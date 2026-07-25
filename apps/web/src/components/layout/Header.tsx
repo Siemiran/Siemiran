@@ -5,45 +5,45 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 w-full border-b border-slate-200/70 bg-white/90 backdrop-blur-xl">
       <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6 lg:px-8">
-        <link href="/" className="transition hover:opacity-90">
+        <Link href="/" className="transition hover:opacity-90">
           <Logo />
-        </link>
+        </Link>
 
         <nav className="hidden items-center gap-8 lg:flex">
-          <a
+          <Link
             className="text-sm font-medium transition hover:text-cyan-600"
             href="#"
           >
             محصولات
-          </a>
+          </Link>
 
-          <a
+          <Link
             className="text-sm font-medium transition hover:text-cyan-600"
             href="#"
           >
             برندها
-          </a>
+          </Link>
 
-          <a
+          <Link
             className="text-sm font-medium transition hover:text-cyan-600"
             href="#"
           >
             استعلام قیمت
-          </a>
+          </Link>
 
-          <a
+          <Link
             className="text-sm font-medium transition hover:text-cyan-600"
             href="#"
           >
             درباره ما
-          </a>
+          </Link>
 
-          <a
+          <Link
             className="text-sm font-medium transition hover:text-cyan-600"
             href="#"
           >
             تماس
-          </a>
+          </Link>
         </nav>
 
         <div className="flex items-center gap-3">
