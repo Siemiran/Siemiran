@@ -1,6 +1,6 @@
-import Hero from "@/src/components/sections/Hero";
-import BannerStrip from "@/src/components/sections/BannerStrip";
-import Pillars from "@/src/components/sections/Pillars";
+import Hero from "@/components/sections/Hero";
+import BannerStrip from "@/components/sections/BannerStrip";
+import Pillars from "@/components/sections/Pillars";
 
 export default function Home() {
   return (

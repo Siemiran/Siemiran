@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
-import Header from "@/src/components/layout/Header";
+
+import Header from "@/components/layout/Header";
 
 const vazirmatn = localFont({
   src: [
@@ -31,13 +32,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="fa" dir="rtl" className={`${vazirmatn.variable} h-full antialiased`}>
-      <body className="min-h-full flex flex-col font-[family-name:var(--font-vazirmatn)]">
-  <Header />
-  <main className="flex-1">
-    {children}
-  </main>
-</body>
+    <html
+      lang="fa"
+      dir="rtl"
+      className={`${vazirmatn.variable} h-full antialiased`}
+    >
+      <body className="flex min-h-full flex-col font-[family-name:var(--font-vazirmatn)]">
+        <Header />
+        <main className="flex-1">{children}</main>
+      </body>
     </html>
   );
 }
