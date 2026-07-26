@@ -11,3 +11,15 @@ Rules:
 - Every product must belong to exactly one family.
 - Images must be official whenever possible.
 - Datasheets and manuals should be linked when available.
+
+Brand
+↓
+Category
+↓
+Family
+↓
+Series
+↓
+Product
+↓
+Variant

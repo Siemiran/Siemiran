@@ -10,6 +10,11 @@
 - [x] Pillars
 - [x] Project architecture
 - [x] Design System
+- [x] Database Architecture
+- [x] Product Taxonomy
+- [x] Product Types
+- [x] Multi Brand Structure
+- [x] Feature Architecture
 
 ## In Progress
 
