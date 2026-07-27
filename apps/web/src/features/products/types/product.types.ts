@@ -29,13 +29,22 @@ export interface Product {
     datasheet?: string;
     manual?: string;
     catalog?: string;
+    firmware?: string;
+    cad?: string;
+    certificates?: string;
   };
 
   compatibility?: string[];
 
   accessories?: string[];
 
+  relatedProducts?: string[];
+
   tags?: string[];
 
   lifecycle?: "active" | "legacy" | "discontinued";
+
+  inStock?: boolean;
+
+  featured?: boolean;
 }

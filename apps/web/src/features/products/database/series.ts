@@ -6,6 +6,7 @@ export const series = {
     "Technology Module",
     "Power Supply",
     "Memory Card",
+    "Communication Processor",
     "Starter Kit",
     "Accessory",
   ],
@@ -15,8 +16,10 @@ export const series = {
     "Signal Module",
     "Communication Module",
     "Technology Module",
+    "Communication Processor",
     "Failsafe",
     "Redundant",
+    "Memory Card",
     "Accessory",
   ],
 } as const;

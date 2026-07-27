@@ -11,5 +11,6 @@ export const categories = [
   "Relays",
   "Low Voltage",
   "Instrumentation",
+  "Safety",
   "Accessories",
 ] as const;

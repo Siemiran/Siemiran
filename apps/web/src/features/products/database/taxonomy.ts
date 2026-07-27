@@ -14,6 +14,7 @@ export const taxonomy = {
     "Relays",
     "Low Voltage",
     "Instrumentation",
+    "Safety",
     "Accessories",
   ],
 
@@ -24,4 +25,8 @@ export const taxonomy = {
     series: "Series",
     product: "Product",
   },
+
+  defaultBrand: "siemens",
+
+  supportedBrands: ["siemens", "schneider", "abb", "omron", "delta", "phoenix"],
 } as const;
