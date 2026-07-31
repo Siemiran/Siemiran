@@ -28,6 +28,14 @@ export interface Series {
   familyId: string;
 }
 
+export interface ProductType {
+  id: string;
+  title: string;
+  slug: string;
+
+  seriesId: string;
+}
+
 export interface ProductReference {
   brandId: string;
 
@@ -36,4 +44,6 @@ export interface ProductReference {
   familyId: string;
 
   seriesId?: string;
+
+  productTypeId?: string;
 }

@@ -84,3 +84,40 @@ Data Model → Verified Data → Reusable Components → Pages → Search/Compar
 
 Pages must not be finalized before the underlying data model is stable.
 '@ | Set-Content -Encoding UTF8 "docs/DECISIONS.md"
+---
+
+## ADR-008 — Product Type Layer
+
+Status: Accepted
+
+A dedicated Product Type layer is introduced between Series and Product.
+
+Final hierarchy:
+
+Brand → Category → Family → Series → Product Type → Product
+
+Reason:
+
+Industrial products (especially Siemens) require an intermediate classification between product families and individual products.
+
+Examples:
+
+S7-1200
+  └── CPU
+        └── Compact CPU
+              └── CPU1214C DC/DC/DC
+
+SINAMICS G120
+  └── Power Module
+        └── PM240-2
+              └── 6SL3210...
+
+This hierarchy improves:
+
+- Product Search
+- Product Comparison
+- SEO
+- Product Import
+- Future multi-brand compatibility
+
+This hierarchy is considered frozen unless a future architecture review explicitly changes it.

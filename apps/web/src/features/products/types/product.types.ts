@@ -1,30 +1,32 @@
 export interface Product {
+  // ---------- Identity ----------
   id: string;
-
   slug: string;
 
   title: string;
-
   shortDescription: string;
-
   description?: string;
 
+  // ---------- Taxonomy ----------
   brandId: string;
-
   categoryId: string;
-
   familyId: string;
-
   seriesId?: string;
+  productTypeId?: string;
 
+  // ---------- Manufacturer ----------
   partNumber: string;
+  manufacturerPartNumber?: string;
+  ean?: string;
 
+  // ---------- Media ----------
   image: string;
-
   gallery?: string[];
 
+  // ---------- Technical ----------
   specifications?: Record<string, string>;
 
+  // ---------- Documents ----------
   documents?: {
     datasheet?: string;
     manual?: string;
@@ -34,17 +36,25 @@ export interface Product {
     certificates?: string;
   };
 
+  // ---------- Relations ----------
   compatibility?: string[];
-
   accessories?: string[];
-
   relatedProducts?: string[];
+  replacementProduct?: string;
 
+  // ---------- Classification ----------
   tags?: string[];
 
   lifecycle?: "active" | "legacy" | "discontinued";
 
+  // ---------- Commercial ----------
   inStock?: boolean;
-
   featured?: boolean;
+
+  // ---------- SEO ----------
+  seoTitle?: string;
+  seoDescription?: string;
+
+  // ---------- External ----------
+  siemensUrl?: string;
 }
