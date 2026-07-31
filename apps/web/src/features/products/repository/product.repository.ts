@@ -1,4 +1,4 @@
-import { products } from "../data/products";
+import { products } from "../data";
 import type { Product } from "../types/product.types";
 
 export function getProducts(): Product[] {
