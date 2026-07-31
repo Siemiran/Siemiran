@@ -126,3 +126,39 @@ Status: Not Started
 - Performance optimization
 - Production deployment
 '@ | Set-Content -Encoding UTF8 "docs/ROADMAP.md"
+
+## Products Module
+
+### Foundation
+
+* ✅ Product Types
+* ✅ Product Dataset
+* ✅ Product Repository
+* ✅ Product Validator
+* ✅ Product Hook
+* ✅ Product Components
+* ✅ Featured Products
+* ✅ Products Page
+
+### SEO Phase
+
+* ⬜ Dynamic Product Page
+* ⬜ generateStaticParams
+* ⬜ generateMetadata
+* ⬜ Product Schema (JSON-LD)
+* ⬜ OpenGraph
+* ⬜ Canonical URL
+
+### Catalog Phase
+
+* ⬜ Search
+* ⬜ Filter
+* ⬜ Sort
+* ⬜ Pagination
+
+### UX Phase
+
+* ⬜ Breadcrumb
+* ⬜ Related Products
+* ⬜ Product Gallery
+* ⬜ Datasheet Download
