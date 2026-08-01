@@ -1,164 +1,235 @@
-@'
 # Siemiran Roadmap
 
-## Phase 0 — Foundation
+**Project Version:** v0.3 Products Foundation
+
+---
+
+# Phase 0 — Foundation ✅
 
 Status: Completed
 
-- Next.js setup
-- Tailwind setup
-- TypeScript setup
-- Feature First architecture
-- Base layout
-- GitHub backup
+## Infrastructure
 
-## Phase 1 — Project Stabilization
+* ✅ Next.js
+* ✅ React
+* ✅ TypeScript
+* ✅ Tailwind CSS
+* ✅ ESLint
+* ✅ Git
+
+## Architecture
+
+* ✅ Feature First
+* ✅ Folder Structure
+* ✅ Documentation Structure
+
+---
+
+# Phase 1 — Products Foundation ✅
+
+Status: Completed
+
+## Product Model
+
+* ✅ Product Type
+* ✅ Dataset
+* ✅ Repository
+* ✅ Validator
+* ✅ Hooks
+
+## Components
+
+* ✅ ProductCard
+* ✅ ProductImage
+* ✅ ProductBadge
+* ✅ ProductMeta
+* ✅ ProductActions
+* ✅ ProductSkeleton
+
+## UI
+
+* ✅ Featured Products
+* ✅ Products Page
+* ✅ Home Integration
+
+Exit Criteria:
+
+* Build passes
+* TypeScript passes
+* Components reusable
+* Repository functional
+
+---
+
+# Phase 2 — Dynamic Product Pages
 
 Status: In Progress
 
-- Remove unused duplicate Product type
-- Record architecture decisions
-- Create project audit tool
-- Identify empty placeholder files
-- Establish canonical sources of truth
-- Validate build, lint and Git status
+Goal:
 
-Exit criteria:
+Create enterprise-ready product detail pages.
 
-- One Product interface
-- No untracked architectural decisions
-- Build passes
-- Lint passes
-- Documentation reflects the real repository
+Tasks:
 
-## Phase 2 — Product Data Model
-
-Status: Not Started
-
-- Validate Brand model
-- Validate Category model
-- Validate Family model
-- Correct Series semantics
-- Decide whether ProductGroup is required
-- Add typed IDs and relations
-- Add validation helpers
-- Define product document structure
-- Define lifecycle values
-- Define official data source policy
-
-Exit criteria:
-
-- Taxonomy supports real Siemens products without ambiguity
-- No duplicated category or taxonomy source
-- At least 5 verified Siemens products can be represented correctly
-
-## Phase 3 — Siemens Data Migration
-
-Status: Not Started
-
-- Extract product records from legacy data
-- Normalize Siemens part numbers
-- Map products to taxonomy
-- Import images and technical documents
-- Add lifecycle and availability fields
-- Verify data against official sources
-
-Exit criteria:
-
-- First verified Siemens product family migrated
-- Data contains no guessed technical specifications
-- Products pass validation
-
-## Phase 4 — Reusable Product UI
-
-Status: Not Started
-
-- ProductImage
-- ProductBadge
-- ProductMeta
-- ProductActions
-- ProductCard
-- ProductSkeleton
-- ProductGrid
-
-Exit criteria:
-
-- ProductCard receives Product through props
-- No hardcoded product content
-- Components support RTL and responsive layouts
-
-## Phase 5 — Product Experience
-
-Status: Not Started
-
-- Products page
-- Filters
-- Pagination
-- Search
-- Product details
-- Related products
-- Document downloads
-- Quote request
-- Compare
-
-## Phase 6 — Content and SEO
-
-Status: Not Started
-
-- Metadata architecture
-- Structured data
-- Category SEO pages
-- Brand pages
-- Family pages
-- Technical articles
-- Internal linking
-- Sitemap
-
-## Phase 7 — Final Experience
-
-Status: Not Started
-
-- Final Home page
-- Mega Menu
-- Final Footer
-- Motion and interactions
-- Accessibility
-- Performance optimization
-- Production deployment
-'@ | Set-Content -Encoding UTF8 "docs/ROADMAP.md"
-
-## Products Module
-
-### Foundation
-
-* ✅ Product Types
-* ✅ Product Dataset
-* ✅ Product Repository
-* ✅ Product Validator
-* ✅ Product Hook
-* ✅ Product Components
-* ✅ Featured Products
-* ✅ Products Page
-
-### SEO Phase
-
-* ⬜ Dynamic Product Page
+* ⬜ Dynamic Route (`/products/[slug]`)
+* ⬜ Product Lookup
+* ⬜ NotFound Handling
+* ⬜ Static Generation
 * ⬜ generateStaticParams
+
+Exit Criteria:
+
+* Every product has its own page.
+* Dynamic routing works.
+* Build passes.
+
+---
+
+# Phase 3 — SEO Foundation
+
+Status: Not Started
+
+Tasks:
+
 * ⬜ generateMetadata
-* ⬜ Product Schema (JSON-LD)
+* ⬜ Canonical URLs
 * ⬜ OpenGraph
-* ⬜ Canonical URL
+* ⬜ Twitter Cards
+* ⬜ JSON-LD
+* ⬜ Breadcrumb Schema
+* ⬜ Product Schema
+* ⬜ Sitemap
+* ⬜ robots.txt
 
-### Catalog Phase
+Exit Criteria:
 
-* ⬜ Search
-* ⬜ Filter
-* ⬜ Sort
-* ⬜ Pagination
+* Lighthouse SEO > 95
+* Rich Results compatible
 
-### UX Phase
+---
 
-* ⬜ Breadcrumb
-* ⬜ Related Products
+# Phase 4 — Product Experience
+
+Status: Not Started
+
+Tasks:
+
 * ⬜ Product Gallery
 * ⬜ Datasheet Download
+* ⬜ Related Products
+* ⬜ Inquiry Button
+* ⬜ Quote Request
+* ⬜ Product Specifications
+* ⬜ Product Documents
+
+---
+
+# Phase 5 — Catalog
+
+Status: Not Started
+
+Tasks:
+
+* ⬜ Search
+* ⬜ Filters
+* ⬜ Sort
+* ⬜ Pagination
+* ⬜ Brand Pages
+* ⬜ Family Pages
+* ⬜ Series Pages
+
+---
+
+# Phase 6 — Data
+
+Status: Not Started
+
+Tasks:
+
+* ⬜ Siemens Migration
+* ⬜ Verified Specifications
+* ⬜ Images
+* ⬜ PDFs
+* ⬜ Accessories
+* ⬜ Cross References
+
+---
+
+# Phase 7 — CMS
+
+Status: Not Started
+
+Tasks:
+
+* ⬜ Authentication
+* ⬜ Roles
+* ⬜ Product CRUD
+* ⬜ Upload Manager
+* ⬜ Media Library
+* ⬜ Audit Logs
+
+---
+
+# Phase 8 — Performance
+
+Status: Not Started
+
+Tasks:
+
+* ⬜ Image Optimization
+* ⬜ Lazy Loading
+* ⬜ ISR
+* ⬜ Cache Strategy
+* ⬜ Bundle Optimization
+
+---
+
+# Phase 9 — Production
+
+Status: Not Started
+
+Tasks:
+
+* ⬜ CI/CD
+* ⬜ Monitoring
+* ⬜ Error Tracking
+* ⬜ Analytics
+* ⬜ Production Deployment
+
+---
+
+# Current Sprint
+
+## Active
+
+* Dynamic Product Pages
+
+## Next
+
+* SEO Foundation
+
+---
+
+# Definition of Done
+
+Every completed feature must satisfy:
+
+* ✅ Build passes
+* ✅ TypeScript passes
+* ✅ Documentation updated
+* ✅ Git committed
+* ✅ Architecture unchanged
+
+---
+
+# Long-Term Goals
+
+* Multi-brand support
+* Persian industrial knowledge base
+* Enterprise CMS
+* Product comparison engine
+* Quote management
+* ERP integration
+* Dealer portal
+* Customer portal
+* API platform

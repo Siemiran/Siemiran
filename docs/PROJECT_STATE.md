@@ -1,121 +1,220 @@
-@'
-# Siemiran — Current Project State
+# Siemiran — Project State
 
-Last updated: 2026-07-31
+**Version:** v0.3 Products Foundation
 
-## Project Goal
+**Last Updated:** 2026-07-31
 
-Build a Persian enterprise-grade industrial automation platform with Siemens as the primary brand.
+---
 
-The project must be:
+# Vision
 
-- Siemens-first
-- Multi-brand ready
-- SEO-first
-- High performance
-- Scalable
-- Maintainable
-- Based on verified product data
-- Suitable for product discovery, technical reference, comparison and quotation
+Siemiran is an enterprise-grade industrial automation platform focused on Siemens products, designed with scalability, maintainability, SEO, and future multi-brand expansion in mind.
 
-## Frozen Architecture Rules
+The platform is intended to become:
 
-1. Never edit the legacy directory.
-2. Use Feature First Architecture.
-3. Never duplicate reusable components.
-4. Never bypass TypeScript.
-5. All products must use the canonical Product type.
-6. Database hierarchy is frozen:
+* Siemens-first
+* Multi-brand ready
+* Enterprise architecture
+* SEO-first
+* High performance
+* Scalable
+* Maintainable
+* Data-driven
+* Ready for quotation, comparison and technical documentation
 
-Brand → Category → Family → Series → Product
+---
 
-## Canonical Product Type
+# Current Architecture
 
-apps/web/src/features/products/types/product.types.ts
+## Framework
 
-Do not create another Product interface outside this feature.
+* Next.js 16
+* React 19
+* TypeScript 5
+* Tailwind CSS v4
 
-## Design Reference
+## Architecture
 
-The official design and migration reference is:
+Feature First Architecture
 
-legacy/index.html
+```
+src/
+    features/
+    components/
+    constants/
+    types/
+```
 
-Old folders such as html13 are not project references.
+The legacy implementation is frozen and used only as a visual/design reference.
 
-## Current Completed Work
+---
 
-- Next.js application setup
-- Tailwind CSS setup
-- Base Header
-- Base Hero
-- BannerStrip
-- Pillars
-- Feature First project structure
-- Product type
-- Initial product database structure
-- Initial brands
-- Initial categories
-- Initial Siemens families
-- Initial taxonomy
-- GitHub backup
+# Canonical Product Model
 
-## Current Known Issues
+Single source of truth:
 
-- Product data is empty.
-- ProductCard still contains hardcoded demo data.
-- Footer is still empty.
-- Several placeholder components are empty.
-- Siemens taxonomy is incomplete.
-- series.ts currently mixes Series with Product Groups.
-- categories are duplicated between taxonomy.ts and categories.ts.
-- Documentation files are incomplete.
-- The legacy Product interface must remain deleted if no imports use it.
+```
+src/features/products/types/product.types.ts
+```
 
-## Current Phase
+No duplicate Product interfaces are allowed anywhere in the project.
 
-Project Stabilization and Product Data Foundation
+---
 
-## Do Not Start Yet
+# Canonical Taxonomy
 
-- Final Products Page
-- Final Product Grid
-- Advanced Search
-- Product Comparison
-- Product Popup
-- Final Footer
-- Admin Panel
+Current hierarchy:
 
-These features must wait until the product data model and taxonomy are validated.
-'@ | Set-Content -Encoding UTF8 "docs/PROJECT_STATE.md"
+```
+Brand
+    ↓
+Category
+    ↓
+Family
+    ↓
+Series
+    ↓
+Product
+```
 
-## Project Status (v0.3)
+This hierarchy is frozen unless a documented architectural decision changes it.
 
-### Completed
+---
 
-* Next.js App Router architecture
-* Product feature modularization
-* Product dataset
-* Product validation
-* Product repository (functional)
-* Product hooks
-* Product reusable UI components
-* Featured Products section
-* Products listing page
-* Home page integration
-* Clean component exports
-* Stable build pipeline
+# Current Completed Work
 
-### Current
+## Foundation
 
-* Dynamic Product Page implementation in progress (`/products/[slug]`)
+* ✅ Next.js project
+* ✅ Tailwind setup
+* ✅ TypeScript strict mode
+* ✅ Feature First architecture
+* ✅ Git repository
+* ✅ Documentation structure
 
-### Build
+---
 
-Status: ✅ Passing
+## Layout
 
-### Git
+* ✅ Header
+* ✅ Hero
+* ✅ Banner Strip
+* ✅ Pillars
+* ✅ Base Layout
 
-Stable milestone:
+---
 
-`v0.3-products-foundation`
+## Products Module
+
+Completed:
+
+* ✅ Product Types
+* ✅ Product Dataset
+* ✅ Product Repository
+* ✅ Product Validator
+* ✅ Product Hooks
+* ✅ Product Components
+* ✅ Product Card
+* ✅ Featured Products Section
+* ✅ Products Listing Page
+* ✅ Home Page Integration
+
+---
+
+## Build
+
+Current status:
+
+* ✅ Build Passing
+* ✅ TypeScript Passing
+* ✅ Repository Stable
+
+---
+
+# Current Work
+
+Active milestone:
+
+```
+Dynamic Product Pages
+```
+
+Current target:
+
+```
+/products/[slug]
+```
+
+---
+
+# Next Milestone
+
+SEO Foundation
+
+Tasks:
+
+* Dynamic Product Page
+* generateStaticParams
+* generateMetadata
+* JSON-LD
+* OpenGraph
+* Canonical URLs
+
+---
+
+# Frozen Rules
+
+These rules may NOT be broken.
+
+1. Feature First Architecture
+2. No duplicated Product interfaces
+3. Repository is the only data access layer
+4. Reusable UI components only
+5. TypeScript Strict
+6. Build must remain green
+7. Documentation must be updated before closing every milestone
+
+---
+
+# Repository Status
+
+Branch:
+
+```
+main
+```
+
+Current milestone:
+
+```
+v0.3-products-foundation
+```
+
+Status:
+
+Stable
+
+---
+
+# Definition of Done
+
+A feature is considered complete only when:
+
+* Build passes
+* TypeScript passes
+* Components are reusable
+* Documentation updated
+* Git committed
+* Architecture preserved
+
+---
+
+# Current Priority
+
+1. Dynamic Product Pages
+2. SEO
+3. Search
+4. Filters
+5. Pagination
+6. Product Experience
+7. Admin Platform
