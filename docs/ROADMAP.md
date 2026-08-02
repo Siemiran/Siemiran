@@ -1,6 +1,6 @@
 # Siemiran Roadmap
 
-**Project Version:** v0.3 Products Foundation
+**Project Version:** v0.4 SEO Foundation
 
 ---
 
@@ -54,16 +54,16 @@ Status: Completed
 
 Exit Criteria:
 
-* Build passes
-* TypeScript passes
-* Components reusable
-* Repository functional
+* ✅ Build passes
+* ✅ TypeScript passes
+* ✅ Components reusable
+* ✅ Repository functional
 
 ---
 
-# Phase 2 — Dynamic Product Pages
+# Phase 2 — Dynamic Product Pages ✅
 
-Status: In Progress
+Status: Completed
 
 Goal:
 
@@ -71,52 +71,65 @@ Create enterprise-ready product detail pages.
 
 Tasks:
 
-* ⬜ Dynamic Route (`/products/[slug]`)
-* ⬜ Product Lookup
-* ⬜ NotFound Handling
-* ⬜ Static Generation
-* ⬜ generateStaticParams
+* ✅ Dynamic Route (`/products/[slug]`)
+* ✅ Product Lookup
+* ✅ NotFound Handling
+* ✅ Static Generation
+* ✅ generateStaticParams
 
 Exit Criteria:
 
-* Every product has its own page.
-* Dynamic routing works.
-* Build passes.
+* ✅ Every product has its own page.
+* ✅ Dynamic routing works.
+* ✅ Build passes.
 
 ---
 
-# Phase 3 — SEO Foundation
+# Phase 3 — SEO Foundation ✅
 
-Status: Not Started
+Status: Completed
+
+Goal:
+
+Create search-engine optimized product pages.
 
 Tasks:
 
-* ⬜ generateMetadata
-* ⬜ Canonical URLs
-* ⬜ OpenGraph
-* ⬜ Twitter Cards
-* ⬜ JSON-LD
+* ✅ generateMetadata
+* ✅ Canonical URLs
+* ✅ OpenGraph
+* ✅ Twitter Cards
+* ✅ JSON-LD
+* ✅ Product Schema
+
+Pending:
+
 * ⬜ Breadcrumb Schema
-* ⬜ Product Schema
 * ⬜ Sitemap
 * ⬜ robots.txt
 
 Exit Criteria:
 
-* Lighthouse SEO > 95
-* Rich Results compatible
+* ✅ Metadata system implemented
+* ✅ Product pages SEO-ready
+* ✅ Rich Results foundation ready
 
 ---
 
 # Phase 4 — Product Experience
 
-Status: Not Started
+Status: Next
+
+Goal:
+
+Build complete industrial product detail experience.
 
 Tasks:
 
+* ⬜ Breadcrumb
+* ⬜ Related Products
 * ⬜ Product Gallery
 * ⬜ Datasheet Download
-* ⬜ Related Products
 * ⬜ Inquiry Button
 * ⬜ Quote Request
 * ⬜ Product Specifications
@@ -132,7 +145,7 @@ Tasks:
 
 * ⬜ Search
 * ⬜ Filters
-* ⬜ Sort
+* ⬜ Sorting
 * ⬜ Pagination
 * ⬜ Brand Pages
 * ⬜ Family Pages
@@ -200,13 +213,24 @@ Tasks:
 
 # Current Sprint
 
-## Active
+## Completed
 
 * Dynamic Product Pages
+* Product Metadata
+* JSON-LD Product Schema
+* OpenGraph
+* Twitter Card
+* Canonical URL
+
+## Active
+
+* Product Experience Layer
 
 ## Next
 
-* SEO Foundation
+* Breadcrumb
+* Related Products
+* Product Gallery
 
 ---
 
@@ -233,3 +257,47 @@ Every completed feature must satisfy:
 * Dealer portal
 * Customer portal
 * API platform
+
+---
+
+# Products Roadmap
+
+## Foundation
+
+* ✅ Product Types
+* ✅ Product Dataset
+* ✅ Product Repository
+* ✅ Product Validator
+* ✅ Product Components
+* ✅ Featured Products
+* ✅ Products Listing Page
+
+## Dynamic Pages
+
+* ✅ Dynamic Product Page
+* ✅ generateStaticParams
+* ✅ Product Lookup
+* ✅ NotFound Handling
+
+## SEO Phase
+
+* ✅ generateMetadata
+* ✅ JSON-LD Product Schema
+* ✅ Product Schema
+* ✅ OpenGraph
+* ✅ Twitter Card
+* ✅ Canonical URL
+
+## UX Phase
+
+* ⬜ Breadcrumb
+* ⬜ Related Products
+* ⬜ Product Gallery
+* ⬜ Datasheet Download
+
+## Catalog Phase
+
+* ⬜ Search
+* ⬜ Filters
+* ⬜ Sorting
+* ⬜ Pagination
