@@ -2,6 +2,8 @@ import { createProductSchema } from "@/features/products/lib/product.schema";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { createProductMetadata } from "@/features/products/lib/product.seo";
+import Breadcrumb from "@/components/navigation/Breadcrumb";
+import { createBreadcrumbSchema } from "@/features/products/lib/breadcrumb.schema";
 
 import {
   getProductBySlug,
@@ -42,6 +44,26 @@ export default async function ProductPage({ params }: Props) {
     notFound();
   }
   const schema = createProductSchema(product);
+  const breadcrumb = [
+    {
+      label: "Home",
+      href: "/",
+    },
+    {
+      label: "Products",
+      href: "/products",
+    },
+    {
+      label: product.familyId,
+      href: `/products?family=${product.familyId}`,
+    },
+    {
+      label: product.title,
+      href: `/products/${product.slug}`,
+    },
+  ];
+
+  const breadcrumbSchema = createBreadcrumbSchema(breadcrumb);
 
   return (
     <>
@@ -52,7 +74,28 @@ export default async function ProductPage({ params }: Props) {
         }}
       />
 
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(breadcrumbSchema),
+        }}
+      />
+
       <main className="mx-auto max-w-7xl px-6 py-16">
+        <Breadcrumb
+          items={[
+            { label: "Home", href: "/" },
+            { label: "Products", href: "/products" },
+            {
+              label: product.familyId,
+              href: `/products?family=${product.familyId}`,
+            },
+            {
+              label: product.title,
+            },
+          ]}
+        />
+
         <h1 className="text-4xl font-bold">{product.title}</h1>
 
         <p className="mt-4 text-slate-600">{product.shortDescription}</p>
