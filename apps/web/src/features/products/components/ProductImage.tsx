@@ -1,3 +1,5 @@
+﻿import Image from "next/image";
+
 import type { Product } from "@/features/products/types/product.types";
 
 interface ProductImageProps {
@@ -7,11 +9,12 @@ interface ProductImageProps {
 export default function ProductImage({ product }: ProductImageProps) {
   return (
     <div className="relative aspect-square overflow-hidden rounded-xl bg-slate-50">
-      <img
-        src={product.image}
+      <Image
+        src={product.images[0]}
         alt={product.title}
-        loading="lazy"
-        className="h-full w-full object-contain p-6 transition duration-300 group-hover:scale-105"
+        fill
+        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+        className="object-contain p-6 transition duration-300 group-hover:scale-105"
       />
     </div>
   );

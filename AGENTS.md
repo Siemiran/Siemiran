@@ -1,10 +1,11 @@
-# Project Rules
+﻿# AGENTS
 
-- Never edit legacy.
-- Never duplicate components.
-- Use Feature First Architecture.
-- All Products must be typed.
-- Database hierarchy is frozen:
-  Brand → Category → Family → Series → Product
-- Reusable components only.
-- Never bypass TypeScript.
+Project Rules
+
+- Feature First
+- Repository Pattern
+- Single Product Interface
+- Verified Product Data
+- Build must pass
+- Docs must stay updated
+- Legacy is read only

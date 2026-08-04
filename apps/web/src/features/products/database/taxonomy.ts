@@ -23,6 +23,7 @@ export const taxonomy = {
     category: "Category",
     family: "Family",
     series: "Series",
+    productType: "Product Type",
     product: "Product",
   },
 

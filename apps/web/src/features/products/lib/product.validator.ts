@@ -23,7 +23,7 @@ export function validateProduct(product: Product): ValidationResult {
 
   if (!product.partNumber) errors.push("Missing part number");
 
-  if (!product.image) errors.push("Missing image");
+  if (product.images[0]) errors.push("Missing image");
 
   return {
     valid: errors.length === 0,

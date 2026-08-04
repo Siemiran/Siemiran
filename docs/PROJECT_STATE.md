@@ -1,298 +1,136 @@
-# Siemiran — Project State
+﻿# Siemiran — Project State
 
-**Version:** v0.3 Products Foundation
+Current Milestone:
+v0.5 Product SEO Navigation
 
-**Last Updated:** 2026-07-31
+Status:
+Production Build Passing
 
----
+Last Update:
+2026-08-04
 
-# Vision
+--------------------------------------------------
 
-Siemiran is an enterprise-grade industrial automation platform focused on Siemens products, designed with scalability, maintainability, SEO, and future multi-brand expansion in mind.
+STACK
 
-The platform is intended to become:
+- Next.js 16
+- React 19
+- TypeScript
+- Tailwind CSS
+- ESLint
+- App Router
 
-* Siemens-first
-* Multi-brand ready
-* Enterprise architecture
-* SEO-first
-* High performance
-* Scalable
-* Maintainable
-* Data-driven
-* Ready for quotation, comparison and technical documentation
+--------------------------------------------------
 
----
-
-# Current Architecture
-
-## Framework
-
-* Next.js 16
-* React 19
-* TypeScript 5
-* Tailwind CSS v4
-
-## Architecture
+ARCHITECTURE
 
 Feature First Architecture
 
-```
-src/
-    features/
-    components/
-    constants/
-    types/
-```
+apps/web/src/features
 
-The legacy implementation is frozen and used only as a visual/design reference.
+--------------------------------------------------
 
----
+CANONICAL PRODUCT HIERARCHY
 
-# Canonical Product Model
-
-Single source of truth:
-
-```
-src/features/products/types/product.types.ts
-```
-
-No duplicate Product interfaces are allowed anywhere in the project.
-
----
-
-# Canonical Taxonomy
-
-Current hierarchy:
-
-```
 Brand
-    ↓
-Category
-    ↓
-Family
-    ↓
-Series
-    ↓
-Product
-```
+ └── Category
+      └── Family
+           └── Series
+                └── Product Type
+                     └── Product
 
-This hierarchy is frozen unless a documented architectural decision changes it.
+--------------------------------------------------
 
----
+CANONICAL PRODUCT TYPE
 
-# Current Completed Work
+apps/web/src/features/products/types/product.types.ts
 
-## Foundation
+--------------------------------------------------
 
-* ✅ Next.js project
-* ✅ Tailwind setup
-* ✅ TypeScript strict mode
-* ✅ Feature First architecture
-* ✅ Git repository
-* ✅ Documentation structure
+DATA ACCESS
 
----
+Product Repository
 
-## Layout
+apps/web/src/features/products/repository/product.repository.ts
 
-* ✅ Header
-* ✅ Hero
-* ✅ Banner Strip
-* ✅ Pillars
-* ✅ Base Layout
+--------------------------------------------------
 
----
+COMPLETED
 
-## Products Module
+✔ Feature First Structure
 
-Completed:
+✔ Product Dataset
 
-* ✅ Product Types
-* ✅ Product Dataset
-* ✅ Product Repository
-* ✅ Product Validator
-* ✅ Product Hooks
-* ✅ Product Components
-* ✅ Product Card
-* ✅ Featured Products Section
-* ✅ Products Listing Page
-* ✅ Home Page Integration
+✔ Product Repository
 
----
+✔ Product Components
 
-## Build
+✔ Products Listing Page
 
-Current status:
+✔ Dynamic Product Page
 
-* ✅ Build Passing
-* ✅ TypeScript Passing
-* ✅ Repository Stable
+✔ Product Metadata
 
----
+✔ Product JSON-LD
 
-# Current Work
+✔ Breadcrumb Component
 
-Active milestone:
+✔ Breadcrumb Schema
 
-```
-Dynamic Product Pages
-```
+✔ Next Image
 
-Current target:
+✔ Placeholder Images
 
-```
-/products/[slug]
-```
+✔ Safe Product Schema
 
----
+✔ Static Product Generation
 
-# Next Milestone
+--------------------------------------------------
 
-SEO Foundation
+QUALITY
 
-Tasks:
+✔ ESLint Passing
 
-* Dynamic Product Page
-* generateStaticParams
-* generateMetadata
-* JSON-LD
-* OpenGraph
-* Canonical URLs
+✔ TypeScript Passing
 
----
+✔ Production Build Passing
 
-# Frozen Rules
+--------------------------------------------------
 
-These rules may NOT be broken.
+NEXT MILESTONE
 
-1. Feature First Architecture
-2. No duplicated Product interfaces
-3. Repository is the only data access layer
-4. Reusable UI components only
-5. TypeScript Strict
-6. Build must remain green
-7. Documentation must be updated before closing every milestone
+Related Products Engine
 
----
+Priority
 
-# Repository Status
+1. Product Type
 
-Branch:
+2. Series
 
-```
-main
-```
+3. Family
 
-Current milestone:
+4. Category
 
-```
-v0.3-products-foundation
-```
+5. Brand
 
-Status:
+--------------------------------------------------
 
-Stable
+RULES
 
----
+Never edit legacy.
 
-# Definition of Done
+Never duplicate Product interface.
 
-A feature is considered complete only when:
+Always use Repository.
 
-* Build passes
-* TypeScript passes
-* Components are reusable
-* Documentation updated
-* Git committed
-* Architecture preserved
+Hierarchy is frozen.
 
----
+No fake product data.
 
-# Current Priority
+No fake pricing.
 
-1. Dynamic Product Pages
-2. SEO
-3. Search
-4. Filters
-5. Pagination
-6. Product Experience
-7. Admin Platform
+No fake stock.
 
-## Project Status (v0.4)
+No fake documents.
 
-### Completed
-
-- Next.js App Router architecture
-- Feature-based products module
-- Product dataset
-- Product repository
-- Product validation
-- Product reusable components
-- Featured Products section
-- Products listing page
-- Dynamic Product Page
-
-### SEO Foundation Completed
-
-- generateStaticParams for product routes
-- Static generation for product pages
-- Dynamic metadata generation
-- Canonical URLs
-- OpenGraph metadata
-- Twitter Card metadata
-- Product JSON-LD schema
-
-### Current
-
-Product module is ready for UX improvements and catalog features.
-
-### Build Status
-
-✅ Production build passing
-
-### Next Development Phase
-
-- Breadcrumb
-- Related Products
-- Product Gallery
-- Datasheet Download
-- Search
-- Filtering
-- Sorting
-- Pagination
-
-## Milestone: Product SEO Navigation Completed
-
-Status: Completed
-
-### Completed Features
-
-- Dynamic Product Page
-- Product metadata system
-- Canonical URL generation
-- OpenGraph metadata
-- Twitter Card metadata
-- Product JSON-LD Schema
-- Breadcrumb UI component
-- Breadcrumb structured data (BreadcrumbList Schema)
-
-### Current Architecture
-
-Product pages now include:
-
-- Static generation using generateStaticParams
-- SEO metadata generation
-- Structured data support
-- SEO-friendly navigation hierarchy
-
-### Build Status
-
-✅ Production build passing
-
-### Next Phase
-
-- Related Products Engine
-- Product Gallery
-- Datasheet Download
-- Advanced Catalog Features
+Always update Docs before milestone completion.

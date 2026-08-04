@@ -1,333 +1,103 @@
-# Siemiran Roadmap
+﻿# ROADMAP
 
-**Project Version:** v0.4 SEO Foundation
+Current Version
 
----
+v0.5 Product SEO Navigation
 
-# Phase 0 — Foundation ✅
+--------------------------------------------------
 
-Status: Completed
+DONE
 
-## Infrastructure
+Foundation
 
-- ✅ Next.js
-- ✅ React
-- ✅ TypeScript
-- ✅ Tailwind CSS
-- ✅ ESLint
-- ✅ Git
+✔ Next.js
 
-## Architecture
+✔ React
 
-- ✅ Feature First Architecture
-- ✅ Folder Structure
-- ✅ Documentation Structure
+✔ TypeScript
 
----
+✔ Tailwind
 
-# Phase 1 — Products Foundation ✅
+✔ Feature First
 
-Status: Completed
+✔ Git
 
-## Product Model
+--------------------------------------------------
 
-- ✅ Product Type
-- ✅ Product Dataset
-- ✅ Product Repository
-- ✅ Product Validator
-- ✅ Product Hooks
+Products
 
-## Components
+✔ Dataset
 
-- ✅ ProductCard
-- ✅ ProductImage
-- ✅ ProductBadge
-- ✅ ProductMeta
-- ✅ ProductActions
-- ✅ ProductSkeleton
+✔ Repository
 
-## UI
+✔ Product Components
 
-- ✅ Featured Products
-- ✅ Products Listing Page
-- ✅ Home Integration
+✔ Products Page
 
-## Exit Criteria
+✔ Dynamic Product Page
 
-- ✅ Build passes
-- ✅ TypeScript passes
-- ✅ Components reusable
-- ✅ Repository functional
+--------------------------------------------------
 
----
+SEO
 
-# Phase 2 — Dynamic Product Pages ✅
+✔ Metadata
 
-Status: Completed
+✔ OpenGraph
 
-Goal:
+✔ Twitter
 
-Create enterprise-ready product detail pages.
+✔ Product JSON-LD
 
-## Completed
+✔ Breadcrumb
 
-- ✅ Dynamic Route (`/products/[slug]`)
-- ✅ Product Lookup
-- ✅ NotFound Handling
-- ✅ Static Generation
-- ✅ generateStaticParams
+✔ Breadcrumb JSON-LD
 
-## Exit Criteria
+✔ metadataBase
 
-- ✅ Every product has its own page
-- ✅ Dynamic routing works
-- ✅ Production build passes
+--------------------------------------------------
 
----
+NEXT
 
-# Phase 3 — SEO Foundation 🟡
+Related Products Engine
 
-Status: In Progress
+--------------------------------------------------
 
-Goal:
+BACKLOG
 
-Create search-engine optimized product architecture.
+Product Gallery
 
-## Completed
+Product Specifications
 
-- ✅ generateMetadata
-- ✅ Canonical URLs
-- ✅ OpenGraph Metadata
-- ✅ Twitter Cards
-- ✅ JSON-LD Product Schema
-- ✅ Product Schema
+Datasheet Downloads
 
-## Active
+Inquiry System
 
-- 🟡 Breadcrumb UI
-- 🟡 Breadcrumb Structured Data
+Quote System
 
-## Pending
+Search
 
-- ⬜ Sitemap
-- ⬜ robots.txt
-- ⬜ Organization Schema
-- ⬜ Website Schema
+Filtering
 
-## Exit Criteria
+Pagination
 
-- Product pages SEO-ready
-- Rich Results foundation completed
-- Breadcrumb Schema validated
+Brand Pages
 
----
+Series Pages
 
-# Phase 4 — Product Experience
+Family Pages
 
-Status: Next
+Product Type Pages
 
-Goal:
+Organization Schema
 
-Build a complete industrial product detail experience.
+Website Schema
 
-## Tasks
+Sitemap
 
-- ⬜ Breadcrumb Final Integration
-- ⬜ Related Products Engine
-- ⬜ Product Gallery
-- ⬜ Datasheet Download
-- ⬜ Inquiry Button
-- ⬜ Quote Request Flow
-- ⬜ Product Specifications
-- ⬜ Product Documents
+Robots.txt
 
----
+CMS
 
-# Phase 5 — Catalog
+Deployment
 
-Status: Not Started
-
-Goal:
-
-Create scalable industrial catalog navigation.
-
-## Tasks
-
-- ⬜ Product Search
-- ⬜ Advanced Filters
-- ⬜ Sorting
-- ⬜ Pagination
-- ⬜ Brand Pages
-- ⬜ Family Pages
-- ⬜ Series Pages
-
----
-
-# Phase 6 — Data Expansion
-
-Status: Not Started
-
-Goal:
-
-Expand Siemens industrial product database.
-
-## Tasks
-
-- ⬜ Siemens Product Migration
-- ⬜ Verified Specifications
-- ⬜ Product Images
-- ⬜ Datasheet PDFs
-- ⬜ Accessories Database
-- ⬜ Cross References
-
----
-
-# Phase 7 — CMS
-
-Status: Not Started
-
-Goal:
-
-Create enterprise content management system.
-
-## Tasks
-
-- ⬜ Authentication
-- ⬜ User Roles
-- ⬜ Product CRUD
-- ⬜ Upload Manager
-- ⬜ Media Library
-- ⬜ Audit Logs
-
----
-
-# Phase 8 — Performance
-
-Status: Not Started
-
-Goal:
-
-Optimize production performance.
-
-## Tasks
-
-- ⬜ Image Optimization
-- ⬜ Lazy Loading
-- ⬜ ISR Strategy
-- ⬜ Cache Strategy
-- ⬜ Bundle Optimization
-
----
-
-# Phase 9 — Production
-
-Status: Not Started
-
-Goal:
-
-Prepare production deployment.
-
-## Tasks
-
-- ⬜ CI/CD
-- ⬜ Monitoring
-- ⬜ Error Tracking
-- ⬜ Analytics
-- ⬜ Production Deployment
-
----
-
-# Current Sprint
-
-## Completed
-
-- Dynamic Product Pages
-- Product Repository
-- Product Metadata System
-- JSON-LD Product Schema
-- OpenGraph
-- Twitter Card
-- Canonical URL
-
-## Active
-
-- Breadcrumb System
-- SEO Navigation Structure
-
-## Next
-
-- Related Products Engine
-- Product Gallery
-- Datasheet System
-
----
-
-# Definition of Done
-
-Every completed feature must satisfy:
-
-- ✅ Build passes
-- ✅ TypeScript passes
-- ✅ Documentation updated
-- ✅ Git committed
-- ✅ Architecture unchanged
-
----
-
-# Long-Term Goals
-
-- Multi-brand support
-- Persian industrial knowledge base
-- Enterprise CMS
-- Product Comparison Engine
-- Quote Management
-- ERP Integration
-- Dealer Portal
-- Customer Portal
-- API Platform
-
----
-
-# Products Roadmap
-
-## Foundation ✅
-
-- ✅ Product Types
-- ✅ Product Dataset
-- ✅ Product Repository
-- ✅ Product Validator
-- ✅ Product Components
-- ✅ Featured Products
-- ✅ Products Listing Page
-
-## Dynamic Pages ✅
-
-- ✅ Dynamic Product Page
-- ✅ generateStaticParams
-- ✅ Product Lookup
-- ✅ NotFound Handling
-
-## SEO Phase 🟡
-
-- ✅ generateMetadata
-- ✅ JSON-LD Product Schema
-- ✅ Product Schema
-- ✅ OpenGraph
-- ✅ Twitter Card
-- ✅ Canonical URL
-- 🟡 Breadcrumb UI
-- 🟡 Breadcrumb Schema
-
-## UX Phase
-
-- ⬜ Related Products
-- ⬜ Product Gallery
-- ⬜ Datasheet Download
-- ⬜ Inquiry System
-
-## Catalog Phase
-
-- ⬜ Search
-- ⬜ Filters
-- ⬜ Sorting
-- ⬜ Pagination
+Monitoring

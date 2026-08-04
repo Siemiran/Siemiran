@@ -21,7 +21,7 @@ export function createProductMetadata(product: Product): Metadata {
       url: `/products/${product.slug}`,
       images: [
         {
-          url: product.image,
+          url: product.images[0],
           width: 1200,
           height: 1200,
           alt: product.title,
@@ -33,7 +33,7 @@ export function createProductMetadata(product: Product): Metadata {
       card: "summary_large_image",
       title,
       description,
-      images: [product.image],
+      images: [product.images[0]],
     },
   };
 }

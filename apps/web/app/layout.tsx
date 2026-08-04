@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 
@@ -22,6 +22,7 @@ const vazirmatn = localFont({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://siemiran.com"),
   title: "SIEMIRAN",
   description: "Industrial Automation & Siemens Solutions",
 };

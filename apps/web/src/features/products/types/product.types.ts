@@ -20,7 +20,7 @@ export interface Product {
   ean?: string;
 
   // ---------- Media ----------
-  image: string;
+  images: string[];
   gallery?: string[];
 
   // ---------- Technical ----------

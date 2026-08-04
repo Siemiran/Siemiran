@@ -1,25 +1,42 @@
+﻿import Link from "next/link";
+
 import type { Product } from "@/features/products/types/product.types";
 
 interface ProductActionsProps {
   product: Product;
 }
 
-export default function ProductActions({ product }: ProductActionsProps) {
+export default function ProductActions({
+  product,
+}: ProductActionsProps) {
+  const datasheet = product.documents?.datasheet?.trim();
+
   return (
     <div className="flex border-t border-slate-100">
-      <a
-        href={product.documents?.datasheet ?? "#"}
-        className="flex-1 py-3 text-center text-sm font-semibold transition hover:bg-slate-50"
-      >
-        Datasheet
-      </a>
+      {datasheet ? (
+        <a
+          href={datasheet}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex-1 py-3 text-center text-sm font-semibold transition hover:bg-slate-50"
+        >
+          Datasheet
+        </a>
+      ) : (
+        <span
+          aria-disabled="true"
+          className="flex-1 cursor-not-allowed py-3 text-center text-sm font-semibold text-slate-400"
+        >
+          Datasheet
+        </span>
+      )}
 
-      <a
+      <Link
         href={`/products/${product.slug}`}
         className="flex-1 border-x border-slate-100 py-3 text-center text-sm font-semibold transition hover:bg-slate-50"
       >
         Details
-      </a>
+      </Link>
 
       <button
         type="button"

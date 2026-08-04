@@ -1,27 +1,26 @@
-# Siemiran
+﻿# Siemiran
 
-Official website of Siemiran, specializing in Siemens industrial automation, PLC, HMI, drives, instrumentation, and industrial electrical solutions.
+Industrial Automation Platform
 
-## Project Status
+Stack
 
-🚧 Under active development
+- Next.js 16
+- React 19
+- TypeScript
+- Tailwind CSS
 
-## Repository Structure
+Architecture
 
-- `/siemiran-multi` - Recovered legacy project
-- `/docs` - Documentation
-- `/backups` - Backup files
-- `/scripts` - Utility scripts
-- `/assets` - Shared assets
+Feature First
 
-## Goals
+Documentation
 
-- Build a modern, scalable website
-- Develop a dedicated admin panel
-- Improve SEO
-- Maintain version control with Git
-- Implement automated backups
+See docs/
 
-## License
+Current Milestone
 
-Copyright © Siemiran
+v0.5 Product SEO Navigation
+
+Next Milestone
+
+Related Products Engine

@@ -1,9 +1,10 @@
-import { products } from "@/features/products/data/products";
+import { getProducts } from "@/features/products/repository/product.repository";
 import ProductCard from "@/features/products/components/ProductCard";
 
 export default function ProductsPage() {
+  const products = getProducts();
   return (
-    <main className="mx-auto max-w-7xl px-6 py-20">
+    <section className="mx-auto max-w-7xl px-6 py-20">
       <div className="mb-12">
         <p className="mb-2 text-sm font-semibold tracking-wider text-cyan-600 uppercase">
           Siemens
@@ -21,6 +22,6 @@ export default function ProductsPage() {
           <ProductCard key={product.id} product={product} />
         ))}
       </div>
-    </main>
+    </section>
   );
 }

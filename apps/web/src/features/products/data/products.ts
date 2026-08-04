@@ -1,4 +1,4 @@
-import type { Product } from "@/features/products/types/product.types";
+﻿import type { Product } from "@/features/products/types/product.types";
 
 export const products: Product[] = [
   {
@@ -28,7 +28,7 @@ export const products: Product[] = [
 
     manufacturerPartNumber: "6ES7214-1AG40-0XB0",
 
-    image: "/images/products/siemens/s7-1200/cpu1214c.webp",
+    images: ["/images/products/siemens/s7-1200/cpu1214c.webp"],
 
     gallery: [],
 
@@ -58,12 +58,7 @@ export const products: Product[] = [
 
     replacementProduct: "",
 
-    tags: [
-      "PLC",
-      "S7-1200",
-      "CPU",
-      "Compact CPU",
-    ],
+    tags: ["PLC", "S7-1200", "CPU", "Compact CPU"],
 
     lifecycle: "active",
 
@@ -71,8 +66,7 @@ export const products: Product[] = [
 
     featured: true,
 
-    seoTitle:
-      "SIMATIC S7-1200 CPU 1214C DC/DC/DC",
+    seoTitle: "SIMATIC S7-1200 CPU 1214C DC/DC/DC",
 
     seoDescription:
       "Technical specifications and documentation for Siemens CPU 1214C.",
