@@ -7,6 +7,8 @@ import { createBreadcrumbSchema } from "@/features/products/lib/breadcrumb.schem
 import RelatedProducts from "@/features/products/components/RelatedProducts";
 import ProductSpecifications from "@/features/products/components/ProductSpecifications";
 import { getRelatedProducts } from "@/features/products/lib/product.recommendation";
+import ProductGallery from "@/features/products/components/ProductGallery";
+import ProductDownloads from "@/features/products/components/ProductDownloads";
 
 import {
   getProductBySlug,
@@ -99,10 +101,19 @@ export default async function ProductPage({ params }: Props) {
           ]}
         />
 
-        <h1 className="text-4xl font-bold">{product.title}</h1>
+        <div className="grid gap-12 lg:grid-cols-2">
+          <ProductGallery images={product.images} alt={product.title} />
 
-        <p className="mt-4 text-slate-600">{product.shortDescription}</p>
-        <ProductSpecifications specifications={product.specifications} />
+          <div>
+            <h1 className="text-4xl font-bold">{product.title}</h1>
+
+            <p className="mt-4 text-slate-600">{product.shortDescription}</p>
+
+            <ProductSpecifications specifications={product.specifications} />
+            <ProductDownloads downloads={product.downloads} />
+          </div>
+        </div>
+
         <RelatedProducts products={relatedProducts} />
       </section>
     </>

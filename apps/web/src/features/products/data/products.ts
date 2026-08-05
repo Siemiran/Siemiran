@@ -41,14 +41,35 @@ export const products: Product[] = [
       Memory: "100 KB",
     },
 
-    documents: {
-      datasheet: "",
-      manual: "",
-      catalog: "",
-      firmware: "",
-      cad: "",
-      certificates: "",
-    },
+    downloads: [
+      {
+        id: "cpu1214c-datasheet",
+
+        title: "Datasheet",
+
+        type: "datasheet",
+
+        language: "EN",
+
+        size: "3.4 MB",
+
+        file: "/downloads/cpu1214c/datasheet.pdf",
+      },
+
+      {
+        id: "cpu1214c-manual",
+
+        title: "System Manual",
+
+        type: "manual",
+
+        language: "EN",
+
+        size: "11.2 MB",
+
+        file: "/downloads/cpu1214c/manual.pdf",
+      },
+    ],
 
     compatibility: [],
 

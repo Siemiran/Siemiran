@@ -1,4 +1,6 @@
+import type { ProductDownload } from "./download.types";
 export interface Product {
+  downloads: ProductDownload[];
   // ---------- Identity ----------
   id: string;
   slug: string;
