@@ -1,63 +1,29 @@
 ﻿# CHANGELOG
 
----
+## v0.8
 
-## v0.7 Product Experience
+Added
 
-### Added
+- Product Toolbar
 
-- Product Gallery
+- Product Search
 
-- Image Zoom
+- Products Client Component
 
-- Related Products
+- Search Params Infrastructure
 
-- Specifications
+Changed
 
-- Download Architecture
+- Products page migrated to client/server split
 
-- Product Validator
+Quality
 
-- Product Types
+✔ ESLint Passing
 
-### Changed
+✔ TypeScript Passing
 
-- Repository Cleanup
+✔ Production Build Passing
 
-- Product Images Migration
+Next
 
-### Validation
-
-- ESLint ✔
-
-- TypeScript ✔
-
-- Build ✔
-
----
-
-## v0.6 Product SEO
-
-### Added
-
-- Metadata
-
-- Product Schema
-
-- Breadcrumb
-
-- Breadcrumb Schema
-
----
-
-## v0.5 Foundation
-
-### Added
-
-- Feature First
-
-- Repository
-
-- Product Dataset
-
-- Dynamic Product Pages
+Enterprise Filters

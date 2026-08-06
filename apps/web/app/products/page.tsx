@@ -1,27 +1,22 @@
+import { Suspense } from "react";
+
+import ProductsClient from "@/features/products/components/ProductsClient";
 import { getProducts } from "@/features/products/repository/product.repository";
-import ProductCard from "@/features/products/components/ProductCard";
 
 export default function ProductsPage() {
   const products = getProducts();
+
   return (
-    <section className="mx-auto max-w-7xl px-6 py-20">
-      <div className="mb-12">
-        <p className="mb-2 text-sm font-semibold tracking-wider text-cyan-600 uppercase">
-          Siemens
-        </p>
-
-        <h1 className="text-5xl font-bold text-slate-900">Products</h1>
-
-        <p className="mt-4 max-w-3xl text-slate-600">
-          Browse our industrial automation catalog.
-        </p>
-      </div>
-
-      <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-        {products.map((product) => (
-          <ProductCard key={product.id} product={product} />
-        ))}
-      </div>
-    </section>
+    <main className="mx-auto max-w-7xl px-6 py-16">
+      <Suspense
+        fallback={
+          <div className="py-20 text-center text-slate-500">
+            Loading products...
+          </div>
+        }
+      >
+        <ProductsClient products={products} />
+      </Suspense>
+    </main>
   );
 }

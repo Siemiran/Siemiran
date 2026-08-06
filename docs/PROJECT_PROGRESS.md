@@ -1,73 +1,51 @@
 ﻿# PROJECT PROGRESS
 
-## Foundation
+Current Version
 
-✔ Next.js
+v0.8
 
-✔ React
+Completed
 
-✔ TypeScript
-
-✔ Tailwind
+✔ Foundation
 
 ✔ Feature First
 
----
+✔ Product Repository
 
-## Products
+✔ Product Database
 
-✔ Dataset
+✔ Product Pages
 
-✔ Repository
-
-✔ Product Cards
-
-✔ Product Listing
-
-✔ Dynamic Product Page
-
-✔ Static Generation
-
----
-
-## SEO
-
-✔ Metadata
+✔ Product SEO
 
 ✔ Product JSON-LD
 
 ✔ Breadcrumb
 
-✔ Breadcrumb JSON-LD
-
----
-
-## Product Experience
-
-✔ Gallery
-
-✔ Zoom
+✔ Product Gallery
 
 ✔ Related Products
 
 ✔ Specifications
 
-✔ Download Architecture
+✔ Downloads
 
-✔ Validator
+✔ Product Toolbar
 
----
+✔ Product Search
 
-## Current Version
+✔ Search Params Infrastructure
 
-v0.7 Product Experience
+Current Milestone
 
----
+v0.8 Product Search Foundation
 
-## Next
+Next
 
-Search
+Category Filter
 
-Filters
+Family Filter
 
-Pagination
+Series Filter
+
+Product Type Filter

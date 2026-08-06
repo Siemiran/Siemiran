@@ -1,35 +1,52 @@
 ﻿# ROADMAP
 
-## v0.8
+Current Version
 
-- Product Search
-- URL Search Params
-- Brand Filter
+v0.8
+
+DONE
+
+✔ Feature First
+
+✔ Repository
+
+✔ Products
+
+✔ SEO
+
+✔ Gallery
+
+✔ Related Products
+
+✔ Specifications
+
+✔ Downloads
+
+✔ Search Foundation
+
+NEXT
+
+v0.9 Enterprise Filters
+
 - Category Filter
+
 - Family Filter
+
 - Series Filter
+
 - Product Type Filter
-- Sorting
+
+- URL Sync
+
+- Active Filters
+
+- Clear Filters
+
+Future
+
 - Pagination
 
----
-
-## v0.9
-
-- Download Center
-- Datasheet
-- Manuals
-- Certificates
-- Firmware
-- CAD Files
-
----
-
-## v1.0
-
-- Inquiry Form
-
-- Quote System
+- Sorting
 
 - Compare Products
 
@@ -41,8 +58,4 @@
 
 - Product Type Pages
 
-- Sitemap
-
-- Robots
-
-- Deployment
+- CMS
