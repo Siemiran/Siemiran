@@ -1,7 +1,6 @@
-# Node.js
+﻿# Node.js
 node_modules/
 npm-debug.log*
-package-lock.json
 
 # Build
 .next/
@@ -32,3 +31,7 @@ temp/
 # Backup files
 *.bak
 *.old
+PROJECT_PROGRESS.md
+files.txt
+git_status.txt
+project_tree.txt

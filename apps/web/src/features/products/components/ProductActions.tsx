@@ -9,13 +9,15 @@ interface ProductActionsProps {
 export default function ProductActions({
   product,
 }: ProductActionsProps) {
-  const datasheet = product.documents?.datasheet?.trim();
+  const datasheet = product.downloads.find(
+    (download) => download.type === "datasheet",
+  );
 
   return (
     <div className="flex border-t border-slate-100">
       {datasheet ? (
         <a
-          href={datasheet}
+          href={datasheet.file}
           target="_blank"
           rel="noopener noreferrer"
           className="flex-1 py-3 text-center text-sm font-semibold transition hover:bg-slate-50"

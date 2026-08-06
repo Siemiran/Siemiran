@@ -1,6 +1,6 @@
-import type { ProductDownload } from "./download.types";
+﻿import type { ProductDownload } from "./download.types";
+
 export interface Product {
-  downloads: ProductDownload[];
   // ---------- Identity ----------
   id: string;
   slug: string;
@@ -22,21 +22,13 @@ export interface Product {
   ean?: string;
 
   // ---------- Media ----------
-  images: string[];
-  gallery?: string[];
+  images: [string, ...string[]];
 
   // ---------- Technical ----------
   specifications?: Record<string, string>;
 
-  // ---------- Documents ----------
-  documents?: {
-    datasheet?: string;
-    manual?: string;
-    catalog?: string;
-    firmware?: string;
-    cad?: string;
-    certificates?: string;
-  };
+  // ---------- Downloads ----------
+  downloads: ProductDownload[];
 
   // ---------- Relations ----------
   compatibility?: string[];

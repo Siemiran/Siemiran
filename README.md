@@ -2,25 +2,89 @@
 
 Industrial Automation Platform
 
-Stack
+## Stack
 
 - Next.js 16
 - React 19
 - TypeScript
 - Tailwind CSS
+- App Router
 
-Architecture
+---
 
-Feature First
+## Architecture
 
-Documentation
+Feature First Architecture
 
-See docs/
+```
+apps/
+docs/
 
-Current Milestone
+src/features/
+    products/
+```
 
-v0.5 Product SEO Navigation
+Repository Pattern
 
-Next Milestone
+Single Source of Truth
 
-Related Products Engine
+---
+
+## Product Hierarchy
+
+Brand
+
+→ Category
+
+→ Family
+
+→ Series
+
+→ Product Type
+
+→ Product
+
+---
+
+## Current Version
+
+v0.7 Product Experience
+
+---
+
+## Completed
+
+- Product Listing
+- Dynamic Product Pages
+- Static Generation
+- Product Repository
+- Product Metadata
+- Product JSON-LD
+- Breadcrumb
+- Breadcrumb JSON-LD
+- Product Gallery
+- Image Zoom
+- Related Products
+- Product Specifications
+- Download Architecture
+- Product Validator
+
+---
+
+## Development
+
+```bash
+npm install
+
+npm run dev
+
+npm run lint
+
+npm run build
+```
+
+---
+
+## Next Version
+
+v0.8 Search & Filters

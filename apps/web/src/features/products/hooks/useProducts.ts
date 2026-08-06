@@ -1,4 +1,8 @@
-import { products } from "@/features/products/data/products";
+﻿import {
+  getFeaturedProducts,
+  getProducts,
+} from "@/features/products/repository/product.repository";
+
 import type { Product } from "@/features/products/types/product.types";
 
 export interface UseProductsResult {
@@ -8,7 +12,7 @@ export interface UseProductsResult {
 
 export function useProducts(): UseProductsResult {
   return {
-    products,
-    featured: products.filter((product) => product.featured),
+    products: getProducts(),
+    featured: getFeaturedProducts(),
   };
 }

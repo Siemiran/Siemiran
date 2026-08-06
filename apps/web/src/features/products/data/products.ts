@@ -28,9 +28,9 @@ export const products: Product[] = [
 
     manufacturerPartNumber: "6ES7214-1AG40-0XB0",
 
-    images: ["/images/products/siemens/s7-1200/cpu1214c.webp"],
-
-    gallery: [],
+    images: [
+      "/images/products/placeholders/siemens-product.svg",
+    ],
 
     specifications: {
       "Supply Voltage": "24 V DC",
@@ -41,35 +41,7 @@ export const products: Product[] = [
       Memory: "100 KB",
     },
 
-    downloads: [
-      {
-        id: "cpu1214c-datasheet",
-
-        title: "Datasheet",
-
-        type: "datasheet",
-
-        language: "EN",
-
-        size: "3.4 MB",
-
-        file: "/downloads/cpu1214c/datasheet.pdf",
-      },
-
-      {
-        id: "cpu1214c-manual",
-
-        title: "System Manual",
-
-        type: "manual",
-
-        language: "EN",
-
-        size: "11.2 MB",
-
-        file: "/downloads/cpu1214c/manual.pdf",
-      },
-    ],
+    downloads: [],
 
     compatibility: [],
 
@@ -79,7 +51,12 @@ export const products: Product[] = [
 
     replacementProduct: "",
 
-    tags: ["PLC", "S7-1200", "CPU", "Compact CPU"],
+    tags: [
+      "PLC",
+      "S7-1200",
+      "CPU",
+      "Compact CPU",
+    ],
 
     lifecycle: "active",
 

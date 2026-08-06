@@ -1,4 +1,4 @@
-﻿export const productTypes = {
+export const productTypes = {
   siemens: {
     PLC: {
       "S7-1200": [
