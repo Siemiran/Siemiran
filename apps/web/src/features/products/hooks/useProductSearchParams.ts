@@ -6,18 +6,33 @@ export function useProductSearchParams() {
   const router = useRouter();
   const searchParams = useSearchParams();
 
-  const search = searchParams.get("search") ?? "";
-  const category = searchParams.get("category") ?? "all";
+  const search = searchParams.get("search") || "";
+  const category = searchParams.get("category") || "all";
+  const family = searchParams.get("family") || "all";
+  const series = searchParams.get("series") || "all";
 
-  function updateParams(nextSearch: string, nextCategory: string) {
+  function updateParams(
+    nextSearch: string,
+    nextCategory: string,
+    nextFamily: string,
+    nextSeries: string
+  ) {
     const params = new URLSearchParams();
 
     if (nextSearch.trim()) {
       params.set("search", nextSearch);
     }
 
-    if (nextCategory && nextCategory !== "all") {
+    if (nextCategory !== "all") {
       params.set("category", nextCategory);
+    }
+
+    if (nextFamily !== "all") {
+      params.set("family", nextFamily);
+    }
+
+    if (nextSeries !== "all") {
+      params.set("series", nextSeries);
     }
 
     const query = params.toString();
@@ -28,11 +43,19 @@ export function useProductSearchParams() {
   }
 
   function setSearch(value: string) {
-    updateParams(value, category);
+    updateParams(value, category, family, series);
   }
 
   function setCategory(value: string) {
-    updateParams(search, value);
+    updateParams(search, value, "all", "all");
+  }
+
+  function setFamily(value: string) {
+    updateParams(search, category, value, "all");
+  }
+
+  function setSeries(value: string) {
+    updateParams(search, category, family, value);
   }
 
   return {
@@ -41,5 +64,11 @@ export function useProductSearchParams() {
 
     category,
     setCategory,
+
+    family,
+    setFamily,
+
+    series,
+    setSeries,
   };
 }

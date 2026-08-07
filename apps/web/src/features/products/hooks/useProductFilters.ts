@@ -4,18 +4,30 @@ import { useMemo } from "react";
 
 import type { Product } from "../types/product.types";
 import { filterByCategory } from "../filters/category.filter";
+import { filterByFamily } from "../filters/family.filter";
+import { filterBySeries } from "../filters/series.filter";
 
 interface Props {
   products: Product[];
   search: string;
   category?: string;
+  family?: string;
+  series?: string;
 }
 
-export function useProductFilters({ products, search, category }: Props) {
+export function useProductFilters({
+  products,
+  search,
+  category,
+  family,
+  series,
+}: Props) {
   const filteredProducts = useMemo(() => {
     let result = [...products];
 
     result = filterByCategory(result, category);
+    result = filterByFamily(result, family);
+    result = filterBySeries(result, series);
 
     if (search.trim()) {
       const q = search.toLowerCase();
@@ -30,7 +42,7 @@ export function useProductFilters({ products, search, category }: Props) {
     }
 
     return result;
-  }, [products, search, category]);
+  }, [products, search, category, family, series]);
 
   return {
     filteredProducts,
