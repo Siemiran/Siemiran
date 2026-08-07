@@ -10,12 +10,14 @@ export function useProductSearchParams() {
   const category = searchParams.get("category") || "all";
   const family = searchParams.get("family") || "all";
   const series = searchParams.get("series") || "all";
+  const productType = searchParams.get("productType") || "all";
 
   function updateParams(
     nextSearch: string,
     nextCategory: string,
     nextFamily: string,
-    nextSeries: string
+    nextSeries: string,
+    nextProductType: string
   ) {
     const params = new URLSearchParams();
 
@@ -35,6 +37,10 @@ export function useProductSearchParams() {
       params.set("series", nextSeries);
     }
 
+    if (nextProductType !== "all") {
+      params.set("productType", nextProductType);
+    }
+
     const query = params.toString();
 
     router.replace(query ? `/products?${query}` : "/products", {
@@ -43,21 +49,27 @@ export function useProductSearchParams() {
   }
 
   function setSearch(value: string) {
-    updateParams(value, category, family, series);
+    updateParams(value, category, family, series, productType);
   }
 
   function setCategory(value: string) {
-    updateParams(search, value, "all", "all");
+    updateParams(search, value, "all", "all", "all");
   }
 
   function setFamily(value: string) {
-    updateParams(search, category, value, "all");
+    updateParams(search, category, value, "all", "all");
   }
 
   function setSeries(value: string) {
-    updateParams(search, category, family, value);
+    updateParams(search, category, family, value, "all");
   }
 
+  function setProductType(value: string) {
+    updateParams(search, category, family, series, value);
+  }
+  function clearFilters() {
+    updateParams(search, "all", "all", "all", "all");
+  }
   return {
     search,
     setSearch,
@@ -70,5 +82,10 @@ export function useProductSearchParams() {
 
     series,
     setSeries,
+
+    productType,
+    setProductType,
+
+    clearFilters,
   };
 }

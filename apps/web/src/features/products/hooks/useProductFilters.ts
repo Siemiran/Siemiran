@@ -6,6 +6,7 @@ import type { Product } from "../types/product.types";
 import { filterByCategory } from "../filters/category.filter";
 import { filterByFamily } from "../filters/family.filter";
 import { filterBySeries } from "../filters/series.filter";
+import { filterByProductType } from "../filters/productType.filter";
 
 interface Props {
   products: Product[];
@@ -13,6 +14,7 @@ interface Props {
   category?: string;
   family?: string;
   series?: string;
+  productType?: string;
 }
 
 export function useProductFilters({
@@ -21,6 +23,7 @@ export function useProductFilters({
   category,
   family,
   series,
+  productType,
 }: Props) {
   const filteredProducts = useMemo(() => {
     let result = [...products];
@@ -28,6 +31,7 @@ export function useProductFilters({
     result = filterByCategory(result, category);
     result = filterByFamily(result, family);
     result = filterBySeries(result, series);
+    result = filterByProductType(result, productType);
 
     if (search.trim()) {
       const q = search.toLowerCase();
@@ -42,7 +46,7 @@ export function useProductFilters({
     }
 
     return result;
-  }, [products, search, category, family, series]);
+  }, [products, search, category, family, series, productType]);
 
   return {
     filteredProducts,

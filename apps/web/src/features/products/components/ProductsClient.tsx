@@ -18,6 +18,12 @@ import { getFamilies } from "../filters/family.filter";
 import SeriesFilter from "./SeriesFilter";
 
 import { getSeries } from "../filters/series.filter";
+import ProductTypeFilter from "./ProductTypeFilter";
+
+import { getProductTypes } from "../filters/productType.filter";
+
+import ActiveFilters from "./ActiveFilters";
+import ClearFiltersButton from "./ClearFiltersButton";
 
 interface Props {
   products: Product[];
@@ -36,6 +42,11 @@ export default function ProductsClient({ products }: Props) {
 
     series,
     setSeries,
+
+    productType,
+    setProductType,
+
+    clearFilters,
   } = useProductSearchParams();
 
   const { filteredProducts } = useProductFilters({
@@ -44,15 +55,31 @@ export default function ProductsClient({ products }: Props) {
     category,
     family,
     series,
+    productType,
   });
 
   const categories = getCategories(products);
   const families = getFamilies(products, category);
   const seriesList = getSeries(products, family);
+  const productTypes = getProductTypes(products, series);
   return (
     <>
       <div className="mb-8 flex flex-wrap items-center gap-4">
         <ProductToolbar search={search} onSearchChange={setSearch} />
+        <div className="mb-4 flex flex-wrap items-center gap-3">
+          <ActiveFilters
+            category={category}
+            family={family}
+            series={series}
+            productType={productType}
+            onClearCategory={() => setCategory("all")}
+            onClearFamily={() => setFamily("all")}
+            onClearSeries={() => setSeries("all")}
+            onClearProductType={() => setProductType("all")}
+          />
+
+          <ClearFiltersButton onClick={clearFilters} />
+        </div>
 
         <CategoryFilter
           categories={categories}
@@ -61,6 +88,11 @@ export default function ProductsClient({ products }: Props) {
         />
         <FamilyFilter families={families} value={family} onChange={setFamily} />
         <SeriesFilter series={seriesList} value={series} onChange={setSeries} />
+        <ProductTypeFilter
+          productTypes={productTypes}
+          value={productType}
+          onChange={setProductType}
+        />
       </div>
 
       <div className="mb-6 text-sm text-slate-500">
