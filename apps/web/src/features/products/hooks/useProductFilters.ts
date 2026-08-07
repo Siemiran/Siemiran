@@ -1,42 +1,36 @@
 "use client";
 
 import { useMemo } from "react";
-import type { Product } from "../types/product.types";
 
-interface UseProductFiltersProps {
+import type { Product } from "../types/product.types";
+import { filterByCategory } from "../filters/category.filter";
+
+interface Props {
   products: Product[];
   search: string;
+  category?: string;
 }
 
-export function useProductFilters({
-  products,
-  search,
-}: UseProductFiltersProps) {
+export function useProductFilters({ products, search, category }: Props) {
   const filteredProducts = useMemo(() => {
-    const query = search.trim().toLowerCase();
+    let result = [...products];
 
-    if (!query) {
-      return products;
+    result = filterByCategory(result, category);
+
+    if (search.trim()) {
+      const q = search.toLowerCase();
+
+      result = result.filter((product) => {
+        return (
+          product.title.toLowerCase().includes(q) ||
+          product.partNumber.toLowerCase().includes(q) ||
+          product.shortDescription.toLowerCase().includes(q)
+        );
+      });
     }
 
-    return products.filter((product) => {
-      return [
-        product.title,
-        product.partNumber,
-        product.shortDescription,
-        product.description,
-        product.brandId,
-        product.categoryId,
-        product.familyId,
-        product.seriesId ?? "",
-        product.productTypeId ?? "",
-        ...(product.tags ?? []),
-      ]
-        .join(" ")
-        .toLowerCase()
-        .includes(query);
-    });
-  }, [products, search]);
+    return result;
+  }, [products, search, category]);
 
   return {
     filteredProducts,
