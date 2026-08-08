@@ -1,0 +1,16 @@
+export const categories = [
+  "PLC",
+  "HMI",
+  "Drives",
+  "Industrial PC",
+  "IO Systems",
+  "Network",
+  "Power Supply",
+  "Software",
+  "Sensors",
+  "Relays",
+  "Low Voltage",
+  "Instrumentation",
+  "Safety",
+  "Accessories",
+] as const;
