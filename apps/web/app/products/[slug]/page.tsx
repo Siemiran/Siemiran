@@ -13,6 +13,7 @@ import ProductHeader from "@/features/products/components/ProductHeader";
 import ProductDescription from "@/features/products/components/ProductDescription";
 import ProductRelations from "@/features/products/components/ProductRelations";
 import { getProductRelations } from "@/features/products/lib/product.relations";
+import ProductInquiryTrigger from "@/features/products/components/ProductInquiryTrigger";
 
 import {
   getProductBySlug,
@@ -111,6 +112,8 @@ export default async function ProductPage({ params }: Props) {
 
           <div className="space-y-8">
             <ProductHeader product={product} />
+
+            <ProductInquiryTrigger product={product} />
 
             <ProductSpecifications specifications={product.specifications} />
 
