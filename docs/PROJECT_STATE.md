@@ -1,13 +1,13 @@
 ﻿# Siemiran — Project State
 
 Current Version:
-v0.8
+v1.1 Comparison Core
 
 Status:
-Production Stable
+Production Stable / Comparison Integration Pending
 
 Last Update:
-2026-08-06
+2026-08-12
 
 --------------------------------------------------
 
@@ -28,6 +28,10 @@ Feature First Architecture
 
 apps/web/src/features
 
+Repository Pattern
+
+Single Product Interface
+
 --------------------------------------------------
 
 CANONICAL PRODUCT HIERARCHY
@@ -41,45 +45,83 @@ Brand
 
 --------------------------------------------------
 
-DATA
+PRODUCT SYSTEM
+
+✔ Product Dataset
 
 ✔ Product Repository
 
-✔ Product Database
+✔ Product Listing
 
-✔ Product Validator
+✔ Dynamic Product Pages
+
+✔ Static Product Generation
 
 --------------------------------------------------
 
 PRODUCT EXPERIENCE
 
-✔ Dynamic Product Pages
-
 ✔ Product Gallery
 
-✔ Product Specifications
+✔ Image Zoom / Lightbox
+
+✔ Technical Specifications
 
 ✔ Related Products
 
-✔ Downloads
-
-✔ Product Toolbar
-
-✔ Product Search
-
-✔ URL Search Params Infrastructure
+✔ Download Architecture
 
 --------------------------------------------------
 
 SEO
 
-✔ Metadata
+✔ Product Metadata
 
 ✔ Product JSON-LD
 
 ✔ Breadcrumb
 
 ✔ Breadcrumb JSON-LD
+
+--------------------------------------------------
+
+CATALOG
+
+✔ Product Search
+
+✔ URL Search Params
+
+✔ Category Filter
+
+✔ Family Filter
+
+✔ Series Filter
+
+✔ Product Type Filter
+
+✔ Active Filters
+
+✔ Clear Filters
+
+✔ Sorting
+
+✔ Pagination
+
+--------------------------------------------------
+
+COMPARISON
+
+✔ Comparison Types
+
+✔ Comparison Utilities
+
+✔ Comparison Hook
+
+✔ Compare Button
+
+✔ Comparison Bar
+
+◐ Comparison Page Integration Pending
 
 --------------------------------------------------
 
@@ -93,20 +135,15 @@ QUALITY
 
 --------------------------------------------------
 
+CURRENT MILESTONE
+
+v1.1 Product Comparison Integration
+
+--------------------------------------------------
+
 NEXT
 
-Category Filter
-
-Family Filter
-
-Series Filter
-
-Product Type Filter
-
-Multi Filter
-
-URL Synced Filters
-
-Pagination
-
-Sorting
+- Connect comparison state to comparison page
+- Comparison URL / persistence
+- Comparison table
+- Responsive comparison UX

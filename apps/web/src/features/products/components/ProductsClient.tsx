@@ -143,13 +143,14 @@ export default function ProductsClient({ products }: Props) {
             onRemoveFromComparison={removeProduct}
           />
         ))}
-        <ProductComparisonBar
-          products={comparisonProducts}
-          maxProducts={maxProducts}
-          onRemove={removeProduct}
-          onClear={clearProducts}
-        />
       </section>
+
+      <ProductComparisonBar
+        products={comparisonProducts}
+        maxProducts={maxProducts}
+        onRemove={removeProduct}
+        onClear={clearProducts}
+      />
       <ProductPagination
         currentPage={currentPage}
         totalPages={totalPages}

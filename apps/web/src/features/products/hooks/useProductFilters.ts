@@ -48,7 +48,6 @@ export function useProductFilters({
       });
     }
     result = sortProducts(result, sort);
-    result = sortProducts(result, sort);
 
     return result;
   }, [products, search, category, family, series, productType, sort]);

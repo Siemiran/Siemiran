@@ -35,3 +35,6 @@ PROJECT_PROGRESS.md
 files.txt
 git_status.txt
 project_tree.txt
+
+# Project backups
+backups/
