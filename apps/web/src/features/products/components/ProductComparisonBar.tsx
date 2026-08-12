@@ -1,5 +1,7 @@
 "use client";
 
+import Link from "next/link";
+
 import type { Product } from "../types/product.types";
 
 interface Props {
@@ -42,7 +44,7 @@ export default function ProductComparisonBar({
                   type="button"
                   onClick={() => onRemove(product.id)}
                   aria-label={`Remove ${product.title}`}
-                  className="font-bold text-slate-500 hover:text-slate-900"
+                  className="font-bold text-slate-500 transition hover:text-slate-900"
                 >
                   ×
                 </button>
@@ -58,10 +60,17 @@ export default function ProductComparisonBar({
         <button
           type="button"
           onClick={onClear}
-          className="shrink-0 rounded-lg border border-slate-300 px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-50"
+          className="shrink-0 rounded-lg border border-slate-300 px-3 py-2 text-sm font-medium text-slate-700 transition hover:bg-slate-50"
         >
           Clear
         </button>
+
+        <Link
+          href="/products/compare"
+          className="shrink-0 rounded-lg bg-slate-900 px-4 py-2 text-sm font-medium text-white transition hover:bg-slate-800"
+        >
+          Compare
+        </Link>
       </div>
     </aside>
   );
