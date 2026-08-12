@@ -1,0 +1,3 @@
+﻿ .../features/products/components/ProductCard.tsx   | 28 ++++++++++++++++++---
+ .../products/components/ProductsClient.tsx         | 29 +++++++++++++++++++++-
+ 2 files changed, 52 insertions(+), 5 deletions(-)
