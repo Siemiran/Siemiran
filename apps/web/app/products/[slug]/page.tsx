@@ -9,6 +9,10 @@ import ProductSpecifications from "@/features/products/components/ProductSpecifi
 import { getRelatedProducts } from "@/features/products/lib/product.recommendation";
 import ProductGallery from "@/features/products/components/ProductGallery";
 import ProductDownloads from "@/features/products/components/ProductDownloads";
+import ProductHeader from "@/features/products/components/ProductHeader";
+import ProductDescription from "@/features/products/components/ProductDescription";
+import ProductRelations from "@/features/products/components/ProductRelations";
+import { getProductRelations } from "@/features/products/lib/product.relations";
 
 import {
   getProductBySlug,
@@ -70,6 +74,7 @@ export default async function ProductPage({ params }: Props) {
 
   const breadcrumbSchema = createBreadcrumbSchema(breadcrumb);
   const relatedProducts = getRelatedProducts(product, getProducts());
+  const productRelations = getProductRelations(product, getProducts());
   return (
     <>
       <script
@@ -104,16 +109,21 @@ export default async function ProductPage({ params }: Props) {
         <div className="grid gap-12 lg:grid-cols-2">
           <ProductGallery images={product.images} alt={product.title} />
 
-          <div>
-            <h1 className="text-4xl font-bold">{product.title}</h1>
-
-            <p className="mt-4 text-slate-600">{product.shortDescription}</p>
+          <div className="space-y-8">
+            <ProductHeader product={product} />
 
             <ProductSpecifications specifications={product.specifications} />
+
             <ProductDownloads downloads={product.downloads} />
           </div>
         </div>
 
+        <ProductDescription description={product.description} />
+        <ProductRelations
+          compatibility={productRelations.compatibility}
+          accessories={productRelations.accessories}
+          replacementProduct={productRelations.replacementProduct}
+        />
         <RelatedProducts products={relatedProducts} />
       </section>
     </>
