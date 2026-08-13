@@ -5,9 +5,7 @@ export interface ValidationResult {
   errors: string[];
 }
 
-export function validateProduct(
-  product: Product,
-): ValidationResult {
+export function validateProduct(product: Product): ValidationResult {
   const errors: string[] = [];
 
   if (!product.id.trim()) {
@@ -38,11 +36,15 @@ export function validateProduct(
     errors.push("Missing part number");
   }
 
-  if (
-    product.images.length === 0 ||
-    !product.images[0].trim()
-  ) {
+  if (product.images.length === 0 || !product.images[0].trim()) {
     errors.push("Missing image");
+  }
+
+  if (
+    product.manufacturerPartNumber &&
+    !product.manufacturerPartNumber.trim()
+  ) {
+    errors.push("Invalid manufacturer part number");
   }
 
   return {

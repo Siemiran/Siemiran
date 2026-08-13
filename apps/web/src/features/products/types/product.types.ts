@@ -1,4 +1,4 @@
-﻿import type { ProductDownload } from "./download.types";
+import type { ProductDownload } from "./download.types";
 
 export interface Product {
   // ---------- Identity ----------
@@ -15,6 +15,7 @@ export interface Product {
   familyId: string;
   seriesId?: string;
   productTypeId?: string;
+  variantId?: string;
 
   // ---------- Manufacturer ----------
   partNumber: string;

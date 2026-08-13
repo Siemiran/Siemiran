@@ -1,6 +1,8 @@
-﻿import type { Product } from "@/features/products/types/product.types";
+import type { Product } from "@/features/products/types/product.types";
+import { siemensPLC } from "@/features/products/database/siemens/plc";
+import { mapSiemensPLCToProduct } from "@/features/products/database/siemens/plc.adapter";
 
-export const products: Product[] = [
+const existingProducts: Product[] = [
   {
     id: "6es7214-1ag40-0xb0",
 
@@ -62,4 +64,13 @@ export const products: Product[] = [
 
     siemensUrl: "",
   },
+];
+
+const verifiedSiemensPLCProducts: Product[] = siemensPLC.map(
+  mapSiemensPLCToProduct,
+);
+
+export const products: Product[] = [
+  ...existingProducts,
+  ...verifiedSiemensPLCProducts,
 ];
