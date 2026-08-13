@@ -20,17 +20,13 @@ export const products: Product[] = [
 
     familyId: "S7-1200",
 
-    seriesId: "CPU",
-
-    productTypeId: "Compact CPU",
+    productTypeId: "CPU",
 
     partNumber: "6ES7214-1AG40-0XB0",
 
     manufacturerPartNumber: "6ES7214-1AG40-0XB0",
 
-    images: [
-      "/images/products/placeholders/siemens-product.svg",
-    ],
+    images: ["/images/products/placeholders/siemens-product.svg"],
 
     specifications: {
       "Supply Voltage": "24 V DC",
@@ -51,12 +47,7 @@ export const products: Product[] = [
 
     replacementProduct: "",
 
-    tags: [
-      "PLC",
-      "S7-1200",
-      "CPU",
-      "Compact CPU",
-    ],
+    tags: ["PLC", "S7-1200", "CPU", "Compact CPU"],
 
     lifecycle: "active",
 
