@@ -903,6 +903,37 @@ export const s7300SM: SiemensS7300SignalModule[] = [
   },
 
   {
+    id: "siemens-s7-300-sm322-do-64-24vdc-0-3a-sinking-1bp50-0aa0",
+    mlfb: "6ES7322-1BP50-0AA0",
+
+    brandId: "siemens",
+    categoryId: "PLC",
+    familyId: "S7-300",
+    seriesId: "S7-300",
+
+    productTypeId: "Signal Module",
+    variantId: "digital-output",
+
+    title: "SIMATIC S7-300 SM 322 64 DO 24 V DC Sinking",
+
+    description:
+      "SIMATIC S7-300 digital output SM 322 with 64 digital outputs, 24 V DC, 0.3 A sinking outputs, electrically isolated in four groups of 16 channels.",
+
+    lifecycle: "phase-out",
+
+    specifications: {
+      digitalOutputs: 64,
+      outputVoltage: "24 V DC",
+      terminalConnection:
+        "Terminal blocks 6ES7392-1.N00-0AA0 and cables 6ES7392-4...0-0AA0",
+      interfaces: ["Backplane bus"],
+    },
+
+    source:
+      "https://support.industry.siemens.com/cs/attachments/8859629/s7300_module_data_manual_en-US_en-US.pdf",
+  },
+
+  {
     id: "siemens-s7-300-sm322-do-16-24vdc-0-5a-diagnostics-8bh10-0ab0",
     mlfb: "6ES7322-8BH10-0AB0",
 
@@ -1172,10 +1203,10 @@ export const s7300SM: SiemensS7300SignalModule[] = [
     productTypeId: "Signal Module",
     variantId: "programmable-digital-io",
 
-    title: "SIMATIC S7-300 SM 327 8 DI / 8 DO 24 V DC",
+    title: "SIMATIC S7-300 SM 327 8 DI / 8 DX 24 V DC",
 
     description:
-      "SIMATIC S7-300 programmable digital I/O signal module SM 327 with 8 digital inputs and 8 programmable digital inputs/outputs, 24 V DC, 0.5 A.",
+      "SIMATIC S7-300 programmable digital I/O module SM 327 with 8 digital inputs and 8 individually parameterizable digital I/O channels, configurable as DI or DO, 24 V DC, 0.5 A.",
 
     lifecycle: "spare-part",
 
