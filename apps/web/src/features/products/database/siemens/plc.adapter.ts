@@ -1,5 +1,6 @@
 ﻿import type { Product } from "@/features/products/types/product.types";
 import type { SiemensPLCProduct } from "./plc";
+import { validateSiemensPLCProduct } from "./plc.validator";
 
 function mapLifecycle(
   lifecycle: SiemensPLCProduct["lifecycle"],
@@ -22,9 +23,17 @@ function createSlug(mlfb: string): string {
     .replace(/^-+|-+$/g, "");
 }
 
-export function mapSiemensPLCToProduct(
-  source: SiemensPLCProduct,
-): Product {
+export function mapSiemensPLCToProduct(source: SiemensPLCProduct): Product {
+  const validation = validateSiemensPLCProduct(source);
+
+  if (!validation.valid) {
+    throw new Error(
+      `Invalid Siemens PLC ${source.mlfb || source.id}: ${validation.errors.join(
+        ", ",
+      )}`,
+    );
+  }
+
   const specifications: Record<string, string> = {};
 
   if (source.specifications.workMemory) {
@@ -32,33 +41,35 @@ export function mapSiemensPLCToProduct(
   }
 
   if (source.specifications.interfaces?.length) {
-    specifications["Interfaces"] =
-      source.specifications.interfaces.join(", ");
+    specifications["Interfaces"] = source.specifications.interfaces.join(", ");
   }
 
   if (source.specifications.supplyVoltage) {
-    specifications["Supply Voltage"] =
-      source.specifications.supplyVoltage;
+    specifications["Supply Voltage"] = source.specifications.supplyVoltage;
   }
 
   if (source.specifications.digitalInputs !== undefined) {
-    specifications["Digital Inputs"] =
-      String(source.specifications.digitalInputs);
+    specifications["Digital Inputs"] = String(
+      source.specifications.digitalInputs,
+    );
   }
 
   if (source.specifications.digitalOutputs !== undefined) {
-    specifications["Digital Outputs"] =
-      String(source.specifications.digitalOutputs);
+    specifications["Digital Outputs"] = String(
+      source.specifications.digitalOutputs,
+    );
   }
 
   if (source.specifications.analogInputs !== undefined) {
-    specifications["Analog Inputs"] =
-      String(source.specifications.analogInputs);
+    specifications["Analog Inputs"] = String(
+      source.specifications.analogInputs,
+    );
   }
 
   if (source.specifications.analogOutputs !== undefined) {
-    specifications["Analog Outputs"] =
-      String(source.specifications.analogOutputs);
+    specifications["Analog Outputs"] = String(
+      source.specifications.analogOutputs,
+    );
   }
 
   if (source.specifications.highSpeedCounters) {
@@ -67,8 +78,7 @@ export function mapSiemensPLCToProduct(
   }
 
   if (source.specifications.memoryCard) {
-    specifications["Memory Card"] =
-      source.specifications.memoryCard;
+    specifications["Memory Card"] = source.specifications.memoryCard;
   }
 
   return {
@@ -89,9 +99,7 @@ export function mapSiemensPLCToProduct(
     partNumber: source.mlfb,
     manufacturerPartNumber: source.mlfb,
 
-    images: [
-      "/images/products/placeholders/siemens-product.svg",
-    ],
+    images: ["/images/products/placeholders/siemens-product.svg"],
 
     specifications,
 
