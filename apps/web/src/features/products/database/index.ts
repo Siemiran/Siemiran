@@ -5,3 +5,4 @@ export * from "./series";
 export * from "./taxonomy";
 export * from "./database.types";
 export * from "./productTypes";
+export * from "./taxonomy-audit";
