@@ -411,6 +411,132 @@ export const s7300SM: SiemensS7300SignalModule[] = [
       "https://mall.industry.siemens.com/mall/en/fescomelsaownuy/Catalog/Product?SiepCountryCode=OE&mlfb=6ES7321-7RD00-0AB0",
   },
 
+  {
+    id: "siemens-s7-300-sm321-di-16-24-125vdc-7eh00-0ab0",
+    mlfb: "6ES7321-7EH00-0AB0",
+
+    brandId: "siemens",
+    categoryId: "PLC",
+    familyId: "S7-300",
+    seriesId: "S7-300",
+
+    productTypeId: "Signal Module",
+    variantId: "digital-input",
+
+    title: "SIMATIC S7-300 SM 321 16 DI 24/125 V DC",
+
+    description:
+      "SIMATIC S7-300 SM 321 digital input module with 16 digital inputs, 24/125 V DC, wire-break diagnostics and hardware interrupt diagnostics.",
+
+    lifecycle: "spare-part",
+
+    specifications: {
+      digitalInputs: 16,
+      inputVoltage: "24/125 V DC",
+      terminalConnection: "1 x 40-pole",
+      interfaces: ["Backplane bus"],
+      diagnostics: "Wire-break diagnostics",
+      interrupts: "Hardware interrupt diagnostics",
+    },
+
+    source:
+      "https://mall.industry.siemens.com/mall/en/fescomelsaownuy/Catalog/Product?SiepCountryCode=OE&mlfb=6ES7321-7EH00-0AB0",
+  },
+
+  {
+    id: "siemens-s7-300-sm321-di-16-24vdc-namur-7th00-0ab0",
+    mlfb: "6ES7321-7TH00-0AB0",
+
+    brandId: "siemens",
+    categoryId: "PLC",
+    familyId: "S7-300",
+    seriesId: "S7-300",
+
+    productTypeId: "Signal Module",
+    variantId: "digital-input",
+
+    title: "SIMATIC S7-300 SM 321 16 DI 24 V DC NAMUR",
+
+    description:
+      "SIMATIC S7-300 SM 321 digital input module with 16 digital inputs, 24 V DC and NAMUR signal evaluation for process automation applications.",
+
+    lifecycle: "discontinued",
+
+    specifications: {
+      digitalInputs: 16,
+      inputVoltage: "24 V DC",
+      terminalConnection: "1 x 40-pole",
+      interfaces: ["Backplane bus"],
+      signalStandard: "NAMUR",
+      hazardousArea: true,
+    },
+
+    source:
+      "https://support.industry.siemens.com/cs/attachments/7215812/Signalbaugruppen_EN_en-US.pdf",
+  },
+
+  {
+    id: "siemens-s7-300-sm321-di-16-24vdc-sourcing-1bh50-0aa0",
+    mlfb: "6ES7321-1BH50-0AA0",
+
+    brandId: "siemens",
+    categoryId: "PLC",
+    familyId: "S7-300",
+    seriesId: "S7-300",
+
+    productTypeId: "Signal Module",
+    variantId: "digital-input",
+
+    title: "SIMATIC S7-300 SM 321 16 DI 24 V DC Sourcing",
+
+    description:
+      "SIMATIC S7-300 digital input SM 321, isolated, 16 digital inputs, 24 V DC sourcing inputs, 1 x 20-pole.",
+
+    lifecycle: "spare-part",
+
+    specifications: {
+      digitalInputs: 16,
+      inputVoltage: "24 V DC",
+      terminalConnection: "1 x 20-pole",
+      interfaces: ["Backplane bus"],
+    },
+
+    source:
+      "https://mall.industry.siemens.com/mall/en/oeii/Catalog/Product/6ES7321-1BH50-0AA0",
+  },
+
+  {
+    id: "siemens-s7-300-sm321-di16-24vdc-diagnostics-7bh00-0ab0",
+    mlfb: "6ES7321-7BH00-0AB0",
+
+    brandId: "siemens",
+    categoryId: "PLC",
+    familyId: "S7-300",
+    seriesId: "S7-300",
+
+    productTypeId: "Signal Module",
+    variantId: "digital-input",
+
+    title: "SIMATIC S7-300 SM 321 16 DI 24 V DC Diagnostics",
+
+    description:
+      "SIMATIC S7-300 digital input SM 321, 16 digital inputs, 24 V DC, with diagnostics and process/hardware interrupt capability.",
+
+    lifecycle: "discontinued",
+
+    specifications: {
+      digitalInputs: 16,
+      inputVoltage: "24 V DC",
+      terminalConnection: "1 x 40-pole",
+      interfaces: ["Backplane bus"],
+      diagnostics: "Parameterizable diagnostics",
+      interrupts: "Hardware/process interrupt",
+    },
+
+    source:
+      "https://support.industry.siemens.com/cs/attachments/109983085/s7400_cpu_410_proc_autom_v8.3_system_en-US_en-US.pdf",
+  },
+
   // --------------------------------------------------
   // S7-300 — SM 322 — Digital Output
   // --------------------------------------------------
@@ -960,5 +1086,109 @@ export const s7300SM: SiemensS7300SignalModule[] = [
 
     source:
       "https://mall.industry.siemens.com/mall/en/WW/Catalog/Product/?mlfb=6ES7322-5HF00-0AB0",
+  },
+
+  // --------------------------------------------------
+  // S7-300 — SM 323 — Digital Input / Output
+  // --------------------------------------------------
+
+  {
+    id: "siemens-s7-300-sm323-di8-do8-24vdc-0-5a-1bh01-0aa0",
+    mlfb: "6ES7323-1BH01-0AA0",
+
+    brandId: "siemens",
+    categoryId: "PLC",
+    familyId: "S7-300",
+    seriesId: "S7-300",
+
+    productTypeId: "Signal Module",
+    variantId: "digital-io",
+
+    title: "SIMATIC S7-300 SM 323 8 DI / 8 DO 24 V DC",
+
+    description:
+      "SIMATIC S7-300 digital input/output signal module SM 323 with 8 digital inputs and 8 digital outputs, 24 V DC, 0.5 A, isolated, 1 x 20-pole.",
+
+    lifecycle: "spare-part",
+
+    specifications: {
+      digitalInputs: 8,
+      digitalOutputs: 8,
+      inputVoltage: "24 V DC",
+      outputVoltage: "24 V DC",
+      terminalConnection: "1 x 20-pole",
+      interfaces: ["Backplane bus"],
+    },
+
+    source:
+      "https://mall.industry.siemens.com/mall/en/oeii/Catalog/Product?SiepCountryCode=OE&mlfb=6ES7323-1BH01-0AA0",
+  },
+
+  {
+    id: "siemens-s7-300-sm323-di16-do16-24vdc-0-5a-1bl00-0aa0",
+    mlfb: "6ES7323-1BL00-0AA0",
+
+    brandId: "siemens",
+    categoryId: "PLC",
+    familyId: "S7-300",
+    seriesId: "S7-300",
+
+    productTypeId: "Signal Module",
+    variantId: "digital-io",
+
+    title: "SIMATIC S7-300 SM 323 16 DI / 16 DO 24 V DC",
+
+    description:
+      "SIMATIC S7-300 digital input/output signal module SM 323 with 16 digital inputs and 16 digital outputs, 24 V DC, 0.5 A, isolated, 1 x 40-pole.",
+
+    lifecycle: "spare-part",
+
+    specifications: {
+      digitalInputs: 16,
+      digitalOutputs: 16,
+      inputVoltage: "24 V DC",
+      outputVoltage: "24 V DC",
+      terminalConnection: "1 x 40-pole",
+      interfaces: ["Backplane bus"],
+    },
+
+    source:
+      "https://mall.industry.siemens.com/mall/en/oeii/Catalog/Product?SiepCountryCode=OE&mlfb=6ES7323-1BL00-0AA0",
+  },
+
+  // --------------------------------------------------
+  // S7-300 — SM 327 — Programmable Digital I/O
+  // --------------------------------------------------
+
+  {
+    id: "siemens-s7-300-sm327-di8-do8-24vdc-0-5a-1bh00-0ab0",
+    mlfb: "6ES7327-1BH00-0AB0",
+
+    brandId: "siemens",
+    categoryId: "PLC",
+    familyId: "S7-300",
+    seriesId: "S7-300",
+
+    productTypeId: "Signal Module",
+    variantId: "programmable-digital-io",
+
+    title: "SIMATIC S7-300 SM 327 8 DI / 8 DO 24 V DC",
+
+    description:
+      "SIMATIC S7-300 programmable digital I/O signal module SM 327 with 8 digital inputs and 8 programmable digital inputs/outputs, 24 V DC, 0.5 A.",
+
+    lifecycle: "spare-part",
+
+    specifications: {
+      digitalInputs: 8,
+      digitalOutputs: 8,
+      inputVoltage: "24 V DC",
+      outputVoltage: "24 V DC",
+      interfaces: ["Backplane bus"],
+      terminalConnection: "1 x 20-pole",
+    },
+
+    source:
+      "https://support.industry.siemens.com/cs/attachments/download/8859629/s7300_module_data_manual_en-US_en-US.pdf",
   },
 ];
