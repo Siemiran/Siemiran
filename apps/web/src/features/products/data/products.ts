@@ -24,7 +24,9 @@ const existingProducts: Product[] = [
 
     seriesId: "CPU",
 
-    productTypeId: "Compact CPU",
+    productTypeId: "CPU",
+
+    variantId: "compact",
 
     partNumber: "6ES7214-1AG40-0XB0",
 
