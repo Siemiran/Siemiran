@@ -107,6 +107,19 @@ CATALOG
 
 ✔ Pagination
 
+### Verified Siemens Catalog
+
+- Siemens PLC source validation is active.
+- Verified Siemens taxonomy contract is active.
+- Siemens PLC records pass source validation before adapter mapping.
+- Current verified S7-300 CPU baseline contains 10 CPU records.
+- Current S7-300 CPU variants represented:
+  - Standard
+  - Compact
+  - SIPLUS
+- The S7-300 CPU catalog is not yet exhaustive.
+- Additional S7-300 product classes must be added only after official Siemens verification.
+
 --------------------------------------------------
 
 COMPARISON
