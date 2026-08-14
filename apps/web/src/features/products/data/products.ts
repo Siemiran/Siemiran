@@ -22,7 +22,9 @@ const existingProducts: Product[] = [
 
     familyId: "S7-1200",
 
-    productTypeId: "CPU",
+    seriesId: "CPU",
+
+    productTypeId: "Compact CPU",
 
     partNumber: "6ES7214-1AG40-0XB0",
 
@@ -67,7 +69,7 @@ const existingProducts: Product[] = [
 ];
 
 const verifiedSiemensPLCProducts: Product[] = siemensPLC.map(
-  mapSiemensPLCToProduct,
+  mapSiemensPLCToProduct
 );
 
 export const products: Product[] = [
