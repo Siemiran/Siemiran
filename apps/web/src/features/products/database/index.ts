@@ -6,3 +6,4 @@ export * from "./taxonomy";
 export * from "./database.types";
 export * from "./productTypes";
 export * from "./taxonomy-audit";
+export * from "./taxonomy-relationship-audit";
