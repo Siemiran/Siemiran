@@ -2154,4 +2154,191 @@ export const s7300SM: SiemensS7300SignalModule[] = [
     source:
       "https://mall.industry.siemens.com/mall/en/oeii/Catalog/Product?SiepCountryCode=OE&mlfb=6AG1332-5HF00-2AB0",
   },
+
+  // --------------------------------------------------
+  // S7-300 — SM 334 — Analog Input / Output
+  // --------------------------------------------------
+
+  {
+    id: "siemens-s7-300-sm334-ai4-ao2-8bit-0ce01-0aa0",
+    mlfb: "6ES7334-0CE01-0AA0",
+
+    brandId: "siemens",
+    categoryId: "PLC",
+    familyId: "S7-300",
+    seriesId: "S7-300",
+
+    productTypeId: "Signal Module",
+    variantId: "analog-io",
+
+    title: "SIMATIC S7-300 SM 334 4 AI / 2 AO 8 Bit",
+
+    description:
+      "SIMATIC S7-300 analog I/O SM 334, non-isolated, 4 analog inputs and 2 analog outputs, 8 bit resolution, 0-10 V and 0-20 mA signal ranges, 1 x 20-pole.",
+
+    lifecycle: "phase-out",
+
+    specifications: {
+      analogInputs: 4,
+      analogOutputs: 2,
+      inputVoltage: "24 V DC",
+      outputVoltage: "24 V DC",
+      resolution: "8 bit",
+      signalRanges: ["0-10 V", "0-20 mA"],
+      measurementType: ["Voltage", "Current"],
+      interfaces: ["Backplane bus"],
+      terminalConnection: "1 x 20-pole",
+    },
+
+    source:
+      "https://mall.industry.siemens.com/mall/en/riederpyown/Catalog/Product?SiepCountryCode=OE&mlfb=6ES7334-0CE01-0AA0",
+  },
+
+  {
+    id: "siemens-s7-300-sm334-ai4-ao2-12bit-0ke00-0ab0",
+    mlfb: "6ES7334-0KE00-0AB0",
+
+    brandId: "siemens",
+    categoryId: "PLC",
+    familyId: "S7-300",
+    seriesId: "S7-300",
+
+    productTypeId: "Signal Module",
+    variantId: "analog-io",
+
+    title: "SIMATIC S7-300 SM 334 4 AI / 2 AO 12 Bit",
+
+    description:
+      "SIMATIC S7-300 analog I/O SM 334, isolated, 4 analog inputs and 2 analog outputs, 12 bit resolution, 0-10 V, Pt100 and 0-10 kOhm measurement ranges, 1 x 20-pole.",
+
+    lifecycle: "spare-part",
+
+    specifications: {
+      analogInputs: 4,
+      analogOutputs: 2,
+      inputVoltage: "24 V DC",
+      outputVoltage: "24 V DC",
+      resolution: "12 bit",
+      signalRanges: ["0-10 V", "Pt100", "0-10000 ohms"],
+      measurementType: ["Voltage", "Resistance thermometer", "Resistance"],
+      interfaces: ["Backplane bus"],
+      terminalConnection: "1 x 20-pole",
+    },
+
+    source:
+      "https://mall.industry.siemens.com/mall/en/oms/Catalog/Product/6ES7334-0KE00-0AB0",
+  },
+
+  {
+    id: "siemens-siplus-s7-300-sm334-ai4-ao2-12bit-0ke00-7ab0",
+    mlfb: "6AG1334-0KE00-7AB0",
+
+    brandId: "siemens",
+    categoryId: "PLC",
+    familyId: "S7-300",
+    seriesId: "S7-300",
+
+    productTypeId: "Signal Module",
+    variantId: "analog-io",
+
+    title: "SIPLUS S7-300 SM 334 4 AI / 2 AO 12 Bit",
+
+    description:
+      "SIPLUS S7-300 SM 334 analog I/O module based on 6ES7334-0KE00-0AB0, with conformal coating and -25…+70 °C extended environmental temperature range, isolated, 4 analog inputs and 2 analog outputs, 12 bit resolution, 0-10 V, Pt100 and 0-10 kOhm measurement ranges, 1 x 20-pole.",
+
+    lifecycle: "phase-out",
+
+    specifications: {
+      analogInputs: 4,
+      analogOutputs: 2,
+      inputVoltage: "24 V DC",
+      outputVoltage: "24 V DC",
+      resolution: "12 bit",
+      signalRanges: ["0-10 V", "Pt100", "0-10000 ohms"],
+      measurementType: ["Voltage", "Resistance thermometer", "Resistance"],
+      interfaces: ["Backplane bus"],
+      terminalConnection: "1 x 20-pole",
+    },
+
+    source:
+      "https://mall.industry.siemens.com/mall/en/oms/Catalog/Product/6AG1334-0KE00-7AB0",
+  },
+
+  // --------------------------------------------------
+  // S7-300 — SM 335 — High-Speed Analog I/O
+  // --------------------------------------------------
+
+  {
+    id: "siemens-s7-300-sm335-ai4-ao4-14bit-7hg01-0ab0",
+    mlfb: "6ES7335-7HG01-0AB0",
+
+    brandId: "siemens",
+    categoryId: "PLC",
+    familyId: "S7-300",
+    seriesId: "S7-300",
+
+    productTypeId: "Signal Module",
+    variantId: "analog-output",
+
+    title: "SIMATIC S7-300 SM 335 4 AI / 4 AO High-Speed",
+
+    description:
+      "SIMATIC S7-300 high-speed analog I/O SM 335 with 4 analog inputs and 4 analog outputs, 14 bit input resolution and 11/12 bit output resolution, optically isolated, with diagnostics and alarm functions, 20-pole.",
+
+    lifecycle: "phase-out",
+
+    specifications: {
+      analogInputs: 4,
+      analogOutputs: 4,
+      inputVoltage: "24 V DC",
+      outputVoltage: "24 V DC",
+      resolution: "14 bit input / 11/12 bit output",
+      signalRanges: ["Voltage", "Current"],
+      measurementType: ["Voltage", "Current"],
+      interfaces: ["Backplane bus"],
+      terminalConnection: "1 x 20-pole",
+      diagnostics: "Diagnostics",
+      interrupts: "Alarm",
+    },
+
+    source:
+      "https://support.industry.siemens.com/cs/attachments/1398483/s7300_sm335_high_speed_analog_io_module_manual_en-US_en-US.pdf",
+  },
+
+  {
+    id: "siemens-s7-300-sm335-ai4-ao4-14bit-7hg02-0ab0",
+    mlfb: "6ES7335-7HG02-0AB0",
+
+    brandId: "siemens",
+    categoryId: "PLC",
+    familyId: "S7-300",
+    seriesId: "S7-300",
+
+    productTypeId: "Signal Module",
+    variantId: "analog-output",
+
+    title: "SIMATIC S7-300 SM 335 4 AI / 4 AO High-Speed",
+
+    description:
+      "SIMATIC S7-300 high-speed analog I/O SM 335 with 4 analog inputs and 4 analog outputs, 14 bit input resolution and 11/12 bit output resolution, optically isolated, with diagnostics and alarm functions, 20-pole.",
+
+    lifecycle: "spare-part",
+
+    specifications: {
+      analogInputs: 4,
+      analogOutputs: 4,
+      inputVoltage: "24 V DC",
+      outputVoltage: "24 V DC",
+      resolution: "14 bit input / 11/12 bit output",
+      signalRanges: ["Voltage", "Current"],
+      measurementType: ["Voltage", "Current"],
+      interfaces: ["Backplane bus"],
+      terminalConnection: "1 x 20-pole",
+      diagnostics: "Diagnostics",
+      interrupts: "Alarm",
+    },
+
+    source:
+      "https://mall.industry.siemens.com/mall/en/se/Catalog/Product/6ES7335-7HG02-0AB0",
+  },
 ];

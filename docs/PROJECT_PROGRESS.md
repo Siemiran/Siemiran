@@ -93,16 +93,19 @@
 v1.1 Product Comparison Integration
 
 ### Checkpoint — Siemens S7-300 CPU Baseline
+### Checkpoint — Siemens S7-300 Signal Module Baseline
 
 Status: Complete
 
-- Verified Siemens taxonomy contract added.
-- Siemens PLC validator enforces Family → Series → Product Type → Variant.
-- Siemens PLC adapter maps verified source records into canonical Product.
-- 10 S7-300 CPU records are currently populated.
-- Standard / Compact / SIPLUS variants are represented.
-- lint, build, and diff checks are passing.
-
-Next:
-- Verify and populate the next S7-300 product class.
-- Do not populate from assumptions or legacy data.
+- S7-300 Signal Module verification workflow established.
+- SM321 completed.
+- SM322 completed.
+- SM323 completed.
+- SM327 completed.
+- SM331 completed.
+- SM332 completed.
+- SM334 completed.
+- SM335 completed.
+- Historical Siemens MLFB variants are preserved where officially verifiable.
+- Source validation remains mandatory for new records.
+- lint, build, and diff checks are required before checkpoint commit.

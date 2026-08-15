@@ -112,12 +112,18 @@ CATALOG
 - Siemens PLC source validation is active.
 - Verified Siemens taxonomy contract is active.
 - Siemens PLC records pass source validation before adapter mapping.
-- Current verified S7-300 CPU baseline contains 10 CPU records.
-- Current S7-300 CPU variants represented:
-  - Standard
-  - Compact
-  - SIPLUS
-- The S7-300 CPU catalog is not yet exhaustive.
+- S7-300 Signal Module verification is active.
+- Completed S7-300 Signal Module families:
+  - SM321 — Digital Input
+  - SM322 — Digital Output
+  - SM323 — Digital I/O
+  - SM327 — Programmable Digital I/O
+  - SM331 — Analog Input
+  - SM332 — Analog Output
+  - SM334 — Analog I/O
+  - SM335 — High-Speed Analog I/O
+- S7-300 Signal Module records are maintained as verified source records before adapter mapping.
+- Historical and lifecycle variants are preserved where officially verifiable.
 - Additional S7-300 product classes must be added only after official Siemens verification.
 
 --------------------------------------------------

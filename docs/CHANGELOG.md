@@ -1,5 +1,27 @@
 ﻿# CHANGELOG
 
+## S7-300 Signal Module Verification
+
+### Completed
+
+- Verified S7-300 SM321 records
+- Verified S7-300 SM322 records
+- Verified S7-300 SM323 records
+- Verified S7-300 SM327 records
+- Verified S7-300 SM331 records
+- Verified S7-300 SM332 records
+- Verified S7-300 SM334 records
+- Verified S7-300 SM335 records
+- Preserved historically relevant Siemens MLFB variants
+- Maintained source-backed lifecycle information
+
+### Validation
+
+- ESLint
+- TypeScript
+- Production Build
+- Git diff validation
+
 ## v1.1 — Comparison Core
 
 ### Added
