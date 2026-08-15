@@ -21,14 +21,29 @@ export interface SiemensS7300SignalModule {
   specifications: {
     digitalInputs?: number;
     digitalOutputs?: number;
+
+    analogInputs?: number;
+    analogOutputs?: number;
+
     inputVoltage?: string;
     outputVoltage?: string;
+
+    inputCurrent?: string;
+    outputCurrent?: string;
+
+    resolution?: string;
+
+    signalRanges?: string[];
+
+    measurementType?: string[];
+
     interfaces?: string[];
     terminalConnection?: string;
+
     diagnostics?: string;
     interrupts?: string;
     isochronousMode?: boolean;
-    memoryCard?: string;
+
     signalStandard?: string;
     hazardousArea?: boolean;
   };
@@ -1221,5 +1236,571 @@ export const s7300SM: SiemensS7300SignalModule[] = [
 
     source:
       "https://support.industry.siemens.com/cs/attachments/download/8859629/s7300_module_data_manual_en-US_en-US.pdf",
+  },
+
+  // --------------------------------------------------
+  // S7-300 — SM 331 — Analog Input
+  // Siemens catalog order:
+  // universal analog input → voltage/current → RTD/thermocouple
+  // → Ex → HART
+  // --------------------------------------------------
+
+  {
+    id: "siemens-s7-300-sm331-ai2-9-12-14bit-7kb02-0ab0",
+    mlfb: "6ES7331-7KB02-0AB0",
+
+    brandId: "siemens",
+    categoryId: "PLC",
+    familyId: "S7-300",
+    seriesId: "S7-300",
+
+    productTypeId: "Signal Module",
+    variantId: "analog-input",
+
+    title: "SIMATIC S7-300 SM 331 2 AI Universal",
+
+    description:
+      "SIMATIC S7-300 analog input SM 331, isolated, 2 analog inputs, 9/12/14 bit resolution, voltage, current, thermocouple and resistance measurement, diagnostics and alarm capability, 1 x 20-pole.",
+
+    lifecycle: "spare-part",
+
+    specifications: {
+      analogInputs: 2,
+      inputVoltage: "24 V DC",
+      resolution: "9/12/14 bit",
+      signalRanges: [
+        "Voltage",
+        "Current",
+        "Thermocouple",
+        "Resistance thermometer",
+        "Resistance",
+      ],
+      measurementType: [
+        "Voltage",
+        "Current",
+        "Thermocouple",
+        "Resistance thermometer",
+        "Resistance",
+      ],
+      interfaces: ["Backplane bus"],
+      terminalConnection: "1 x 20-pole",
+      diagnostics: "Diagnostics",
+      interrupts: "Alarm",
+    },
+
+    source:
+      "https://mall.industry.siemens.com/mall/en/oeii/Catalog/Product/6ES7331-7KB02-0AB0",
+  },
+
+  {
+    id: "siemens-s7-300-sm331-ai8-13bit-1kf01-0ab0",
+    mlfb: "6ES7331-1KF01-0AB0",
+
+    brandId: "siemens",
+    categoryId: "PLC",
+    familyId: "S7-300",
+    seriesId: "S7-300",
+
+    productTypeId: "Signal Module",
+    variantId: "analog-input",
+
+    title: "SIMATIC S7-300 SM 331 8 AI 13 Bit",
+
+    description:
+      "SIMATIC S7-300 analog input SM 331, optically isolated, 8 analog inputs, 13 bit resolution, voltage, current, resistance and Pt100/Ni100/Ni1000/LG-Ni1000 measurement, 66 ms module update, 1 x 40-pole.",
+
+    lifecycle: "discontinued",
+
+    specifications: {
+      analogInputs: 8,
+      inputVoltage: "24 V DC",
+      resolution: "13 bit",
+      signalRanges: [
+        "Voltage",
+        "Current",
+        "Resistance thermometer",
+        "Resistance",
+        "Pt100",
+        "Ni100",
+        "Ni1000",
+        "LG-Ni1000",
+      ],
+      measurementType: [
+        "Voltage",
+        "Current",
+        "Resistance thermometer",
+        "Resistance",
+      ],
+      interfaces: ["Backplane bus"],
+      terminalConnection: "1 x 40-pole",
+    },
+
+    source:
+      "https://mall.industry.siemens.com/mall/en/au/Catalog/Product/6ES7331-1KF01-0AB0",
+  },
+
+  {
+    id: "siemens-s7-300-sm331-ai8-13bit-universal-1kf02-0ab0",
+    mlfb: "6ES7331-1KF02-0AB0",
+
+    brandId: "siemens",
+    categoryId: "PLC",
+    familyId: "S7-300",
+    seriesId: "S7-300",
+
+    productTypeId: "Signal Module",
+    variantId: "analog-input",
+
+    title: "SIMATIC S7-300 SM 331 8 AI Universal 13 Bit",
+
+    description:
+      "SIMATIC S7-300 analog input SM 331, isolated, 8 analog inputs, 13 bit resolution, voltage, current, resistance, Pt100, Ni100, Ni1000, LG-Ni1000, PTC and KTY measurement, 66 ms conversion time, 1 x 40-pole.",
+
+    lifecycle: "phase-out",
+
+    specifications: {
+      analogInputs: 8,
+      inputVoltage: "24 V DC",
+      resolution: "13 bit",
+      signalRanges: [
+        "Voltage",
+        "Current",
+        "Resistance thermometer",
+        "Resistance",
+        "Pt100",
+        "Ni100",
+        "Ni1000",
+        "LG-Ni1000",
+        "PTC",
+        "KTY",
+      ],
+      measurementType: [
+        "Voltage",
+        "Current",
+        "Resistance thermometer",
+        "Resistance",
+      ],
+      interfaces: ["Backplane bus"],
+      terminalConnection: "1 x 40-pole",
+    },
+
+    source:
+      "https://mall.industry.siemens.com/mall/en/EN/Catalog/Product/6ES7331-1KF02-0AB0",
+  },
+
+  {
+    id: "siemens-s7-300-sm331-ai8-9-12-14bit-7kf02-0ab0",
+    mlfb: "6ES7331-7KF02-0AB0",
+
+    brandId: "siemens",
+    categoryId: "PLC",
+    familyId: "S7-300",
+    seriesId: "S7-300",
+
+    productTypeId: "Signal Module",
+    variantId: "analog-input",
+
+    title: "SIMATIC S7-300 SM 331 8 AI Universal 9/12/14 Bit",
+
+    description:
+      "SIMATIC S7-300 analog input SM 331, isolated, 8 analog inputs, 9/12/14 bit resolution, voltage, current, thermocouple and resistance measurement, diagnostics and alarm capability, 1 x 20-pole, removable and insertable with active backplane bus.",
+
+    lifecycle: "spare-part",
+
+    specifications: {
+      analogInputs: 8,
+      inputVoltage: "24 V DC",
+      resolution: "9/12/14 bit",
+      signalRanges: [
+        "Voltage",
+        "Current",
+        "Thermocouple",
+        "Resistance thermometer",
+        "Resistance",
+      ],
+      measurementType: [
+        "Voltage",
+        "Current",
+        "Thermocouple",
+        "Resistance thermometer",
+        "Resistance",
+      ],
+      interfaces: ["Backplane bus"],
+      terminalConnection: "1 x 20-pole",
+      diagnostics: "Diagnostics",
+      interrupts: "Alarm",
+    },
+
+    source:
+      "https://mall.industry.siemens.com/mall/en/oeii/Catalog/Product/6ES7331-7KF02-0AB0",
+  },
+
+  {
+    id: "siemens-s7-300-sm331-ai8-14bit-isochronous-7hf01-0ab0",
+    mlfb: "6ES7331-7HF01-0AB0",
+
+    brandId: "siemens",
+    categoryId: "PLC",
+    familyId: "S7-300",
+    seriesId: "S7-300",
+
+    productTypeId: "Signal Module",
+    variantId: "analog-input",
+
+    title: "SIMATIC S7-300 SM 331 8 AI 14 Bit Isochronous",
+
+    description:
+      "SIMATIC S7-300 analog input SM 331, isolated, 8 analog inputs, 14 bit resolution, voltage and current measurement, diagnostics and interrupts, suitable for isochronous mode with improved DP cycle time.",
+
+    lifecycle: "spare-part",
+
+    specifications: {
+      analogInputs: 8,
+      inputVoltage: "24 V DC",
+      resolution: "14 bit",
+      signalRanges: ["Voltage", "Current"],
+      measurementType: ["Voltage", "Current"],
+      interfaces: ["Backplane bus"],
+      terminalConnection: "1 x 20-pole",
+      diagnostics: "Diagnostics",
+      interrupts: "Hardware/process interrupt",
+      isochronousMode: true,
+    },
+
+    source:
+      "https://support.industry.siemens.com/teddatasheet/?caller=SIOS&format=pdf&language=en&mlfbs=6ES7331-7HF01-0AB0",
+  },
+
+  {
+    id: "siemens-s7-300-sm331-ai8-16bit-voltage-current-7nf00-0ab0",
+    mlfb: "6ES7331-7NF00-0AB0",
+
+    brandId: "siemens",
+    categoryId: "PLC",
+    familyId: "S7-300",
+    seriesId: "S7-300",
+
+    productTypeId: "Signal Module",
+    variantId: "analog-input",
+
+    title: "SIMATIC S7-300 SM 331 8 AI Voltage / Current 16 Bit",
+
+    description:
+      "SIMATIC S7-300 analog input SM 331, isolated, 8 analog inputs, voltage and current ranges including ±5/10 V, 1-5 V, ±20 mA and 0/4-20 mA, 16 bit resolution, 55 ms conversion time, single-point grounding, 1 x 40-pole.",
+
+    lifecycle: "spare-part",
+
+    specifications: {
+      analogInputs: 8,
+      inputVoltage: "24 V DC",
+      resolution: "16 bit",
+      signalRanges: ["±5 V", "±10 V", "1-5 V", "±20 mA", "0/4-20 mA"],
+      measurementType: ["Voltage", "Current"],
+      interfaces: ["Backplane bus"],
+      terminalConnection: "1 x 40-pole",
+    },
+
+    source:
+      "https://mall.industry.siemens.com/mall/en/oeii/Catalog/Product?SiepCountryCode=OE&mlfb=6ES7331-7NF00-0AB0",
+  },
+
+  {
+    id: "siemens-s7-300-sm331-ai8-16bit-voltage-current-fast-7nf10-0ab0",
+    mlfb: "6ES7331-7NF10-0AB0",
+
+    brandId: "siemens",
+    categoryId: "PLC",
+    familyId: "S7-300",
+    seriesId: "S7-300",
+
+    productTypeId: "Signal Module",
+    variantId: "analog-input",
+
+    title: "SIMATIC S7-300 SM 331 8 AI Fast 16 Bit",
+
+    description:
+      "SIMATIC S7-300 analog input SM 331, isolated, 8 analog inputs, ±5/10 V, 1-5 V, ±20 mA and 0/4-20 mA, 16 bit resolution, single-point grounding, 4-channel operation 10 ms and 8-channel operation 23-95 ms, 1 x 40-pole.",
+
+    lifecycle: "spare-part",
+
+    specifications: {
+      analogInputs: 8,
+      inputVoltage: "24 V DC",
+      resolution: "16 bit",
+      signalRanges: ["±5 V", "±10 V", "1-5 V", "±20 mA", "0/4-20 mA"],
+      measurementType: ["Voltage", "Current"],
+      interfaces: ["Backplane bus"],
+      terminalConnection: "1 x 40-pole",
+    },
+
+    source:
+      "https://mall.industry.siemens.com/mall/en/oeii/Catalog/Product?SiepCountryCode=OE&mlfb=6ES7331-7NF10-0AB0",
+  },
+
+  {
+    id: "siemens-s7-300-sm331-ai8-rtd-7pf01-0ab0",
+    mlfb: "6ES7331-7PF01-0AB0",
+
+    brandId: "siemens",
+    categoryId: "PLC",
+    familyId: "S7-300",
+    seriesId: "S7-300",
+
+    productTypeId: "Signal Module",
+    variantId: "analog-input",
+
+    title: "SIMATIC S7-300 SM 331 8 AI Resistance / RTD",
+
+    description:
+      "SIMATIC S7-300 analog input SM 331, isolated, 8 analog inputs for 2/3/4-wire resistance and resistance-temperature measurement including Pt100/200/1000, Ni100/120/200/500/1000, LG-Ni1000 and Cu10, characteristic curves according to GOST, 50 ms conversion time, 1 x 40-pole.",
+
+    lifecycle: "spare-part",
+
+    specifications: {
+      analogInputs: 8,
+      inputVoltage: "24 V DC",
+      resolution: "16 bit internal 24 bit",
+      signalRanges: [
+        "Pt100",
+        "Pt200",
+        "Pt1000",
+        "Ni100",
+        "Ni120",
+        "Ni200",
+        "Ni500",
+        "Ni1000",
+        "LG-Ni1000",
+        "Cu10",
+        "Resistance",
+      ],
+      measurementType: ["Resistance thermometer", "Resistance"],
+      interfaces: ["Backplane bus"],
+      terminalConnection: "1 x 40-pole",
+    },
+
+    source:
+      "https://mall.industry.siemens.com/mall/en/in/Catalog/Product/6ES7331-7PF01-0AB0",
+  },
+
+  {
+    id: "siemens-s7-300-sm331-ai6-thermocouple-16bit-7pe10-0ab0",
+    mlfb: "6ES7331-7PE10-0AB0",
+
+    brandId: "siemens",
+    categoryId: "PLC",
+    familyId: "S7-300",
+    seriesId: "S7-300",
+
+    productTypeId: "Signal Module",
+    variantId: "analog-input",
+
+    title: "SIMATIC S7-300 SM 331 6 AI Thermocouple 16 Bit",
+
+    description:
+      "SIMATIC S7-300 analog input SM 331, isolated, 6 thermocouple inputs, 16 bit resolution, thermocouple types B, E, J, K, L, N, R, S and T, voltage ranges from ±25 mV to ±1 V, 50 ms conversion time, 1 x 40-pole.",
+
+    lifecycle: "active",
+
+    specifications: {
+      analogInputs: 6,
+      inputVoltage: "24 V DC",
+      resolution: "16 bit",
+      signalRanges: [
+        "Thermocouple B",
+        "Thermocouple E",
+        "Thermocouple J",
+        "Thermocouple K",
+        "Thermocouple L",
+        "Thermocouple N",
+        "Thermocouple R",
+        "Thermocouple S",
+        "Thermocouple T",
+        "±25 mV to ±1 V",
+      ],
+      measurementType: ["Thermocouple"],
+      interfaces: ["Backplane bus"],
+      terminalConnection: "1 x 40-pole",
+    },
+
+    source:
+      "https://support.industry.siemens.com/teddatasheet/?caller=SIOS&format=pdf&language=en&mlfbs=6ES7331-7PE10-0AB0",
+  },
+
+  {
+    id: "siemens-s7-300-sm331-ai8-thermocouple-7pf11-0ab0",
+    mlfb: "6ES7331-7PF11-0AB0",
+
+    brandId: "siemens",
+    categoryId: "PLC",
+    familyId: "S7-300",
+    seriesId: "S7-300",
+
+    productTypeId: "Signal Module",
+    variantId: "analog-input",
+
+    title: "SIMATIC S7-300 SM 331 8 AI Thermocouple 16 Bit",
+
+    description:
+      "SIMATIC S7-300 analog input SM 331, isolated, 8 thermocouple analog inputs, types B, E, J, K, L, N, R, S and T, plus TXK/TXK(L) according to GOST, 16 bit resolution, 50 ms conversion time, 1 x 40-pole.",
+
+    lifecycle: "spare-part",
+
+    specifications: {
+      analogInputs: 8,
+      inputVoltage: "24 V DC",
+      resolution: "16 bit",
+      signalRanges: [
+        "Thermocouple B",
+        "Thermocouple E",
+        "Thermocouple J",
+        "Thermocouple K",
+        "Thermocouple L",
+        "Thermocouple N",
+        "Thermocouple R",
+        "Thermocouple S",
+        "Thermocouple T",
+        "TXK/TXK(L) GOST",
+      ],
+      measurementType: ["Thermocouple"],
+      interfaces: ["Backplane bus"],
+      terminalConnection: "1 x 40-pole",
+    },
+
+    source:
+      "https://mall.industry.siemens.com/mall/en/oeii/Catalog/Product/6ES7331-7PF11-0AB0",
+  },
+
+  {
+    id: "siemens-s7-300-sm331-ai4-0-4-20ma-ex-7rd00-0ab0",
+    mlfb: "6ES7331-7RD00-0AB0",
+
+    brandId: "siemens",
+    categoryId: "PLC",
+    familyId: "S7-300",
+    seriesId: "S7-300",
+
+    productTypeId: "Signal Module",
+    variantId: "analog-input",
+
+    title: "SIMATIC S7-300 SM 331 4 AI 0/4-20 mA Ex",
+
+    description:
+      "SIMATIC S7-300 analog input SM 331, isolated, 4 analog inputs, 0/4-20 mA, for signals from hazardous areas, diagnostics-capable and PTB tested, 1 x 20-pole.",
+
+    lifecycle: "spare-part",
+
+    specifications: {
+      analogInputs: 4,
+      inputVoltage: "24 V DC",
+      resolution: "Not specified in catalog description",
+      signalRanges: ["0-20 mA", "4-20 mA"],
+      measurementType: ["Current"],
+      interfaces: ["Backplane bus"],
+      terminalConnection: "1 x 20-pole",
+      diagnostics: "Diagnostics-capable",
+      hazardousArea: true,
+    },
+
+    source:
+      "https://mall.industry.siemens.com/mall/en/oeii/Catalog/Product?SiepCountryCode=OE&mlfb=6ES7331-7RD00-0AB0",
+  },
+
+  {
+    id: "siemens-s7-300-sm331-ai8-tc-ai4-pt100-ex-7sf00-0ab0",
+    mlfb: "6ES7331-7SF00-0AB0",
+
+    brandId: "siemens",
+    categoryId: "PLC",
+    familyId: "S7-300",
+    seriesId: "S7-300",
+
+    productTypeId: "Signal Module",
+    variantId: "analog-input",
+
+    title: "SIMATIC S7-300 SM 331 8 AI Thermocouple / 4 AI Pt100 Ex",
+
+    description:
+      "SIMATIC S7-300 analog input SM 331, isolated, 8 thermocouple inputs or 4 Pt100 inputs, for signals from hazardous areas, diagnostics-capable and PTB tested, 1 x 20-pole.",
+
+    lifecycle: "spare-part",
+
+    specifications: {
+      analogInputs: 8,
+      inputVoltage: "24 V DC",
+      signalRanges: ["Thermocouple", "Pt100"],
+      measurementType: ["Thermocouple", "Resistance thermometer"],
+      interfaces: ["Backplane bus"],
+      terminalConnection: "1 x 20-pole",
+      diagnostics: "Diagnostics-capable",
+      hazardousArea: true,
+    },
+
+    source:
+      "https://mall.industry.siemens.com/mall/en/oeii/Catalog/Product/6ES7331-7SF00-0AB0",
+  },
+
+  {
+    id: "siemens-s7-300-sm331-ai2-hart-7tb00-0ab0",
+    mlfb: "6ES7331-7TB00-0AB0",
+
+    brandId: "siemens",
+    categoryId: "PLC",
+    familyId: "S7-300",
+    seriesId: "S7-300",
+
+    productTypeId: "Signal Module",
+    variantId: "analog-input",
+
+    title: "SIMATIC S7-300 SM 331 2 AI HART",
+
+    description:
+      "SIMATIC S7-300 HART analog input SM 331 with 2 analog inputs for 0/4-20 mA HART signal processing and HART communication.",
+
+    lifecycle: "phase-out",
+
+    specifications: {
+      analogInputs: 2,
+      inputVoltage: "24 V DC",
+      signalRanges: ["0-20 mA", "4-20 mA HART"],
+      measurementType: ["Current", "HART"],
+      interfaces: ["Backplane bus"],
+      terminalConnection: "1 x 40-pole",
+    },
+
+    source:
+      "https://support.industry.siemens.com/cs/attachments/8859629/s7300_module_data_manual_en-US_en-US.pdf",
+  },
+
+  {
+    id: "siemens-s7-300-sm331-ai8-hart-7tf01-0ab0",
+    mlfb: "6ES7331-7TF01-0AB0",
+
+    brandId: "siemens",
+    categoryId: "PLC",
+    familyId: "S7-300",
+    seriesId: "S7-300",
+
+    productTypeId: "Signal Module",
+    variantId: "analog-input",
+
+    title: "SIMATIC S7-300 SM 331 8 AI HART",
+
+    description:
+      "SIMATIC DP HART analog input SM 331 with 8 analog inputs for 0/4-20 mA HART, for ET 200M with IM153-2, firmware update, HART auxiliary variables, redundancy and local diagnostic buffer with time stamping, 1 x 20-pole.",
+
+    lifecycle: "spare-part",
+
+    specifications: {
+      analogInputs: 8,
+      inputVoltage: "24 V DC",
+      signalRanges: ["0-20 mA", "4-20 mA HART"],
+      measurementType: ["Current", "HART"],
+      interfaces: ["Backplane bus"],
+      terminalConnection: "1 x 20-pole",
+      diagnostics: "Local diagnostic buffer with time stamping",
+    },
+
+    source:
+      "https://mall.industry.siemens.com/mall/en/oeii/Catalog/Product/6ES7331-7TF01-0AB0",
   },
 ];
