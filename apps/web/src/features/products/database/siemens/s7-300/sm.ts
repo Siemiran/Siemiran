@@ -1803,4 +1803,355 @@ export const s7300SM: SiemensS7300SignalModule[] = [
     source:
       "https://mall.industry.siemens.com/mall/en/oeii/Catalog/Product/6ES7331-7TF01-0AB0",
   },
+
+  // --------------------------------------------------
+  // S7-300 — SM 332 — Analog Output
+  // Siemens catalog order:
+  // standard U/I → high-density → 16-bit isochronous
+  // → Ex → HART → SIPLUS
+  // --------------------------------------------------
+
+  {
+    id: "siemens-s7-300-sm332-ao2-ui-11-12bit-5hb01-0ab0",
+    mlfb: "6ES7332-5HB01-0AB0",
+
+    brandId: "siemens",
+    categoryId: "PLC",
+    familyId: "S7-300",
+    seriesId: "S7-300",
+
+    productTypeId: "Signal Module",
+    variantId: "analog-output",
+
+    title: "SIMATIC S7-300 SM 332 2 AO U/I 11/12 Bit",
+
+    description:
+      "SIMATIC S7-300 analog output SM 332, isolated, 2 analog outputs for voltage and current, 11/12 bit resolution, removable and insertable with active backplane bus, 20-pole.",
+
+    lifecycle: "spare-part",
+
+    specifications: {
+      analogOutputs: 2,
+      outputVoltage: "24 V DC",
+      resolution: "11/12 bit",
+      signalRanges: [
+        "0-10 V",
+        "1-5 V",
+        "-10 V to +10 V",
+        "0-20 mA",
+        "-20 mA to +20 mA",
+        "4-20 mA",
+      ],
+      measurementType: ["Voltage", "Current"],
+      interfaces: ["Backplane bus"],
+      terminalConnection: "1 x 20-pole",
+    },
+
+    source:
+      "https://mall.industry.siemens.com/mall/en/pe/Catalog/Product/6ES7332-5HB01-0AB0",
+  },
+
+  {
+    id: "siemens-s7-300-sm332-ao4-ui-diagnostics-5hd01-0ab0",
+    mlfb: "6ES7332-5HD01-0AB0",
+
+    brandId: "siemens",
+    categoryId: "PLC",
+    familyId: "S7-300",
+    seriesId: "S7-300",
+
+    productTypeId: "Signal Module",
+    variantId: "analog-output",
+
+    title: "SIMATIC S7-300 SM 332 4 AO U/I 11/12 Bit",
+
+    description:
+      "SIMATIC S7-300 analog output SM 332, isolated, 4 analog outputs for voltage and current, diagnostics, 11/12 bit resolution, removable and insertable with active backplane bus, 20-pole.",
+
+    lifecycle: "spare-part",
+
+    specifications: {
+      analogOutputs: 4,
+      outputVoltage: "24 V DC",
+      resolution: "11/12 bit",
+      signalRanges: [
+        "0-10 V",
+        "1-5 V",
+        "-10 V to +10 V",
+        "0-20 mA",
+        "-20 mA to +20 mA",
+        "4-20 mA",
+      ],
+      measurementType: ["Voltage", "Current"],
+      interfaces: ["Backplane bus"],
+      terminalConnection: "1 x 20-pole",
+      diagnostics: "Diagnostics",
+    },
+
+    source:
+      "https://mall.industry.siemens.com/mall/en/fescomelsaownuy/Catalog/Product?SiepCountryCode=OE&mlfb=6ES7332-5HD01-0AB0",
+  },
+
+  {
+    id: "siemens-s7-300-sm332-ao8-ui-diagnostics-5hf00-0ab0",
+    mlfb: "6ES7332-5HF00-0AB0",
+
+    brandId: "siemens",
+    categoryId: "PLC",
+    familyId: "S7-300",
+    seriesId: "S7-300",
+
+    productTypeId: "Signal Module",
+    variantId: "analog-output",
+
+    title: "SIMATIC S7-300 SM 332 8 AO U/I 11/12 Bit",
+
+    description:
+      "SIMATIC S7-300 analog output SM 332, isolated, 8 analog outputs for voltage and current, diagnostics, 11/12 bit resolution, removable and insertable with active backplane bus, 40-pole.",
+
+    lifecycle: "spare-part",
+
+    specifications: {
+      analogOutputs: 8,
+      outputVoltage: "24 V DC",
+      resolution: "11/12 bit",
+      signalRanges: [
+        "0-10 V",
+        "1-5 V",
+        "-10 V to +10 V",
+        "0-20 mA",
+        "-20 mA to +20 mA",
+        "4-20 mA",
+      ],
+      measurementType: ["Voltage", "Current"],
+      interfaces: ["Backplane bus"],
+      terminalConnection: "1 x 40-pole",
+      diagnostics: "Diagnostics",
+    },
+
+    source:
+      "https://mall.industry.siemens.com/mall/en/en/Catalog/Product/6ES7332-5HF00-0AB0",
+  },
+
+  {
+    id: "siemens-s7-300-sm332-ao4-channel-isolated-16bit-7nd02-0ab0",
+    mlfb: "6ES7332-7ND02-0AB0",
+
+    brandId: "siemens",
+    categoryId: "PLC",
+    familyId: "S7-300",
+    seriesId: "S7-300",
+
+    productTypeId: "Signal Module",
+    variantId: "analog-output",
+
+    title: "SIMATIC S7-300 SM 332 4 AO 16 Bit Channel-Isolated",
+
+    description:
+      "SIMATIC S7-300 analog output SM 332, channel-to-channel isolated, 4 analog outputs, 16 bit resolution, voltage and current ranges, suitable for isochronous mode with improved DP cycle times, 20-pole.",
+
+    lifecycle: "spare-part",
+
+    specifications: {
+      analogOutputs: 4,
+      outputVoltage: "24 V DC",
+      resolution: "16 bit",
+      signalRanges: [
+        "0-10 V",
+        "1-5 V",
+        "-10 V to +10 V",
+        "0-20 mA",
+        "-20 mA to +20 mA",
+        "4-20 mA",
+      ],
+      measurementType: ["Voltage", "Current"],
+      interfaces: ["Backplane bus"],
+      terminalConnection: "1 x 20-pole",
+      isochronousMode: true,
+    },
+
+    source:
+      "https://support.industry.siemens.com/teddatasheet/?caller=SIOS&format=pdf&language=en&mlfbs=6ES7332-7ND02-0AB0",
+  },
+
+  {
+    id: "siemens-s7-300-sm332-ao4-0-4-20ma-ex-5rd00-0ab0",
+    mlfb: "6ES7332-5RD00-0AB0",
+
+    brandId: "siemens",
+    categoryId: "PLC",
+    familyId: "S7-300",
+    seriesId: "S7-300",
+
+    productTypeId: "Signal Module",
+    variantId: "analog-output",
+
+    title: "SIMATIC S7-300 SM 332 4 AO 0/4-20 mA Ex",
+
+    description:
+      "SIMATIC S7-300 analog output SM 332, isolated, 4 analog current outputs, 0/4-20 mA, for signals from hazardous areas, diagnostics-capable and PTB tested, 20-pole.",
+
+    lifecycle: "spare-part",
+
+    specifications: {
+      analogOutputs: 4,
+      outputVoltage: "24 V DC",
+      resolution: "15 bit",
+      signalRanges: ["0-20 mA", "4-20 mA"],
+      measurementType: ["Current"],
+      interfaces: ["Backplane bus"],
+      terminalConnection: "1 x 20-pole",
+      diagnostics: "Diagnostics-capable",
+      hazardousArea: true,
+    },
+
+    source:
+      "https://mall.industry.siemens.com/mall/en/conateluyown/Catalog/Product?SiepCountryCode=OE&mlfb=6ES7332-5RD00-0AB0",
+  },
+
+  {
+    id: "siemens-s7-300-sm332-ao2-hart-5tb00-0ab0",
+    mlfb: "6ES7332-5TB00-0AB0",
+
+    brandId: "siemens",
+    categoryId: "PLC",
+    familyId: "S7-300",
+    seriesId: "S7-300",
+
+    productTypeId: "Signal Module",
+    variantId: "analog-output",
+
+    title: "SIMATIC S7-300 SM 332 2 AO 0/4-20 mA HART",
+
+    description:
+      "SIMATIC S7-300 HART analog output SM 332 with 2 analog outputs for 0/4-20 mA HART, for ET 200M with IM 153-2.",
+
+    lifecycle: "phase-out",
+
+    specifications: {
+      analogOutputs: 2,
+      outputVoltage: "24 V DC",
+      signalRanges: ["0-20 mA HART", "4-20 mA HART"],
+      measurementType: ["Current", "HART"],
+      interfaces: ["Backplane bus"],
+      terminalConnection: "1 x 20-pole",
+    },
+
+    source:
+      "https://support.industry.siemens.com/cs/attachments/8859629/s7300_module_data_manual_en-US_en-US.pdf",
+  },
+
+  {
+    id: "siemens-s7-300-sm332-ao8-hart-8tf01-0ab0",
+    mlfb: "6ES7332-8TF01-0AB0",
+
+    brandId: "siemens",
+    categoryId: "PLC",
+    familyId: "S7-300",
+    seriesId: "S7-300",
+
+    productTypeId: "Signal Module",
+    variantId: "analog-output",
+
+    title: "SIMATIC S7-300 SM 332 8 AO 0/4-20 mA HART",
+
+    description:
+      "SIMATIC DP HART analog output SM 332 with 8 analog outputs, 0/4-20 mA HART, for ET 200M with IM 153-2, firmware update, HART auxiliary variables, redundancy and local diagnostic buffer with time stamping, 20-pole.",
+
+    lifecycle: "phase-out",
+
+    specifications: {
+      analogOutputs: 8,
+      outputVoltage: "24 V DC",
+      signalRanges: ["0-20 mA HART", "4-20 mA HART"],
+      measurementType: ["Current", "HART"],
+      interfaces: ["Backplane bus"],
+      terminalConnection: "1 x 20-pole",
+      diagnostics: "Local diagnostic buffer with time stamping",
+    },
+
+    source:
+      "https://mall.industry.siemens.com/mall/en/in/Catalog/Product/6ES7332-8TF01-0AB0",
+  },
+
+  {
+    id: "siemens-siplus-s7-300-sm332-ao2-ui-5hb01-2ab0",
+    mlfb: "6AG1332-5HB01-2AB0",
+
+    brandId: "siemens",
+    categoryId: "PLC",
+    familyId: "S7-300",
+    seriesId: "S7-300",
+
+    productTypeId: "Signal Module",
+    variantId: "analog-output",
+
+    title: "SIPLUS S7-300 SM 332 2 AO U/I",
+
+    description:
+      "SIPLUS S7-300 SM 332 analog output module with 2 isolated analog outputs for voltage and current, based on 6ES7332-5HB01-0AB0, with conformal coating and extended environmental temperature range.",
+
+    lifecycle: "spare-part",
+
+    specifications: {
+      analogOutputs: 2,
+      outputVoltage: "24 V DC",
+      resolution: "11/12 bit",
+      signalRanges: [
+        "0-10 V",
+        "1-5 V",
+        "-10 V to +10 V",
+        "0-20 mA",
+        "-20 mA to +20 mA",
+        "4-20 mA",
+      ],
+      measurementType: ["Voltage", "Current"],
+      interfaces: ["Backplane bus"],
+      terminalConnection: "1 x 20-pole",
+    },
+
+    source:
+      "https://mall.industry.siemens.com/mall/en/oeii/Catalog/Product?SiepCountryCode=OE&mlfb=6AG1332-5HB01-2AB0",
+  },
+
+  {
+    id: "siemens-siplus-s7-300-sm332-ao8-ui-5hf00-2ab0",
+    mlfb: "6AG1332-5HF00-2AB0",
+
+    brandId: "siemens",
+    categoryId: "PLC",
+    familyId: "S7-300",
+    seriesId: "S7-300",
+
+    productTypeId: "Signal Module",
+    variantId: "analog-output",
+
+    title: "SIPLUS S7-300 SM 332 8 AO U/I",
+
+    description:
+      "SIPLUS S7-300 SM 332 analog output module with 8 isolated analog outputs for voltage and current, based on 6ES7332-5HF00-0AB0, with conformal coating and extended environmental temperature range.",
+
+    lifecycle: "spare-part",
+
+    specifications: {
+      analogOutputs: 8,
+      outputVoltage: "24 V DC",
+      resolution: "11/12 bit",
+      signalRanges: [
+        "0-10 V",
+        "1-5 V",
+        "-10 V to +10 V",
+        "0-20 mA",
+        "-20 mA to +20 mA",
+        "4-20 mA",
+      ],
+      measurementType: ["Voltage", "Current"],
+      interfaces: ["Backplane bus"],
+      terminalConnection: "1 x 40-pole",
+      diagnostics: "Diagnostics",
+    },
+
+    source:
+      "https://mall.industry.siemens.com/mall/en/oeii/Catalog/Product?SiepCountryCode=OE&mlfb=6AG1332-5HF00-2AB0",
+  },
 ];
