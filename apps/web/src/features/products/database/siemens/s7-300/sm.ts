@@ -2278,7 +2278,7 @@ export const s7300SM: SiemensS7300SignalModule[] = [
     seriesId: "S7-300",
 
     productTypeId: "Signal Module",
-    variantId: "analog-output",
+    variantId: "analog-io",
 
     title: "SIMATIC S7-300 SM 335 4 AI / 4 AO High-Speed",
 
@@ -2315,7 +2315,7 @@ export const s7300SM: SiemensS7300SignalModule[] = [
     seriesId: "S7-300",
 
     productTypeId: "Signal Module",
-    variantId: "analog-output",
+    variantId: "analog-io",
 
     title: "SIMATIC S7-300 SM 335 4 AI / 4 AO High-Speed",
 
