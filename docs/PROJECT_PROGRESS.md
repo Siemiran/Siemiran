@@ -1,6 +1,6 @@
 # Siemiran — Project Progress
 
-Baseline: `main` at `2b9e8857108bfc6a5e4e3929ac06fefdf32041d3`
+Repository source of truth: current `main` branch
 
 Last synchronized: 2026-08-29
 
@@ -50,6 +50,7 @@ pending milestone.
 - Interface Module source dataset: PRESENT, DISCONNECTED
 - Function Module source dataset: PRESENT, DISCONNECTED
 - Communication Processor source dataset: PRESENT, DISCONNECTED
+- Power Supply source dataset: 5 RECORDS, IMPLEMENTED, DISCONNECTED
 
 ### S7-1200
 
@@ -63,10 +64,14 @@ Substantial source datasets are present in:
 - `cb.ts`
 - `special.ts`
 - `other.ts`
+- `pm.ts`
 
-These files contain 181 unique MLFB declarations. Their integration into the
+These files contain 184 unique MLFB declarations. The Power Module baseline adds
+1 Classic and 2 G2 records, all DISCONNECTED. Their integration into the
 validated Product pipeline is NOT COMPLETE. There is no connecting S7-1200
-aggregator, and taxonomy alignment remains unresolved.
+aggregator, and broader taxonomy alignment remains unresolved. The initial
+Power Module taxonomy distinguishes `S7-1200` from `S7-1200 G2`; no G5 series
+was created.
 
 ## Inquiry Progress
 
