@@ -1,111 +1,91 @@
-﻿# PROJECT PROGRESS
+# Siemiran — Project Progress
 
-## Foundation
+Baseline: `main` at `2b9e8857108bfc6a5e4e3929ac06fefdf32041d3`
 
-✔ Feature First
+Last synchronized: 2026-08-29
 
-✔ Repository Pattern
+## Completed Foundation
 
-✔ Product Interface
+- Feature-first application organization
+- Product repository pattern
+- Single UI-facing Product interface
+- Product data aggregation and repository
+- Product listing and dynamic, statically generated detail pages
+- Metadata, Product JSON-LD, breadcrumbs, and Breadcrumb JSON-LD
 
-✔ Product Database
+## Completed Product Experience
 
----
+- Search with URL state
+- Category, family, series, and product-type filters
+- Active filters and filter clearing
+- Sorting and URL-synchronized pagination
+- Product gallery and specifications
+- Related-product recommendation and relation-rendering architecture
+- Download-rendering architecture
 
-## Products
+Downloads and explicit relations are structurally implemented, but the active
+dataset does not currently populate their data.
 
-✔ Product Dataset
+## Completed Comparison Milestone
 
-✔ Product Repository
+- Comparison types and utilities
+- Compare controls on product cards
+- Comparison selection bar
+- Comparison page and responsive table
+- Comparison page state integration
+- Difference highlighting
+- Browser `localStorage` persistence
 
-✔ Product Listing
+Comparison integration is complete in the current implementation; it is not a
+pending milestone.
 
-✔ Dynamic Product Page
+## Siemens Catalog Progress
 
-✔ Static Generation
+### S7-300
 
----
+- CPU source records: IMPLEMENTED and CONNECTED
+- CPU flow from source through validation, adapter, Product aggregation,
+  repository, and UI: IMPLEMENTED
+- Signal Module source dataset: PRESENT, DISCONNECTED
+- Interface Module source dataset: PRESENT, DISCONNECTED
+- Function Module source dataset: PRESENT, DISCONNECTED
+- Communication Processor source dataset: PRESENT, DISCONNECTED
 
-## SEO
+### S7-1200
 
-✔ Metadata
+Substantial source datasets are present in:
 
-✔ Product JSON-LD
+- `cpu.ts`
+- `sm.ts`
+- `sb.ts`
+- `cm.ts`
+- `cp.ts`
+- `cb.ts`
+- `special.ts`
+- `other.ts`
 
-✔ Breadcrumb
+These files contain 181 unique MLFB declarations. Their integration into the
+validated Product pipeline is NOT COMPLETE. There is no connecting S7-1200
+aggregator, and taxonomy alignment remains unresolved.
 
-✔ Breadcrumb JSON-LD
+## Inquiry Progress
 
----
+- Inquiry form UI: IMPLEMENTED
+- Shared client/server validation: IMPLEMENTED
+- Inquiry API validation and acknowledgement: IMPLEMENTED
+- Delivery or persistence workflow: PARTIAL / NOT ESTABLISHED
 
-## Product Experience
+## Quality Progress
 
-✔ Gallery
+- Latest local ESLint check: PASS
+- Latest local TypeScript check: PASS
+- Latest local production build: PASS
+- Automated test baseline: NOT ESTABLISHED
+- CI/CD: NOT ESTABLISHED
 
-✔ Zoom / Lightbox
+## Current Development State
 
-✔ Specifications
-
-✔ Related Products
-
-✔ Download Architecture
-
----
-
-## Catalog
-
-✔ Search
-
-✔ URL Search Params
-
-✔ Category Filter
-
-✔ Family Filter
-
-✔ Series Filter
-
-✔ Product Type Filter
-
-✔ Active Filters
-
-✔ Clear Filters
-
-✔ Sorting
-
-✔ Pagination
-
----
-
-## Comparison
-
-✔ Comparison Core
-
-✔ Compare Button
-
-✔ Comparison Bar
-
-◐ Comparison Page Integration
-
----
-
-## Current Milestone
-
-v1.1 Product Comparison Integration
-
-### Checkpoint — Siemens S7-300 CPU Baseline
-### Checkpoint — Siemens S7-300 Signal Module Baseline
-
-Status: Complete
-
-- S7-300 Signal Module verification workflow established.
-- SM321 completed.
-- SM322 completed.
-- SM323 completed.
-- SM327 completed.
-- SM331 completed.
-- SM332 completed.
-- SM334 completed.
-- SM335 completed.
-- Historical Siemens MLFB variants are preserved where officially verifiable.
-- Source validation remains mandatory for new records.
-- lint, build, and diff checks are required before checkpoint commit.
+The product browsing, detail, comparison, and inquiry-entry experiences are in
+place. The current catalog work is centered on safely generalizing the Siemens
+validation/mapping pipeline and connecting existing source datasets without
+presenting them as active products before controlled verification.
