@@ -1,96 +1,82 @@
-﻿# CHANGELOG
+# Siemiran — Changelog
 
-## S7-300 Signal Module Verification
+This file records completed repository changes. Connection status refers to the
+implementation at baseline commit
+`2b9e8857108bfc6a5e4e3929ac06fefdf32041d3`.
+
+## 2026-08-29 — Current-State Documentation Synchronization
 
 ### Completed
 
-- Verified S7-300 SM321 records
-- Verified S7-300 SM322 records
-- Verified S7-300 SM323 records
-- Verified S7-300 SM327 records
-- Verified S7-300 SM331 records
-- Verified S7-300 SM332 records
-- Verified S7-300 SM334 records
-- Verified S7-300 SM335 records
-- Preserved historically relevant Siemens MLFB variants
-- Maintained source-backed lifecycle information
+- Audited the current Git, application, Siemens data, quality, and documentation
+  state.
+- Synchronized project documentation with the current implementation.
+- Corrected comparison documentation to record page integration, table, and
+  localStorage persistence as implemented.
+- Distinguished active Product data from disconnected Siemens source datasets.
+- Recorded the partial inquiry backend, missing automated-test baseline, and
+  absence of GitHub Actions CI/CD.
 
-### Validation
+## S7-1200 Source Database Expansion
 
-- ESLint
-- TypeScript
-- Production Build
-- Git diff validation
+The following source datasets were added historically. At the current baseline,
+they remain DISCONNECTED from active Product aggregation and the UI.
 
-## v1.1 — Comparison Core
+- `2b9e885` — Added S7-1200 communication boards
+- `c00af82` — Added S7-1200 signal boards
+- `b3281e7` — Added S7-1200 companion modules
+- `81bd9e2` — Added S7-1200 communication modules
+- `14bafe4` — Added S7-1200 special and technology modules
+- `be3b4e7` — Added S7-1200 communication processors
+- `251afd0` — Added S7-1200 signal modules
+- `2882774` — Added the S7-1200 CPU database
 
-### Added
+Together, the current S7-1200 files contain 181 unique MLFB declarations. Their
+addition to the repository did not connect them to the validation, adapter,
+repository, or UI pipeline.
 
-- Product Comparison State
-- Comparison Types
-- Comparison Utilities
-- Product Compare Button
-- Product Comparison Bar
-- Product Comparison Table
-- Product Comparison View
-- Comparison Route
+## S7-300 Source Database Expansion
 
-### Changed
+- `ce1cd47` — Added S7-300 interface modules
+- `5f43ab3` — Added S7-300 function modules
+- `bc51b08` — Added S7-300 communication processors
+- `088c1c6` — Completed the S7-300 signal module baseline
+- `2249f9d` — Normalized SM335 variant classification
 
-- Product Catalog connected to comparison state
-- Product Cards support comparison actions
+These datasets remain DISCONNECTED at the current baseline. The previously
+completed S7-300 CPU source dataset is the Siemens dataset currently connected
+through validation and adapter mapping to active Products.
 
-### Pending
+## Comparison Integration
 
-- Comparison Page State Integration
-- Comparison Persistence
-- Final Comparison UX
+### Completed
 
-### Validation
+- Product comparison types and utilities
+- Compare controls and comparison selection bar
+- Product comparison route and view
+- Comparison table with dynamic specification rows and difference highlighting
+- Comparison page state integration
+- Browser `localStorage` persistence
+- Product catalog connection to comparison state
 
-- ESLint Passing
-- TypeScript Passing
-- Production Build Passing
+## Product Catalog Milestones
 
----
+### Pagination
 
-## v1.0.2 — Product Pagination
+- Pagination engine and hook
+- Product pagination component
+- Page URL synchronization
+- Page reset after filter, search, or sorting changes
 
-### Added
+### Filtering and Sorting
 
-- Pagination Engine
-- Pagination Hook
-- Product Pagination Component
-- Page URL Synchronization
-- Filter / Search / Sort page reset
+- Category, family, series, and product-type filters
+- Active filter display and clear controls
+- Product sorting
 
-### Validation
+### Search
 
-- ESLint Passing
-- TypeScript Passing
-- Production Build Passing
-
----
-
-## v1.0 — Enterprise Filtering
-
-### Added
-
-- Category Filter
-- Family Filter
-- Series Filter
-- Product Type Filter
-- Active Filters
-- Clear Filters
-- Product Sorting
-
----
-
-## v0.8 — Product Search
-
-### Added
-
-- Product Search
-- Product Toolbar
-- Search URL Parameters
-- Products Client Component
+- Product search UI
+- Product toolbar
+- Search URL parameters
+- Client-side catalog integration
