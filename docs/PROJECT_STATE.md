@@ -4,8 +4,7 @@
 
 - Status: Active Development
 - Documentation synchronized: 2026-08-29
-- Branch: `main`
-- Commit: `2b9e8857108bfc6a5e4e3929ac06fefdf32041d3`
+- Repository source of truth: current `main` branch
 - No semantic release version is asserted by this document.
 
 ## Current Stack
@@ -47,23 +46,26 @@
 
 ### Active Application Data
 
-The active `Product` aggregation contains 38 products:
+The active `Product` aggregation contains 37 products:
 
 - 1 manually declared S7-1200 product
-- 37 S7-300 CPU source records mapped through validation and the Siemens adapter
+- 36 S7-300 CPU source records mapped through validation and the Siemens adapter
 
 These products flow through `data/products.ts`, the Product repository, and the UI.
 
 ### Source Data Not Connected to the Application
 
-- S7-300 SM, IM, FM, and CP datasets exist but are DISCONNECTED.
-- S7-1200 CPU, SM, SB, CM, CP, CB, special, and other datasets exist but are
-  DISCONNECTED.
-- The S7-1200 source files contain 181 unique MLFB declarations.
+- S7-300 PS, SM, IM, FM, and CP datasets exist but are DISCONNECTED. The PS
+  baseline contains 5 verified source records.
+- S7-1200 CPU, PM, SM, SB, CM, CP, CB, special, and other datasets exist but are
+  DISCONNECTED. The PM baseline contains 1 Classic and 2 G2 source records.
+- The S7-1200 source files contain 184 unique MLFB declarations.
 - Disconnected source records are not validated during normal application
   construction and must not be treated as active UI products.
-- S7-1200 taxonomy identifiers and verified-taxonomy coverage require
+- The verified taxonomy distinguishes the Classic `S7-1200` and `S7-1200 G2`
+  series for Power Modules. Broader S7-1200 source taxonomy still requires
   reconciliation before controlled integration.
+- No S7-1200 G5 generation has been established.
 - The current Siemens validator/adapter contract is coupled primarily to the
   S7-300 CPU source interface.
 

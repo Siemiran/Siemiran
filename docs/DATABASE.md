@@ -1,6 +1,6 @@
 # Siemiran — Product Database
 
-Baseline: `main` at `2b9e8857108bfc6a5e4e3929ac06fefdf32041d3`
+Repository source of truth: current `main` branch
 
 ## Canonical Hierarchy
 
@@ -24,10 +24,10 @@ Product reads are exposed through
 
 ## Current Active Dataset
 
-The application currently aggregates 38 Products:
+The application currently aggregates 37 Products:
 
 - 1 manually declared S7-1200 Product
-- 37 mapped S7-300 CPU Products
+- 36 mapped S7-300 CPU Products
 
 Only records included by `data/products.ts` reach the Product repository and UI.
 The presence of a manufacturer source file does not make its records active
@@ -51,7 +51,8 @@ The current shared Siemens files are:
 
 | Source class | Records | Connection status |
 | --- | ---: | --- |
-| CPU | 37 | CONNECTED |
+| CPU | 36 | CONNECTED |
+| Power Supply (PS) | 5 | DISCONNECTED |
 | Signal Module (SM) | 66 | DISCONNECTED |
 | Interface Module (IM) | 7 | DISCONNECTED |
 | Function Module (FM) | 32 | DISCONNECTED |
@@ -61,15 +62,18 @@ Only S7-300 CPU is exported through `siemens/plc.ts`. CPU records flow through
 the Siemens validator and adapter into active Product aggregation, the Product
 repository, and the UI.
 
-The SM, IM, FM, and CP datasets are present as manufacturer source records but
-are not imported by the active pipeline. They are therefore not active Products
-and are not validated during normal application construction.
+The PS, SM, IM, FM, and CP datasets are present as manufacturer source records
+but are not imported by the active pipeline. They are therefore not active
+Products and are not validated during normal application construction. The PS
+baseline contains PS 305, PS 307, and PS 307 Outdoor variants verified against
+official Siemens sources.
 
 ## S7-1200 Source Data
 
 | Source module | Records | Connection status |
 | --- | ---: | --- |
 | CPU | 60 | DISCONNECTED |
+| Power Module (PM) | 3 | DISCONNECTED |
 | Signal Module (SM) | 47 | DISCONNECTED |
 | Signal Board (SB) | 32 | DISCONNECTED |
 | Communication Module (CM) | 16 | DISCONNECTED |
@@ -77,11 +81,12 @@ and are not validated during normal application construction.
 | Communication Board (CB) | 3 | DISCONNECTED |
 | Special/technology modules | 11 | DISCONNECTED |
 | Other/companion modules | 5 | DISCONNECTED |
-| **Total** | **181** | **DISCONNECTED** |
+| **Total** | **184** | **DISCONNECTED** |
 
-The audit found 181 unique MLFB declarations across the current S7-1200 source
-files. These are source records awaiting controlled integration and final
-verification; they are not production-ready application Products.
+The current S7-1200 source files contain 184 unique MLFB declarations. The 3 PM
+records comprise 1 S7-1200 Classic PM 1207 and 2 S7-1200 G2 PM 1207 records,
+including the EX-certified G2 variant. These are source records awaiting
+controlled integration; they are not active application Products.
 
 Current constraints:
 
@@ -90,7 +95,9 @@ Current constraints:
 - Source/reference URL fields exist on the source records.
 - Source and taxonomy enforcement occurs only when a record passes through the
   current validator.
-- `verified-taxonomy.ts` has limited S7-1200 coverage.
+- `verified-taxonomy.ts` distinguishes the `S7-1200` and `S7-1200 G2` series for
+  the initial Power Module baseline. No S7-1200 G5 series is defined because
+  that generation is not established.
 - S7-1200 source `seriesId` values and the verified taxonomy's S7-1200 series
   identifier are not aligned.
 - The current shared adapter and source interface are coupled to S7-300 CPU

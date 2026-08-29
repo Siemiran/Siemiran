@@ -1,8 +1,22 @@
 # Siemiran — Changelog
 
 This file records completed repository changes. Connection status refers to the
-implementation at baseline commit
-`2b9e8857108bfc6a5e4e3929ac06fefdf32041d3`.
+implementation on the current `main` branch.
+
+## 2026-08-29 — Siemens Power Supply Source Baseline
+
+### Completed
+
+- Added 5 verified S7-300 Power Supply source records covering PS 305, PS 307,
+  and PS 307 Outdoor.
+- Added 3 verified S7-1200 Power Module source records: 1 Classic PM 1207 and 2
+  G2 PM 1207 variants, including the EX-certified model.
+- Added the minimum verified taxonomy for S7-300 Power Supply and S7-1200
+  Classic/G2 Power Module source classification.
+- Kept all new PS/PM records disconnected from Product aggregation and the UI.
+- Corrected the active baseline to 36 mapped S7-300 CPUs plus 1 manual S7-1200
+  Product, for 37 active Products total.
+- Recorded that an S7-1200 G5 generation is not established.
 
 ## 2026-08-29 — Current-State Documentation Synchronization
 
@@ -31,7 +45,7 @@ they remain DISCONNECTED from active Product aggregation and the UI.
 - `251afd0` — Added S7-1200 signal modules
 - `2882774` — Added the S7-1200 CPU database
 
-Together, the current S7-1200 files contain 181 unique MLFB declarations. Their
+Together, the current S7-1200 files contain 184 unique MLFB declarations. Their
 addition to the repository did not connect them to the validation, adapter,
 repository, or UI pipeline.
 
