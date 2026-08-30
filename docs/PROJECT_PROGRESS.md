@@ -2,7 +2,7 @@
 
 Repository source of truth: current `main` branch
 
-Last synchronized: 2026-08-29
+Last synchronized: 2026-08-30
 
 ## Completed Foundation
 

@@ -3,7 +3,7 @@
 ## Current Baseline
 
 - Status: Active Development
-- Documentation synchronized: 2026-08-29
+- Documentation synchronized: 2026-08-30
 - Repository source of truth: current `main` branch
 - No semantic release version is asserted by this document.
 
