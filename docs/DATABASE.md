@@ -41,10 +41,13 @@ Manufacturer source data is under:
 
 The current shared Siemens files are:
 
-- `plc.ts`: exports the source contract and records currently connected to the
+- `plc.ts`: defines the neutral Siemens PLC source identity, taxonomy, and
+  lifecycle boundary and exports the records currently connected to the
   pipeline
-- `plc.validator.ts`: validates connected source records
-- `plc.adapter.ts`: maps validated source records into `Product`
+- `plc.validator.ts`: validates connected records against that shared
+  structural boundary
+- `plc.adapter.ts`: maps common validated fields into `Product` and requires an
+  explicit product-type specification normalizer
 - `verified-taxonomy.ts`: verified Siemens taxonomy contract used by validation
 
 ## S7-300 Source Data
@@ -123,6 +126,12 @@ For connected S7-300 CPU records, validation checks required identity and
 classification values, supported lifecycle, MLFB format, HTTPS source presence,
 and membership in verified Siemens taxonomy. Invalid connected records cause
 adapter mapping to fail.
+
+Manufacturer source interfaces retain their product-type-specific
+`specifications` contracts. Common Product mapping does not inspect or
+arbitrarily serialize those objects; every connected product type must supply
+an explicit specification normalizer. Task C establishes this boundary while
+preserving the existing S7-300 CPU mapping and adds no new source integration.
 
 This enforcement must not be inferred for disconnected source files. Until a
 dataset is connected to the validation/adapter/aggregation path, normal builds

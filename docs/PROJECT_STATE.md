@@ -77,8 +77,13 @@ These products flow through `data/products.ts`, the Product repository, and the 
   series and now covers the structurally classified G2 CPU, Signal Board,
   Signal Module, and Power Module variants.
 - No S7-1200 G5 generation has been established.
-- The current Siemens validator/adapter contract is coupled primarily to the
-  S7-300 CPU source interface.
+- The Siemens validation boundary now uses a neutral PLC source structural
+  contract for identity, taxonomy, lifecycle, descriptions, and official
+  source URLs.
+- Common Siemens Product mapping is separated from explicit product-type
+  specification normalization. S7-300 CPU remains the only connected
+  manufacturer source array; all other Siemens source datasets remain
+  disconnected, and the active Product count remains 37.
 
 ## Latest Local Quality Verification
 

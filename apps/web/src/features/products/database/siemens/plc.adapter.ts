@@ -1,9 +1,9 @@
 ﻿import type { Product } from "@/features/products/types/product.types";
-import type { SiemensPLCProduct } from "./plc";
+import type { SiemensPLCProduct, SiemensPLCSourceBase } from "./plc";
 import { validateSiemensPLCProduct } from "./plc.validator";
 
 function mapLifecycle(
-  lifecycle: SiemensPLCProduct["lifecycle"],
+  lifecycle: SiemensPLCSourceBase["lifecycle"],
 ): NonNullable<Product["lifecycle"]> {
   switch (lifecycle) {
     case "active":
@@ -23,17 +23,9 @@ function createSlug(mlfb: string): string {
     .replace(/^-+|-+$/g, "");
 }
 
-export function mapSiemensPLCToProduct(source: SiemensPLCProduct): Product {
-  const validation = validateSiemensPLCProduct(source);
-
-  if (!validation.valid) {
-    throw new Error(
-      `Invalid Siemens PLC ${source.mlfb || source.id}: ${validation.errors.join(
-        ", ",
-      )}`,
-    );
-  }
-
+function normalizeS7300CPUSpecifications(
+  source: SiemensPLCProduct,
+): Record<string, string> {
   const specifications: Record<string, string> = {};
 
   if (source.specifications.workMemory) {
@@ -81,6 +73,25 @@ export function mapSiemensPLCToProduct(source: SiemensPLCProduct): Product {
     specifications["Memory Card"] = source.specifications.memoryCard;
   }
 
+  return specifications;
+}
+
+export function mapSiemensPLCSourceToProduct<
+  TSource extends SiemensPLCSourceBase,
+>(
+  source: TSource,
+  normalizeSpecifications: (source: TSource) => Record<string, string>,
+): Product {
+  const validation = validateSiemensPLCProduct(source);
+
+  if (!validation.valid) {
+    throw new Error(
+      `Invalid Siemens PLC ${source.mlfb || source.id}: ${validation.errors.join(
+        ", ",
+      )}`,
+    );
+  }
+
   return {
     id: source.id,
     slug: createSlug(source.mlfb),
@@ -101,7 +112,7 @@ export function mapSiemensPLCToProduct(source: SiemensPLCProduct): Product {
 
     images: ["/images/products/placeholders/siemens-product.svg"],
 
-    specifications,
+    specifications: normalizeSpecifications(source),
 
     downloads: [],
 
@@ -116,4 +127,11 @@ export function mapSiemensPLCToProduct(source: SiemensPLCProduct): Product {
 
     siemensUrl: source.source,
   };
+}
+
+export function mapSiemensPLCToProduct(source: SiemensPLCProduct): Product {
+  return mapSiemensPLCSourceToProduct(
+    source,
+    normalizeS7300CPUSpecifications,
+  );
 }

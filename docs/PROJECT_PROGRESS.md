@@ -41,6 +41,16 @@ pending milestone.
 
 ## Siemens Catalog Progress
 
+### Shared Pipeline
+
+- Task C Siemens PLC pipeline generalization: COMPLETED
+- Neutral structural validation for common identity, taxonomy, lifecycle, and
+  official source fields: IMPLEMENTED
+- Generic common Product mapping with an explicit specification normalizer:
+  IMPLEMENTED
+- Existing S7-300 CPU specification normalization: EXTRACTED and PRESERVED
+- New Product exposure: 0; active Product total remains 37
+
 ### S7-300
 
 - CPU source records: IMPLEMENTED and CONNECTED
@@ -100,6 +110,8 @@ created.
 ## Current Development State
 
 The product browsing, detail, comparison, and inquiry-entry experiences are in
-place. The current catalog work is centered on safely generalizing the Siemens
-validation/mapping pipeline and connecting existing source datasets without
-presenting them as active products before controlled verification.
+place. The Siemens validation and common Product mapping pipeline is now
+generalized while product-type specification normalization remains explicit.
+Future source datasets still require controlled taxonomy and normalization
+work before integration and must not be presented as active products before
+verification.
