@@ -24,10 +24,11 @@ Product reads are exposed through
 
 ## Current Active Dataset
 
-The application currently aggregates 37 Products:
+The application currently aggregates 50 Products:
 
 - 1 manually declared S7-1200 Product
 - 36 mapped S7-300 CPU Products
+- 13 mapped S7-300 Power Supply Products
 
 Only records included by `data/products.ts` reach the Product repository and UI.
 The presence of a manufacturer source file does not make its records active
@@ -55,22 +56,23 @@ The current shared Siemens files are:
 | Source class | Records | Connection status |
 | --- | ---: | --- |
 | CPU | 36 | CONNECTED |
-| Power Supply (PS) | 13 | DISCONNECTED |
+| Power Supply (PS) | 13 | CONNECTED |
 | Signal Module (SM) | 66 | DISCONNECTED |
 | Interface Module (IM) | 7 | DISCONNECTED |
 | Function Module (FM) | 32 | DISCONNECTED |
 | Communication Processor (CP) | 43 | DISCONNECTED |
 
-Only S7-300 CPU is exported through `siemens/plc.ts`. CPU records flow through
-the Siemens validator and adapter into active Product aggregation, the Product
-repository, and the UI.
+S7-300 CPU records flow through the shared Siemens validator and their explicit
+CPU normalizer. The 13 S7-300 Power Supply records use the same validator and
+generic common Product mapper with an explicit PS specification normalizer.
+Both datasets enter active Product aggregation, the Product repository, and the
+UI.
 
-The PS, SM, IM, FM, and CP datasets are present as manufacturer source records
-but are not imported by the active pipeline. They are therefore not active
-Products and are not validated during normal application construction. The 13
-PS records comprise 5 initial standard/outdoor records, 4 historical revisions,
-and 4 SIPLUS records. Official base-product and successor relationships are
-preserved where Siemens states them.
+The SM, IM, FM, and CP datasets remain disconnected manufacturer source data.
+The connected 13-record PS dataset comprises 5 initial standard/outdoor
+records, 4 historical revisions, and 4 SIPLUS records. Official base-product
+and successor MLFB relationships remain source-only; they are not mapped into
+canonical Product relation fields.
 
 ## S7-1200 Source Data
 
@@ -117,15 +119,15 @@ Current constraints:
   for the classified CPU, Signal Board, Signal Module, and Power Module
   variants. No S7-1200 G5 series is defined because that generation is not
   established.
-- The current shared adapter and source interface are coupled to S7-300 CPU
-  assumptions and preserve only their explicitly mapped specification fields.
+- Connected source types use explicit product-type specification normalizers;
+  arbitrary specification serialization is not supported.
 
 ## Validation and Mapping
 
-For connected S7-300 CPU records, validation checks required identity and
-classification values, supported lifecycle, MLFB format, HTTPS source presence,
-and membership in verified Siemens taxonomy. Invalid connected records cause
-adapter mapping to fail.
+For connected S7-300 CPU and Power Supply records, validation checks required
+identity and classification values, supported lifecycle, MLFB format, HTTPS
+source presence, and membership in verified Siemens taxonomy. Invalid connected
+records cause adapter mapping to fail.
 
 Manufacturer source interfaces retain their product-type-specific
 `specifications` contracts. Common Product mapping does not inspect or

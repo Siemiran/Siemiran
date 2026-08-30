@@ -49,7 +49,8 @@ pending milestone.
 - Generic common Product mapping with an explicit specification normalizer:
   IMPLEMENTED
 - Existing S7-300 CPU specification normalization: EXTRACTED and PRESERVED
-- New Product exposure: 0; active Product total remains 37
+- Task C Product exposure: 0; the current active Product total is 50 after the
+  controlled Task D Power Supply integration
 
 ### S7-300
 
@@ -60,7 +61,11 @@ pending milestone.
 - Interface Module source dataset: PRESENT, DISCONNECTED
 - Function Module source dataset: PRESENT, DISCONNECTED
 - Communication Processor source dataset: PRESENT, DISCONNECTED
-- Power Supply source dataset: 13 RECORDS, including historical and SIPLUS completeness data, IMPLEMENTED, DISCONNECTED
+- Power Supply source dataset: 13 RECORDS, including historical and SIPLUS
+  completeness data, IMPLEMENTED, CONNECTED
+- Power Supply flow through shared validation, generic Product mapping, and an
+  explicit PS specification normalizer: IMPLEMENTED
+- Task D new Product exposure: 13; active Product total: 50
 
 ### S7-1200
 
@@ -112,6 +117,7 @@ created.
 The product browsing, detail, comparison, and inquiry-entry experiences are in
 place. The Siemens validation and common Product mapping pipeline is now
 generalized while product-type specification normalization remains explicit.
-Future source datasets still require controlled taxonomy and normalization
-work before integration and must not be presented as active products before
-verification.
+The S7-300 Power Supply dataset is now connected through an explicit
+normalizer. All other disconnected source datasets still require controlled
+taxonomy and normalization work before integration and must not be presented
+as active products before verification.
