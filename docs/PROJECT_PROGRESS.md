@@ -105,8 +105,14 @@ an explicit shared S7-1200 SM normalizer. Task J exposes 9 new Products and
 increases the active Product total from 114 to 123. The 38-record Classic Signal
 Module source remains DISCONNECTED.
 
-Classic S7-1200 SM and all S7-1200 SB, CM, CP, CB, special, and other datasets
-remain DISCONNECTED. Structural G2 classification is complete for 28 existing records:
+The 9-record S7-1200 G2 Signal Board dataset is VALIDATED and CONNECTED through
+an explicit shared S7-1200 SB normalizer. Task K exposes 9 new Products and
+increases the active Product total from 123 to 132. The 23-record Classic Signal
+Board source remains DISCONNECTED. S7-1200 now has 83 of 186 source records
+connected, leaving 103 disconnected.
+
+Classic S7-1200 SM and SB plus all S7-1200 CM, CP, CB, special, and other
+datasets remain DISCONNECTED. Structural G2 classification is complete for 28 existing records:
 10 CPU, 9 Signal Board, and 9 Signal Module records now carry generation in
 `seriesId`, while their functional variant IDs no longer encode G2. The G2
 taxonomy now covers those product types alongside the 2 previously classified
@@ -138,7 +144,8 @@ The product browsing, detail, comparison, and inquiry-entry experiences are in
 place. The Siemens validation and common Product mapping pipeline is now
 generalized while product-type specification normalization remains explicit.
 The S7-300 Power Supply, S7-1200 Classic/G2 Power Module and CPU, and S7-1200 G2
-Signal Module datasets are connected through explicit normalizers. All other
+Signal Module and Signal Board datasets are connected through explicit
+normalizers. All other
 disconnected source datasets still require controlled taxonomy and normalization
 work before integration and must not be presented as active products before
 verification.

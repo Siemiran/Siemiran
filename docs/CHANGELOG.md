@@ -3,6 +3,22 @@
 This file records completed repository changes. Connection status refers to the
 implementation on the current `main` branch.
 
+## 2026-08-30 — Siemens S7-1200 G2 Signal Board Integration
+
+### Completed
+
+- Connected all 9 verified G2 Signal Board variants through the active Product
+  aggregation.
+- Added one explicit shared S7-1200 Signal Board normalizer while preserving
+  physical G2 source separation and keeping all 23 Classic Signal Boards
+  disconnected.
+- Preserved the existing 123 Products and increased the active total from 123
+  to 132.
+- Increased connected S7-1200 source records from 74 to 83 of 186, leaving 103
+  disconnected.
+- Made no source, taxonomy, Product interface, or generic pipeline changes and
+  connected no other dataset.
+
 ## 2026-08-30 — Siemens S7-1200 G2 Signal Module Integration
 
 ### Completed
