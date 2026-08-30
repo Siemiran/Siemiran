@@ -1,12 +1,15 @@
 import { siemensVerifiedTaxonomy } from "./verified-taxonomy";
-import type { SiemensPLCProduct } from "./plc";
+import type {
+  SiemensPLCSourceBase,
+  SiemensPLCSourceLifecycle,
+} from "./plc";
 
 export interface SiemensPLCValidationResult {
   valid: boolean;
   errors: string[];
 }
 
-const SUPPORTED_LIFECYCLES: SiemensPLCProduct["lifecycle"][] = [
+const SUPPORTED_LIFECYCLES: SiemensPLCSourceLifecycle[] = [
   "active",
   "phase-out",
   "spare-part",
@@ -14,7 +17,7 @@ const SUPPORTED_LIFECYCLES: SiemensPLCProduct["lifecycle"][] = [
 ];
 
 export function validateSiemensPLCProduct(
-  product: SiemensPLCProduct
+  product: SiemensPLCSourceBase
 ): SiemensPLCValidationResult {
   const errors: string[] = [];
 

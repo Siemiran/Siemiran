@@ -3,6 +3,19 @@
 This file records completed repository changes. Connection status refers to the
 implementation on the current `main` branch.
 
+## 2026-08-30 — Siemens PLC Pipeline Generalization
+
+### Completed
+
+- Added a neutral Siemens PLC source base contract for shared identity,
+  taxonomy, lifecycle, description, and official source validation.
+- Decoupled the Siemens validator from the S7-300 CPU source interface.
+- Separated common Product mapping from explicit S7-300 CPU specification
+  normalization without changing existing mapped output.
+- Preserved the canonical Product interface and the active total of 37
+  Products.
+- Added no new manufacturer source integration or Product exposure.
+
 ## 2026-08-30 — Siemens S7-1200 G2 Structural Reclassification
 
 ### Completed
