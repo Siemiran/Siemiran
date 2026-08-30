@@ -66,6 +66,10 @@ These products flow through `data/products.ts`, the Product repository, and the 
 - `S7-1200 G2` is a distinct series under the S7-1200 family. Existing G2
   classification covers 10 CPU, 9 Signal Board, and 9 Signal Module records;
   the 2 G2 Power Module records were already classified in that series.
+- G2 manufacturer data is physically separated under `s7-1200/g2/`, containing
+  30 records: 10 CPU, 9 Signal Board, 9 Signal Module, and 2 Power Module. The
+  root Classic files retain 50 CPU, 23 Signal Board, 38 Signal Module, and 3
+  Power Module records.
 - Historical and SIPLUS PS/PM source records remain disconnected.
 - Disconnected source records are not validated during normal application
   construction and must not be treated as active UI products.

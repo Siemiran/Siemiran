@@ -76,7 +76,11 @@ aggregator. Structural G2 classification is complete for 28 existing records:
 taxonomy now covers those product types alongside the 2 previously classified
 G2 Power Modules. Six G2 Signal Module links were upgraded to MLFB-specific
 Siemens URLs, and the manual Classic Product series was corrected to
-`S7-1200`. No source integration was performed, and no G5 series was created.
+`S7-1200`. All 30 G2 records are now physically separated under `s7-1200/g2/`
+(10 CPU, 9 Signal Board, 9 Signal Module, and 2 Power Module), while the root
+Classic files retain 50 CPU, 23 Signal Board, 38 Signal Module, and 3 Power
+Module records. No source integration was performed, and no G5 series was
+created.
 
 ## Inquiry Progress
 

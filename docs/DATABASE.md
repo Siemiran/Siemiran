@@ -92,6 +92,11 @@ is represented by `seriesId`: 28 existing CPU/SB/SM records are classified as
 comprise 1 Classic SIMATIC PM 1207, 2 G2 SIMATIC PM 1207 records, and 2 Classic
 SIPLUS PM 1207 records.
 
+The 30 G2 records are physically separated under `s7-1200/g2/`: 10 CPU, 9
+Signal Board, 9 Signal Module, and 2 Power Module records. The corresponding
+root Classic files contain 50 CPU, 23 Signal Board, 38 Signal Module, and 3
+Power Module records. Combined source-module totals remain unchanged.
+
 All S7-1200 manufacturer source datasets remain disconnected and await
 controlled integration; this structural classification does not establish that
 the entire 186-record dataset is lifecycle-verified. The manual Classic S7-1200

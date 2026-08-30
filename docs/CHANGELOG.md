@@ -13,6 +13,10 @@ implementation on the current `main` branch.
   with functional variant IDs.
 - Upgraded six G2 Signal Module sources to MLFB-specific Siemens Industry Mall
   URLs.
+- Physically separated all 30 G2 source records into `s7-1200/g2/`: 10 CPU, 9
+  Signal Board, 9 Signal Module, and 2 Power Module records.
+- Retained 50 CPU, 23 Signal Board, 38 Signal Module, and 3 Power Module records
+  in the root Classic source files.
 - Corrected the manual Classic S7-1200 Product series classification.
 - Kept the S7-1200 source count at 186 and the active Product count at 37.
 - Added no source aggregation or Product integration.
