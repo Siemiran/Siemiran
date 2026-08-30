@@ -8,7 +8,7 @@ export interface SiemensS71200CPUProduct {
   brandId: "siemens";
   categoryId: "PLC";
   familyId: "S7-1200";
-  seriesId: "S7-1200";
+  seriesId: "S7-1200" | "S7-1200 G2";
   productTypeId: "CPU";
   variantId: string;
 
@@ -707,7 +707,7 @@ export const siemensS71200CPU: SiemensS71200CPUProduct[] = [
     brandId: "siemens",
     categoryId: "PLC",
     familyId: "S7-1200",
-    seriesId: "S7-1200",
+    seriesId: "S7-1200 G2",
     productTypeId: "CPU",
     variantId: "compact",
 
@@ -742,7 +742,7 @@ export const siemensS71200CPU: SiemensS71200CPUProduct[] = [
     brandId: "siemens",
     categoryId: "PLC",
     familyId: "S7-1200",
-    seriesId: "S7-1200",
+    seriesId: "S7-1200 G2",
     productTypeId: "CPU",
     variantId: "compact",
 
@@ -777,7 +777,7 @@ export const siemensS71200CPU: SiemensS71200CPUProduct[] = [
     brandId: "siemens",
     categoryId: "PLC",
     familyId: "S7-1200",
-    seriesId: "S7-1200",
+    seriesId: "S7-1200 G2",
     productTypeId: "CPU",
     variantId: "compact",
 
@@ -812,7 +812,7 @@ export const siemensS71200CPU: SiemensS71200CPUProduct[] = [
     brandId: "siemens",
     categoryId: "PLC",
     familyId: "S7-1200",
-    seriesId: "S7-1200",
+    seriesId: "S7-1200 G2",
     productTypeId: "CPU",
     variantId: "compact",
 
@@ -847,7 +847,7 @@ export const siemensS71200CPU: SiemensS71200CPUProduct[] = [
     brandId: "siemens",
     categoryId: "PLC",
     familyId: "S7-1200",
-    seriesId: "S7-1200",
+    seriesId: "S7-1200 G2",
     productTypeId: "CPU",
     variantId: "compact",
 
@@ -882,7 +882,7 @@ export const siemensS71200CPU: SiemensS71200CPUProduct[] = [
     brandId: "siemens",
     categoryId: "PLC",
     familyId: "S7-1200",
-    seriesId: "S7-1200",
+    seriesId: "S7-1200 G2",
     productTypeId: "CPU",
     variantId: "compact",
 
@@ -917,7 +917,7 @@ export const siemensS71200CPU: SiemensS71200CPUProduct[] = [
     brandId: "siemens",
     categoryId: "PLC",
     familyId: "S7-1200",
-    seriesId: "S7-1200",
+    seriesId: "S7-1200 G2",
     productTypeId: "CPU",
     variantId: "fail-safe",
 
@@ -952,7 +952,7 @@ export const siemensS71200CPU: SiemensS71200CPUProduct[] = [
     brandId: "siemens",
     categoryId: "PLC",
     familyId: "S7-1200",
-    seriesId: "S7-1200",
+    seriesId: "S7-1200 G2",
     productTypeId: "CPU",
     variantId: "fail-safe",
 
@@ -987,7 +987,7 @@ export const siemensS71200CPU: SiemensS71200CPUProduct[] = [
     brandId: "siemens",
     categoryId: "PLC",
     familyId: "S7-1200",
-    seriesId: "S7-1200",
+    seriesId: "S7-1200 G2",
     productTypeId: "CPU",
     variantId: "fail-safe",
 
@@ -1022,7 +1022,7 @@ export const siemensS71200CPU: SiemensS71200CPUProduct[] = [
     brandId: "siemens",
     categoryId: "PLC",
     familyId: "S7-1200",
-    seriesId: "S7-1200",
+    seriesId: "S7-1200 G2",
     productTypeId: "CPU",
     variantId: "fail-safe",
 

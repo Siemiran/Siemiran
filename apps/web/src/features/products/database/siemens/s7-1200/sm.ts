@@ -8,7 +8,7 @@ export interface SiemensS71200SignalModule {
   brandId: "siemens";
   categoryId: "PLC";
   familyId: "S7-1200";
-  seriesId: "S7-1200";
+  seriesId: "S7-1200" | "S7-1200 G2";
 
   productTypeId: "Signal Module";
   variantId: string;
@@ -826,9 +826,9 @@ export const siemensS71200SM: SiemensS71200SignalModule[] = [
     brandId: "siemens",
     categoryId: "PLC",
     familyId: "S7-1200",
-    seriesId: "S7-1200",
+    seriesId: "S7-1200 G2",
     productTypeId: "Signal Module",
-    variantId: "g2-digital-output",
+    variantId: "digital-output",
 
     title: "SIMATIC S7-1200 G2 SM 1222 16 DO 24 V DC",
 
@@ -845,7 +845,7 @@ export const siemensS71200SM: SiemensS71200SignalModule[] = [
     },
 
     source:
-      "https://mall.industry.siemens.com/tstcloud/Api/Catalog/ExportInformation?catalogItemId=S7_1200&lang=en",
+      "https://mall.industry.siemens.com/mall/en/oeii/Catalog/Product?SiepCountryCode=OE&mlfb=6ES7222-5BH50-0XB0",
   },
   {
     id: "siemens-s7-1200-g2-sm1222-16relay",
@@ -854,9 +854,9 @@ export const siemensS71200SM: SiemensS71200SignalModule[] = [
     brandId: "siemens",
     categoryId: "PLC",
     familyId: "S7-1200",
-    seriesId: "S7-1200",
+    seriesId: "S7-1200 G2",
     productTypeId: "Signal Module",
-    variantId: "g2-digital-output",
+    variantId: "digital-output",
 
     title: "SIMATIC S7-1200 G2 SM 1222 16 DO Relay",
 
@@ -872,7 +872,7 @@ export const siemensS71200SM: SiemensS71200SignalModule[] = [
     },
 
     source:
-      "https://mall.industry.siemens.com/tstcloud/Api/Catalog/ExportInformation?catalogItemId=S7_1200&lang=en",
+      "https://mall.industry.siemens.com/mall/en/oeii/Catalog/Product?SiepCountryCode=OE&mlfb=6ES7222-5HH50-0XB0",
   },
 
   // --------------------------------------------------
@@ -886,9 +886,9 @@ export const siemensS71200SM: SiemensS71200SignalModule[] = [
     brandId: "siemens",
     categoryId: "PLC",
     familyId: "S7-1200",
-    seriesId: "S7-1200",
+    seriesId: "S7-1200 G2",
     productTypeId: "Signal Module",
-    variantId: "g2-digital-io",
+    variantId: "digital-io",
 
     title: "SIMATIC S7-1200 G2 SM 1223 8 DI / 8 DO",
 
@@ -907,7 +907,7 @@ export const siemensS71200SM: SiemensS71200SignalModule[] = [
     },
 
     source:
-      "https://mall.industry.siemens.com/tstcloud/Api/Catalog/ExportInformation?catalogItemId=S7_1200&lang=en",
+      "https://mall.industry.siemens.com/mall/en/oeii/Catalog/Product?SiepCountryCode=OE&mlfb=6ES7223-5BH50-0XB0",
   },
   {
     id: "siemens-s7-1200-g2-sm1223-8di8relay",
@@ -916,9 +916,9 @@ export const siemensS71200SM: SiemensS71200SignalModule[] = [
     brandId: "siemens",
     categoryId: "PLC",
     familyId: "S7-1200",
-    seriesId: "S7-1200",
+    seriesId: "S7-1200 G2",
     productTypeId: "Signal Module",
-    variantId: "g2-digital-io",
+    variantId: "digital-io",
 
     title: "SIMATIC S7-1200 G2 SM 1223 8 DI / 8 DO Relay",
 
@@ -936,7 +936,7 @@ export const siemensS71200SM: SiemensS71200SignalModule[] = [
     },
 
     source:
-      "https://mall.industry.siemens.com/tstcloud/Api/Catalog/ExportInformation?catalogItemId=S7_1200&lang=en",
+      "https://mall.industry.siemens.com/mall/en/oeii/Catalog/Product?SiepCountryCode=OE&mlfb=6ES7223-5PH50-0XB0",
   },
 
   // --------------------------------------------------
@@ -950,9 +950,9 @@ export const siemensS71200SM: SiemensS71200SignalModule[] = [
     brandId: "siemens",
     categoryId: "PLC",
     familyId: "S7-1200",
-    seriesId: "S7-1200",
+    seriesId: "S7-1200 G2",
     productTypeId: "Signal Module",
-    variantId: "g2-analog-input",
+    variantId: "analog-input",
 
     title: "SIMATIC S7-1200 G2 SM 1231 8 AI",
 
@@ -970,7 +970,7 @@ export const siemensS71200SM: SiemensS71200SignalModule[] = [
     },
 
     source:
-      "https://mall.industry.siemens.com/tstcloud/Api/Catalog/ExportInformation?catalogItemId=S7_1200&lang=en",
+      "https://mall.industry.siemens.com/mall/en/oeii/Catalog/Product?SiepCountryCode=OE&mlfb=6ES7231-4HF50-0XB0",
   },
   {
     id: "siemens-s7-1200-g2-sm1231-5QF500XB0",
@@ -979,9 +979,9 @@ export const siemensS71200SM: SiemensS71200SignalModule[] = [
     brandId: "siemens",
     categoryId: "PLC",
     familyId: "S7-1200",
-    seriesId: "S7-1200",
+    seriesId: "S7-1200 G2",
     productTypeId: "Signal Module",
-    variantId: "g2-analog-input",
+    variantId: "analog-input",
 
     title: "SIMATIC S7-1200 G2 SM 1231 8 AI thermocouples",
 
@@ -998,7 +998,7 @@ export const siemensS71200SM: SiemensS71200SignalModule[] = [
     },
 
     source:
-      "https://mall.industry.siemens.com/tstcloud/Api/Catalog/ExportInformation?catalogItemId=S7_1200&lang=en",
+      "https://mall.industry.siemens.com/mall/en/oeii/Catalog/Product?SiepCountryCode=OE&mlfb=6ES7231-5QF50-0XB0",
   },
 
   // --------------------------------------------------
@@ -1012,9 +1012,9 @@ export const siemensS71200SM: SiemensS71200SignalModule[] = [
     brandId: "siemens",
     categoryId: "PLC",
     familyId: "S7-1200",
-    seriesId: "S7-1200",
+    seriesId: "S7-1200 G2",
     productTypeId: "Signal Module",
-    variantId: "g2-analog-input",
+    variantId: "analog-input",
 
     title: "SIMATIC S7-1200 G2 SM 1231 RTD 4 AI",
 
@@ -1045,9 +1045,9 @@ export const siemensS71200SM: SiemensS71200SignalModule[] = [
     brandId: "siemens",
     categoryId: "PLC",
     familyId: "S7-1200",
-    seriesId: "S7-1200",
+    seriesId: "S7-1200 G2",
     productTypeId: "Signal Module",
-    variantId: "g2-analog-output",
+    variantId: "analog-output",
 
     title: "SIMATIC S7-1200 G2 SM 1232 8 AO",
 
@@ -1079,9 +1079,9 @@ export const siemensS71200SM: SiemensS71200SignalModule[] = [
     brandId: "siemens",
     categoryId: "PLC",
     familyId: "S7-1200",
-    seriesId: "S7-1200",
+    seriesId: "S7-1200 G2",
     productTypeId: "Signal Module",
-    variantId: "g2-analog-io",
+    variantId: "analog-io",
 
     title: "SIMATIC S7-1200 G2 SM 1233 4 AI / 4 AO",
 

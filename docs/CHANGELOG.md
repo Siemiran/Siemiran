@@ -3,6 +3,20 @@
 This file records completed repository changes. Connection status refers to the
 implementation on the current `main` branch.
 
+## 2026-08-30 — Siemens S7-1200 G2 Structural Reclassification
+
+### Completed
+
+- Reclassified 28 existing S7-1200 G2 source records: 10 CPU, 9 Signal Board,
+  and 9 Signal Module records.
+- Expanded the G2 taxonomy and replaced generation-prefixed SB/SM variants
+  with functional variant IDs.
+- Upgraded six G2 Signal Module sources to MLFB-specific Siemens Industry Mall
+  URLs.
+- Corrected the manual Classic S7-1200 Product series classification.
+- Kept the S7-1200 source count at 186 and the active Product count at 37.
+- Added no source aggregation or Product integration.
+
 ## 2026-08-30 — Siemens Power Supply Historical/SIPLUS Completeness
 
 ### Completed

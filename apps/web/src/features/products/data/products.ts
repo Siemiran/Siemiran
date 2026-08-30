@@ -22,7 +22,7 @@ const existingProducts: Product[] = [
 
     familyId: "S7-1200",
 
-    seriesId: "CPU",
+    seriesId: "S7-1200",
 
     productTypeId: "CPU",
 

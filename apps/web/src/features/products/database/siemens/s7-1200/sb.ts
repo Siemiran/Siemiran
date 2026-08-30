@@ -8,7 +8,7 @@ export interface SiemensS71200SignalBoard {
   brandId: "siemens";
   categoryId: "PLC";
   familyId: "S7-1200";
-  seriesId: "S7-1200";
+  seriesId: "S7-1200" | "S7-1200 G2";
 
   productTypeId: "Signal Board";
   variantId: string;
@@ -843,9 +843,9 @@ export const s71200SignalBoards: SiemensS71200SignalBoard[] = [
     brandId: "siemens",
     categoryId: "PLC",
     familyId: "S7-1200",
-    seriesId: "S7-1200",
+    seriesId: "S7-1200 G2",
     productTypeId: "Signal Board",
-    variantId: "g2-sb1221-di8-24vdc",
+    variantId: "sb1221-di8-24vdc",
 
     title: "SIMATIC S7-1200 G2 SB 1221 8 DI 24 V DC",
     description:
@@ -875,9 +875,9 @@ export const s71200SignalBoards: SiemensS71200SignalBoard[] = [
     brandId: "siemens",
     categoryId: "PLC",
     familyId: "S7-1200",
-    seriesId: "S7-1200",
+    seriesId: "S7-1200 G2",
     productTypeId: "Signal Board",
-    variantId: "g2-sb1222-dq8-24vdc",
+    variantId: "sb1222-dq8-24vdc",
 
     title: "SIMATIC S7-1200 G2 SB 1222 8 DQ 24 V DC",
     description:
@@ -907,9 +907,9 @@ export const s71200SignalBoards: SiemensS71200SignalBoard[] = [
     brandId: "siemens",
     categoryId: "PLC",
     familyId: "S7-1200",
-    seriesId: "S7-1200",
+    seriesId: "S7-1200 G2",
     productTypeId: "Signal Board",
-    variantId: "g2-sb1223-di4-dq4-24vdc",
+    variantId: "sb1223-di4-dq4-24vdc",
 
     title: "SIMATIC S7-1200 G2 SB 1223 4 DI / 4 DQ 24 V DC",
     description:
@@ -941,9 +941,9 @@ export const s71200SignalBoards: SiemensS71200SignalBoard[] = [
     brandId: "siemens",
     categoryId: "PLC",
     familyId: "S7-1200",
-    seriesId: "S7-1200",
+    seriesId: "S7-1200 G2",
     productTypeId: "Signal Board",
-    variantId: "g2-sb1223-di4-dq4-5vdc",
+    variantId: "sb1223-di4-dq4-5vdc",
 
     title: "SIMATIC S7-1200 G2 SB 1223 4 DI / 4 DQ 5 V DC",
     description:
@@ -975,9 +975,9 @@ export const s71200SignalBoards: SiemensS71200SignalBoard[] = [
     brandId: "siemens",
     categoryId: "PLC",
     familyId: "S7-1200",
-    seriesId: "S7-1200",
+    seriesId: "S7-1200 G2",
     productTypeId: "Signal Board",
-    variantId: "g2-sb1231-ai4",
+    variantId: "sb1231-ai4",
 
     title: "SIMATIC S7-1200 G2 SB 1231 4 AI",
     description:
@@ -1007,9 +1007,9 @@ export const s71200SignalBoards: SiemensS71200SignalBoard[] = [
     brandId: "siemens",
     categoryId: "PLC",
     familyId: "S7-1200",
-    seriesId: "S7-1200",
+    seriesId: "S7-1200 G2",
     productTypeId: "Signal Board",
-    variantId: "g2-sb1231-rtd-ai2",
+    variantId: "sb1231-rtd-ai2",
 
     title: "SIMATIC S7-1200 G2 SB 1231 RTD 2 AI",
     description:
@@ -1038,9 +1038,9 @@ export const s71200SignalBoards: SiemensS71200SignalBoard[] = [
     brandId: "siemens",
     categoryId: "PLC",
     familyId: "S7-1200",
-    seriesId: "S7-1200",
+    seriesId: "S7-1200 G2",
     productTypeId: "Signal Board",
-    variantId: "g2-sb1231-tc-ai4",
+    variantId: "sb1231-tc-ai4",
 
     title: "SIMATIC S7-1200 G2 SB 1231 TC 4 AI",
     description:
@@ -1069,9 +1069,9 @@ export const s71200SignalBoards: SiemensS71200SignalBoard[] = [
     brandId: "siemens",
     categoryId: "PLC",
     familyId: "S7-1200",
-    seriesId: "S7-1200",
+    seriesId: "S7-1200 G2",
     productTypeId: "Signal Board",
-    variantId: "g2-sb1232-ao4",
+    variantId: "sb1232-ao4",
 
     title: "SIMATIC S7-1200 G2 SB 1232 4 AO",
     description:
@@ -1101,9 +1101,9 @@ export const s71200SignalBoards: SiemensS71200SignalBoard[] = [
     brandId: "siemens",
     categoryId: "PLC",
     familyId: "S7-1200",
-    seriesId: "S7-1200",
+    seriesId: "S7-1200 G2",
     productTypeId: "Signal Board",
-    variantId: "g2-sb1233-ai2-ao2",
+    variantId: "sb1233-ai2-ao2",
 
     title: "SIMATIC S7-1200 G2 SB 1233 2 AI / 2 AO",
     description:

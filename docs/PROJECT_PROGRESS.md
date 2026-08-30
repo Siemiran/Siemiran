@@ -70,9 +70,13 @@ These files contain 186 unique MLFB declarations. The Power Module baseline
 contains 1 Classic SIMATIC, 2 G2 SIMATIC, and 2 Classic SIPLUS records, all
 DISCONNECTED. Their integration into the
 validated Product pipeline is NOT COMPLETE. There is no connecting S7-1200
-aggregator, and broader taxonomy alignment remains unresolved. The initial
-Power Module taxonomy distinguishes `S7-1200` from `S7-1200 G2`; no G5 series
-was created.
+aggregator. Structural G2 classification is complete for 28 existing records:
+10 CPU, 9 Signal Board, and 9 Signal Module records now carry generation in
+`seriesId`, while their functional variant IDs no longer encode G2. The G2
+taxonomy now covers those product types alongside the 2 previously classified
+G2 Power Modules. Six G2 Signal Module links were upgraded to MLFB-specific
+Siemens URLs, and the manual Classic Product series was corrected to
+`S7-1200`. No source integration was performed, and no G5 series was created.
 
 ## Inquiry Progress
 
