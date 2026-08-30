@@ -56,10 +56,13 @@ These products flow through `data/products.ts`, the Product repository, and the 
 ### Source Data Not Connected to the Application
 
 - S7-300 PS, SM, IM, FM, and CP datasets exist but are DISCONNECTED. The PS
-  baseline contains 5 verified source records.
+  baseline contains 13 source records: 5 initial standard/outdoor, 4 historical,
+  and 4 SIPLUS records.
 - S7-1200 CPU, PM, SM, SB, CM, CP, CB, special, and other datasets exist but are
-  DISCONNECTED. The PM baseline contains 1 Classic and 2 G2 source records.
-- The S7-1200 source files contain 184 unique MLFB declarations.
+  DISCONNECTED. The PM baseline contains 1 Classic SIMATIC, 2 G2 SIMATIC, and
+  2 Classic SIPLUS source records.
+- The S7-1200 source files contain 186 unique MLFB declarations.
+- Historical and SIPLUS PS/PM source records remain disconnected.
 - Disconnected source records are not validated during normal application
   construction and must not be treated as active UI products.
 - The verified taxonomy distinguishes the Classic `S7-1200` and `S7-1200 G2`
