@@ -24,13 +24,14 @@ Product reads are exposed through
 
 ## Current Active Dataset
 
-The application currently aggregates 55 Products:
+The application currently aggregates 65 Products:
 
 - 1 manually declared S7-1200 Product
 - 36 mapped S7-300 CPU Products
 - 13 mapped S7-300 Power Supply Products
 - 3 mapped S7-1200 Classic Power Module Products
 - 2 mapped S7-1200 G2 Power Module Products
+- 10 mapped S7-1200 G2 CPU Products
 
 Only records included by `data/products.ts` reach the Product repository and UI.
 The presence of a manufacturer source file does not make its records active
@@ -80,7 +81,7 @@ canonical Product relation fields.
 
 | Source module | Records | Connection status |
 | --- | ---: | --- |
-| CPU | 60 | DISCONNECTED |
+| CPU | 60 | 10 G2 CONNECTED; 50 Classic DISCONNECTED |
 | Power Module (PM) | 5 | CONNECTED (3 Classic, 2 G2) |
 | Signal Module (SM) | 47 | DISCONNECTED |
 | Signal Board (SB) | 32 | DISCONNECTED |
@@ -89,7 +90,7 @@ canonical Product relation fields.
 | Communication Board (CB) | 3 | DISCONNECTED |
 | Special/technology modules | 11 | DISCONNECTED |
 | Other/companion modules | 5 | DISCONNECTED |
-| **Total** | **186** | **5 CONNECTED** |
+| **Total** | **186** | **15 CONNECTED** |
 
 The current S7-1200 source files contain 186 unique MLFB declarations. No source
 records were added or removed during structural G2 reclassification. Generation
@@ -108,16 +109,24 @@ The 3 Classic and 2 G2 Power Module records are connected through one explicit
 PM specification normalizer that supports both structurally compatible source
 contracts. Their source arrays and files remain separate, and `seriesId`
 preserves the Classic/G2 generation distinction. Classic `baseMlfb` lineage
-metadata remains source-only. The active Product total is 55.
+metadata remains source-only.
+
+The 10 G2 CPU records are connected through an explicit S7-1200 CPU
+specification normalizer: 6 compact and 4 fail-safe Products. Their generation
+is preserved by `seriesId = S7-1200 G2`. The 50-record Classic CPU source stays
+disconnected. Its `6ES7214-1AG40-0XB0` MLFB overlaps the existing manual Product
+and must be resolved by a future controlled Classic CPU migration and
+deduplication. The active Product total is 65.
 
 All other S7-1200 manufacturer source datasets remain disconnected and await
-controlled integration; connecting the 5 Power Modules does not establish that
-the other 181 records are lifecycle-verified. The manual Classic S7-1200 Product
-continues to use `seriesId = S7-1200`.
+controlled integration; connecting 15 of 186 records does not establish that
+the remaining 171 records are lifecycle-verified. The manual Classic S7-1200
+Product continues to use `seriesId = S7-1200`.
 
 Current constraints:
 
-- Only the Classic and G2 Power Module arrays connect to Product aggregation.
+- Only the Classic/G2 Power Module arrays and G2 CPU array connect to Product
+  aggregation; the Classic CPU array is not imported.
 - Disconnected records are not validated during normal application construction.
 - Source/reference URL fields exist on the source records.
 - Source and taxonomy enforcement occurs only when a record passes through the
@@ -131,8 +140,8 @@ Current constraints:
 
 ## Validation and Mapping
 
-For connected S7-300 CPU and Power Supply records and S7-1200 Classic/G2 Power
-Module records, validation checks required
+For connected S7-300 CPU and Power Supply records, S7-1200 Classic/G2 Power
+Module records, and S7-1200 G2 CPU records, validation checks required
 identity and classification values, supported lifecycle, MLFB format, HTTPS
 source presence, and membership in verified Siemens taxonomy. Invalid connected
 records cause adapter mapping to fail.

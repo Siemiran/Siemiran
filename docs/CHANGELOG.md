@@ -3,6 +3,21 @@
 This file records completed repository changes. Connection status refers to the
 implementation on the current `main` branch.
 
+## 2026-08-30 — Siemens S7-1200 G2 CPU Integration
+
+### Completed
+
+- Connected all 10 S7-1200 G2 CPU records: 6 compact and 4 fail-safe.
+- Added an explicit S7-1200 CPU specification normalizer while preserving
+  physical G2 source separation and `seriesId = S7-1200 G2`.
+- Preserved the existing 55 Products and increased the active total from 55 to
+  65.
+- Kept the 50-record Classic CPU source disconnected and preserved the manual
+  Classic Product pending controlled MLFB deduplication and migration.
+- Made no taxonomy, Product interface, generic Siemens infrastructure, or
+  manufacturer source-record changes.
+- Connected no other S7-1200 dataset.
+
 ## 2026-08-30 — Siemens S7-1200 Power Module Integration
 
 ### Completed
