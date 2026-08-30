@@ -3,6 +3,21 @@
 This file records completed repository changes. Connection status refers to the
 implementation on the current `main` branch.
 
+## 2026-08-30 — Siemens S7-1200 G2 Signal Module Integration
+
+### Completed
+
+- Connected all 9 G2 Signal Module records: 2 digital-output, 2 digital-io, 3
+  analog-input, 1 analog-output, and 1 analog-io.
+- Added one explicit shared S7-1200 Signal Module normalizer while preserving
+  physical G2 source separation and keeping Classic SM disconnected.
+- Preserved the existing 114 Products and increased the active total from 114
+  to 123.
+- Increased connected S7-1200 source records from 65 to 74 of 186, leaving 112
+  disconnected.
+- Made no source, taxonomy, Product interface, or generic pipeline changes and
+  connected no other dataset.
+
 ## 2026-08-30 — Siemens S7-1200 Classic CPU Canonical Migration
 
 ### Completed
