@@ -52,7 +52,7 @@ The current shared Siemens files are:
 | Source class | Records | Connection status |
 | --- | ---: | --- |
 | CPU | 36 | CONNECTED |
-| Power Supply (PS) | 5 | DISCONNECTED |
+| Power Supply (PS) | 13 | DISCONNECTED |
 | Signal Module (SM) | 66 | DISCONNECTED |
 | Interface Module (IM) | 7 | DISCONNECTED |
 | Function Module (FM) | 32 | DISCONNECTED |
@@ -64,16 +64,17 @@ repository, and the UI.
 
 The PS, SM, IM, FM, and CP datasets are present as manufacturer source records
 but are not imported by the active pipeline. They are therefore not active
-Products and are not validated during normal application construction. The PS
-baseline contains PS 305, PS 307, and PS 307 Outdoor variants verified against
-official Siemens sources.
+Products and are not validated during normal application construction. The 13
+PS records comprise 5 initial standard/outdoor records, 4 historical revisions,
+and 4 SIPLUS records. Official base-product and successor relationships are
+preserved where Siemens states them.
 
 ## S7-1200 Source Data
 
 | Source module | Records | Connection status |
 | --- | ---: | --- |
 | CPU | 60 | DISCONNECTED |
-| Power Module (PM) | 3 | DISCONNECTED |
+| Power Module (PM) | 5 | DISCONNECTED |
 | Signal Module (SM) | 47 | DISCONNECTED |
 | Signal Board (SB) | 32 | DISCONNECTED |
 | Communication Module (CM) | 16 | DISCONNECTED |
@@ -81,12 +82,12 @@ official Siemens sources.
 | Communication Board (CB) | 3 | DISCONNECTED |
 | Special/technology modules | 11 | DISCONNECTED |
 | Other/companion modules | 5 | DISCONNECTED |
-| **Total** | **184** | **DISCONNECTED** |
+| **Total** | **186** | **DISCONNECTED** |
 
-The current S7-1200 source files contain 184 unique MLFB declarations. The 3 PM
-records comprise 1 S7-1200 Classic PM 1207 and 2 S7-1200 G2 PM 1207 records,
-including the EX-certified G2 variant. These are source records awaiting
-controlled integration; they are not active application Products.
+The current S7-1200 source files contain 186 unique MLFB declarations. The 5 PM
+records comprise 1 Classic SIMATIC PM 1207, 2 G2 SIMATIC PM 1207 records, and
+2 Classic SIPLUS PM 1207 records. These are source records awaiting controlled
+integration; they are not active application Products.
 
 Current constraints:
 

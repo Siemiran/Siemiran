@@ -3,6 +3,17 @@
 This file records completed repository changes. Connection status refers to the
 implementation on the current `main` branch.
 
+## 2026-08-30 — Siemens Power Supply Historical/SIPLUS Completeness
+
+### Completed
+
+- Added 4 historical S7-300 PS 307 revisions with Siemens-stated successor relationships.
+- Added 4 SIPLUS S7-300 PS records with record-specific lifecycle, base-product,
+  environmental, and successor metadata.
+- Added 2 active Classic SIPLUS S7-1200 PM 1207 records.
+- Kept all historical and SIPLUS PS/PM records disconnected from Product
+  aggregation and the UI.
+
 ## 2026-08-29 — Siemens Power Supply Source Baseline
 
 ### Completed
@@ -45,7 +56,7 @@ they remain DISCONNECTED from active Product aggregation and the UI.
 - `251afd0` — Added S7-1200 signal modules
 - `2882774` — Added the S7-1200 CPU database
 
-Together, the current S7-1200 files contain 184 unique MLFB declarations. Their
+Together, the current S7-1200 files contain 186 unique MLFB declarations. Their
 addition to the repository did not connect them to the validation, adapter,
 repository, or UI pipeline.
 
