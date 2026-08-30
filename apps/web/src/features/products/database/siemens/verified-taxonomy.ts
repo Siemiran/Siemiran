@@ -73,6 +73,107 @@ export const siemensVerifiedTaxonomy = {
           slug: "s7-1200-g2",
           productTypes: [
             {
+              id: "CPU",
+              title: "CPU",
+              slug: "cpu",
+              variants: [
+                {
+                  id: "compact",
+                  title: "Compact",
+                  slug: "compact",
+                },
+                {
+                  id: "fail-safe",
+                  title: "Fail-safe",
+                  slug: "fail-safe",
+                },
+              ],
+            },
+            {
+              id: "Signal Board",
+              title: "Signal Board",
+              slug: "signal-board",
+              variants: [
+                {
+                  id: "sb1221-di8-24vdc",
+                  title: "SB 1221 DI8 24 V DC",
+                  slug: "sb1221-di8-24vdc",
+                },
+                {
+                  id: "sb1222-dq8-24vdc",
+                  title: "SB 1222 DQ8 24 V DC",
+                  slug: "sb1222-dq8-24vdc",
+                },
+                {
+                  id: "sb1223-di4-dq4-24vdc",
+                  title: "SB 1223 DI4 / DQ4 24 V DC",
+                  slug: "sb1223-di4-dq4-24vdc",
+                },
+                {
+                  id: "sb1223-di4-dq4-5vdc",
+                  title: "SB 1223 DI4 / DQ4 5 V DC",
+                  slug: "sb1223-di4-dq4-5vdc",
+                },
+                {
+                  id: "sb1231-ai4",
+                  title: "SB 1231 AI4",
+                  slug: "sb1231-ai4",
+                },
+                {
+                  id: "sb1231-rtd-ai2",
+                  title: "SB 1231 RTD AI2",
+                  slug: "sb1231-rtd-ai2",
+                },
+                {
+                  id: "sb1231-tc-ai4",
+                  title: "SB 1231 TC AI4",
+                  slug: "sb1231-tc-ai4",
+                },
+                {
+                  id: "sb1232-ao4",
+                  title: "SB 1232 AO4",
+                  slug: "sb1232-ao4",
+                },
+                {
+                  id: "sb1233-ai2-ao2",
+                  title: "SB 1233 AI2 / AO2",
+                  slug: "sb1233-ai2-ao2",
+                },
+              ],
+            },
+            {
+              id: "Signal Module",
+              title: "Signal Module",
+              slug: "signal-module",
+              variants: [
+                {
+                  id: "digital-output",
+                  title: "Digital Output",
+                  slug: "digital-output",
+                },
+                {
+                  id: "digital-io",
+                  title: "Digital I/O",
+                  slug: "digital-io",
+                },
+                {
+                  id: "analog-input",
+                  title: "Analog Input",
+                  slug: "analog-input",
+                },
+                {
+                  id: "analog-output",
+                  title: "Analog Output",
+                  slug: "analog-output",
+                },
+                {
+                  id: "analog-io",
+                  title: "Analog I/O",
+                  slug: "analog-io",
+                },
+              ],
+            },
+            {
               id: "Power Module",
               title: "Power Module",
               slug: "power-module",

@@ -84,10 +84,24 @@ preserved where Siemens states them.
 | Other/companion modules | 5 | DISCONNECTED |
 | **Total** | **186** | **DISCONNECTED** |
 
-The current S7-1200 source files contain 186 unique MLFB declarations. The 5 PM
-records comprise 1 Classic SIMATIC PM 1207, 2 G2 SIMATIC PM 1207 records, and
-2 Classic SIPLUS PM 1207 records. These are source records awaiting controlled
-integration; they are not active application Products.
+The current S7-1200 source files contain 186 unique MLFB declarations. No source
+records were added or removed during structural G2 reclassification. Generation
+is represented by `seriesId`: 28 existing CPU/SB/SM records are classified as
+`S7-1200 G2` (10 CPU, 9 Signal Board, and 9 Signal Module), in addition to the
+2 SIMATIC G2 Power Module records that were already classified. The 5 PM records
+comprise 1 Classic SIMATIC PM 1207, 2 G2 SIMATIC PM 1207 records, and 2 Classic
+SIPLUS PM 1207 records.
+
+The 30 G2 records are physically separated under `s7-1200/g2/`: 10 CPU, 9
+Signal Board, 9 Signal Module, and 2 Power Module records. The corresponding
+root Classic files contain 50 CPU, 23 Signal Board, 38 Signal Module, and 3
+Power Module records. Combined source-module totals remain unchanged.
+
+All S7-1200 manufacturer source datasets remain disconnected and await
+controlled integration; this structural classification does not establish that
+the entire 186-record dataset is lifecycle-verified. The manual Classic S7-1200
+Product now uses `seriesId = S7-1200`; that correction is application metadata
+only and does not connect source aggregation.
 
 Current constraints:
 
@@ -96,11 +110,10 @@ Current constraints:
 - Source/reference URL fields exist on the source records.
 - Source and taxonomy enforcement occurs only when a record passes through the
   current validator.
-- `verified-taxonomy.ts` distinguishes the `S7-1200` and `S7-1200 G2` series for
-  the initial Power Module baseline. No S7-1200 G5 series is defined because
-  that generation is not established.
-- S7-1200 source `seriesId` values and the verified taxonomy's S7-1200 series
-  identifier are not aligned.
+- `verified-taxonomy.ts` distinguishes the `S7-1200` and `S7-1200 G2` series
+  for the classified CPU, Signal Board, Signal Module, and Power Module
+  variants. No S7-1200 G5 series is defined because that generation is not
+  established.
 - The current shared adapter and source interface are coupled to S7-300 CPU
   assumptions and preserve only their explicitly mapped specification fields.
 
