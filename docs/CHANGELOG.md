@@ -3,6 +3,22 @@
 This file records completed repository changes. Connection status refers to the
 implementation on the current `main` branch.
 
+## 2026-08-30 — Siemens S7-1200 Classic CPU Canonical Migration
+
+### Completed
+
+- Connected all 50 Classic S7-1200 CPU source records: 41 compact and 9
+  fail-safe.
+- Removed the overlapping manual Product and replaced `6ES7214-1AG40-0XB0`
+  with its canonical source-backed representation.
+- Added one permanent redirect from the former manual Product slug to the
+  canonical MLFB-derived slug.
+- Preserved the existing 64 non-overlapping Products and increased the active
+  total from 65 to 114.
+- Made no manufacturer source, taxonomy, adapter, Product interface, generic
+  pipeline, repository, dynamic Product page, or comparison-hook changes.
+- Connected no other Siemens dataset.
+
 ## 2026-08-30 — Siemens S7-1200 Classic CPU Variant Normalization
 
 ### Completed
