@@ -3,6 +3,22 @@
 This file records completed repository changes. Connection status refers to the
 implementation on the current `main` branch.
 
+## 2026-08-30 — Siemens S7-1200 Power Module Integration
+
+### Completed
+
+- Connected 3 Classic and 2 G2 S7-1200 Power Module records through shared
+  Siemens validation and generic Product mapping.
+- Added one explicit Power Module specification normalizer for both compatible
+  source contracts while preserving physical Classic/G2 source separation.
+- Preserved the generation distinction through `seriesId` and kept source
+  lineage metadata source-only.
+- Preserved the existing 50 Products and increased the active total from 50 to
+  55.
+- Made no taxonomy, Product interface, generic Siemens infrastructure, or
+  manufacturer source-record changes.
+- Connected no other S7-1200 dataset.
+
 ## 2026-08-30 — Siemens S7-300 Power Supply Integration
 
 ### Completed

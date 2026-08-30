@@ -46,22 +46,25 @@
 
 ### Active Application Data
 
-The active `Product` aggregation contains 50 products:
+The active `Product` aggregation contains 55 products:
 
 - 1 manually declared Classic S7-1200 product, now classified with
   `seriesId = S7-1200`
 - 36 S7-300 CPU source records mapped through validation and the Siemens adapter
 - 13 S7-300 Power Supply source records mapped through the shared validator,
   generic Product mapper, and explicit Power Supply specification normalizer
+- 3 S7-1200 Classic Power Module source records mapped through validation and
+  the explicit S7-1200 Power Module specification normalizer
+- 2 S7-1200 G2 Power Module source records mapped through the same normalizer,
+  with generation preserved by `seriesId = S7-1200 G2`
 
 These products flow through `data/products.ts`, the Product repository, and the UI.
 
 ### Source Data Not Connected to the Application
 
 - S7-300 SM, IM, FM, and CP datasets exist but are DISCONNECTED.
-- S7-1200 CPU, PM, SM, SB, CM, CP, CB, special, and other datasets exist but are
-  DISCONNECTED. The PM baseline contains 1 Classic SIMATIC, 2 G2 SIMATIC, and
-  2 Classic SIPLUS source records.
+- S7-1200 CPU, SM, SB, CM, CP, CB, special, and other datasets exist but are
+  DISCONNECTED.
 - The S7-1200 source files contain 186 unique MLFB declarations.
 - `S7-1200 G2` is a distinct series under the S7-1200 family. Existing G2
   classification covers 10 CPU, 9 Signal Board, and 9 Signal Module records;
@@ -69,10 +72,10 @@ These products flow through `data/products.ts`, the Product repository, and the 
 - G2 manufacturer data is physically separated under `s7-1200/g2/`, containing
   30 records: 10 CPU, 9 Signal Board, 9 Signal Module, and 2 Power Module. The
   root Classic files retain 50 CPU, 23 Signal Board, 38 Signal Module, and 3
-  Power Module records.
-- Historical and SIPLUS S7-300 Power Supply records are included in the
-  controlled connected PS dataset. Historical and SIPLUS S7-1200 Power Module
-  source records remain disconnected.
+  Power Module records. The Classic and G2 Power Module source files remain
+  physically separated while both are connected through one explicit normalizer.
+- Historical and SIPLUS S7-300 Power Supply records and the Classic SIPLUS
+  S7-1200 Power Module records are included in their controlled connected datasets.
 - Disconnected source records are not validated during normal application
   construction and must not be treated as active UI products.
 - The verified taxonomy distinguishes the Classic `S7-1200` and `S7-1200 G2`
@@ -83,9 +86,10 @@ These products flow through `data/products.ts`, the Product repository, and the 
   contract for identity, taxonomy, lifecycle, descriptions, and official
   source URLs.
 - Common Siemens Product mapping is separated from explicit product-type
-  specification normalization. S7-300 CPU and S7-300 Power Supply are the only
-  connected manufacturer source arrays; all other Siemens source datasets
-  remain disconnected, and the active Product count is 50.
+  specification normalization. S7-300 CPU, S7-300 Power Supply, and S7-1200
+  Classic/G2 Power Module are the only connected manufacturer source arrays;
+  all other Siemens source datasets remain disconnected, and the active Product
+  count is 55.
 
 ## Latest Local Quality Verification
 
