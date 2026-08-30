@@ -1,6 +1,8 @@
 import type { Product } from "@/features/products/types/product.types";
 import { siemensPLC } from "@/features/products/database/siemens/plc";
 import { mapSiemensPLCToProduct } from "@/features/products/database/siemens/plc.adapter";
+import { mapSiemensS7300PowerSupplyToProduct } from "@/features/products/database/siemens/s7-300/ps.adapter";
+import { siemensS7300PowerSupplies } from "@/features/products/database/siemens/s7-300/ps";
 
 const existingProducts: Product[] = [
   {
@@ -74,7 +76,11 @@ const verifiedSiemensPLCProducts: Product[] = siemensPLC.map(
   mapSiemensPLCToProduct
 );
 
+const verifiedSiemensS7300PowerSupplyProducts: Product[] =
+  siemensS7300PowerSupplies.map(mapSiemensS7300PowerSupplyToProduct);
+
 export const products: Product[] = [
   ...existingProducts,
   ...verifiedSiemensPLCProducts,
+  ...verifiedSiemensS7300PowerSupplyProducts,
 ];

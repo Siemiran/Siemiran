@@ -3,6 +3,21 @@
 This file records completed repository changes. Connection status refers to the
 implementation on the current `main` branch.
 
+## 2026-08-30 — Siemens S7-300 Power Supply Integration
+
+### Completed
+
+- Connected all 13 verified S7-300 Power Supply source records through shared
+  Siemens validation and generic Product mapping.
+- Added explicit Power Supply specification normalization while keeping MLFB
+  lineage metadata source-only.
+- Preserved all 36 existing mapped S7-300 CPU Products and increased the active
+  Product aggregation from 37 to 50.
+- Included the historical and SIPLUS Power Supply records in the controlled
+  connected dataset.
+- Connected no other Siemens dataset and made no taxonomy, Product interface,
+  or manufacturer source-record changes.
+
 ## 2026-08-30 — Siemens PLC Pipeline Generalization
 
 ### Completed
