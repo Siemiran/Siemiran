@@ -95,6 +95,12 @@ The 50-record Classic S7-1200 CPU source remains DISCONNECTED. The manual
 Classic Product is preserved because its MLFB overlaps the Classic source and
 requires a future controlled migration and deduplication.
 
+Classic S7-1200 CPU is now NORMALIZED and VALIDATION-READY: all 50 records
+validate with 41 `compact` and 9 `fail-safe` variants. Task H Product exposure
+is 0, the active Product total remains 65, and Classic CPU remains DISCONNECTED.
+The next step is a controlled source-backed Classic CPU migration that replaces
+the overlapping manual Product.
+
 All S7-1200 SM, SB, CM, CP, CB, special, and other datasets remain
 DISCONNECTED. Structural G2 classification is complete for 28 existing records:
 10 CPU, 9 Signal Board, and 9 Signal Module records now carry generation in

@@ -81,7 +81,7 @@ canonical Product relation fields.
 
 | Source module | Records | Connection status |
 | --- | ---: | --- |
-| CPU | 60 | 10 G2 CONNECTED; 50 Classic DISCONNECTED |
+| CPU | 60 | 10 G2 CONNECTED; 50 Classic NORMALIZED, VALIDATION-READY, DISCONNECTED |
 | Power Module (PM) | 5 | CONNECTED (3 Classic, 2 G2) |
 | Signal Module (SM) | 47 | DISCONNECTED |
 | Signal Board (SB) | 32 | DISCONNECTED |
@@ -117,6 +117,12 @@ is preserved by `seriesId = S7-1200 G2`. The 50-record Classic CPU source stays
 disconnected. Its `6ES7214-1AG40-0XB0` MLFB overlaps the existing manual Product
 and must be resolved by a future controlled Classic CPU migration and
 deduplication. The active Product total is 65.
+
+The 50 Classic CPU source records are normalized to 41 `compact` and 9
+`fail-safe` functional variants and validate 50/50 against the verified
+taxonomy. SIPLUS environmental edition remains represented by source MLFB,
+title, and description evidence rather than `variantId`. Classic CPU remains
+disconnected, and the active Product total remains 65.
 
 All other S7-1200 manufacturer source datasets remain disconnected and await
 controlled integration; connecting 15 of 186 records does not establish that

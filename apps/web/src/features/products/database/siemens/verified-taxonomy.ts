@@ -51,6 +51,11 @@ export const siemensVerifiedTaxonomy = {
                   title: "Compact",
                   slug: "compact",
                 },
+                {
+                  id: "fail-safe",
+                  title: "Fail-safe",
+                  slug: "fail-safe",
+                },
               ],
             },
             {
