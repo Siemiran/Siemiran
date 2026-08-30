@@ -88,7 +88,14 @@ both compatible source contracts while their source files remain physically
 separated and generation remains represented by `seriesId`. Task E exposes 5
 new Products, increasing the active Product total from 50 to 55.
 
-All S7-1200 CPU, SM, SB, CM, CP, CB, special, and other datasets remain
+The 10-record S7-1200 G2 CPU dataset is IMPLEMENTED and CONNECTED through an
+explicit S7-1200 CPU normalizer: 6 compact and 4 fail-safe records. Task F
+exposes 10 new Products and increases the active Product total from 55 to 65.
+The 50-record Classic S7-1200 CPU source remains DISCONNECTED. The manual
+Classic Product is preserved because its MLFB overlaps the Classic source and
+requires a future controlled migration and deduplication.
+
+All S7-1200 SM, SB, CM, CP, CB, special, and other datasets remain
 DISCONNECTED. Structural G2 classification is complete for 28 existing records:
 10 CPU, 9 Signal Board, and 9 Signal Module records now carry generation in
 `seriesId`, while their functional variant IDs no longer encode G2. The G2
@@ -120,7 +127,7 @@ Module records. No G5 series was created.
 The product browsing, detail, comparison, and inquiry-entry experiences are in
 place. The Siemens validation and common Product mapping pipeline is now
 generalized while product-type specification normalization remains explicit.
-The S7-300 Power Supply dataset and the S7-1200 Classic/G2 Power Module datasets
-are now connected through explicit normalizers. All other disconnected source
-datasets still require controlled taxonomy and normalization work before
+The S7-300 Power Supply, S7-1200 Classic/G2 Power Module, and S7-1200 G2 CPU
+datasets are now connected through explicit normalizers. All other disconnected
+source datasets still require controlled taxonomy and normalization work before
 integration and must not be presented as active products before verification.

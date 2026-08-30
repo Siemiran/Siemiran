@@ -3,6 +3,8 @@ import { siemensPLC } from "@/features/products/database/siemens/plc";
 import { mapSiemensPLCToProduct } from "@/features/products/database/siemens/plc.adapter";
 import { mapSiemensS7300PowerSupplyToProduct } from "@/features/products/database/siemens/s7-300/ps.adapter";
 import { siemensS7300PowerSupplies } from "@/features/products/database/siemens/s7-300/ps";
+import { mapSiemensS71200CPUToProduct } from "@/features/products/database/siemens/s7-1200/cpu.adapter";
+import { siemensS71200G2CPU } from "@/features/products/database/siemens/s7-1200/g2/cpu";
 import { siemensS71200G2PowerModules } from "@/features/products/database/siemens/s7-1200/g2/pm";
 import { mapSiemensS71200PowerModuleToProduct } from "@/features/products/database/siemens/s7-1200/pm.adapter";
 import { siemensS71200PowerModules } from "@/features/products/database/siemens/s7-1200/pm";
@@ -88,10 +90,14 @@ const verifiedSiemensS71200ClassicPowerModuleProducts: Product[] =
 const verifiedSiemensS71200G2PowerModuleProducts: Product[] =
   siemensS71200G2PowerModules.map(mapSiemensS71200PowerModuleToProduct);
 
+const verifiedSiemensS71200G2CPUProducts: Product[] =
+  siemensS71200G2CPU.map(mapSiemensS71200CPUToProduct);
+
 export const products: Product[] = [
   ...existingProducts,
   ...verifiedSiemensPLCProducts,
   ...verifiedSiemensS7300PowerSupplyProducts,
   ...verifiedSiemensS71200ClassicPowerModuleProducts,
   ...verifiedSiemensS71200G2PowerModuleProducts,
+  ...verifiedSiemensS71200G2CPUProducts,
 ];
