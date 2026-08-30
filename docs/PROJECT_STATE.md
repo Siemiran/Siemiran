@@ -46,7 +46,7 @@
 
 ### Active Application Data
 
-The active `Product` aggregation contains 123 products:
+The active `Product` aggregation contains 132 products:
 
 - 36 S7-300 CPU source records mapped through validation and the Siemens adapter
 - 13 S7-300 Power Supply source records mapped through the shared validator,
@@ -61,6 +61,8 @@ The active `Product` aggregation contains 123 products:
   normalizer: 41 compact and 9 fail-safe
 - 9 S7-1200 G2 Signal Module source records mapped through validation and an
   explicit shared S7-1200 Signal Module specification normalizer
+- 9 S7-1200 G2 Signal Board source records mapped through validation and an
+  explicit shared S7-1200 Signal Board specification normalizer
 
 These products flow through `data/products.ts`, the Product repository, and the UI.
 
@@ -79,8 +81,13 @@ These products flow through `data/products.ts`, the Product repository, and the 
 - The 9 G2 Signal Modules are connected through one shared SM normalizer that
   also supports the compatible Classic contract without connecting it. Physical
   G2 source separation remains preserved.
-- 74 of 186 S7-1200 source records are connected: 50 Classic CPUs, 10 G2 CPUs,
-  5 Power Modules, and 9 G2 Signal Modules. The remaining 112 are disconnected.
+- The 9 G2 Signal Boards are connected through one shared SB normalizer that
+  structurally supports the compatible Classic contract without connecting it.
+  Physical G2 source separation remains preserved, and all 23 Classic Signal
+  Boards remain disconnected.
+- 83 of 186 S7-1200 source records are connected: 50 Classic CPUs, 10 G2 CPUs,
+  5 Power Modules, 9 G2 Signal Modules, and 9 G2 Signal Boards. The remaining
+  103 are disconnected.
 - The S7-1200 source files contain 186 unique MLFB declarations.
 - `S7-1200 G2` is a distinct series under the S7-1200 family. Existing G2
   classification covers 10 CPU, 9 Signal Board, and 9 Signal Module records;
@@ -104,9 +111,10 @@ These products flow through `data/products.ts`, the Product repository, and the 
   source URLs.
 - Common Siemens Product mapping is separated from explicit product-type
   specification normalization. S7-300 CPU, S7-300 Power Supply, and S7-1200
-  Classic/G2 Power Module and CPU arrays plus the G2 Signal Module array are
+  Classic/G2 Power Module and CPU arrays plus the G2 Signal Module and Signal
+  Board arrays are
   connected; all other Siemens source datasets remain disconnected, and the
-  active Product count is 123.
+  active Product count is 132.
 
 ## Latest Local Quality Verification
 

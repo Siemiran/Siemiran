@@ -7,9 +7,11 @@ import { siemensS71200CPU } from "@/features/products/database/siemens/s7-1200/c
 import { mapSiemensS71200CPUToProduct } from "@/features/products/database/siemens/s7-1200/cpu.adapter";
 import { siemensS71200G2CPU } from "@/features/products/database/siemens/s7-1200/g2/cpu";
 import { siemensS71200G2PowerModules } from "@/features/products/database/siemens/s7-1200/g2/pm";
+import { s71200G2SignalBoards } from "@/features/products/database/siemens/s7-1200/g2/sb";
 import { siemensS71200G2SM } from "@/features/products/database/siemens/s7-1200/g2/sm";
 import { mapSiemensS71200PowerModuleToProduct } from "@/features/products/database/siemens/s7-1200/pm.adapter";
 import { siemensS71200PowerModules } from "@/features/products/database/siemens/s7-1200/pm";
+import { mapSiemensS71200SignalBoardToProduct } from "@/features/products/database/siemens/s7-1200/sb.adapter";
 import { mapSiemensS71200SignalModuleToProduct } from "@/features/products/database/siemens/s7-1200/sm.adapter";
 
 const verifiedSiemensPLCProducts: Product[] = siemensPLC.map(
@@ -34,6 +36,9 @@ const verifiedSiemensS71200ClassicCPUProducts: Product[] =
 const verifiedSiemensS71200G2SignalModuleProducts: Product[] =
   siemensS71200G2SM.map(mapSiemensS71200SignalModuleToProduct);
 
+const verifiedSiemensS71200G2SignalBoardProducts: Product[] =
+  s71200G2SignalBoards.map(mapSiemensS71200SignalBoardToProduct);
+
 export const products: Product[] = [
   ...verifiedSiemensPLCProducts,
   ...verifiedSiemensS7300PowerSupplyProducts,
@@ -42,4 +47,5 @@ export const products: Product[] = [
   ...verifiedSiemensS71200G2CPUProducts,
   ...verifiedSiemensS71200ClassicCPUProducts,
   ...verifiedSiemensS71200G2SignalModuleProducts,
+  ...verifiedSiemensS71200G2SignalBoardProducts,
 ];
