@@ -3,6 +3,18 @@
 This file records completed repository changes. Connection status refers to the
 implementation on the current `main` branch.
 
+## 2026-08-30 — Siemens S7-1200 Classic CPU Variant Normalization
+
+### Completed
+
+- Normalized 28 Classic SIPLUS CPU records to functional `compact` variants and
+  3 SIPLUS fail-safe records to `fail-safe`.
+- Added the legitimate Classic CPU `fail-safe` taxonomy entry.
+- Established final Classic CPU variants of 41 compact and 9 fail-safe, with
+  all 50 source records passing taxonomy validation.
+- Added or removed no source records and exposed no new Products.
+- Kept Classic CPU disconnected and the active Product total at 65.
+
 ## 2026-08-30 — Siemens S7-1200 G2 CPU Integration
 
 ### Completed

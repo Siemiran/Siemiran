@@ -709,7 +709,7 @@ export const siemensS71200CPU: SiemensS71200CPUProduct[] = [
     familyId: "S7-1200",
     seriesId: "S7-1200",
     productTypeId: "CPU",
-    variantId: "siplus-fail-safe",
+    variantId: "fail-safe",
 
     title: "SIPLUS S7-1200F CPU 1214FC DC/DC/DC",
 
@@ -742,7 +742,7 @@ export const siemensS71200CPU: SiemensS71200CPUProduct[] = [
     familyId: "S7-1200",
     seriesId: "S7-1200",
     productTypeId: "CPU",
-    variantId: "siplus-fail-safe",
+    variantId: "fail-safe",
 
     title: "SIPLUS S7-1200F CPU 1214FC DC/DC/RLY",
 
@@ -775,7 +775,7 @@ export const siemensS71200CPU: SiemensS71200CPUProduct[] = [
     familyId: "S7-1200",
     seriesId: "S7-1200",
     productTypeId: "CPU",
-    variantId: "siplus-fail-safe",
+    variantId: "fail-safe",
 
     title: "SIPLUS S7-1200F CPU 1215FC DC/DC/DC",
 
@@ -813,7 +813,7 @@ export const siemensS71200CPU: SiemensS71200CPUProduct[] = [
     familyId: "S7-1200",
     seriesId: "S7-1200",
     productTypeId: "CPU",
-    variantId: "siplus",
+    variantId: "compact",
 
     title: "SIPLUS S7-1200 CPU 1212C DC/DC/DC",
 
@@ -847,7 +847,7 @@ export const siemensS71200CPU: SiemensS71200CPUProduct[] = [
     familyId: "S7-1200",
     seriesId: "S7-1200",
     productTypeId: "CPU",
-    variantId: "siplus",
+    variantId: "compact",
 
     title: "SIPLUS S7-1200 CPU 1212C DC/DC/DC",
 
@@ -881,7 +881,7 @@ export const siemensS71200CPU: SiemensS71200CPUProduct[] = [
     familyId: "S7-1200",
     seriesId: "S7-1200",
     productTypeId: "CPU",
-    variantId: "siplus",
+    variantId: "compact",
 
     title: "SIPLUS S7-1200 CPU 1212C AC/DC/RLY",
 
@@ -915,7 +915,7 @@ export const siemensS71200CPU: SiemensS71200CPUProduct[] = [
     familyId: "S7-1200",
     seriesId: "S7-1200",
     productTypeId: "CPU",
-    variantId: "siplus",
+    variantId: "compact",
 
     title: "SIPLUS S7-1200 CPU 1212C AC/DC/RLY",
 
@@ -949,7 +949,7 @@ export const siemensS71200CPU: SiemensS71200CPUProduct[] = [
     familyId: "S7-1200",
     seriesId: "S7-1200",
     productTypeId: "CPU",
-    variantId: "siplus",
+    variantId: "compact",
 
     title: "SIPLUS S7-1200 CPU 1212C DC/DC/RLY",
 
@@ -983,7 +983,7 @@ export const siemensS71200CPU: SiemensS71200CPUProduct[] = [
     familyId: "S7-1200",
     seriesId: "S7-1200",
     productTypeId: "CPU",
-    variantId: "siplus",
+    variantId: "compact",
 
     title: "SIPLUS S7-1200 CPU 1212C DC/DC/RLY",
 
@@ -1017,7 +1017,7 @@ export const siemensS71200CPU: SiemensS71200CPUProduct[] = [
     familyId: "S7-1200",
     seriesId: "S7-1200",
     productTypeId: "CPU",
-    variantId: "siplus",
+    variantId: "compact",
 
     title: "SIPLUS S7-1200 CPU 1214C DC/DC/DC",
 
@@ -1051,7 +1051,7 @@ export const siemensS71200CPU: SiemensS71200CPUProduct[] = [
     familyId: "S7-1200",
     seriesId: "S7-1200",
     productTypeId: "CPU",
-    variantId: "siplus",
+    variantId: "compact",
 
     title: "SIPLUS S7-1200 CPU 1214C DC/DC/DC",
 
@@ -1085,7 +1085,7 @@ export const siemensS71200CPU: SiemensS71200CPUProduct[] = [
     familyId: "S7-1200",
     seriesId: "S7-1200",
     productTypeId: "CPU",
-    variantId: "siplus",
+    variantId: "compact",
 
     title: "SIPLUS S7-1200 CPU 1214C DC/DC/DC",
 
@@ -1119,7 +1119,7 @@ export const siemensS71200CPU: SiemensS71200CPUProduct[] = [
     familyId: "S7-1200",
     seriesId: "S7-1200",
     productTypeId: "CPU",
-    variantId: "siplus",
+    variantId: "compact",
 
     title: "SIPLUS S7-1200 CPU 1214C AC/DC/RLY",
 
@@ -1153,7 +1153,7 @@ export const siemensS71200CPU: SiemensS71200CPUProduct[] = [
     familyId: "S7-1200",
     seriesId: "S7-1200",
     productTypeId: "CPU",
-    variantId: "siplus",
+    variantId: "compact",
 
     title: "SIPLUS S7-1200 CPU 1214C AC/DC/RLY",
 
@@ -1187,7 +1187,7 @@ export const siemensS71200CPU: SiemensS71200CPUProduct[] = [
     familyId: "S7-1200",
     seriesId: "S7-1200",
     productTypeId: "CPU",
-    variantId: "siplus",
+    variantId: "compact",
 
     title: "SIPLUS S7-1200 CPU 1214C AC/DC/RLY",
 
@@ -1221,7 +1221,7 @@ export const siemensS71200CPU: SiemensS71200CPUProduct[] = [
     familyId: "S7-1200",
     seriesId: "S7-1200",
     productTypeId: "CPU",
-    variantId: "siplus",
+    variantId: "compact",
 
     title: "SIPLUS S7-1200 CPU 1214C DC/DC/RLY",
 
@@ -1255,7 +1255,7 @@ export const siemensS71200CPU: SiemensS71200CPUProduct[] = [
     familyId: "S7-1200",
     seriesId: "S7-1200",
     productTypeId: "CPU",
-    variantId: "siplus",
+    variantId: "compact",
 
     title: "SIPLUS S7-1200 CPU 1214C DC/DC/RLY",
 
@@ -1289,7 +1289,7 @@ export const siemensS71200CPU: SiemensS71200CPUProduct[] = [
     familyId: "S7-1200",
     seriesId: "S7-1200",
     productTypeId: "CPU",
-    variantId: "siplus",
+    variantId: "compact",
 
     title: "SIPLUS S7-1200 CPU 1214C DC/DC/RLY",
 
@@ -1323,7 +1323,7 @@ export const siemensS71200CPU: SiemensS71200CPUProduct[] = [
     familyId: "S7-1200",
     seriesId: "S7-1200",
     productTypeId: "CPU",
-    variantId: "siplus",
+    variantId: "compact",
 
     title: "SIPLUS S7-1200 CPU 1215C DC/DC/DC",
 
@@ -1358,7 +1358,7 @@ export const siemensS71200CPU: SiemensS71200CPUProduct[] = [
     familyId: "S7-1200",
     seriesId: "S7-1200",
     productTypeId: "CPU",
-    variantId: "siplus",
+    variantId: "compact",
 
     title: "SIPLUS S7-1200 CPU 1215C DC/DC/DC",
 
@@ -1393,7 +1393,7 @@ export const siemensS71200CPU: SiemensS71200CPUProduct[] = [
     familyId: "S7-1200",
     seriesId: "S7-1200",
     productTypeId: "CPU",
-    variantId: "siplus",
+    variantId: "compact",
 
     title: "SIPLUS S7-1200 CPU 1215C DC/DC/DC",
 
@@ -1428,7 +1428,7 @@ export const siemensS71200CPU: SiemensS71200CPUProduct[] = [
     familyId: "S7-1200",
     seriesId: "S7-1200",
     productTypeId: "CPU",
-    variantId: "siplus",
+    variantId: "compact",
 
     title: "SIPLUS S7-1200 CPU 1215C AC/DC/RLY",
 
@@ -1463,7 +1463,7 @@ export const siemensS71200CPU: SiemensS71200CPUProduct[] = [
     familyId: "S7-1200",
     seriesId: "S7-1200",
     productTypeId: "CPU",
-    variantId: "siplus",
+    variantId: "compact",
 
     title: "SIPLUS S7-1200 CPU 1215C AC/DC/RLY",
 
@@ -1498,7 +1498,7 @@ export const siemensS71200CPU: SiemensS71200CPUProduct[] = [
     familyId: "S7-1200",
     seriesId: "S7-1200",
     productTypeId: "CPU",
-    variantId: "siplus",
+    variantId: "compact",
 
     title: "SIPLUS S7-1200 CPU 1215C AC/DC/RLY",
 
@@ -1533,7 +1533,7 @@ export const siemensS71200CPU: SiemensS71200CPUProduct[] = [
     familyId: "S7-1200",
     seriesId: "S7-1200",
     productTypeId: "CPU",
-    variantId: "siplus",
+    variantId: "compact",
 
     title: "SIPLUS S7-1200 CPU 1215C DC/DC/RLY",
 
@@ -1568,7 +1568,7 @@ export const siemensS71200CPU: SiemensS71200CPUProduct[] = [
     familyId: "S7-1200",
     seriesId: "S7-1200",
     productTypeId: "CPU",
-    variantId: "siplus",
+    variantId: "compact",
 
     title: "SIPLUS S7-1200 CPU 1215C DC/DC/RLY",
 
@@ -1603,7 +1603,7 @@ export const siemensS71200CPU: SiemensS71200CPUProduct[] = [
     familyId: "S7-1200",
     seriesId: "S7-1200",
     productTypeId: "CPU",
-    variantId: "siplus",
+    variantId: "compact",
 
     title: "SIPLUS S7-1200 CPU 1215C DC/DC/RLY",
 
@@ -1638,7 +1638,7 @@ export const siemensS71200CPU: SiemensS71200CPUProduct[] = [
     familyId: "S7-1200",
     seriesId: "S7-1200",
     productTypeId: "CPU",
-    variantId: "siplus",
+    variantId: "compact",
 
     title: "SIPLUS S7-1200 CPU 1217C DC/DC/DC",
 
@@ -1677,7 +1677,7 @@ export const siemensS71200CPU: SiemensS71200CPUProduct[] = [
     familyId: "S7-1200",
     seriesId: "S7-1200",
     productTypeId: "CPU",
-    variantId: "siplus",
+    variantId: "compact",
 
     title: "SIPLUS S7-1200 CPU 1217C DC/DC/DC",
 
@@ -1716,7 +1716,7 @@ export const siemensS71200CPU: SiemensS71200CPUProduct[] = [
     familyId: "S7-1200",
     seriesId: "S7-1200",
     productTypeId: "CPU",
-    variantId: "siplus",
+    variantId: "compact",
 
     title: "SIPLUS S7-1200 CPU 1212C DC/DC/DC RAIL",
 
@@ -1750,7 +1750,7 @@ export const siemensS71200CPU: SiemensS71200CPUProduct[] = [
     familyId: "S7-1200",
     seriesId: "S7-1200",
     productTypeId: "CPU",
-    variantId: "siplus",
+    variantId: "compact",
 
     title: "SIPLUS S7-1200 CPU 1214C DC/DC/DC RAIL",
 

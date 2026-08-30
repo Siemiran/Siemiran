@@ -68,6 +68,11 @@ These products flow through `data/products.ts`, the Product repository, and the 
 - The 50-record Classic S7-1200 CPU source remains DISCONNECTED, as do S7-1200
   SM, SB, CM, CP, CB, special, and other datasets. The manual Classic Product
   remains active pending a controlled Classic CPU migration and deduplication.
+- All 50 Classic CPU records are taxonomy/validation-ready after normalizing
+  their functional variants to 41 `compact` and 9 `fail-safe`. SIPLUS remains
+  environmental source evidence in MLFBs, titles, and descriptions rather than
+  a functional `variantId`. Task H added no Product exposure, so the active
+  Product total remains 65.
 - The S7-1200 source files contain 186 unique MLFB declarations.
 - `S7-1200 G2` is a distinct series under the S7-1200 family. Existing G2
   classification covers 10 CPU, 9 Signal Board, and 9 Signal Module records;
