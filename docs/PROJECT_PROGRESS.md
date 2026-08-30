@@ -81,11 +81,15 @@ Substantial source datasets are present in:
 - `other.ts`
 - `pm.ts`
 
-These files contain 186 unique MLFB declarations. The Power Module baseline
-contains 1 Classic SIMATIC, 2 G2 SIMATIC, and 2 Classic SIPLUS records, all
-DISCONNECTED. Their integration into the
-validated Product pipeline is NOT COMPLETE. There is no connecting S7-1200
-aggregator. Structural G2 classification is complete for 28 existing records:
+These files contain 186 unique MLFB declarations. The 3 Classic Power Module
+records (1 SIMATIC and 2 SIPLUS) are IMPLEMENTED and CONNECTED. The 2 G2 Power
+Module records are IMPLEMENTED and CONNECTED. One explicit PM normalizer maps
+both compatible source contracts while their source files remain physically
+separated and generation remains represented by `seriesId`. Task E exposes 5
+new Products, increasing the active Product total from 50 to 55.
+
+All S7-1200 CPU, SM, SB, CM, CP, CB, special, and other datasets remain
+DISCONNECTED. Structural G2 classification is complete for 28 existing records:
 10 CPU, 9 Signal Board, and 9 Signal Module records now carry generation in
 `seriesId`, while their functional variant IDs no longer encode G2. The G2
 taxonomy now covers those product types alongside the 2 previously classified
@@ -94,8 +98,7 @@ Siemens URLs, and the manual Classic Product series was corrected to
 `S7-1200`. All 30 G2 records are now physically separated under `s7-1200/g2/`
 (10 CPU, 9 Signal Board, 9 Signal Module, and 2 Power Module), while the root
 Classic files retain 50 CPU, 23 Signal Board, 38 Signal Module, and 3 Power
-Module records. No source integration was performed, and no G5 series was
-created.
+Module records. No G5 series was created.
 
 ## Inquiry Progress
 
@@ -117,7 +120,7 @@ created.
 The product browsing, detail, comparison, and inquiry-entry experiences are in
 place. The Siemens validation and common Product mapping pipeline is now
 generalized while product-type specification normalization remains explicit.
-The S7-300 Power Supply dataset is now connected through an explicit
-normalizer. All other disconnected source datasets still require controlled
-taxonomy and normalization work before integration and must not be presented
-as active products before verification.
+The S7-300 Power Supply dataset and the S7-1200 Classic/G2 Power Module datasets
+are now connected through explicit normalizers. All other disconnected source
+datasets still require controlled taxonomy and normalization work before
+integration and must not be presented as active products before verification.
