@@ -2,7 +2,7 @@
 
 Repository source of truth: current `main` branch
 
-Last synchronized: 2026-08-30
+Last synchronized: 2026-08-31
 
 ## Completed Foundation
 
@@ -164,9 +164,17 @@ All 42 records are taxonomy-valid but remain DISCONNECTED. Task Q exposure is
 0; active Products remain 193 and S7-1200 remains 144/186 connected with 42
 disconnected.
 
-The next controlled task is Task R — explicit adapter implementation with zero
-Product exposure. CM RS422/485 connector verification remains required before
-future CM exposure.
+Task R completes the EXPLICIT ADAPTER LAYER for all remaining 42 records. A
+shared communication adapter covers CM, CP, CB, and RF120C; a shared special
+adapter covers Special Module and Technology Module; guarded narrow adapters
+cover Network Switch and Data Decoupling Module. Every remaining Product Type
+now has exactly one deterministic route. Source, taxonomy, and Product
+aggregation remain unchanged, so exposure is 0, active Products remain 193,
+and S7-1200 remains 144/186 connected with 42 disconnected.
+
+The next controlled step is source verification for CM records
+`6AG1241-1CH32-4XB0` and `6AG1241-1CH32-2XB0` before Communication Module
+exposure.
 
 ## Inquiry Progress
 
