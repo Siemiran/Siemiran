@@ -10,7 +10,8 @@ export interface SiemensS71200OtherModule {
   familyId: "S7-1200";
   seriesId: "S7-1200";
 
-  productTypeId: "Other Module";
+  productTypeId:
+    "Communication Module" | "Network Switch" | "Data Decoupling Module";
   variantId: string;
 
   title: string;
@@ -48,7 +49,7 @@ export const s71200OtherModules: SiemensS71200OtherModule[] = [
     familyId: "S7-1200",
     seriesId: "S7-1200",
 
-    productTypeId: "Other Module",
+    productTypeId: "Network Switch",
     variantId: "csm1277",
 
     title: "SIMATIC S7-1200 CSM 1277 Compact Switch Module",
@@ -86,8 +87,8 @@ export const s71200OtherModules: SiemensS71200OtherModule[] = [
     familyId: "S7-1200",
     seriesId: "S7-1200",
 
-    productTypeId: "Other Module",
-    variantId: "siplus-csm1277-40-70c",
+    productTypeId: "Network Switch",
+    variantId: "csm1277",
 
     title: "SIPLUS NET CSM 1277",
 
@@ -124,8 +125,8 @@ export const s71200OtherModules: SiemensS71200OtherModule[] = [
     familyId: "S7-1200",
     seriesId: "S7-1200",
 
-    productTypeId: "Other Module",
-    variantId: "siplus-csm1277-0-60c",
+    productTypeId: "Network Switch",
+    variantId: "csm1277",
 
     title: "SIPLUS NET CSM 1277",
 
@@ -162,7 +163,7 @@ export const s71200OtherModules: SiemensS71200OtherModule[] = [
     familyId: "S7-1200",
     seriesId: "S7-1200",
 
-    productTypeId: "Other Module",
+    productTypeId: "Data Decoupling Module",
     variantId: "dcm1271",
 
     title: "SIMATIC S7-1200 DCM 1271",
@@ -198,7 +199,7 @@ export const s71200OtherModules: SiemensS71200OtherModule[] = [
     familyId: "S7-1200",
     seriesId: "S7-1200",
 
-    productTypeId: "Other Module",
+    productTypeId: "Communication Module",
     variantId: "rf120c",
 
     title: "SIMATIC S7-1200 RF120C",

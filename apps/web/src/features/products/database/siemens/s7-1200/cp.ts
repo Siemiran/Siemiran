@@ -243,7 +243,7 @@ export const s71200CP: SiemensS71200CommunicationProcessor[] = [
     seriesId: "S7-1200",
 
     productTypeId: "Communication Processor",
-    variantId: "siplus-industrial-ethernet-telecontrol",
+    variantId: "industrial-ethernet-telecontrol",
 
     title: "SIPLUS S7-1200 CP 1243-1",
 
@@ -281,7 +281,7 @@ export const s71200CP: SiemensS71200CommunicationProcessor[] = [
     seriesId: "S7-1200",
 
     productTypeId: "Communication Processor",
-    variantId: "siplus-rail-telecontrol",
+    variantId: "industrial-ethernet-telecontrol",
 
     title: "SIPLUS S7-1200 CP 1243-1 T1 RAIL",
 

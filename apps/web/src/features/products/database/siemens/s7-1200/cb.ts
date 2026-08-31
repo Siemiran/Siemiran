@@ -88,7 +88,7 @@ export const s71200CommunicationBoards: SiemensS71200CommunicationBoard[] = [
     seriesId: "S7-1200",
 
     productTypeId: "Communication Board",
-    variantId: "siplus-cb1241-rs485",
+    variantId: "cb1241-rs485",
 
     title: "SIPLUS S7-1200 CB 1241 RS485",
 
@@ -127,7 +127,7 @@ export const s71200CommunicationBoards: SiemensS71200CommunicationBoard[] = [
     seriesId: "S7-1200",
 
     productTypeId: "Communication Board",
-    variantId: "siplus-cb1241-rs485-t1-rail",
+    variantId: "cb1241-rs485",
 
     title: "SIPLUS S7-1200 CB 1241 RS485 T1 RAIL",
 

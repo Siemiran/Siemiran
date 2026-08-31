@@ -89,7 +89,7 @@ export const s71200SpecialModules: SiemensS71200SpecialModule[] = [
     seriesId: "S7-1200",
 
     productTypeId: "Special Module",
-    variantId: "siplus-io-link-master",
+    variantId: "io-link-master",
 
     title: "SIPLUS S7-1200 SM 1278 4x IO-Link Master",
 
@@ -120,7 +120,7 @@ export const s71200SpecialModules: SiemensS71200SpecialModule[] = [
     seriesId: "S7-1200",
 
     productTypeId: "Special Module",
-    variantId: "siplus-io-link-master",
+    variantId: "io-link-master",
 
     title: "SIPLUS S7-1200 SM 1278 4x IO-Link Master",
 

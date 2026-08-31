@@ -179,6 +179,170 @@ export const siemensVerifiedTaxonomy = {
                 },
               ],
             },
+            {
+              id: "Communication Module",
+              title: "Communication Module",
+              slug: "communication-module",
+              variants: [
+                {
+                  id: "cm1241-rs232",
+                  title: "CM 1241 RS232",
+                  slug: "cm1241-rs232",
+                },
+                {
+                  id: "cm1241-rs422-485",
+                  title: "CM 1241 RS422/485",
+                  slug: "cm1241-rs422-485",
+                },
+                {
+                  id: "cm1242-5",
+                  title: "CM 1242-5",
+                  slug: "cm1242-5",
+                },
+                {
+                  id: "cm1243-2",
+                  title: "CM 1243-2",
+                  slug: "cm1243-2",
+                },
+                {
+                  id: "cm1243-5",
+                  title: "CM 1243-5",
+                  slug: "cm1243-5",
+                },
+                {
+                  id: "rf120c",
+                  title: "RF120C",
+                  slug: "rf120c",
+                },
+              ],
+            },
+            {
+              id: "Communication Processor",
+              title: "Communication Processor",
+              slug: "communication-processor",
+              variants: [
+                {
+                  id: "telecontrol-gprs",
+                  title: "Telecontrol GPRS",
+                  slug: "telecontrol-gprs",
+                },
+                {
+                  id: "industrial-ethernet-telecontrol",
+                  title: "Industrial Ethernet Telecontrol",
+                  slug: "industrial-ethernet-telecontrol",
+                },
+                {
+                  id: "lte-eu",
+                  title: "LTE EU",
+                  slug: "lte-eu",
+                },
+                {
+                  id: "lte-us",
+                  title: "LTE US",
+                  slug: "lte-us",
+                },
+                {
+                  id: "telecontrol-irc",
+                  title: "Telecontrol IRC",
+                  slug: "telecontrol-irc",
+                },
+              ],
+            },
+            {
+              id: "Communication Board",
+              title: "Communication Board",
+              slug: "communication-board",
+              variants: [
+                {
+                  id: "cb1241-rs485",
+                  title: "CB 1241 RS485",
+                  slug: "cb1241-rs485",
+                },
+              ],
+            },
+            {
+              id: "Special Module",
+              title: "Special Module",
+              slug: "special-module",
+              variants: [
+                {
+                  id: "io-link-master",
+                  title: "IO-Link Master",
+                  slug: "io-link-master",
+                },
+                {
+                  id: "condition-monitoring",
+                  title: "Condition Monitoring",
+                  slug: "condition-monitoring",
+                },
+                {
+                  id: "simulator-1211-1212",
+                  title: "SIM 1274 CPU 1211/1212",
+                  slug: "simulator-1211-1212",
+                },
+                {
+                  id: "simulator-1214-1215",
+                  title: "SIM 1274 CPU 1214/1215",
+                  slug: "simulator-1214-1215",
+                },
+                {
+                  id: "simulator-1217",
+                  title: "SIM 1274 CPU 1217",
+                  slug: "simulator-1217",
+                },
+                {
+                  id: "battery-board",
+                  title: "BB 1297 Battery Board",
+                  slug: "battery-board",
+                },
+              ],
+            },
+            {
+              id: "Technology Module",
+              title: "Technology Module",
+              slug: "technology-module",
+              variants: [
+                {
+                  id: "weighing-wp231",
+                  title: "SIWAREX WP231",
+                  slug: "weighing-wp231",
+                },
+                {
+                  id: "weighing-wp241",
+                  title: "SIWAREX WP241",
+                  slug: "weighing-wp241",
+                },
+                {
+                  id: "weighing-wp251",
+                  title: "SIWAREX WP251",
+                  slug: "weighing-wp251",
+                },
+              ],
+            },
+            {
+              id: "Network Switch",
+              title: "Network Switch",
+              slug: "network-switch",
+              variants: [
+                {
+                  id: "csm1277",
+                  title: "CSM 1277",
+                  slug: "csm1277",
+                },
+              ],
+            },
+            {
+              id: "Data Decoupling Module",
+              title: "Data Decoupling Module",
+              slug: "data-decoupling-module",
+              variants: [
+                {
+                  id: "dcm1271",
+                  title: "DCM 1271",
+                  slug: "dcm1271",
+                },
+              ],
+            },
           ],
         },
         {

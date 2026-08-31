@@ -157,6 +157,17 @@ Siemens URLs, and the manual Classic Product series was corrected to
 Classic files retain 50 CPU, 23 Signal Board, 38 Signal Module, and 3 Power
 Module records. No G5 series was created.
 
+Task Q completes normalization and taxonomy work for all remaining 42 S7-1200
+records. It normalizes 19 environmental/SIPLUS composite variants, reclassifies
+all five former `Other Module` records, and adds seven stable Product Types.
+All 42 records are taxonomy-valid but remain DISCONNECTED. Task Q exposure is
+0; active Products remain 193 and S7-1200 remains 144/186 connected with 42
+disconnected.
+
+The next controlled task is Task R — explicit adapter implementation with zero
+Product exposure. CM RS422/485 connector verification remains required before
+future CM exposure.
+
 ## Inquiry Progress
 
 - Inquiry form UI: IMPLEMENTED
