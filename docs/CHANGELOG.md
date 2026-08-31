@@ -3,6 +3,22 @@
 This file records completed repository changes. Connection status refers to the
 implementation on the current `main` branch.
 
+## 2026-08-31 — Siemens S7-1200 Classic SM/SB Variant & Taxonomy Normalization
+
+### Completed
+
+- Normalized 12 Classic Signal Module and 12 Classic Signal Board SIPLUS
+  composite variants to their evidence-backed functional/model variants.
+- Added Classic Signal Module taxonomy with 8 functional variants and Classic
+  Signal Board taxonomy with 11 model-specific variants.
+- Made Classic SM taxonomy-valid 38/38 and Classic SB taxonomy-valid 23/23 while
+  keeping both datasets disconnected.
+- Added no Product exposure: the active Product total remains 132 and S7-1200
+  remains 83/186 connected.
+- Kept the existing SM/SB adapters and G2 source/taxonomy semantics unchanged.
+- Intentionally left the `6AG1223-1QH32-4XB0` AC-title versus 24 V DC
+  specification discrepancy untouched pending separate verification.
+
 ## 2026-08-30 — Siemens S7-1200 G2 Signal Board Integration
 
 ### Completed

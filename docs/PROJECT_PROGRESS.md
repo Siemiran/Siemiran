@@ -111,6 +111,24 @@ increases the active Product total from 123 to 132. The 23-record Classic Signal
 Board source remains DISCONNECTED. S7-1200 now has 83 of 186 source records
 connected, leaving 103 disconnected.
 
+Task M normalizes the 38-record Classic S7-1200 Signal Module dataset to 8
+functional variants and the 23-record Classic Signal Board dataset to 11
+model-specific variants. Classic SM is NORMALIZED, VALIDATION-READY 38/38, and
+DISCONNECTED. Classic SB is NORMALIZED, VALIDATION-READY 23/23, and
+DISCONNECTED. SIPLUS environmental edition no longer appears in their
+functional/model `variantId` values. The shared SM/SB adapters and all G2
+source/taxonomy semantics remain unchanged.
+
+Task M Product exposure is 0. The active Product total remains 132; S7-1200
+remains 83/186 connected with 103 disconnected. The next controlled steps are:
+
+1. Classic Signal Module integration
+2. Classic Signal Board integration
+
+Neither Classic dataset is marked connected by Task M. The known
+`6AG1223-1QH32-4XB0` AC-title versus 24 V DC specification discrepancy remains
+untouched pending separate verification.
+
 Classic S7-1200 SM and SB plus all S7-1200 CM, CP, CB, special, and other
 datasets remain DISCONNECTED. Structural G2 classification is complete for 28 existing records:
 10 CPU, 9 Signal Board, and 9 Signal Module records now carry generation in

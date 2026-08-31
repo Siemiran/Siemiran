@@ -70,6 +70,115 @@ export const siemensVerifiedTaxonomy = {
                 },
               ],
             },
+            {
+              id: "Signal Module",
+              title: "Signal Module",
+              slug: "signal-module",
+              variants: [
+                {
+                  id: "digital-input",
+                  title: "Digital Input",
+                  slug: "digital-input",
+                },
+                {
+                  id: "digital-output",
+                  title: "Digital Output",
+                  slug: "digital-output",
+                },
+                {
+                  id: "digital-io",
+                  title: "Digital I/O",
+                  slug: "digital-io",
+                },
+                {
+                  id: "fail-safe-input",
+                  title: "Fail-safe Input",
+                  slug: "fail-safe-input",
+                },
+                {
+                  id: "fail-safe-output",
+                  title: "Fail-safe Output",
+                  slug: "fail-safe-output",
+                },
+                {
+                  id: "analog-input",
+                  title: "Analog Input",
+                  slug: "analog-input",
+                },
+                {
+                  id: "analog-output",
+                  title: "Analog Output",
+                  slug: "analog-output",
+                },
+                {
+                  id: "analog-io",
+                  title: "Analog I/O",
+                  slug: "analog-io",
+                },
+              ],
+            },
+            {
+              id: "Signal Board",
+              title: "Signal Board",
+              slug: "signal-board",
+              variants: [
+                {
+                  id: "sb1221-di4-24vdc",
+                  title: "SB 1221 DI4 24 V DC",
+                  slug: "sb1221-di4-24vdc",
+                },
+                {
+                  id: "sb1221-di4-5vdc",
+                  title: "SB 1221 DI4 5 V DC",
+                  slug: "sb1221-di4-5vdc",
+                },
+                {
+                  id: "sb1222-dq4-24vdc",
+                  title: "SB 1222 DQ4 24 V DC",
+                  slug: "sb1222-dq4-24vdc",
+                },
+                {
+                  id: "sb1222-dq4-5vdc",
+                  title: "SB 1222 DQ4 5 V DC",
+                  slug: "sb1222-dq4-5vdc",
+                },
+                {
+                  id: "sb1223-di2-do2-standard",
+                  title: "SB 1223 DI2 / DQ2 Standard",
+                  slug: "sb1223-di2-do2-standard",
+                },
+                {
+                  id: "sb1223-di2-do2-24vdc",
+                  title: "SB 1223 DI2 / DQ2 24 V DC",
+                  slug: "sb1223-di2-do2-24vdc",
+                },
+                {
+                  id: "sb1223-di2-do2-5vdc",
+                  title: "SB 1223 DI2 / DQ2 5 V DC",
+                  slug: "sb1223-di2-do2-5vdc",
+                },
+                {
+                  id: "sb1231-ai1",
+                  title: "SB 1231 AI1",
+                  slug: "sb1231-ai1",
+                },
+                {
+                  id: "sb1231-rtd",
+                  title: "SB 1231 RTD AI1",
+                  slug: "sb1231-rtd",
+                },
+                {
+                  id: "sb1231-thermocouple",
+                  title: "SB 1231 TC AI1",
+                  slug: "sb1231-thermocouple",
+                },
+                {
+                  id: "sb1232-ao1",
+                  title: "SB 1232 AO1",
+                  slug: "sb1232-ao1",
+                },
+              ],
+            },
           ],
         },
         {

@@ -431,7 +431,7 @@ export const s71200SignalBoards: SiemensS71200SignalBoard[] = [
     familyId: "S7-1200",
     seriesId: "S7-1200",
     productTypeId: "Signal Board",
-    variantId: "siplus-sb1221-di4-5vdc",
+    variantId: "sb1221-di4-5vdc",
 
     title: "SIPLUS S7-1200 SB 1221 4 DI 5 V DC",
     description:
@@ -465,7 +465,7 @@ export const s71200SignalBoards: SiemensS71200SignalBoard[] = [
     familyId: "S7-1200",
     seriesId: "S7-1200",
     productTypeId: "Signal Board",
-    variantId: "siplus-sb1221-di4-24vdc",
+    variantId: "sb1221-di4-24vdc",
 
     title: "SIPLUS S7-1200 SB 1221 4 DI 24 V DC",
     description:
@@ -499,7 +499,7 @@ export const s71200SignalBoards: SiemensS71200SignalBoard[] = [
     familyId: "S7-1200",
     seriesId: "S7-1200",
     productTypeId: "Signal Board",
-    variantId: "siplus-sb1222-dq4-5vdc",
+    variantId: "sb1222-dq4-5vdc",
 
     title: "SIPLUS S7-1200 SB 1222 4 DQ 5 V DC",
     description:
@@ -533,7 +533,7 @@ export const s71200SignalBoards: SiemensS71200SignalBoard[] = [
     familyId: "S7-1200",
     seriesId: "S7-1200",
     productTypeId: "Signal Board",
-    variantId: "siplus-sb1222-dq4-24vdc",
+    variantId: "sb1222-dq4-24vdc",
 
     title: "SIPLUS S7-1200 SB 1222 4 DQ 24 V DC",
     description:
@@ -567,7 +567,7 @@ export const s71200SignalBoards: SiemensS71200SignalBoard[] = [
     familyId: "S7-1200",
     seriesId: "S7-1200",
     productTypeId: "Signal Board",
-    variantId: "siplus-sb1223-rail",
+    variantId: "sb1223-di2-do2-standard",
 
     title: "SIPLUS S7-1200 SB 1223 2 DI / 2 DQ RAIL",
     description:
@@ -602,7 +602,7 @@ export const s71200SignalBoards: SiemensS71200SignalBoard[] = [
     familyId: "S7-1200",
     seriesId: "S7-1200",
     productTypeId: "Signal Board",
-    variantId: "siplus-sb1223-24vdc-extreme",
+    variantId: "sb1223-di2-do2-standard",
 
     title: "SIPLUS S7-1200 SB 1223 2 DI / 2 DQ 24 V DC",
     description:
@@ -637,7 +637,7 @@ export const s71200SignalBoards: SiemensS71200SignalBoard[] = [
     familyId: "S7-1200",
     seriesId: "S7-1200",
     productTypeId: "Signal Board",
-    variantId: "siplus-sb1223-24vdc",
+    variantId: "sb1223-di2-do2-standard",
 
     title: "SIPLUS S7-1200 SB 1223 2 DI / 2 DQ 24 V DC",
     description:
@@ -672,7 +672,7 @@ export const s71200SignalBoards: SiemensS71200SignalBoard[] = [
     familyId: "S7-1200",
     seriesId: "S7-1200",
     productTypeId: "Signal Board",
-    variantId: "siplus-sb1223-5vdc",
+    variantId: "sb1223-di2-do2-5vdc",
 
     title: "SIPLUS S7-1200 SB 1223 2 DI / 2 DQ 5 V DC",
     description:
@@ -708,7 +708,7 @@ export const s71200SignalBoards: SiemensS71200SignalBoard[] = [
     familyId: "S7-1200",
     seriesId: "S7-1200",
     productTypeId: "Signal Board",
-    variantId: "siplus-sb1223-24vdc-highspeed",
+    variantId: "sb1223-di2-do2-24vdc",
 
     title: "SIPLUS S7-1200 SB 1223 2 DI / 2 DQ 24 V DC",
     description:
@@ -744,7 +744,7 @@ export const s71200SignalBoards: SiemensS71200SignalBoard[] = [
     familyId: "S7-1200",
     seriesId: "S7-1200",
     productTypeId: "Signal Board",
-    variantId: "siplus-sb1231-rtd",
+    variantId: "sb1231-rtd",
 
     title: "SIPLUS S7-1200 SB 1231 1 AI RTD",
     description:
@@ -778,7 +778,7 @@ export const s71200SignalBoards: SiemensS71200SignalBoard[] = [
     familyId: "S7-1200",
     seriesId: "S7-1200",
     productTypeId: "Signal Board",
-    variantId: "siplus-sb1232-ao1",
+    variantId: "sb1232-ao1",
 
     title: "SIPLUS S7-1200 SB 1232 1 AQ",
     description:
@@ -812,7 +812,7 @@ export const s71200SignalBoards: SiemensS71200SignalBoard[] = [
     familyId: "S7-1200",
     seriesId: "S7-1200",
     productTypeId: "Signal Board",
-    variantId: "siplus-sb1232-ao1-extended",
+    variantId: "sb1232-ao1",
 
     title: "SIPLUS S7-1200 SB 1232 1 AQ",
     description:
