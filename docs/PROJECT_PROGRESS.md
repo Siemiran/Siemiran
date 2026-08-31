@@ -138,12 +138,15 @@ NORMALIZED, VALIDATED, and CONNECTED. Task N exposes 38 Products and increases
 the active Product total from 132 to 170. The source lifecycle distribution of
 37 active and 1 spare-part maps to 37 active and 1 legacy Product.
 
-S7-1200 is now 121/186 connected with 65 disconnected. The next controlled
-Product-Type integration is the 23-record Classic S7-1200 Signal Board dataset,
-which remains DISCONNECTED.
+Task O connects all 23 normalized and validated Classic S7-1200 Signal Board
+records through the unchanged shared SB adapter. Classic SB is now 23 RECORDS,
+NORMALIZED, VALIDATED, and CONNECTED. Task O exposes 23 active Products and
+increases the active Product total from 170 to 193.
 
-Classic S7-1200 SB plus all S7-1200 CM, CP, CB, special, and other datasets
-remain DISCONNECTED. Structural G2 classification is complete for 28 existing records:
+S7-1200 is now 144/186 connected with 42 disconnected. CPU, Power Module,
+Signal Module, and Signal Board are fully connected across Classic and G2. CM
+16, CP 7, CB 3, special/technology 11, and other/companion 5 remain
+DISCONNECTED. Structural G2 classification is complete for 28 existing records:
 10 CPU, 9 Signal Board, and 9 Signal Module records now carry generation in
 `seriesId`, while their functional variant IDs no longer encode G2. The G2
 taxonomy now covers those product types alongside the 2 previously classified
@@ -174,8 +177,8 @@ Module records. No G5 series was created.
 The product browsing, detail, comparison, and inquiry-entry experiences are in
 place. The Siemens validation and common Product mapping pipeline is now
 generalized while product-type specification normalization remains explicit.
-The S7-300 Power Supply, S7-1200 Classic/G2 Power Module, CPU, and Signal Module,
-and S7-1200 G2 Signal Board datasets are connected through explicit
+The S7-300 Power Supply and S7-1200 Classic/G2 Power Module, CPU, Signal Module,
+and Signal Board datasets are connected through explicit
 normalizers. All other
 disconnected source datasets still require controlled taxonomy and normalization
 work before integration and must not be presented as active products before

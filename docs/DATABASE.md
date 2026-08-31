@@ -24,7 +24,7 @@ Product reads are exposed through
 
 ## Current Active Dataset
 
-The application currently aggregates 170 Products:
+The application currently aggregates 193 Products:
 
 - 36 mapped S7-300 CPU Products
 - 13 mapped S7-300 Power Supply Products
@@ -35,6 +35,7 @@ The application currently aggregates 170 Products:
 - 9 mapped S7-1200 G2 Signal Module Products
 - 9 mapped S7-1200 G2 Signal Board Products
 - 38 mapped S7-1200 Classic Signal Module Products
+- 23 mapped S7-1200 Classic Signal Board Products
 
 Only records included by `data/products.ts` reach the Product repository and UI.
 The presence of a manufacturer source file does not make its records active
@@ -87,13 +88,13 @@ canonical Product relation fields.
 | CPU | 60 | CONNECTED (50 Classic, 10 G2) |
 | Power Module (PM) | 5 | CONNECTED (3 Classic, 2 G2) |
 | Signal Module (SM) | 47 | CONNECTED (38 Classic, 9 G2) |
-| Signal Board (SB) | 32 | 9 G2 CONNECTED; 23 Classic DISCONNECTED |
+| Signal Board (SB) | 32 | CONNECTED (23 Classic, 9 G2) |
 | Communication Module (CM) | 16 | DISCONNECTED |
 | Communication Processor (CP) | 7 | DISCONNECTED |
 | Communication Board (CB) | 3 | DISCONNECTED |
 | Special/technology modules | 11 | DISCONNECTED |
 | Other/companion modules | 5 | DISCONNECTED |
-| **Total** | **186** | **83 CONNECTED; 103 DISCONNECTED** |
+| **Total** | **186** | **144 CONNECTED; 42 DISCONNECTED** |
 
 The current S7-1200 source files contain 186 unique MLFB declarations. No source
 records were added or removed during structural G2 reclassification. Generation
@@ -139,33 +140,32 @@ CONNECTED. Their functional variants are: `digital-input` 4,
 Source lifecycle is 37 active and 1 spare-part, mapped to 37 active and 1 legacy
 Products.
 
-The 32 Signal Board source records comprise 9 G2 and 23 Classic records. The 9
-G2 records are connected through an explicit S7-1200 Signal Board specification
-normalizer shared with the structurally compatible Classic contract, while all
-23 Classic Signal Boards remain disconnected. Each G2 variant has one record:
+The 32 Signal Board source records comprise 9 G2 and 23 Classic records. All are
+connected through the unchanged shared S7-1200 Signal Board specification
+normalizer. Each G2 variant has one record:
 `sb1221-di8-24vdc`, `sb1222-dq8-24vdc`, `sb1223-di4-dq4-24vdc`,
 `sb1223-di4-dq4-5vdc`, `sb1231-ai4`, `sb1231-rtd-ai2`, `sb1231-tc-ai4`,
 `sb1232-ao4`, and `sb1233-ai2-ao2`.
 
-The 23 Classic Signal Board records are NORMALIZED, taxonomy-ready 23/23, and
-DISCONNECTED. Their final model-specific variants are:
+The 23 Classic Signal Board records are NORMALIZED, taxonomy-valid 23/23, and
+CONNECTED. Their model-specific variants are:
 `sb1221-di4-24vdc` 2, `sb1221-di4-5vdc` 2, `sb1222-dq4-24vdc` 2,
 `sb1222-dq4-5vdc` 2, `sb1223-di2-do2-standard` 4,
 `sb1223-di2-do2-24vdc` 2, `sb1223-di2-do2-5vdc` 2, `sb1231-ai1` 1,
 `sb1231-rtd` 2, `sb1231-thermocouple` 1, and `sb1232-ao1` 3. All 23
-records remain active.
+records map to 23 active Products.
 
 For both Classic datasets, SIPLUS environmental edition remains represented by
 MLFB, title, description, and other source evidence rather than functional or
-model variant taxonomy. Their shared adapters are unchanged. Classic Signal
-Board remains disconnected.
+model variant taxonomy. Their shared adapters are unchanged.
 
-S7-1200 now has 121 connected of 186 source records, with 65 disconnected, and
-the active Product total is 170.
+S7-1200 now has 144 connected of 186 source records, with 42 disconnected, and
+the active Product total is 193. CPU, Power Module, Signal Module, and Signal
+Board are fully connected across Classic and G2.
 
 All other S7-1200 manufacturer source datasets remain disconnected and await
-controlled integration; connecting 121 of 186 records does not establish that
-the remaining 65 records are lifecycle-verified.
+controlled integration; the remaining 42 are CM 16, CP 7, CB 3,
+special/technology 11, and other/companion 5.
 
 Current constraints:
 
