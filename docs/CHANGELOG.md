@@ -3,6 +3,22 @@
 This file records completed repository changes. Connection status refers to the
 implementation on the current `main` branch.
 
+## 2026-08-31 — Remaining S7-1200 Source Normalization & Taxonomy
+
+### Completed
+
+- Normalized 19 environmental/SIPLUS composite variant fields across the
+  remaining S7-1200 source records.
+- Reclassified all five former `Other Module` records and eliminated that
+  catch-all source classification.
+- Added seven stable, evidence-backed Product Types and made all remaining 42
+  records taxonomy-valid while preserving source lifecycle.
+- Added zero Product exposure: the active Product total remains 193 and
+  S7-1200 remains 144/186 connected with 42 disconnected.
+- Deferred explicit adapters to Task R.
+- Retained CM RS422/485 connector verification debt for
+  `6AG1241-1CH32-4XB0` and `6AG1241-1CH32-2XB0` before future exposure.
+
 ## 2026-08-31 — Siemens S7-1200 Classic Signal Board Integration
 
 ### Completed

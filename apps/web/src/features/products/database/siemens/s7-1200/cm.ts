@@ -243,7 +243,7 @@ export const s71200CM: SiemensS71200CommunicationModule[] = [
     seriesId: "S7-1200",
 
     productTypeId: "Communication Module",
-    variantId: "siplus-cm1241-rs232",
+    variantId: "cm1241-rs232",
 
     title: "SIPLUS S7-1200 CM 1241 RS232",
 
@@ -281,7 +281,7 @@ export const s71200CM: SiemensS71200CommunicationModule[] = [
     seriesId: "S7-1200",
 
     productTypeId: "Communication Module",
-    variantId: "siplus-cm1241-rs422-485",
+    variantId: "cm1241-rs422-485",
 
     title: "SIPLUS S7-1200 CM 1241 RS422/485",
 
@@ -319,7 +319,7 @@ export const s71200CM: SiemensS71200CommunicationModule[] = [
     seriesId: "S7-1200",
 
     productTypeId: "Communication Module",
-    variantId: "siplus-cm1242-5",
+    variantId: "cm1242-5",
 
     title: "SIPLUS S7-1200 CM 1242-5",
 
@@ -358,7 +358,7 @@ export const s71200CM: SiemensS71200CommunicationModule[] = [
     seriesId: "S7-1200",
 
     productTypeId: "Communication Module",
-    variantId: "siplus-cm1243-2",
+    variantId: "cm1243-2",
 
     title: "SIPLUS S7-1200 CM 1243-2",
 
@@ -396,7 +396,7 @@ export const s71200CM: SiemensS71200CommunicationModule[] = [
     seriesId: "S7-1200",
 
     productTypeId: "Communication Module",
-    variantId: "siplus-cm1243-5",
+    variantId: "cm1243-5",
 
     title: "SIPLUS S7-1200 CM 1243-5",
 
@@ -435,7 +435,7 @@ export const s71200CM: SiemensS71200CommunicationModule[] = [
     seriesId: "S7-1200",
 
     productTypeId: "Communication Module",
-    variantId: "siplus-cm1241-rs232-extreme",
+    variantId: "cm1241-rs232",
 
     title: "SIPLUS S7-1200 CM 1241 RS232",
 
@@ -473,7 +473,7 @@ export const s71200CM: SiemensS71200CommunicationModule[] = [
     seriesId: "S7-1200",
 
     productTypeId: "Communication Module",
-    variantId: "siplus-cm1241-rs422-485-extreme",
+    variantId: "cm1241-rs422-485",
 
     title: "SIPLUS S7-1200 CM 1241 RS422/485",
 
@@ -511,7 +511,7 @@ export const s71200CM: SiemensS71200CommunicationModule[] = [
     seriesId: "S7-1200",
 
     productTypeId: "Communication Module",
-    variantId: "siplus-cm1241-rs232-rail",
+    variantId: "cm1241-rs232",
 
     title: "SIPLUS S7-1200 CM 1241 RS232 RAIL",
 
@@ -548,7 +548,7 @@ export const s71200CM: SiemensS71200CommunicationModule[] = [
     seriesId: "S7-1200",
 
     productTypeId: "Communication Module",
-    variantId: "siplus-cm1241-rs422-485-rail",
+    variantId: "cm1241-rs422-485",
 
     title: "SIPLUS S7-1200 CM 1241 RS422/485 RAIL",
 
@@ -585,7 +585,7 @@ export const s71200CM: SiemensS71200CommunicationModule[] = [
     seriesId: "S7-1200",
 
     productTypeId: "Communication Module",
-    variantId: "siplus-cm1242-5-rail",
+    variantId: "cm1242-5",
 
     title: "SIPLUS S7-1200 CM 1242-5 RAIL",
 
@@ -624,7 +624,7 @@ export const s71200CM: SiemensS71200CommunicationModule[] = [
     seriesId: "S7-1200",
 
     productTypeId: "Communication Module",
-    variantId: "siplus-cm1243-5-rail",
+    variantId: "cm1243-5",
 
     title: "SIPLUS S7-1200 CM 1243-5 RAIL",
 

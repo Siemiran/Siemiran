@@ -80,7 +80,11 @@ These products flow through `data/products.ts`, the Product repository, and the 
   preserved, and SIPLUS environmental edition remains source evidence rather
   than functional/model variant taxonomy.
 - The remaining disconnected S7-1200 sources are exactly CM 16, CP 7, CB 3,
-  special/technology 11, and other/companion 5.
+  special/technology 11, and companion-file records 5. Task Q normalized 19
+  environmental/composite variant fields and reclassified all five former
+  `Other Module` records into stable Product Types. All 42 records are
+  taxonomy-valid and remain DISCONNECTED because explicit adapters are not yet
+  implemented.
 - All 50 Classic CPU records are taxonomy/validation-ready after normalizing
   their functional variants to 41 `compact` and 9 `fail-safe`. SIPLUS remains
   environmental source evidence in MLFBs, titles, and descriptions rather than
@@ -115,6 +119,11 @@ These products flow through `data/products.ts`, the Product repository, and the 
 - Task O connects all 23 Classic Signal Boards without changing source,
   taxonomy, adapters, or other datasets. The active Product total is 193 and
   S7-1200 is 144/186 connected with 42 disconnected.
+- Task Q adds seven evidence-backed Classic S7-1200 Product Types and eliminates
+  `Other Module` from the remaining source classification with zero Product
+  exposure. Active Products remain 193 and S7-1200 remains 144/186 connected.
+- Connector wording for `6AG1241-1CH32-4XB0` and `6AG1241-1CH32-2XB0` remains
+  non-blocking verification debt that must be settled before CM exposure.
 - `6AG1223-1QH32-4XB0` was verified against its official Siemens Industry Mall
   product record. Its digital inputs are 120/230 V AC, the incorrect 24 V DC
   source value is corrected, and the record now uses a direct MLFB-specific
