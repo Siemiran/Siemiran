@@ -3,6 +3,23 @@
 This file records completed repository changes. Connection status refers to the
 implementation on the current `main` branch.
 
+## 2026-08-31 — Siemens S7-1200 Classic Signal Board Integration
+
+### Completed
+
+- Connected all 23 normalized Classic Signal Board records across 11
+  model-specific variants as 23 active Products.
+- Reused the unchanged shared Classic/G2 Signal Board adapter and preserved all
+  170 existing Products while increasing the active total from 170 to 193.
+- Increased connected S7-1200 source records from 121 to 144 of 186, reducing
+  the disconnected remainder from 65 to 42.
+- Completed S7-1200 CPU, Power Module, Signal Module, and Signal Board
+  integration across Classic and G2.
+- Made no source, taxonomy, adapter, Product interface, or generic-pipeline
+  changes and connected no other dataset.
+- Kept CM, CP, CB, special/technology, and other/companion datasets
+  disconnected.
+
 ## 2026-08-31 — Siemens S7-1200 Classic Signal Module Integration
 
 ### Completed

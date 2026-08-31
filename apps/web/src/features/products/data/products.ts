@@ -11,6 +11,7 @@ import { s71200G2SignalBoards } from "@/features/products/database/siemens/s7-12
 import { siemensS71200G2SM } from "@/features/products/database/siemens/s7-1200/g2/sm";
 import { mapSiemensS71200PowerModuleToProduct } from "@/features/products/database/siemens/s7-1200/pm.adapter";
 import { siemensS71200PowerModules } from "@/features/products/database/siemens/s7-1200/pm";
+import { s71200SignalBoards } from "@/features/products/database/siemens/s7-1200/sb";
 import { mapSiemensS71200SignalBoardToProduct } from "@/features/products/database/siemens/s7-1200/sb.adapter";
 import { siemensS71200SM } from "@/features/products/database/siemens/s7-1200/sm";
 import { mapSiemensS71200SignalModuleToProduct } from "@/features/products/database/siemens/s7-1200/sm.adapter";
@@ -43,6 +44,9 @@ const verifiedSiemensS71200G2SignalBoardProducts: Product[] =
 const verifiedSiemensS71200ClassicSignalModuleProducts: Product[] =
   siemensS71200SM.map(mapSiemensS71200SignalModuleToProduct);
 
+const verifiedSiemensS71200ClassicSignalBoardProducts: Product[] =
+  s71200SignalBoards.map(mapSiemensS71200SignalBoardToProduct);
+
 export const products: Product[] = [
   ...verifiedSiemensPLCProducts,
   ...verifiedSiemensS7300PowerSupplyProducts,
@@ -53,4 +57,5 @@ export const products: Product[] = [
   ...verifiedSiemensS71200G2SignalModuleProducts,
   ...verifiedSiemensS71200G2SignalBoardProducts,
   ...verifiedSiemensS71200ClassicSignalModuleProducts,
+  ...verifiedSiemensS71200ClassicSignalBoardProducts,
 ];
