@@ -3,6 +3,23 @@
 This file records completed repository changes. Connection status refers to the
 implementation on the current `main` branch.
 
+## 2026-08-31 — Siemens S7-1200 Communication Module Integration
+
+### Completed
+
+- Connected all 17 Communication Module records: 16 CM source records plus the
+  RF120C record from `other.ts`, reusing the unchanged communication adapter.
+- Verified before exposure that `6AG1241-1CH32-4XB0` and
+  `6AG1241-1CH32-2XB0` both specify a 9-pole D-sub pin connector; no source
+  correction was required.
+- Preserved all existing 193 Products and increased the Product collection
+  total from 193 to 210.
+- Increased connected S7-1200 source records from 144 to 161 of 186 and reduced
+  the disconnected remainder from 42 to 25.
+- Made no source, taxonomy, adapter, or generic-pipeline changes and exposed no
+  Communication Processor, Communication Board, Special Module, Technology
+  Module, Network Switch, or Data Decoupling Module records.
+
 ## 2026-08-31 — Remaining S7-1200 Explicit Adapter Layer
 
 ### Completed

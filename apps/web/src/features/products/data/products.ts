@@ -3,12 +3,15 @@ import { siemensPLC } from "@/features/products/database/siemens/plc";
 import { mapSiemensPLCToProduct } from "@/features/products/database/siemens/plc.adapter";
 import { mapSiemensS7300PowerSupplyToProduct } from "@/features/products/database/siemens/s7-300/ps.adapter";
 import { siemensS7300PowerSupplies } from "@/features/products/database/siemens/s7-300/ps";
+import { s71200CM } from "@/features/products/database/siemens/s7-1200/cm";
+import { mapSiemensS71200CommunicationToProduct } from "@/features/products/database/siemens/s7-1200/communication.adapter";
 import { siemensS71200CPU } from "@/features/products/database/siemens/s7-1200/cpu";
 import { mapSiemensS71200CPUToProduct } from "@/features/products/database/siemens/s7-1200/cpu.adapter";
 import { siemensS71200G2CPU } from "@/features/products/database/siemens/s7-1200/g2/cpu";
 import { siemensS71200G2PowerModules } from "@/features/products/database/siemens/s7-1200/g2/pm";
 import { s71200G2SignalBoards } from "@/features/products/database/siemens/s7-1200/g2/sb";
 import { siemensS71200G2SM } from "@/features/products/database/siemens/s7-1200/g2/sm";
+import { s71200OtherModules } from "@/features/products/database/siemens/s7-1200/other";
 import { mapSiemensS71200PowerModuleToProduct } from "@/features/products/database/siemens/s7-1200/pm.adapter";
 import { siemensS71200PowerModules } from "@/features/products/database/siemens/s7-1200/pm";
 import { s71200SignalBoards } from "@/features/products/database/siemens/s7-1200/sb";
@@ -47,6 +50,13 @@ const verifiedSiemensS71200ClassicSignalModuleProducts: Product[] =
 const verifiedSiemensS71200ClassicSignalBoardProducts: Product[] =
   s71200SignalBoards.map(mapSiemensS71200SignalBoardToProduct);
 
+const verifiedSiemensS71200CommunicationModuleProducts: Product[] = [
+  ...s71200CM.map(mapSiemensS71200CommunicationToProduct),
+  ...s71200OtherModules
+    .filter((source) => source.productTypeId === "Communication Module")
+    .map(mapSiemensS71200CommunicationToProduct),
+];
+
 export const products: Product[] = [
   ...verifiedSiemensPLCProducts,
   ...verifiedSiemensS7300PowerSupplyProducts,
@@ -58,4 +68,5 @@ export const products: Product[] = [
   ...verifiedSiemensS71200G2SignalBoardProducts,
   ...verifiedSiemensS71200ClassicSignalModuleProducts,
   ...verifiedSiemensS71200ClassicSignalBoardProducts,
+  ...verifiedSiemensS71200CommunicationModuleProducts,
 ];

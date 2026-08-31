@@ -172,9 +172,17 @@ now has exactly one deterministic route. Source, taxonomy, and Product
 aggregation remain unchanged, so exposure is 0, active Products remain 193,
 and S7-1200 remains 144/186 connected with 42 disconnected.
 
-The next controlled step is source verification for CM records
-`6AG1241-1CH32-4XB0` and `6AG1241-1CH32-2XB0` before Communication Module
-exposure.
+Task S connects all 17 Communication Module records: all 16 normalized CM
+records plus RF120C from `other.ts`. Communication Module is now 17 RECORDS,
+NORMALIZED, TAXONOMY-VALID, ADAPTER-READY, and CONNECTED. The unchanged
+communication adapter maps 17 active Products, increasing the Product total
+from 193 to 210 and S7-1200 connectivity from 144/186 to 161/186, leaving 25
+disconnected.
+
+Connector verification debt for `6AG1241-1CH32-4XB0` and
+`6AG1241-1CH32-2XB0` is RESOLVED: both connector values are verified as
+`9-pole D-sub pin`, and no source change was required. The next controlled
+integration is Communication Processor with 7 records; it remains disconnected.
 
 ## Inquiry Progress
 

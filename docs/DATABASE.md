@@ -24,7 +24,7 @@ Product reads are exposed through
 
 ## Current Active Dataset
 
-The application currently aggregates 193 Products:
+The application currently aggregates 210 Products:
 
 - 36 mapped S7-300 CPU Products
 - 13 mapped S7-300 Power Supply Products
@@ -36,6 +36,7 @@ The application currently aggregates 193 Products:
 - 9 mapped S7-1200 G2 Signal Board Products
 - 38 mapped S7-1200 Classic Signal Module Products
 - 23 mapped S7-1200 Classic Signal Board Products
+- 17 mapped S7-1200 Communication Module Products
 
 Only records included by `data/products.ts` reach the Product repository and UI.
 The presence of a manufacturer source file does not make its records active
@@ -89,12 +90,12 @@ canonical Product relation fields.
 | Power Module (PM) | 5 | CONNECTED (3 Classic, 2 G2) |
 | Signal Module (SM) | 47 | CONNECTED (38 Classic, 9 G2) |
 | Signal Board (SB) | 32 | CONNECTED (23 Classic, 9 G2) |
-| Communication Module (CM) | 16 | DISCONNECTED |
+| Communication Module (CM) | 16 | CONNECTED |
 | Communication Processor (CP) | 7 | DISCONNECTED |
 | Communication Board (CB) | 3 | DISCONNECTED |
 | Special/technology modules | 11 | DISCONNECTED |
-| Other/companion modules | 5 | DISCONNECTED |
-| **Total** | **186** | **144 CONNECTED; 42 DISCONNECTED** |
+| Other/companion modules | 5 | 1 CONNECTED; 4 DISCONNECTED |
+| **Total** | **186** | **161 CONNECTED; 25 DISCONNECTED** |
 
 The current S7-1200 source files contain 186 unique MLFB declarations. No source
 records were added or removed during structural G2 reclassification. Generation
@@ -159,15 +160,23 @@ For both Classic datasets, SIPLUS environmental edition remains represented by
 MLFB, title, description, and other source evidence rather than functional or
 model variant taxonomy. Their shared adapters are unchanged.
 
-S7-1200 now has 144 connected of 186 source records, with 42 disconnected, and
-the active Product total is 193. CPU, Power Module, Signal Module, and Signal
-Board are fully connected across Classic and G2.
+S7-1200 now has 161 connected of 186 source records, with 25 disconnected, and
+the active Product total is 210. CPU, Power Module, Signal Module, Signal Board,
+and Communication Module are fully connected across Classic and G2.
 
-The remaining 42 records are NORMALIZED, TAXONOMY-VALID, ADAPTER-ROUTED, and
+Communication Module is CONNECTED with 17 active Products: 16 records from
+`cm.ts` plus RF120C from `other.ts`. Their variant distribution is:
+
+- `cm1241-rs232`: 4
+- `cm1241-rs422-485`: 4
+- `cm1242-5`: 3
+- `cm1243-2`: 2
+- `cm1243-5`: 3
+- `rf120c`: 1
+
+The remaining 25 records are NORMALIZED, TAXONOMY-VALID, ADAPTER-ROUTED, and
 DISCONNECTED. Their Product-Type distribution and explicit adapter routes are:
 
-- Communication Module: 17 (16 in `cm.ts`, plus RF120C in `other.ts`) via
-  `communication.adapter.ts`
 - Communication Processor: 7 via `communication.adapter.ts`
 - Communication Board: 3 via `communication.adapter.ts`
 - Special Module: 8 via `special.adapter.ts`
@@ -175,21 +184,19 @@ DISCONNECTED. Their Product-Type distribution and explicit adapter routes are:
 - Network Switch: 3 via `network-switch.adapter.ts`
 - Data Decoupling Module: 1 via `data-decoupling.adapter.ts`
 
-`Other Module` is no longer used as a source classification. Task Q adds zero
-Product exposure, and Task R also adds zero Product exposure. All 42 records are
-taxonomy-valid and adapter-routed but remain disconnected; the active Product
-total remains 193. The mixed physical `other.ts` file is unchanged, with
-Product-Type guards preventing records from crossing communication, Network
-Switch, and Data Decoupling Module adapter routes.
+`Other Module` is no longer used as a source classification. The mixed physical
+`other.ts` file remains unchanged: only RF120C is connected through the guarded
+communication adapter, while Network Switch and Data Decoupling Module remain
+disconnected.
 
-All other S7-1200 manufacturer source datasets remain disconnected and await
-controlled integration; the remaining 42 are CM 16, CP 7, CB 3,
-special/technology 11, and other/companion 5.
+Connector values for `6AG1241-1CH32-4XB0` and `6AG1241-1CH32-2XB0` were
+verified before exposure as `9-pole D-sub pin`; no source correction was
+required.
 
 Current constraints:
 
-- Only the Classic/G2 Power Module and CPU arrays plus the G2 Signal Module and
-  Signal Board arrays connect to Product aggregation.
+- The Classic/G2 CPU, Power Module, Signal Module, and Signal Board arrays plus
+  the 17 Communication Module records connect to Product aggregation.
 - Disconnected records are not validated during normal application construction.
 - Source/reference URL fields exist on the source records.
 - Source and taxonomy enforcement occurs only when a record passes through the
