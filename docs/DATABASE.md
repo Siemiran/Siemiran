@@ -24,7 +24,7 @@ Product reads are exposed through
 
 ## Current Active Dataset
 
-The application currently aggregates 132 Products:
+The application currently aggregates 170 Products:
 
 - 36 mapped S7-300 CPU Products
 - 13 mapped S7-300 Power Supply Products
@@ -34,6 +34,7 @@ The application currently aggregates 132 Products:
 - 50 mapped S7-1200 Classic CPU Products
 - 9 mapped S7-1200 G2 Signal Module Products
 - 9 mapped S7-1200 G2 Signal Board Products
+- 38 mapped S7-1200 Classic Signal Module Products
 
 Only records included by `data/products.ts` reach the Product repository and UI.
 The presence of a manufacturer source file does not make its records active
@@ -85,7 +86,7 @@ canonical Product relation fields.
 | --- | ---: | --- |
 | CPU | 60 | CONNECTED (50 Classic, 10 G2) |
 | Power Module (PM) | 5 | CONNECTED (3 Classic, 2 G2) |
-| Signal Module (SM) | 47 | 9 G2 CONNECTED; 38 Classic DISCONNECTED |
+| Signal Module (SM) | 47 | CONNECTED (38 Classic, 9 G2) |
 | Signal Board (SB) | 32 | 9 G2 CONNECTED; 23 Classic DISCONNECTED |
 | Communication Module (CM) | 16 | DISCONNECTED |
 | Communication Processor (CP) | 7 | DISCONNECTED |
@@ -127,16 +128,16 @@ source-backed record supplies Product identity and content, while a permanent
 redirect maps the old manual slug to `6es7214-1ag40-0xb0`. The S7-1200 source
 state includes 50 Classic CPUs, 10 G2 CPUs, and 5 Power Modules.
 
-The 9 G2 Signal Module records are connected through an explicit S7-1200 Signal
-Module specification normalizer shared with the structurally compatible Classic
-contract. The 38 Classic SM records remain disconnected. G2 variants comprise
+The 9 G2 and 38 Classic Signal Module records are connected through the same
+explicit S7-1200 Signal Module specification normalizer. G2 variants comprise
 2 digital-output, 2 digital-io, 3 analog-input, 1 analog-output, and 1 analog-io.
 
-The 38 Classic Signal Module records are NORMALIZED, taxonomy-ready 38/38, and
-DISCONNECTED. Their final functional variants are: `digital-input` 4,
+The 38 Classic Signal Module records are NORMALIZED, taxonomy-valid 38/38, and
+CONNECTED. Their functional variants are: `digital-input` 4,
 `digital-output` 11, `digital-io` 11, `fail-safe-input` 1,
 `fail-safe-output` 2, `analog-input` 5, `analog-output` 2, and `analog-io` 2.
-Lifecycle remains 37 active and 1 spare-part.
+Source lifecycle is 37 active and 1 spare-part, mapped to 37 active and 1 legacy
+Products.
 
 The 32 Signal Board source records comprise 9 G2 and 23 Classic records. The 9
 G2 records are connected through an explicit S7-1200 Signal Board specification
@@ -156,16 +157,15 @@ records remain active.
 
 For both Classic datasets, SIPLUS environmental edition remains represented by
 MLFB, title, description, and other source evidence rather than functional or
-model variant taxonomy. Their shared adapters are unchanged. This normalization
-adds no Product exposure: the active total remains 132 and S7-1200 remains
-83/186 connected with 103 disconnected.
+model variant taxonomy. Their shared adapters are unchanged. Classic Signal
+Board remains disconnected.
 
-S7-1200 now has 83 connected of 186 source records, with 103 disconnected, and
-the active Product total is 132.
+S7-1200 now has 121 connected of 186 source records, with 65 disconnected, and
+the active Product total is 170.
 
 All other S7-1200 manufacturer source datasets remain disconnected and await
-controlled integration; connecting 83 of 186 records does not establish that
-the remaining 103 records are lifecycle-verified.
+controlled integration; connecting 121 of 186 records does not establish that
+the remaining 65 records are lifecycle-verified.
 
 Current constraints:
 

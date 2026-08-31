@@ -3,6 +3,25 @@
 This file records completed repository changes. Connection status refers to the
 implementation on the current `main` branch.
 
+## 2026-08-31 — Siemens S7-1200 Classic Signal Module Integration
+
+### Completed
+
+- Connected all 38 normalized Classic Signal Module records: 4 digital-input,
+  11 digital-output, 11 digital-io, 1 fail-safe-input, 2 fail-safe-output, 5
+  analog-input, 2 analog-output, and 2 analog-io.
+- Mapped 37 active and 1 spare-part source lifecycle to 37 active and 1 legacy
+  Product through the unchanged shared Classic/G2 Signal Module adapter.
+- Preserved all 132 existing Products and increased the active total from 132
+  to 170.
+- Increased connected S7-1200 source records from 83 to 121 of 186, reducing
+  the disconnected remainder from 103 to 65.
+- Exposed the corrected `6AG1223-1QH32-4XB0` 120/230 V AC input voltage and
+  direct Siemens source URL through its Product.
+- Made no source, taxonomy, adapter, Product interface, or generic-pipeline
+  changes; connected no other dataset, and kept Classic Signal Board
+  disconnected.
+
 ## 2026-08-31 — Siemens S7-1200 SM 1223 AC Input Verification
 
 ### Completed

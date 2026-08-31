@@ -46,7 +46,7 @@
 
 ### Active Application Data
 
-The active `Product` aggregation contains 132 products:
+The active `Product` aggregation contains 170 products:
 
 - 36 S7-300 CPU source records mapped through validation and the Siemens adapter
 - 13 S7-300 Power Supply source records mapped through the shared validator,
@@ -63,20 +63,22 @@ The active `Product` aggregation contains 132 products:
   explicit shared S7-1200 Signal Module specification normalizer
 - 9 S7-1200 G2 Signal Board source records mapped through validation and an
   explicit shared S7-1200 Signal Board specification normalizer
+- 38 S7-1200 Classic Signal Module source records mapped through the unchanged
+  shared Signal Module normalizer: 37 active and 1 legacy Product mapped from a
+  spare-part source lifecycle
 
 These products flow through `data/products.ts`, the Product repository, and the UI.
 
 ### Source Data Not Connected to the Application
 
 - S7-300 SM, IM, FM, and CP datasets exist but are DISCONNECTED.
-- The 38-record Classic S7-1200 Signal Module and 23-record Classic Signal
-  Board sources remain DISCONNECTED. The Classic SM source is normalized to 8
-  functional variants and validates 38/38; the Classic SB source is normalized
-  to 11 model-specific variants and validates 23/23. SIPLUS environmental
-  edition remains source evidence rather than a functional/model `variantId`.
-  Their existing shared adapters remain unchanged and ready for controlled
-  integration. S7-1200 CM, CP, CB, special, and other datasets also remain
-  disconnected.
+- The 38-record Classic S7-1200 Signal Module source is source-backed,
+  taxonomy-valid 38/38, and CONNECTED through the unchanged shared Signal
+  Module adapter. The 23-record Classic Signal Board source remains
+  DISCONNECTED, normalized to 11 model-specific variants, and validates 23/23.
+  SIPLUS environmental edition remains source evidence rather than a
+  functional/model `variantId`. S7-1200 CM, CP, CB, special, and other datasets
+  also remain disconnected.
 - All 50 Classic CPU records are taxonomy/validation-ready after normalizing
   their functional variants to 41 `compact` and 9 `fail-safe`. SIPLUS remains
   environmental source evidence in MLFBs, titles, and descriptions rather than
@@ -84,16 +86,15 @@ These products flow through `data/products.ts`, the Product repository, and the 
 - All 50 Classic CPUs are source-backed and connected. The source-backed
   `6ES7214-1AG40-0XB0` Product replaces the former manual declaration, and a
   permanent redirect preserves its old `/products/cpu-1214c-dc-dc-dc` URL.
-- The 9 G2 Signal Modules are connected through one shared SM normalizer that
-  also supports the compatible Classic contract without connecting it. Physical
-  G2 source separation remains preserved.
+- The 9 G2 and 38 Classic Signal Modules are connected through one unchanged
+  shared SM normalizer. Physical source separation remains preserved.
 - The 9 G2 Signal Boards are connected through one shared SB normalizer that
   structurally supports the compatible Classic contract without connecting it.
   Physical G2 source separation remains preserved, and all 23 Classic Signal
   Boards remain disconnected.
-- 83 of 186 S7-1200 source records are connected: 50 Classic CPUs, 10 G2 CPUs,
-  5 Power Modules, 9 G2 Signal Modules, and 9 G2 Signal Boards. The remaining
-  103 are disconnected.
+- 121 of 186 S7-1200 source records are connected: 50 Classic CPUs, 10 G2 CPUs,
+  5 Power Modules, 9 G2 Signal Modules, 38 Classic Signal Modules, and 9 G2
+  Signal Boards. The remaining 65 are disconnected.
 - The S7-1200 source files contain 186 unique MLFB declarations.
 - `S7-1200 G2` is a distinct series under the S7-1200 family. Existing G2
   classification covers 10 CPU, 9 Signal Board, and 9 Signal Module records;
@@ -111,24 +112,24 @@ These products flow through `data/products.ts`, the Product repository, and the 
 - The verified taxonomy distinguishes the Classic `S7-1200` and `S7-1200 G2`
   series and covers the Classic and G2 Signal Board and Signal Module variants
   without changing G2 source or taxonomy semantics.
-- Task M adds zero Product exposure: the active Product total remains 132 and
-  S7-1200 remains 83/186 connected with 103 disconnected.
+- Task N connects all 38 Classic Signal Modules without changing source,
+  taxonomy, adapters, or other datasets. The active Product total is 170 and
+  S7-1200 is 121/186 connected with 65 disconnected.
 - `6AG1223-1QH32-4XB0` was verified against its official Siemens Industry Mall
   product record. Its digital inputs are 120/230 V AC, the incorrect 24 V DC
   source value is corrected, and the record now uses a direct MLFB-specific
-  Siemens source URL. Lifecycle remains active as of 2026-08-31. Classic SM
-  remains disconnected, Product exposure remains 0, the active Product total
-  remains 132, and S7-1200 remains 83/186 connected.
+  Siemens source URL. Lifecycle remains active as of 2026-08-31, and the
+  corrected 120/230 V AC value and direct URL now flow into its Product.
 - No S7-1200 G5 generation has been established.
 - The Siemens validation boundary now uses a neutral PLC source structural
   contract for identity, taxonomy, lifecycle, descriptions, and official
   source URLs.
 - Common Siemens Product mapping is separated from explicit product-type
   specification normalization. S7-300 CPU, S7-300 Power Supply, and S7-1200
-  Classic/G2 Power Module and CPU arrays plus the G2 Signal Module and Signal
-  Board arrays are
+  Classic/G2 Power Module and CPU arrays, both Signal Module arrays, and the G2
+  Signal Board array are
   connected; all other Siemens source datasets remain disconnected, and the
-  active Product count is 132.
+  active Product count is 170.
 
 ## Latest Local Quality Verification
 
