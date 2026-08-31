@@ -1146,11 +1146,11 @@ export const siemensS71200SM: SiemensS71200SignalModule[] = [
     specifications: {
       digitalInputs: 8,
       digitalOutputs: 8,
-      inputVoltage: "24 V DC",
+      inputVoltage: "120/230 V AC",
       interfaces: ["Backplane bus"],
     },
 
     source:
-      "https://mall.industry.siemens.com/tstcloud/Api/Catalog/ExportInformation?catalogItemId=S7_1200&lang=en",
+      "https://mall.industry.siemens.com/mall/en/ww/Catalog/Product/6AG1223-1QH32-4XB0",
   },
 ];
