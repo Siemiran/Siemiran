@@ -3,7 +3,7 @@
 ## Current Baseline
 
 - Status: Active Development
-- Documentation synchronized: 2026-08-30
+- Documentation synchronized: 2026-08-31
 - Repository source of truth: current `main` branch
 - No semantic release version is asserted by this document.
 
@@ -69,8 +69,14 @@ These products flow through `data/products.ts`, the Product repository, and the 
 ### Source Data Not Connected to the Application
 
 - S7-300 SM, IM, FM, and CP datasets exist but are DISCONNECTED.
-- The 38-record Classic S7-1200 Signal Module source remains DISCONNECTED, as
-  do S7-1200 SB, CM, CP, CB, special, and other datasets.
+- The 38-record Classic S7-1200 Signal Module and 23-record Classic Signal
+  Board sources remain DISCONNECTED. The Classic SM source is normalized to 8
+  functional variants and validates 38/38; the Classic SB source is normalized
+  to 11 model-specific variants and validates 23/23. SIPLUS environmental
+  edition remains source evidence rather than a functional/model `variantId`.
+  Their existing shared adapters remain unchanged and ready for controlled
+  integration. S7-1200 CM, CP, CB, special, and other datasets also remain
+  disconnected.
 - All 50 Classic CPU records are taxonomy/validation-ready after normalizing
   their functional variants to 41 `compact` and 9 `fail-safe`. SIPLUS remains
   environmental source evidence in MLFBs, titles, and descriptions rather than
@@ -103,8 +109,13 @@ These products flow through `data/products.ts`, the Product repository, and the 
 - Disconnected source records are not validated during normal application
   construction and must not be treated as active UI products.
 - The verified taxonomy distinguishes the Classic `S7-1200` and `S7-1200 G2`
-  series and now covers the structurally classified G2 CPU, Signal Board,
-  Signal Module, and Power Module variants.
+  series and covers the Classic and G2 Signal Board and Signal Module variants
+  without changing G2 source or taxonomy semantics.
+- Task M adds zero Product exposure: the active Product total remains 132 and
+  S7-1200 remains 83/186 connected with 103 disconnected.
+- The known non-blocking `6AG1223-1QH32-4XB0` AC-title versus 24 V DC
+  specification discrepancy remains intentionally unmodified pending separate
+  verification.
 - No S7-1200 G5 generation has been established.
 - The Siemens validation boundary now uses a neutral PLC source structural
   contract for identity, taxonomy, lifecycle, descriptions, and official

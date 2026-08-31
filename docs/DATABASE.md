@@ -131,6 +131,13 @@ The 9 G2 Signal Module records are connected through an explicit S7-1200 Signal
 Module specification normalizer shared with the structurally compatible Classic
 contract. The 38 Classic SM records remain disconnected. G2 variants comprise
 2 digital-output, 2 digital-io, 3 analog-input, 1 analog-output, and 1 analog-io.
+
+The 38 Classic Signal Module records are NORMALIZED, taxonomy-ready 38/38, and
+DISCONNECTED. Their final functional variants are: `digital-input` 4,
+`digital-output` 11, `digital-io` 11, `fail-safe-input` 1,
+`fail-safe-output` 2, `analog-input` 5, `analog-output` 2, and `analog-io` 2.
+Lifecycle remains 37 active and 1 spare-part.
+
 The 32 Signal Board source records comprise 9 G2 and 23 Classic records. The 9
 G2 records are connected through an explicit S7-1200 Signal Board specification
 normalizer shared with the structurally compatible Classic contract, while all
@@ -138,6 +145,20 @@ normalizer shared with the structurally compatible Classic contract, while all
 `sb1221-di8-24vdc`, `sb1222-dq8-24vdc`, `sb1223-di4-dq4-24vdc`,
 `sb1223-di4-dq4-5vdc`, `sb1231-ai4`, `sb1231-rtd-ai2`, `sb1231-tc-ai4`,
 `sb1232-ao4`, and `sb1233-ai2-ao2`.
+
+The 23 Classic Signal Board records are NORMALIZED, taxonomy-ready 23/23, and
+DISCONNECTED. Their final model-specific variants are:
+`sb1221-di4-24vdc` 2, `sb1221-di4-5vdc` 2, `sb1222-dq4-24vdc` 2,
+`sb1222-dq4-5vdc` 2, `sb1223-di2-do2-standard` 4,
+`sb1223-di2-do2-24vdc` 2, `sb1223-di2-do2-5vdc` 2, `sb1231-ai1` 1,
+`sb1231-rtd` 2, `sb1231-thermocouple` 1, and `sb1232-ao1` 3. All 23
+records remain active.
+
+For both Classic datasets, SIPLUS environmental edition remains represented by
+MLFB, title, description, and other source evidence rather than functional or
+model variant taxonomy. Their shared adapters are unchanged. This normalization
+adds no Product exposure: the active total remains 132 and S7-1200 remains
+83/186 connected with 103 disconnected.
 
 S7-1200 now has 83 connected of 186 source records, with 103 disconnected, and
 the active Product total is 132.

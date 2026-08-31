@@ -828,7 +828,7 @@ export const siemensS71200SM: SiemensS71200SignalModule[] = [
     familyId: "S7-1200",
     seriesId: "S7-1200",
     productTypeId: "Signal Module",
-    variantId: "siplus-digital-input",
+    variantId: "digital-input",
 
     title: "SIPLUS S7-1200 SM 1221 8DI",
 
@@ -855,7 +855,7 @@ export const siemensS71200SM: SiemensS71200SignalModule[] = [
     familyId: "S7-1200",
     seriesId: "S7-1200",
     productTypeId: "Signal Module",
-    variantId: "siplus-digital-input",
+    variantId: "digital-input",
 
     title: "SIPLUS S7-1200 SM 1221 16DI",
 
@@ -887,7 +887,7 @@ export const siemensS71200SM: SiemensS71200SignalModule[] = [
     familyId: "S7-1200",
     seriesId: "S7-1200",
     productTypeId: "Signal Module",
-    variantId: "siplus-digital-output",
+    variantId: "digital-output",
 
     title: "SIPLUS S7-1200 SM 1222 8DQ",
 
@@ -913,7 +913,7 @@ export const siemensS71200SM: SiemensS71200SignalModule[] = [
     familyId: "S7-1200",
     seriesId: "S7-1200",
     productTypeId: "Signal Module",
-    variantId: "siplus-digital-output",
+    variantId: "digital-output",
 
     title: "SIPLUS S7-1200 SM 1222 16DQ",
 
@@ -939,7 +939,7 @@ export const siemensS71200SM: SiemensS71200SignalModule[] = [
     familyId: "S7-1200",
     seriesId: "S7-1200",
     productTypeId: "Signal Module",
-    variantId: "siplus-digital-output",
+    variantId: "digital-output",
 
     title: "SIPLUS S7-1200 SM 1222 8DQ RLY",
 
@@ -965,7 +965,7 @@ export const siemensS71200SM: SiemensS71200SignalModule[] = [
     familyId: "S7-1200",
     seriesId: "S7-1200",
     productTypeId: "Signal Module",
-    variantId: "siplus-digital-output",
+    variantId: "digital-output",
 
     title: "SIPLUS S7-1200 SM 1222 16DQ RLY",
 
@@ -991,7 +991,7 @@ export const siemensS71200SM: SiemensS71200SignalModule[] = [
     familyId: "S7-1200",
     seriesId: "S7-1200",
     productTypeId: "Signal Module",
-    variantId: "siplus-digital-output",
+    variantId: "digital-output",
 
     title: "SIPLUS S7-1200 SM 1222 8DQ RLY",
 
@@ -1022,7 +1022,7 @@ export const siemensS71200SM: SiemensS71200SignalModule[] = [
     familyId: "S7-1200",
     seriesId: "S7-1200",
     productTypeId: "Signal Module",
-    variantId: "siplus-digital-io",
+    variantId: "digital-io",
 
     title: "SIPLUS S7-1200 SM 1223 8DI/8DQ",
 
@@ -1050,7 +1050,7 @@ export const siemensS71200SM: SiemensS71200SignalModule[] = [
     familyId: "S7-1200",
     seriesId: "S7-1200",
     productTypeId: "Signal Module",
-    variantId: "siplus-digital-io",
+    variantId: "digital-io",
 
     title: "SIPLUS S7-1200 SM 1223 16DI/16DQ",
 
@@ -1078,7 +1078,7 @@ export const siemensS71200SM: SiemensS71200SignalModule[] = [
     familyId: "S7-1200",
     seriesId: "S7-1200",
     productTypeId: "Signal Module",
-    variantId: "siplus-digital-io",
+    variantId: "digital-io",
 
     title: "SIPLUS S7-1200 SM 1223 8DI/8DQ RLY",
 
@@ -1106,7 +1106,7 @@ export const siemensS71200SM: SiemensS71200SignalModule[] = [
     familyId: "S7-1200",
     seriesId: "S7-1200",
     productTypeId: "Signal Module",
-    variantId: "siplus-digital-io",
+    variantId: "digital-io",
 
     title: "SIPLUS S7-1200 SM 1223 16DI/16DQ RLY",
 
@@ -1134,7 +1134,7 @@ export const siemensS71200SM: SiemensS71200SignalModule[] = [
     familyId: "S7-1200",
     seriesId: "S7-1200",
     productTypeId: "Signal Module",
-    variantId: "siplus-digital-io",
+    variantId: "digital-io",
 
     title: "SIPLUS S7-1200 SM 1223 8DI AC/8DQ RLY",
 
