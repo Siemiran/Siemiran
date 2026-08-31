@@ -163,19 +163,24 @@ S7-1200 now has 144 connected of 186 source records, with 42 disconnected, and
 the active Product total is 193. CPU, Power Module, Signal Module, and Signal
 Board are fully connected across Classic and G2.
 
-The remaining 42 records are NORMALIZED, TAXONOMY-VALID, DISCONNECTED, and do
-not yet have explicit adapters. Their final Product-Type distribution is:
+The remaining 42 records are NORMALIZED, TAXONOMY-VALID, ADAPTER-ROUTED, and
+DISCONNECTED. Their Product-Type distribution and explicit adapter routes are:
 
-- Communication Module: 17 (16 in `cm.ts`, plus RF120C in `other.ts`)
-- Communication Processor: 7
-- Communication Board: 3
-- Special Module: 8
-- Technology Module: 3
-- Network Switch: 3
-- Data Decoupling Module: 1
+- Communication Module: 17 (16 in `cm.ts`, plus RF120C in `other.ts`) via
+  `communication.adapter.ts`
+- Communication Processor: 7 via `communication.adapter.ts`
+- Communication Board: 3 via `communication.adapter.ts`
+- Special Module: 8 via `special.adapter.ts`
+- Technology Module: 3 via `special.adapter.ts`
+- Network Switch: 3 via `network-switch.adapter.ts`
+- Data Decoupling Module: 1 via `data-decoupling.adapter.ts`
 
 `Other Module` is no longer used as a source classification. Task Q adds zero
-Product exposure; the active Product total remains 193.
+Product exposure, and Task R also adds zero Product exposure. All 42 records are
+taxonomy-valid and adapter-routed but remain disconnected; the active Product
+total remains 193. The mixed physical `other.ts` file is unchanged, with
+Product-Type guards preventing records from crossing communication, Network
+Switch, and Data Decoupling Module adapter routes.
 
 All other S7-1200 manufacturer source datasets remain disconnected and await
 controlled integration; the remaining 42 are CM 16, CP 7, CB 3,

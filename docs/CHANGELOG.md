@@ -3,6 +3,22 @@
 This file records completed repository changes. Connection status refers to the
 implementation on the current `main` branch.
 
+## 2026-08-31 — Remaining S7-1200 Explicit Adapter Layer
+
+### Completed
+
+- Added a shared explicit communication adapter for CM, CP, CB, and RF120C and
+  a shared explicit adapter for Special Module and Technology Module.
+- Added guarded Network Switch and Data Decoupling Module adapters, giving all
+  42 remaining records one deterministic adapter route.
+- Kept the mixed `other.ts` source file unchanged and protected its routes with
+  runtime Product-Type guards.
+- Made no source, taxonomy, generic-pipeline, or Product aggregation changes;
+  Product exposure remains 0, the active Product total remains 193, and
+  S7-1200 remains 144/186 connected with 42 disconnected.
+- Retained CM connector verification for `6AG1241-1CH32-4XB0` and
+  `6AG1241-1CH32-2XB0` before future exposure.
+
 ## 2026-08-31 — Remaining S7-1200 Source Normalization & Taxonomy
 
 ### Completed

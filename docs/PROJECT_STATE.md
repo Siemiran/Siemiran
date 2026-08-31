@@ -83,8 +83,9 @@ These products flow through `data/products.ts`, the Product repository, and the 
   special/technology 11, and companion-file records 5. Task Q normalized 19
   environmental/composite variant fields and reclassified all five former
   `Other Module` records into stable Product Types. All 42 records are
-  taxonomy-valid and remain DISCONNECTED because explicit adapters are not yet
-  implemented.
+  taxonomy-valid. Task R adds explicit adapter coverage for all 42 while they
+  remain DISCONNECTED with zero Product exposure; source and taxonomy remain
+  unchanged.
 - All 50 Classic CPU records are taxonomy/validation-ready after normalizing
   their functional variants to 41 `compact` and 9 `fail-safe`. SIPLUS remains
   environmental source evidence in MLFBs, titles, and descriptions rather than
@@ -122,6 +123,14 @@ These products flow through `data/products.ts`, the Product repository, and the 
 - Task Q adds seven evidence-backed Classic S7-1200 Product Types and eliminates
   `Other Module` from the remaining source classification with zero Product
   exposure. Active Products remain 193 and S7-1200 remains 144/186 connected.
+- Task R adds four explicit adapters and gives all seven remaining Product Types
+  exactly one intended adapter route. Communication Module, Communication
+  Processor, and Communication Board share `communication.adapter.ts`; Special
+  Module and Technology Module share `special.adapter.ts`; Network Switch and
+  Data Decoupling Module use their own narrow guarded adapters. The mixed
+  physical `other.ts` file remains unchanged, and Product-Type guards prevent
+  cross-mapping. Product exposure remains zero, with 193 active Products and
+  S7-1200 still 144/186 connected with 42 disconnected.
 - Connector wording for `6AG1241-1CH32-4XB0` and `6AG1241-1CH32-2XB0` remains
   non-blocking verification debt that must be settled before CM exposure.
 - `6AG1223-1QH32-4XB0` was verified against its official Siemens Industry Mall
