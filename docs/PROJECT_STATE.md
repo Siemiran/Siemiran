@@ -113,9 +113,12 @@ These products flow through `data/products.ts`, the Product repository, and the 
   without changing G2 source or taxonomy semantics.
 - Task M adds zero Product exposure: the active Product total remains 132 and
   S7-1200 remains 83/186 connected with 103 disconnected.
-- The known non-blocking `6AG1223-1QH32-4XB0` AC-title versus 24 V DC
-  specification discrepancy remains intentionally unmodified pending separate
-  verification.
+- `6AG1223-1QH32-4XB0` was verified against its official Siemens Industry Mall
+  product record. Its digital inputs are 120/230 V AC, the incorrect 24 V DC
+  source value is corrected, and the record now uses a direct MLFB-specific
+  Siemens source URL. Lifecycle remains active as of 2026-08-31. Classic SM
+  remains disconnected, Product exposure remains 0, the active Product total
+  remains 132, and S7-1200 remains 83/186 connected.
 - No S7-1200 G5 generation has been established.
 - The Siemens validation boundary now uses a neutral PLC source structural
   contract for identity, taxonomy, lifecycle, descriptions, and official

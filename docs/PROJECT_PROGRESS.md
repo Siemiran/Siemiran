@@ -125,9 +125,12 @@ remains 83/186 connected with 103 disconnected. The next controlled steps are:
 1. Classic Signal Module integration
 2. Classic Signal Board integration
 
-Neither Classic dataset is marked connected by Task M. The known
-`6AG1223-1QH32-4XB0` AC-title versus 24 V DC specification discrepancy remains
-untouched pending separate verification.
+Neither Classic dataset is marked connected by Task M. The previously known
+`6AG1223-1QH32-4XB0` AC-title versus 24 V DC specification discrepancy is
+VERIFIED and RESOLVED: official Siemens evidence confirms 120/230 V AC digital
+inputs, and the record now uses its direct MLFB-specific source URL. No Product
+integration occurred, and Classic SM remains ready for the next controlled
+integration task.
 
 Classic S7-1200 SM and SB plus all S7-1200 CM, CP, CB, special, and other
 datasets remain DISCONNECTED. Structural G2 classification is complete for 28 existing records:

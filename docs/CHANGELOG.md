@@ -3,6 +3,18 @@
 This file records completed repository changes. Connection status refers to the
 implementation on the current `main` branch.
 
+## 2026-08-31 — Siemens S7-1200 SM 1223 AC Input Verification
+
+### Completed
+
+- Verified MLFB `6AG1223-1QH32-4XB0` against its official Siemens Industry Mall
+  product record.
+- Corrected Input Voltage from 24 V DC to 120/230 V AC and replaced the broad
+  catalog reference with the exact MLFB-specific Siemens URL.
+- Kept lifecycle active and made no taxonomy, adapter, or Product aggregation
+  changes.
+- Added no Product exposure; the active Product total remains 132.
+
 ## 2026-08-31 — Siemens S7-1200 Classic SM/SB Variant & Taxonomy Normalization
 
 ### Completed
