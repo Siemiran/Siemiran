@@ -214,10 +214,18 @@ the shared Special/Technology source layer is complete at 11/11 connected. The
 Product collection total increases from 228 to 231, and S7-1200 connectivity
 increases from 179/186 to 182/186, leaving 4 disconnected.
 
+Task X connects exactly 3 Network Switch / CSM 1277 records. Network Switch is
+now 3 RECORDS, NORMALIZED, TAXONOMY-VALID, ADAPTER-READY, and CONNECTED through
+the unchanged dedicated Network Switch adapter. All three use variant `csm1277`
+and map to active Products. Existing RF120C exposure is preserved, DCM 1271
+remains disconnected, and mixed `other.ts` exposure is 4/5. The Product
+collection total increases from 231 to 234, and S7-1200 connectivity increases
+from 182/186 to 185/186, leaving 1 Data Decoupling Module disconnected.
+
 Connector verification debt for `6AG1241-1CH32-4XB0` and
 `6AG1241-1CH32-2XB0` is RESOLVED: both connector values are verified as
 `9-pole D-sub pin`, and no source change was required. The next controlled
-integration is Network Switch with 3 records; it remains disconnected.
+integration is Data Decoupling Module with 1 record; it remains disconnected.
 
 ## Inquiry Progress
 

@@ -24,7 +24,7 @@ Product reads are exposed through
 
 ## Current Active Dataset
 
-The application currently aggregates 231 Products:
+The application currently aggregates 234 Products:
 
 - 36 mapped S7-300 CPU Products
 - 13 mapped S7-300 Power Supply Products
@@ -41,6 +41,7 @@ The application currently aggregates 231 Products:
 - 3 mapped S7-1200 Communication Board Products
 - 8 mapped S7-1200 Special Module Products
 - 3 mapped S7-1200 Technology Module Products
+- 3 mapped S7-1200 Network Switch Products
 
 Only records included by `data/products.ts` reach the Product repository and UI.
 The presence of a manufacturer source file does not make its records active
@@ -98,8 +99,8 @@ canonical Product relation fields.
 | Communication Processor (CP) | 7 | CONNECTED |
 | Communication Board (CB) | 3 | CONNECTED |
 | Special/technology modules | 11 | CONNECTED (8 Special Module, 3 Technology Module) |
-| Other/companion modules | 5 | 1 CONNECTED; 4 DISCONNECTED |
-| **Total** | **186** | **182 CONNECTED; 4 DISCONNECTED** |
+| Other/companion modules | 5 | 4 CONNECTED; 1 DISCONNECTED |
+| **Total** | **186** | **185 CONNECTED; 1 DISCONNECTED** |
 
 The current S7-1200 source files contain 186 unique MLFB declarations. No source
 records were added or removed during structural G2 reclassification. Generation
@@ -164,11 +165,11 @@ For both Classic datasets, SIPLUS environmental edition remains represented by
 MLFB, title, description, and other source evidence rather than functional or
 model variant taxonomy. Their shared adapters are unchanged.
 
-S7-1200 now has 182 connected of 186 source records, with 4 disconnected, and
-the Product collection total is 231. CPU, Power Module, Signal Module, Signal
+S7-1200 now has 185 connected of 186 source records, with 1 disconnected, and
+the Product collection total is 234. CPU, Power Module, Signal Module, Signal
 Board, Communication Module, Communication Processor, and Communication Board
 are fully connected across Classic and G2; Special Module and Technology Module
-are also connected.
+are also connected, as is Network Switch.
 
 Communication Module is CONNECTED with 17 active Products: 16 records from
 `cm.ts` plus RF120C from `other.ts`. Their variant distribution is:
@@ -227,16 +228,26 @@ All three Technology Module Products are active. The shared Special/Technology
 source array is fully connected: 8 Special Module plus 3 Technology Module,
 or 11/11 records.
 
-The remaining 4 records are NORMALIZED, TAXONOMY-VALID, ADAPTER-ROUTED, and
-DISCONNECTED. Their Product-Type distribution and explicit adapter routes are:
+Network Switch is CONNECTED with 3 active CSM 1277 Products through the unchanged
+dedicated Network Switch adapter. All use variant `csm1277`. Their MLFBs are:
 
-- Network Switch: 3 via `network-switch.adapter.ts`
+- `6GK7277-1AA10-0AA0`
+- `6AG1277-1AA10-2AA0`
+- `6AG1277-1AA10-4AA0`
+
+Mixed `other.ts` exposure is 4/5: RF120C Communication Module 1 connected,
+Network Switch 3 connected, and Data Decoupling Module 0 connected. DCM 1271
+(`3RK7271-1AA30-0AA0`) is the only remaining disconnected record.
+
+The remaining record is NORMALIZED, TAXONOMY-VALID, ADAPTER-ROUTED, and
+DISCONNECTED. Its Product-Type distribution and explicit adapter route are:
+
 - Data Decoupling Module: 1 via `data-decoupling.adapter.ts`
 
 `Other Module` is no longer used as a source classification. The mixed physical
-`other.ts` file remains unchanged: only RF120C is connected through the guarded
-communication adapter, while Network Switch and Data Decoupling Module remain
-disconnected.
+`other.ts` file remains unchanged: RF120C is connected through the guarded
+communication adapter and three CSM 1277 records through the dedicated Network
+Switch adapter, while Data Decoupling Module remains disconnected.
 
 Connector values for `6AG1241-1CH32-4XB0` and `6AG1241-1CH32-2XB0` were
 verified before exposure as `9-pole D-sub pin`; no source correction was
