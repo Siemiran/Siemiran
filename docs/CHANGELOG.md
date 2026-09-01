@@ -3,6 +3,26 @@
 This file records completed repository changes. Connection status refers to the
 implementation on the current `main` branch.
 
+## 2026-08-31 — Siemens S7-1200 Communication Processor Integration
+
+### Completed
+
+- Connected all seven normalized and taxonomy-valid Communication Processor
+  records through the existing communication adapter unchanged.
+- Preserved five final CP variants, including separate LTE EU and LTE US
+  variants.
+- Preserved source lifecycle of 6 active and 1 spare-part, mapped to Product
+  lifecycle of 6 active and 1 legacy.
+- Retained the spare-part CP 1242-7 V2 (`6GK7242-7KX31-0XE0`) rather than
+  filtering it.
+- Preserved the existing 210 Products and increased the Product collection
+  total from 210 to 217.
+- Increased connected S7-1200 source records from 161 to 168 of 186 and reduced
+  the disconnected remainder from 25 to 18.
+- Made no source, taxonomy, adapter, or generic-pipeline changes and exposed no
+  Communication Board, Special Module, Technology Module, Network Switch, or
+  Data Decoupling Module records.
+
 ## 2026-08-31 — Siemens S7-1200 Communication Module Integration
 
 ### Completed

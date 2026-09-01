@@ -16,7 +16,7 @@ Brand
 The canonical UI-facing interface is
 `apps/web/src/features/products/types/product.types.ts`.
 
-The active Product aggregation is
+The Product aggregation is
 `apps/web/src/features/products/data/products.ts`.
 
 Product reads are exposed through
@@ -24,7 +24,7 @@ Product reads are exposed through
 
 ## Current Active Dataset
 
-The application currently aggregates 210 Products:
+The application currently aggregates 217 Products:
 
 - 36 mapped S7-300 CPU Products
 - 13 mapped S7-300 Power Supply Products
@@ -37,6 +37,7 @@ The application currently aggregates 210 Products:
 - 38 mapped S7-1200 Classic Signal Module Products
 - 23 mapped S7-1200 Classic Signal Board Products
 - 17 mapped S7-1200 Communication Module Products
+- 7 mapped S7-1200 Communication Processor Products
 
 Only records included by `data/products.ts` reach the Product repository and UI.
 The presence of a manufacturer source file does not make its records active
@@ -91,11 +92,11 @@ canonical Product relation fields.
 | Signal Module (SM) | 47 | CONNECTED (38 Classic, 9 G2) |
 | Signal Board (SB) | 32 | CONNECTED (23 Classic, 9 G2) |
 | Communication Module (CM) | 16 | CONNECTED |
-| Communication Processor (CP) | 7 | DISCONNECTED |
+| Communication Processor (CP) | 7 | CONNECTED |
 | Communication Board (CB) | 3 | DISCONNECTED |
 | Special/technology modules | 11 | DISCONNECTED |
 | Other/companion modules | 5 | 1 CONNECTED; 4 DISCONNECTED |
-| **Total** | **186** | **161 CONNECTED; 25 DISCONNECTED** |
+| **Total** | **186** | **168 CONNECTED; 18 DISCONNECTED** |
 
 The current S7-1200 source files contain 186 unique MLFB declarations. No source
 records were added or removed during structural G2 reclassification. Generation
@@ -160,9 +161,10 @@ For both Classic datasets, SIPLUS environmental edition remains represented by
 MLFB, title, description, and other source evidence rather than functional or
 model variant taxonomy. Their shared adapters are unchanged.
 
-S7-1200 now has 161 connected of 186 source records, with 25 disconnected, and
-the active Product total is 210. CPU, Power Module, Signal Module, Signal Board,
-and Communication Module are fully connected across Classic and G2.
+S7-1200 now has 168 connected of 186 source records, with 18 disconnected, and
+the Product collection total is 217. CPU, Power Module, Signal Module, Signal
+Board, Communication Module, and Communication Processor are fully connected
+across Classic and G2.
 
 Communication Module is CONNECTED with 17 active Products: 16 records from
 `cm.ts` plus RF120C from `other.ts`. Their variant distribution is:
@@ -174,10 +176,22 @@ Communication Module is CONNECTED with 17 active Products: 16 records from
 - `cm1243-5`: 3
 - `rf120c`: 1
 
-The remaining 25 records are NORMALIZED, TAXONOMY-VALID, ADAPTER-ROUTED, and
+Communication Processor is CONNECTED with 7 Products through the unchanged
+communication adapter. Its variant distribution is:
+
+- `telecontrol-gprs`: 1
+- `industrial-ethernet-telecontrol`: 3
+- `lte-eu`: 1
+- `lte-us`: 1
+- `telecontrol-irc`: 1
+
+Source lifecycle is 6 active and 1 spare-part; mapped Product lifecycle for
+these seven is 6 active and 1 legacy. The spare-part CP 1242-7 V2
+(`6GK7242-7KX31-0XE0`) is preserved and connected rather than filtered.
+
+The remaining 18 records are NORMALIZED, TAXONOMY-VALID, ADAPTER-ROUTED, and
 DISCONNECTED. Their Product-Type distribution and explicit adapter routes are:
 
-- Communication Processor: 7 via `communication.adapter.ts`
 - Communication Board: 3 via `communication.adapter.ts`
 - Special Module: 8 via `special.adapter.ts`
 - Technology Module: 3 via `special.adapter.ts`
