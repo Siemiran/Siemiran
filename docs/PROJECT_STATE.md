@@ -46,7 +46,7 @@
 
 ### Active Application Data
 
-The `Product` aggregation contains 217 products:
+The `Product` aggregation contains 220 products:
 
 - 36 S7-300 CPU source records mapped through validation and the Siemens adapter
 - 13 S7-300 Power Supply source records mapped through the shared validator,
@@ -74,6 +74,9 @@ The `Product` aggregation contains 217 products:
 - 7 S7-1200 Communication Processor records mapped through the unchanged shared
   communication adapter: 6 active Products and 1 legacy Product mapped from a
   spare-part source lifecycle
+- 3 S7-1200 Communication Board records mapped through the unchanged shared
+  communication adapter: all use variant `cb1241-rs485` and map to active
+  Products
 
 These products flow through `data/products.ts`, the Product repository, and the UI.
 
@@ -85,9 +88,9 @@ These products flow through `data/products.ts`, the Product repository, and the 
   unchanged shared adapters. Classic/G2 physical source separation is
   preserved, and SIPLUS environmental edition remains source evidence rather
   than functional/model variant taxonomy.
-- The remaining disconnected S7-1200 sources are exactly Communication Board 3,
-  Special Module 8, Technology Module 3, Network Switch 3, and Data Decoupling
-  Module 1. All 18 are normalized, taxonomy-valid, and adapter-routed.
+- The remaining disconnected S7-1200 sources are exactly Special Module 8,
+  Technology Module 3, Network Switch 3, and Data Decoupling Module 1. All 15
+  are normalized, taxonomy-valid, and adapter-routed.
 - All 50 Classic CPU records are taxonomy/validation-ready after normalizing
   their functional variants to 41 `compact` and 9 `fail-safe`. SIPLUS remains
   environmental source evidence in MLFBs, titles, and descriptions rather than
@@ -99,9 +102,9 @@ These products flow through `data/products.ts`, the Product repository, and the 
   shared SM normalizer. Physical source separation remains preserved.
 - The 9 G2 and 23 Classic Signal Boards are connected through one unchanged
   shared SB normalizer. Physical source separation remains preserved.
-- 168 of 186 S7-1200 source records are connected: all CPU, Power Module,
-  Signal Module, Signal Board, Communication Module, and Communication Processor
-  records. The remaining 18 are disconnected.
+- 171 of 186 S7-1200 source records are connected: all CPU, Power Module,
+  Signal Module, Signal Board, Communication Module, Communication Processor,
+  and Communication Board records. The remaining 15 are disconnected.
 - The S7-1200 source files contain 186 unique MLFB declarations.
 - `S7-1200 G2` is a distinct series under the S7-1200 family. Existing G2
   classification covers 10 CPU, 9 Signal Board, and 9 Signal Module records;
@@ -146,6 +149,14 @@ These products flow through `data/products.ts`, the Product repository, and the 
   S7-1200 connectivity is 168/186, with 18 disconnected: Communication Board 3,
   Special Module 8, Technology Module 3, Network Switch 3, and Data Decoupling
   Module 1.
+- Task U connects all 3 Communication Board records through the unchanged
+  communication adapter. All use variant `cb1241-rs485` and map to active
+  Products; lifecycle for these three is 3 active, 0 legacy, and 0 discontinued.
+  All S7-1200 communication Product Types are now connected:
+  Communication Module 17, Communication Processor 7, and Communication Board
+  3, for 27 communication records total. The Product collection total is 220
+  and S7-1200 connectivity is 171/186, with 15 disconnected: Special Module 8,
+  Technology Module 3, Network Switch 3, and Data Decoupling Module 1.
 - Connector verification for `6AG1241-1CH32-4XB0` and
   `6AG1241-1CH32-2XB0` is RESOLVED. Both are verified as `9-pole D-sub pin`,
   and no source correction was required.
@@ -161,8 +172,9 @@ These products flow through `data/products.ts`, the Product repository, and the 
 - Common Siemens Product mapping is separated from explicit product-type
   specification normalization. S7-300 CPU, S7-300 Power Supply, and S7-1200
   Classic/G2 Power Module, CPU, Signal Module, Signal Board, Communication
-  Module, and Communication Processor records are connected; all other Siemens
-  source datasets remain disconnected, and the Product collection total is 217.
+  Module, Communication Processor, and Communication Board records are
+  connected; all other Siemens source datasets remain disconnected, and the
+  Product collection total is 220.
 
 ## Latest Local Quality Verification
 

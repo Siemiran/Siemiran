@@ -187,10 +187,20 @@ is preserved and the record is connected rather than filtered. The Product
 collection total increases from 210 to 217, and S7-1200 connectivity increases
 from 161/186 to 168/186, leaving 18 disconnected.
 
+Task U connects all 3 Communication Board records. Communication Board is now
+3 RECORDS, NORMALIZED, TAXONOMY-VALID, ADAPTER-READY, and CONNECTED through the
+unchanged communication adapter. All three use variant `cb1241-rs485` and map
+to active Products; lifecycle for these three is 3 active, 0 legacy, and 0
+discontinued. The Product collection total increases from 217 to 220,
+and S7-1200 connectivity increases from 168/186 to 171/186, leaving 15
+disconnected. The S7-1200 communication layer is complete with 27/27 records
+connected: Communication Module 17, Communication Processor 7, and
+Communication Board 3.
+
 Connector verification debt for `6AG1241-1CH32-4XB0` and
 `6AG1241-1CH32-2XB0` is RESOLVED: both connector values are verified as
 `9-pole D-sub pin`, and no source change was required. The next controlled
-integration is Communication Board with 3 records; it remains disconnected.
+integration is Special Module with 8 records; it remains disconnected.
 
 ## Inquiry Progress
 
