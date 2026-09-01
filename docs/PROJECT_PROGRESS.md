@@ -206,10 +206,18 @@ Product. The phase-out SM 1278 (`6ES7278-4BD32-0XB0`) is preserved as legacy.
 The Product collection total increases from 220 to 228, and S7-1200 connectivity
 increases from 171/186 to 179/186, leaving 7 disconnected.
 
+Task W connects all 3 Technology Module / SIWAREX records. Technology Module is
+now 3 RECORDS, NORMALIZED, TAXONOMY-VALID, ADAPTER-READY, and CONNECTED through
+the unchanged Special/Technology adapter. SIWAREX WP231, WP241, and WP251 map to
+3 active Products. The existing 8 Special Module Products remain unchanged, and
+the shared Special/Technology source layer is complete at 11/11 connected. The
+Product collection total increases from 228 to 231, and S7-1200 connectivity
+increases from 179/186 to 182/186, leaving 4 disconnected.
+
 Connector verification debt for `6AG1241-1CH32-4XB0` and
 `6AG1241-1CH32-2XB0` is RESOLVED: both connector values are verified as
 `9-pole D-sub pin`, and no source change was required. The next controlled
-integration is Technology Module with 3 records; it remains disconnected.
+integration is Network Switch with 3 records; it remains disconnected.
 
 ## Inquiry Progress
 
