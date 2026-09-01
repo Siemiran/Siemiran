@@ -179,10 +179,18 @@ communication adapter maps 17 active Products, increasing the Product total
 from 193 to 210 and S7-1200 connectivity from 144/186 to 161/186, leaving 25
 disconnected.
 
+Task T connects all 7 Communication Processor records. Communication Processor
+is now 7 RECORDS, NORMALIZED, TAXONOMY-VALID, ADAPTER-READY, and CONNECTED
+through the unchanged communication adapter. Source lifecycle is 6 active and
+1 spare-part, mapped to 6 active and 1 legacy Product. The spare-part lifecycle
+is preserved and the record is connected rather than filtered. The Product
+collection total increases from 210 to 217, and S7-1200 connectivity increases
+from 161/186 to 168/186, leaving 18 disconnected.
+
 Connector verification debt for `6AG1241-1CH32-4XB0` and
 `6AG1241-1CH32-2XB0` is RESOLVED: both connector values are verified as
 `9-pole D-sub pin`, and no source change was required. The next controlled
-integration is Communication Processor with 7 records; it remains disconnected.
+integration is Communication Board with 3 records; it remains disconnected.
 
 ## Inquiry Progress
 
