@@ -3,6 +3,21 @@
 This file records completed repository changes. Connection status refers to the
 implementation on the current `main` branch.
 
+## 2026-09-01 — Siemens S7-1200 Technology Module Integration
+
+### Completed
+
+- Connected all 3 Technology Module / SIWAREX records: WP231, WP241, and WP251.
+- Reused the existing Special/Technology adapter unchanged and kept the existing
+  8 Special Module Products unchanged.
+- Completed shared Special/Technology source exposure at 11/11 records; all 3
+  new Technology Module Products are active.
+- Increased the Product collection total from 228 to 231.
+- Increased connected S7-1200 source records from 179 to 182 of 186 and reduced
+  the disconnected remainder from 7 to 4.
+- Made no source, taxonomy, adapter, or generic-pipeline changes and exposed no
+  Network Switch or Data Decoupling Module records.
+
 ## 2026-09-01 — Siemens S7-1200 Special Module Integration
 
 ### Completed

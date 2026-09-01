@@ -72,6 +72,11 @@ const verifiedSiemensS71200SpecialModuleProducts: Product[] =
     .filter((source) => source.productTypeId === "Special Module")
     .map(mapSiemensS71200SpecialModuleToProduct);
 
+const verifiedSiemensS71200TechnologyModuleProducts: Product[] =
+  s71200SpecialModules
+    .filter((source) => source.productTypeId === "Technology Module")
+    .map(mapSiemensS71200SpecialModuleToProduct);
+
 export const products: Product[] = [
   ...verifiedSiemensPLCProducts,
   ...verifiedSiemensS7300PowerSupplyProducts,
@@ -87,4 +92,5 @@ export const products: Product[] = [
   ...verifiedSiemensS71200CommunicationProcessorProducts,
   ...verifiedSiemensS71200CommunicationBoardProducts,
   ...verifiedSiemensS71200SpecialModuleProducts,
+  ...verifiedSiemensS71200TechnologyModuleProducts,
 ];

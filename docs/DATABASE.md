@@ -24,7 +24,7 @@ Product reads are exposed through
 
 ## Current Active Dataset
 
-The application currently aggregates 228 Products:
+The application currently aggregates 231 Products:
 
 - 36 mapped S7-300 CPU Products
 - 13 mapped S7-300 Power Supply Products
@@ -40,6 +40,7 @@ The application currently aggregates 228 Products:
 - 7 mapped S7-1200 Communication Processor Products
 - 3 mapped S7-1200 Communication Board Products
 - 8 mapped S7-1200 Special Module Products
+- 3 mapped S7-1200 Technology Module Products
 
 Only records included by `data/products.ts` reach the Product repository and UI.
 The presence of a manufacturer source file does not make its records active
@@ -96,9 +97,9 @@ canonical Product relation fields.
 | Communication Module (CM) | 16 | CONNECTED |
 | Communication Processor (CP) | 7 | CONNECTED |
 | Communication Board (CB) | 3 | CONNECTED |
-| Special/technology modules | 11 | 8 Special Module CONNECTED; 3 Technology Module DISCONNECTED |
+| Special/technology modules | 11 | CONNECTED (8 Special Module, 3 Technology Module) |
 | Other/companion modules | 5 | 1 CONNECTED; 4 DISCONNECTED |
-| **Total** | **186** | **179 CONNECTED; 7 DISCONNECTED** |
+| **Total** | **186** | **182 CONNECTED; 4 DISCONNECTED** |
 
 The current S7-1200 source files contain 186 unique MLFB declarations. No source
 records were added or removed during structural G2 reclassification. Generation
@@ -163,10 +164,11 @@ For both Classic datasets, SIPLUS environmental edition remains represented by
 MLFB, title, description, and other source evidence rather than functional or
 model variant taxonomy. Their shared adapters are unchanged.
 
-S7-1200 now has 179 connected of 186 source records, with 7 disconnected, and
-the Product collection total is 228. CPU, Power Module, Signal Module, Signal
+S7-1200 now has 182 connected of 186 source records, with 4 disconnected, and
+the Product collection total is 231. CPU, Power Module, Signal Module, Signal
 Board, Communication Module, Communication Processor, and Communication Board
-are fully connected across Classic and G2; Special Module is also connected.
+are fully connected across Classic and G2; Special Module and Technology Module
+are also connected.
 
 Communication Module is CONNECTED with 17 active Products: 16 records from
 `cm.ts` plus RF120C from `other.ts`. Their variant distribution is:
@@ -215,12 +217,19 @@ Special Module is CONNECTED with exactly 8 Products selected from the shared
 Source lifecycle for these eight is 7 active and 1 phase-out; mapped Product
 lifecycle is 7 active and 1 legacy. The phase-out SM 1278
 (`6ES7278-4BD32-0XB0`) remains connected as a legacy Product. Technology Module
-remains 3 records DISCONNECTED.
+is CONNECTED with all 3 SIWAREX Products:
 
-The remaining 7 records are NORMALIZED, TAXONOMY-VALID, ADAPTER-ROUTED, and
+- WP231 — `7MH4960-2AA01`, variant `weighing-wp231`
+- WP241 — `7MH4960-4AA01`, variant `weighing-wp241`
+- WP251 — `7MH4960-6AA01`, variant `weighing-wp251`
+
+All three Technology Module Products are active. The shared Special/Technology
+source array is fully connected: 8 Special Module plus 3 Technology Module,
+or 11/11 records.
+
+The remaining 4 records are NORMALIZED, TAXONOMY-VALID, ADAPTER-ROUTED, and
 DISCONNECTED. Their Product-Type distribution and explicit adapter routes are:
 
-- Technology Module: 3 via `special.adapter.ts`
 - Network Switch: 3 via `network-switch.adapter.ts`
 - Data Decoupling Module: 1 via `data-decoupling.adapter.ts`
 
