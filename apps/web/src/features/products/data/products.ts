@@ -3,6 +3,7 @@ import { siemensPLC } from "@/features/products/database/siemens/plc";
 import { mapSiemensPLCToProduct } from "@/features/products/database/siemens/plc.adapter";
 import { mapSiemensS7300PowerSupplyToProduct } from "@/features/products/database/siemens/s7-300/ps.adapter";
 import { siemensS7300PowerSupplies } from "@/features/products/database/siemens/s7-300/ps";
+import { s71200CommunicationBoards } from "@/features/products/database/siemens/s7-1200/cb";
 import { s71200CM } from "@/features/products/database/siemens/s7-1200/cm";
 import { mapSiemensS71200CommunicationToProduct } from "@/features/products/database/siemens/s7-1200/communication.adapter";
 import { s71200CP } from "@/features/products/database/siemens/s7-1200/cp";
@@ -61,6 +62,9 @@ const verifiedSiemensS71200CommunicationModuleProducts: Product[] = [
 const verifiedSiemensS71200CommunicationProcessorProducts: Product[] =
   s71200CP.map(mapSiemensS71200CommunicationToProduct);
 
+const verifiedSiemensS71200CommunicationBoardProducts: Product[] =
+  s71200CommunicationBoards.map(mapSiemensS71200CommunicationToProduct);
+
 export const products: Product[] = [
   ...verifiedSiemensPLCProducts,
   ...verifiedSiemensS7300PowerSupplyProducts,
@@ -74,4 +78,5 @@ export const products: Product[] = [
   ...verifiedSiemensS71200ClassicSignalBoardProducts,
   ...verifiedSiemensS71200CommunicationModuleProducts,
   ...verifiedSiemensS71200CommunicationProcessorProducts,
+  ...verifiedSiemensS71200CommunicationBoardProducts,
 ];

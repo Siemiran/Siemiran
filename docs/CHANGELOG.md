@@ -3,6 +3,25 @@
 This file records completed repository changes. Connection status refers to the
 implementation on the current `main` branch.
 
+## 2026-09-01 — Siemens S7-1200 Communication Board Integration
+
+### Completed
+
+- Connected all three normalized and taxonomy-valid Communication Board records
+  through the existing communication adapter unchanged.
+- Preserved the final functional variant `cb1241-rs485` for all three records;
+  all three map to active Products, with Task U lifecycle of 3 active, 0 legacy,
+  and 0 discontinued.
+- Preserved the existing 217 Products and increased the Product collection
+  total from 217 to 220.
+- Increased connected S7-1200 source records from 168 to 171 of 186 and reduced
+  the disconnected remainder from 18 to 15.
+- Completed S7-1200 Communication Module, Communication Processor, and
+  Communication Board exposure with 27/27 communication records connected.
+- Made no source, taxonomy, adapter, or generic-pipeline changes and exposed no
+  Special Module, Technology Module, Network Switch, or Data Decoupling Module
+  records.
+
 ## 2026-08-31 — Siemens S7-1200 Communication Processor Integration
 
 ### Completed
