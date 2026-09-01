@@ -20,6 +20,8 @@ import { s71200SignalBoards } from "@/features/products/database/siemens/s7-1200
 import { mapSiemensS71200SignalBoardToProduct } from "@/features/products/database/siemens/s7-1200/sb.adapter";
 import { siemensS71200SM } from "@/features/products/database/siemens/s7-1200/sm";
 import { mapSiemensS71200SignalModuleToProduct } from "@/features/products/database/siemens/s7-1200/sm.adapter";
+import { s71200SpecialModules } from "@/features/products/database/siemens/s7-1200/special";
+import { mapSiemensS71200SpecialModuleToProduct } from "@/features/products/database/siemens/s7-1200/special.adapter";
 
 const verifiedSiemensPLCProducts: Product[] = siemensPLC.map(
   mapSiemensPLCToProduct
@@ -65,6 +67,11 @@ const verifiedSiemensS71200CommunicationProcessorProducts: Product[] =
 const verifiedSiemensS71200CommunicationBoardProducts: Product[] =
   s71200CommunicationBoards.map(mapSiemensS71200CommunicationToProduct);
 
+const verifiedSiemensS71200SpecialModuleProducts: Product[] =
+  s71200SpecialModules
+    .filter((source) => source.productTypeId === "Special Module")
+    .map(mapSiemensS71200SpecialModuleToProduct);
+
 export const products: Product[] = [
   ...verifiedSiemensPLCProducts,
   ...verifiedSiemensS7300PowerSupplyProducts,
@@ -79,4 +86,5 @@ export const products: Product[] = [
   ...verifiedSiemensS71200CommunicationModuleProducts,
   ...verifiedSiemensS71200CommunicationProcessorProducts,
   ...verifiedSiemensS71200CommunicationBoardProducts,
+  ...verifiedSiemensS71200SpecialModuleProducts,
 ];
