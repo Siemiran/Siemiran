@@ -3,6 +3,20 @@
 This file records completed repository changes. Connection status refers to the
 implementation on the current `main` branch.
 
+## 2026-09-01 — Siemens S7-1200 Network Switch Integration
+
+### Completed
+
+- Connected exactly 3 Network Switch / CSM 1277 records through the existing
+  dedicated Network Switch adapter unchanged.
+- Preserved variant `csm1277` for all three records; all map to active Products.
+- Preserved existing RF120C exposure and left DCM 1271 disconnected.
+- Increased the Product collection total from 231 to 234.
+- Increased connected S7-1200 source records from 182 to 185 of 186 and reduced
+  the disconnected remainder from 4 to 1.
+- Made no source, taxonomy, adapter, or generic-pipeline changes and exposed no
+  Data Decoupling Module records.
+
 ## 2026-09-01 — Siemens S7-1200 Technology Module Integration
 
 ### Completed
