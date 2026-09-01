@@ -197,10 +197,19 @@ disconnected. The S7-1200 communication layer is complete with 27/27 records
 connected: Communication Module 17, Communication Processor 7, and
 Communication Board 3.
 
+Task V connects exactly 8 Special Module records from the shared 11-record
+source array. Special Module is now 8 RECORDS, NORMALIZED, TAXONOMY-VALID,
+ADAPTER-READY, and CONNECTED through the unchanged Special/Technology adapter.
+All 3 Technology Module records remain disconnected. Source lifecycle for the
+selected eight is 7 active and 1 phase-out, mapped to 7 active and 1 legacy
+Product. The phase-out SM 1278 (`6ES7278-4BD32-0XB0`) is preserved as legacy.
+The Product collection total increases from 220 to 228, and S7-1200 connectivity
+increases from 171/186 to 179/186, leaving 7 disconnected.
+
 Connector verification debt for `6AG1241-1CH32-4XB0` and
 `6AG1241-1CH32-2XB0` is RESOLVED: both connector values are verified as
 `9-pole D-sub pin`, and no source change was required. The next controlled
-integration is Special Module with 8 records; it remains disconnected.
+integration is Technology Module with 3 records; it remains disconnected.
 
 ## Inquiry Progress
 

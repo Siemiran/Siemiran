@@ -3,6 +3,21 @@
 This file records completed repository changes. Connection status refers to the
 implementation on the current `main` branch.
 
+## 2026-09-01 — Siemens S7-1200 Special Module Integration
+
+### Completed
+
+- Connected exactly 8 Special Module records from the shared 11-record source
+  array and left all 3 Technology Module records disconnected.
+- Reused the existing Special/Technology adapter unchanged.
+- Preserved the phase-out SM 1278 (`6ES7278-4BD32-0XB0`) and mapped it to a
+  legacy Product; lifecycle for the eight new Products is 7 active and 1 legacy.
+- Increased the Product collection total from 220 to 228.
+- Increased connected S7-1200 source records from 171 to 179 of 186 and reduced
+  the disconnected remainder from 15 to 7.
+- Made no source, taxonomy, adapter, or generic-pipeline changes and exposed no
+  Network Switch or Data Decoupling Module records.
+
 ## 2026-09-01 — Siemens S7-1200 Communication Board Integration
 
 ### Completed
