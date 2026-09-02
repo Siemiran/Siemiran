@@ -24,10 +24,11 @@ Product reads are exposed through
 
 ## Current Active Dataset
 
-The application currently aggregates 235 Products:
+The application currently aggregates 301 Products:
 
 - 36 mapped S7-300 CPU Products
 - 13 mapped S7-300 Power Supply Products
+- 66 mapped S7-300 Signal Module Products
 - 3 mapped S7-1200 Classic Power Module Products
 - 2 mapped S7-1200 G2 Power Module Products
 - 10 mapped S7-1200 G2 CPU Products
@@ -71,31 +72,35 @@ The current shared Siemens files are:
 | --- | ---: | --- |
 | CPU | 36 | CONNECTED |
 | Power Supply (PS) | 13 | CONNECTED |
-| Signal Module (SM) | 66 | DISCONNECTED |
+| Signal Module (SM) | 66 | CONNECTED |
 | Interface Module (IM) | 7 | DISCONNECTED |
 | Function Module (FM) | 32 | DISCONNECTED |
 | Communication Processor (CP) | 43 | DISCONNECTED |
 
 S7-300 CPU records flow through the shared Siemens validator and their explicit
-CPU normalizer. The 13 S7-300 Power Supply records use the same validator and
-generic common Product mapper with an explicit PS specification normalizer.
-Both datasets enter active Product aggregation, the Product repository, and the
-UI.
+CPU normalizer. The 13 S7-300 Power Supply records and 66 Signal Module records
+use the same validator and generic common Product mapper with their explicit
+product-type specification normalizers. All three datasets enter Product
+aggregation, the Product repository, and the UI.
 
-The SM, IM, FM, and CP datasets remain disconnected manufacturer source data.
+The IM, FM, and CP datasets remain disconnected manufacturer source data.
 The 66-record S7-300 SM dataset is taxonomy-valid 66/66 and ADAPTER-READY, with
 variants digital-input 16, digital-output 19, digital-io 2,
 programmable-digital-io 1, analog-input 14, analog-output 9, and analog-io 5.
 Its source lifecycle is 1 active, 18 phase-out, 41 spare-part, and 6
-discontinued; future generic mapping would produce 1 active, 59 legacy, and 6
-discontinued Products. Product exposure remains zero, connection remains
-DISCONNECTED, and the Product collection remains 235. The existing official
+discontinued; generic mapping produces 1 active, 59 legacy, and 6
+discontinued Products. All 66 are CONNECTED as 1 active, 59 legacy, and 6
+discontinued Products. The Product collection is 301. The existing official
 Siemens module-specific source for `6ES7321-7BH00-0AB0` is accepted as sufficient
 provenance. Direct live Mall retrieval for `6ES7322-5SD00-0AB0` remained
 edge-denied; an exact SiePortal capture records PM400 phase-out effective
-2023-10-01, corroborated by two independent publishers with no conflicting higher-authority
-evidence found. Both verification debts are closed, so the source-verified,
-taxonomy-valid, adapter-ready dataset is ready for controlled Product exposure.
+2023-10-01, corroborated by two independent publishers with no conflicting
+higher-authority evidence found. Both verification debts are closed. Current verified S7-300
+integration is 115/197, leaving 82 disconnected records: IM 7, FM 32, and CP 43.
+The next gate is Interface Module readiness, taxonomy, and source verification.
+After full S7-300 completion and closure audit, stop before opening another
+Siemens series and separately evaluate additional Siemens series/family data
+versus Persian-first bilingual site completion.
 The connected 13-record PS dataset comprises 5 initial standard/outdoor
 records, 4 historical revisions, and 4 SIPLUS records. Official base-product
 and successor MLFB relationships remain source-only; they are not mapped into
@@ -180,7 +185,7 @@ MLFB, title, description, and other source evidence rather than functional or
 model variant taxonomy. Their shared adapters are unchanged.
 
 S7-1200 current verified source integration is 186/186 connected, with 0
-disconnected, and the Product collection total is 235. CPU, Power Module, Signal
+disconnected, and the Product collection total is 301. CPU, Power Module, Signal
 Board, Communication Module, Communication Processor, and Communication Board
 are fully connected across Classic and G2; Special Module and Technology Module
 are also connected, as are Network Switch and Data Decoupling Module.
@@ -285,8 +290,8 @@ Current constraints:
 
 ## Validation and Mapping
 
-For connected S7-300 CPU and Power Supply records, S7-1200 Classic/G2 Power
-Module records, and S7-1200 G2 CPU records, validation checks required
+For connected S7-300 CPU, Power Supply, and Signal Module records, S7-1200
+Classic/G2 Power Module records, and S7-1200 G2 CPU records, validation checks required
 identity and classification values, supported lifecycle, MLFB format, HTTPS
 source presence, and membership in verified Siemens taxonomy. Invalid connected
 records cause adapter mapping to fail.
