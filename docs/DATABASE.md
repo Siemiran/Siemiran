@@ -83,6 +83,12 @@ Both datasets enter active Product aggregation, the Product repository, and the
 UI.
 
 The SM, IM, FM, and CP datasets remain disconnected manufacturer source data.
+The S7-300 SM taxonomy evidence audit is complete. Source data now records
+`6ES7322-5RD00-0AB0` as phase-out and marks it and
+`6ES7322-5SD00-0AB0` as hazardous-area capable. The latter remains discontinued
+pending official PLM verification, while `6ES7321-7BH00-0AB0` retains source
+provenance verification debt. No taxonomy, adapter, or Product aggregation
+change is included; the Product collection remains 235.
 The connected 13-record PS dataset comprises 5 initial standard/outdoor
 records, 4 historical revisions, and 4 SIPLUS records. Official base-product
 and successor MLFB relationships remain source-only; they are not mapped into

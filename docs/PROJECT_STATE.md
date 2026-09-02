@@ -95,6 +95,14 @@ These products flow through `data/products.ts`, the Product repository, and the 
 ### Source Data Not Connected to the Application
 
 - S7-300 SM, IM, FM, and CP datasets exist but are DISCONNECTED.
+- The S7-300 Signal Module taxonomy evidence audit is complete. Verified source
+  corrections set `6ES7322-5RD00-0AB0` to phase-out and mark both
+  `6ES7322-5RD00-0AB0` and `6ES7322-5SD00-0AB0` as hazardous-area capable.
+  `6ES7322-5SD00-0AB0` remains discontinued pending official PLM verification,
+  and `6ES7321-7BH00-0AB0` still requires a stronger product- or module-specific
+  Siemens source before final exposure. Taxonomy and adapter preparation may
+  proceed, but the 66-record dataset remains disconnected with zero Product
+  exposure and the Product collection remains 235.
 - The 38-record Classic S7-1200 Signal Module and 23-record Classic Signal Board
   sources are source-backed, taxonomy-valid, and CONNECTED through their
   unchanged shared adapters. Classic/G2 physical source separation is
