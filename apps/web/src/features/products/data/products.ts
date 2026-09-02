@@ -9,6 +9,7 @@ import { mapSiemensS71200CommunicationToProduct } from "@/features/products/data
 import { s71200CP } from "@/features/products/database/siemens/s7-1200/cp";
 import { siemensS71200CPU } from "@/features/products/database/siemens/s7-1200/cpu";
 import { mapSiemensS71200CPUToProduct } from "@/features/products/database/siemens/s7-1200/cpu.adapter";
+import { mapSiemensS71200DataDecouplingModuleToProduct } from "@/features/products/database/siemens/s7-1200/data-decoupling.adapter";
 import { siemensS71200G2CPU } from "@/features/products/database/siemens/s7-1200/g2/cpu";
 import { siemensS71200G2PowerModules } from "@/features/products/database/siemens/s7-1200/g2/pm";
 import { s71200G2SignalBoards } from "@/features/products/database/siemens/s7-1200/g2/sb";
@@ -83,6 +84,11 @@ const verifiedSiemensS71200NetworkSwitchProducts: Product[] =
     .filter((source) => source.productTypeId === "Network Switch")
     .map(mapSiemensS71200NetworkSwitchToProduct);
 
+const verifiedSiemensS71200DataDecouplingModuleProducts: Product[] =
+  s71200OtherModules
+    .filter((source) => source.productTypeId === "Data Decoupling Module")
+    .map(mapSiemensS71200DataDecouplingModuleToProduct);
+
 export const products: Product[] = [
   ...verifiedSiemensPLCProducts,
   ...verifiedSiemensS7300PowerSupplyProducts,
@@ -100,4 +106,5 @@ export const products: Product[] = [
   ...verifiedSiemensS71200SpecialModuleProducts,
   ...verifiedSiemensS71200TechnologyModuleProducts,
   ...verifiedSiemensS71200NetworkSwitchProducts,
+  ...verifiedSiemensS71200DataDecouplingModuleProducts,
 ];

@@ -3,6 +3,21 @@
 This file records completed repository changes. Connection status refers to the
 implementation on the current `main` branch.
 
+## 2026-09-01 — Siemens S7-1200 Data Decoupling Module Final Integration
+
+### Completed
+
+- Connected DCM 1271 (`3RK7271-1AA30-0AA0`) through the existing dedicated Data
+  Decoupling adapter unchanged; Product lifecycle is active.
+- Completed `other.ts` exposure at 5/5 with no duplicate exposure.
+- Increased the Product collection total from 234 to 235.
+- Increased current verified S7-1200 integration from 185/186 to 186/186 and
+  reduced disconnected current source records from 1 to 0.
+- Made no source, taxonomy, adapter, or generic-pipeline changes.
+- Completed current verified S7-1200 source integration. This statement is
+  scoped to the repository dataset and does not claim external catalog
+  exhaustiveness.
+
 ## 2026-09-01 — Siemens S7-1200 Network Switch Integration
 
 ### Completed

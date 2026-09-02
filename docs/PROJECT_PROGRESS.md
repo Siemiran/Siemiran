@@ -222,10 +222,20 @@ remains disconnected, and mixed `other.ts` exposure is 4/5. The Product
 collection total increases from 231 to 234, and S7-1200 connectivity increases
 from 182/186 to 185/186, leaving 1 Data Decoupling Module disconnected.
 
+Task Y connects the final currently verified S7-1200 source record. Data
+Decoupling Module is now 1 RECORD, NORMALIZED, TAXONOMY-VALID, ADAPTER-READY,
+and CONNECTED through the unchanged dedicated adapter. DCM 1271
+(`3RK7271-1AA30-0AA0`) maps to 1 active, 0 legacy, and 0 discontinued Product.
+Mixed `other.ts` exposure is complete at 5/5. The Product collection total
+increases from 234 to 235, and current verified S7-1200 source integration is
+186/186 COMPLETE, with 0 current source records disconnected. This completion
+statement is limited to the verified repository dataset.
+
 Connector verification debt for `6AG1241-1CH32-4XB0` and
 `6AG1241-1CH32-2XB0` is RESOLVED: both connector values are verified as
-`9-pole D-sub pin`, and no source change was required. The next controlled
-integration is Data Decoupling Module with 1 record; it remains disconnected.
+`9-pole D-sub pin`, and no source change was required. The next step is an
+S7-1200 integration closure / verification audit, a read-only verification step
+after Task Y merge.
 
 ## Inquiry Progress
 
