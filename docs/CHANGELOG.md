@@ -3,6 +3,25 @@
 This file records completed repository changes. Connection status refers to the
 implementation on the current `main` branch.
 
+## 2026-09-02 — Siemens S7-300 Signal Module Pipeline Preparation
+
+### Completed
+
+- Added verified S7-300 Signal Module taxonomy for all 66 source records across
+  digital-input 16, digital-output 19, digital-io 2, programmable-digital-io 1,
+  analog-input 14, analog-output 9, and analog-io 5.
+- Added an explicit S7-300 Signal Module specification adapter that delegates
+  common Product construction and lifecycle mapping to the generic Siemens
+  mapper unchanged.
+- Confirmed source lifecycle readiness at 1 active, 17 phase-out, 41 spare-part,
+  and 7 discontinued, mapping in a future integration to 1 active, 58 legacy,
+  and 7 discontinued Products.
+- Retained verification debt for `6ES7321-7BH00-0AB0` source provenance and
+  `6ES7322-5SD00-0AB0` live official PLM lifecycle. Resolution or review remains
+  the next gate before controlled Product exposure.
+- Kept all 66 records disconnected, added zero Product exposure, and retained
+  the Product collection total of 235.
+
 ## 2026-09-02 — Siemens S7-300 Signal Module Verified Source Corrections
 
 ### Completed
