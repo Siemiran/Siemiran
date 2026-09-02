@@ -3,6 +3,25 @@
 This file records completed repository changes. Connection status refers to the
 implementation on the current `main` branch.
 
+## 2026-09-02 — Siemens S7-300 Signal Module Integration
+
+### Completed
+
+- Connected all 66 source-verified, taxonomy-valid S7-300 Signal Module records
+  through the existing dedicated adapter without changing source or taxonomy.
+- Added 1 active, 59 legacy, and 6 discontinued Products while preserving exact
+  source identity, MLFB, variant, Siemens URL, and generic lifecycle mapping.
+- Increased the Product collection from 235 to 301 with 301 unique IDs, slugs,
+  and part numbers and no duplicate exposure.
+- Advanced current verified S7-300 integration from 49/197 to 115/197, leaving
+  82 disconnected records: IM 7, FM 32, and CP 43. S7-300 is not complete; the
+  next gate is Interface Module readiness, taxonomy, and source verification.
+- Preserved S7-1200 integration at 186/186 and made no source, taxonomy, adapter,
+  generic infrastructure, repository, UI, route, dependency, or roadmap change.
+- Retained the decision that after full S7-300 completion and closure audit,
+  work stops before another Siemens series while additional Siemens series/family
+  data is evaluated separately against Persian-first bilingual site completion.
+
 ## 2026-09-02 — Siemens S7-300 Signal Module Verification-Debt Closure
 
 ### Completed

@@ -58,18 +58,22 @@ pending milestone.
 - CPU flow from source through validation, adapter, Product aggregation,
   repository, and UI: IMPLEMENTED
 - Signal Module source dataset: 66 RECORDS, SOURCE-VERIFIED, TAXONOMY-VALID 66/66,
-  ADAPTER-READY, and DISCONNECTED. Variant coverage is digital-input 16,
+  ADAPTER-READY, and CONNECTED. Variant coverage is digital-input 16,
   digital-output 19, digital-io 2, programmable-digital-io 1, analog-input 14,
   analog-output 9, and analog-io 5. Source lifecycle is 1 active, 18 phase-out,
-  41 spare-part, and 6 discontinued; expected future Product mapping is 1
-  active, 59 legacy, and 6 discontinued. Product exposure remains zero and the
-  Product collection remains 235. The existing official module-specific source
+  41 spare-part, and 6 discontinued; Product mapping is 1 active, 59 legacy,
+  and 6 discontinued. All 66 source records are exposed exactly once, and the
+  Product collection is 301. The existing official module-specific source
   closes `6ES7321-7BH00-0AB0` provenance debt. Direct live Mall access remained
   edge-denied for `6ES7322-5SD00-0AB0`; an exact captured SiePortal PM400 state
   and 2023-10-01 effective date, two independently published matching sources,
-  and no conflicting
-  higher-authority evidence close its lifecycle debt. The dataset is ready for
-  a separate controlled Product-exposure task.
+  and no conflicting higher-authority evidence close its lifecycle debt. Current verified S7-300
+  integration advances from 49/197 to 115/197, leaving 82 records disconnected:
+  IM 7, FM 32, and CP 43. S7-1200 remains 186/186 connected. The next S7-300
+  gate is Interface Module readiness, taxonomy, and source-verification work.
+  After full S7-300 completion and closure audit, stop before another Siemens
+  series and separately evaluate additional Siemens series/family data versus
+  Persian-first bilingual site completion.
 - Interface Module source dataset: PRESENT, DISCONNECTED
 - Function Module source dataset: PRESENT, DISCONNECTED
 - Communication Processor source dataset: PRESENT, DISCONNECTED
@@ -269,8 +273,8 @@ after Task Y merge.
 The product browsing, detail, comparison, and inquiry-entry experiences are in
 place. The Siemens validation and common Product mapping pipeline is now
 generalized while product-type specification normalization remains explicit.
-The S7-300 Power Supply and S7-1200 Classic/G2 Power Module, CPU, Signal Module,
-and Signal Board datasets are connected through explicit
+The S7-300 Power Supply and Signal Module plus S7-1200 Classic/G2 Power Module,
+CPU, Signal Module, and Signal Board datasets are connected through explicit
 normalizers. All other
 disconnected source datasets still require controlled taxonomy and normalization
 work before integration and must not be presented as active products before
