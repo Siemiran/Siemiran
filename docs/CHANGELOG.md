@@ -3,6 +3,25 @@
 This file records completed repository changes. Connection status refers to the
 implementation on the current `main` branch.
 
+## 2026-09-02 — Siemens S7-300 Signal Module Verification-Debt Closure
+
+### Completed
+
+- Accepted the existing Siemens-hosted module-specific evidence for
+  `6ES7321-7BH00-0AB0` as sufficient provenance, closing that debt without
+  changing its source record.
+- Verified `6ES7322-5SD00-0AB0` as PM400 phase-out effective 2023-10-01 and
+  changed its source lifecycle from discontinued to phase-out. Direct live Mall
+  retrieval remained edge-denied; the accepted chain comprises an exact
+  SiePortal product-page capture, two independently published matching sources,
+  and no conflicting higher-authority evidence.
+- Updated source lifecycle readiness to 1 active, 18 phase-out, 41 spare-part,
+  and 6 discontinued, with future Product mapping of 1 active, 59 legacy, and 6
+  discontinued.
+- Closed both remaining blocking verification debts while keeping all 66 Signal
+  Module records disconnected, Product exposure at zero, and the Product
+  collection at 235. Controlled Product exposure remains a separate task.
+
 ## 2026-09-02 — Siemens S7-300 Signal Module Pipeline Preparation
 
 ### Completed

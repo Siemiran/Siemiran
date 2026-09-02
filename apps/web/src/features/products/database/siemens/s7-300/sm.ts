@@ -1028,7 +1028,7 @@ export const s7300SM: SiemensS7300SignalModule[] = [
     description:
       "SIMATIC S7-300 SM 322 digital output module with 4 optically isolated outputs, 24 V DC / 10 mA, for signals from hazardous areas, with diagnostics capability.",
 
-    lifecycle: "discontinued",
+    lifecycle: "phase-out",
 
     specifications: {
       digitalOutputs: 4,
