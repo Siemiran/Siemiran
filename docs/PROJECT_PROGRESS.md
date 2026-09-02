@@ -57,7 +57,13 @@ pending milestone.
 - CPU source records: IMPLEMENTED and CONNECTED
 - CPU flow from source through validation, adapter, Product aggregation,
   repository, and UI: IMPLEMENTED
-- Signal Module source dataset: PRESENT, DISCONNECTED
+- Signal Module source dataset: 66 RECORDS, PRESENT, DISCONNECTED; taxonomy
+  evidence audit complete. Verified source corrections record
+  `6ES7322-5RD00-0AB0` as phase-out and mark it and
+  `6ES7322-5SD00-0AB0` as hazardous-area capable. The 5SD00 lifecycle and
+  7BH00 source provenance remain verification debt before final exposure.
+  Taxonomy and adapter preparation is the next gate; Product exposure remains
+  zero and the Product collection remains 235.
 - Interface Module source dataset: PRESENT, DISCONNECTED
 - Function Module source dataset: PRESENT, DISCONNECTED
 - Communication Processor source dataset: PRESENT, DISCONNECTED

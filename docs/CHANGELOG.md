@@ -3,6 +3,22 @@
 This file records completed repository changes. Connection status refers to the
 implementation on the current `main` branch.
 
+## 2026-09-02 — Siemens S7-300 Signal Module Verified Source Corrections
+
+### Completed
+
+- Completed the S7-300 Signal Module taxonomy evidence audit and corrected only
+  sufficiently verified manufacturer source data.
+- Changed `6ES7322-5RD00-0AB0` from discontinued to phase-out from Siemens PM400
+  evidence and marked it as hazardous-area capable.
+- Marked `6ES7322-5SD00-0AB0` as hazardous-area capable while retaining its
+  discontinued lifecycle pending official PLM verification.
+- Retained the existing `6ES7321-7BH00-0AB0` source and recorded the need for a
+  stronger product- or module-specific Siemens source before final exposure.
+- Added no taxonomy, adapter, or Product exposure. S7-300 Signal Module remains
+  disconnected and the Product collection remains 235; taxonomy and adapter
+  preparation is the next gate.
+
 ## 2026-09-01 — Siemens S7-1200 Data Decoupling Module Final Integration
 
 ### Completed

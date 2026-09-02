@@ -996,7 +996,7 @@ export const s7300SM: SiemensS7300SignalModule[] = [
     description:
       "SIMATIC S7-300 SM 322 digital output module with 4 optically isolated outputs, 15 V / 20 mA, for signals from hazardous areas, with diagnostics capability and PTB testing.",
 
-    lifecycle: "discontinued",
+    lifecycle: "phase-out",
 
     specifications: {
       digitalOutputs: 4,
@@ -1004,6 +1004,7 @@ export const s7300SM: SiemensS7300SignalModule[] = [
       terminalConnection: "1 x 20-pole",
       interfaces: ["Backplane bus"],
       diagnostics: "Diagnostics-capable",
+      hazardousArea: true,
     },
 
     source:
@@ -1035,6 +1036,7 @@ export const s7300SM: SiemensS7300SignalModule[] = [
       terminalConnection: "1 x 20-pole",
       interfaces: ["Backplane bus"],
       diagnostics: "Diagnostics-capable",
+      hazardousArea: true,
     },
 
     source:
