@@ -536,6 +536,48 @@ export const siemensVerifiedTaxonomy = {
                 },
               ],
             },
+            {
+              id: "Signal Module",
+              title: "Signal Module",
+              slug: "signal-module",
+              variants: [
+                {
+                  id: "digital-input",
+                  title: "Digital Input",
+                  slug: "digital-input",
+                },
+                {
+                  id: "digital-output",
+                  title: "Digital Output",
+                  slug: "digital-output",
+                },
+                {
+                  id: "digital-io",
+                  title: "Digital I/O",
+                  slug: "digital-io",
+                },
+                {
+                  id: "programmable-digital-io",
+                  title: "Programmable Digital I/O",
+                  slug: "programmable-digital-io",
+                },
+                {
+                  id: "analog-input",
+                  title: "Analog Input",
+                  slug: "analog-input",
+                },
+                {
+                  id: "analog-output",
+                  title: "Analog Output",
+                  slug: "analog-output",
+                },
+                {
+                  id: "analog-io",
+                  title: "Analog I/O",
+                  slug: "analog-io",
+                },
+              ],
+            },
           ],
         },
       ],
