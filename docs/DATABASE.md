@@ -86,13 +86,16 @@ The SM, IM, FM, and CP datasets remain disconnected manufacturer source data.
 The 66-record S7-300 SM dataset is taxonomy-valid 66/66 and ADAPTER-READY, with
 variants digital-input 16, digital-output 19, digital-io 2,
 programmable-digital-io 1, analog-input 14, analog-output 9, and analog-io 5.
-Its source lifecycle is 1 active, 17 phase-out, 41 spare-part, and 7
-discontinued; future generic mapping would produce 1 active, 58 legacy, and 7
+Its source lifecycle is 1 active, 18 phase-out, 41 spare-part, and 6
+discontinued; future generic mapping would produce 1 active, 59 legacy, and 6
 discontinued Products. Product exposure remains zero, connection remains
-DISCONNECTED, and the Product collection remains 235. Verification debt for
-`6ES7321-7BH00-0AB0` source provenance and `6ES7322-5SD00-0AB0` live official
-PLM lifecycle does not block taxonomy or adapter readiness, but must be resolved
-or reviewed before controlled Product exposure.
+DISCONNECTED, and the Product collection remains 235. The existing official
+Siemens module-specific source for `6ES7321-7BH00-0AB0` is accepted as sufficient
+provenance. Direct live Mall retrieval for `6ES7322-5SD00-0AB0` remained
+edge-denied; an exact SiePortal capture records PM400 phase-out effective
+2023-10-01, corroborated by two independent publishers with no conflicting higher-authority
+evidence found. Both verification debts are closed, so the source-verified,
+taxonomy-valid, adapter-ready dataset is ready for controlled Product exposure.
 The connected 13-record PS dataset comprises 5 initial standard/outdoor
 records, 4 historical revisions, and 4 SIPLUS records. Official base-product
 and successor MLFB relationships remain source-only; they are not mapped into

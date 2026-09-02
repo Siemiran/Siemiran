@@ -57,15 +57,19 @@ pending milestone.
 - CPU source records: IMPLEMENTED and CONNECTED
 - CPU flow from source through validation, adapter, Product aggregation,
   repository, and UI: IMPLEMENTED
-- Signal Module source dataset: 66 RECORDS, SOURCE-READY, TAXONOMY-VALID 66/66,
+- Signal Module source dataset: 66 RECORDS, SOURCE-VERIFIED, TAXONOMY-VALID 66/66,
   ADAPTER-READY, and DISCONNECTED. Variant coverage is digital-input 16,
   digital-output 19, digital-io 2, programmable-digital-io 1, analog-input 14,
-  analog-output 9, and analog-io 5. Source lifecycle is 1 active, 17 phase-out,
-  41 spare-part, and 7 discontinued; expected future Product mapping is 1
-  active, 58 legacy, and 7 discontinued. Product exposure remains zero and the
-  Product collection remains 235. `6ES7321-7BH00-0AB0` source provenance and
-  `6ES7322-5SD00-0AB0` live official PLM lifecycle remain verification debt.
-  The next gate is to resolve or review that debt before controlled exposure.
+  analog-output 9, and analog-io 5. Source lifecycle is 1 active, 18 phase-out,
+  41 spare-part, and 6 discontinued; expected future Product mapping is 1
+  active, 59 legacy, and 6 discontinued. Product exposure remains zero and the
+  Product collection remains 235. The existing official module-specific source
+  closes `6ES7321-7BH00-0AB0` provenance debt. Direct live Mall access remained
+  edge-denied for `6ES7322-5SD00-0AB0`; an exact captured SiePortal PM400 state
+  and 2023-10-01 effective date, two independently published matching sources,
+  and no conflicting
+  higher-authority evidence close its lifecycle debt. The dataset is ready for
+  a separate controlled Product-exposure task.
 - Interface Module source dataset: PRESENT, DISCONNECTED
 - Function Module source dataset: PRESENT, DISCONNECTED
 - Communication Processor source dataset: PRESENT, DISCONNECTED
