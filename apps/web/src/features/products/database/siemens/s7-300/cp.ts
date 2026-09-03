@@ -1342,7 +1342,7 @@ export const s7300CP: SiemensS7300CommunicationProcessor[] = [
     },
 
     source:
-      "https://support.industry.siemens.com/cs/attachments/109764594/Maroc-DdC-PD-PA-CI-081-2019-02-01.pdf",
+      "https://cache.industry.siemens.com/dl/files/561/109765561/att_978974/v1/SIMATIC_NET_IKPI_chap02_PROFINET_IE_English_2015.pdf",
   },
 
   // --------------------------------------------------
@@ -1379,7 +1379,7 @@ export const s7300CP: SiemensS7300CommunicationProcessor[] = [
     },
 
     source:
-      "https://support.industry.siemens.com/cs/attachments/109988542/RCM-suppliers_declaration_of_conformity_2025-05-22.pdf",
+      "https://sid.siemens.com/api/khub/documents/6F7efyrNuR7e_13efi0kVA/content",
   },
 
   // --------------------------------------------------

@@ -285,6 +285,19 @@ after Task Y merge.
   exposure, taxonomy preparation, adapter preparation, and SIPLUS normalization
   were not performed. The post-S7-300 management gate remains unchanged.
 
+- Task AL closes ERPC `6GK7343-1FX00-0XE0` and BACnet
+  `6FL4343-1CX10-0XE0` lifecycle debt. Both remain `discontinued`; exact official
+  Siemens technical sources replace their compliance-only sources. ERPC PM500
+  and independent manufacturer-discontinuation evidence supersede stale PM300
+  mirrors. BACnet sales restriction from 2012-04-30 precedes verified
+  cancellation on 2019-07-01, resolving Phase-Out as the earlier stage. Direct
+  Siemens PLM pages were inaccessible. AJ blockers 30 became 2 after AK and 0
+  after AL. Final lifecycle remains 0 active, 1 phase-out, 18 spare-part, and 24
+  discontinued. CP is SOURCE/LIFECYCLE VERIFIED but remains disconnected 0/43.
+- Next gate: Communication Processor SIPLUS normalization, taxonomy, and explicit
+  adapter preparation. Product total remains 308, S7-300 remains 122/197, and
+  S7-1200 remains 186/186. The post-S7-300 management gate remains unchanged.
+
 - Inquiry form UI: IMPLEMENTED
 - Shared client/server validation: IMPLEMENTED
 - Inquiry API validation and acknowledgement: IMPLEMENTED
