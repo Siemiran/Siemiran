@@ -298,6 +298,21 @@ after Task Y merge.
   adapter preparation. Product total remains 308, S7-300 remains 122/197, and
   S7-1200 remains 186/186. The post-S7-300 management gate remains unchanged.
 
+- Task AM normalizes 4 SIPLUS CP records from environmental labels to functional
+  base variants and reduces the vocabulary from 20 to 16. Final counts are:
+  rs232 3, 20ma-tty 3, rs422-485 3, profibus-dp 4, profibus-dp-fo 1,
+  profibus-fms 2, as-interface 4, as-interface-plus 2, industrial-ethernet 7,
+  industrial-ethernet-lean 3, industrial-ethernet-advanced 4,
+  industrial-ethernet-iso 1, industrial-ethernet-it 3,
+  industrial-ethernet-erpc 1, profinet 1, and bacnet 1.
+- Taxonomy validation and explicit adapter mapping are 43/43 with no remaining
+  identity, lifecycle, taxonomy, or adapter blocker. Future Product lifecycle is
+  0 active, 19 legacy, and 24 discontinued. CP is SOURCE/LIFECYCLE VERIFIED,
+  FUNCTIONALLY NORMALIZED, TAXONOMY-VALID, ADAPTER-READY, and DISCONNECTED 0/43.
+- Product total remains 308, S7-300 remains 122/197, and S7-1200 remains 186/186.
+  Controlled CP Product integration is next; projected future totals are 351 and
+  165/197, leaving Function Module 32. The post-S7-300 gate remains unchanged.
+
 - Inquiry form UI: IMPLEMENTED
 - Shared client/server validation: IMPLEMENTED
 - Inquiry API validation and acknowledgement: IMPLEMENTED

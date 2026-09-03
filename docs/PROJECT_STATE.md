@@ -303,3 +303,16 @@ with identity, lifecycle, taxonomy, and adapter blocker counts all zero, but
 remains disconnected 0/43. The next gate is SIPLUS normalization, taxonomy, and
 explicit adapter preparation. Product total remains 308, S7-300 remains 122/197,
 S7-1200 remains 186/186, and the post-S7-300 management gate remains in force.
+
+Task AM normalizes exactly four SIPLUS CP variant leaks to their functional base
+roles and reduces the 43-record vocabulary from 20 to 16 variants. Verified
+Communication Processor taxonomy now covers 43/43 records, and a dedicated
+explicit adapter maps all 43 through the generic Siemens Product mapper. Future
+Product lifecycle is 0 active, 19 legacy, and 24 discontinued. CP is
+SOURCE/LIFECYCLE VERIFIED, FUNCTIONALLY NORMALIZED, TAXONOMY-VALID 43/43,
+ADAPTER-READY, and DISCONNECTED 0/43, with identity, lifecycle, taxonomy, and
+adapter blockers all zero. Product total remains 308, S7-300 remains 122/197,
+and S7-1200 remains 186/186. The next task is controlled 43-record CP Product
+integration; expected future totals are 351 Products and S7-300 165/197, leaving
+Function Module 32. These are projections, not current state. The post-S7-300
+management gate remains in force.

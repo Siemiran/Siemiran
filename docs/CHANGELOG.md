@@ -3,6 +3,29 @@
 This file records completed repository changes. Connection status refers to the
 implementation on the current `main` branch.
 
+## 2026-09-03 — Siemens S7-300 Communication Processor Pipeline Preparation
+
+### Completed
+
+- Normalized four SIPLUS Communication Processor records to their functional
+  base variants, reducing the source vocabulary from 20 variants to 16 without
+  changing identity, lifecycle, sources, descriptions, or specifications.
+- Added verified S7-300 Communication Processor taxonomy covering all 43 records
+  and a dedicated explicit specification adapter using the generic Siemens
+  Product mapper. Taxonomy validation and adapter mapping are 43/43.
+- Final variants are rs232 3, 20ma-tty 3, rs422-485 3, profibus-dp 4,
+  profibus-dp-fo 1, profibus-fms 2, as-interface 4, as-interface-plus 2,
+  industrial-ethernet 7, industrial-ethernet-lean 3,
+  industrial-ethernet-advanced 4, industrial-ethernet-iso 1,
+  industrial-ethernet-it 3, industrial-ethernet-erpc 1, profinet 1, bacnet 1.
+- Future Product lifecycle is 0 active, 19 legacy, and 24 discontinued. CP is
+  SOURCE/LIFECYCLE VERIFIED, FUNCTIONALLY NORMALIZED, TAXONOMY-VALID 43/43,
+  ADAPTER-READY, and DISCONNECTED 0/43.
+- Product total remains 308, S7-300 remains 122/197, and S7-1200 remains 186/186.
+  Controlled 43-record CP Product integration is next; that future task would
+  produce 351 Products and S7-300 165/197, leaving Function Module 32. The
+  post-S7-300 decision gate remains preserved.
+
 ## 2026-09-03 — Siemens S7-300 Communication Processor Final Lifecycle Closure
 
 ### Completed
