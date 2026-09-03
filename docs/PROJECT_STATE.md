@@ -316,3 +316,15 @@ and S7-1200 remains 186/186. The next task is controlled 43-record CP Product
 integration; expected future totals are 351 Products and S7-300 165/197, leaving
 Function Module 32. These are projections, not current state. The post-S7-300
 management gate remains in force.
+
+Task AN connects all 43 verified S7-300 Communication Processor records through
+the dedicated explicit adapter. CP is now SOURCE/LIFECYCLE VERIFIED,
+FUNCTIONALLY NORMALIZED, TAXONOMY-VALID 43/43, ADAPTER-READY, and CONNECTED
+43/43. Mapped Product lifecycle is 0 active, 19 legacy, and 24 discontinued.
+The Product collection increases from 308 to 351 and S7-300 advances from
+122/197 to 165/197; S7-1200 remains 186/186. S7-300 is not complete: Function
+Module is the sole remaining disconnected dataset with 32 records. The next
+S7-300 gate is Function Module readiness, source, taxonomy, and adapter work.
+After Function Module integration and a strict S7-300 closure audit, stop before
+starting another Siemens series and evaluate additional Siemens data versus
+Persian-first bilingual site completion.

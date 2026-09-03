@@ -1,6 +1,8 @@
 import type { Product } from "@/features/products/types/product.types";
 import { siemensPLC } from "@/features/products/database/siemens/plc";
 import { mapSiemensPLCToProduct } from "@/features/products/database/siemens/plc.adapter";
+import { mapSiemensS7300CommunicationProcessorToProduct } from "@/features/products/database/siemens/s7-300/cp.adapter";
+import { s7300CP } from "@/features/products/database/siemens/s7-300/cp";
 import { mapSiemensS7300InterfaceModuleToProduct } from "@/features/products/database/siemens/s7-300/im.adapter";
 import { s7300IM } from "@/features/products/database/siemens/s7-300/im";
 import { mapSiemensS7300PowerSupplyToProduct } from "@/features/products/database/siemens/s7-300/ps.adapter";
@@ -43,6 +45,9 @@ const verifiedSiemensS7300SignalModuleProducts: Product[] = s7300SM.map(
 const verifiedSiemensS7300InterfaceModuleProducts: Product[] = s7300IM.map(
   mapSiemensS7300InterfaceModuleToProduct,
 );
+
+const verifiedSiemensS7300CommunicationProcessorProducts: Product[] =
+  s7300CP.map(mapSiemensS7300CommunicationProcessorToProduct);
 
 const verifiedSiemensS71200ClassicPowerModuleProducts: Product[] =
   siemensS71200PowerModules.map(mapSiemensS71200PowerModuleToProduct);
@@ -106,6 +111,7 @@ export const products: Product[] = [
   ...verifiedSiemensS7300PowerSupplyProducts,
   ...verifiedSiemensS7300SignalModuleProducts,
   ...verifiedSiemensS7300InterfaceModuleProducts,
+  ...verifiedSiemensS7300CommunicationProcessorProducts,
   ...verifiedSiemensS71200ClassicPowerModuleProducts,
   ...verifiedSiemensS71200G2PowerModuleProducts,
   ...verifiedSiemensS71200G2CPUProducts,
