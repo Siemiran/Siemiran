@@ -3,6 +3,25 @@
 This file records completed repository changes. Connection status refers to the
 implementation on the current `main` branch.
 
+## 2026-09-03 — Siemens S7-300 Interface Module Integration
+
+### Completed
+
+- Connected all 7 source-verified, taxonomy-valid S7-300 Interface Module
+  records through the existing dedicated adapter without changing source,
+  taxonomy, adapter, or generic Siemens infrastructure.
+- Added 0 active, 5 legacy, and 2 discontinued Products while preserving the
+  corrected IM178-4 identity `6ES7178-4BH00-0AE0` and exact source mapping.
+- Increased the Product collection from 301 to 308 with 308 unique IDs, slugs,
+  and part numbers and no duplicate exposure.
+- Advanced S7-300 integration from 115/197 to 122/197. The remaining 75
+  disconnected records are Communication Processor 43 and Function Module 32;
+  S7-300 is not complete, and S7-1200 remains 186/186 connected.
+- Set Communication Processor readiness, taxonomy, and source verification as
+  the next S7-300 gate. After full S7-300 completion and closure audit, work
+  still stops before another Siemens series while additional Siemens
+  series/family data is evaluated against Persian-first bilingual completion.
+
 ## 2026-09-03 — Siemens S7-300 Interface Module Final Source Verification
 
 ### Completed
