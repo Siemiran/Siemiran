@@ -120,12 +120,17 @@ These products flow through `data/products.ts`, the Product repository, and the 
   at 0/7 and adds no Products. Variants are rack-sender 1, rack-receiver 1,
   rack-interface 3, motion-control 1, and distributed-motion-control 1. Source
   lifecycle is 0 active, 0 phase-out, 5 spare-part, and 2 discontinued; future
-  mapping would yield 0 active, 5 legacy, and 2 discontinued Products. Current
-  Siemens lifecycle evidence remains unavailable for `6ES7365-0BA81-0AA0` and
-  `6ES7178-4AB00-0XA0`; both retained discontinued values are non-blocking for
-  taxonomy and adapter readiness but block final Product exposure. The next gate
-  is resolving that debt before controlled 7-record integration. Product total
-  remains 301 and S7-300 remains 115/197 connected.
+  mapping would yield 0 active, 5 legacy, and 2 discontinued Products.
+  Extended-temperature IM365 `6ES7365-0BA81-0AA0` is verified as
+  PM500/discontinued effective 2012-10-01 with successor `6AG1365-0BA01-2AA0`.
+  The erroneous IM178-4 MLFB `6ES7178-4AB00-0XA0` is corrected to the official
+  Siemens manual identity `6ES7178-4BH00-0AE0`; current Siemens/TIA documentation
+  confirms it is no longer actively marketed, and matching independent evidence
+  retains PM500/discontinued effective 2014-10-01. Direct Siemens PLM pages were
+  inaccessible, and no conflicting higher-authority evidence was found. All IM
+  verification debt is closed. The next task is controlled seven-record IM
+  Product integration. Product total remains 301 and S7-300 remains 115/197
+  connected.
 - The 38-record Classic S7-1200 Signal Module and 23-record Classic Signal Board
   sources are source-backed, taxonomy-valid, and CONNECTED through their
   unchanged shared adapters. Classic/G2 physical source separation is

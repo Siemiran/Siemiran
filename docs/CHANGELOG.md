@@ -3,6 +3,27 @@
 This file records completed repository changes. Connection status refers to the
 implementation on the current `main` branch.
 
+## 2026-09-03 — Siemens S7-300 Interface Module Final Source Verification
+
+### Completed
+
+- Verified extended-temperature IM365 `6ES7365-0BA81-0AA0` as PM500,
+  discontinued effective 2012-10-01, with successor `6AG1365-0BA01-2AA0`.
+  Direct Siemens PLM access was unavailable; two independent exact-product
+  reproductions agree and no conflicting higher-authority evidence was found.
+- Corrected the IM178-4 source MLFB from erroneous `6ES7178-4AB00-0XA0` to
+  `6ES7178-4BH00-0AE0` and updated its source ID. The official Siemens manual
+  confirms the identity and specifications, while current Siemens/TIA
+  documentation confirms that IM178-4 is no longer actively marketed and
+  suggests IM174 as an alternative.
+- Retained discontinued lifecycle for corrected IM178-4. Direct Siemens PLM
+  access was unavailable; independent exact-product evidence agrees on PM500
+  and lifecycle end 2014-10-01, with no conflicting higher-authority evidence.
+- Closed all remaining IM verification debt. The seven-record dataset is now
+  source-verified, taxonomy-valid 7/7, adapter-ready, and disconnected 0/7,
+  ready for controlled Product exposure as the next task. Product total remains
+  301 and S7-300 remains 115/197 connected; taxonomy and adapter are unchanged.
+
 ## 2026-09-03 — Siemens S7-300 Interface Module Pipeline Preparation
 
 ### Completed
