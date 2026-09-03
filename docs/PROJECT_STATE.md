@@ -279,8 +279,11 @@ These products flow through `data/products.ts`, the Product repository, and the 
   `6GK7343-1EX30-0XE0`, and `6GK7343-1GX31-0XE0` to `spare-part`. Exact Siemens
   technical product data replaced family-manual sources for the Lean and
   Advanced records. The other lifecycle values were retained after verification.
-- Final lifecycle: 0 active, 1 phase-out, 18 spare-part, 24 discontinued; no
-  lifecycle debt remains. Communication Processor stays disconnected at 0/43.
+- Final recorded lifecycle: 0 active, 1 phase-out, 18 spare-part, 24
+  discontinued. Of the 30 initial blockers, 28 are resolved; ERPC
+  `6GK7343-1FX00-0XE0` and BACnet `6FL4343-1CX10-0XE0` remain unresolved because
+  accessible secondary PLM claims conflict. Communication Processor stays
+  disconnected at 0/43 and is not exposure-ready.
 - Product collection stays 308, S7-300 stays 122/197, and S7-1200 stays 186/186.
-  The next gate is Communication Processor taxonomy and adapter preparation;
-  the post-S7-300 management gate remains in force.
+  The next gate is targeted lifecycle resolution for those two exact MLFBs; the
+  post-S7-300 management gate remains in force.

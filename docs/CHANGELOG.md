@@ -18,13 +18,14 @@ implementation on the current `main` branch.
 - Upgraded the Lean and Advanced records from family manuals to exact Siemens
   technical product data. Other checked lifecycle values were retained where
   the evidence confirmed the existing PM410 or PM500 classification.
-- Final CP lifecycle is 0 active, 1 phase-out, 18 spare-part, and 24
-  discontinued, with no remaining identity or lifecycle blocker. CP remains
-  disconnected at 0/43; Product collection remains 308, S7-300 remains 122/197,
-  and S7-1200 remains 186/186.
-- Set Communication Processor taxonomy and adapter preparation as the next gate.
-  Product exposure remains explicitly out of scope, and the post-S7-300
-  management gate is preserved.
+- Final recorded CP lifecycle is 0 active, 1 phase-out, 18 spare-part, and 24
+  discontinued. Exact Siemens evidence closes 28 of the 30 initial lifecycle
+  blockers; ERPC `6GK7343-1FX00-0XE0` and BACnet `6FL4343-1CX10-0XE0` retain
+  their existing values but remain unresolved because accessible secondary PLM
+  claims conflict. CP remains disconnected at 0/43; Product collection remains
+  308, S7-300 remains 122/197, and S7-1200 remains 186/186.
+- Set targeted resolution of those two MLFBs as the next gate. Product exposure
+  remains explicitly blocked, and the post-S7-300 management gate is preserved.
 
 ## 2026-09-03 — Siemens S7-300 Interface Module Integration
 

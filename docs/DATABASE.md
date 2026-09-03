@@ -344,7 +344,9 @@ verification. Task AK closed that set. Three stale values were corrected:
 `6GK7343-1CX10-0XE0`, `6GK7343-1EX30-0XE0`, and `6GK7343-1GX31-0XE0` are now
 `spare-part`; exact Siemens technical product data also replaced the family
 sources for the Lean and Advanced records. All other checked lifecycle values
-were retained. Final distribution is 0 active, 1 phase-out, 18 spare-part, and
-24 discontinued, with no unresolved MLFB. The dataset remains source-only and
-disconnected at 0/43; Product total is 308, S7-300 is 122/197, and S7-1200 is
-186/186. Communication Processor taxonomy and adapter preparation is next.
+were retained. Final recorded distribution is 0 active, 1 phase-out, 18
+spare-part, and 24 discontinued. Verification resolved 28/30 initial blockers;
+ERPC `6GK7343-1FX00-0XE0` and BACnet `6FL4343-1CX10-0XE0` remain unresolved due
+to conflicting secondary PLM claims. The dataset remains source-only,
+disconnected at 0/43, and not exposure-ready; Product total is 308, S7-300 is
+122/197, and S7-1200 is 186/186. Targeted resolution of those MLFBs is next.
