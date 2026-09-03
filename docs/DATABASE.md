@@ -107,11 +107,17 @@ The 7 Interface Module records are normalized to functional variants:
 but remain DISCONNECTED at 0/7 with zero Product exposure. Source lifecycle is
 0 active, 0 phase-out, 5 spare-part, and 2 discontinued; expected future mapping
 is 0 active, 5 legacy, and 2 discontinued. Current Siemens lifecycle evidence
-remains unavailable for extended-temperature IM365 `6ES7365-0BA81-0AA0` and
-IM178-4 `6ES7178-4AB00-0XA0`; their retained discontinued states block final
-Product exposure, but not taxonomy or adapter readiness. Resolve this debt before
-controlled integration. The Product collection remains 301 and S7-300 remains
-115/197 connected.
+is now complete: extended-temperature IM365 `6ES7365-0BA81-0AA0` is verified as
+PM500/discontinued effective 2012-10-01 with successor `6AG1365-0BA01-2AA0`,
+and the erroneous IM178-4 MLFB `6ES7178-4AB00-0XA0` is corrected to the
+official-manual identity `6ES7178-4BH00-0AE0`. Current Siemens/TIA documentation
+confirms that IM178-4 is no longer actively marketed; its independently
+corroborated PM500 lifecycle ended 2014-10-01. Direct Siemens PLM pages were
+inaccessible, so both lifecycle closures use matching independent exact-product
+reproductions with no conflicting higher-authority evidence. Remaining IM
+verification debt is 0. The next task is controlled seven-record IM Product
+integration. The Product collection remains 301 and S7-300 remains 115/197
+connected.
 The connected 13-record PS dataset comprises 5 initial standard/outdoor
 records, 4 historical revisions, and 4 SIPLUS records. Official base-product
 and successor MLFB relationships remain source-only; they are not mapped into

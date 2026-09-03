@@ -267,8 +267,8 @@ export const s7300IM: SiemensS7300InterfaceModule[] = [
   // --------------------------------------------------
 
   {
-    id: "siemens-s7-300-im178-4-0ab00-0xa0",
-    mlfb: "6ES7178-4AB00-0XA0",
+    id: "siemens-s7-300-im178-4-4bh00-0ae0",
+    mlfb: "6ES7178-4BH00-0AE0",
 
     brandId: "siemens",
     categoryId: "PLC",

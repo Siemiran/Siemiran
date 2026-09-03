@@ -79,11 +79,16 @@ pending milestone.
   rack-sender 1, rack-receiver 1, rack-interface 3, motion-control 1, and
   distributed-motion-control 1. Source lifecycle is 0 active, 0 phase-out, 5
   spare-part, and 2 discontinued; future mapping is 0 active, 5 legacy, and 2
-  discontinued. Current Siemens lifecycle evidence remains unavailable for
-  `6ES7365-0BA81-0AA0` and `6ES7178-4AB00-0XA0`; both retained discontinued
-  values block final Product exposure but not taxonomy or adapter readiness.
-  Product total remains 301 and S7-300 remains 115/197 connected. The next gate
-  is resolving this debt before controlled 7-record integration.
+  discontinued. Extended-temperature IM365 `6ES7365-0BA81-0AA0` is verified as
+  PM500/discontinued effective 2012-10-01, and erroneous IM178-4 MLFB
+  `6ES7178-4AB00-0XA0` is corrected to official-manual identity
+  `6ES7178-4BH00-0AE0`, retained PM500/discontinued effective 2014-10-01.
+  Current Siemens/TIA documentation confirms IM178-4 is no longer actively
+  marketed. Direct Siemens PLM pages were inaccessible; matching independent
+  exact-product reproductions close both lifecycle debts with no conflicting
+  higher-authority evidence. Remaining IM verification debt is 0. Product total
+  remains 301 and S7-300 remains 115/197 connected. The next task is controlled
+  seven-record IM Product integration.
 - Function Module source dataset: PRESENT, DISCONNECTED
 - Communication Processor source dataset: PRESENT, DISCONNECTED
 - Power Supply source dataset: 13 RECORDS, including historical and SIPLUS
