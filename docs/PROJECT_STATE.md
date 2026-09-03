@@ -46,13 +46,15 @@
 
 ### Active Application Data
 
-The `Product` aggregation contains 301 products:
+The `Product` aggregation contains 308 products:
 
 - 36 S7-300 CPU source records mapped through validation and the Siemens adapter
 - 13 S7-300 Power Supply source records mapped through the shared validator,
   generic Product mapper, and explicit Power Supply specification normalizer
 - 66 S7-300 Signal Module source records mapped through validation and the
   dedicated explicit Signal Module specification normalizer
+- 7 S7-300 Interface Module source records mapped through validation and the
+  dedicated explicit Interface Module specification normalizer
 - 3 S7-1200 Classic Power Module source records mapped through validation and
   the explicit S7-1200 Power Module specification normalizer
 - 2 S7-1200 G2 Power Module source records mapped through the same normalizer,
@@ -96,7 +98,7 @@ These products flow through `data/products.ts`, the Product repository, and the 
 
 ### Source Data and Connection Status
 
-- S7-300 IM, FM, and CP datasets exist but are DISCONNECTED.
+- The S7-300 IM dataset is CONNECTED; FM and CP remain DISCONNECTED.
 - The 66-record S7-300 Signal Module dataset is SOURCE-VERIFIED, taxonomy-valid
   66/66, ADAPTER-READY, and CONNECTED with 66 Product records. Its
   variants are digital-input 16, digital-output 19, digital-io 2,
@@ -109,18 +111,19 @@ These products flow through `data/products.ts`, the Product repository, and the 
   effective 2023-10-01, is verified by an exact SiePortal product-page capture,
   two independently published matching sources, and no conflicting
   higher-authority evidence. Both debts are closed. S7-300 integration advances from 49/197 to
-  115/197, leaving 82 disconnected records: IM 7, FM 32, and CP 43. The Product
-  collection is 301, while S7-1200 remains 186/186 connected. The next S7-300
-  gate is Interface Module readiness, taxonomy, and source-verification work.
+  122/197, leaving 75 disconnected records: FM 32 and CP 43. The Product
+  collection is 308, while S7-1200 remains 186/186 connected. The next S7-300
+  gate is Communication Processor readiness, taxonomy, and source-verification
+  work.
   After full S7-300 completion and its closure audit, stop before opening another
   Siemens series and separately evaluate additional Siemens series/family data
   versus Persian-first bilingual site completion.
-- The 7-record S7-300 Interface Module dataset is functionally normalized and
-  taxonomy-valid 7/7 with its explicit adapter ready, but remains DISCONNECTED
-  at 0/7 and adds no Products. Variants are rack-sender 1, rack-receiver 1,
+- The 7-record S7-300 Interface Module dataset is functionally normalized,
+  taxonomy-valid 7/7, adapter-ready, and CONNECTED at 7/7 through its explicit
+  adapter. Variants are rack-sender 1, rack-receiver 1,
   rack-interface 3, motion-control 1, and distributed-motion-control 1. Source
-  lifecycle is 0 active, 0 phase-out, 5 spare-part, and 2 discontinued; future
-  mapping would yield 0 active, 5 legacy, and 2 discontinued Products.
+  lifecycle is 0 active, 0 phase-out, 5 spare-part, and 2 discontinued; Product
+  mapping yields 0 active, 5 legacy, and 2 discontinued Products.
   Extended-temperature IM365 `6ES7365-0BA81-0AA0` is verified as
   PM500/discontinued effective 2012-10-01 with successor `6AG1365-0BA01-2AA0`.
   The erroneous IM178-4 MLFB `6ES7178-4AB00-0XA0` is corrected to the official
@@ -128,9 +131,9 @@ These products flow through `data/products.ts`, the Product repository, and the 
   confirms it is no longer actively marketed, and matching independent evidence
   retains PM500/discontinued effective 2014-10-01. Direct Siemens PLM pages were
   inaccessible, and no conflicting higher-authority evidence was found. All IM
-  verification debt is closed. The next task is controlled seven-record IM
-  Product integration. Product total remains 301 and S7-300 remains 115/197
-  connected.
+  verification debt is closed. Product total is 308 and S7-300 is 122/197
+  connected, leaving CP 43 and FM 32 disconnected. The next S7-300 gate is
+  Communication Processor readiness, taxonomy, and source verification.
 - The 38-record Classic S7-1200 Signal Module and 23-record Classic Signal Board
   sources are source-backed, taxonomy-valid, and CONNECTED through their
   unchanged shared adapters. Classic/G2 physical source separation is
@@ -252,12 +255,13 @@ These products flow through `data/products.ts`, the Product repository, and the 
   contract for identity, taxonomy, lifecycle, descriptions, and official
   source URLs.
 - Common Siemens Product mapping is separated from explicit product-type
-  specification normalization. S7-300 CPU, Power Supply, and Signal Module plus
+  specification normalization. S7-300 CPU, Power Supply, Signal Module, and
+  Interface Module plus
   S7-1200 Classic/G2 Power Module, CPU, Signal Module, Signal Board, Communication
   Module, Communication Processor, Communication Board, Special Module, and
   Technology Module, Network Switch, and Data Decoupling Module records are
   connected. The current verified S7-1200 source integration is 186/186 complete,
-  and the Product collection total is 301.
+  and the Product collection total is 308.
 
 ## Latest Local Quality Verification
 

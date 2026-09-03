@@ -63,22 +63,22 @@ pending milestone.
   analog-output 9, and analog-io 5. Source lifecycle is 1 active, 18 phase-out,
   41 spare-part, and 6 discontinued; Product mapping is 1 active, 59 legacy,
   and 6 discontinued. All 66 source records are exposed exactly once, and the
-  Product collection is 301. The existing official module-specific source
+  Product collection is 308. The existing official module-specific source
   closes `6ES7321-7BH00-0AB0` provenance debt. Direct live Mall access remained
   edge-denied for `6ES7322-5SD00-0AB0`; an exact captured SiePortal PM400 state
   and 2023-10-01 effective date, two independently published matching sources,
   and no conflicting higher-authority evidence close its lifecycle debt. Current verified S7-300
-  integration advances from 49/197 to 115/197, leaving 82 records disconnected:
-  IM 7, FM 32, and CP 43. S7-1200 remains 186/186 connected. The next S7-300
-  gate is Interface Module readiness, taxonomy, and source-verification work.
+  integration advances from 49/197 to 122/197, leaving 75 records disconnected:
+  FM 32 and CP 43. S7-1200 remains 186/186 connected. The next S7-300 gate is
+  Communication Processor readiness, taxonomy, and source-verification work.
   After full S7-300 completion and closure audit, stop before another Siemens
   series and separately evaluate additional Siemens series/family data versus
   Persian-first bilingual site completion.
 - Interface Module source dataset: 7 RECORDS, FUNCTIONALLY NORMALIZED,
-  TAXONOMY-VALID 7/7, ADAPTER-READY, and DISCONNECTED at 0/7. Variants are
+  TAXONOMY-VALID 7/7, ADAPTER-READY, and CONNECTED at 7/7. Variants are
   rack-sender 1, rack-receiver 1, rack-interface 3, motion-control 1, and
   distributed-motion-control 1. Source lifecycle is 0 active, 0 phase-out, 5
-  spare-part, and 2 discontinued; future mapping is 0 active, 5 legacy, and 2
+  spare-part, and 2 discontinued; Product mapping is 0 active, 5 legacy, and 2
   discontinued. Extended-temperature IM365 `6ES7365-0BA81-0AA0` is verified as
   PM500/discontinued effective 2012-10-01, and erroneous IM178-4 MLFB
   `6ES7178-4AB00-0XA0` is corrected to official-manual identity
@@ -87,8 +87,9 @@ pending milestone.
   marketed. Direct Siemens PLM pages were inaccessible; matching independent
   exact-product reproductions close both lifecycle debts with no conflicting
   higher-authority evidence. Remaining IM verification debt is 0. Product total
-  remains 301 and S7-300 remains 115/197 connected. The next task is controlled
-  seven-record IM Product integration.
+  is 308 and S7-300 is 122/197 connected, leaving CP 43 and FM 32 disconnected.
+  The next gate is Communication Processor readiness, taxonomy, and source
+  verification.
 - Function Module source dataset: PRESENT, DISCONNECTED
 - Communication Processor source dataset: PRESENT, DISCONNECTED
 - Power Supply source dataset: 13 RECORDS, including historical and SIPLUS
