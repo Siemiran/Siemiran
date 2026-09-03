@@ -270,3 +270,17 @@ These products flow through `data/products.ts`, the Product repository, and the 
 - Production build: PASS
 - Automated tests: NOT ESTABLISHED
 - GitHub Actions CI/CD: NOT FOUND
+
+## S7-300 Communication Processor Source Verification — 2026-09-03
+
+- Task AJ audited 43/43 records: all identities reconcile, with zero taxonomy
+  blockers and zero adapter blockers; 30 lifecycle records required verification.
+- Task AK verified that set and corrected `6GK7343-1CX10-0XE0`,
+  `6GK7343-1EX30-0XE0`, and `6GK7343-1GX31-0XE0` to `spare-part`. Exact Siemens
+  technical product data replaced family-manual sources for the Lean and
+  Advanced records. The other lifecycle values were retained after verification.
+- Final lifecycle: 0 active, 1 phase-out, 18 spare-part, 24 discontinued; no
+  lifecycle debt remains. Communication Processor stays disconnected at 0/43.
+- Product collection stays 308, S7-300 stays 122/197, and S7-1200 stays 186/186.
+  The next gate is Communication Processor taxonomy and adapter preparation;
+  the post-S7-300 management gate remains in force.

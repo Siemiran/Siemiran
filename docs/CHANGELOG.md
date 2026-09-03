@@ -3,6 +3,29 @@
 This file records completed repository changes. Connection status refers to the
 implementation on the current `main` branch.
 
+## 2026-09-03 — Siemens S7-300 Communication Processor Source and Lifecycle Correction
+
+### Completed
+
+- Recorded the Task AJ read-only audit of all 43 Communication Processor source
+  records: identities reconcile 43/43 with zero taxonomy or adapter blockers and
+  an initial lifecycle-verification set of 30 records.
+- Reconciled that complete set against exact current or historical product
+  evidence. Updated CP 343-1 Lean `6GK7343-1CX10-0XE0`, CP 343-1
+  `6GK7343-1EX30-0XE0`, and CP 343-1 Advanced `6GK7343-1GX31-0XE0` from stale
+  lifecycle values to `spare-part`; the standard CP 343-1 and Advanced products
+  passed from phase-out on 2023-10-01 to cancellation/spare-part on 2025-10-01.
+- Upgraded the Lean and Advanced records from family manuals to exact Siemens
+  technical product data. Other checked lifecycle values were retained where
+  the evidence confirmed the existing PM410 or PM500 classification.
+- Final CP lifecycle is 0 active, 1 phase-out, 18 spare-part, and 24
+  discontinued, with no remaining identity or lifecycle blocker. CP remains
+  disconnected at 0/43; Product collection remains 308, S7-300 remains 122/197,
+  and S7-1200 remains 186/186.
+- Set Communication Processor taxonomy and adapter preparation as the next gate.
+  Product exposure remains explicitly out of scope, and the post-S7-300
+  management gate is preserved.
+
 ## 2026-09-03 — Siemens S7-300 Interface Module Integration
 
 ### Completed

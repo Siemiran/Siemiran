@@ -335,3 +335,16 @@ do not establish that every record satisfies the active Product contract.
 - Do not invent prices, stock, specifications, taxonomy, or lifecycle values.
 - Do not call disconnected or unverified source records active products.
 - Reconcile taxonomy and validation before controlled dataset integration.
+
+## S7-300 Communication Processor Verification — 2026-09-03
+
+Task AJ reconciled all 43 Communication Processor identities and found no
+taxonomy or adapter blocker, while identifying 30 lifecycle records requiring
+verification. Task AK closed that set. Three stale values were corrected:
+`6GK7343-1CX10-0XE0`, `6GK7343-1EX30-0XE0`, and `6GK7343-1GX31-0XE0` are now
+`spare-part`; exact Siemens technical product data also replaced the family
+sources for the Lean and Advanced records. All other checked lifecycle values
+were retained. Final distribution is 0 active, 1 phase-out, 18 spare-part, and
+24 discontinued, with no unresolved MLFB. The dataset remains source-only and
+disconnected at 0/43; Product total is 308, S7-300 is 122/197, and S7-1200 is
+186/186. Communication Processor taxonomy and adapter preparation is next.
