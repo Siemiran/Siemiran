@@ -115,6 +115,17 @@ These products flow through `data/products.ts`, the Product repository, and the 
   After full S7-300 completion and its closure audit, stop before opening another
   Siemens series and separately evaluate additional Siemens series/family data
   versus Persian-first bilingual site completion.
+- The 7-record S7-300 Interface Module dataset is functionally normalized and
+  taxonomy-valid 7/7 with its explicit adapter ready, but remains DISCONNECTED
+  at 0/7 and adds no Products. Variants are rack-sender 1, rack-receiver 1,
+  rack-interface 3, motion-control 1, and distributed-motion-control 1. Source
+  lifecycle is 0 active, 0 phase-out, 5 spare-part, and 2 discontinued; future
+  mapping would yield 0 active, 5 legacy, and 2 discontinued Products. Current
+  Siemens lifecycle evidence remains unavailable for `6ES7365-0BA81-0AA0` and
+  `6ES7178-4AB00-0XA0`; both retained discontinued values are non-blocking for
+  taxonomy and adapter readiness but block final Product exposure. The next gate
+  is resolving that debt before controlled 7-record integration. Product total
+  remains 301 and S7-300 remains 115/197 connected.
 - The 38-record Classic S7-1200 Signal Module and 23-record Classic Signal Board
   sources are source-backed, taxonomy-valid, and CONNECTED through their
   unchanged shared adapters. Classic/G2 physical source separation is

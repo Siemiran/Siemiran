@@ -51,7 +51,7 @@ export const s7300IM: SiemensS7300InterfaceModule[] = [
     seriesId: "S7-300",
 
     productTypeId: "Interface Module",
-    variantId: "im360-sender",
+    variantId: "rack-sender",
 
     title: "SIMATIC S7-300 IM 360 Interface Module",
 
@@ -86,14 +86,14 @@ export const s7300IM: SiemensS7300InterfaceModule[] = [
     seriesId: "S7-300",
 
     productTypeId: "Interface Module",
-    variantId: "im361-receiver",
+    variantId: "rack-receiver",
 
     title: "SIMATIC S7-300 IM 361 Interface Module",
 
     description:
       "SIMATIC S7-300 IM 361 interface module for connection of an expansion rack to the central rack via IM 360, with 24 V DC supply and C-bus.",
 
-    lifecycle: "phase-out",
+    lifecycle: "spare-part",
 
     specifications: {
       function: "Expansion rack connection",
@@ -123,14 +123,14 @@ export const s7300IM: SiemensS7300InterfaceModule[] = [
     seriesId: "S7-300",
 
     productTypeId: "Interface Module",
-    variantId: "im365",
+    variantId: "rack-interface",
 
     title: "SIMATIC S7-300 IM 365 Interface Module",
 
     description:
       "SIMATIC S7-300 IM 365 interface module for connecting one expansion rack to the central rack without C-bus, supplied as two modules with a 1 m connecting cable.",
 
-    lifecycle: "phase-out",
+    lifecycle: "spare-part",
 
     specifications: {
       function: "Expansion rack connection",
@@ -159,7 +159,7 @@ export const s7300IM: SiemensS7300InterfaceModule[] = [
     seriesId: "S7-300",
 
     productTypeId: "Interface Module",
-    variantId: "im365-extended-temperature",
+    variantId: "rack-interface",
 
     title: "SIMATIC S7-300 IM 365 Extended Temperature Range",
 
@@ -195,7 +195,7 @@ export const s7300IM: SiemensS7300InterfaceModule[] = [
     seriesId: "S7-300",
 
     productTypeId: "Interface Module",
-    variantId: "im365-siplus",
+    variantId: "rack-interface",
 
     title: "SIPLUS S7-300 IM 365",
 
@@ -276,7 +276,7 @@ export const s7300IM: SiemensS7300InterfaceModule[] = [
     seriesId: "S7-300",
 
     productTypeId: "Interface Module",
-    variantId: "im178-4",
+    variantId: "distributed-motion-control",
 
     title: "SIMATIC S7-300 IM 178-4",
 
