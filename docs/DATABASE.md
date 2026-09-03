@@ -362,3 +362,16 @@ canonical source is upgraded to the exact Siemens BACnet datasheet. Direct
 Siemens PLM pages were inaccessible for both. Lifecycle blockers are now 0 and
 the 43-record source is SOURCE/LIFECYCLE VERIFIED, still disconnected 0/43.
 The next gate is SIPLUS normalization, taxonomy, and explicit adapter preparation.
+
+Task AM completes that preparation. Four SIPLUS records now use their functional
+base variants, reducing Communication Processor taxonomy from 20 source labels
+to 16 functional variants. All 43 records validate against the new S7-300
+Communication Processor taxonomy and map through a dedicated explicit adapter.
+The adapter preserves strings, joins `interfaces` and `protocols` arrays with
+`, `, omits undefined fields, and delegates Product construction and lifecycle
+mapping to the generic Siemens mapper. Expected future Product lifecycle is 0
+active, 19 legacy, and 24 discontinued. CP remains disconnected 0/43; Product
+total remains 308, S7-300 remains 122/197, and S7-1200 remains 186/186. The next
+task is controlled 43-record CP integration, projected to produce 351 Products
+and S7-300 165/197 with Function Module 32 remaining. The projection is not the
+current state.

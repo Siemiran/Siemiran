@@ -610,6 +610,73 @@ export const siemensVerifiedTaxonomy = {
                 },
               ],
             },
+            {
+              id: "Communication Processor",
+              title: "Communication Processor",
+              slug: "communication-processor",
+              variants: [
+                { id: "rs232", title: "RS-232", slug: "rs232" },
+                { id: "20ma-tty", title: "20 mA TTY", slug: "20ma-tty" },
+                { id: "rs422-485", title: "RS-422/485", slug: "rs422-485" },
+                {
+                  id: "profibus-dp",
+                  title: "PROFIBUS DP",
+                  slug: "profibus-dp",
+                },
+                {
+                  id: "profibus-dp-fo",
+                  title: "PROFIBUS DP FO",
+                  slug: "profibus-dp-fo",
+                },
+                {
+                  id: "profibus-fms",
+                  title: "PROFIBUS FMS",
+                  slug: "profibus-fms",
+                },
+                {
+                  id: "as-interface",
+                  title: "AS-Interface",
+                  slug: "as-interface",
+                },
+                {
+                  id: "as-interface-plus",
+                  title: "AS-Interface Plus",
+                  slug: "as-interface-plus",
+                },
+                {
+                  id: "industrial-ethernet",
+                  title: "Industrial Ethernet",
+                  slug: "industrial-ethernet",
+                },
+                {
+                  id: "industrial-ethernet-lean",
+                  title: "Industrial Ethernet Lean",
+                  slug: "industrial-ethernet-lean",
+                },
+                {
+                  id: "industrial-ethernet-advanced",
+                  title: "Industrial Ethernet Advanced",
+                  slug: "industrial-ethernet-advanced",
+                },
+                {
+                  id: "industrial-ethernet-iso",
+                  title: "Industrial Ethernet ISO",
+                  slug: "industrial-ethernet-iso",
+                },
+                {
+                  id: "industrial-ethernet-it",
+                  title: "Industrial Ethernet IT",
+                  slug: "industrial-ethernet-it",
+                },
+                {
+                  id: "industrial-ethernet-erpc",
+                  title: "Industrial Ethernet ERPC",
+                  slug: "industrial-ethernet-erpc",
+                },
+                { id: "profinet", title: "PROFINET", slug: "profinet" },
+                { id: "bacnet", title: "BACnet", slug: "bacnet" },
+              ],
+            },
           ],
         },
       ],

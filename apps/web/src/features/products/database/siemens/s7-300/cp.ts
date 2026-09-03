@@ -516,7 +516,7 @@ export const s7300CP: SiemensS7300CommunicationProcessor[] = [
     seriesId: "S7-300",
 
     productTypeId: "Communication Processor",
-    variantId: "profibus-dp-siplus",
+    variantId: "profibus-dp",
 
     title: "SIPLUS NET S7-300 CP 342-5 PROFIBUS DP",
 
@@ -1433,7 +1433,7 @@ export const s7300CP: SiemensS7300CommunicationProcessor[] = [
     seriesId: "S7-300",
 
     productTypeId: "Communication Processor",
-    variantId: "industrial-ethernet-lean-siplus",
+    variantId: "industrial-ethernet-lean",
 
     title: "SIPLUS S7-300 CP 343-1 Lean",
 
@@ -1630,7 +1630,7 @@ export const s7300CP: SiemensS7300CommunicationProcessor[] = [
     seriesId: "S7-300",
 
     productTypeId: "Communication Processor",
-    variantId: "industrial-ethernet-siplus",
+    variantId: "industrial-ethernet",
 
     title: "SIPLUS S7-300 CP 343-1",
 
@@ -1672,7 +1672,7 @@ export const s7300CP: SiemensS7300CommunicationProcessor[] = [
     seriesId: "S7-300",
 
     productTypeId: "Communication Processor",
-    variantId: "industrial-ethernet-advanced-siplus",
+    variantId: "industrial-ethernet-advanced",
 
     title: "SIPLUS S7-300 CP 343-1 Advanced",
 
