@@ -287,3 +287,19 @@ These products flow through `data/products.ts`, the Product repository, and the 
 - Product collection stays 308, S7-300 stays 122/197, and S7-1200 stays 186/186.
   The next gate is targeted lifecycle resolution for those two exact MLFBs; the
   post-S7-300 management gate remains in force.
+
+Task AL closes the final two lifecycle debts. ERPC `6GK7343-1FX00-0XE0`
+remains `discontinued`: exact official Siemens catalog and ProductCERT evidence
+establish identity, an exact Siemens-derived product reproduction explicitly
+reports PM500, and independent exact-product evidence reports manufacturer
+discontinuation; older PM300 mirrors are stale. BACnet `6FL4343-1CX10-0XE0`
+also remains `discontinued`: the official Siemens datasheet establishes sales
+restriction from 2012-04-30, followed by Siemens-derived cancellation evidence
+dated 2019-07-01; Phase-Out evidence reflects the earlier stage. Direct Siemens
+PLM pages were not accessible for either record. Both canonical sources now use
+exact official Siemens technical documents. Lifecycle remains 0 active, 1
+phase-out, 18 spare-part, and 24 discontinued. CP is SOURCE/LIFECYCLE VERIFIED
+with identity, lifecycle, taxonomy, and adapter blocker counts all zero, but
+remains disconnected 0/43. The next gate is SIPLUS normalization, taxonomy, and
+explicit adapter preparation. Product total remains 308, S7-300 remains 122/197,
+S7-1200 remains 186/186, and the post-S7-300 management gate remains in force.

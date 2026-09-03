@@ -3,6 +3,28 @@
 This file records completed repository changes. Connection status refers to the
 implementation on the current `main` branch.
 
+## 2026-09-03 — Siemens S7-300 Communication Processor Final Lifecycle Closure
+
+### Completed
+
+- Closed the final ERPC `6GK7343-1FX00-0XE0` and BACnet
+  `6FL4343-1CX10-0XE0` lifecycle debts without changing their verified
+  `discontinued` values. Direct Siemens PLM pages were not accessible.
+- Reconciled ERPC using official Siemens catalog and ProductCERT identity,
+  explicit Siemens-derived PM500 evidence, and independent manufacturer-
+  discontinuation evidence; stale PM300 mirrors represent an earlier state.
+- Reconstructed BACnet chronology from the official Siemens sales restriction
+  dated 2012-04-30 to Siemens-derived cancellation dated 2019-07-01; Phase-Out
+  evidence represents the earlier stage.
+- Replaced both compliance-only canonical sources with exact official Siemens
+  technical documents. Lifecycle remains 0 active, 1 phase-out, 18 spare-part,
+  and 24 discontinued. AJ blockers 30 became 2 after AK and 0 after AL.
+- CP is SOURCE/LIFECYCLE VERIFIED with zero identity, lifecycle, taxonomy, or
+  adapter blockers, while remaining disconnected 0/43. Product total remains
+  308, S7-300 remains 122/197, and S7-1200 remains 186/186. The next gate is CP
+  SIPLUS normalization, taxonomy, and explicit adapter preparation; the
+  post-S7-300 management gate is preserved.
+
 ## 2026-09-03 — Siemens S7-300 Communication Processor Source and Lifecycle Correction
 
 ### Completed

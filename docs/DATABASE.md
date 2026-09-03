@@ -350,3 +350,15 @@ ERPC `6GK7343-1FX00-0XE0` and BACnet `6FL4343-1CX10-0XE0` remain unresolved due
 to conflicting secondary PLM claims. The dataset remains source-only,
 disconnected at 0/43, and not exposure-ready; Product total is 308, S7-300 is
 122/197, and S7-1200 is 186/186. Targeted resolution of those MLFBs is next.
+
+Task AL closes both remaining debts without changing lifecycle values. ERPC
+`6GK7343-1FX00-0XE0` remains `discontinued` because explicit PM500 evidence and
+independent manufacturer-discontinuation evidence supersede stale PM300 mirrors;
+its canonical source is upgraded to the exact official Siemens IK PI catalog.
+BACnet `6FL4343-1CX10-0XE0` remains `discontinued`: official Siemens data records
+sales restriction from 2012-04-30, and later Siemens-derived product data records
+cancellation on 2019-07-01, making Phase-Out the earlier lifecycle stage. Its
+canonical source is upgraded to the exact Siemens BACnet datasheet. Direct
+Siemens PLM pages were inaccessible for both. Lifecycle blockers are now 0 and
+the 43-record source is SOURCE/LIFECYCLE VERIFIED, still disconnected 0/43.
+The next gate is SIPLUS normalization, taxonomy, and explicit adapter preparation.
