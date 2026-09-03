@@ -3,6 +3,27 @@
 This file records completed repository changes. Connection status refers to the
 implementation on the current `main` branch.
 
+## 2026-09-03 — Siemens S7-300 Interface Module Pipeline Preparation
+
+### Completed
+
+- Normalized all 7 Interface Module records to five functional variants:
+  rack-sender 1, rack-receiver 1, rack-interface 3, motion-control 1, and
+  distributed-motion-control 1. SIPLUS and extended-temperature editions remain
+  source evidence rather than taxonomy variants.
+- Updated IM361 and standard IM365 from phase-out to spare-part using current
+  Siemens datasheets. Final source lifecycle is 0 active, 0 phase-out, 5
+  spare-part, and 2 discontinued.
+- Added verified Interface Module taxonomy with 7/7 coverage and one explicit
+  specification adapter using the unchanged generic Siemens mapper.
+- Retained discontinued lifecycle for extended-temperature IM365
+  `6ES7365-0BA81-0AA0` and IM178-4 `6ES7178-4AB00-0XA0` because current Siemens
+  lifecycle evidence was unavailable. This debt does not block taxonomy or
+  adapter readiness, but blocks final Product exposure.
+- Added zero Product exposure: Interface Module remains 0/7 connected, Product
+  total remains 301, and S7-300 remains 115/197 connected. Debt resolution is
+  the next gate before controlled integration.
+
 ## 2026-09-02 — Siemens S7-300 Signal Module Integration
 
 ### Completed

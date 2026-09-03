@@ -578,6 +578,38 @@ export const siemensVerifiedTaxonomy = {
                 },
               ],
             },
+            {
+              id: "Interface Module",
+              title: "Interface Module",
+              slug: "interface-module",
+              variants: [
+                {
+                  id: "rack-sender",
+                  title: "Rack Sender",
+                  slug: "rack-sender",
+                },
+                {
+                  id: "rack-receiver",
+                  title: "Rack Receiver",
+                  slug: "rack-receiver",
+                },
+                {
+                  id: "rack-interface",
+                  title: "Rack Interface",
+                  slug: "rack-interface",
+                },
+                {
+                  id: "motion-control",
+                  title: "Motion Control",
+                  slug: "motion-control",
+                },
+                {
+                  id: "distributed-motion-control",
+                  title: "Distributed Motion Control",
+                  slug: "distributed-motion-control",
+                },
+              ],
+            },
           ],
         },
       ],

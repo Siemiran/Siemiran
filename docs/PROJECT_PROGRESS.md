@@ -74,7 +74,16 @@ pending milestone.
   After full S7-300 completion and closure audit, stop before another Siemens
   series and separately evaluate additional Siemens series/family data versus
   Persian-first bilingual site completion.
-- Interface Module source dataset: PRESENT, DISCONNECTED
+- Interface Module source dataset: 7 RECORDS, FUNCTIONALLY NORMALIZED,
+  TAXONOMY-VALID 7/7, ADAPTER-READY, and DISCONNECTED at 0/7. Variants are
+  rack-sender 1, rack-receiver 1, rack-interface 3, motion-control 1, and
+  distributed-motion-control 1. Source lifecycle is 0 active, 0 phase-out, 5
+  spare-part, and 2 discontinued; future mapping is 0 active, 5 legacy, and 2
+  discontinued. Current Siemens lifecycle evidence remains unavailable for
+  `6ES7365-0BA81-0AA0` and `6ES7178-4AB00-0XA0`; both retained discontinued
+  values block final Product exposure but not taxonomy or adapter readiness.
+  Product total remains 301 and S7-300 remains 115/197 connected. The next gate
+  is resolving this debt before controlled 7-record integration.
 - Function Module source dataset: PRESENT, DISCONNECTED
 - Communication Processor source dataset: PRESENT, DISCONNECTED
 - Power Supply source dataset: 13 RECORDS, including historical and SIPLUS
