@@ -340,7 +340,7 @@ do not establish that every record satisfies the active Product contract.
 
 Task AJ reconciled all 43 Communication Processor identities and found no
 taxonomy or adapter blocker, while identifying 30 lifecycle records requiring
-verification. Task AK closed that set. Three stale values were corrected:
+verification. Task AK reconciled that set. Three stale values were corrected:
 `6GK7343-1CX10-0XE0`, `6GK7343-1EX30-0XE0`, and `6GK7343-1GX31-0XE0` are now
 `spare-part`; exact Siemens technical product data also replaced the family
 sources for the Lean and Advanced records. All other checked lifecycle values
