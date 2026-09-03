@@ -645,7 +645,7 @@ export const s7300CP: SiemensS7300CommunicationProcessor[] = [
     description:
       "SIMATIC S7-300 CP 343-1 communications processor for Industrial Ethernet via ISO and TCP/IP, PROFINET IO controller or PROFINET IO device, with integrated 2-port switch and S7 communication services.",
 
-    lifecycle: "phase-out",
+    lifecycle: "spare-part",
 
     specifications: {
       interface: "Industrial Ethernet",
@@ -687,7 +687,7 @@ export const s7300CP: SiemensS7300CommunicationProcessor[] = [
     description:
       "SIMATIC S7-300 CP 343-1 Lean communications processor for Industrial Ethernet via TCP/IP and UDP, supporting S7 communication, open communication, PROFINET IO device functionality and integrated 2-port switch.",
 
-    lifecycle: "phase-out",
+    lifecycle: "spare-part",
 
     specifications: {
       interface: "Industrial Ethernet",
@@ -707,7 +707,7 @@ export const s7300CP: SiemensS7300CommunicationProcessor[] = [
     },
 
     source:
-      "https://support.industry.siemens.com/cs/attachments/16767769/IE_CP_S7-300_e.pdf",
+      "https://mall.industry.siemens.com/goos/catalog/Pages/mmpdata.ashx?MLFB1=6GK7343-1CX10-0XE0&lang=en",
   },
 
   {
@@ -769,7 +769,7 @@ export const s7300CP: SiemensS7300CommunicationProcessor[] = [
     description:
       "SIMATIC S7-300 CP 343-1 Advanced communications processor for Industrial Ethernet and PROFINET with enhanced communication and synchronization functions.",
 
-    lifecycle: "discontinued",
+    lifecycle: "spare-part",
 
     specifications: {
       interface: "Industrial Ethernet",
@@ -791,7 +791,7 @@ export const s7300CP: SiemensS7300CommunicationProcessor[] = [
     },
 
     source:
-      "https://support.industry.siemens.com/cs/attachments/16767769/IE_CP_S7-300_e.pdf",
+      "https://mall.industry.siemens.com/goos/catalog/Pages/mmpdata.ashx?MLFB1=6GK7343-1GX31-0XE0&lang=en",
   },
 
   // --------------------------------------------------

@@ -270,6 +270,21 @@ after Task Y merge.
 
 ## Inquiry Progress
 
+## S7-300 Communication Processor Source Progress — 2026-09-03
+
+- Task AJ: 43/43 identities reconciled; taxonomy blockers 0; adapter blockers 0;
+  initial lifecycle-verification set 30.
+- Task AK: all 30 checked, with three lifecycle corrections and two exact-source
+  upgrades. Final recorded lifecycle is 0 active, 1 phase-out, 18 spare-part,
+  and 24 discontinued. Verification resolved 28; ERPC `6GK7343-1FX00-0XE0`
+  and BACnet `6FL4343-1CX10-0XE0` remain unresolved because accessible secondary
+  PLM claims conflict.
+- CP remains disconnected 0/43. Product collection remains 308, S7-300 remains
+  122/197, and S7-1200 remains 186/186.
+- Next gate: targeted lifecycle resolution of those two exact MLFBs. Product
+  exposure, taxonomy preparation, adapter preparation, and SIPLUS normalization
+  were not performed. The post-S7-300 management gate remains unchanged.
+
 - Inquiry form UI: IMPLEMENTED
 - Shared client/server validation: IMPLEMENTED
 - Inquiry API validation and acknowledgement: IMPLEMENTED
