@@ -3,6 +3,27 @@
 This file records completed repository changes. Connection status refers to the
 implementation on the current `main` branch.
 
+## 2026-09-04 — S7-300 Function Module Verified-Subset Integration
+
+### Added
+
+- Added one explicit Siemens-official lifecycle exposure gate containing the
+  seven unresolved Function Module MLFBs.
+- Connected the remaining 25 Function Modules through the existing explicit FM
+  adapter. Blocked source records remain in the dataset but are not Products.
+
+### State
+
+- FM is SOURCE RECORDS 32/32, FUNCTIONALLY NORMALIZED, TAXONOMY-VALID 32/32,
+  ADAPTER-READY 32/32, PRODUCT-EXPOSED 25/32, and SIEMENS-OFFICIAL
+  LIFECYCLE-DEBT 7.
+- Exposed Product lifecycle is 0 active, 20 legacy, and 5 discontinued.
+- Product increases from 351 to 376 and S7-300 from 165/197 to 190/197;
+  S7-1200 remains 186/186. S7-300 is not complete.
+- Third-party lifecycle research is prohibited. Only future official Siemens
+  evidence may remove an MLFB from the exposure gate. The locked post-S7-300
+  decision remains pending.
+
 ## 2026-09-04 — S7-300 Function Module Pipeline Preparation
 
 ### Added

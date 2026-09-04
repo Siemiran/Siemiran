@@ -402,3 +402,19 @@ verification.
 - Product remains 351, S7-300 remains 165/197, and S7-1200 remains 186/186.
   The next management gate is a bounded historical-lifecycle acceptance policy
   for the seven legacy records before integration; S7-300 is not complete.
+
+## 2026-09-04 — FM Verified Subset Connected
+
+- Added an explicit seven-MLFB Siemens-official lifecycle exposure gate beside
+  the 32-record FM source dataset.
+- Connected exactly 25 non-blocked records through the existing FM adapter;
+  all seven unresolved records remain disconnected with no lifecycle inference.
+- Exposed mapping is 0 active, 20 legacy, and 5 discontinued. FM moves from
+  0/32 to 25/32, Product from 351 to 376, and S7-300 from 165/197 to 190/197.
+  S7-1200 remains 186/186.
+- State: FM SOURCE RECORDS 32/32, FUNCTIONALLY NORMALIZED, TAXONOMY-VALID
+  32/32, ADAPTER-READY 32/32, PRODUCT-EXPOSED 25/32, SIEMENS-OFFICIAL
+  LIFECYCLE-DEBT 7, S7-300 CONNECTED 190/197.
+- S7-300 is not complete. Third-party lifecycle evidence cannot remove records
+  from the gate; the next management action requires official Siemens evidence
+  and preserves the locked post-S7-300 decision.

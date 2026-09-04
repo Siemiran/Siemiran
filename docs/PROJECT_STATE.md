@@ -390,3 +390,23 @@ DISCONNECTED 0/32. FM remains unexposed, Product remains 351, S7-300 remains
 165/197, and S7-1200 remains 186/186. The next management gate is to decide the
 bounded historical-lifecycle acceptance policy before Product integration.
 S7-300 is not complete, and the locked post-S7-300 decision gate remains.
+
+## 2026-09-04 — Function Module Controlled Partial Integration
+
+Task AT introduces one explicit Siemens-official lifecycle gate for the seven
+unresolved FM MLFBs and exposes only the 25 verified records through the FM
+adapter. All 32 records remain in the source dataset; the blocked seven are not
+Products. No lifecycle is inferred and no source URL, taxonomy, or adapter is
+changed.
+
+The exposed source subset contains 0 active, 13 phase-out, 7 spare-part, and 5
+discontinued records, mapping to 0 active, 20 legacy, and 5 discontinued
+Products. FM is now connected 25/32. Product is 376, S7-300 is 190/197 with
+seven remaining Function Modules, and S7-1200 remains 186/186.
+
+State: FM SOURCE RECORDS 32/32, FUNCTIONALLY NORMALIZED, TAXONOMY-VALID 32/32,
+ADAPTER-READY 32/32, PRODUCT-EXPOSED 25/32, SIEMENS-OFFICIAL LIFECYCLE-DEBT 7,
+S7-300 CONNECTED 190/197. S7-300 is not complete. Repeated third-party
+lifecycle research is prohibited; only future official Siemens evidence may
+remove an MLFB from the exposure-blocked set. The locked post-S7-300 decision
+gate remains pending.

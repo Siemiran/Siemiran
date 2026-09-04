@@ -446,3 +446,23 @@ but not functional preparation: `6AG1350-1AH03-2AE0`,
 `6AT1735-0AA01-0AA0`, `6ES7354-1AH02-0AE0`, `6ES7356-3BN00-0AE0`,
 `6ES7356-4BM00-0AE0`, `6ES7357-4AH03-0AE0`, and `7MH4904-2AA01`. FM remains
 0/32 connected; Product 351, S7-300 165/197, and S7-1200 186/186 are unchanged.
+
+## 2026-09-04 — Function Module Verified-Subset Exposure
+
+Task AS prepared all 32 FM source records structurally. Task AT adds a single
+Siemens-official evidence gate in `fm.ts` for the seven lifecycle-unresolved
+MLFBs and connects every other record through the FM adapter. The result is 25
+exposed and 7 blocked records, with no source-record, lifecycle, taxonomy, or
+adapter change.
+
+The exposed source distribution is 0 active, 13 phase-out, 7 spare-part, and 5
+discontinued; mapped Product lifecycle is 0 active, 20 legacy, and 5
+discontinued. Product increases 351 to 376, S7-300 increases 165/197 to
+190/197, and S7-1200 remains 186/186.
+
+Current state: FM SOURCE RECORDS 32/32, FUNCTIONALLY NORMALIZED,
+TAXONOMY-VALID 32/32, ADAPTER-READY 32/32, PRODUCT-EXPOSED 25/32,
+SIEMENS-OFFICIAL LIFECYCLE-DEBT 7, S7-300 CONNECTED 190/197. The blocked
+records remain source records, and S7-300 is not complete. Repeated third-party
+lifecycle research is prohibited; only official Siemens evidence may remove a
+record from the exposure gate.
