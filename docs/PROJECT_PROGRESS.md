@@ -428,12 +428,30 @@ verification.
 - Resolved 1/8 targets using only exact Siemens Industry Mall lifecycle
   evidence: FM354 `6ES7354-1AH01-0AE0` is PM410 "Product cancellation" from
   2017-03-01, remains `spare-part`, and is removed from the gate.
-- Left seven exact MLFBs blocked. Siemens identity material for SIPLUS FM350-1,
-  CM35, FM354 AH02, both FM356-4 revisions, FM357-2 AH03, and SIWAREX A does
-  not explicitly prove lifecycle.
+- Left seven exact MLFBs blocked. Exact Siemens identity is established for
+  SIPLUS FM350-1, CM35, both FM356-4 revisions, and FM357-2 AH03, but not for
+  FM354 AH02 or SIWAREX A; Siemens material does not explicitly prove lifecycle
+  for any of the seven.
 - FM exposure is 25/32; Product is 376; S7-300 is 190/197; S7-1200 remains
   186/186. No third-party evidence is used and S7-300 is not complete.
 - Next gate: continue exact Siemens-only lifecycle resolution for the seven
   remaining Function Modules; the strict closure audit begins only after
   S7-300 reaches 197/197. IM/CP provenance, localization, and another Siemens
   series have not started; the post-closure management choice remains locked.
+
+## 2026-09-04 — Final Seven FM Identity Integrity
+
+- Task AV resolved 0/7 lifecycle debts and exposed the FM356-4 8 MB identity
+  error. Task AW corrects it to Siemens MLFB `6ES7356-4BN00-0AE0` and the
+  matching internal ID; the official manual maps `4BM00` to 4 MB and `4BN00`
+  to 8 MB.
+- No exact Siemens lifecycle statement was recovered for `4BN00`; provisional
+  `discontinued` remains and the corrected MLFB stays gated.
+- FM354 `6ES7354-1AH02-0AE0` is now tracked as IDENTITY-UNRESOLVED because
+  exact Siemens FM354 material establishes AH00/AH01, not AH02. SIWAREX A
+  `7MH4904-2AA01` is also exact-identity-unresolved because its Siemens manual
+  does not display that MLFB. Both remain unchanged and blocked pending
+  management review.
+- FM remains 25/32, Product 376, S7-300 190/197, and S7-1200 186/186. Remaining
+  FM completion precedes the closure audit; IM/CP audit, localization, and a
+  new series remain unstarted.

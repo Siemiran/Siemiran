@@ -418,7 +418,7 @@ is corrected to PM400 phase-out.
 FM lifecycle is 0 active / 14 phase-out / 7 spare-part / 11 discontinued.
 Identity, placement, and source blockers are zero, while seven lifecycle
 blockers remain: `6AG1350-1AH03-2AE0`, `6AT1735-0AA01-0AA0`,
-`6ES7354-1AH02-0AE0`, `6ES7356-3BN00-0AE0`, `6ES7356-4BM00-0AE0`,
+`6ES7354-1AH02-0AE0`, `6ES7356-4BN00-0AE0`, `6ES7356-4BM00-0AE0`,
 `6ES7357-4AH03-0AE0`, and `7MH4904-2AA01`. The three SIPLUS source variants,
 13-variant taxonomy, and explicit adapter remain deferred. FM remains 0/32,
 Product 351, S7-300 165/197, and S7-1200 186/186.
@@ -443,7 +443,7 @@ active, 21 legacy, and 11 discontinued.
 Task AR produced no safe lifecycle correction, so repeated identical research
 is stopped. Seven exact lifecycle blockers remain and block Product exposure,
 but not functional preparation: `6AG1350-1AH03-2AE0`,
-`6AT1735-0AA01-0AA0`, `6ES7354-1AH02-0AE0`, `6ES7356-3BN00-0AE0`,
+`6AT1735-0AA01-0AA0`, `6ES7354-1AH02-0AE0`, `6ES7356-4BN00-0AE0`,
 `6ES7356-4BM00-0AE0`, `6ES7357-4AH03-0AE0`, and `7MH4904-2AA01`. FM remains
 0/32 connected; Product 351, S7-300 165/197, and S7-1200 186/186 are unchanged.
 
@@ -486,20 +486,21 @@ the gate entry is removed, and exposure is approved.
 | `6AG1350-1AH03-2AE0` | SIPLUS FM350-1 | phase-out / phase-out | Siemens ST 70 2023, `cache.industry.siemens.com/.../simatic-st70-complete-english-2023.pdf` | None; identity/catalog context only | kept / no |
 | `6AT1735-0AA01-0AA0` | CM35 | discontinued / discontinued | Siemens CM35 manual, `cache.industry.siemens.com/.../HB_CM35_d.pdf` | None; identity/manual context only | kept / no |
 | `6ES7354-1AH01-0AE0` | FM354 | spare-part / spare-part | Siemens Industry Mall exact Product page | PM410 "Product cancellation" / 2017-03-01 | removed / yes |
-| `6ES7354-1AH02-0AE0` | FM354 | discontinued / discontinued | Siemens FM354 manual, `support.industry.siemens.com/.../Fm354v2_e.pdf` | None; identity/manual context only | kept / no |
-| `6ES7356-3BN00-0AE0` | FM356-4 | discontinued / discontinued | Siemens FM356 manual, `cache.industry.siemens.com/.../Fm356_e.pdf` | None; identity/manual context only | kept / no |
+| `6ES7354-1AH02-0AE0` | FM354 | discontinued / discontinued | No exact identity source; Siemens FM354 material names AH00/AH01 | Identity unresolved; lifecycle not established | kept / no |
+| `6ES7356-4BN00-0AE0` | FM356-4 8 MB | discontinued / discontinued | Siemens FM356 manual, `cache.industry.siemens.com/.../Fm356_e.pdf` | None; identity/manual context only | kept / no |
 | `6ES7356-4BM00-0AE0` | FM356-4 | discontinued / discontinued | Siemens FM356 manual, `cache.industry.siemens.com/.../Fm356_e.pdf` | None; identity/manual context only | kept / no |
 | `6ES7357-4AH03-0AE0` | FM357-2 | discontinued / discontinued | Siemens FM357 manual, `support.industry.siemens.com/.../fm357_e.pdf` | None; identity/manual context only | kept / no |
-| `7MH4904-2AA01` | SIWAREX A | discontinued / discontinued | Siemens SIWAREX A manual, `support.industry.siemens.com/.../manual_a_en_04072001.pdf` | None; identity/manual context only | kept / no |
+| `7MH4904-2AA01` | SIWAREX A | discontinued / discontinued | Siemens SIWAREX A manual, `support.industry.siemens.com/.../manual_a_en_04072001.pdf` | Model/function only; exact MLFB and lifecycle unresolved | kept / no |
 
 The remaining targets retain their provisional lifecycle and stay gated because
 no exact official Siemens lifecycle statement was established: SIPLUS FM350-1
 `6AG1350-1AH03-2AE0` (`phase-out`), CM35 `6AT1735-0AA01-0AA0`
 (`discontinued`), FM354 AH02 `6ES7354-1AH02-0AE0` (`discontinued`), FM356-4
-`6ES7356-3BN00-0AE0` and `6ES7356-4BM00-0AE0` (`discontinued`), FM357-2
+`6ES7356-4BN00-0AE0` and `6ES7356-4BM00-0AE0` (`discontinued`), FM357-2
 `6ES7357-4AH03-0AE0` (`discontinued`), and SIWAREX A `7MH4904-2AA01`
-(`discontinued`). Their existing Siemens manuals/catalogs remain identity-only
-sources; no effective lifecycle date is claimed.
+(`discontinued`). Exact identity sources remain valid for five records. FM354
+AH02 and SIWAREX A retain identity debt; no effective lifecycle date is claimed
+for any of the seven.
 
 Source remains 32 records (0 active / 14 phase-out / 7 spare-part / 11
 discontinued). Exposure is 25/32, with mapped lifecycle 0 active / 20 legacy /
@@ -509,3 +510,25 @@ seven remaining gated Function Modules. Only after all seven are exposed and
 S7-300 reaches 197/197 does the strict S7-300 closure audit begin. After S7-300
 completion, the deferred Siemens-only provenance compliance audit precedes the
 locked Persian-first bilingual versus additional-Siemens-series decision.
+
+## 2026-09-04 — Final Seven FM Identity Integrity
+
+Task AV closed 0/7 lifecycle debts and exposed a malformed FM356-4 8 MB
+identity. Task AW replaces that source record and exposure-gate key with exact
+Siemens MLFB `6ES7356-4BN00-0AE0`; its internal ID is now
+`siemens-m7-300-fm356-4-4bn00-0ae0`. The Siemens FM356 manual explicitly maps
+`6ES7356-4BM00-0AE0` to 4 MB and `6ES7356-4BN00-0AE0` to 8 MB. No duplicate ID,
+MLFB, generated slug, or Product part number results.
+
+The manual and firmware material contain no explicit lifecycle state for
+`4BN00`, so its provisional `discontinued` value is unchanged and it remains
+blocked. The seven-item gate is now `6AG1350-1AH03-2AE0`,
+`6AT1735-0AA01-0AA0`, `6ES7354-1AH02-0AE0`, `6ES7356-4BN00-0AE0`,
+`6ES7356-4BM00-0AE0`, `6ES7357-4AH03-0AE0`, and `7MH4904-2AA01`.
+
+FM354 `6ES7354-1AH02-0AE0` is IDENTITY-UNRESOLVED: exact Siemens material
+identifies FM354 AH00/AH01, not AH02. SIWAREX A `7MH4904-2AA01` is also
+exact-identity-unresolved because its official manual establishes the
+SIWAREX A model/function without displaying that MLFB. Both remain gated and
+unchanged pending management review. Source stays 32 unique records; exposure
+stays 25/32; Product stays 376; S7-300 stays 190/197; S7-1200 stays 186/186.
