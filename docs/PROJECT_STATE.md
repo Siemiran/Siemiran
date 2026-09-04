@@ -417,3 +417,21 @@ S7-300 CONNECTED 189/197. S7-300 is not complete. Repeated third-party
 lifecycle research is prohibited; only future official Siemens evidence may
 remove an MLFB from the exposure-blocked set. The locked post-S7-300 decision
 gate remains pending.
+
+## 2026-09-04 — Final Eight FM Lifecycle Pass
+
+Task AU checked only the eight gated Function Modules against Siemens-controlled
+sources. Exact Siemens Industry Mall evidence closes FM354
+`6ES7354-1AH01-0AE0` as PM410, "Product cancellation," effective 2017-03-01;
+its lifecycle remains `spare-part`, its source is upgraded to the exact product
+page, and it is exposed. The other seven records remain blocked because their
+official Siemens manuals/catalogs establish identity but not exact lifecycle:
+`6AG1350-1AH03-2AE0`, `6AT1735-0AA01-0AA0`, `6ES7354-1AH02-0AE0`,
+`6ES7356-3BN00-0AE0`, `6ES7356-4BM00-0AE0`, `6ES7357-4AH03-0AE0`, and
+`7MH4904-2AA01`.
+
+FM is 25/32 exposed, Product is 376, S7-300 is 190/197, and S7-1200 remains
+186/186. No third-party evidence is used. S7-300 is not complete; the next gate
+remains STRICT S7-300 CLOSURE AUDIT, followed by the deferred Siemens-only
+provenance compliance audit and the locked Persian-first bilingual versus
+additional-Siemens-series decision.

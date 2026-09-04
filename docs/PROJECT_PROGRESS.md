@@ -422,3 +422,17 @@ verification.
 - S7-300 is not complete. Third-party lifecycle evidence cannot remove records
   from the gate; the next management action requires official Siemens evidence
   and preserves the locked post-S7-300 decision.
+
+## 2026-09-04 — Final Eight FM Lifecycle Pass
+
+- Resolved 1/8 targets using only exact Siemens Industry Mall lifecycle
+  evidence: FM354 `6ES7354-1AH01-0AE0` is PM410 "Product cancellation" from
+  2017-03-01, remains `spare-part`, and is removed from the gate.
+- Left seven exact MLFBs blocked. Siemens identity material for SIPLUS FM350-1,
+  CM35, FM354 AH02, both FM356-4 revisions, FM357-2 AH03, and SIWAREX A does
+  not explicitly prove lifecycle.
+- FM exposure is 25/32; Product is 376; S7-300 is 190/197; S7-1200 remains
+  186/186. No third-party evidence is used and S7-300 is not complete.
+- Next gate: STRICT S7-300 CLOSURE AUDIT. IM/CP provenance, localization, and
+  another Siemens series have not started; the post-closure management choice
+  remains locked.

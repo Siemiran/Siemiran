@@ -41,7 +41,6 @@ export interface SiemensS7300FunctionModule {
 export const siemensS7300FMExposureBlockedMlfbs: ReadonlySet<string> = new Set([
   "6AG1350-1AH03-2AE0",
   "6AT1735-0AA01-0AA0",
-  "6ES7354-1AH01-0AE0",
   "6ES7354-1AH02-0AE0",
   "6ES7356-3BN00-0AE0",
   "6ES7356-4BM00-0AE0",
@@ -398,7 +397,7 @@ export const s7300FM: SiemensS7300FunctionModule[] = [
     },
 
     source:
-      "https://support.industry.siemens.com/cs/attachments/1109366/Fm354v2_e.pdf",
+      "https://mall.industry.siemens.com/mall/en/WW/Catalog/Product/6ES7354-1AH01-0AE0",
   },
 
   // --------------------------------------------------
