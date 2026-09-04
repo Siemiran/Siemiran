@@ -367,3 +367,26 @@ placement, and source blockers are zero. Seven lifecycle blockers remain:
 `7MH4904-2AA01`. Three SIPLUS variant normalizations remain deferred; taxonomy
 and adapter are absent. FM remains 0/32, Product 351, S7-300 165/197, and
 S7-1200 186/186. The next gate targets only these seven lifecycle records.
+
+## 2026-09-04 — Function Module Pipeline Prepared
+
+Task AS normalizes exactly three SIPLUS environmental variants into their base
+functions: two counters and one weighing-electronics record. The FM vocabulary
+is now 13 functional variants across 32 records. The new verified taxonomy
+accepts 32/32 records, and the dedicated explicit adapter maps 32/32 with a
+current projection of 0 active, 21 legacy, and 11 discontinued.
+
+Task AR exhausted the final bounded lifecycle search without safe source-data
+corrections. Repeated identical research is stopped. The seven exact lifecycle
+records remain unresolved exposure debt: `6AG1350-1AH03-2AE0`,
+`6AT1735-0AA01-0AA0`, `6ES7354-1AH02-0AE0`, `6ES7356-3BN00-0AE0`,
+`6ES7356-4BM00-0AE0`, `6ES7357-4AH03-0AE0`, and `7MH4904-2AA01`. This debt no
+longer blocks functional normalization, taxonomy, or adapter preparation, but
+it continues to block Product exposure.
+
+Current status: IDENTITY-VALID, PLACEMENT-VALID, SOURCE-VALID, FUNCTIONALLY
+NORMALIZED, TAXONOMY-VALID 32/32, ADAPTER-READY, LIFECYCLE-DEBT 7, and
+DISCONNECTED 0/32. FM remains unexposed, Product remains 351, S7-300 remains
+165/197, and S7-1200 remains 186/186. The next management gate is to decide the
+bounded historical-lifecycle acceptance policy before Product integration.
+S7-300 is not complete, and the locked post-S7-300 decision gate remains.

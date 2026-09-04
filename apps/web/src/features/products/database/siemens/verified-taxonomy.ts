@@ -579,6 +579,74 @@ export const siemensVerifiedTaxonomy = {
               ],
             },
             {
+              id: "Function Module",
+              title: "Function Module",
+              slug: "function-module",
+              variants: [
+                { id: "counter", title: "Counter", slug: "counter" },
+                {
+                  id: "positioning",
+                  title: "Positioning",
+                  slug: "positioning",
+                },
+                {
+                  id: "cam-controller",
+                  title: "Cam Controller",
+                  slug: "cam-controller",
+                },
+                {
+                  id: "servo-positioning",
+                  title: "Servo Positioning",
+                  slug: "servo-positioning",
+                },
+                {
+                  id: "closed-loop-control",
+                  title: "Closed-Loop Control",
+                  slug: "closed-loop-control",
+                },
+                {
+                  id: "closed-loop-control-step-pulse",
+                  title: "Closed-Loop Control — Step/Pulse",
+                  slug: "closed-loop-control-step-pulse",
+                },
+                {
+                  id: "temperature-control",
+                  title: "Temperature Control",
+                  slug: "temperature-control",
+                },
+                {
+                  id: "temperature-control-step-pulse",
+                  title: "Temperature Control — Step/Pulse",
+                  slug: "temperature-control-step-pulse",
+                },
+                {
+                  id: "high-speed-boolean-processor",
+                  title: "High-Speed Boolean Processor",
+                  slug: "high-speed-boolean-processor",
+                },
+                {
+                  id: "application-function",
+                  title: "Application Function",
+                  slug: "application-function",
+                },
+                {
+                  id: "multi-axis-positioning",
+                  title: "Multi-Axis Positioning",
+                  slug: "multi-axis-positioning",
+                },
+                {
+                  id: "position-input",
+                  title: "Position Input",
+                  slug: "position-input",
+                },
+                {
+                  id: "weighing-electronics",
+                  title: "Weighing Electronics",
+                  slug: "weighing-electronics",
+                },
+              ],
+            },
+            {
               id: "Interface Module",
               title: "Interface Module",
               slug: "interface-module",
