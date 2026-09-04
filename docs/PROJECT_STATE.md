@@ -463,3 +463,28 @@ FM remains 25/32 exposed and 7 blocked. Product remains 376, S7-300 remains
 190/197, and S7-1200 remains 186/186. Remaining FM identity and lifecycle work
 continues before any S7-300 closure audit; IM/CP audit, localization, and a new
 Siemens series have not started.
+
+## 2026-09-04 — Final Seven FM Exact Identity Closure
+
+Task AX corrects the SIWAREX A source record from unsupported repository MLFB
+`7MH4904-2AA01` to exact Siemens MLFB `7MH4421-1AA01` and corrects the matching
+internal ID to `siemens-s7-300-siwarex-a-4421-1aa01`. The Siemens SIWAREX A
+device manual explicitly associates that MLFB with SIWAREX A, while the Siemens
+STEP 7 S7-300 module and compatibility tables independently repeat the same
+association. The repository-wide collision check found no duplicate ID, MLFB,
+generated slug, or Product part number. No explicit lifecycle statement was
+recovered, so provisional `discontinued` remains and the corrected MLFB stays
+gated.
+
+FM354 `6ES7354-1AH02-0AE0` remains IDENTITY-NOT-ESTABLISHED. The Siemens FM354
+predecessor/successor table identifies AH00 followed by AH01, and Siemens FM354
+manual, firmware, compatibility, migration, and STEP 7 material consistently
+identify AH01 rather than AH02. AH02 is a DELETE/INVENTORY-CORRECTION CANDIDATE,
+but Task AX does not infer a replacement or change the denominator without
+management review.
+
+Identity debt is reduced from two records to one. FM remains 25/32 exposed and
+7 blocked; Product remains 376; S7-300 remains 190/197 with the structural
+denominator classified PENDING-IDENTITY-REVIEW; S7-1200 remains 186/186. The
+same final-seven completion continues before any closure audit; IM/CP audit,
+localization, and a new Siemens series have not started.

@@ -532,3 +532,26 @@ exact-identity-unresolved because its official manual establishes the
 SIWAREX A model/function without displaying that MLFB. Both remain gated and
 unchanged pending management review. Source stays 32 unique records; exposure
 stays 25/32; Product stays 376; S7-300 stays 190/197; S7-1200 stays 186/186.
+
+## 2026-09-04 — Final Seven FM Exact Identity Closure
+
+Task AX corrects the SIWAREX A source MLFB from `7MH4904-2AA01` to Siemens
+MLFB `7MH4421-1AA01`, corrects its internal ID to
+`siemens-s7-300-siwarex-a-4421-1aa01`, and replaces its source with the exact
+Siemens SIWAREX A device manual. That manual explicitly displays SIWAREX A and
+order number `7MH4421-1AA01`; Siemens STEP 7 S7-300 module and compatibility
+tables corroborate the same mapping. No repository collision results. Because
+none of the qualifying identity material states lifecycle, provisional
+`discontinued` remains and the corrected gate key stays blocked.
+
+FM354 `6ES7354-1AH02-0AE0` remains IDENTITY-NOT-ESTABLISHED. Official Siemens
+FM354 material establishes AH00 as predecessor and AH01 as successor/current
+revision, while manuals, firmware summaries, compatibility tables, migration
+guides, and STEP 7 material do not establish AH02. The record is retained as a
+DELETE/INVENTORY-CORRECTION CANDIDATE pending management review; no speculative
+rewrite or denominator change is made.
+
+Identity debt falls from two records to one. The seven-item gate now ends with
+`7MH4421-1AA01`; FM remains 25/32 exposed, Product remains 376, S7-300 remains
+190/197 with denominator status PENDING-IDENTITY-REVIEW, and S7-1200 remains
+186/186.
