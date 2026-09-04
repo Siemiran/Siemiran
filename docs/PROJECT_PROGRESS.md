@@ -433,6 +433,7 @@ verification.
   not explicitly prove lifecycle.
 - FM exposure is 25/32; Product is 376; S7-300 is 190/197; S7-1200 remains
   186/186. No third-party evidence is used and S7-300 is not complete.
-- Next gate: STRICT S7-300 CLOSURE AUDIT. IM/CP provenance, localization, and
-  another Siemens series have not started; the post-closure management choice
-  remains locked.
+- Next gate: continue exact Siemens-only lifecycle resolution for the seven
+  remaining Function Modules; the strict closure audit begins only after
+  S7-300 reaches 197/197. IM/CP provenance, localization, and another Siemens
+  series have not started; the post-closure management choice remains locked.

@@ -504,3 +504,8 @@ sources; no effective lifecycle date is claimed.
 Source remains 32 records (0 active / 14 phase-out / 7 spare-part / 11
 discontinued). Exposure is 25/32, with mapped lifecycle 0 active / 20 legacy /
 5 discontinued. Product is 376, S7-300 is 190/197, and S7-1200 is 186/186.
+The next gate is continued Siemens-official-only lifecycle resolution for the
+seven remaining gated Function Modules. Only after all seven are exposed and
+S7-300 reaches 197/197 does the strict S7-300 closure audit begin. After S7-300
+completion, the deferred Siemens-only provenance compliance audit precedes the
+locked Persian-first bilingual versus additional-Siemens-series decision.

@@ -19,8 +19,11 @@ implementation on the current `main` branch.
 - Source lifecycle remains 0 active, 14 phase-out, 7 spare-part, and 11
   discontinued; exposed Products map to 0 active, 20 legacy, and 5
   discontinued.
-- Product is 376, S7-300 is 190/197, and S7-1200 remains 186/186. No
-  third-party evidence was used. Next gate: STRICT S7-300 CLOSURE AUDIT.
+- Product is 376, S7-300 remains incomplete at 190/197, and S7-1200 remains
+  186/186. Seven FM lifecycle records remain gated, and no third-party evidence
+  was used. Next work continues Siemens-official-only lifecycle resolution for
+  those same seven records. The strict S7-300 closure audit is deferred until
+  all seven are exposed and S7-300 reaches 197/197.
 
 ## 2026-09-04 — S7-300 Function Module Verified-Subset Integration
 

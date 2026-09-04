@@ -430,8 +430,12 @@ official Siemens manuals/catalogs establish identity but not exact lifecycle:
 `6ES7356-3BN00-0AE0`, `6ES7356-4BM00-0AE0`, `6ES7357-4AH03-0AE0`, and
 `7MH4904-2AA01`.
 
-FM is 25/32 exposed, Product is 376, S7-300 is 190/197, and S7-1200 remains
-186/186. No third-party evidence is used. S7-300 is not complete; the next gate
-remains STRICT S7-300 CLOSURE AUDIT, followed by the deferred Siemens-only
-provenance compliance audit and the locked Persian-first bilingual versus
-additional-Siemens-series decision.
+FM is 25/32 exposed, Product is 376, S7-300 is 190/197 with seven Function
+Modules remaining, and S7-1200 remains 186/186. No third-party evidence is
+used. The next task is continued Siemens-official-only lifecycle resolution for
+those same seven FM records. The strict S7-300 closure audit has not started and
+begins only after all seven are exposed and S7-300 reaches 197/197. The IM/CP
+provenance audit, localization, and a new Siemens series have not started.
+After S7-300 completion, the deferred Siemens-only provenance compliance audit
+precedes the locked Persian-first bilingual versus additional-Siemens-series
+decision.
