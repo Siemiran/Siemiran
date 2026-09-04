@@ -363,7 +363,7 @@ PM410 spare-part evidence, SIWAREX CS follows exact PM410 evidence, and FM
 Lifecycle is 0 active, 14 phase-out, 7 spare-part, and 11 discontinued. Identity,
 placement, and source blockers are zero. Seven lifecycle blockers remain:
 `6AG1350-1AH03-2AE0`, `6AT1735-0AA01-0AA0`, `6ES7354-1AH02-0AE0`,
-`6ES7356-3BN00-0AE0`, `6ES7356-4BM00-0AE0`, `6ES7357-4AH03-0AE0`, and
+`6ES7356-4BN00-0AE0`, `6ES7356-4BM00-0AE0`, `6ES7357-4AH03-0AE0`, and
 `7MH4904-2AA01`. Three SIPLUS variant normalizations remain deferred; taxonomy
 and adapter are absent. FM remains 0/32, Product 351, S7-300 165/197, and
 S7-1200 186/186. The next gate targets only these seven lifecycle records.
@@ -379,7 +379,7 @@ current projection of 0 active, 21 legacy, and 11 discontinued.
 Task AR exhausted the final bounded lifecycle search without safe source-data
 corrections. Repeated identical research is stopped. The seven exact lifecycle
 records remain unresolved exposure debt: `6AG1350-1AH03-2AE0`,
-`6AT1735-0AA01-0AA0`, `6ES7354-1AH02-0AE0`, `6ES7356-3BN00-0AE0`,
+`6AT1735-0AA01-0AA0`, `6ES7354-1AH02-0AE0`, `6ES7356-4BN00-0AE0`,
 `6ES7356-4BM00-0AE0`, `6ES7357-4AH03-0AE0`, and `7MH4904-2AA01`. This debt no
 longer blocks functional normalization, taxonomy, or adapter preparation, but
 it continues to block Product exposure.
@@ -424,10 +424,11 @@ Task AU checked only the eight gated Function Modules against Siemens-controlled
 sources. Exact Siemens Industry Mall evidence closes FM354
 `6ES7354-1AH01-0AE0` as PM410, "Product cancellation," effective 2017-03-01;
 its lifecycle remains `spare-part`, its source is upgraded to the exact product
-page, and it is exposed. The other seven records remain blocked because their
-official Siemens manuals/catalogs establish identity but not exact lifecycle:
+page, and it is exposed. The other seven records remain blocked because exact
+official Siemens lifecycle is unresolved; exact identity is established for
+five, while FM354 AH02 and SIWAREX A remain exact-identity-unresolved:
 `6AG1350-1AH03-2AE0`, `6AT1735-0AA01-0AA0`, `6ES7354-1AH02-0AE0`,
-`6ES7356-3BN00-0AE0`, `6ES7356-4BM00-0AE0`, `6ES7357-4AH03-0AE0`, and
+`6ES7356-4BN00-0AE0`, `6ES7356-4BM00-0AE0`, `6ES7357-4AH03-0AE0`, and
 `7MH4904-2AA01`.
 
 FM is 25/32 exposed, Product is 376, S7-300 is 190/197 with seven Function
@@ -439,3 +440,26 @@ provenance audit, localization, and a new Siemens series have not started.
 After S7-300 completion, the deferred Siemens-only provenance compliance audit
 precedes the locked Persian-first bilingual versus additional-Siemens-series
 decision.
+
+## 2026-09-04 — Final Seven FM Identity Integrity
+
+Task AV resolved 0/7 lifecycle debts, but its Siemens-only evidence review
+exposed an exact identity error in the FM356-4 8 MB source record. Task AW
+corrects the repository MLFB from `6ES7356-3BN00-0AE0` to the Siemens-documented
+`6ES7356-4BN00-0AE0` and corrects the matching internal ID. The official FM356
+manual establishes `6ES7356-4BM00-0AE0` as the 4 MB model and
+`6ES7356-4BN00-0AE0` as the 8 MB model. The correction does not establish
+lifecycle: `4BN00` retains provisional `discontinued` and remains gated.
+
+Exact Siemens identity for FM354 `6ES7354-1AH02-0AE0` remains unresolved.
+Recovered FM354 manuals, firmware material, compatibility lists, and migration
+guides identify AH00/AH01 but not AH02, so AH02 is identity debt rather than
+merely lifecycle debt. The Siemens SIWAREX A manual establishes the model and
+function but does not show exact MLFB `7MH4904-2AA01`; that record also remains
+exact-identity debt. Neither record is rewritten, removed, or exposed pending
+management review.
+
+FM remains 25/32 exposed and 7 blocked. Product remains 376, S7-300 remains
+190/197, and S7-1200 remains 186/186. Remaining FM identity and lifecycle work
+continues before any S7-300 closure audit; IM/CP audit, localization, and a new
+Siemens series have not started.

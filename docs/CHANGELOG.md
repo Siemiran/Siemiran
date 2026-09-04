@@ -3,6 +3,28 @@
 This file records completed repository changes. Connection status refers to the
 implementation on the current `main` branch.
 
+## 2026-09-04 — S7-300 Final Seven FM Identity Correction
+
+### Changed
+
+- Corrected the FM356-4 8 MB record to exact Siemens MLFB
+  `6ES7356-4BN00-0AE0` and internal ID
+  `siemens-m7-300-fm356-4-4bn00-0ae0`.
+- Replaced the malformed MLFB in the exposure gate without removing the gate.
+  The Siemens FM356 manual explicitly maps `4BM00` to 4 MB and `4BN00` to 8 MB.
+- Recorded FM354 `6ES7354-1AH02-0AE0` and SIWAREX A `7MH4904-2AA01` as exact
+  identity debt pending management review.
+
+### State
+
+- Task AV resolved 0/7 lifecycle debts. Task AW found no explicit Siemens
+  lifecycle state for corrected `4BN00`, so provisional `discontinued` remains.
+- FM remains 25/32 exposed and 7 blocked; Product remains 376; S7-300 remains
+  190/197; S7-1200 remains 186/186.
+- Remaining FM identity/lifecycle completion continues before the S7-300
+  closure audit. IM/CP audit, localization, and another Siemens series remain
+  unstarted.
+
 ## 2026-09-04 — S7-300 Final Eight FM Partial Closure
 
 ### Changed
