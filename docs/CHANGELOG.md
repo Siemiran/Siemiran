@@ -3,6 +3,30 @@
 This file records completed repository changes. Connection status refers to the
 implementation on the current `main` branch.
 
+## 2026-09-04 — Siemens S7-300 Function Module Data Reconciliation
+
+### Corrected
+
+- Corrected FM 355 S `6ES7355-1VH10-0AE0` from active to phase-out using exact
+  Siemens PM400 lifecycle evidence.
+- Replaced the mismatched FM 355-2 S source and the non-Siemens CM35 source with
+  exact official Siemens manuals.
+- Corrected the one-channel SIWAREX CS internal ID to
+  `siemens-s7-300-siwarex-cs-4910-0aa01` without changing its MLFB or data.
+
+### State
+
+- Task AO audited all 32 FM records. SM 338 POS and CM35 retain their locked
+  Function Module placement. Lifecycle changes from 1 active / 13 phase-out /
+  4 spare-part / 14 discontinued to 0 / 14 / 4 / 14.
+- Eleven exact lifecycle blockers and SIPLUS FM 350-1 exact-product provenance
+  remain unresolved. Its `counter-siplus` variant and the other two SIPLUS
+  variants remain unchanged pending the later 13-variant taxonomy task.
+- No taxonomy, adapter, or Product exposure was added. FM remains 0/32, Product
+  remains 351, S7-300 remains 165/197, and S7-1200 remains 186/186.
+- The next gate targets only unresolved exact MLFBs. The post-S7-300 closure
+  audit and locked management decision remain required.
+
 ## 2026-09-03 — Siemens S7-300 Communication Processor Product Integration
 
 ### Completed

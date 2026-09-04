@@ -349,3 +349,22 @@ normalizers. All other
 disconnected source datasets still require controlled taxonomy and normalization
 work before integration and must not be presented as active products before
 verification.
+
+## 2026-09-04 — Function Module Source/Lifecycle Progress
+
+- Task AO audited 32/32 S7-300 Function Module source records.
+- SM 338 POS remains Function Module / position-input, and CM35 remains S7-300
+  Function Module / counter, based on official Siemens compatibility/manual
+  evidence. Placement blockers are zero.
+- FM 355 S is corrected from active to phase-out under exact PM400 evidence.
+  FM 355-2 S and CM35 now use their exact official Siemens manuals. The
+  one-channel SIWAREX CS internal ID is corrected before Product exposure.
+- Lifecycle moves from 1 active / 13 phase-out / 4 spare-part / 14 discontinued
+  to 0 / 14 / 4 / 14. Eleven exact lifecycle blockers remain, plus unresolved
+  exact-product provenance for SIPLUS FM 350-1 `6AG1350-1AH03-4AE0`.
+- Three SIPLUS variant merges, the expected 13-variant FM taxonomy, and the
+  explicit FM adapter remain deferred. FM is still 0/32; Product is 351,
+  S7-300 is 165/197, and S7-1200 is 186/186.
+- Next gate: target only unresolved exact MLFB lifecycle/source evidence. After
+  later FM integration and strict S7-300 closure audit, stop for the locked
+  management decision before localization or another Siemens series.

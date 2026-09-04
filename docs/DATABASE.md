@@ -387,3 +387,21 @@ records. Its readiness, source, taxonomy, and adapter work is the next gate.
 After its integration and strict S7-300 closure audit, the locked decision gate
 requires stopping before another Siemens series and evaluating additional
 Siemens data versus Persian-first bilingual site completion.
+
+## 2026-09-04 — S7-300 Function Module Reconciliation
+
+Task AO audited 32 unique FM records and confirmed the project placement of SM
+338 POS as `Function Module` / `position-input` and CM35 as S7-300 `Function
+Module` / `counter`. Task AP preserves all 32 MLFBs, titles, specifications,
+Product Types, and variants while correcting FM 355 S from active to phase-out,
+upgrading the FM 355-2 S and CM35 sources to exact Siemens manuals, and changing
+the SIWAREX CS internal ID to `siemens-s7-300-siwarex-cs-4910-0aa01`.
+
+Lifecycle before was 1 active, 13 phase-out, 4 spare-part, and 14 discontinued;
+afterward it is 0 active, 14 phase-out, 4 spare-part, and 14 discontinued.
+Eleven lifecycle records remain blocked, and SIPLUS FM 350-1 MLFB
+`6AG1350-1AH03-4AE0` retains unresolved exact-product provenance. The three
+SIPLUS variant normalizations remain deferred. Expected final FM taxonomy is 13
+functional variants covering all 32 records, but verified taxonomy and an FM
+adapter have not been created. FM remains 0/32, Product remains 351, S7-300
+remains 165/197, and S7-1200 remains 186/186.
