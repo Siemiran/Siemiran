@@ -447,7 +447,7 @@ export const s7300FM: SiemensS7300FunctionModule[] = [
     description:
       "SIMATIC S7-300 FM 355 S closed-loop control module with four step and pulse control channels, four analog inputs, eight digital inputs and eight digital outputs.",
 
-    lifecycle: "active",
+    lifecycle: "phase-out",
 
     specifications: {
       function: "Step and pulse closed-loop control",
@@ -541,7 +541,7 @@ export const s7300FM: SiemensS7300FunctionModule[] = [
     },
 
     source:
-      "https://support.industry.siemens.com/cs/attachments/1109579/s7300_fm355_operating_instructions_en_en-US.pdf",
+      "https://support.industry.siemens.com/cs/attachments/12069310/s7300_fm355_2_operating_instructions_en_en-US.pdf",
   },
 
   // --------------------------------------------------
@@ -624,7 +624,8 @@ export const s7300FM: SiemensS7300FunctionModule[] = [
       supplyVoltage: "5 V DC via S7 bus",
     },
 
-    source: "https://docs.rs-online.com/e265/0900766b80abe794.pdf",
+    source:
+      "https://cache.industry.siemens.com/dl/files/297/1911297/att_59462/v1/HB_CM35_d.pdf",
   },
 
   // --------------------------------------------------
@@ -1139,7 +1140,7 @@ export const s7300FM: SiemensS7300FunctionModule[] = [
   // --------------------------------------------------
 
   {
-    id: "siemens-s7-300-siwarex-cs-4-chan",
+    id: "siemens-s7-300-siwarex-cs-4910-0aa01",
     mlfb: "7MH4910-0AA01",
 
     brandId: "siemens",
