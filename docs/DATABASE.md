@@ -450,19 +450,26 @@ but not functional preparation: `6AG1350-1AH03-2AE0`,
 ## 2026-09-04 — Function Module Verified-Subset Exposure
 
 Task AS prepared all 32 FM source records structurally. Task AT adds a single
-Siemens-official evidence gate in `fm.ts` for the seven lifecycle-unresolved
-MLFBs and connects every other record through the FM adapter. The result is 25
-exposed and 7 blocked records, with no source-record, lifecycle, taxonomy, or
+Siemens-official evidence gate in `fm.ts` for the eight lifecycle-unresolved
+MLFBs and connects every other record through the FM adapter. The result is 24
+exposed and 8 blocked records, with no source-record, lifecycle, taxonomy, or
 adapter change.
 
-The exposed source distribution is 0 active, 13 phase-out, 7 spare-part, and 5
-discontinued; mapped Product lifecycle is 0 active, 20 legacy, and 5
-discontinued. Product increases 351 to 376, S7-300 increases 165/197 to
-190/197, and S7-1200 remains 186/186.
+FM353 `6ES7353-1AH01-0AE0` is verified by Siemens Industry Mall as PM410 from
+2017-03-01, and FM352-5 AH11 `6ES7352-5AH11-0AE0` is verified by Siemens
+Industry Mall as PM400 from 2023-10-01; both remain exposed. FM354 AH01
+`6ES7354-1AH01-0AE0` has official Siemens identity evidence, but its lifecycle
+is Siemens-official-unresolved and it is withheld without changing its source
+value.
+
+The exposed source distribution is 0 active, 13 phase-out, 6 spare-part, and 5
+discontinued; mapped Product lifecycle is 0 active, 19 legacy, and 5
+discontinued. Product increases 351 to 375, S7-300 increases 165/197 to
+189/197, and S7-1200 remains 186/186.
 
 Current state: FM SOURCE RECORDS 32/32, FUNCTIONALLY NORMALIZED,
-TAXONOMY-VALID 32/32, ADAPTER-READY 32/32, PRODUCT-EXPOSED 25/32,
-SIEMENS-OFFICIAL LIFECYCLE-DEBT 7, S7-300 CONNECTED 190/197. The blocked
+TAXONOMY-VALID 32/32, ADAPTER-READY 32/32, PRODUCT-EXPOSED 24/32,
+SIEMENS-OFFICIAL LIFECYCLE-DEBT 8, S7-300 CONNECTED 189/197. The blocked
 records remain source records, and S7-300 is not complete. Repeated third-party
 lifecycle research is prohibited; only official Siemens evidence may remove a
 record from the exposure gate.

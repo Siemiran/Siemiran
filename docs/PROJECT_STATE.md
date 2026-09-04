@@ -393,20 +393,27 @@ S7-300 is not complete, and the locked post-S7-300 decision gate remains.
 
 ## 2026-09-04 — Function Module Controlled Partial Integration
 
-Task AT introduces one explicit Siemens-official lifecycle gate for the seven
-unresolved FM MLFBs and exposes only the 25 verified records through the FM
-adapter. All 32 records remain in the source dataset; the blocked seven are not
+Task AT introduces one explicit Siemens-official lifecycle gate for the eight
+unresolved FM MLFBs and exposes only the 24 verified records through the FM
+adapter. All 32 records remain in the source dataset; the blocked eight are not
 Products. No lifecycle is inferred and no source URL, taxonomy, or adapter is
 changed.
 
-The exposed source subset contains 0 active, 13 phase-out, 7 spare-part, and 5
-discontinued records, mapping to 0 active, 20 legacy, and 5 discontinued
-Products. FM is now connected 25/32. Product is 376, S7-300 is 190/197 with
-seven remaining Function Modules, and S7-1200 remains 186/186.
+Official Siemens Industry Mall evidence establishes FM353
+`6ES7353-1AH01-0AE0` as PM410 from 2017-03-01 and FM352-5 AH11
+`6ES7352-5AH11-0AE0` as PM400 from 2023-10-01, so both remain exposed. FM354
+AH01 `6ES7354-1AH01-0AE0` has official identity evidence but insufficient
+official lifecycle evidence and is withheld without changing its provisional
+source lifecycle.
+
+The exposed source subset contains 0 active, 13 phase-out, 6 spare-part, and 5
+discontinued records, mapping to 0 active, 19 legacy, and 5 discontinued
+Products. FM is now connected 24/32. Product is 375, S7-300 is 189/197 with
+eight remaining Function Modules, and S7-1200 remains 186/186.
 
 State: FM SOURCE RECORDS 32/32, FUNCTIONALLY NORMALIZED, TAXONOMY-VALID 32/32,
-ADAPTER-READY 32/32, PRODUCT-EXPOSED 25/32, SIEMENS-OFFICIAL LIFECYCLE-DEBT 7,
-S7-300 CONNECTED 190/197. S7-300 is not complete. Repeated third-party
+ADAPTER-READY 32/32, PRODUCT-EXPOSED 24/32, SIEMENS-OFFICIAL LIFECYCLE-DEBT 8,
+S7-300 CONNECTED 189/197. S7-300 is not complete. Repeated third-party
 lifecycle research is prohibited; only future official Siemens evidence may
 remove an MLFB from the exposure-blocked set. The locked post-S7-300 decision
 gate remains pending.
