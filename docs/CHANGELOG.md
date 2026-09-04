@@ -3,6 +3,25 @@
 This file records completed repository changes. Connection status refers to the
 implementation on the current `main` branch.
 
+## 2026-09-03 — Siemens S7-300 Communication Processor Product Integration
+
+### Completed
+
+- Connected all 43 verified S7-300 Communication Processor records through the
+  existing dedicated adapter without changing source, taxonomy, adapter, or
+  generic Siemens infrastructure.
+- CP is SOURCE/LIFECYCLE VERIFIED, FUNCTIONALLY NORMALIZED, TAXONOMY-VALID
+  43/43, ADAPTER-READY, and CONNECTED 43/43. Mapped Product lifecycle is 0
+  active, 19 legacy, and 24 discontinued.
+- Product collection increased from 308 to 351 and S7-300 advanced from 122/197
+  to 165/197. S7-1200 remains 186/186.
+- Function Module is the only remaining disconnected S7-300 dataset, with 32
+  records. Function Module readiness, source, taxonomy, and adapter work is the
+  next gate; S7-300 is not yet complete.
+- The post-S7-300 decision gate remains locked: after Function Module integration
+  and strict S7-300 closure audit, stop before another Siemens series and
+  evaluate additional Siemens data versus Persian-first bilingual completion.
+
 ## 2026-09-03 — Siemens S7-300 Communication Processor Pipeline Preparation
 
 ### Completed
