@@ -384,3 +384,21 @@ verification.
 - Variant normalization, the 13-variant taxonomy, adapter work, and Product
   integration have not started. FM remains 0/32; Product is 351, S7-300 is
   165/197, and S7-1200 is 186/186. The post-S7-300 gate remains locked.
+
+## 2026-09-04 — FM Functional Preparation Complete
+
+- Normalized exactly three SIPLUS records to their base functional variants,
+  reducing 15 source variant IDs to 13 functional IDs.
+- Added Function Module taxonomy and validated 32/32 records with zero invalid
+  combinations.
+- Added the explicit FM adapter and mapped 32/32 records. The current lifecycle
+  projection is 0 active, 21 legacy, and 11 discontinued; numeric zero,
+  arrays, and boolean specifications are preserved explicitly.
+- Task AR exhausted the bounded lifecycle search with no safe corrections.
+  Seven lifecycle blockers remain unchanged and block Product exposure, while
+  no longer blocking functional normalization, taxonomy, or adapter work.
+- State: IDENTITY-VALID, PLACEMENT-VALID, SOURCE-VALID, FUNCTIONALLY NORMALIZED,
+  TAXONOMY-VALID 32/32, ADAPTER-READY, LIFECYCLE-DEBT 7, DISCONNECTED 0/32.
+- Product remains 351, S7-300 remains 165/197, and S7-1200 remains 186/186.
+  The next management gate is a bounded historical-lifecycle acceptance policy
+  for the seven legacy records before integration; S7-300 is not complete.

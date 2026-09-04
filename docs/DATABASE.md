@@ -422,3 +422,27 @@ blockers remain: `6AG1350-1AH03-2AE0`, `6AT1735-0AA01-0AA0`,
 `6ES7357-4AH03-0AE0`, and `7MH4904-2AA01`. The three SIPLUS source variants,
 13-variant taxonomy, and explicit adapter remain deferred. FM remains 0/32,
 Product 351, S7-300 165/197, and S7-1200 186/186.
+
+## 2026-09-04 — Function Module Functional Pipeline
+
+Task AS normalizes the three SIPLUS environmental leaks without changing any
+identity or lifecycle: `6AG1350-1AH03-2AE0` and `6AG1350-2AH01-4AE0` now use
+`counter`; `6AG1950-2AA01-4AA0` now uses `weighing-electronics`. The source
+vocabulary moves from 15 variant IDs to 13 functional IDs with counts: counter
+6, positioning 3, cam-controller 1, servo-positioning 2,
+closed-loop-control 1, closed-loop-control-step-pulse 1,
+temperature-control 1, temperature-control-step-pulse 1,
+high-speed-boolean-processor 4, application-function 2,
+multi-axis-positioning 2, position-input 1, and weighing-electronics 7.
+
+The verified Function Module taxonomy validates 32/32 records. The dedicated
+FM adapter explicitly maps all supported specifications and preserves numeric
+zero values; its validation maps 32/32 records with a current projection of 0
+active, 21 legacy, and 11 discontinued.
+
+Task AR produced no safe lifecycle correction, so repeated identical research
+is stopped. Seven exact lifecycle blockers remain and block Product exposure,
+but not functional preparation: `6AG1350-1AH03-2AE0`,
+`6AT1735-0AA01-0AA0`, `6ES7354-1AH02-0AE0`, `6ES7356-3BN00-0AE0`,
+`6ES7356-4BM00-0AE0`, `6ES7357-4AH03-0AE0`, and `7MH4904-2AA01`. FM remains
+0/32 connected; Product 351, S7-300 165/197, and S7-1200 186/186 are unchanged.

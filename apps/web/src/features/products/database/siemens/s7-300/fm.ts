@@ -168,7 +168,7 @@ export const s7300FM: SiemensS7300FunctionModule[] = [
     seriesId: "S7-300",
 
     productTypeId: "Function Module",
-    variantId: "counter-siplus",
+    variantId: "counter",
 
     title: "SIPLUS S7-300 FM 350-2 Counter Module",
 
@@ -1000,7 +1000,7 @@ export const s7300FM: SiemensS7300FunctionModule[] = [
     seriesId: "S7-300",
 
     productTypeId: "Function Module",
-    variantId: "weighing-electronics-siplus",
+    variantId: "weighing-electronics",
 
     title: "SIPLUS S7-300 SIWAREX U",
 
@@ -1185,7 +1185,7 @@ export const s7300FM: SiemensS7300FunctionModule[] = [
     seriesId: "S7-300",
 
     productTypeId: "Function Module",
-    variantId: "counter-siplus",
+    variantId: "counter",
 
     title: "SIPLUS S7-300 FM 350-1 Counter Module",
 

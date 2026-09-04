@@ -3,6 +3,33 @@
 This file records completed repository changes. Connection status refers to the
 implementation on the current `main` branch.
 
+## 2026-09-04 — S7-300 Function Module Pipeline Preparation
+
+### Added
+
+- Added the verified S7-300 Function Module taxonomy with 13 functional
+  variants covering all 32 source records.
+- Added the explicit Function Module Product adapter using the generic Siemens
+  mapper and a zero-safe, field-by-field specification normalizer.
+
+### Changed
+
+- Normalized exactly three SIPLUS environmental variant leaks: two
+  `counter-siplus` records to `counter`, and one
+  `weighing-electronics-siplus` record to `weighing-electronics`.
+- Variant vocabulary is reduced from 15 source IDs to 13 functional IDs. All
+  32 records are taxonomy-valid and map successfully through the adapter.
+
+### State
+
+- Task AR exhausted the bounded seven-record lifecycle research without safe
+  source corrections. Repeating that research is stopped; the seven records
+  remain explicit Product-exposure debt but no longer block preparation.
+- FM is IDENTITY-VALID, PLACEMENT-VALID, SOURCE-VALID, FUNCTIONALLY NORMALIZED,
+  TAXONOMY-VALID 32/32, ADAPTER-READY, LIFECYCLE-DEBT 7, and DISCONNECTED 0/32.
+- Current mapped projection is 0 active, 21 legacy, and 11 discontinued.
+  Product remains 351, S7-300 165/197, and S7-1200 186/186.
+
 ## 2026-09-04 — S7-300 FM Targeted Identity/Lifecycle Closure
 
 ### Corrected
