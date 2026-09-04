@@ -332,7 +332,7 @@ export const s7300FM: SiemensS7300FunctionModule[] = [
     description:
       "SIMATIC S7-300 FM 353 positioning module for positioning drives with stepper motors, supporting parameterizable positioning functions, reference point approach and diagnostic functions.",
 
-    lifecycle: "discontinued",
+    lifecycle: "spare-part",
 
     specifications: {
       function: "Positioning",
@@ -371,7 +371,7 @@ export const s7300FM: SiemensS7300FunctionModule[] = [
     description:
       "SIMATIC S7-300 FM 354 servo drive positioning module for positioning servo drives, with incremental and SSI absolute encoder interfaces, positioning functions and diagnostic capabilities.",
 
-    lifecycle: "discontinued",
+    lifecycle: "spare-part",
 
     specifications: {
       function: "Servo drive positioning",
@@ -718,7 +718,7 @@ export const s7300FM: SiemensS7300FunctionModule[] = [
     description:
       "SIMATIC S7-300 FM 352-5 high-speed Boolean processor for high-speed logic processing with digital inputs and outputs.",
 
-    lifecycle: "discontinued",
+    lifecycle: "phase-out",
 
     specifications: {
       function: "High-speed Boolean processing",
@@ -1156,7 +1156,7 @@ export const s7300FM: SiemensS7300FunctionModule[] = [
     description:
       "SIWAREX CS compact weighing module for SIMATIC S7-300 and ET 200M systems, with load-cell connection and integration into the automation system.",
 
-    lifecycle: "phase-out",
+    lifecycle: "spare-part",
 
     specifications: {
       function: "Weighing electronics",
@@ -1168,7 +1168,7 @@ export const s7300FM: SiemensS7300FunctionModule[] = [
     },
 
     source:
-      "https://support.industry.siemens.com/cs/attachments/27770414/SIWAREX_CS_manual_en-US_en-US.pdf",
+      "https://mall.industry.siemens.com/mall/it/it/Catalog/Product/7MH4910-0AA01",
   },
 
   // --------------------------------------------------
@@ -1176,8 +1176,8 @@ export const s7300FM: SiemensS7300FunctionModule[] = [
   // --------------------------------------------------
 
   {
-    id: "siemens-siplus-s7-300-fm350-1-counter-1ah03-4ae0",
-    mlfb: "6AG1350-1AH03-4AE0",
+    id: "siemens-siplus-s7-300-fm350-1-counter-1ah03-2ae0",
+    mlfb: "6AG1350-1AH03-2AE0",
 
     brandId: "siemens",
     categoryId: "PLC",
@@ -1206,7 +1206,7 @@ export const s7300FM: SiemensS7300FunctionModule[] = [
     },
 
     source:
-      "https://mall.industry.siemens.com/mall/en/WW/Catalog/Products/10041227",
+      "https://cache.industry.siemens.com/dl/files/167/109744167/att_1145924/v1/simatic-st70-complete-english-2023.pdf",
   },
 
   // --------------------------------------------------

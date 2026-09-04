@@ -3,6 +3,30 @@
 This file records completed repository changes. Connection status refers to the
 implementation on the current `main` branch.
 
+## 2026-09-04 — S7-300 FM Targeted Identity/Lifecycle Closure
+
+### Corrected
+
+- Targeted only the 11 remaining Function Module blockers; no full FM re-audit.
+- Corrected SIPLUS FM 350-1 from the unsupported `6AG1350-1AH03-4AE0`
+  identity to Siemens-documented `6AG1350-1AH03-2AE0`, including its internal
+  ID and canonical Siemens ST 70 source.
+- Corrected FM 353 and FM 354 AH01 from discontinued to PM410 spare-part,
+  SIWAREX CS from phase-out to PM410 spare-part, and FM 352-5 AH11 from stale
+  discontinued to PM400 phase-out. SIWAREX CS now uses its exact Siemens Mall
+  lifecycle page.
+
+### State
+
+- FM lifecycle is now 0 active, 14 phase-out, 7 spare-part, and 11
+  discontinued. Identity, placement, and source blockers are zero; seven exact
+  lifecycle blockers remain.
+- The three SIPLUS variants remain unchanged. Taxonomy and adapter remain
+  absent, FM remains disconnected 0/32, Product remains 351, S7-300 remains
+  165/197, and S7-1200 remains 186/186.
+- The next task targets only the remaining seven MLFB lifecycles. The locked
+  post-S7-300 closure audit and management decision remain required.
+
 ## 2026-09-04 — Siemens S7-300 Function Module Data Reconciliation
 
 ### Corrected
