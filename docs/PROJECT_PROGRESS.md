@@ -368,3 +368,19 @@ verification.
 - Next gate: target only unresolved exact MLFB lifecycle/source evidence. After
   later FM integration and strict S7-300 closure audit, stop for the locked
   management decision before localization or another Siemens series.
+
+## 2026-09-04 — FM Targeted Closure Progress
+
+- Task AQ researched only the 11 remaining blockers; no non-blocking FM records
+  were re-audited.
+- Corrected SIPLUS FM 350-1 to Siemens MLFB `6AG1350-1AH03-2AE0` with the
+  matching internal ID and Siemens ST 70 source.
+- Corrected FM 353 and FM 354 AH01 to PM410 spare-part, SIWAREX CS to PM410
+  spare-part, and FM 352-5 AH11 to PM400 phase-out. SIWAREX CS now uses its
+  exact Siemens Mall page.
+- FM lifecycle is 0 active / 14 phase-out / 7 spare-part / 11 discontinued.
+  Identity, placement, and source blockers are closed; seven exact lifecycle
+  blockers remain and are the only next research gate.
+- Variant normalization, the 13-variant taxonomy, adapter work, and Product
+  integration have not started. FM remains 0/32; Product is 351, S7-300 is
+  165/197, and S7-1200 is 186/186. The post-S7-300 gate remains locked.

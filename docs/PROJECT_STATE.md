@@ -350,3 +350,20 @@ source/lifecycle closure and SIPLUS normalization. No FM adapter exists and FM
 remains disconnected 0/32. Product total remains 351, S7-300 remains 165/197,
 and S7-1200 remains 186/186. The next gate targets only the unresolved exact
 MLFBs. The locked post-S7-300 decision gate remains in force.
+
+## 2026-09-04 — FM Final Targeted Identity/Lifecycle Work
+
+Task AQ revisits only the 11 remaining blocker records. SIPLUS FM 350-1 is
+corrected from `6AG1350-1AH03-4AE0` to the repeatedly documented Siemens MLFB
+`6AG1350-1AH03-2AE0`; its internal ID and canonical source are corrected with
+no variant or specification change. FM 353 and FM 354 AH01 now follow explicit
+PM410 spare-part evidence, SIWAREX CS follows exact PM410 evidence, and FM
+352-5 AH11 follows the newer PM400 phase-out chronology.
+
+Lifecycle is 0 active, 14 phase-out, 7 spare-part, and 11 discontinued. Identity,
+placement, and source blockers are zero. Seven lifecycle blockers remain:
+`6AG1350-1AH03-2AE0`, `6AT1735-0AA01-0AA0`, `6ES7354-1AH02-0AE0`,
+`6ES7356-3BN00-0AE0`, `6ES7356-4BM00-0AE0`, `6ES7357-4AH03-0AE0`, and
+`7MH4904-2AA01`. Three SIPLUS variant normalizations remain deferred; taxonomy
+and adapter are absent. FM remains 0/32, Product 351, S7-300 165/197, and
+S7-1200 186/186. The next gate targets only these seven lifecycle records.

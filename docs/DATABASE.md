@@ -405,3 +405,20 @@ SIPLUS variant normalizations remain deferred. Expected final FM taxonomy is 13
 functional variants covering all 32 records, but verified taxonomy and an FM
 adapter have not been created. FM remains 0/32, Product remains 351, S7-300
 remains 165/197, and S7-1200 remains 186/186.
+
+## 2026-09-04 — FM Targeted Identity/Lifecycle Reconciliation
+
+Task AQ targets only the 11 open records. The SIPLUS FM 350-1 identity is now
+`6AG1350-1AH03-2AE0` with internal ID
+`siemens-siplus-s7-300-fm350-1-counter-1ah03-2ae0` and an exact Siemens ST 70
+source. FM 353 and FM 354 AH01 are corrected to PM410 spare-part; SIWAREX CS is
+corrected to PM410 spare-part and an exact Siemens Mall source; FM 352-5 AH11
+is corrected to PM400 phase-out.
+
+FM lifecycle is 0 active / 14 phase-out / 7 spare-part / 11 discontinued.
+Identity, placement, and source blockers are zero, while seven lifecycle
+blockers remain: `6AG1350-1AH03-2AE0`, `6AT1735-0AA01-0AA0`,
+`6ES7354-1AH02-0AE0`, `6ES7356-3BN00-0AE0`, `6ES7356-4BM00-0AE0`,
+`6ES7357-4AH03-0AE0`, and `7MH4904-2AA01`. The three SIPLUS source variants,
+13-variant taxonomy, and explicit adapter remain deferred. FM remains 0/32,
+Product 351, S7-300 165/197, and S7-1200 186/186.
