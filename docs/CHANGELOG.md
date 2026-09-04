@@ -3,6 +3,30 @@
 This file records completed repository changes. Connection status refers to the
 implementation on the current `main` branch.
 
+## 2026-09-04 — S7-300 Final FM Exact Identity Closure
+
+### Changed
+
+- Corrected SIWAREX A from unsupported repository MLFB `7MH4904-2AA01` to exact
+  Siemens MLFB `7MH4421-1AA01`, corrected its internal ID to
+  `siemens-s7-300-siwarex-a-4421-1aa01`, and replaced its source with the exact
+  Siemens device manual.
+- Replaced the SIWAREX A exposure-gate key without exposing the record; no
+  explicit Siemens lifecycle statement was recovered, so provisional
+  `discontinued` remains.
+- Classified FM354 `6ES7354-1AH02-0AE0` as IDENTITY-NOT-ESTABLISHED and a
+  DELETE/INVENTORY-CORRECTION CANDIDATE. Siemens revision material establishes
+  AH00 followed by AH01 but not AH02; management review is required before any
+  denominator change.
+
+### State
+
+- Identity debt falls from two records to one. FM remains 25/32 exposed and 7
+  blocked; Product remains 376; S7-300 remains 190/197 with denominator status
+  PENDING-IDENTITY-REVIEW; S7-1200 remains 186/186.
+- No closure audit, IM/CP audit, localization, or new Siemens series work was
+  started.
+
 ## 2026-09-04 — S7-300 Final Seven FM Identity Correction
 
 ### Changed

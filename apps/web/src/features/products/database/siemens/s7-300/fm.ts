@@ -45,7 +45,7 @@ export const siemensS7300FMExposureBlockedMlfbs: ReadonlySet<string> = new Set([
   "6ES7356-4BN00-0AE0",
   "6ES7356-4BM00-0AE0",
   "6ES7357-4AH03-0AE0",
-  "7MH4904-2AA01",
+  "7MH4421-1AA01",
 ]);
 
 export const s7300FM: SiemensS7300FunctionModule[] = [
@@ -1114,8 +1114,8 @@ export const s7300FM: SiemensS7300FunctionModule[] = [
   // --------------------------------------------------
 
   {
-    id: "siemens-s7-300-siwarex-a-4904-2aa01",
-    mlfb: "7MH4904-2AA01",
+    id: "siemens-s7-300-siwarex-a-4421-1aa01",
+    mlfb: "7MH4421-1AA01",
 
     brandId: "siemens",
     categoryId: "PLC",
@@ -1142,7 +1142,7 @@ export const s7300FM: SiemensS7300FunctionModule[] = [
     },
 
     source:
-      "https://support.industry.siemens.com/cs/attachments/7787356/manual_a_en_04072001.pdf",
+      "https://support.industry.siemens.com/cs/attachments/7787356/manual_a_de_04072001.pdf",
   },
 
   // --------------------------------------------------

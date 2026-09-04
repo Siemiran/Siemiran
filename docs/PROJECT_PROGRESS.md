@@ -455,3 +455,22 @@ verification.
 - FM remains 25/32, Product 376, S7-300 190/197, and S7-1200 186/186. Remaining
   FM completion precedes the closure audit; IM/CP audit, localization, and a
   new series remain unstarted.
+
+## 2026-09-04 — Final Seven FM Exact Identity Closure
+
+- Corrected SIWAREX A from unsupported repository MLFB `7MH4904-2AA01` to the
+  Siemens-documented `7MH4421-1AA01`, including its internal ID, exact device
+  manual source, and matching exposure-gate key.
+- Siemens SIWAREX A manual, STEP 7 S7-300 module table, and compatibility table
+  all associate `7MH4421-1AA01` with SIWAREX A; the whole-repository collision
+  check found no duplicate ID, MLFB, generated slug, or Product part number.
+- No explicit lifecycle statement was found for the corrected article, so its
+  provisional `discontinued` value remains and it stays gated.
+- FM354 `6ES7354-1AH02-0AE0` remains IDENTITY-NOT-ESTABLISHED. Siemens material
+  identifies the AH00 predecessor and AH01 successor/current revision, but not
+  AH02. It is a DELETE/INVENTORY-CORRECTION CANDIDATE requiring management
+  review; no deletion, speculative correction, or denominator change occurred.
+- Identity debt falls from two to one. FM remains 25/32, Product 376, S7-300
+  190/197 with denominator PENDING-IDENTITY-REVIEW, and S7-1200 186/186. The
+  same final-seven completion continues; no closure, IM/CP, localization, or
+  new-series work has started.
