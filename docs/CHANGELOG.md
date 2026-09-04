@@ -3,6 +3,28 @@
 This file records completed repository changes. Connection status refers to the
 implementation on the current `main` branch.
 
+## 2026-09-04 — S7-300 Final Eight FM Partial Closure
+
+### Changed
+
+- Upgraded FM354 `6ES7354-1AH01-0AE0` to its exact Siemens Industry Mall
+  source. The page states PM410 "Product cancellation" effective 2017-03-01,
+  confirming the existing `spare-part` lifecycle.
+- Removed that exact MLFB from the exposure gate. The other seven targets stay
+  blocked because exact Siemens lifecycle evidence remains unresolved.
+
+### State
+
+- Resolved 1/8; FM is 25/32 exposed and 7 blocked.
+- Source lifecycle remains 0 active, 14 phase-out, 7 spare-part, and 11
+  discontinued; exposed Products map to 0 active, 20 legacy, and 5
+  discontinued.
+- Product is 376, S7-300 remains incomplete at 190/197, and S7-1200 remains
+  186/186. Seven FM lifecycle records remain gated, and no third-party evidence
+  was used. Next work continues Siemens-official-only lifecycle resolution for
+  those same seven records. The strict S7-300 closure audit is deferred until
+  all seven are exposed and S7-300 reaches 197/197.
+
 ## 2026-09-04 — S7-300 Function Module Verified-Subset Integration
 
 ### Added
