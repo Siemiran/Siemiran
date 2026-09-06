@@ -3,6 +3,41 @@
 This file records completed repository changes. Connection status refers to the
 implementation on the current `main` branch.
 
+## 2026-09-04 - Task AY: FM354 AH02 Inventory Correction (Current State)
+
+The project owner approved removal of unsupported FM354 AH02
+`6ES7354-1AH02-0AE0` (ID
+`siemens-s7-300-fm354-servo-positioning-1ah02-0ae0`) from the FM source and
+exposure gate. Prior Siemens-only verification did not establish this exact
+identity. No new external research or third-party evidence was used. Valid
+FM354 AH01 `6ES7354-1AH01-0AE0` remains unchanged; no replacement or
+placeholder was fabricated.
+
+- FM source: 32 to 31; blocked: 7 to 6; exposed: 25 to 25 (now 25/31).
+- Product collection: 376 to 376; S7-300: 190/197 to 190/196.
+- Current S7-300 total: 196; connected: 190; remaining: 6; not complete.
+- S7-1200 remains 186/186.
+- Identity debt: 1 to 0; lifecycle debt: 7 to 6.
+- Lifecycle values for all six remaining gated records are unchanged.
+
+The current exposure gate contains exactly:
+
+- `6AG1350-1AH03-2AE0`
+- `6AT1735-0AA01-0AA0`
+- `6ES7356-4BN00-0AE0`
+- `6ES7356-4BM00-0AE0`
+- `6ES7357-4AH03-0AE0`
+- `7MH4421-1AA01`
+
+Next work remains **S7-300 FINAL 6 FM LIFECYCLE COMPLETION -
+SIEMENS-OFFICIAL-ONLY**, after this correction is merged. Strict S7-300 closure
+audit has NOT started; closure requires 196/196. IM/CP audit, localization,
+and new Siemens series work have not started.
+
+This is the authoritative current inventory state. Earlier task entries below
+preserve their historical counts and AH02 references; those references describe
+the inventory before this approved deletion, not a valid current record.
+
 ## 2026-09-04 — S7-300 Final FM Exact Identity Closure
 
 ### Changed

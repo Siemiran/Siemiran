@@ -41,7 +41,6 @@ export interface SiemensS7300FunctionModule {
 export const siemensS7300FMExposureBlockedMlfbs: ReadonlySet<string> = new Set([
   "6AG1350-1AH03-2AE0",
   "6AT1735-0AA01-0AA0",
-  "6ES7354-1AH02-0AE0",
   "6ES7356-4BN00-0AE0",
   "6ES7356-4BM00-0AE0",
   "6ES7357-4AH03-0AE0",
@@ -743,46 +742,6 @@ export const s7300FM: SiemensS7300FunctionModule[] = [
 
     source:
       "https://support.industry.siemens.com/cs/attachments/21536617/21536617_Compatibility_FM_with_PROFIBUS_InterfaceModules_en.pdf",
-  },
-
-  // --------------------------------------------------
-  // S7-300 — FM 354 — Servo Drive Positioning Module
-  // --------------------------------------------------
-
-  {
-    id: "siemens-s7-300-fm354-servo-positioning-1ah02-0ae0",
-    mlfb: "6ES7354-1AH02-0AE0",
-
-    brandId: "siemens",
-    categoryId: "PLC",
-    familyId: "S7-300",
-    seriesId: "S7-300",
-
-    productTypeId: "Function Module",
-    variantId: "servo-positioning",
-
-    title: "SIMATIC S7-300 FM 354 Servo Drive Positioning Module",
-
-    description:
-      "SIMATIC S7-300 FM 354 servo drive positioning module for positioning servo drives with incremental or SSI absolute encoder feedback.",
-
-    lifecycle: "discontinued",
-
-    specifications: {
-      function: "Servo drive positioning",
-      channels: 1,
-      encoderSupply: "24 V DC",
-      digitalInputs: 8,
-      digitalOutputs: 8,
-      inputVoltage: "24 V DC",
-      interfaces: ["Backplane bus", "SSI encoder interface"],
-      terminalConnection: "1 x 40-pole",
-      diagnostics: "Diagnostics and status LEDs",
-      supplyVoltage: "24 V DC",
-    },
-
-    source:
-      "https://support.industry.siemens.com/cs/attachments/1109366/Fm354v2_e.pdf",
   },
 
   // --------------------------------------------------
