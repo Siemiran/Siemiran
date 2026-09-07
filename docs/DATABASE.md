@@ -261,7 +261,7 @@ MLFB, title, description, and other source evidence rather than functional or
 model variant taxonomy. Their shared adapters are unchanged.
 
 S7-1200 current verified source integration is 186/186 connected, with 0
-disconnected, and the Product collection total is 308. CPU, Power Module, Signal
+disconnected, and the Product collection total is 382. CPU, Power Module, Signal
 Board, Communication Module, Communication Processor, and Communication Board
 are fully connected across Classic and G2; Special Module and Technology Module
 are also connected, as are Network Switch and Data Decoupling Module.
