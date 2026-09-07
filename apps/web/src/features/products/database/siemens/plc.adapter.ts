@@ -4,7 +4,7 @@ import { validateSiemensPLCProduct } from "./plc.validator";
 
 function mapLifecycle(
   lifecycle: SiemensPLCSourceBase["lifecycle"],
-): NonNullable<Product["lifecycle"]> {
+): Product["lifecycle"] {
   switch (lifecycle) {
     case "active":
       return "active";
@@ -13,6 +13,8 @@ function mapLifecycle(
     case "phase-out":
     case "spare-part":
       return "legacy";
+    case "unverified":
+      return undefined;
   }
 }
 
@@ -92,6 +94,8 @@ export function mapSiemensPLCSourceToProduct<
     );
   }
 
+  const lifecycle = mapLifecycle(source.lifecycle);
+
   return {
     id: source.id,
     slug: createSlug(source.mlfb),
@@ -123,7 +127,7 @@ export function mapSiemensPLCSourceToProduct<
       source.variantId,
     ],
 
-    lifecycle: mapLifecycle(source.lifecycle),
+    ...(lifecycle !== undefined ? { lifecycle } : {}),
 
     siemensUrl: source.source,
   };

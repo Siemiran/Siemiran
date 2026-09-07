@@ -1,5 +1,32 @@
 # Siemiran — Project State
 
+## 2026-09-07 - Task BA: Explicit Unverified Lifecycle and Complete S7-300 Coverage (Current State)
+
+Task AZ exhausted reasonable Siemens-controlled historical lifecycle recovery
+for the final six Function Modules and resolved 0/6 exact lifecycle debts.
+Third-party lifecycle sourcing remains rejected. The Siemens source pipeline
+now models those records explicitly as `unverified`, while the public
+`Product.lifecycle` property is intentionally omitted rather than inferred.
+
+The six exact lifecycle-provenance gaps remain:
+
+- `6AG1350-1AH03-2AE0`
+- `6AT1735-0AA01-0AA0`
+- `6ES7356-4BN00-0AE0`
+- `6ES7356-4BM00-0AE0`
+- `6ES7357-4AH03-0AE0`
+- `7MH4421-1AA01`
+
+All 31 FM identities are Siemens-officially verified and exposed. FM is 31/31,
+Product is 382, S7-300 Product coverage is complete at 196/196, and S7-1200
+remains 186/186. S7-300 lifecycle provenance is not fully verified;
+lifecycle provenance debt remains exactly 6.
+
+Next task: **STRICT S7-300 CLOSURE / PROVENANCE AUDIT**, including these six
+explicitly unverified records, deferred IM/CP Siemens-only provenance,
+denominator and Product-coverage reconciliation, and source-domain compliance.
+That audit, localization, and new Siemens-series work have not started.
+
 ## 2026-09-04 - Task AY: FM354 AH02 Inventory Correction (Current State)
 
 The project owner approved removal of unsupported FM354 AH02

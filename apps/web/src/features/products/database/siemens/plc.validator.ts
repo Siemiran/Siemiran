@@ -14,6 +14,7 @@ const SUPPORTED_LIFECYCLES: SiemensPLCSourceLifecycle[] = [
   "phase-out",
   "spare-part",
   "discontinued",
+  "unverified",
 ];
 
 export function validateSiemensPLCProduct(

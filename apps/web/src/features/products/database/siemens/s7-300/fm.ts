@@ -1,5 +1,9 @@
 export type SiemensS7300FMLifecycle =
-  "active" | "phase-out" | "spare-part" | "discontinued";
+  | "active"
+  | "phase-out"
+  | "spare-part"
+  | "discontinued"
+  | "unverified";
 
 export interface SiemensS7300FunctionModule {
   id: string;
@@ -37,15 +41,6 @@ export interface SiemensS7300FunctionModule {
 
   source: string;
 }
-
-export const siemensS7300FMExposureBlockedMlfbs: ReadonlySet<string> = new Set([
-  "6AG1350-1AH03-2AE0",
-  "6AT1735-0AA01-0AA0",
-  "6ES7356-4BN00-0AE0",
-  "6ES7356-4BM00-0AE0",
-  "6ES7357-4AH03-0AE0",
-  "7MH4421-1AA01",
-]);
 
 export const s7300FM: SiemensS7300FunctionModule[] = [
   // --------------------------------------------------
@@ -616,7 +611,7 @@ export const s7300FM: SiemensS7300FunctionModule[] = [
     description:
       "SIMATIC CM 35 intelligent 8-channel counter module for universal counting, measurement and simple positioning tasks with up to four axes.",
 
-    lifecycle: "discontinued",
+    lifecycle: "unverified",
 
     specifications: {
       function:
@@ -765,7 +760,7 @@ export const s7300FM: SiemensS7300FunctionModule[] = [
     description:
       "SIMATIC FM 356-4 application function module for S7-300/M7-300 systems with 80486DX2-50 processor, 8 MB main memory, RS232 COM1 interface and AT-bus expansion capability.",
 
-    lifecycle: "discontinued",
+    lifecycle: "unverified",
 
     specifications: {
       function: "Application function",
@@ -795,7 +790,7 @@ export const s7300FM: SiemensS7300FunctionModule[] = [
     description:
       "SIMATIC FM 356-4 application function module for S7-300/M7-300 systems with 80486DX2-50 processor, 4 MB main memory, RS232 COM1 interface and AT-bus expansion capability.",
 
-    lifecycle: "discontinued",
+    lifecycle: "unverified",
 
     specifications: {
       function: "Application function",
@@ -1089,7 +1084,7 @@ export const s7300FM: SiemensS7300FunctionModule[] = [
     description:
       "SIMATIC SIWAREX A weighing module for integration into SIMATIC S7-300 systems for weighing and force measurement applications with analog load cells.",
 
-    lifecycle: "discontinued",
+    lifecycle: "unverified",
 
     specifications: {
       function: "Weighing and force measurement",
@@ -1161,7 +1156,7 @@ export const s7300FM: SiemensS7300FunctionModule[] = [
     description:
       "SIPLUS S7-300 FM 350-1 counter module based on 6ES7350-1AH03-0AE0, with conformal coating and extended environmental conditions.",
 
-    lifecycle: "phase-out",
+    lifecycle: "unverified",
 
     specifications: {
       function: "Counting",
@@ -1200,7 +1195,7 @@ export const s7300FM: SiemensS7300FunctionModule[] = [
     description:
       "SIMATIC S7-300 FM 357-2 function module for multi-axis positioning and path control of servo and stepper drives.",
 
-    lifecycle: "discontinued",
+    lifecycle: "unverified",
 
     specifications: {
       function: "Multi-axis positioning and path control",
