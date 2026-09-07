@@ -2,6 +2,40 @@
 
 Repository source of truth: current `main` branch
 
+## 2026-09-07 - Task BA: Explicit Unverified Lifecycle and Full FM Exposure (Current State)
+
+Task AZ exhausted reasonable Siemens-only historical lifecycle research and
+resolved 0/6 exact lifecycle debts. Third-party evidence remains prohibited
+and was not used. The Siemens source contract and validator now require and
+accept an explicit `unverified` provenance state. The generic Siemens mapper
+omits public `Product.lifecycle` for that state; the public Product contract
+and UI are unchanged.
+
+The lifecycle field is now `unverified` for exactly:
+
+- `6AG1350-1AH03-2AE0`
+- `6AT1735-0AA01-0AA0`
+- `6ES7356-4BN00-0AE0`
+- `6ES7356-4BM00-0AE0`
+- `6ES7357-4AH03-0AE0`
+- `7MH4421-1AA01`
+
+Their existing Siemens-controlled source URLs remain identity/specification
+evidence and are not represented as lifecycle evidence. Because all 31 FM
+identities are verified, the six-entry exposure gate is removed and all 31
+records map directly into Product.
+
+- FM source and exposed: 31/31; identity debt: 0.
+- Product collection: 376 to 382.
+- S7-300 Product coverage: 190/196 to 196/196, complete.
+- S7-1200: 186/186, unchanged.
+- Lifecycle provenance debt: 6; not fully verified.
+
+Next work is the separate **STRICT S7-300 CLOSURE / PROVENANCE AUDIT**. It must
+include the six unverified FM lifecycles, deferred IM/CP Siemens-only
+provenance, the 196-record denominator, Product coverage reconciliation, and
+source-domain compliance. It is not part of Task BA.
+
 ## 2026-09-04 - Task AY: FM354 AH02 Inventory Correction (Current State)
 
 The project owner approved removal of unsupported FM354 AH02

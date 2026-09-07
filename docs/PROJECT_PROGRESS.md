@@ -2,7 +2,30 @@
 
 Repository source of truth: current `main` branch
 
-Last synchronized: 2026-09-04
+Last synchronized: 2026-09-07
+
+## 2026-09-07 - Task BA: S7-300 Product Coverage Complete
+
+Task AZ exhausted reasonable Siemens-only lifecycle recovery and officially
+resolved 0/6 exact lifecycle debts; third-party sourcing was rejected. The
+source pipeline now represents those six records explicitly as `unverified`,
+and the generic mapper intentionally omits public Product lifecycle for them.
+No customer-facing lifecycle state or badge is fabricated.
+
+The affected MLFBs are `6AG1350-1AH03-2AE0`, `6AT1735-0AA01-0AA0`,
+`6ES7356-4BN00-0AE0`, `6ES7356-4BM00-0AE0`, `6ES7357-4AH03-0AE0`, and
+`7MH4421-1AA01`. Their Siemens-controlled identity/specification sources remain
+unchanged.
+
+FM exposure advances from 25/31 to 31/31, Product from 376 to 382, and S7-300
+from 190/196 to 196/196. S7-300 Product coverage is complete. S7-1200 remains
+186/186. S7-300 lifecycle provenance is not fully verified, and lifecycle
+provenance debt remains exactly 6.
+
+Next task is the separate **STRICT S7-300 CLOSURE / PROVENANCE AUDIT** covering
+the six unverified FM records, deferred IM/CP Siemens-only provenance, the
+current denominator, coverage reconciliation, and source-domain compliance.
+That audit, localization, and new Siemens-series work have not started.
 
 ## 2026-09-04 - Task AY: FM354 AH02 Inventory Correction (Current State)
 

@@ -2,7 +2,8 @@ export type SiemensPLCSourceLifecycle =
   | "active"
   | "phase-out"
   | "spare-part"
-  | "discontinued";
+  | "discontinued"
+  | "unverified";
 
 export interface SiemensPLCSourceBase {
   id: string;

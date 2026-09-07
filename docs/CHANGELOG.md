@@ -3,6 +3,36 @@
 This file records completed repository changes. Connection status refers to the
 implementation on the current `main` branch.
 
+## 2026-09-07 - Task BA: Model Unverified Siemens Lifecycle
+
+### Changed
+
+- Added explicit Siemens source lifecycle state `unverified` and validator
+  support without changing the public Product lifecycle type.
+- Updated the generic Siemens mapper so `unverified` source records omit
+  `Product.lifecycle`; existing active, phase-out, spare-part, and discontinued
+  mappings remain unchanged.
+- Replaced the provisional lifecycle values on exactly six FM records with
+  `unverified`: `6AG1350-1AH03-2AE0`, `6AT1735-0AA01-0AA0`,
+  `6ES7356-4BN00-0AE0`, `6ES7356-4BM00-0AE0`, `6ES7357-4AH03-0AE0`, and
+  `7MH4421-1AA01`.
+- Removed the obsolete six-entry FM exposure gate and mapped all 31 verified
+  FM identities directly into Product. Source URLs remain unchanged Siemens
+  identity/specification evidence.
+
+### State
+
+- Task AZ exhausted reasonable Siemens-only lifecycle recovery and resolved
+  0/6 exact lifecycle debts. Third-party lifecycle sourcing remains rejected;
+  third-party evidence is 0.
+- FM is 31/31 exposed, Product increases 376 to 382, S7-300 Product coverage
+  increases 190/196 to 196/196, and S7-1200 remains 186/186.
+- S7-300 lifecycle provenance is not fully verified. Lifecycle provenance debt
+  remains exactly 6.
+- The next separate task is the strict S7-300 closure/provenance audit. It has
+  not started; neither have the deferred IM/CP audit, localization, or a new
+  Siemens series.
+
 ## 2026-09-04 - Task AY: FM354 AH02 Inventory Correction (Current State)
 
 The project owner approved removal of unsupported FM354 AH02
