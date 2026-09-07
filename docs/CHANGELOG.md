@@ -3,6 +3,32 @@
 This file records completed repository changes. Connection status refers to the
 implementation on the current `main` branch.
 
+## 2026-09-07 - Task BC: Remediate S7-300 Lifecycle Provenance
+
+### Changed
+
+- Applied the Task BB **PASS WITH REMEDIATION REQUIRED** result to four
+  historical secondary-evidence claims: IM `6ES7365-0BA81-0AA0` and
+  `6ES7178-4BH00-0AE0`, plus CP `6GK7343-1FX00-0XE0` and
+  `6FL4343-1CX10-0XE0` now use source lifecycle `unverified` instead of
+  `discontinued`.
+- Preserved all four Products and their Siemens identity/specification sources.
+  Their public Product lifecycle property is omitted by the unchanged generic
+  mapper; no customer-facing lifecycle is inferred.
+- Reconciled current-state documentation while preserving dated historical
+  task records. The Siemens-only policy remains intact and no third-party
+  evidence is used for current claims.
+
+### State
+
+- S7-300 remains 196/196, S7-1200 remains 186/186, global Product remains 382,
+  and FM remains 31/31.
+- Lifecycle provenance is 186 Siemens-official verified, 10 explicit
+  unverified, 0 noncompliant, and 0 unknown. Lifecycle provenance debt is 10
+  explicit known gaps; not all lifecycle values are Siemens-verified.
+- S7-300 is not formally closed. Task BD final read-only closure verification
+  remains next; localization and new Siemens-series work have not started.
+
 ## 2026-09-07 - Task BA: Model Unverified Siemens Lifecycle
 
 ### Changed
@@ -33,7 +59,7 @@ implementation on the current `main` branch.
   not started; neither have the deferred IM/CP audit, localization, or a new
   Siemens series.
 
-## 2026-09-04 - Task AY: FM354 AH02 Inventory Correction (Current State)
+## 2026-09-04 - Task AY: FM354 AH02 Inventory Correction (Historical Snapshot)
 
 The project owner approved removal of unsupported FM354 AH02
 `6ES7354-1AH02-0AE0` (ID
@@ -64,7 +90,7 @@ SIEMENS-OFFICIAL-ONLY**, after this correction is merged. Strict S7-300 closure
 audit has NOT started; closure requires 196/196. IM/CP audit, localization,
 and new Siemens series work have not started.
 
-This is the authoritative current inventory state. Earlier task entries below
+This was the authoritative Task AY inventory snapshot. Earlier task entries below
 preserve their historical counts and AH02 references; those references describe
 the inventory before this approved deletion, not a valid current record.
 

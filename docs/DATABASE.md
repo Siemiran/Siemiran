@@ -2,7 +2,28 @@
 
 Repository source of truth: current `main` branch
 
-## 2026-09-07 - Task BA: Explicit Unverified Lifecycle and Full FM Exposure (Current State)
+## 2026-09-07 - Task BC: S7-300 Provenance Remediation (Current State)
+
+Task BB classified the completed S7-300 Product inventory as **PASS WITH
+REMEDIATION REQUIRED**. Task BC changes exactly four source lifecycle values
+from `discontinued` to `unverified`: Interface Modules
+`6ES7365-0BA81-0AA0` and `6ES7178-4BH00-0AE0`, plus Communication Processors
+`6GK7343-1FX00-0XE0` and `6FL4343-1CX10-0XE0`.
+
+Their Siemens-controlled URLs remain identity/specification sources, not
+lifecycle evidence. All four Products remain exposed with public lifecycle
+omitted through the unchanged generic Siemens mapper. No third-party evidence
+is used.
+
+- S7-300 inventory and Product coverage: 196/196.
+- FM: 31/31; S7-1200: 186/186; global Product: 382.
+- Lifecycle provenance: 186 Siemens-official verified, 10 explicit unverified,
+  0 noncompliant, and 0 unknown.
+- Lifecycle provenance debt: 10 explicit known gaps.
+
+Formal closure remains deferred to the separate read-only Task BD verification.
+
+## 2026-09-07 - Task BA: Explicit Unverified Lifecycle and Full FM Exposure (Historical Snapshot)
 
 Task AZ exhausted reasonable Siemens-only historical lifecycle research and
 resolved 0/6 exact lifecycle debts. Third-party evidence remains prohibited
@@ -36,7 +57,7 @@ include the six unverified FM lifecycles, deferred IM/CP Siemens-only
 provenance, the 196-record denominator, Product coverage reconciliation, and
 source-domain compliance. It is not part of Task BA.
 
-## 2026-09-04 - Task AY: FM354 AH02 Inventory Correction (Current State)
+## 2026-09-04 - Task AY: FM354 AH02 Inventory Correction (Historical Snapshot)
 
 The project owner approved removal of unsupported FM354 AH02
 `6ES7354-1AH02-0AE0` (ID
@@ -67,7 +88,7 @@ SIEMENS-OFFICIAL-ONLY**, after this correction is merged. Strict S7-300 closure
 audit has NOT started; closure requires 196/196. IM/CP audit, localization,
 and new Siemens series work have not started.
 
-This is the authoritative current inventory state. Earlier task entries below
+This was the authoritative Task AY inventory snapshot. Earlier task entries below
 preserve their historical counts and AH02 references; those references describe
 the inventory before this approved deletion, not a valid current record.
 
@@ -93,12 +114,14 @@ Product reads are exposed through
 
 ## Current Active Dataset
 
-The application currently aggregates 308 Products:
+The application currently aggregates 382 Products:
 
 - 36 mapped S7-300 CPU Products
 - 13 mapped S7-300 Power Supply Products
 - 66 mapped S7-300 Signal Module Products
 - 7 mapped S7-300 Interface Module Products
+- 43 mapped S7-300 Communication Processor Products
+- 31 mapped S7-300 Function Module Products
 - 3 mapped S7-1200 Classic Power Module Products
 - 2 mapped S7-1200 G2 Power Module Products
 - 10 mapped S7-1200 G2 CPU Products
@@ -143,58 +166,21 @@ The current shared Siemens files are:
 | CPU | 36 | CONNECTED |
 | Power Supply (PS) | 13 | CONNECTED |
 | Signal Module (SM) | 66 | CONNECTED |
-| Interface Module (IM) | 7 | DISCONNECTED |
-| Function Module (FM) | 32 | DISCONNECTED |
-| Communication Processor (CP) | 43 | DISCONNECTED |
+| Interface Module (IM) | 7 | CONNECTED |
+| Communication Processor (CP) | 43 | CONNECTED |
+| Function Module (FM) | 31 | CONNECTED |
+| **Total** | **196** | **196/196 CONNECTED** |
 
-S7-300 CPU records flow through the shared Siemens validator and their explicit
-CPU normalizer. The 13 S7-300 Power Supply records and 66 Signal Module records
-use the same validator and generic common Product mapper with their explicit
-product-type specification normalizers. All three datasets enter Product
-aggregation, the Product repository, and the UI.
+All six S7-300 source groups flow through the shared Siemens validator and
+generic Product mapper with explicit product-type specification normalizers.
+Every source record maps to exactly one Product; no current exposure gate
+remains. CPU contributes 36 Products, PS 13, SM 66, IM 7, CP 43, and FM 31.
 
-The FM and CP datasets remain disconnected manufacturer source data.
-The 66-record S7-300 SM dataset is taxonomy-valid 66/66 and ADAPTER-READY, with
-variants digital-input 16, digital-output 19, digital-io 2,
-programmable-digital-io 1, analog-input 14, analog-output 9, and analog-io 5.
-Its source lifecycle is 1 active, 18 phase-out, 41 spare-part, and 6
-discontinued; generic mapping produces 1 active, 59 legacy, and 6
-discontinued Products. All 66 are CONNECTED as 1 active, 59 legacy, and 6
-discontinued Products. The Product collection is 308. The existing official
-Siemens module-specific source for `6ES7321-7BH00-0AB0` is accepted as sufficient
-provenance. Direct live Mall retrieval for `6ES7322-5SD00-0AB0` remained
-edge-denied; an exact SiePortal capture records PM400 phase-out effective
-2023-10-01, corroborated by two independent publishers with no conflicting
-higher-authority evidence found. Both verification debts are closed. Current verified S7-300
-integration is 122/197, leaving 75 disconnected records: FM 32 and CP 43.
-The next gate is Communication Processor readiness, taxonomy, and source
-verification.
-After full S7-300 completion and closure audit, stop before opening another
-Siemens series and separately evaluate additional Siemens series/family data
-versus Persian-first bilingual site completion.
-The 7 Interface Module records are normalized to functional variants:
-`rack-sender` 1, `rack-receiver` 1, `rack-interface` 3, `motion-control` 1, and
-`distributed-motion-control` 1. They are taxonomy-valid 7/7, adapter-ready, and
-CONNECTED at 7/7 through the dedicated adapter. Source lifecycle is
-0 active, 0 phase-out, 5 spare-part, and 2 discontinued; expected future mapping
-is now exposed as 0 active, 5 legacy, and 2 discontinued Products. Current
-Siemens lifecycle evidence
-is now complete: extended-temperature IM365 `6ES7365-0BA81-0AA0` is verified as
-PM500/discontinued effective 2012-10-01 with successor `6AG1365-0BA01-2AA0`,
-and the erroneous IM178-4 MLFB `6ES7178-4AB00-0XA0` is corrected to the
-official-manual identity `6ES7178-4BH00-0AE0`. Current Siemens/TIA documentation
-confirms that IM178-4 is no longer actively marketed; its independently
-corroborated PM500 lifecycle ended 2014-10-01. Direct Siemens PLM pages were
-inaccessible, so both lifecycle closures use matching independent exact-product
-reproductions with no conflicting higher-authority evidence. Remaining IM
-verification debt is 0. The Product collection is now 308 and S7-300 is 122/197
-connected, leaving 75 disconnected records: Communication Processor 43 and
-Function Module 32. S7-1200 remains 186/186 connected. The next S7-300 gate is
-Communication Processor readiness, taxonomy, and source-verification work.
-The connected 13-record PS dataset comprises 5 initial standard/outdoor
-records, 4 historical revisions, and 4 SIPLUS records. Official base-product
-and successor MLFB relationships remain source-only; they are not mapped into
-canonical Product relation fields.
+The current lifecycle provenance matrix is 186 Siemens-official verified and 10
+explicit unverified, with 0 noncompliant secondary-history claims and 0 unknown.
+The ten known gaps remain exposed without a public lifecycle value. Historical
+source and integration milestones are preserved in the dated task sections
+below and do not define the current connection state.
 
 ## S7-1200 Source Data
 
