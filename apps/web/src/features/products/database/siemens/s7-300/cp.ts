@@ -1,5 +1,9 @@
 export type SiemensS7300CPLifecycle =
-  "active" | "phase-out" | "spare-part" | "discontinued";
+  | "active"
+  | "phase-out"
+  | "spare-part"
+  | "discontinued"
+  | "unverified";
 
 export interface SiemensS7300CommunicationProcessor {
   id: string;
@@ -1323,7 +1327,7 @@ export const s7300CP: SiemensS7300CommunicationProcessor[] = [
     description:
       "SIMATIC S7-300 communications processor CP 343-1 ERPC for Industrial Ethernet communication and direct connection of S7-300 process data to enterprise resource planning systems.",
 
-    lifecycle: "discontinued",
+    lifecycle: "unverified",
 
     specifications: {
       interface: "Industrial Ethernet",
@@ -1366,7 +1370,7 @@ export const s7300CP: SiemensS7300CommunicationProcessor[] = [
     description:
       "SIMATIC S7-300 communications processor CP 343-1 BACnet for connecting S7-300 automation systems to BACnet/IP building automation networks.",
 
-    lifecycle: "discontinued",
+    lifecycle: "unverified",
 
     specifications: {
       interface: "Industrial Ethernet",

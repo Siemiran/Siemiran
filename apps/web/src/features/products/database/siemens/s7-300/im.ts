@@ -1,5 +1,9 @@
 export type SiemensS7300IMLifecycle =
-  "active" | "phase-out" | "spare-part" | "discontinued";
+  | "active"
+  | "phase-out"
+  | "spare-part"
+  | "discontinued"
+  | "unverified";
 
 export interface SiemensS7300InterfaceModule {
   id: string;
@@ -166,7 +170,7 @@ export const s7300IM: SiemensS7300InterfaceModule[] = [
     description:
       "SIMATIC S7-300 IM 365 interface module for extended temperature range applications, connecting one expansion rack to the central rack with a permanently connected 1 m cable.",
 
-    lifecycle: "discontinued",
+    lifecycle: "unverified",
 
     specifications: {
       function: "Expansion rack connection",
@@ -283,7 +287,7 @@ export const s7300IM: SiemensS7300InterfaceModule[] = [
     description:
       "SIMATIC IM 178-4 distributed interface module for position detection with incremental or SSI encoders and control of analog drives over PROFIBUS DP.",
 
-    lifecycle: "discontinued",
+    lifecycle: "unverified",
 
     specifications: {
       function: "Distributed motion control interface",

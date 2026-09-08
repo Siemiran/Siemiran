@@ -4,6 +4,24 @@ Repository source of truth: current `main` branch
 
 Last synchronized: 2026-09-07
 
+## 2026-09-07 - Task BC: S7-300 Provenance Remediation (Current State)
+
+Task BB classified S7-300 as **PASS WITH REMEDIATION REQUIRED**. Task BC
+changes four historical secondary-evidence lifecycle claims from
+`discontinued` to `unverified`: IM `6ES7365-0BA81-0AA0` and
+`6ES7178-4BH00-0AE0`, plus CP `6GK7343-1FX00-0XE0` and
+`6FL4343-1CX10-0XE0`.
+
+Product exposure is unchanged. S7-300 remains complete at 196/196 Products,
+S7-1200 remains 186/186, global Product remains 382, and FM remains 31/31. The
+current provenance matrix is 186 Siemens-official verified, 10 explicit
+unverified, 0 noncompliant, and 0 unknown. Lifecycle provenance debt is exactly
+10 known gaps; not all lifecycle values are Siemens-verified.
+
+The Siemens-only source policy remains intact. Final formal closure awaits the
+separate read-only Task BD verification; localization and new Siemens-series
+work remain locked.
+
 ## 2026-09-07 - Task BA: S7-300 Product Coverage Complete
 
 Task AZ exhausted reasonable Siemens-only lifecycle recovery and officially
@@ -27,7 +45,7 @@ the six unverified FM records, deferred IM/CP Siemens-only provenance, the
 current denominator, coverage reconciliation, and source-domain compliance.
 That audit, localization, and new Siemens-series work have not started.
 
-## 2026-09-04 - Task AY: FM354 AH02 Inventory Correction (Current State)
+## 2026-09-04 - Task AY: FM354 AH02 Inventory Correction (Historical Snapshot)
 
 The project owner approved removal of unsupported FM354 AH02
 `6ES7354-1AH02-0AE0` (ID
@@ -58,7 +76,7 @@ SIEMENS-OFFICIAL-ONLY**, after this correction is merged. Strict S7-300 closure
 audit has NOT started; closure requires 196/196. IM/CP audit, localization,
 and new Siemens series work have not started.
 
-This is the authoritative current inventory state. Earlier task entries below
+This was the authoritative Task AY inventory snapshot. Earlier task entries below
 preserve their historical counts and AH02 references; those references describe
 the inventory before this approved deletion, not a valid current record.
 
@@ -401,12 +419,10 @@ after Task Y merge.
 The product browsing, detail, comparison, and inquiry-entry experiences are in
 place. The Siemens validation and common Product mapping pipeline is now
 generalized while product-type specification normalization remains explicit.
-The S7-300 Power Supply and Signal Module plus S7-1200 Classic/G2 Power Module,
-CPU, Signal Module, and Signal Board datasets are connected through explicit
-normalizers. All other
-disconnected source datasets still require controlled taxonomy and normalization
-work before integration and must not be presented as active products before
-verification.
+All six S7-300 source groups are connected with complete Product coverage at
+196/196, and S7-1200 remains complete at 186/186. The current remaining S7-300
+concern is lifecycle provenance only: 10 records are explicitly `unverified`
+and expose no public lifecycle value. Product integration is not pending.
 
 ## 2026-09-04 — Function Module Source/Lifecycle Progress
 
