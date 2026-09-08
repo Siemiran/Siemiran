@@ -3,6 +3,35 @@
 This file records completed repository changes. Connection status refers to the
 implementation on the current `main` branch.
 
+## 2026-09-08 - Task BD: Formally Close Siemens S7-300
+
+### Verified
+
+- Task BD independently verified `main` at
+  `c3378ebdc2a4858b468a99ee49282fea95aeab89` and returned **PASS**.
+- S7-300 inventory and Product coverage are 196/196, S7-1200 is 186/186,
+  global Product is 382, and FM is 31/31. All six S7-300 source groups are
+  connected with one-to-one Product mapping and 0 duplicate Product IDs,
+  slugs, or part numbers.
+- Lifecycle provenance is 186 Siemens-official verified, 10 explicit
+  unverified, 0 noncompliant, and 0 unknown. All ten unverified records remain
+  exposed as Products with public lifecycle intentionally omitted.
+- All 196 source URLs are Siemens-controlled and 0 are non-Siemens. ESLint,
+  TypeScript, production build, 382 Product detail paths, 389/389 static
+  generation, uniqueness checks, documentation reconciliation, and clean-tree
+  validation passed.
+
+### State
+
+- Siemens S7-300 is formally closed under the current Siemens-only provenance
+  policy. Lifecycle provenance debt remains exactly 10 explicit known gaps;
+  closure does not mean all 196 lifecycle values are verified.
+- Task BD was read-only. No source, Product, adapter, UI, dependency, or route
+  change occurred.
+- The next phase has not started or been selected. Localization and new
+  Siemens-series work remain unstarted pending an explicit owner/management
+  decision.
+
 ## 2026-09-07 - Task BC: Remediate S7-300 Lifecycle Provenance
 
 ### Changed

@@ -2,9 +2,31 @@
 
 Repository source of truth: current `main` branch
 
-Last synchronized: 2026-09-07
+Last synchronized: 2026-09-08
 
-## 2026-09-07 - Task BC: S7-300 Provenance Remediation (Current State)
+## 2026-09-08 - Task BD: S7-300 Formally Closed (Current State)
+
+The accepted Task BD verdict is **PASS**. Independent verification of `main` at
+`c3378ebdc2a4858b468a99ee49282fea95aeab89` confirms complete structural
+coverage and compliance with the current Siemens-only provenance policy.
+
+S7-300 inventory and Product coverage are 196/196, S7-1200 remains 186/186,
+global Product is 382, and FM is 31/31. All six S7-300 source groups are
+connected with one-to-one Product mapping and 0 duplicate Product IDs, slugs,
+or part numbers. The provenance matrix is 186 Siemens-official verified, 10
+explicit unverified, 0 noncompliant, and 0 unknown. The ten explicit lifecycle
+debts remain safely modeled: all ten Products are exposed and omit public
+lifecycle rather than publishing an unsupported claim.
+
+ESLint, TypeScript, production build, 382 Product detail paths, 389/389 static
+generation, uniqueness checks, documentation reconciliation, and clean-tree
+validation passed. Task BD was read-only and made no source or application
+change. S7-300 work is formally closed.
+
+Localization and new Siemens-series work remain unstarted. The next phase is
+intentionally undecided pending explicit owner/management selection.
+
+## 2026-09-07 - Task BC: S7-300 Provenance Remediation (Historical Snapshot)
 
 Task BB classified S7-300 as **PASS WITH REMEDIATION REQUIRED**. Task BC
 changes four historical secondary-evidence lifecycle claims from

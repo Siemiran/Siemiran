@@ -1,6 +1,33 @@
 # Siemiran — Project State
 
-## 2026-09-07 - Task BC: S7-300 Provenance Remediation (Current State)
+## 2026-09-08 - Task BD: S7-300 Formal Closure (Current State)
+
+Task BD independently verified the merged `main` state at
+`c3378ebdc2a4858b468a99ee49282fea95aeab89` and returned **PASS**. Siemens
+S7-300 is formally closed under the current Siemens-only provenance policy.
+
+The verified structural state is S7-300 inventory and Product coverage 196/196,
+S7-1200 coverage 186/186, global Product 382, and FM 31/31. All six S7-300
+source groups are connected, every source maps to exactly one Product, and
+duplicate Product IDs, slugs, and part numbers are all 0.
+
+Lifecycle provenance is 186 Siemens-official verified, 10 explicit unverified,
+0 noncompliant, and 0 unknown. All ten unverified records remain exposed as
+Products with the public `Product.lifecycle` property intentionally omitted.
+All 196 source URLs are Siemens-controlled and 0 are non-Siemens. Lifecycle
+provenance debt therefore remains exactly 10 explicit known gaps.
+
+Closure means the dataset is complete, policy-compliant, and safely
+represented; it does not mean all 196 lifecycle values are verified. ESLint,
+TypeScript, the production build, 382 Product detail paths, 389/389 static
+generation, uniqueness checks, documentation reconciliation, and clean-tree
+validation passed. Task BD made no source or application change.
+
+No next phase has started or been selected. Localization and new
+Siemens-series work remain unstarted pending an explicit owner/management
+decision.
+
+## 2026-09-07 - Task BC: S7-300 Provenance Remediation (Historical Snapshot)
 
 Task BB classified S7-300 as **PASS WITH REMEDIATION REQUIRED**. Task BC
 supersedes four historical secondary-evidence lifecycle claims by changing only
@@ -89,7 +116,7 @@ the inventory before this approved deletion, not a valid current record.
 ## Current Baseline
 
 - Status: Active Development
-- Documentation synchronized: 2026-09-07
+- Documentation synchronized: 2026-09-08
 - Repository source of truth: current `main` branch
 - No semantic release version is asserted by this document.
 
