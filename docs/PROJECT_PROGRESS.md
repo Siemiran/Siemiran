@@ -2,9 +2,35 @@
 
 Repository source of truth: current `main` branch
 
-Last synchronized: 2026-09-08
+Last synchronized: 2026-09-10
 
-## 2026-09-08 - Task BD: S7-300 Formally Closed (Current State)
+## 2026-09-10 - Task BH: FA/EN Routing Foundation Verified (Current State)
+
+Task BG delivered the Persian/English routing foundation and was squash-merged
+through PR #48 as `7118bf35f4935b732413e6d1709c807e7c0f34f8`.
+Task BH independently verified the merged `main` state and returned **PASS**.
+
+The application now uses `next-intl` 4.13.4 with unprefixed Persian routes and
+English under `/en`, deterministic locale handling, and a one-click switcher
+that preserves equivalent routes, Product slugs, and query strings. Persian is
+RTL and English is LTR. The final comparison and Product-description
+directionality correction uses automatic content direction while retaining
+technical-token isolation.
+
+The FA and EN catalogs contain 123 matching UI messages each. The approved
+Persian project/site name is `زیمیران`, the English name remains `SIEMIRAN`, and
+active incorrect Persian brand-name occurrences are 0. Static generation
+completes 774/774 with 382 Persian and 382 English Product-detail routes and
+identical slug sets.
+
+Tasks BG-BH changed no canonical Product/source data. Global Product remains
+382, S7-300 remains 196/196, S7-1200 remains 186/186, and the ten unverified
+S7-300 records continue to omit public lifecycle. Persian Product-copy overlays
+and bilingual SEO activation remain gated future work; English routes remain
+temporarily `noindex, follow`, and hreflang/localized sitemap work has not
+started.
+
+## 2026-09-08 - Task BD: S7-300 Formally Closed (Historical Snapshot)
 
 The accepted Task BD verdict is **PASS**. Independent verification of `main` at
 `c3378ebdc2a4858b468a99ee49282fea95aeab89` confirms complete structural
@@ -110,6 +136,21 @@ the inventory before this approved deletion, not a valid current record.
 - Product data aggregation and repository
 - Product listing and dynamic, statically generated detail pages
 - Metadata, Product JSON-LD, breadcrumbs, and Breadcrumb JSON-LD
+
+## Completed Localization Foundation
+
+- `next-intl` 4.13.4 with Persian as the unprefixed default and English under
+  `/en`
+- Deterministic locale routing and one-click equivalent-page switching
+- Matching 123-message FA/EN UI catalogs
+- Locale-specific document language, direction, metadata, canonical URLs,
+  OpenGraph URLs, and structured-data URLs
+- 382 Product-detail routes per locale and 774/774 static generation
+- Technical-token isolation and automatic direction for localized comparison
+  values and Product-description presentation
+
+Persian Product-copy overlays, English indexing activation, reciprocal
+hreflang, and localized sitemap coverage remain future gates.
 
 ## Completed Product Experience
 

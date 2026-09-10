@@ -3,6 +3,48 @@
 This file records completed repository changes. Connection status refers to the
 implementation on the current `main` branch.
 
+## 2026-09-10 - Tasks BG-BH: Add and Verify FA/EN Routing Foundation
+
+### Changed
+
+- Added `next-intl` 4.13.4 and moved application pages into the locale route
+  tree.
+- Added locale-aware navigation and proxy integration with Persian as the
+  unprefixed default and English under `/en`.
+- Added a one-click language switcher that preserves equivalent routes, Product
+  slugs, and query parameters.
+- Added matching Persian and English UI catalogs with 123 messages per locale.
+- Added locale-specific RTL/LTR document handling, technical-token bidi
+  isolation, and localized inquiry presentation.
+- Added locale-aware Product canonical URLs, metadata, OpenGraph URLs, Product
+  schema URLs, and Breadcrumb schema URLs.
+- Applied the final `dir="auto"` correction to localized comparison values and
+  the three Product-description presentation locations.
+
+### Verified
+
+- Task BH returned **PASS** against merged `main` at
+  `7118bf35f4935b732413e6d1709c807e7c0f34f8`.
+- ESLint, TypeScript no-emit, and the production build passed.
+- Static generation completed 774/774, including 382 Persian and 382 English
+  Product-detail routes with identical slug sets.
+- FA/EN catalog keys, structure, placeholders, and ICU forms match; both
+  catalogs contain 123 non-empty messages.
+- Direct inquiry API validation and Product-count, uniqueness, source-data, and
+  lifecycle-omission invariants passed.
+- Post-verification Git status was clean.
+
+### State
+
+- The Persian/English routing and UI foundation is complete.
+- The project/site names remain `زیمیران` in Persian and `SIEMIRAN` in English.
+- Full Persian Product-copy localization is not complete.
+- English `noindex, follow` remains temporary.
+- Reciprocal hreflang and localized sitemap coverage remain deferred.
+- Tasks BG-BH changed no canonical Product/source data, lifecycle evidence, or
+  documentation.
+- Subsequent work requires separate authorization.
+
 ## 2026-09-08 - Task BD: Formally Close Siemens S7-300
 
 ### Verified
