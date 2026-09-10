@@ -1,6 +1,7 @@
 "use client";
 
 import { Search } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 interface ProductSearchProps {
   value: string;
@@ -11,10 +12,12 @@ export default function ProductSearch({
   value,
   onChange,
 }: ProductSearchProps) {
+  const t = useTranslations("Products");
+
   return (
     <div className="relative w-full">
       <Search
-        className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400"
+        className="absolute start-3 top-1/2 -translate-y-1/2 text-slate-400"
         size={18}
       />
 
@@ -22,7 +25,7 @@ export default function ProductSearch({
         type="text"
         value={value}
         onChange={(e) => onChange(e.target.value)}
-        placeholder="Search products..."
+        placeholder={t("search")}
         className="
           w-full
           rounded-xl
@@ -30,8 +33,8 @@ export default function ProductSearch({
           border-slate-300
           bg-white
           py-3
-          pl-10
-          pr-4
+          ps-10
+          pe-4
           text-sm
           outline-none
           transition

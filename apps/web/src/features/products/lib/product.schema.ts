@@ -1,5 +1,7 @@
 ﻿import type { Product } from "../types/product.types";
 
+import type { AppLocale } from "@/i18n/routing";
+
 const DEFAULT_SITE_URL = "https://siemiran.com";
 
 function toAbsoluteUrl(path: string, siteUrl: string): string {
@@ -10,9 +12,11 @@ function toAbsoluteUrl(path: string, siteUrl: string): string {
 
 export function createProductSchema(
   product: Product,
-  siteUrl = DEFAULT_SITE_URL
+  locale: AppLocale,
+  siteUrl = DEFAULT_SITE_URL,
 ) {
   const hasVerifiedImage = !product.images[0].includes("placeholder");
+  const localePrefix = locale === "en" ? "/en" : "";
 
   return {
     "@context": "https://schema.org",
@@ -21,7 +25,7 @@ export function createProductSchema(
     description: product.shortDescription,
     sku: product.partNumber,
     mpn: product.manufacturerPartNumber ?? product.partNumber,
-    url: `${siteUrl}/products/${product.slug}`,
+    url: `${siteUrl}${localePrefix}/products/${product.slug}`,
     ...(hasVerifiedImage
       ? {
           image: [toAbsoluteUrl(product.images[0], siteUrl)],

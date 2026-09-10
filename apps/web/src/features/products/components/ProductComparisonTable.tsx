@@ -1,4 +1,5 @@
 import type { Product } from "@/features/products/types/product.types";
+import { useTranslations } from "next-intl";
 
 interface Props {
   products: Product[];
@@ -47,91 +48,85 @@ function hasDifferentValues(values: string[]) {
   return new Set(comparableValues).size > 1;
 }
 
-const baseRows: ComparisonRow[] = [
-  {
-    label: "Part Number",
-    getValue: (product) => product.partNumber,
-  },
-  {
-    label: "Manufacturer Part Number",
-    getValue: (product) => product.manufacturerPartNumber ?? "—",
-  },
-  {
-    label: "EAN",
-    getValue: (product) => product.ean ?? "—",
-  },
-  {
-    label: "Brand",
-    getValue: (product) => product.brandId,
-  },
-  {
-    label: "Category",
-    getValue: (product) => product.categoryId,
-  },
-  {
-    label: "Family",
-    getValue: (product) => product.familyId,
-  },
-  {
-    label: "Series",
-    getValue: (product) => product.seriesId ?? "—",
-  },
-  {
-    label: "Product Type",
-    getValue: (product) => product.productTypeId ?? "—",
-  },
-  {
-    label: "Lifecycle",
-    getValue: (product) => product.lifecycle ?? "—",
-  },
-  {
-    label: "Availability",
-    getValue: (product) => {
-      if (product.inStock === undefined) {
-        return "—";
-      }
-
-      return product.inStock ? "In stock" : "Out of stock";
-    },
-  },
-  {
-    label: "Featured",
-    getValue: (product) => {
-      if (product.featured === undefined) {
-        return "—";
-      }
-
-      return product.featured ? "Yes" : "No";
-    },
-  },
-  {
-    label: "Tags",
-    getValue: (product) => getArrayValue(product.tags),
-  },
-  {
-    label: "Compatibility",
-    getValue: (product) => getArrayValue(product.compatibility),
-  },
-  {
-    label: "Accessories",
-    getValue: (product) => getArrayValue(product.accessories),
-  },
-  {
-    label: "Related Products",
-    getValue: (product) => getArrayValue(product.relatedProducts),
-  },
-  {
-    label: "Replacement Product",
-    getValue: (product) => product.replacementProduct ?? "—",
-  },
-];
-
 export default function ProductComparisonTable({ products }: Props) {
+  const t = useTranslations("Comparison");
+  const productT = useTranslations("Product");
+
   if (products.length === 0) {
     return null;
   }
 
   const specificationKeys = getSpecificationKeys(products);
+  const baseRows: ComparisonRow[] = [
+    {
+      label: productT("partNumber"),
+      getValue: (product) => product.partNumber,
+    },
+    {
+      label: productT("manufacturerPartNumber"),
+      getValue: (product) => product.manufacturerPartNumber ?? "—",
+    },
+    {
+      label: productT("ean"),
+      getValue: (product) => product.ean ?? "—",
+    },
+    {
+      label: t("brand"),
+      getValue: (product) => product.brandId,
+    },
+    {
+      label: productT("category"),
+      getValue: (product) => product.categoryId,
+    },
+    {
+      label: productT("family"),
+      getValue: (product) => product.familyId,
+    },
+    {
+      label: productT("series"),
+      getValue: (product) => product.seriesId ?? "—",
+    },
+    {
+      label: productT("productType"),
+      getValue: (product) => product.productTypeId ?? "—",
+    },
+    {
+      label: t("lifecycle"),
+      getValue: (product) =>
+        product.lifecycle ? productT(product.lifecycle) : "—",
+    },
+    {
+      label: t("availability"),
+      getValue: (product) => {
+        if (product.inStock === undefined) return "—";
+        return product.inStock ? productT("inStock") : t("outOfStock");
+      },
+    },
+    {
+      label: t("featured"),
+      getValue: (product) => {
+        if (product.featured === undefined) return "—";
+        return product.featured ? t("yes") : t("no");
+      },
+    },
+    { label: t("tags"), getValue: (product) => getArrayValue(product.tags) },
+    {
+      label: t("compatibility"),
+      getValue: (product) => getArrayValue(product.compatibility),
+    },
+    {
+      label: productT("accessories"),
+      getValue: (product) => getArrayValue(product.accessories),
+    },
+    {
+      label: t("relatedProducts"),
+      getValue: (product) => getArrayValue(product.relatedProducts),
+    },
+    {
+      label: productT("replacementProduct"),
+      getValue: (product) => product.replacementProduct ?? "—",
+    },
+  ];
 
   const rows: ComparisonRow[] = [
     ...baseRows,
@@ -148,23 +143,23 @@ export default function ProductComparisonTable({ products }: Props) {
           <tr className="bg-slate-50">
             <th
               scope="col"
-              className="sticky left-0 z-10 min-w-52 border-r border-b border-slate-200 bg-slate-50 px-4 py-4 text-left font-semibold text-slate-700"
+              className="sticky start-0 z-10 min-w-52 border-e border-b border-slate-200 bg-slate-50 px-4 py-4 text-start font-semibold text-slate-700"
             >
-              Specification
+              {t("specification")}
             </th>
 
             {products.map((product) => (
               <th
                 key={product.id}
                 scope="col"
-                className="min-w-64 border-b border-slate-200 px-4 py-4 text-left align-top"
+                className="min-w-64 border-b border-slate-200 px-4 py-4 text-start align-top"
               >
                 <div className="font-semibold text-slate-900">
-                  {product.title}
+                  <bdi dir="ltr">{product.title}</bdi>
                 </div>
 
                 <div className="mt-1 text-xs font-normal text-slate-500">
-                  {product.partNumber}
+                  <bdi dir="ltr">{product.partNumber}</bdi>
                 </div>
               </th>
             ))}
@@ -186,7 +181,7 @@ export default function ProductComparisonTable({ products }: Props) {
               >
                 <th
                   scope="row"
-                  className="sticky left-0 z-1 min-w-52 border-r border-b border-slate-200 bg-inherit px-4 py-3 text-left font-medium text-slate-600"
+                  className="sticky start-0 z-1 min-w-52 border-e border-b border-slate-200 bg-inherit px-4 py-3 text-start font-medium text-slate-600"
                 >
                   {row.label}
                 </th>
@@ -207,9 +202,12 @@ export default function ProductComparisonTable({ products }: Props) {
                         isMissing ? "text-slate-400" : "",
                       ].join(" ")}
                     >
-                      <span className="wrap-break-words whitespace-pre-wrap">
+                      <bdi
+                        dir="auto"
+                        className="wrap-break-words whitespace-pre-wrap"
+                      >
                         {value}
-                      </span>
+                      </bdi>
                     </td>
                   );
                 })}

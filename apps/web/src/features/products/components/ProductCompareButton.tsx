@@ -1,6 +1,7 @@
 "use client";
 
 import type { Product } from "../types/product.types";
+import { useTranslations } from "next-intl";
 
 interface Props {
   product: Product;
@@ -17,6 +18,8 @@ export default function ProductCompareButton({
   onAdd,
   onRemove,
 }: Props) {
+  const t = useTranslations("Comparison");
+
   function handleClick() {
     if (selected) {
       onRemove(product.id);
@@ -36,7 +39,7 @@ export default function ProductCompareButton({
       aria-pressed={selected}
       className="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm font-medium transition hover:bg-slate-50 disabled:cursor-not-allowed disabled:opacity-50"
     >
-      {selected ? "Remove from comparison" : "Compare"}
+      {selected ? t("removeButton") : t("compare")}
     </button>
   );
 }

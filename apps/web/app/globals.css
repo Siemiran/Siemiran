@@ -27,8 +27,20 @@
 }
 
 html {
-  direction: rtl;
   scroll-behavior: smooth;
+}
+
+html[dir="rtl"] {
+  direction: rtl;
+}
+
+html[dir="ltr"] {
+  direction: ltr;
+}
+
+bdi,
+[dir="ltr"] {
+  unicode-bidi: isolate;
 }
 
 body {

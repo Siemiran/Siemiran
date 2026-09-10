@@ -1,4 +1,9 @@
+import { useTranslations } from "next-intl";
+
+import { Link } from "@/i18n/navigation";
+
 export default function Hero() {
+  const t = useTranslations("Home");
   const brands = ["Siemens", "ABB", "Schneider", "Endress+Hauser"];
   return (
     <section className="relative overflow-hidden border-b border-slate-200 bg-gradient-to-b from-white via-slate-50 to-white">
@@ -20,30 +25,30 @@ export default function Hero() {
           {/* Text */}
           <div className="flex flex-col justify-center">
             <span className="mb-4 text-sm font-medium tracking-widest text-cyan-500 uppercase">
-              Industrial Automation · Instrumentation · Control
+              {t("eyebrow")}
             </span>
 
             <h1 className="max-w-3xl text-5xl leading-[1.1] font-extrabold tracking-tight text-slate-900 lg:text-7xl">
               {" "}
-              Every link in your
-              <span className="text-[#00B8D9]"> automation </span>
-              chain
+              {t("titleBefore")} {" "}
+              <span className="text-[#00B8D9]">{t("titleAccent")}</span>{" "}
+              {t("titleAfter")}
             </h1>
 
             <p className="mt-8 max-w-xl text-lg leading-9 text-slate-600">
-              Siemiran supplies industrial automation, low and medium voltage
-              electrical equipment, and precision instrumentation from Siemens,
-              ABB, Schneider Electric, Endress+Hauser and Emerson for projects
-              where reliability is critical.
+              {t("description")}
             </p>
 
             <div className="mt-10 flex flex-wrap gap-4">
-              <button className="rounded-xl bg-[#009CDE] px-8 py-4 font-semibold text-white transition hover:bg-[#0087c2]">
-                Browse Products
-              </button>
+              <Link
+                href="/products"
+                className="rounded-xl bg-[#009CDE] px-8 py-4 font-semibold text-white transition hover:bg-[#0087c2]"
+              >
+                {t("browseProducts")}
+              </Link>
 
               <button className="rounded-xl border border-slate-300 px-8 py-4 font-semibold transition hover:bg-slate-100">
-                Request Quote
+                {t("requestQuote")}
               </button>
             </div>
 
@@ -53,7 +58,7 @@ export default function Hero() {
                   key={brand}
                   className="rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-medium shadow-sm transition hover:border-cyan-400 hover:shadow-md"
                 >
-                  {brand}
+                  <bdi dir="ltr">{brand}</bdi>
                 </div>
               ))}
             </div>
@@ -71,10 +76,12 @@ export default function Hero() {
                         ⚙️
                       </div>
                       <h3 className="text-2xl font-bold text-slate-800">
-                        Siemens PLC
+                        <bdi dir="ltr">Siemens PLC</bdi>
                       </h3>
 
-                      <p className="mt-3 text-slate-500">S7-1200 • S7-1500</p>
+                      <p className="mt-3 text-slate-500">
+                        <bdi dir="ltr">S7-1200 • S7-1500</bdi>
+                      </p>
                     </div>
                   </div>
                 </div>

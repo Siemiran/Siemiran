@@ -1,14 +1,14 @@
-﻿import Link from "next/link";
+import { useTranslations } from "next-intl";
 
+import { Link } from "@/i18n/navigation";
 import type { Product } from "@/features/products/types/product.types";
 
 interface ProductActionsProps {
   product: Product;
 }
 
-export default function ProductActions({
-  product,
-}: ProductActionsProps) {
+export default function ProductActions({ product }: ProductActionsProps) {
+  const t = useTranslations("Products");
   const datasheet = product.downloads.find(
     (download) => download.type === "datasheet",
   );
@@ -22,14 +22,14 @@ export default function ProductActions({
           rel="noopener noreferrer"
           className="flex-1 py-3 text-center text-sm font-semibold transition hover:bg-slate-50"
         >
-          Datasheet
+          {t("datasheet")}
         </a>
       ) : (
         <span
           aria-disabled="true"
           className="flex-1 cursor-not-allowed py-3 text-center text-sm font-semibold text-slate-400"
         >
-          Datasheet
+          {t("datasheet")}
         </span>
       )}
 
@@ -37,14 +37,14 @@ export default function ProductActions({
         href={`/products/${product.slug}`}
         className="flex-1 border-x border-slate-100 py-3 text-center text-sm font-semibold transition hover:bg-slate-50"
       >
-        Details
+        {t("details")}
       </Link>
 
       <button
         type="button"
         className="flex-1 py-3 text-sm font-semibold text-cyan-600 transition hover:bg-cyan-50"
       >
-        Inquiry
+        {t("inquiry")}
       </button>
     </div>
   );

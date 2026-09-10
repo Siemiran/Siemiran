@@ -1,8 +1,12 @@
+import { useTranslations } from "next-intl";
+
 interface Props {
   specifications?: Record<string, string>;
 }
 
 export default function ProductSpecifications({ specifications }: Props) {
+  const t = useTranslations("Product");
+
   if (!specifications) return null;
 
   const rows = Object.entries(specifications);
@@ -12,7 +16,7 @@ export default function ProductSpecifications({ specifications }: Props) {
   return (
     <section className="mt-16">
       <h2 className="mb-6 text-3xl font-bold text-slate-900">
-        Technical Specifications
+        {t("technicalSpecifications")}
       </h2>
 
       <div className="overflow-hidden rounded-2xl border border-slate-200">
@@ -21,10 +25,12 @@ export default function ProductSpecifications({ specifications }: Props) {
             {rows.map(([label, value]) => (
               <tr key={label} className="border-b last:border-0">
                 <td className="w-1/3 bg-slate-50 px-6 py-4 font-medium">
-                  {label}
+                  <bdi dir="ltr">{label}</bdi>
                 </td>
 
-                <td className="px-6 py-4">{value}</td>
+                <td className="px-6 py-4">
+                  <bdi dir="ltr">{value}</bdi>
+                </td>
               </tr>
             ))}
           </tbody>
