@@ -27,7 +27,7 @@ export default function ProductDescription({
       </h2>
 
       <p
-        dir="ltr"
+        dir="auto"
         className="mt-4 text-sm leading-7 whitespace-pre-line text-slate-600"
       >
         {description}

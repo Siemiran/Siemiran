@@ -19,7 +19,7 @@ export default function ProductMeta({ product }: ProductMetaProps) {
         <bdi dir="ltr">{product.partNumber}</bdi>
       </p>
 
-      <p dir="ltr" className="line-clamp-2 text-sm leading-6 text-slate-600">
+      <p dir="auto" className="line-clamp-2 text-sm leading-6 text-slate-600">
         {product.shortDescription}
       </p>
 

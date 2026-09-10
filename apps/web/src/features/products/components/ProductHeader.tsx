@@ -41,7 +41,7 @@ export default function ProductHeader({ product }: ProductHeaderProps) {
         </h1>
 
         <p
-          dir="ltr"
+          dir="auto"
           className="mt-3 max-w-3xl text-base leading-7 text-slate-600"
         >
           {product.shortDescription}

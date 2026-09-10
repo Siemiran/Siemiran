@@ -203,7 +203,7 @@ export default function ProductComparisonTable({ products }: Props) {
                       ].join(" ")}
                     >
                       <bdi
-                        dir="ltr"
+                        dir="auto"
                         className="wrap-break-words whitespace-pre-wrap"
                       >
                         {value}
