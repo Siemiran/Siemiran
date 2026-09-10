@@ -1,6 +1,33 @@
 # Siemiran — Project State
 
-## 2026-09-08 - Task BD: S7-300 Formal Closure (Current State)
+## 2026-09-10 - Task BH: FA/EN Routing Foundation Verified (Current State)
+
+Task BG added the Persian/English routing foundation and was squash-merged
+through PR #48 as `7118bf35f4935b732413e6d1709c807e7c0f34f8`.
+Task BH independently verified that merged `main` state and returned **PASS**.
+
+The application uses `next-intl` 4.13.4 with Persian as the unprefixed default
+locale and English under `/en`. Locale detection is disabled for deterministic
+routing. A one-click language switch preserves the equivalent route, Product
+slug, and query string. Persian documents render with `lang="fa"` and RTL
+direction; English documents render with `lang="en"` and LTR direction.
+
+The FA and EN UI catalogs contain 123 matching messages per locale. The current
+Persian project/site name is `زیمیران`, the English name remains `SIEMIRAN`, and
+active incorrect Persian brand-name occurrences are 0. Static generation
+completes 774/774, including 382 Persian and 382 English Product-detail routes
+with identical slug sets.
+
+English routes remain temporarily `noindex, follow`. Reciprocal hreflang,
+alternate links, and localized sitemap work have not started. Product
+descriptions remain canonical English data, and the separate approved Persian
+Product-copy overlay has not started.
+
+Catalog and lifecycle policy remain unchanged: global Product is 382, S7-300 is
+196/196, S7-1200 is 186/186, and the ten unverified S7-300 records omit public
+lifecycle in both languages.
+
+## 2026-09-08 - Task BD: S7-300 Formal Closure (Historical Snapshot)
 
 Task BD independently verified the merged `main` state at
 `c3378ebdc2a4858b468a99ee49282fea95aeab89` and returned **PASS**. Siemens
@@ -116,13 +143,14 @@ the inventory before this approved deletion, not a valid current record.
 ## Current Baseline
 
 - Status: Active Development
-- Documentation synchronized: 2026-09-08
+- Documentation synchronized: 2026-09-10
 - Repository source of truth: current `main` branch
 - No semantic release version is asserted by this document.
 
 ## Current Stack
 
 - Next.js 16.2.11 with App Router
+- next-intl 4.13.4
 - React 19.2.4
 - TypeScript 5 in strict mode
 - Tailwind CSS 4
@@ -134,7 +162,8 @@ the inventory before this approved deletion, not a valid current record.
 - Feature-first application structure under `apps/web/src/features`
 - Repository pattern for product access
 - One UI-facing `Product` interface
-- Routes under `apps/web/app`
+- Locale route tree under `apps/web/app/[locale]`, with `fa` routes unprefixed
+  and `en` routes under `/en`
 - Shared UI under `apps/web/src/components`
 - Product feature areas: components, comparison, data, database, filters, hooks,
   lib, pagination, repository, sections, sorting, and types
@@ -145,6 +174,7 @@ the inventory before this approved deletion, not a valid current record.
 | Area | Status | Current state |
 | --- | --- | --- |
 | Product listing and dynamic detail pages | IMPLEMENTED | Repository-backed listing, static product paths, and not-found handling |
+| Localization foundation | IMPLEMENTED | Persian-first FA/EN routing, matching UI catalogs, one-click equivalent-page switching, locale direction, and temporarily noindexed English routes |
 | Search, URL parameters, filters, sorting, pagination | IMPLEMENTED | Category, family, series, and product-type filters; 12-item pagination |
 | Gallery and specifications | IMPLEMENTED | Product gallery/image UI and technical specification rendering |
 | SEO and structured data | IMPLEMENTED | Metadata, canonical/Open Graph/Twitter fields, Product JSON-LD, breadcrumbs, and Breadcrumb JSON-LD |

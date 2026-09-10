@@ -1,79 +1,81 @@
 # Siemiran — Roadmap
 
-Baseline: `main` at `2b9e8857108bfc6a5e4e3929ac06fefdf32041d3`
+Baseline: `main` at `7118bf35f4935b732413e6d1709c807e7c0f34f8`
 
-This roadmap contains future work only. Ordering expresses current priority, not
-a finalized implementation design or semantic release schedule.
+This roadmap distinguishes the completed repository baseline from future
+priorities. Ordering expresses current priority, not a finalized implementation
+design or semantic release schedule.
 
-## 1. Siemens Data Pipeline Normalization
+## Completed Baseline
 
-- Define a controlled path for the existing Siemens source-record classes to
-  reach validation, Product mapping, and aggregation.
-- Reduce the current coupling of the shared Siemens contract and adapter to the
-  S7-300 CPU source shape.
-- Preserve the repository pattern and canonical Product interface.
+- Siemens pipeline normalization is complete.
+- Taxonomy reconciliation is complete.
+- S7-1200 coverage is complete at 186/186.
+- S7-300 is formally closed at 196/196 under the current provenance policy.
+- The global Product total is 382.
+- The Persian/English routing foundation is merged and independently verified.
+- Product-detail generation covers 382 Persian routes and 382 English routes.
+- Static generation completes 774/774.
+- UI catalogs contain 123 matched messages per locale.
+- English routes remain temporarily `noindex, follow`.
 
-The specific generalized interface design is NOT ESTABLISHED and requires a
-separately scoped architecture decision.
+## 1. Persian Product-copy Overlay and Quality Gate
 
-## 2. Taxonomy Reconciliation
+- Add a typed presentation overlay keyed by stable Product ID.
+- Provide accurate Persian short and long descriptive prose while keeping
+  canonical Product/source data unchanged.
+- Preserve technical tokens in English and keep them bidi-isolated.
+- Require human linguistic and technical approval.
+- Gate production readiness on 382/382 approved Persian Product copies.
+- Draft and review Product copy in controlled batches, but do not publicly
+  activate a partial Persian Product-copy overlay before all 382/382 Products
+  pass linguistic and technical approval.
 
-- Reconcile S7-1200 source classification identifiers with verified taxonomy.
-- Extend verified taxonomy only from confirmed manufacturer classifications.
-- Establish validation coverage for the source classes selected for integration.
+## 2. Bilingual SEO Activation
 
-## 3. Controlled S7-1200 Integration
+- Begin public bilingual SEO activation only after the complete 382/382
+  Persian Product-copy approval gate passes.
+- Remove temporary English `noindex` only at the approved launch gate.
+- Add correct reciprocal hreflang and alternate links.
+- Add localized sitemap coverage.
+- Verify locale-specific canonical, OpenGraph, and structured-data output.
+- Prevent duplicate-content or partial-indexing rollout.
 
-- Add an explicit aggregation path for the existing S7-1200 source modules.
-- Integrate source classes in verified, reviewable batches.
-- Resolve overlap between the manually declared active S7-1200 product and the
-  source CPU dataset before activation.
-- Do not expose the 181 source records as active Products until validation and
-  mapping are established.
+## 3. Richer Specification Preservation
 
-## 4. Remaining S7-300 Dataset Connection
+- Preserve verified module-specific fields.
+- Translate presentation labels only where appropriate.
+- Keep canonical technical values and engineering units unchanged.
 
-- Connect existing SM, IM, FM, and CP datasets through the validated Product
-  pipeline in controlled batches.
-- Confirm taxonomy and source validation for each connected class.
+## 4. Inquiry Delivery and Persistence
 
-## 5. Richer Specification Preservation
+- Select an approved delivery or storage provider.
+- Add success handling and operational failure visibility.
+- Preserve localized presentation and the shared validation contract.
 
-- Ensure verified module-specific fields survive mapping into displayable
-  Product specifications.
-- Define mapping behavior only after the Siemens source contract is scoped.
+## 5. Automated Validation and CI/CD
 
-## 6. Inquiry Delivery and Persistence
+- Automate locale routing, catalog parity, Product integrity, bidi, lifecycle
+  omission, lint, TypeScript, and production-build checks.
+- Add a deployment workflow only after target hosting is selected.
 
-- Connect the implemented inquiry UI and validation API to an approved delivery
-  or persistence workflow.
-- Add explicit success handling and operational failure visibility.
+## 6. Resource and Download Population
 
-The delivery provider and storage architecture are NOT ESTABLISHED.
+- Add verified Siemens datasheets, manuals, firmware, certificates, and CAD.
+- Keep provenance and Product associations verifiable.
 
-## 7. Automated Validation and Testing Baseline
+## 7. Catalog and SEO Expansion
 
-- Add automated coverage for taxonomy, dataset integrity, adapters,
-  repositories, catalog behavior, comparison, and inquiry validation.
-- Select tooling in a separately reviewed task; no test framework is currently
-  established.
+- Add localized brand, category, family, series, and product-type landing pages.
+- Add Organization and Website structured data.
+- Measure and optimize performance.
 
-## 8. CI/CD
+## 8. Later Product/Platform Expansion
 
-- Add continuous checks for lint, TypeScript, production build, and the future
-  automated validation suite.
-- Define deployment automation only when the target environment is established.
+- Do not begin another Siemens series until the owner selects it in a separate
+  task.
+- Keep CMS, API, database, and cache evaluation as future architecture
+  decisions.
 
-## 9. Resource and Download Population
-
-- Populate verified datasheets, manuals, firmware, certificates, and CAD
-  resources using the existing download architecture.
-- Keep resource provenance and product associations verifiable.
-
-## 10. Catalog, SEO, and Later Platform Expansion
-
-- Brand, category, family, series, and product-type landing pages
-- Organization and Website structured data
-- Sitemap and robots configuration
-- Performance measurement and optimization
-- CMS/API/database/cache evaluation after current catalog architecture is stable
+Product translation, bilingual SEO activation, inquiry delivery, CI/CD,
+download population, and another Siemens-series expansion are not complete.
