@@ -1,24 +1,30 @@
 import type { Metadata } from "next";
+import type { AppLocale } from "@/i18n/routing";
 import type { Product } from "../types/product.types";
 
-export function createProductMetadata(product: Product): Metadata {
+export function createProductMetadata(
+  product: Product,
+  locale: AppLocale,
+): Metadata {
   const title = `${product.title} | Siemiran`;
 
   const description = product.shortDescription;
+  const localePrefix = locale === "en" ? "/en" : "";
+  const pathname = `${localePrefix}/products/${product.slug}`;
 
   return {
     title,
     description,
 
     alternates: {
-      canonical: `/products/${product.slug}`,
+      canonical: pathname,
     },
 
     openGraph: {
       title,
       description,
       type: "website",
-      url: `/products/${product.slug}`,
+      url: pathname,
       images: [
         {
           url: product.images[0],

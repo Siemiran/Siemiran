@@ -1,5 +1,7 @@
 "use client";
 
+import { useTranslations } from "next-intl";
+
 import ProductSearch from "./ProductSearch";
 
 interface ProductToolbarProps {
@@ -11,6 +13,8 @@ export default function ProductToolbar({
   search,
   onSearchChange,
 }: ProductToolbarProps) {
+  const t = useTranslations("Products");
+
   return (
     <section className="mb-8 flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
       <div className="w-full max-w-xl">
@@ -18,7 +22,7 @@ export default function ProductToolbar({
       </div>
 
       <div className="text-sm text-slate-500">
-        Industrial Automation Products
+        {t("toolbar")}
       </div>
     </section>
   );

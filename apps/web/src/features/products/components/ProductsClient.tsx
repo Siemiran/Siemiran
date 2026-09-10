@@ -1,5 +1,7 @@
 "use client";
 
+import { useTranslations } from "next-intl";
+
 import ProductCard from "./ProductCard";
 import ProductToolbar from "./ProductToolbar";
 import CategoryFilter from "./CategoryFilter";
@@ -38,6 +40,7 @@ interface Props {
 }
 
 export default function ProductsClient({ products }: Props) {
+  const t = useTranslations("Products");
   const {
     search,
     setSearch,
@@ -126,7 +129,7 @@ export default function ProductsClient({ products }: Props) {
       </div>
 
       <div className="mb-6 text-sm text-slate-500">
-        {filteredProducts.length} products found
+        {t("found", { count: filteredProducts.length })}
       </div>
 
       <section className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">

@@ -38,7 +38,7 @@ export default function ActiveFilters({
           onClick={onClearCategory}
           className="rounded-full bg-cyan-100 px-3 py-1 text-sm text-cyan-700"
         >
-          {category} ✕
+          <bdi dir="ltr">{category}</bdi> ✕
         </button>
       )}
 
@@ -47,7 +47,7 @@ export default function ActiveFilters({
           onClick={onClearFamily}
           className="rounded-full bg-cyan-100 px-3 py-1 text-sm text-cyan-700"
         >
-          {family} ✕
+          <bdi dir="ltr">{family}</bdi> ✕
         </button>
       )}
 
@@ -56,7 +56,7 @@ export default function ActiveFilters({
           onClick={onClearSeries}
           className="rounded-full bg-cyan-100 px-3 py-1 text-sm text-cyan-700"
         >
-          {series} ✕
+          <bdi dir="ltr">{series}</bdi> ✕
         </button>
       )}
 
@@ -65,7 +65,7 @@ export default function ActiveFilters({
           onClick={onClearProductType}
           className="rounded-full bg-cyan-100 px-3 py-1 text-sm text-cyan-700"
         >
-          {productType} ✕
+          <bdi dir="ltr">{productType}</bdi> ✕
         </button>
       )}
     </div>

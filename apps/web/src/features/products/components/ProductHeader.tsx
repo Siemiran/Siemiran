@@ -1,30 +1,19 @@
 import type { Product } from "@/features/products/types/product.types";
+import { useTranslations } from "next-intl";
 
 interface ProductHeaderProps {
   product: Product;
 }
 
-function getLifecycleLabel(lifecycle?: Product["lifecycle"]) {
-  switch (lifecycle) {
-    case "active":
-      return "Active";
-    case "legacy":
-      return "Legacy";
-    case "discontinued":
-      return "Discontinued";
-    default:
-      return null;
-  }
-}
-
 export default function ProductHeader({ product }: ProductHeaderProps) {
-  const lifecycleLabel = getLifecycleLabel(product.lifecycle);
+  const t = useTranslations("Product");
+  const lifecycleLabel = product.lifecycle ? t(product.lifecycle) : null;
 
   return (
     <header className="space-y-5">
       <div className="flex flex-wrap items-center gap-2">
         <span className="rounded-md bg-cyan-50 px-2.5 py-1 text-xs font-semibold tracking-wide text-cyan-700 uppercase">
-          {product.brandId}
+          <bdi dir="ltr">{product.brandId}</bdi>
         </span>
 
         {lifecycleLabel && (
@@ -41,17 +30,20 @@ export default function ProductHeader({ product }: ProductHeaderProps) {
                 : "rounded-md bg-amber-50 px-2.5 py-1 text-xs font-medium text-amber-700"
             }
           >
-            {product.inStock ? "In stock" : "Currently unavailable"}
+            {product.inStock ? t("inStock") : t("unavailable")}
           </span>
         )}
       </div>
 
       <div>
         <h1 className="text-3xl font-bold tracking-tight text-slate-950 sm:text-4xl">
-          {product.title}
+          <bdi dir="ltr">{product.title}</bdi>
         </h1>
 
-        <p className="mt-3 max-w-3xl text-base leading-7 text-slate-600">
+        <p
+          dir="ltr"
+          className="mt-3 max-w-3xl text-base leading-7 text-slate-600"
+        >
           {product.shortDescription}
         </p>
       </div>
@@ -59,22 +51,22 @@ export default function ProductHeader({ product }: ProductHeaderProps) {
       <div className="grid gap-3 rounded-xl border border-slate-200 bg-slate-50 p-4 sm:grid-cols-2">
         <div>
           <dt className="text-xs font-medium tracking-wide text-slate-500 uppercase">
-            Part Number
+            {t("partNumber")}
           </dt>
 
           <dd className="mt-1 font-mono text-sm font-semibold text-slate-900">
-            {product.partNumber}
+            <bdi dir="ltr">{product.partNumber}</bdi>
           </dd>
         </div>
 
         {product.manufacturerPartNumber && (
           <div>
             <dt className="text-xs font-medium tracking-wide text-slate-500 uppercase">
-              Manufacturer Part Number
+              {t("manufacturerPartNumber")}
             </dt>
 
             <dd className="mt-1 font-mono text-sm font-semibold text-slate-900">
-              {product.manufacturerPartNumber}
+              <bdi dir="ltr">{product.manufacturerPartNumber}</bdi>
             </dd>
           </div>
         )}
@@ -82,43 +74,43 @@ export default function ProductHeader({ product }: ProductHeaderProps) {
         {product.ean && (
           <div>
             <dt className="text-xs font-medium tracking-wide text-slate-500 uppercase">
-              EAN
+              {t("ean")}
             </dt>
 
             <dd className="mt-1 font-mono text-sm text-slate-700">
-              {product.ean}
+              <bdi dir="ltr">{product.ean}</bdi>
             </dd>
           </div>
         )}
 
         <div>
           <dt className="text-xs font-medium tracking-wide text-slate-500 uppercase">
-            Category
+            {t("category")}
           </dt>
 
           <dd className="mt-1 text-sm font-medium text-slate-900">
-            {product.categoryId}
+            <bdi dir="ltr">{product.categoryId}</bdi>
           </dd>
         </div>
 
         <div>
           <dt className="text-xs font-medium tracking-wide text-slate-500 uppercase">
-            Family
+            {t("family")}
           </dt>
 
           <dd className="mt-1 text-sm font-medium text-slate-900">
-            {product.familyId}
+            <bdi dir="ltr">{product.familyId}</bdi>
           </dd>
         </div>
 
         {product.seriesId && (
           <div>
             <dt className="text-xs font-medium tracking-wide text-slate-500 uppercase">
-              Series
+              {t("series")}
             </dt>
 
             <dd className="mt-1 text-sm font-medium text-slate-900">
-              {product.seriesId}
+              <bdi dir="ltr">{product.seriesId}</bdi>
             </dd>
           </div>
         )}
@@ -126,11 +118,11 @@ export default function ProductHeader({ product }: ProductHeaderProps) {
         {product.productTypeId && (
           <div>
             <dt className="text-xs font-medium tracking-wide text-slate-500 uppercase">
-              Product Type
+              {t("productType")}
             </dt>
 
             <dd className="mt-1 text-sm font-medium text-slate-900">
-              {product.productTypeId}
+              <bdi dir="ltr">{product.productTypeId}</bdi>
             </dd>
           </div>
         )}

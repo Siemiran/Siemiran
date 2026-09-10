@@ -1,9 +1,17 @@
 import { Suspense } from "react";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 
 import ProductsClient from "@/features/products/components/ProductsClient";
 import { getProducts } from "@/features/products/repository/product.repository";
 
-export default function ProductsPage() {
+interface ProductsPageProps {
+  params: Promise<{ locale: "fa" | "en" }>;
+}
+
+export default async function ProductsPage({ params }: ProductsPageProps) {
+  const { locale } = await params;
+  setRequestLocale(locale);
+  const t = await getTranslations("Products");
   const products = getProducts();
 
   return (
@@ -11,7 +19,7 @@ export default function ProductsPage() {
       <Suspense
         fallback={
           <div className="py-20 text-center text-slate-500">
-            Loading products...
+            {t("loading")}
           </div>
         }
       >

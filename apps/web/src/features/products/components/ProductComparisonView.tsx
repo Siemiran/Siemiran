@@ -1,6 +1,7 @@
 "use client";
 
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
+import { useTranslations } from "next-intl";
 
 import ProductComparisonTable from "./ProductComparisonTable";
 import type { Product } from "@/features/products/types/product.types";
@@ -16,6 +17,8 @@ export default function ProductComparisonView({
   onRemove,
   onClear,
 }: Props) {
+  const t = useTranslations("Comparison");
+
   if (products.length === 0) {
     return (
       <section className="mx-auto flex min-h-[60vh] w-full max-w-7xl items-center justify-center px-6 py-16">
@@ -27,19 +30,18 @@ export default function ProductComparisonView({
           </div>
 
           <h2 className="text-2xl font-bold text-slate-900">
-            Compare Products
+            {t("compareProducts")}
           </h2>
 
           <p className="mt-2 text-sm leading-6 text-slate-500">
-            No products have been selected for comparison yet. Select products
-            from the products page to compare them side by side.
+            {t("empty")}
           </p>
 
           <Link
             href="/products"
             className="mt-6 inline-flex items-center justify-center rounded-lg bg-slate-900 px-5 py-2.5 text-sm font-medium text-white transition hover:bg-slate-800"
           >
-            Back to Products
+            {t("back")}
           </Link>
         </div>
       </section>
@@ -51,11 +53,11 @@ export default function ProductComparisonView({
       <div className="mb-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         <div>
           <h2 className="text-2xl font-bold text-slate-900">
-            Compare Products
+            {t("compareProducts")}
           </h2>
 
           <p className="mt-1 text-sm text-slate-500">
-            Compare selected products side by side.
+            {t("description")}
           </p>
         </div>
 
@@ -64,7 +66,7 @@ export default function ProductComparisonView({
           onClick={onClear}
           className="rounded-lg border border-slate-300 px-4 py-2 text-sm font-medium text-slate-700 transition hover:bg-slate-50"
         >
-          Clear comparison
+          {t("clearComparison")}
         </button>
       </div>
 
@@ -75,9 +77,9 @@ export default function ProductComparisonView({
             type="button"
             onClick={() => onRemove(product.id)}
             className="rounded-full bg-slate-100 px-3 py-1.5 text-xs font-medium text-slate-700 transition hover:bg-slate-200"
-            aria-label={`Remove ${product.title} from comparison`}
+            aria-label={t("removeFromComparison", { product: product.title })}
           >
-            {product.title} ×
+            <bdi dir="ltr">{product.title}</bdi> ×
           </button>
         ))}
       </div>

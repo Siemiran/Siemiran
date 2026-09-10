@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useTranslations } from "next-intl";
 
 import type { Product } from "@/features/products/types/product.types";
 import ProductInquiry from "./ProductInquiry";
@@ -12,6 +13,7 @@ interface ProductInquiryTriggerProps {
 export default function ProductInquiryTrigger({
   product,
 }: ProductInquiryTriggerProps) {
+  const t = useTranslations("Products");
   const [open, setOpen] = useState(false);
 
   return (
@@ -21,7 +23,7 @@ export default function ProductInquiryTrigger({
         onClick={() => setOpen(true)}
         className="rounded-lg bg-cyan-600 px-5 py-3 text-sm font-semibold text-white transition hover:bg-cyan-700 focus:ring-2 focus:ring-cyan-500 focus:ring-offset-2 focus:outline-none"
       >
-        Inquiry
+        {t("inquiry")}
       </button>
 
       {open && (

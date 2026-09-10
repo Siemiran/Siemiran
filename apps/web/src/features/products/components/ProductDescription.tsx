@@ -1,4 +1,5 @@
 import type { Product } from "@/features/products/types/product.types";
+import { useTranslations } from "next-intl";
 
 interface ProductDescriptionProps {
   description?: Product["description"];
@@ -7,6 +8,8 @@ interface ProductDescriptionProps {
 export default function ProductDescription({
   description,
 }: ProductDescriptionProps) {
+  const t = useTranslations("Product");
+
   if (!description?.trim()) {
     return null;
   }
@@ -20,10 +23,13 @@ export default function ProductDescription({
         id="product-description-title"
         className="text-xl font-bold text-slate-900"
       >
-        Product Description
+        {t("description")}
       </h2>
 
-      <p className="mt-4 text-sm leading-7 whitespace-pre-line text-slate-600">
+      <p
+        dir="ltr"
+        className="mt-4 text-sm leading-7 whitespace-pre-line text-slate-600"
+      >
         {description}
       </p>
     </section>

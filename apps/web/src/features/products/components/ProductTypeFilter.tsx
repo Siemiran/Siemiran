@@ -1,5 +1,7 @@
 "use client";
 
+import { useTranslations } from "next-intl";
+
 interface Props {
   productTypes: string[];
   value: string;
@@ -11,13 +13,15 @@ export default function ProductTypeFilter({
   value,
   onChange,
 }: Props) {
+  const t = useTranslations("Products");
+
   return (
     <div className="flex items-center gap-3">
       <label
         htmlFor="productType"
         className="text-sm font-medium text-slate-700"
       >
-        Product Type
+        {t("productType")}
       </label>
 
       <select
@@ -26,10 +30,10 @@ export default function ProductTypeFilter({
         onChange={(e) => onChange(e.target.value)}
         className="rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm transition outline-none focus:border-cyan-600"
       >
-        <option value="all">All Product Types</option>
+        <option value="all">{t("allProductTypes")}</option>
 
         {productTypes.map((item) => (
-          <option key={item} value={item}>
+          <option key={item} value={item} dir="ltr">
             {item}
           </option>
         ))}

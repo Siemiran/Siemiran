@@ -1,16 +1,19 @@
+import { useTranslations } from "next-intl";
+
 export default function Pillars() {
+  const t = useTranslations("Home");
   const items = [
     {
-      title: "Industrial Automation",
-      desc: "PLC, HMI, SCADA & Drives",
+      title: t("automationTitle"),
+      desc: t("automationDescription"),
     },
     {
-      title: "Electrical Equipment",
-      desc: "LV & MV Distribution",
+      title: t("electricalTitle"),
+      desc: t("electricalDescription"),
     },
     {
-      title: "Instrumentation",
-      desc: "Process Measurement",
+      title: t("instrumentationTitle"),
+      desc: t("instrumentationDescription"),
     },
   ];
 
@@ -18,10 +21,12 @@ export default function Pillars() {
     <section className="bg-slate-50 py-24">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mb-14 text-center">
-          <h2 className="text-4xl font-bold text-slate-900">Our Expertise</h2>
+          <h2 className="text-4xl font-bold text-slate-900">
+            {t("expertiseTitle")}
+          </h2>
 
           <p className="mt-4 text-slate-500">
-            Three core business areas of SIEMIRAN
+            {t("expertiseDescription")}
           </p>
         </div>
 

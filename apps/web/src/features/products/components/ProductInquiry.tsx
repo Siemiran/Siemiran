@@ -1,6 +1,7 @@
 "use client";
 
 import { FormEvent, useState } from "react";
+import { useTranslations } from "next-intl";
 
 import type { Product } from "@/features/products/types/product.types";
 import type { ProductInquiryInput } from "../lib/inquiry.schema";
@@ -15,6 +16,7 @@ export default function ProductInquiry({
   product,
   onClose,
 }: ProductInquiryProps) {
+  const t = useTranslations("Inquiry");
   const [quantity, setQuantity] = useState("1");
   const [name, setName] = useState("");
   const [company, setCompany] = useState("");
@@ -28,6 +30,35 @@ export default function ProductInquiry({
 
   const [submitting, setSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState("");
+
+  function localizeValidationErrors(
+    validationErrors: Partial<Record<keyof ProductInquiryInput, string>>,
+    input: ProductInquiryInput,
+  ) {
+    const localizedErrors: Partial<
+      Record<keyof ProductInquiryInput, string>
+    > = {};
+
+    if (validationErrors.quantity) {
+      localizedErrors.quantity = t("validation.quantityMin");
+    }
+
+    if (validationErrors.name) {
+      localizedErrors.name = t("validation.nameRequired");
+    }
+
+    if (validationErrors.email) {
+      localizedErrors.email = input.email.trim()
+        ? t("validation.emailInvalid")
+        : t("validation.emailRequired");
+    }
+
+    const hasUnmappedErrors = Object.keys(validationErrors).some(
+      (field) => !["quantity", "name", "email"].includes(field),
+    );
+
+    return { localizedErrors, hasUnmappedErrors };
+  }
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -47,7 +78,14 @@ export default function ProductInquiry({
     const result = validateProductInquiry(input);
 
     if (!result.valid) {
-      setErrors(result.errors);
+      const { localizedErrors, hasUnmappedErrors } =
+        localizeValidationErrors(result.errors, input);
+      setErrors(localizedErrors);
+      setSubmitError(
+        hasUnmappedErrors || Object.keys(localizedErrors).length === 0
+          ? t("submitError")
+          : "",
+      );
       return;
     }
 
@@ -64,25 +102,37 @@ export default function ProductInquiry({
         body: JSON.stringify(input),
       });
 
-      const data = (await response.json()) as {
+      let data: {
         success?: boolean;
         message?: string;
         errors?: Partial<Record<keyof ProductInquiryInput, string>>;
       };
 
+      try {
+        data = (await response.json()) as typeof data;
+      } catch {
+        setSubmitError(t("submitError"));
+        return;
+      }
+
       if (!response.ok || !data.success) {
         if (data.errors) {
-          setErrors(data.errors);
+          const { localizedErrors, hasUnmappedErrors } =
+            localizeValidationErrors(data.errors, input);
+          setErrors(localizedErrors);
+          setSubmitError(
+            hasUnmappedErrors || Object.keys(localizedErrors).length === 0
+              ? t("submitError")
+              : "",
+          );
+        } else {
+          setSubmitError(t("submitError"));
         }
-
-        setSubmitError(data.message || "Unable to submit the inquiry.");
 
         return;
       }
     } catch {
-      setSubmitError(
-        "Unable to connect to the inquiry service. Please try again."
-      );
+      setSubmitError(t("connectionError"));
     } finally {
       setSubmitting(false);
     }
@@ -100,11 +150,11 @@ export default function ProductInquiry({
               id="product-inquiry-title"
               className="text-xl font-bold text-slate-900"
             >
-              Product Inquiry
+              {t("title")}
             </h2>
 
             <p className="mt-1 text-sm text-slate-500">
-              Request information or a quotation for this product.
+              {t("description")}
             </p>
           </div>
 
@@ -112,7 +162,7 @@ export default function ProductInquiry({
             <button
               type="button"
               onClick={onClose}
-              aria-label="Close inquiry form"
+              aria-label={t("close")}
               className="rounded-lg px-2 py-1 text-xl leading-none text-slate-400 hover:bg-slate-100 hover:text-slate-700"
             >
               ×
@@ -122,11 +172,11 @@ export default function ProductInquiry({
 
         <div className="mt-4 rounded-lg bg-slate-50 p-4">
           <p className="text-sm font-semibold text-slate-900">
-            {product.title}
+            <bdi dir="ltr">{product.title}</bdi>
           </p>
 
           <p className="mt-1 font-mono text-xs text-slate-500">
-            {product.partNumber}
+            <bdi dir="ltr">{product.partNumber}</bdi>
           </p>
         </div>
       </div>
@@ -145,13 +195,14 @@ export default function ProductInquiry({
             htmlFor="inquiry-quantity"
             className="block text-sm font-medium text-slate-700"
           >
-            Quantity
+            {t("quantity")}
           </label>
 
           <input
             id="inquiry-quantity"
             name="quantity"
             type="number"
+            dir="ltr"
             min="1"
             step="1"
             required
@@ -172,7 +223,7 @@ export default function ProductInquiry({
               htmlFor="inquiry-name"
               className="block text-sm font-medium text-slate-700"
             >
-              Name
+              {t("name")}
             </label>
 
             <input
@@ -197,7 +248,7 @@ export default function ProductInquiry({
               htmlFor="inquiry-company"
               className="block text-sm font-medium text-slate-700"
             >
-              Company
+              {t("company")}
             </label>
 
             <input
@@ -218,13 +269,14 @@ export default function ProductInquiry({
               htmlFor="inquiry-email"
               className="block text-sm font-medium text-slate-700"
             >
-              Email
+              {t("email")}
             </label>
 
             <input
               id="inquiry-email"
               name="email"
               type="email"
+              dir="ltr"
               autoComplete="email"
               required
               value={email}
@@ -243,13 +295,14 @@ export default function ProductInquiry({
               htmlFor="inquiry-phone"
               className="block text-sm font-medium text-slate-700"
             >
-              Phone
+              {t("phone")}
             </label>
 
             <input
               id="inquiry-phone"
               name="phone"
               type="tel"
+              dir="ltr"
               autoComplete="tel"
               value={phone}
               onChange={(event) => setPhone(event.target.value)}
@@ -263,7 +316,7 @@ export default function ProductInquiry({
             htmlFor="inquiry-message"
             className="block text-sm font-medium text-slate-700"
           >
-            Message
+            {t("message")}
           </label>
 
           <textarea
@@ -272,7 +325,7 @@ export default function ProductInquiry({
             rows={5}
             value={message}
             onChange={(event) => setMessage(event.target.value)}
-            placeholder="Tell us what you need..."
+            placeholder={t("messagePlaceholder")}
             className="mt-1.5 w-full resize-y rounded-lg border border-slate-300 px-3 py-2.5 text-sm outline-none focus:border-cyan-500 focus:ring-2 focus:ring-cyan-100"
           />
         </div>
@@ -282,7 +335,7 @@ export default function ProductInquiry({
           disabled={submitting}
           className="w-full rounded-lg bg-cyan-600 px-4 py-3 text-sm font-semibold text-white transition hover:bg-cyan-700 focus:ring-2 focus:ring-cyan-500 focus:ring-offset-2 focus:outline-none disabled:cursor-not-allowed disabled:opacity-60"
         >
-          {submitting ? "Submitting..." : "Submit Inquiry"}
+          {submitting ? t("submitting") : t("submit")}
         </button>
       </form>
     </section>

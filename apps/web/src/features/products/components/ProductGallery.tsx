@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 
 interface Props {
   images: string[];
@@ -9,6 +10,7 @@ interface Props {
 }
 
 export default function ProductGallery({ images, alt }: Props) {
+  const t = useTranslations("Product");
   const [selected, setSelected] = useState(0);
   const [zoomOpen, setZoomOpen] = useState(false);
 
@@ -61,9 +63,9 @@ export default function ProductGallery({ images, alt }: Props) {
           <button
             type="button"
             onClick={() => setZoomOpen(false)}
-            className="absolute top-6 right-6 rounded-lg bg-white px-4 py-2 text-sm font-medium text-slate-900 shadow hover:bg-slate-100"
+            className="absolute top-6 end-6 rounded-lg bg-white px-4 py-2 text-sm font-medium text-slate-900 shadow hover:bg-slate-100"
           >
-            ✕ Close
+            ✕ {t("close")}
           </button>
 
           <div
