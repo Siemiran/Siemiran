@@ -2,9 +2,44 @@
 
 Repository source of truth: current `main` branch
 
-Last synchronized: 2026-09-10
+Last synchronized: 2026-09-11
 
-## 2026-09-10 - Task BH: FA/EN Routing Foundation Verified (Current State)
+## 2026-09-11 - Tasks BK-BL: Inactive Persian Product-copy Infrastructure Verified (Current State)
+
+PR #50 squash-merged Task BK as
+`c37272e4da8e7a7f509b917eacff833fea6b58b9`, and Task BL independently
+verified the merged implementation with a **PASS** verdict.
+
+The typed Product-copy foundation is implemented under
+`apps/web/src/features/products/copy/`. Registry, validation, technical-token
+policy, publication, resolution, and rendering remain server-only; deterministic
+serialization helpers are separate. Product-copy itself is not complete or
+active: the registry is 0/382, publication is disabled, no consumer is wired,
+and both locales retain canonical English Product descriptions. No Persian
+Product descriptions have been drafted or published.
+
+Activation fails closed unless exactly 382/382 canonical IDs have current
+linguistic and technical approvals bound to deterministic content hashes. The
+harness verifies mutation isolation, runtime-authenticated capabilities and
+resolved-copy objects, malformed inputs, timestamps, normalization, the
+approved `زیمیران`/`SIEMIRAN` brand policy, canonical bidi-isolated technical
+tokens, the exact ten lifecycle omissions, and full coverage.
+
+The canonical baseline remains 382 Products, S7-300 196/196, and S7-1200
+186/186. Lint, TypeScript, the Product-copy harness, the production build, all
+382 Persian and 382 English Product paths, and 774/774 static generation
+passed. The supported production smoke invocation passed. The explicit
+`127.0.0.1` bind caveat is framework/runtime-specific; no routing workaround or
+dependency downgrade was adopted. English remains `noindex, follow`, while
+reciprocal hreflang and localized sitemap coverage remain deferred.
+
+The next implementation milestone is to connect the resolver to every
+Product-copy consumer while publication remains disabled and prove unchanged
+canonical output in visible UI, Metadata, OpenGraph/Twitter, JSON-LD, Product
+cards, related Products, and search. Public Persian copy activation must not
+begin in that milestone.
+
+## 2026-09-10 - Task BH: FA/EN Routing Foundation Verified (Historical Snapshot)
 
 Task BG delivered the Persian/English routing foundation and was squash-merged
 through PR #48 as `7118bf35f4935b732413e6d1709c807e7c0f34f8`.
@@ -149,8 +184,24 @@ the inventory before this approved deletion, not a valid current record.
 - Technical-token isolation and automatic direction for localized comparison
   values and Product-description presentation
 
-Persian Product-copy overlays, English indexing activation, reciprocal
-hreflang, and localized sitemap coverage remain future gates.
+Persian Product-copy infrastructure is implemented but inactive. Product-copy
+consumer integration, drafting, review, the exact 382/382 activation gate,
+English indexing activation, reciprocal hreflang, and localized sitemap
+coverage remain future gates.
+
+## Completed Inactive Product-copy Infrastructure
+
+- Typed `text` and `technical` segment model with canonical technical-token
+  isolation
+- Server-only registry, validation, publication, resolution, and rendering
+  boundary
+- Immutable validated snapshots and runtime-authenticated activation and
+  resolved-copy objects
+- Deterministic content hashes binding current linguistic and technical
+  approvals
+- Exact 382/382 atomic activation gate and exact-ten lifecycle-omission
+  invariant
+- Empty 0/382 registry with publication disabled and no connected consumers
 
 ## Completed Product Experience
 
@@ -474,6 +525,9 @@ after Task Y merge.
 - Latest local ESLint check: PASS
 - Latest local TypeScript check: PASS
 - Latest local production build: PASS
+- Product-copy validation harness: PASS
+- Static generation: 774/774
+- Supported production smoke invocation: PASS
 - Automated test baseline: NOT ESTABLISHED
 - CI/CD: NOT ESTABLISHED
 
@@ -486,6 +540,11 @@ All six S7-300 source groups are connected with complete Product coverage at
 196/196, and S7-1200 remains complete at 186/186. The current remaining S7-300
 concern is lifecycle provenance only: 10 records are explicitly `unverified`
 and expose no public lifecycle value. Product integration is not pending.
+
+The inactive Persian Product-copy infrastructure is verified, with a 0/382
+registry and publication disabled. Product-copy consumer integration, drafting,
+linguistic and technical approval, the complete 382/382 activation gate, public
+activation, and bilingual SEO activation remain pending in that order.
 
 ## 2026-09-04 — Function Module Source/Lifecycle Progress
 
