@@ -3,6 +3,50 @@
 This file records completed repository changes. Connection status refers to the
 implementation on the current `main` branch.
 
+## 2026-09-11 - Tasks BK-BL: Add and Verify Inactive Persian Product-copy Infrastructure
+
+### Changed
+
+- Added the typed Product-copy model under
+  `apps/web/src/features/products/copy/`, with explicit `text` and `technical`
+  segments and separate linguistic and technical review records.
+- Added server-only registry, validation, technical-token-policy, publication,
+  locale-resolution, and rendering boundaries, plus separate deterministic
+  serialization helpers.
+- Added deterministic content hashing, immutable validated publication
+  snapshots, runtime-authenticated activation capabilities and resolved-copy
+  objects, and an exact 382/382 atomic activation gate.
+- Added fail-closed enforcement for Product identity and coverage, review
+  currency, malformed content, timestamps, Unicode normalization, brand usage,
+  technical tokens, bidi safety, and the established lifecycle omissions.
+- Added the `validate:product-copy` command and its verification harness.
+- Committed the registry empty and the publication state disabled.
+
+### Verified
+
+- Task BL returned **PASS** against PR #50's squash commit
+  `c37272e4da8e7a7f509b917eacff833fea6b58b9`.
+- The Product-copy validation harness, ESLint, TypeScript no-emit, and the
+  production build passed.
+- Static generation completed 774/774, including 382 Persian and 382 English
+  Product-detail paths.
+- The registry is 0/382 and publication is disabled.
+- The exact established set of ten lifecycle omissions remains enforced.
+- Fail-closed mutation, forged-capability, forged-resolved-copy, malformed-input,
+  timestamp, normalization, brand, token, lifecycle, and coverage checks passed.
+- The supported production smoke contract passed.
+
+### State
+
+- No Persian Product copy was authored, and no Product-copy consumer was wired.
+- No canonical Product or Siemens source data changed.
+- No publication or bilingual SEO activation occurred; English remains
+  `noindex, follow`, and hreflang/localized sitemap work remains deferred.
+- Explicit binding to `127.0.0.1` has a framework/runtime-specific
+  rewrite-origin caveat for unprefixed default-locale routes.
+- No routing workaround or dependency downgrade was adopted because a supported
+  production invocation passes.
+
 ## 2026-09-10 - Tasks BG-BH: Add and Verify FA/EN Routing Foundation
 
 ### Changed

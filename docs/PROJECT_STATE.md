@@ -1,6 +1,39 @@
 # Siemiran — Project State
 
-## 2026-09-10 - Task BH: FA/EN Routing Foundation Verified (Current State)
+## 2026-09-11 - Tasks BK-BL: Inactive Persian Product-copy Infrastructure Verified (Current State)
+
+PR #50 squash-merged Task BK as
+`c37272e4da8e7a7f509b917eacff833fea6b58b9`, and Task BL independently
+verified that merged state with a **PASS** verdict.
+
+The typed Persian Product-copy infrastructure exists under
+`apps/web/src/features/products/copy/`, but it remains inactive. Its registry is
+0/382, publication is disabled, and no UI, Metadata, OpenGraph/Twitter,
+JSON-LD, Product-card, related-Product, or search consumer is wired to the
+resolver. Both locales therefore continue to display canonical English Product
+descriptions. No Persian Product descriptions have been drafted or published.
+
+Public activation remains atomic and requires exactly 382/382 overlays with
+current linguistic and technical approvals bound to deterministic content
+hashes. The server-only boundary fails closed for mutation, forged capability
+or resolved-copy objects, malformed input, invalid timestamps, normalization,
+brand, technical-token, lifecycle-omission, and coverage violations. Technical
+identifiers remain canonical and bidi-isolated, and the exact ten established
+lifecycle omissions remain invariant.
+
+Canonical counts and routes are unchanged: 382 Products, S7-300 196/196,
+S7-1200 186/186, 382 Persian Product paths, 382 English Product paths, and a
+774/774 production build. The Product-copy validation harness passed, together
+with lint and TypeScript. The supported production smoke invocation passed;
+the explicit `127.0.0.1` bind has a framework/runtime-specific rewrite-origin
+caveat, so no application routing workaround or dependency downgrade was
+added.
+
+The approved names remain `زیمیران` in Persian and `SIEMIRAN` in English.
+English remains `noindex, follow`; reciprocal hreflang and localized sitemap
+coverage remain deferred. No bilingual SEO activation has started.
+
+## 2026-09-10 - Task BH: FA/EN Routing Foundation Verified (Historical Snapshot)
 
 Task BG added the Persian/English routing foundation and was squash-merged
 through PR #48 as `7118bf35f4935b732413e6d1709c807e7c0f34f8`.
@@ -143,7 +176,7 @@ the inventory before this approved deletion, not a valid current record.
 ## Current Baseline
 
 - Status: Active Development
-- Documentation synchronized: 2026-09-10
+- Documentation synchronized: 2026-09-11
 - Repository source of truth: current `main` branch
 - No semantic release version is asserted by this document.
 
@@ -166,7 +199,8 @@ the inventory before this approved deletion, not a valid current record.
   and `en` routes under `/en`
 - Shared UI under `apps/web/src/components`
 - Product feature areas: components, comparison, data, database, filters, hooks,
-  lib, pagination, repository, sections, sorting, and types
+  lib, pagination, repository, sections, sorting, types, and the inactive
+  server-only Product-copy infrastructure under `copy/`
 - `legacy/` is read-only and is not part of the current Next.js application
 
 ## Product Platform
@@ -175,6 +209,7 @@ the inventory before this approved deletion, not a valid current record.
 | --- | --- | --- |
 | Product listing and dynamic detail pages | IMPLEMENTED | Repository-backed listing, static product paths, and not-found handling |
 | Localization foundation | IMPLEMENTED | Persian-first FA/EN routing, matching UI catalogs, one-click equivalent-page switching, locale direction, and temporarily noindexed English routes |
+| Persian Product-copy infrastructure | INACTIVE | Typed server-only validation/resolution foundation; registry 0/382, publication disabled, and no consumer integration |
 | Search, URL parameters, filters, sorting, pagination | IMPLEMENTED | Category, family, series, and product-type filters; 12-item pagination |
 | Gallery and specifications | IMPLEMENTED | Product gallery/image UI and technical specification rendering |
 | SEO and structured data | IMPLEMENTED | Metadata, canonical/Open Graph/Twitter fields, Product JSON-LD, breadcrumbs, and Breadcrumb JSON-LD |
@@ -423,6 +458,9 @@ each milestone was recorded; they are not the current connection state.
 - ESLint: PASS
 - TypeScript (`tsc --noEmit`): PASS
 - Production build: PASS
+- Product-copy validation harness: PASS
+- Static generation: 774/774
+- Supported production smoke invocation: PASS
 - Automated tests: NOT ESTABLISHED
 - GitHub Actions CI/CD: NOT FOUND
 

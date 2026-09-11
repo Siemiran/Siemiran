@@ -1,6 +1,6 @@
 # Siemiran — Roadmap
 
-Baseline: `main` at `7118bf35f4935b732413e6d1709c807e7c0f34f8`
+Baseline: `main` at `c37272e4da8e7a7f509b917eacff833fea6b58b9`
 
 This roadmap distinguishes the completed repository baseline from future
 priorities. Ordering expresses current priority, not a finalized implementation
@@ -18,18 +18,26 @@ design or semantic release schedule.
 - Static generation completes 774/774.
 - UI catalogs contain 123 matched messages per locale.
 - English routes remain temporarily `noindex, follow`.
+- The inactive typed Product-copy infrastructure is merged and independently
+  verified.
+- Its server-only validation, publication, and resolution foundation fails
+  closed, with immutable snapshots and runtime-authenticated boundaries.
+- The Product-copy registry is 0/382 and publication is disabled.
 
-## 1. Persian Product-copy Overlay and Quality Gate
+## 1. Persian Product-copy Integration, Drafting, and Activation
 
-- Add a typed presentation overlay keyed by stable Product ID.
-- Provide accurate Persian short and long descriptive prose while keeping
-  canonical Product/source data unchanged.
-- Preserve technical tokens in English and keep them bidi-isolated.
-- Require human linguistic and technical approval.
-- Gate production readiness on 382/382 approved Persian Product copies.
-- Draft and review Product copy in controlled batches, but do not publicly
-  activate a partial Persian Product-copy overlay before all 382/382 Products
-  pass linguistic and technical approval.
+1. Wire the resolver into all Product-copy consumers while publication remains
+   disabled and prove unchanged canonical output across visible UI, Metadata,
+   OpenGraph/Twitter, JSON-LD, Product cards, related Products, and search.
+2. Ensure search and comparison persistence use safe locale-aware presentation
+   boundaries without shipping drafts or reviewer data.
+3. Draft accurate Persian Product copy in controlled batches while keeping
+   canonical Product/source data unchanged and canonical technical tokens
+   bidi-isolated.
+4. Complete linguistic and technical review with approvals bound to the current
+   deterministic content hash.
+5. Pass the complete, exact 382/382 activation gate.
+6. Activate Persian Product copy atomically, with no partial publication.
 
 ## 2. Bilingual SEO Activation
 
@@ -77,5 +85,7 @@ design or semantic release schedule.
 - Keep CMS, API, database, and cache evaluation as future architecture
   decisions.
 
-Product translation, bilingual SEO activation, inquiry delivery, CI/CD,
-download population, and another Siemens-series expansion are not complete.
+Product-copy consumer integration, Persian drafting and review, the 382/382
+activation gate, atomic publication, bilingual SEO activation, inquiry
+delivery, CI/CD, download population, and another Siemens-series expansion are
+not complete. The underlying inactive Product-copy infrastructure is complete.
