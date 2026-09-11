@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "validate:product-copy": "node --conditions=react-server src/features/products/copy/product-copy.verify.cjs"
   },
   "dependencies": {
     "@radix-ui/react-slot": "^1.3.1",
