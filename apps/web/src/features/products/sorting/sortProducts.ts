@@ -1,29 +1,35 @@
-import type { Product } from "../types/product.types";
+import type { ProductListItemViewModel } from "../copy/product-copy.public-types";
 
 export type ProductSortType =
   "default" | "name-asc" | "name-desc" | "featured" | "newest" | "oldest";
 
 export function sortProducts(
-  products: Product[],
+  items: ProductListItemViewModel[],
   sort: ProductSortType
-): Product[] {
-  const result = [...products];
+): ProductListItemViewModel[] {
+  const result = [...items];
 
   switch (sort) {
     case "name-asc":
-      return result.sort((a, b) => a.title.localeCompare(b.title));
+      return result.sort((a, b) =>
+        a.product.title.localeCompare(b.product.title)
+      );
 
     case "name-desc":
-      return result.sort((a, b) => b.title.localeCompare(a.title));
+      return result.sort((a, b) =>
+        b.product.title.localeCompare(a.product.title)
+      );
 
     case "featured":
-      return result.sort((a, b) => Number(b.featured) - Number(a.featured));
+      return result.sort(
+        (a, b) => Number(b.product.featured) - Number(a.product.featured)
+      );
 
     case "newest":
-      return result.sort((a, b) => b.id.localeCompare(a.id));
+      return result.sort((a, b) => b.product.id.localeCompare(a.product.id));
 
     case "oldest":
-      return result.sort((a, b) => a.id.localeCompare(b.id));
+      return result.sort((a, b) => a.product.id.localeCompare(b.product.id));
 
     default:
       return result;

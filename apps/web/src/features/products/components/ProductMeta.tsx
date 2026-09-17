@@ -1,10 +1,13 @@
-import type { Product } from "@/features/products/types/product.types";
+import { PublicProductCopyInline } from "@/features/products/copy/PublicProductCopyText";
+import type { ProductListItemViewModel } from "@/features/products/copy/product-copy.public-types";
 
 interface ProductMetaProps {
-  product: Product;
+  item: ProductListItemViewModel;
 }
 
-export default function ProductMeta({ product }: ProductMetaProps) {
+export default function ProductMeta({ item }: ProductMetaProps) {
+  const { product, copy } = item;
+
   return (
     <div className="space-y-3 p-5">
       <p className="text-sm font-semibold tracking-wide text-cyan-600 uppercase">
@@ -20,7 +23,11 @@ export default function ProductMeta({ product }: ProductMetaProps) {
       </p>
 
       <p dir="auto" className="line-clamp-2 text-sm leading-6 text-slate-600">
-        {product.shortDescription}
+        <PublicProductCopyInline
+          language={copy.language}
+          direction={copy.direction}
+          paragraph={copy.shortDescription}
+        />
       </p>
 
       <div className="flex flex-wrap gap-2 pt-2">

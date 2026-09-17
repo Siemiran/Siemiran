@@ -1,20 +1,18 @@
-import type { Product } from "../types/product.types";
+import type { ProductListItemViewModel } from "../copy/product-copy.public-types";
 
 export function filterByCategory(
-  products: Product[],
-  category?: string,
+  items: ProductListItemViewModel[],
+  category?: string
 ) {
   if (!category || category === "all") {
-    return products;
+    return items;
   }
 
-  return products.filter(
-    (product) => product.categoryId === category,
-  );
+  return items.filter((item) => item.product.categoryId === category);
 }
 
-export function getCategories(products: Product[]) {
+export function getCategories(items: readonly ProductListItemViewModel[]) {
   return Array.from(
-    new Set(products.map((p) => p.categoryId)),
+    new Set(items.map((item) => item.product.categoryId))
   ).sort();
 }

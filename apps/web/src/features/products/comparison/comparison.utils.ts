@@ -1,33 +1,33 @@
-import type { Product } from "../types/product.types";
+import type { ProductId } from "../copy/product-copy.public-types";
 
 export const MAX_COMPARISON_PRODUCTS = 4;
 
 export function addComparisonProduct(
-  products: Product[],
-  product: Product,
+  productIds: readonly ProductId[],
+  productId: ProductId,
   maxProducts = MAX_COMPARISON_PRODUCTS
-): Product[] {
-  if (products.some((item) => item.id === product.id)) {
-    return products;
+): ProductId[] {
+  if (productIds.includes(productId)) {
+    return [...productIds];
   }
 
-  if (products.length >= maxProducts) {
-    return products;
+  if (productIds.length >= maxProducts) {
+    return [...productIds];
   }
 
-  return [...products, product];
+  return [...productIds, productId];
 }
 
 export function removeComparisonProduct(
-  products: Product[],
-  productId: string
-): Product[] {
-  return products.filter((product) => product.id !== productId);
+  productIds: readonly ProductId[],
+  productId: ProductId
+): ProductId[] {
+  return productIds.filter((id) => id !== productId);
 }
 
 export function hasComparisonProduct(
-  products: Product[],
-  productId: string
+  productIds: readonly ProductId[],
+  productId: ProductId
 ): boolean {
-  return products.some((product) => product.id === productId);
+  return productIds.includes(productId);
 }

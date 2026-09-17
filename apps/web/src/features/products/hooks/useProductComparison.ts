@@ -1,8 +1,22 @@
 "use client";
 
-import { useCallback, useEffect, useState } from "react";
+import {
+  useCallback,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+  useSyncExternalStore,
+} from "react";
 
-import type { Product } from "../types/product.types";
+import type {
+  ProductId,
+  ProductListItemViewModel,
+} from "../copy/product-copy.public-types";
+import {
+  createBrowserComparisonStorageAdapter,
+  migrateStoredComparisonIds,
+} from "../comparison/comparison-storage";
 
 import {
   addComparisonProduct,
@@ -11,57 +25,89 @@ import {
   MAX_COMPARISON_PRODUCTS,
 } from "../comparison/comparison.utils";
 
-const STORAGE_KEY = "siemiran:product-comparison";
+const subscribeToHydration = () => () => undefined;
+const getHydratedSnapshot = () => true;
+const getServerHydrationSnapshot = () => false;
 
-function getStoredProducts(): Product[] {
-  if (typeof window === "undefined") {
-    return [];
-  }
-
-  try {
-    const stored = window.localStorage.getItem(STORAGE_KEY);
-
-    if (!stored) {
-      return [];
-    }
-
-    const parsed: unknown = JSON.parse(stored);
-
-    return Array.isArray(parsed) ? (parsed as Product[]) : [];
-  } catch {
-    return [];
-  }
+interface UseProductComparisonOptions {
+  readonly catalog: readonly ProductListItemViewModel[];
 }
 
-export function useProductComparison() {
-  const [products, setProducts] = useState<Product[]>(getStoredProducts);
+export function useProductComparison({ catalog }: UseProductComparisonOptions) {
+  const catalogById = useMemo(
+    () => new Map(catalog.map((item) => [item.product.id, item])),
+    [catalog]
+  );
+  const validIds = useMemo(
+    () => new Set<ProductId>(catalogById.keys()),
+    [catalogById]
+  );
+  const [comparisonStorage] = useState(() =>
+    createBrowserComparisonStorageAdapter()
+  );
+  const storageReadStarted = useRef(false);
+  const [storageReadComplete, setStorageReadComplete] = useState(false);
+  const [storedProductIds, setStoredProductIds] = useState<ProductId[]>([]);
+  const productIds = useMemo(
+    () => migrateStoredComparisonIds(storedProductIds, validIds),
+    [storedProductIds, validIds]
+  );
+  const hydrated = useSyncExternalStore(
+    subscribeToHydration,
+    getHydratedSnapshot,
+    getServerHydrationSnapshot
+  );
 
-  const addProduct = useCallback((product: Product) => {
-    setProducts((currentProducts) =>
-      addComparisonProduct(currentProducts, product, MAX_COMPARISON_PRODUCTS)
-    );
-  }, []);
+  const addProduct = useCallback(
+    (productId: ProductId) => {
+      setStoredProductIds((currentIds) =>
+        addComparisonProduct(
+          migrateStoredComparisonIds(currentIds, validIds),
+          productId,
+          MAX_COMPARISON_PRODUCTS
+        )
+      );
+    },
+    [validIds]
+  );
 
-  const removeProduct = useCallback((productId: string) => {
-    setProducts((currentProducts) =>
-      removeComparisonProduct(currentProducts, productId)
+  const removeProduct = useCallback((productId: ProductId) => {
+    setStoredProductIds((currentIds) =>
+      removeComparisonProduct(currentIds, productId)
     );
   }, []);
 
   const clearProducts = useCallback(() => {
-    setProducts([]);
+    setStoredProductIds([]);
   }, []);
 
   const hasProduct = useCallback(
-    (productId: string) => hasComparisonProduct(products, productId),
-    [products]
+    (productId: ProductId) =>
+      hydrated && hasComparisonProduct(productIds, productId),
+    [hydrated, productIds]
   );
 
   useEffect(() => {
-    window.localStorage.setItem(STORAGE_KEY, JSON.stringify(products));
-  }, [products]);
+    if (storageReadStarted.current) return;
+
+    storageReadStarted.current = true;
+    setStoredProductIds(comparisonStorage.read(validIds));
+    setStorageReadComplete(true);
+  }, [comparisonStorage, validIds]);
+
+  useEffect(() => {
+    if (!storageReadComplete) return;
+
+    comparisonStorage.write(productIds);
+  }, [comparisonStorage, productIds, storageReadComplete]);
+
+  const products = (hydrated ? productIds : []).flatMap((id) => {
+    const item = catalogById.get(id);
+    return item ? [item] : [];
+  });
 
   return {
+    productIds,
     products,
     maxProducts: MAX_COMPARISON_PRODUCTS,
     addProduct,

@@ -1,24 +1,24 @@
-import type { Product } from "@/features/products/types/product.types";
+import type { ProductListItemViewModel } from "@/features/products/copy/product-copy.public-types";
 import { useTranslations } from "next-intl";
 
 interface Props {
-  products: Product[];
+  products: readonly ProductListItemViewModel[];
 }
 
 interface ComparisonRow {
   label: string;
-  getValue: (product: Product) => string;
+  getValue: (item: ProductListItemViewModel) => string;
 }
 
 function normalizeValue(value: string) {
   return value.trim().toLowerCase();
 }
 
-function getSpecificationKeys(products: Product[]) {
+function getSpecificationKeys(products: readonly ProductListItemViewModel[]) {
   const keys = new Set<string>();
 
-  products.forEach((product) => {
-    Object.keys(product.specifications ?? {}).forEach((key) => {
+  products.forEach((item) => {
+    Object.keys(item.product.specifications ?? {}).forEach((key) => {
       keys.add(key);
     });
   });
@@ -26,11 +26,11 @@ function getSpecificationKeys(products: Product[]) {
   return Array.from(keys).sort((a, b) => a.localeCompare(b));
 }
 
-function getSpecificationValue(product: Product, key: string) {
-  return product.specifications?.[key] ?? "—";
+function getSpecificationValue(item: ProductListItemViewModel, key: string) {
+  return item.product.specifications?.[key] ?? "—";
 }
 
-function getArrayValue(value?: string[]) {
+function getArrayValue(value?: readonly string[]) {
   if (!value || value.length === 0) {
     return "—";
   }
@@ -60,71 +60,74 @@ export default function ProductComparisonTable({ products }: Props) {
   const baseRows: ComparisonRow[] = [
     {
       label: productT("partNumber"),
-      getValue: (product) => product.partNumber,
+      getValue: (item) => item.product.partNumber,
     },
     {
       label: productT("manufacturerPartNumber"),
-      getValue: (product) => product.manufacturerPartNumber ?? "—",
+      getValue: (item) => item.product.manufacturerPartNumber ?? "—",
     },
     {
       label: productT("ean"),
-      getValue: (product) => product.ean ?? "—",
+      getValue: (item) => item.product.ean ?? "—",
     },
     {
       label: t("brand"),
-      getValue: (product) => product.brandId,
+      getValue: (item) => item.product.brandId,
     },
     {
       label: productT("category"),
-      getValue: (product) => product.categoryId,
+      getValue: (item) => item.product.categoryId,
     },
     {
       label: productT("family"),
-      getValue: (product) => product.familyId,
+      getValue: (item) => item.product.familyId,
     },
     {
       label: productT("series"),
-      getValue: (product) => product.seriesId ?? "—",
+      getValue: (item) => item.product.seriesId ?? "—",
     },
     {
       label: productT("productType"),
-      getValue: (product) => product.productTypeId ?? "—",
+      getValue: (item) => item.product.productTypeId ?? "—",
     },
     {
       label: t("lifecycle"),
-      getValue: (product) =>
-        product.lifecycle ? productT(product.lifecycle) : "—",
+      getValue: (item) =>
+        item.product.lifecycle ? productT(item.product.lifecycle) : "—",
     },
     {
       label: t("availability"),
-      getValue: (product) => {
-        if (product.inStock === undefined) return "—";
-        return product.inStock ? productT("inStock") : t("outOfStock");
+      getValue: (item) => {
+        if (item.product.inStock === undefined) return "—";
+        return item.product.inStock ? productT("inStock") : t("outOfStock");
       },
     },
     {
       label: t("featured"),
-      getValue: (product) => {
-        if (product.featured === undefined) return "—";
-        return product.featured ? t("yes") : t("no");
+      getValue: (item) => {
+        if (item.product.featured === undefined) return "—";
+        return item.product.featured ? t("yes") : t("no");
       },
     },
-    { label: t("tags"), getValue: (product) => getArrayValue(product.tags) },
+    {
+      label: t("tags"),
+      getValue: (item) => getArrayValue(item.product.tags),
+    },
     {
       label: t("compatibility"),
-      getValue: (product) => getArrayValue(product.compatibility),
+      getValue: (item) => getArrayValue(item.product.compatibility),
     },
     {
       label: productT("accessories"),
-      getValue: (product) => getArrayValue(product.accessories),
+      getValue: (item) => getArrayValue(item.product.accessories),
     },
     {
       label: t("relatedProducts"),
-      getValue: (product) => getArrayValue(product.relatedProducts),
+      getValue: (item) => getArrayValue(item.product.relatedProducts),
     },
     {
       label: productT("replacementProduct"),
-      getValue: (product) => product.replacementProduct ?? "—",
+      getValue: (item) => item.product.replacementProduct ?? "—",
     },
   ];
 
@@ -132,7 +135,7 @@ export default function ProductComparisonTable({ products }: Props) {
     ...baseRows,
     ...specificationKeys.map((key): ComparisonRow => ({
       label: key,
-      getValue: (product) => getSpecificationValue(product, key),
+      getValue: (item) => getSpecificationValue(item, key),
     })),
   ];
 
@@ -148,18 +151,18 @@ export default function ProductComparisonTable({ products }: Props) {
               {t("specification")}
             </th>
 
-            {products.map((product) => (
+            {products.map((item) => (
               <th
-                key={product.id}
+                key={item.product.id}
                 scope="col"
                 className="min-w-64 border-b border-slate-200 px-4 py-4 text-start align-top"
               >
                 <div className="font-semibold text-slate-900">
-                  <bdi dir="ltr">{product.title}</bdi>
+                  <bdi dir="ltr">{item.product.title}</bdi>
                 </div>
 
                 <div className="mt-1 text-xs font-normal text-slate-500">
-                  <bdi dir="ltr">{product.partNumber}</bdi>
+                  <bdi dir="ltr">{item.product.partNumber}</bdi>
                 </div>
               </th>
             ))}
@@ -168,7 +171,7 @@ export default function ProductComparisonTable({ products }: Props) {
 
         <tbody>
           {rows.map((row, rowIndex) => {
-            const values = products.map((product) => row.getValue(product));
+            const values = products.map((item) => row.getValue(item));
 
             const normalizedValues = values.map(normalizeValue);
 
@@ -193,7 +196,7 @@ export default function ProductComparisonTable({ products }: Props) {
 
                   return (
                     <td
-                      key={`${products[index].id}-${row.label}`}
+                      key={`${products[index].product.id}-${row.label}`}
                       className={[
                         "min-w-64 border-b border-slate-200 px-4 py-3 align-top",
                         isDifferent

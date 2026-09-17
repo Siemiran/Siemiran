@@ -1,24 +1,25 @@
 "use client";
 
-import type { Product } from "../types/product.types";
+import type { ProductListItemViewModel } from "../copy/product-copy.public-types";
 import { useTranslations } from "next-intl";
 
 interface Props {
-  product: Product;
+  item: ProductListItemViewModel;
   selected: boolean;
   disabled: boolean;
-  onAdd: (product: Product) => void;
+  onAdd: (productId: string) => void;
   onRemove: (productId: string) => void;
 }
 
 export default function ProductCompareButton({
-  product,
+  item,
   selected,
   disabled,
   onAdd,
   onRemove,
 }: Props) {
   const t = useTranslations("Comparison");
+  const { product } = item;
 
   function handleClick() {
     if (selected) {
@@ -27,7 +28,7 @@ export default function ProductCompareButton({
     }
 
     if (!disabled) {
-      onAdd(product);
+      onAdd(product.id);
     }
   }
 

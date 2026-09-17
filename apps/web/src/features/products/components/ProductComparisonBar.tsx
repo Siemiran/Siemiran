@@ -3,10 +3,10 @@
 import { Link } from "@/i18n/navigation";
 import { useTranslations } from "next-intl";
 
-import type { Product } from "../types/product.types";
+import type { ProductListItemViewModel } from "../copy/product-copy.public-types";
 
 interface Props {
-  products: Product[];
+  products: readonly ProductListItemViewModel[];
   maxProducts: number;
   onRemove: (productId: string) => void;
   onClear: () => void;
@@ -36,19 +36,19 @@ export default function ProductComparisonBar({
           </div>
 
           <div className="flex flex-wrap gap-2">
-            {products.map((product) => (
+            {products.map((item) => (
               <div
-                key={product.id}
+                key={item.product.id}
                 className="flex items-center gap-2 rounded-lg bg-slate-100 px-3 py-2 text-sm text-slate-700"
               >
                 <span className="max-w-48 truncate">
-                  <bdi dir="ltr">{product.title}</bdi>
+                  <bdi dir="ltr">{item.product.title}</bdi>
                 </span>
 
                 <button
                   type="button"
-                  onClick={() => onRemove(product.id)}
-                  aria-label={t("remove", { product: product.title })}
+                  onClick={() => onRemove(item.product.id)}
+                  aria-label={t("remove", { product: item.product.title })}
                   className="font-bold text-slate-500 transition hover:text-slate-900"
                 >
                   ×

@@ -1,20 +1,18 @@
-import type { Product } from "../types/product.types";
-
-export interface PaginatedProducts {
-  items: Product[];
+export interface PaginatedProducts<T> {
+  items: T[];
   currentPage: number;
   totalPages: number;
   totalItems: number;
   pageSize: number;
 }
 
-export function paginateProducts(
-  products: Product[],
+export function paginateProducts<T>(
+  items: readonly T[],
   page: number,
   pageSize: number
-): PaginatedProducts {
+): PaginatedProducts<T> {
   const safePageSize = Math.max(1, pageSize);
-  const totalItems = products.length;
+  const totalItems = items.length;
 
   const totalPages = Math.max(1, Math.ceil(totalItems / safePageSize));
 
@@ -25,7 +23,7 @@ export function paginateProducts(
   const endIndex = startIndex + safePageSize;
 
   return {
-    items: products.slice(startIndex, endIndex),
+    items: items.slice(startIndex, endIndex),
     currentPage,
     totalPages,
     totalItems,

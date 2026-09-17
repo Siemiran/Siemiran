@@ -12,6 +12,8 @@ import ProductInquiryTrigger from "@/features/products/components/ProductInquiry
 import ProductRelations from "@/features/products/components/ProductRelations";
 import ProductSpecifications from "@/features/products/components/ProductSpecifications";
 import RelatedProducts from "@/features/products/components/RelatedProducts";
+import { createProductListItemViewModels } from "@/features/products/copy/product-copy.public.server";
+import { resolveProductCopy } from "@/features/products/copy/product-copy.resolver";
 import { createBreadcrumbSchema } from "@/features/products/lib/breadcrumb.schema";
 import { getProductRelations } from "@/features/products/lib/product.relations";
 import { getRelatedProducts } from "@/features/products/lib/product.recommendation";
@@ -67,7 +69,8 @@ export default async function ProductPage({ params }: Props) {
   }
 
   const localePrefix = locale === "en" ? "/en" : "";
-  const schema = createProductSchema(product, locale);
+  const copy = resolveProductCopy(product, locale);
+  const schema = createProductSchema(product, copy, locale);
   const breadcrumbSchema = createBreadcrumbSchema([
     { label: t("home"), href: `${localePrefix}/` },
     { label: t("products"), href: `${localePrefix}/products` },
@@ -82,6 +85,7 @@ export default async function ProductPage({ params }: Props) {
   ]);
   const products = getProducts();
   const relatedProducts = getRelatedProducts(product, products);
+  const relatedItems = createProductListItemViewModels(relatedProducts, locale);
   const productRelations = getProductRelations(product, products);
 
   return (
@@ -113,20 +117,26 @@ export default async function ProductPage({ params }: Props) {
           <ProductGallery images={product.images} alt={product.title} />
 
           <div className="space-y-8">
-            <ProductHeader product={product} />
-            <ProductInquiryTrigger product={product} />
+            <ProductHeader product={product} copy={copy} />
+            <ProductInquiryTrigger
+              product={{
+                id: product.id,
+                title: product.title,
+                partNumber: product.partNumber,
+              }}
+            />
             <ProductSpecifications specifications={product.specifications} />
             <ProductDownloads downloads={product.downloads} />
           </div>
         </div>
 
-        <ProductDescription description={product.description} />
+        <ProductDescription copy={copy} />
         <ProductRelations
           compatibility={productRelations.compatibility}
           accessories={productRelations.accessories}
           replacementProduct={productRelations.replacementProduct}
         />
-        <RelatedProducts products={relatedProducts} />
+        <RelatedProducts items={relatedItems} />
       </section>
     </>
   );

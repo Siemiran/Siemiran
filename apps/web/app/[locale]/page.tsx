@@ -17,7 +17,7 @@ export default async function Home({ params }: HomePageProps) {
     <>
       <Hero />
       <BannerStrip />
-      <FeaturedProducts />
+      <FeaturedProducts locale={locale} />
       <Pillars />
     </>
   );

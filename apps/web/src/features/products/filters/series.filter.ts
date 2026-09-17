@@ -1,32 +1,30 @@
-import type { Product } from "../types/product.types";
+import type { ProductListItemViewModel } from "../copy/product-copy.public-types";
 
 export function getSeries(
-  products: Product[],
-  family?: string,
+  items: readonly ProductListItemViewModel[],
+  family?: string
 ): string[] {
   const source =
     family && family !== "all"
-      ? products.filter((p) => p.familyId === family)
-      : products;
+      ? items.filter((item) => item.product.familyId === family)
+      : items;
 
   return Array.from(
     new Set(
       source
-        .map((p) => p.seriesId)
-        .filter((series): series is string => Boolean(series)),
-    ),
+        .map((item) => item.product.seriesId)
+        .filter((series): series is string => Boolean(series))
+    )
   ).sort();
 }
 
 export function filterBySeries(
-  products: Product[],
-  series?: string,
+  items: ProductListItemViewModel[],
+  series?: string
 ) {
   if (!series || series === "all") {
-    return products;
+    return items;
   }
 
-  return products.filter(
-    (p) => p.seriesId === series,
-  );
+  return items.filter((item) => item.product.seriesId === series);
 }

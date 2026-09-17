@@ -8,23 +8,65 @@ import { assertResolverIssuedProductCopy } from "./product-copy.resolver";
 type ProductCopyField =
   "shortDescription" | "description" | "seoTitle" | "seoDescription";
 
-interface ProductCopyTextProps {
+interface ProductCopyInlineProps {
   readonly copy: Readonly<ResolvedProductCopy>;
-  readonly field: ProductCopyField;
+  readonly field: Exclude<ProductCopyField, "description">;
   readonly className?: string;
 }
 
-export default function ProductCopyText({
+interface ProductCopyBlockProps {
+  readonly copy: Readonly<ResolvedProductCopy>;
+  readonly field: "description";
+  readonly className?: string;
+  readonly paragraphClassName?: string;
+}
+
+function renderProductSegments(
+  paragraph: ResolvedProductCopy["shortDescription"]
+) {
+  return paragraph.map((segment, segmentIndex) => (
+    <Fragment key={segmentIndex}>
+      {segment.kind === "technical" ? (
+        <bdi dir="ltr" lang="en">
+          {segment.value}
+        </bdi>
+      ) : (
+        segment.value
+      )}
+    </Fragment>
+  ));
+}
+
+export function ProductCopyInline({
   copy,
   field,
   className,
-}: ProductCopyTextProps) {
+}: ProductCopyInlineProps) {
   assertResolverIssuedProductCopy(copy);
 
-  const paragraphs = field === "description" ? copy.description : [copy[field]];
   const isPersian = copy.source === "approved-fa";
 
-  if (paragraphs.length === 0) return null;
+  return (
+    <span
+      lang={isPersian ? "fa" : "en"}
+      dir={isPersian ? "rtl" : "ltr"}
+      className={className}
+    >
+      {renderProductSegments(copy[field])}
+    </span>
+  );
+}
+
+export function ProductCopyBlock({
+  copy,
+  className,
+  paragraphClassName,
+}: ProductCopyBlockProps) {
+  assertResolverIssuedProductCopy(copy);
+
+  const isPersian = copy.source === "approved-fa";
+
+  if (copy.description.length === 0) return null;
 
   return (
     <div
@@ -32,19 +74,9 @@ export default function ProductCopyText({
       dir={isPersian ? "rtl" : "ltr"}
       className={className}
     >
-      {paragraphs.map((paragraph, paragraphIndex) => (
-        <p key={paragraphIndex}>
-          {paragraph.map((segment, segmentIndex) => (
-            <Fragment key={segmentIndex}>
-              {segment.kind === "technical" ? (
-                <bdi dir="ltr" lang="en">
-                  {segment.value}
-                </bdi>
-              ) : (
-                segment.value
-              )}
-            </Fragment>
-          ))}
+      {copy.description.map((paragraph, paragraphIndex) => (
+        <p key={paragraphIndex} className={paragraphClassName}>
+          {renderProductSegments(paragraph)}
         </p>
       ))}
     </div>

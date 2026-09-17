@@ -1,8 +1,35 @@
 import { Children, isValidElement, type ReactNode } from "react";
 
 import { products } from "../data/products";
+import {
+  createComparisonStorageAdapter,
+  migrateStoredComparisonIds,
+  parseStoredComparisonIds,
+} from "../comparison/comparison-storage";
+import {
+  addComparisonProduct,
+  removeComparisonProduct,
+} from "../comparison/comparison.utils";
+import { getRelatedProducts } from "../lib/product.recommendation";
+import { createProductSchema } from "../lib/product.schema";
+import { createProductMetadata } from "../lib/product.seo";
+import {
+  matchesProductSearch,
+  normalizeProductSearchValue,
+} from "../presentation/product.search";
+import { getFeaturedProducts } from "../repository/product.repository";
 import type { Product } from "../types/product.types";
-import ProductCopyText from "./ProductCopyText";
+import { ProductCopyBlock, ProductCopyInline } from "./ProductCopyText";
+import {
+  PublicProductCopyBlock,
+  PublicProductCopyInline,
+} from "./PublicProductCopyText";
+import {
+  createProductListItemViewModel,
+  createProductListItemViewModels,
+  createPublicProductCardCopyDTO,
+  createSanitizedProductBoundary,
+} from "./product-copy.public.server";
 import {
   getPublishedPersianProductCopy,
   PERSIAN_PRODUCT_COPY_PUBLICATION_STATE,
@@ -44,6 +71,69 @@ interface MutableOverlay {
 }
 
 type ValidationResult = ReturnType<typeof validatePersianProductCopyDrafts>;
+
+type RequiredKeysOf<Value> = {
+  [Key in keyof Value]-?: Pick<Value, Key> extends Required<Pick<Value, Key>>
+    ? Key
+    : never;
+}[keyof Value];
+
+type OptionalKeysOf<Value> = Exclude<keyof Value, RequiredKeysOf<Value>>;
+
+type TypesEqual<Left, Right> =
+  (<Value>() => Value extends Left ? 1 : 2) extends <
+    Value,
+  >() => Value extends Right ? 1 : 2
+    ? (<Value>() => Value extends Right ? 1 : 2) extends <
+        Value,
+      >() => Value extends Left ? 1 : 2
+      ? true
+      : false
+    : false;
+
+type AssertType<Condition extends true> = Condition;
+
+type ExpectedRequiredProductKey =
+  | "id"
+  | "slug"
+  | "title"
+  | "shortDescription"
+  | "brandId"
+  | "categoryId"
+  | "familyId"
+  | "partNumber"
+  | "images"
+  | "downloads";
+
+type ExpectedOptionalProductKey =
+  | "description"
+  | "seriesId"
+  | "productTypeId"
+  | "variantId"
+  | "manufacturerPartNumber"
+  | "ean"
+  | "specifications"
+  | "compatibility"
+  | "accessories"
+  | "relatedProducts"
+  | "replacementProduct"
+  | "tags"
+  | "lifecycle"
+  | "inStock"
+  | "featured"
+  | "seoTitle"
+  | "seoDescription"
+  | "siemensUrl";
+
+const requiredProductKeyTypeIsExhaustive: AssertType<
+  TypesEqual<RequiredKeysOf<Product>, ExpectedRequiredProductKey>
+> = true;
+const optionalProductKeyTypeIsExhaustive: AssertType<
+  TypesEqual<OptionalKeysOf<Product>, ExpectedOptionalProductKey>
+> = true;
+
+void requiredProductKeyTypeIsExhaustive;
+void optionalProductKeyTypeIsExhaustive;
 
 const PERSIAN_TEXT = "متن فارسی";
 const PERSIAN_DESCRIPTION = "توضیح فارسی";
@@ -807,7 +897,7 @@ const forgedResolvedCopy = {
 } as unknown as ResolvedProductCopy;
 assertThrows(
   () =>
-    ProductCopyText({
+    ProductCopyInline({
       copy: forgedResolvedCopy,
       field: "shortDescription",
     }),
@@ -830,7 +920,7 @@ function containsTechnicalBdi(node: ReactNode): boolean {
   return Children.toArray(props.children).some(containsTechnicalBdi);
 }
 
-const renderedEnglishSeo = ProductCopyText({
+const renderedEnglishSeo = ProductCopyInline({
   copy: resolvedEnglish,
   field: "seoTitle",
 });
@@ -844,6 +934,1521 @@ assert(
     renderedEnglishSeoProps.dir === "ltr" &&
     containsTechnicalBdi(renderedEnglishSeo),
   "Canonical renderer output must be English LTR with isolated technical text."
+);
+
+assertThrows(
+  () => createPublicProductCardCopyDTO(forgedResolvedCopy),
+  "not issued",
+  "Forged public DTO source"
+);
+
+const publicEnglish = createPublicProductCardCopyDTO(resolvedEnglish);
+const publicDisabledPersian = createPublicProductCardCopyDTO(
+  resolvedDisabledPersian
+);
+const publicRoundTrip = JSON.parse(JSON.stringify(publicEnglish)) as unknown;
+const forbiddenPublicFields = [
+  "locale",
+  "source",
+  "provenance",
+  "reviewerId",
+  "evidenceRef",
+  "reviewedContentHash",
+  "registry",
+  "publication",
+  "capability",
+];
+
+assert(
+  publicEnglish.language === "en" &&
+    publicEnglish.direction === "ltr" &&
+    publicDisabledPersian.language === "en" &&
+    publicDisabledPersian.direction === "ltr",
+  "EN and disabled FA public DTOs must be English LTR."
+);
+assert(
+  JSON.stringify(publicRoundTrip) === JSON.stringify(publicEnglish),
+  "Public DTO must survive a JSON serialization round trip."
+);
+assert(
+  forbiddenPublicFields.every(
+    (field) => !JSON.stringify(publicEnglish).includes(`"${field}"`)
+  ),
+  "Public DTO must exclude all private trust and review fields."
+);
+assert(
+  publicEnglish.shortDescription !== resolvedEnglish.shortDescription &&
+    publicEnglish.shortDescription[0] !== resolvedEnglish.shortDescription[0],
+  "Public DTO segments must be detached from the trusted resolved object."
+);
+
+function renderPublicInlineFixture(input: unknown): ReactNode {
+  return PublicProductCopyInline(
+    input as Parameters<typeof PublicProductCopyInline>[0]
+  );
+}
+
+function renderPublicBlockFixture(input: unknown): ReactNode {
+  return PublicProductCopyBlock(
+    input as Parameters<typeof PublicProductCopyBlock>[0]
+  );
+}
+
+function assertReturnsInertNull(
+  fixtureName: string,
+  render: () => ReactNode
+): void {
+  let output: ReactNode;
+
+  try {
+    output = render();
+  } catch (error) {
+    throw new Error(`${fixtureName} must not throw.`, { cause: error });
+  }
+
+  assert(output === null, `${fixtureName} must return null.`);
+}
+
+const validPublicParagraph = [{ kind: "text", value: "Valid copy" }] as const;
+const malformedInlineFixtures: ReadonlyArray<
+  readonly [string, Record<string, unknown>]
+> = [
+  [
+    "Null public paragraph",
+    { language: "en", direction: "ltr", paragraph: null },
+  ],
+  [
+    "Undefined public paragraph",
+    { language: "en", direction: "ltr", paragraph: undefined },
+  ],
+  [
+    "Empty public paragraph",
+    { language: "en", direction: "ltr", paragraph: [] },
+  ],
+  [
+    "Null public segment",
+    { language: "en", direction: "ltr", paragraph: [null] },
+  ],
+  [
+    "String public segment",
+    { language: "en", direction: "ltr", paragraph: ["text"] },
+  ],
+  [
+    "Empty public segment object",
+    { language: "en", direction: "ltr", paragraph: [{}] },
+  ],
+  [
+    "Missing public segment kind",
+    { language: "en", direction: "ltr", paragraph: [{ value: "copy" }] },
+  ],
+  [
+    "Invalid public segment kind",
+    {
+      language: "en",
+      direction: "ltr",
+      paragraph: [{ kind: "markup", value: "copy" }],
+    },
+  ],
+  [
+    "Missing public segment value",
+    { language: "en", direction: "ltr", paragraph: [{ kind: "text" }] },
+  ],
+  [
+    "Non-string public segment value",
+    {
+      language: "en",
+      direction: "ltr",
+      paragraph: [{ kind: "text", value: 123 }],
+    },
+  ],
+  [
+    "Empty public segment value",
+    {
+      language: "en",
+      direction: "ltr",
+      paragraph: [{ kind: "text", value: "" }],
+    },
+  ],
+  [
+    "Invalid public inline language",
+    { language: "de", direction: "ltr", paragraph: validPublicParagraph },
+  ],
+  [
+    "Invalid public inline direction",
+    { language: "en", direction: "auto", paragraph: validPublicParagraph },
+  ],
+  [
+    "Mismatched public inline language and direction",
+    { language: "en", direction: "rtl", paragraph: validPublicParagraph },
+  ],
+];
+
+for (const [fixtureName, props] of malformedInlineFixtures) {
+  assertReturnsInertNull(fixtureName, () => renderPublicInlineFixture(props));
+}
+
+const malformedBlockFixtures: ReadonlyArray<
+  readonly [string, Record<string, unknown>]
+> = [
+  [
+    "Null public paragraphs",
+    { language: "en", direction: "ltr", paragraphs: null },
+  ],
+  [
+    "Undefined public paragraphs",
+    { language: "en", direction: "ltr", paragraphs: undefined },
+  ],
+  [
+    "Empty public paragraphs",
+    { language: "en", direction: "ltr", paragraphs: [] },
+  ],
+  [
+    "Malformed paragraph among valid public paragraphs",
+    {
+      language: "en",
+      direction: "ltr",
+      paragraphs: [validPublicParagraph, [null]],
+    },
+  ],
+  [
+    "Invalid public block language",
+    { language: "de", direction: "ltr", paragraphs: [validPublicParagraph] },
+  ],
+  [
+    "Invalid public block direction",
+    { language: "en", direction: "auto", paragraphs: [validPublicParagraph] },
+  ],
+  [
+    "Mismatched public block language and direction",
+    { language: "fa", direction: "ltr", paragraphs: [validPublicParagraph] },
+  ],
+];
+
+for (const [fixtureName, props] of malformedBlockFixtures) {
+  assertReturnsInertNull(fixtureName, () => renderPublicBlockFixture(props));
+}
+
+const publicInline = PublicProductCopyInline({
+  language: publicEnglish.language,
+  direction: publicEnglish.direction,
+  paragraph: publicEnglish.shortDescription,
+});
+const publicTechnicalInline = PublicProductCopyInline({
+  language: "fa",
+  direction: "rtl",
+  paragraph: [
+    { kind: "text", value: PERSIAN_TEXT },
+    { kind: "technical", value: product.partNumber },
+  ],
+});
+const publicBlock = PublicProductCopyBlock({
+  language: publicEnglish.language,
+  direction: publicEnglish.direction,
+  paragraphs: [publicEnglish.shortDescription],
+});
+const trustedBlock = ProductCopyBlock({
+  copy: resolvedEnglish,
+  field: "description",
+});
+
+assert(
+  publicInline !== null &&
+    publicInline.type === "span" &&
+    publicInline.type !== "div" &&
+    publicInline.type !== "p",
+  "Public inline renderer must not own block or paragraph markup."
+);
+assert(
+  publicBlock !== null && publicBlock.type === "div",
+  "Public block renderer must own its block markup."
+);
+assert(
+  trustedBlock !== null && trustedBlock.type === "div",
+  "Trusted block renderer must own its block markup."
+);
+
+function hasNestedParagraph(node: ReactNode, insideParagraph = false): boolean {
+  if (!isValidElement(node)) return false;
+
+  const isParagraph = node.type === "p";
+  if (insideParagraph && isParagraph) return true;
+
+  const props = node.props as { readonly children?: ReactNode };
+  return Children.toArray(props.children).some((child) =>
+    hasNestedParagraph(child, insideParagraph || isParagraph)
+  );
+}
+
+function containsUnsafeHtmlProp(node: ReactNode): boolean {
+  if (!isValidElement(node)) return false;
+
+  const props = node.props as {
+    readonly children?: ReactNode;
+    readonly dangerouslySetInnerHTML?: unknown;
+  };
+  return (
+    props.dangerouslySetInnerHTML !== undefined ||
+    Children.toArray(props.children).some(containsUnsafeHtmlProp)
+  );
+}
+
+assert(
+  !hasNestedParagraph(publicInline) &&
+    !hasNestedParagraph(publicBlock) &&
+    !hasNestedParagraph(trustedBlock),
+  "Product-copy renderers must not create nested paragraphs."
+);
+assert(
+  containsTechnicalBdi(renderedEnglishSeo) &&
+    containsTechnicalBdi(publicTechnicalInline) &&
+    !containsUnsafeHtmlProp(publicInline) &&
+    !containsUnsafeHtmlProp(publicBlock) &&
+    !containsUnsafeHtmlProp(trustedBlock),
+  "Renderers must isolate technical segments without unsafe HTML."
+);
+
+const nestedCanonicalProduct: Product = {
+  ...product,
+  images: [...product.images],
+  downloads: [
+    {
+      id: "verification-download",
+      title: "Verification download",
+      type: "manual",
+      language: "en",
+      size: "1 KB",
+      file: "/verification.pdf",
+    },
+  ],
+  specifications: { Voltage: "24 V DC" },
+  tags: ["verification-tag"],
+  compatibility: [secondProduct.id],
+  accessories: [secondProduct.id],
+  relatedProducts: [secondProduct.id],
+};
+const nestedCanonicalSnapshot = JSON.stringify(nestedCanonicalProduct);
+
+const requiredProductKeys = [
+  "id",
+  "slug",
+  "title",
+  "shortDescription",
+  "brandId",
+  "categoryId",
+  "familyId",
+  "partNumber",
+  "images",
+  "downloads",
+] as const;
+
+const optionalProductKeys = [
+  "description",
+  "seriesId",
+  "productTypeId",
+  "variantId",
+  "manufacturerPartNumber",
+  "ean",
+  "specifications",
+  "compatibility",
+  "accessories",
+  "relatedProducts",
+  "replacementProduct",
+  "tags",
+  "lifecycle",
+  "inStock",
+  "featured",
+  "seoTitle",
+  "seoDescription",
+  "siemensUrl",
+] as const;
+
+const requiredFixtureKeysAreExhaustive: AssertType<
+  TypesEqual<(typeof requiredProductKeys)[number], RequiredKeysOf<Product>>
+> = true;
+const optionalFixtureKeysAreExhaustive: AssertType<
+  TypesEqual<(typeof optionalProductKeys)[number], OptionalKeysOf<Product>>
+> = true;
+
+void requiredFixtureKeysAreExhaustive;
+void optionalFixtureKeysAreExhaustive;
+
+function productDataDescriptor(
+  value: unknown,
+  enumerable = true
+): PropertyDescriptor {
+  return {
+    configurable: true,
+    enumerable,
+    value,
+    writable: true,
+  };
+}
+
+function createTopLevelProductFixture(
+  entries: readonly (readonly [PropertyKey, PropertyDescriptor])[] = [],
+  prototype: object | null = Object.prototype,
+  omittedKeys: readonly (keyof Product)[] = []
+): Product {
+  const descriptors = Object.getOwnPropertyDescriptors(product);
+
+  for (const key of omittedKeys) {
+    Reflect.deleteProperty(descriptors, key);
+  }
+
+  for (const [key, descriptor] of entries) {
+    Object.defineProperty(descriptors, key, {
+      configurable: true,
+      enumerable: true,
+      value: descriptor,
+      writable: true,
+    });
+  }
+
+  return Object.create(prototype, descriptors) as Product;
+}
+
+let unknownTopLevelGetterCalls = 0;
+const unknownTopLevelGetterProduct = createTopLevelProductFixture([
+  [
+    "unexpectedPresentationField",
+    {
+      configurable: true,
+      enumerable: true,
+      get() {
+        unknownTopLevelGetterCalls += 1;
+        return "must-not-be-published";
+      },
+    },
+  ],
+]);
+assertThrows(
+  () => createProductListItemViewModel(unknownTopLevelGetterProduct, "en"),
+  "Unsupported public Product",
+  "Unknown enumerable top-level getter"
+);
+assert(
+  unknownTopLevelGetterCalls === 0,
+  "An unknown top-level Product getter must never be invoked."
+);
+
+let allowedTopLevelGetterCalls = 0;
+const allowedTopLevelGetterProduct = createTopLevelProductFixture([
+  [
+    "title",
+    {
+      configurable: true,
+      enumerable: true,
+      get() {
+        allowedTopLevelGetterCalls += 1;
+        return "must-not-be-published";
+      },
+    },
+  ],
+]);
+assertThrows(
+  () => createProductListItemViewModel(allowedTopLevelGetterProduct, "en"),
+  "Unsupported public Product",
+  "Allowed-key top-level getter"
+);
+assert(
+  allowedTopLevelGetterCalls === 0,
+  "An allowed-key top-level Product getter must never be invoked."
+);
+
+let omittedTopLevelGetterCalls = 0;
+const omittedTopLevelGetterProduct = createTopLevelProductFixture([
+  [
+    "shortDescription",
+    {
+      configurable: true,
+      enumerable: true,
+      get() {
+        omittedTopLevelGetterCalls += 1;
+        return "must-not-be-published";
+      },
+    },
+  ],
+]);
+assertThrows(
+  () => createProductListItemViewModel(omittedTopLevelGetterProduct, "en"),
+  "Unsupported public Product",
+  "Forbidden-copy top-level getter"
+);
+assert(
+  omittedTopLevelGetterCalls === 0,
+  "A forbidden-copy top-level Product getter must never be invoked."
+);
+
+let topLevelSetterCalls = 0;
+const setterOnlyTopLevelProduct = createTopLevelProductFixture([
+  [
+    "title",
+    {
+      configurable: true,
+      enumerable: true,
+      set(value: string) {
+        void value;
+        topLevelSetterCalls += 1;
+      },
+    },
+  ],
+]);
+assertThrows(
+  () => createProductListItemViewModel(setterOnlyTopLevelProduct, "en"),
+  "Unsupported public Product",
+  "Setter-only top-level property"
+);
+assert(
+  topLevelSetterCalls === 0,
+  "A top-level Product setter must never be invoked."
+);
+
+class UnsupportedProductPrototype {}
+
+let rejectedPrototypeTrapCalls = 0;
+let rejectedPrototypeOwnKeysCalls = 0;
+const rejectedPrototypeProxy = new Proxy(product, {
+  getPrototypeOf() {
+    rejectedPrototypeTrapCalls += 1;
+    return null;
+  },
+  ownKeys(target) {
+    rejectedPrototypeOwnKeysCalls += 1;
+    return Reflect.ownKeys(target);
+  },
+});
+assertThrows(
+  () => createProductListItemViewModel(rejectedPrototypeProxy, "en"),
+  "Unsupported public Product",
+  "Rejected prototype before own-key enumeration"
+);
+assert(
+  rejectedPrototypeTrapCalls === 1 && rejectedPrototypeOwnKeysCalls === 0,
+  "An invalid prototype must be rejected before own-key enumeration."
+);
+
+assertThrows(
+  () =>
+    createProductListItemViewModel(
+      createTopLevelProductFixture([], UnsupportedProductPrototype.prototype),
+      "en"
+    ),
+  "Unsupported public Product",
+  "Custom Product prototype"
+);
+assertThrows(
+  () =>
+    createProductListItemViewModel(
+      createTopLevelProductFixture([], null),
+      "en"
+    ),
+  "Unsupported public Product",
+  "Null Product prototype"
+);
+for (const [fixtureName, malformedProduct] of [
+  ["null", null],
+  ["array", []],
+  ["primitive", "not-a-product"],
+] as const) {
+  assertThrows(
+    () =>
+      createProductListItemViewModel(
+        malformedProduct as unknown as Product,
+        "en"
+      ),
+    "Unsupported public Product",
+    `Top-level Product ${fixtureName}`
+  );
+}
+
+const invalidRequiredProductValues: Readonly<
+  Record<RequiredKeysOf<Product>, unknown>
+> = {
+  id: 1,
+  slug: false,
+  title: [],
+  shortDescription: {},
+  brandId: 1,
+  categoryId: false,
+  familyId: [],
+  partNumber: {},
+  images: [],
+  downloads: "not-downloads",
+};
+
+for (const key of requiredProductKeys) {
+  assertThrows(
+    () =>
+      createProductListItemViewModel(
+        createTopLevelProductFixture([], Object.prototype, [key]),
+        "en"
+      ),
+    `Product.${key}`,
+    `Missing required Product.${key}`
+  );
+  assertThrows(
+    () =>
+      createProductListItemViewModel(
+        createTopLevelProductFixture([[key, productDataDescriptor(undefined)]]),
+        "en"
+      ),
+    `Product.${key}`,
+    `Undefined required Product.${key}`
+  );
+  assertThrows(
+    () =>
+      createProductListItemViewModel(
+        createTopLevelProductFixture([
+          [key, productDataDescriptor(invalidRequiredProductValues[key])],
+        ]),
+        "en"
+      ),
+    `Product.${key}`,
+    `Invalid required Product.${key}`
+  );
+}
+
+const validOptionalProductValues: {
+  readonly [Key in OptionalKeysOf<Product>]-?: Exclude<Product[Key], undefined>;
+} = {
+  description: "Optional description",
+  seriesId: "optional-series",
+  productTypeId: "optional-product-type",
+  variantId: "optional-variant",
+  manufacturerPartNumber: "optional-manufacturer-part-number",
+  ean: "optional-ean",
+  specifications: { Voltage: "24 V DC" },
+  compatibility: [secondProduct.id],
+  accessories: [secondProduct.id],
+  relatedProducts: [secondProduct.id],
+  replacementProduct: secondProduct.id,
+  tags: ["optional-tag"],
+  lifecycle: "active",
+  inStock: true,
+  featured: false,
+  seoTitle: "Optional SEO title",
+  seoDescription: "Optional SEO description",
+  siemensUrl: "https://example.com/product",
+};
+
+const invalidOptionalProductValues: Readonly<
+  Record<OptionalKeysOf<Product>, unknown>
+> = {
+  description: 1,
+  seriesId: false,
+  productTypeId: [],
+  variantId: {},
+  manufacturerPartNumber: 1,
+  ean: false,
+  specifications: { Voltage: 24 },
+  compatibility: [secondProduct.id, 1],
+  accessories: [secondProduct.id, false],
+  relatedProducts: [secondProduct.id, {}],
+  replacementProduct: 1,
+  tags: ["optional-tag", false],
+  lifecycle: "retired",
+  inStock: "true",
+  featured: 1,
+  seoTitle: false,
+  seoDescription: [],
+  siemensUrl: {},
+};
+
+const optionalAbsentProduct = createTopLevelProductFixture(
+  [],
+  Object.prototype,
+  optionalProductKeys
+);
+createProductListItemViewModel(optionalAbsentProduct, "en");
+
+for (const key of optionalProductKeys) {
+  const undefinedOptionalItem = createProductListItemViewModel(
+    createTopLevelProductFixture([[key, productDataDescriptor(undefined)]]),
+    "en"
+  );
+
+  if (key !== "description" && key !== "seoTitle" && key !== "seoDescription") {
+    assert(
+      Object.prototype.hasOwnProperty.call(
+        undefinedOptionalItem.product,
+        key
+      ) && undefinedOptionalItem.product[key] === undefined,
+      `Optional Product.${key} must preserve an explicit undefined value.`
+    );
+  }
+
+  assertThrows(
+    () =>
+      createProductListItemViewModel(
+        createTopLevelProductFixture([
+          [key, productDataDescriptor(invalidOptionalProductValues[key])],
+        ]),
+        "en"
+      ),
+    `Product.${key}`,
+    `Invalid optional Product.${key}`
+  );
+}
+
+const allOptionalValuesProduct = createTopLevelProductFixture(
+  optionalProductKeys.map(
+    (key) =>
+      [key, productDataDescriptor(validOptionalProductValues[key])] as const
+  )
+);
+const allOptionalValuesItem = createProductListItemViewModel(
+  allOptionalValuesProduct,
+  "en"
+);
+const allOptionalValuesBoundary = createSanitizedProductBoundary(
+  allOptionalValuesProduct
+);
+assert(
+  optionalProductKeys.every((key) => {
+    if (
+      key === "description" ||
+      key === "seoTitle" ||
+      key === "seoDescription"
+    ) {
+      return !(key in allOptionalValuesItem.product);
+    }
+
+    return (
+      JSON.stringify(allOptionalValuesItem.product[key]) ===
+      JSON.stringify(validOptionalProductValues[key])
+    );
+  }),
+  "Every optional Product field must accept its valid declared runtime shape."
+);
+assert(
+  allOptionalValuesBoundary.trustedProduct.shortDescription ===
+    allOptionalValuesProduct.shortDescription &&
+    allOptionalValuesBoundary.trustedProduct.description ===
+      validOptionalProductValues.description &&
+    allOptionalValuesBoundary.trustedProduct.seoTitle ===
+      validOptionalProductValues.seoTitle &&
+    allOptionalValuesBoundary.trustedProduct.seoDescription ===
+      validOptionalProductValues.seoDescription &&
+    !("shortDescription" in allOptionalValuesBoundary.publicProduct) &&
+    !("description" in allOptionalValuesBoundary.publicProduct) &&
+    !("seoTitle" in allOptionalValuesBoundary.publicProduct) &&
+    !("seoDescription" in allOptionalValuesBoundary.publicProduct),
+  "The trusted snapshot must retain canonical copy while the public record omits it."
+);
+
+const validDownload = nestedCanonicalProduct.downloads[0];
+for (const [fixtureName, invalidDownload] of [
+  [
+    "missing id",
+    {
+      title: validDownload.title,
+      type: validDownload.type,
+      language: validDownload.language,
+      size: validDownload.size,
+      file: validDownload.file,
+    },
+  ],
+  ["undefined id", { ...validDownload, id: undefined }],
+  ["numeric title", { ...validDownload, title: 1 }],
+  ["invalid type union", { ...validDownload, type: "archive" }],
+  ["numeric language", { ...validDownload, language: 1 }],
+  ["numeric size", { ...validDownload, size: 1 }],
+  ["numeric file", { ...validDownload, file: 1 }],
+  ["extra key", { ...validDownload, unexpected: "value" }],
+] as const) {
+  assertThrows(
+    () =>
+      createProductListItemViewModel(
+        createTopLevelProductFixture([
+          ["downloads", productDataDescriptor([invalidDownload])],
+        ]),
+        "en"
+      ),
+    "Product.downloads",
+    `Invalid Product download ${fixtureName}`
+  );
+}
+
+for (const [fixtureName, descriptor] of [
+  [
+    "non-enumerable function",
+    {
+      configurable: true,
+      enumerable: false,
+      value: () => undefined,
+      writable: true,
+    },
+  ],
+  [
+    "non-enumerable primitive",
+    {
+      configurable: true,
+      enumerable: false,
+      value: "hidden",
+      writable: true,
+    },
+  ],
+] as const) {
+  assertThrows(
+    () =>
+      createProductListItemViewModel(
+        createTopLevelProductFixture([["siemensUrl", descriptor]]),
+        "en"
+      ),
+    "Unsupported public Product",
+    `Top-level Product ${fixtureName}`
+  );
+}
+
+assertThrows(
+  () =>
+    createProductListItemViewModel(
+      createTopLevelProductFixture([
+        [
+          Symbol("unexpected-product-key"),
+          {
+            configurable: true,
+            enumerable: true,
+            value: "hidden",
+            writable: true,
+          },
+        ],
+      ]),
+      "en"
+    ),
+  "Unsupported public Product",
+  "Symbol-keyed top-level Product property"
+);
+assertThrows(
+  () =>
+    createProductListItemViewModel(
+      createTopLevelProductFixture([
+        [
+          "unexpectedPresentationField",
+          {
+            configurable: true,
+            enumerable: true,
+            value: "must-not-be-published",
+            writable: true,
+          },
+        ],
+      ]),
+      "en"
+    ),
+  "Unsupported public Product",
+  "Unknown enumerable top-level Product property"
+);
+assertThrows(
+  () =>
+    createProductListItemViewModel(
+      createTopLevelProductFixture([
+        [
+          "images",
+          {
+            configurable: true,
+            enumerable: true,
+            value: () => undefined,
+            writable: true,
+          },
+        ],
+      ]),
+      "en"
+    ),
+  "Unsupported public Product",
+  "Unsupported value on a known allowed Product key"
+);
+
+const prototypePollutionMarker = "__task_bo_fix_b_polluted__";
+for (const sensitiveKey of ["__proto__", "constructor", "prototype"] as const) {
+  assertThrows(
+    () =>
+      createProductListItemViewModel(
+        createTopLevelProductFixture([
+          [
+            sensitiveKey,
+            {
+              configurable: true,
+              enumerable: true,
+              value: { [prototypePollutionMarker]: true },
+              writable: true,
+            },
+          ],
+        ]),
+        "en"
+      ),
+    "Unsupported public Product",
+    `Prototype-sensitive Product key ${sensitiveKey}`
+  );
+}
+assert(
+  !(prototypePollutionMarker in Object.prototype),
+  "Prototype-sensitive Product keys must not modify Object.prototype."
+);
+
+let prematureValueTraversalAttempts = 0;
+let lateDescriptorGetterCalls = 0;
+const prematureValueTraversalProbe = new Proxy(
+  {},
+  {
+    getPrototypeOf() {
+      prematureValueTraversalAttempts += 1;
+      return Object.prototype;
+    },
+  }
+);
+const descriptorOrderProduct = createTopLevelProductFixture([
+  [
+    "id",
+    {
+      configurable: true,
+      enumerable: true,
+      value: prematureValueTraversalProbe,
+      writable: true,
+    },
+  ],
+  [
+    "title",
+    {
+      configurable: true,
+      enumerable: true,
+      get() {
+        lateDescriptorGetterCalls += 1;
+        return "must-not-be-read";
+      },
+    },
+  ],
+]);
+assertThrows(
+  () => createProductListItemViewModel(descriptorOrderProduct, "en"),
+  "Unsupported public Product",
+  "Product descriptor validation order"
+);
+assert(
+  prematureValueTraversalAttempts === 0 && lateDescriptorGetterCalls === 0,
+  "All top-level descriptors must be validated before any value is traversed."
+);
+
+const proxyDivergentCopy = "PROXY-DIVERGED-AFTER-DESCRIPTOR-VALIDATION";
+const proxySnapshotTarget: Product = {
+  ...nestedCanonicalProduct,
+  images: [...nestedCanonicalProduct.images],
+  downloads: nestedCanonicalProduct.downloads.map((download) => ({
+    ...download,
+  })),
+  specifications: { ...nestedCanonicalProduct.specifications },
+  tags: [...(nestedCanonicalProduct.tags ?? [])],
+  compatibility: [...(nestedCanonicalProduct.compatibility ?? [])],
+  accessories: [...(nestedCanonicalProduct.accessories ?? [])],
+  relatedProducts: [...(nestedCanonicalProduct.relatedProducts ?? [])],
+};
+const proxyExpectedKeys = Reflect.ownKeys(proxySnapshotTarget);
+const proxyDescriptorCalls = new Map<PropertyKey, number>();
+let proxyGetPrototypeCalls = 0;
+let proxyOwnKeysCalls = 0;
+let proxyGetCalls = 0;
+const descriptorDivergenceProxy = new Proxy(proxySnapshotTarget, {
+  getPrototypeOf(target) {
+    proxyGetPrototypeCalls += 1;
+    return Reflect.getPrototypeOf(target);
+  },
+  ownKeys(target) {
+    proxyOwnKeysCalls += 1;
+    return Reflect.ownKeys(target);
+  },
+  getOwnPropertyDescriptor(target, key) {
+    const callCount = (proxyDescriptorCalls.get(key) ?? 0) + 1;
+    proxyDescriptorCalls.set(key, callCount);
+    const descriptor = Reflect.getOwnPropertyDescriptor(target, key);
+
+    if (key === "shortDescription" && callCount > 1 && descriptor) {
+      return { ...descriptor, value: proxyDivergentCopy };
+    }
+
+    return descriptor;
+  },
+  get() {
+    proxyGetCalls += 1;
+    return proxyDivergentCopy;
+  },
+});
+const proxySnapshotItem = createProductListItemViewModel(
+  descriptorDivergenceProxy,
+  "en"
+);
+const proxyFactoryDescriptorCounts = new Map(proxyDescriptorCalls);
+const secondShortDescriptionDescriptor = Object.getOwnPropertyDescriptor(
+  descriptorDivergenceProxy,
+  "shortDescription"
+);
+const proxySnapshotSerialization = JSON.stringify(proxySnapshotItem);
+assert(
+  proxyGetPrototypeCalls === 1 &&
+    proxyOwnKeysCalls === 1 &&
+    proxyGetCalls === 0 &&
+    proxyExpectedKeys.every(
+      (key) => proxyFactoryDescriptorCounts.get(key) === 1
+    ) &&
+    proxyFactoryDescriptorCounts.size === proxyExpectedKeys.length,
+  "A descriptor-valid Proxy must be captured exactly once without later get-trap access."
+);
+assert(
+  secondShortDescriptionDescriptor?.value === proxyDivergentCopy &&
+    proxyDescriptorCalls.get("shortDescription") === 2 &&
+    proxySnapshotItem.copy.shortDescription[0]?.value ===
+      proxySnapshotTarget.shortDescription &&
+    !proxySnapshotItem.copy.searchText.includes(proxyDivergentCopy) &&
+    !proxySnapshotSerialization.includes(proxyDivergentCopy),
+  "Resolver and public serialization must use only the first trusted descriptor snapshot."
+);
+const proxySnapshotBeforeSourceMutation = JSON.stringify(proxySnapshotItem);
+proxySnapshotTarget.shortDescription = "mutated after snapshot";
+proxySnapshotTarget.images[0] = "mutated-after-snapshot.png";
+proxySnapshotTarget.downloads[0].title = "mutated after snapshot";
+assert(
+  JSON.stringify(proxySnapshotItem) === proxySnapshotBeforeSourceMutation &&
+    Object.isFrozen(proxySnapshotItem.product) &&
+    Object.isFrozen(proxySnapshotItem.product.images) &&
+    Object.isFrozen(proxySnapshotItem.product.downloads) &&
+    Object.isFrozen(proxySnapshotItem.product.downloads[0]),
+  "Trusted resolution and public output must remain detached from later source mutation."
+);
+
+const nestedProductBoundary = createSanitizedProductBoundary(
+  nestedCanonicalProduct
+);
+const nestedPublicRecord = nestedProductBoundary.publicProduct;
+const nestedTrustedProduct = nestedProductBoundary.trustedProduct;
+const forbiddenPublicProductKeys = new Set<PropertyKey>([
+  "shortDescription",
+  "description",
+  "seoTitle",
+  "seoDescription",
+]);
+assert(
+  JSON.stringify(Reflect.ownKeys(nestedPublicRecord)) ===
+    JSON.stringify(
+      Reflect.ownKeys(nestedCanonicalProduct).filter(
+        (key) => !forbiddenPublicProductKeys.has(key)
+      )
+    ) && Object.getPrototypeOf(nestedPublicRecord) === Object.prototype,
+  "A valid public Product must retain every allowed own key on a fresh ordinary record."
+);
+
+function assertDetachedAndFrozenPublicGraph(
+  publicValue: unknown,
+  canonicalValue: unknown,
+  path: string
+): void {
+  if (typeof publicValue !== "object" || publicValue === null) return;
+
+  assert(Object.isFrozen(publicValue), `${path} must be frozen.`);
+  assert(publicValue !== canonicalValue, `${path} must be detached.`);
+
+  if (Array.isArray(publicValue)) {
+    assert(
+      Array.isArray(canonicalValue),
+      `${path} must preserve its array shape.`
+    );
+    publicValue.forEach((entry, index) =>
+      assertDetachedAndFrozenPublicGraph(
+        entry,
+        canonicalValue[index],
+        `${path}[${index}]`
+      )
+    );
+    return;
+  }
+
+  assert(
+    typeof canonicalValue === "object" && canonicalValue !== null,
+    `${path} must preserve its record shape.`
+  );
+  for (const key of Object.keys(publicValue)) {
+    assertDetachedAndFrozenPublicGraph(
+      (publicValue as Record<string, unknown>)[key],
+      (canonicalValue as Record<string, unknown>)[key],
+      `${path}.${key}`
+    );
+  }
+}
+
+assertDetachedAndFrozenPublicGraph(
+  nestedPublicRecord,
+  nestedCanonicalProduct,
+  "PublicProductRecord"
+);
+assertDetachedAndFrozenPublicGraph(
+  nestedTrustedProduct,
+  nestedCanonicalProduct,
+  "TrustedProductSnapshot"
+);
+assert(
+  nestedPublicRecord !== nestedCanonicalProduct &&
+    nestedPublicRecord.images !== nestedCanonicalProduct.images &&
+    nestedPublicRecord.downloads !== nestedCanonicalProduct.downloads &&
+    nestedPublicRecord.downloads[0] !== nestedCanonicalProduct.downloads[0] &&
+    nestedPublicRecord.specifications !==
+      nestedCanonicalProduct.specifications &&
+    nestedPublicRecord.tags !== nestedCanonicalProduct.tags &&
+    nestedPublicRecord.compatibility !== nestedCanonicalProduct.compatibility &&
+    nestedPublicRecord.accessories !== nestedCanonicalProduct.accessories &&
+    nestedPublicRecord.relatedProducts !==
+      nestedCanonicalProduct.relatedProducts,
+  "Every public Product nested collection and contained record must be detached."
+);
+assert(
+  nestedTrustedProduct !== nestedCanonicalProduct &&
+    nestedTrustedProduct !== nestedPublicRecord &&
+    nestedTrustedProduct.images !== nestedCanonicalProduct.images &&
+    nestedTrustedProduct.images !== nestedPublicRecord.images &&
+    nestedTrustedProduct.downloads !== nestedCanonicalProduct.downloads &&
+    nestedTrustedProduct.downloads !== nestedPublicRecord.downloads &&
+    nestedTrustedProduct.downloads[0] !== nestedCanonicalProduct.downloads[0] &&
+    nestedTrustedProduct.downloads[0] !== nestedPublicRecord.downloads[0] &&
+    nestedTrustedProduct.specifications !==
+      nestedCanonicalProduct.specifications &&
+    nestedTrustedProduct.specifications !== nestedPublicRecord.specifications &&
+    nestedTrustedProduct.tags !== nestedCanonicalProduct.tags &&
+    nestedTrustedProduct.tags !== nestedPublicRecord.tags &&
+    nestedTrustedProduct.compatibility !==
+      nestedCanonicalProduct.compatibility &&
+    nestedTrustedProduct.compatibility !== nestedPublicRecord.compatibility &&
+    nestedTrustedProduct.accessories !== nestedCanonicalProduct.accessories &&
+    nestedTrustedProduct.accessories !== nestedPublicRecord.accessories &&
+    nestedTrustedProduct.relatedProducts !==
+      nestedCanonicalProduct.relatedProducts &&
+    nestedTrustedProduct.relatedProducts !== nestedPublicRecord.relatedProducts,
+  "Trusted and public Product graphs must be independently cloned from canonical data."
+);
+assert(
+  !Object.isFrozen(nestedCanonicalProduct) &&
+    !Object.isFrozen(nestedCanonicalProduct.images) &&
+    !Object.isFrozen(nestedCanonicalProduct.downloads) &&
+    !Object.isFrozen(nestedCanonicalProduct.downloads[0]) &&
+    !Object.isFrozen(nestedCanonicalProduct.specifications) &&
+    !Object.isFrozen(nestedCanonicalProduct.tags) &&
+    !Object.isFrozen(nestedCanonicalProduct.compatibility) &&
+    !Object.isFrozen(nestedCanonicalProduct.accessories) &&
+    !Object.isFrozen(nestedCanonicalProduct.relatedProducts) &&
+    JSON.stringify(nestedCanonicalProduct) === nestedCanonicalSnapshot,
+  "Creating a public Product record must not freeze or mutate its canonical Product."
+);
+assert(
+  !Reflect.set(nestedPublicRecord.images as object, "0", "tampered") &&
+    !Reflect.set(
+      nestedPublicRecord.downloads[0] as object,
+      "title",
+      "tampered"
+    ) &&
+    !Reflect.set(
+      nestedPublicRecord.specifications as object,
+      "Voltage",
+      "tampered"
+    ) &&
+    JSON.stringify(nestedCanonicalProduct) === nestedCanonicalSnapshot,
+  "Attempted public Product mutation must not affect canonical Product data."
+);
+assert(
+  JSON.stringify(JSON.parse(JSON.stringify(nestedPublicRecord)) as unknown) ===
+    JSON.stringify(nestedPublicRecord),
+  "A deeply detached public Product record must survive its serializable round trip."
+);
+
+const cyclicSpecificationValue: Record<string, unknown> = {};
+cyclicSpecificationValue.self = cyclicSpecificationValue;
+
+for (const [fixtureName, unsupportedValue] of [
+  ["function", () => undefined],
+  ["symbol", Symbol("unsupported")],
+  ["class instance", new Date(0)],
+  ["Map", new Map()],
+  ["Set", new Set()],
+  ["NaN", Number.NaN],
+  ["positive infinity", Number.POSITIVE_INFINITY],
+  ["negative infinity", Number.NEGATIVE_INFINITY],
+  ["BigInt", BigInt(1)],
+  ["cycle", cyclicSpecificationValue],
+] as const) {
+  assertThrows(
+    () =>
+      createProductListItemViewModel(
+        {
+          ...nestedCanonicalProduct,
+          specifications: {
+            unsupported: unsupportedValue,
+          } as unknown as Record<string, string>,
+        },
+        "en"
+      ),
+    "Unsupported public Product",
+    `Public Product ${fixtureName}`
+  );
+}
+
+const canonicalCatalogSnapshot = JSON.stringify(products);
+const englishListItems = createProductListItemViewModels(products, "en");
+const disabledPersianListItems = createProductListItemViewModels(
+  products,
+  "fa"
+);
+assert(
+  englishListItems.length === 382 &&
+    disabledPersianListItems.length === 382 &&
+    englishListItems.every((item) => item.copy.shortDescription.length > 0) &&
+    disabledPersianListItems.every(
+      (item) => item.copy.language === "en" && item.copy.direction === "ltr"
+    ),
+  "All 382 EN and disabled FA list items must have mandatory resolved copy."
+);
+assert(
+  JSON.stringify(products) === canonicalCatalogSnapshot &&
+    products.every(
+      (canonicalProduct, index) =>
+        englishListItems[index].product !== canonicalProduct
+    ),
+  "All 382 Products must convert without mutating or aliasing canonical records."
+);
+function assertCanonicalGraphUnfrozen(value: unknown, path: string): void {
+  if (typeof value !== "object" || value === null) return;
+
+  assert(!Object.isFrozen(value), `${path} must remain unfrozen.`);
+
+  for (const key of Reflect.ownKeys(value)) {
+    const descriptor = Object.getOwnPropertyDescriptor(value, key);
+
+    assert(
+      descriptor !== undefined && "value" in descriptor,
+      `${path} must remain an ordinary data graph.`
+    );
+    assertCanonicalGraphUnfrozen(descriptor.value, `${path}.${String(key)}`);
+  }
+}
+products.forEach((canonicalProduct, index) =>
+  assertCanonicalGraphUnfrozen(canonicalProduct, `CanonicalProduct[${index}]`)
+);
+products.forEach((canonicalProduct, index) => {
+  assert(
+    JSON.stringify(Reflect.ownKeys(englishListItems[index].product)) ===
+      JSON.stringify(
+        Reflect.ownKeys(canonicalProduct).filter(
+          (key) => !forbiddenPublicProductKeys.has(key)
+        )
+      ),
+    `PublicProductRecord[${index}] must retain every allowed Product key.`
+  );
+});
+englishListItems.forEach((item, index) =>
+  assertDetachedAndFrozenPublicGraph(
+    item.product,
+    products[index],
+    `PublicProductRecord[${index}]`
+  )
+);
+assert(
+  englishListItems.every(
+    (item) =>
+      !("shortDescription" in item.product) &&
+      !("description" in item.product) &&
+      !("seoTitle" in item.product) &&
+      !("seoDescription" in item.product)
+  ),
+  "Public Product records must exclude canonical copy and SEO override fields."
+);
+
+const featuredItems = createProductListItemViewModels(
+  getFeaturedProducts(),
+  "fa"
+);
+const relatedItems = createProductListItemViewModels(
+  getRelatedProducts(product, products),
+  "fa"
+);
+assert(
+  featuredItems.every((item) => item.copy.shortDescription.length > 0) &&
+    relatedItems.every((item) => item.copy.shortDescription.length > 0),
+  "Featured and related card inputs must carry mandatory public copy."
+);
+
+const searchQueries = [
+  ...new Set(
+    products.flatMap((candidate) => [
+      candidate.title,
+      candidate.partNumber,
+      candidate.shortDescription.split(/\s+/u)[0] ?? "",
+    ])
+  ),
+  "no-such-product-copy-query",
+  "",
+];
+for (const query of searchQueries) {
+  const normalizedQuery = query.trim().toLowerCase();
+  const legacyIds = products
+    .filter(
+      (candidate) =>
+        !normalizedQuery ||
+        candidate.title.toLowerCase().includes(normalizedQuery) ||
+        candidate.partNumber.toLowerCase().includes(normalizedQuery) ||
+        candidate.shortDescription.toLowerCase().includes(normalizedQuery)
+    )
+    .map((candidate) => candidate.id);
+  const integratedIds = englishListItems
+    .filter((item) => matchesProductSearch(item, query))
+    .map((item) => item.product.id);
+
+  assert(
+    JSON.stringify(integratedIds) === JSON.stringify(legacyIds),
+    `Disabled-publication search parity failed for ${query}.`
+  );
+}
+const exactPartNumber = englishListItems[0].product.partNumber;
+const cleanPartNumberResult = englishListItems
+  .filter((item) => matchesProductSearch(item, exactPartNumber))
+  .map((item) => item.product.id);
+const bidiFormattingControls = [
+  "\u061c",
+  "\u200e",
+  "\u200f",
+  "\u202a",
+  "\u202b",
+  "\u202c",
+  "\u202d",
+  "\u202e",
+  "\u2066",
+  "\u2067",
+  "\u2068",
+  "\u2069",
+] as const;
+
+for (const control of bidiFormattingControls) {
+  const controlledResult = englishListItems
+    .filter((item) =>
+      matchesProductSearch(item, `${control}${exactPartNumber}${control}`)
+    )
+    .map((item) => item.product.id);
+
+  assert(
+    JSON.stringify(controlledResult) === JSON.stringify(cleanPartNumberResult),
+    `Bidi control U+${control.codePointAt(0)?.toString(16).toUpperCase()} must be search-neutral.`
+  );
+}
+assert(
+  JSON.stringify(
+    englishListItems
+      .filter((item) =>
+        matchesProductSearch(item, `\u202e${exactPartNumber}\u202c`)
+      )
+      .map((item) => item.product.id)
+  ) === JSON.stringify(cleanPartNumberResult),
+  "The U+202E/U+202C bidi override pair must be search-neutral."
+);
+assert(
+  normalizeProductSearchValue(`a\u200cb`) === `a\u200cb`,
+  "Search normalization must preserve meaningful Persian ZWNJ."
+);
+
+const comparisonValidIds = new Set(products.slice(0, 6).map(({ id }) => id));
+const legacyComparison = [
+  products[0],
+  products[1],
+  products[0],
+  { id: "stale-product" },
+  products[2],
+  products[3],
+  products[4],
+];
+const expectedComparisonIds = products.slice(0, 4).map(({ id }) => id);
+assert(
+  JSON.stringify(
+    migrateStoredComparisonIds(legacyComparison, comparisonValidIds)
+  ) === JSON.stringify(expectedComparisonIds),
+  "Legacy comparison Products must migrate to ordered, unique, valid IDs capped at four."
+);
+assert(
+  JSON.stringify(
+    parseStoredComparisonIds(
+      JSON.stringify(expectedComparisonIds),
+      comparisonValidIds
+    )
+  ) === JSON.stringify(expectedComparisonIds) &&
+    parseStoredComparisonIds("not-json", comparisonValidIds).length === 0 &&
+    migrateStoredComparisonIds({}, comparisonValidIds).length === 0,
+  "Comparison storage must accept ID arrays and reject malformed non-arrays."
+);
+let propertyGetterAttempts = 0;
+const propertyGetterFailure = createComparisonStorageAdapter(() => {
+  propertyGetterAttempts += 1;
+  throw new Error("SecurityError");
+});
+assert(
+  propertyGetterFailure.read(comparisonValidIds).length === 0 &&
+    !propertyGetterFailure.write(expectedComparisonIds) &&
+    propertyGetterFailure.read(comparisonValidIds).length === 0 &&
+    propertyGetterAttempts === 1,
+  "A throwing localStorage property getter must be contained and disabled."
+);
+
+let unavailableStorageAttempts = 0;
+const unavailableStorage = createComparisonStorageAdapter(() => {
+  unavailableStorageAttempts += 1;
+  return null;
+});
+assert(
+  unavailableStorage.read(comparisonValidIds).length === 0 &&
+    !unavailableStorage.write(expectedComparisonIds) &&
+    unavailableStorageAttempts === 1,
+  "Null storage must initialize empty and remain unavailable."
+);
+
+let getItemAttempts = 0;
+const getItemFailure = createComparisonStorageAdapter(() => ({
+  getItem() {
+    getItemAttempts += 1;
+    throw new Error("SecurityError");
+  },
+  setItem() {
+    throw new Error("setItem must not run after a read failure");
+  },
+}));
+assert(
+  getItemFailure.read(comparisonValidIds).length === 0 &&
+    getItemFailure.read(comparisonValidIds).length === 0 &&
+    !getItemFailure.write(expectedComparisonIds) &&
+    getItemAttempts === 1,
+  "A throwing getItem must be contained without repeated exception loops."
+);
+
+const malformedStorage = createComparisonStorageAdapter(() => ({
+  getItem: () => "not-json",
+  setItem: () => undefined,
+}));
+assert(
+  malformedStorage.read(comparisonValidIds).length === 0,
+  "Malformed comparison JSON must initialize an empty selection."
+);
+
+let prematureWrites = 0;
+const noPrematureWriteStorage = createComparisonStorageAdapter(() => ({
+  getItem: () => JSON.stringify(legacyComparison),
+  setItem: () => {
+    prematureWrites += 1;
+  },
+}));
+assert(
+  !noPrematureWriteStorage.write(expectedComparisonIds) &&
+    prematureWrites === 0 &&
+    JSON.stringify(noPrematureWriteStorage.read(comparisonValidIds)) ===
+      JSON.stringify(expectedComparisonIds),
+  "Comparison storage must read and migrate the legacy value before writing."
+);
+
+let setItemAttempts = 0;
+const setItemFailure = createComparisonStorageAdapter(() => ({
+  getItem: () => JSON.stringify(expectedComparisonIds),
+  setItem() {
+    setItemAttempts += 1;
+    throw new Error("QuotaExceededError");
+  },
+}));
+let inMemoryIds = setItemFailure.read(comparisonValidIds);
+assert(
+  JSON.stringify(inMemoryIds) === JSON.stringify(expectedComparisonIds) &&
+    !setItemFailure.write(inMemoryIds) &&
+    setItemAttempts === 1,
+  "A write failure after a successful read must be contained."
+);
+inMemoryIds = removeComparisonProduct(inMemoryIds, expectedComparisonIds[0]);
+inMemoryIds = addComparisonProduct(inMemoryIds, products[4].id);
+assert(
+  inMemoryIds.includes(products[4].id) &&
+    !inMemoryIds.includes(expectedComparisonIds[0]) &&
+    !setItemFailure.write(inMemoryIds) &&
+    setItemAttempts === 1,
+  "In-memory add and remove must survive disabled storage."
+);
+inMemoryIds = [];
+assert(
+  inMemoryIds.length === 0 &&
+    !setItemFailure.write(inMemoryIds) &&
+    setItemAttempts === 1,
+  "In-memory clear must survive disabled storage."
+);
+
+let storedIdsOnly = "";
+const workingStorage = createComparisonStorageAdapter(() => ({
+  getItem: () => JSON.stringify(expectedComparisonIds),
+  setItem: (_key, value) => {
+    storedIdsOnly = value;
+  },
+}));
+assert(
+  JSON.stringify(workingStorage.read(comparisonValidIds)) ===
+    JSON.stringify(expectedComparisonIds) &&
+    workingStorage.write(expectedComparisonIds) &&
+    storedIdsOnly === JSON.stringify(expectedComparisonIds),
+  "Available comparison storage must read and persist IDs only."
+);
+
+const rehydratedEnglish = expectedComparisonIds.map((id) =>
+  englishListItems.find((item) => item.product.id === id)!
+);
+const rehydratedPersian = expectedComparisonIds.map((id) =>
+  disabledPersianListItems.find((item) => item.product.id === id)!
+);
+assert(
+  rehydratedEnglish.every(
+    (item, index) => item.product.id === rehydratedPersian[index].product.id
+  ) && rehydratedPersian.every((item) => item.copy.language === "en"),
+  "Locale switching must preserve IDs while rehydrating current-locale copy."
+);
+
+const productMetadata = createProductMetadata(fakeSeoProduct, "fa");
+const metadataOpenGraph = productMetadata.openGraph as {
+  readonly title?: string;
+  readonly description?: string;
+};
+const metadataTwitter = productMetadata.twitter as {
+  readonly title?: string;
+  readonly description?: string;
+};
+const productSchema = createProductSchema(
+  fakeSeoProduct,
+  resolvedDisabledPersian,
+  "fa"
+);
+const serializedDisabledPersian = serializeResolvedProductCopy(
+  resolvedDisabledPersian
+);
+assert(
+  productMetadata.title === serializedDisabledPersian.seoTitle &&
+    metadataOpenGraph.title === serializedDisabledPersian.seoTitle &&
+    metadataTwitter.title === serializedDisabledPersian.seoTitle &&
+    String(productMetadata.title).endsWith("SIEMIRAN"),
+  "Metadata, OpenGraph, and Twitter titles must use the resolved SIEMIRAN title."
+);
+assert(
+  productMetadata.description === serializedDisabledPersian.seoDescription &&
+    metadataOpenGraph.description ===
+      serializedDisabledPersian.seoDescription &&
+    metadataTwitter.description === serializedDisabledPersian.seoDescription &&
+    productSchema.description === serializedDisabledPersian.seoDescription,
+  "Metadata, social metadata, and Product JSON-LD must share resolved SEO description."
+);
+assert(
+  !JSON.stringify(productMetadata).includes(fakeSeoProduct.seoTitle ?? "") &&
+    !JSON.stringify(productMetadata).includes(
+      fakeSeoProduct.seoDescription ?? ""
+    ) &&
+    !JSON.stringify(productSchema).includes(
+      fakeSeoProduct.seoDescription ?? ""
+    ),
+  "Canonical SEO overrides must not reach metadata or Product JSON-LD."
+);
+
+const singleListItem = createProductListItemViewModel(product, "fa");
+assert(
+  singleListItem.copy.language === "en" &&
+    singleListItem.product.id === product.id,
+  "Single-item factory must preserve canonical identity with disabled English copy."
 );
 
 const isolatedTechnicalText = serializeProductCopyParagraph(
@@ -1004,6 +2609,56 @@ console.log(
         forgedCopyRejected: true,
         canonicalLanguageDirection: "en/ltr",
         technicalBdi: true,
+      },
+      consumerIntegration: {
+        publicDtoRoundTrip: true,
+        privateFieldsExcluded: true,
+        detachedSegments: true,
+        listItems: {
+          en: englishListItems.length,
+          faDisabled: disabledPersianListItems.length,
+        },
+        searchParityQueries: searchQueries.length,
+        comparisonStorage: "ids-only",
+        metadataSchemaConsistent: true,
+        officialEnglishBrand: "SIEMIRAN",
+        topLevelProductSanitization: {
+          unknownGetterCalls: unknownTopLevelGetterCalls,
+          allowedGetterCalls: allowedTopLevelGetterCalls,
+          forbiddenCopyGetterCalls: omittedTopLevelGetterCalls,
+          setterCalls: topLevelSetterCalls,
+          prematureValueTraversalAttempts,
+          lateDescriptorGetterCalls,
+          requiredKeys: requiredProductKeys.length,
+          optionalKeys: optionalProductKeys.length,
+          missingRequiredRejected: true,
+          undefinedRequiredRejected: true,
+          wrongTypeRequiredRejected: true,
+          optionalAbsentAccepted: true,
+          optionalUndefinedAccepted: true,
+          wrongTypeOptionalRejected: true,
+          prototypeFirst: {
+            getPrototypeOfCalls: rejectedPrototypeTrapCalls,
+            ownKeysCalls: rejectedPrototypeOwnKeysCalls,
+          },
+          proxySnapshot: {
+            getPrototypeOfCalls: proxyGetPrototypeCalls,
+            ownKeysCalls: proxyOwnKeysCalls,
+            getCalls: proxyGetCalls,
+            descriptorsCapturedOnce: proxyExpectedKeys.every(
+              (key) => proxyFactoryDescriptorCounts.get(key) === 1
+            ),
+            divergentSecondDescriptorIgnored: true,
+          },
+          trustedSnapshotDeepFrozen: Object.isFrozen(nestedTrustedProduct),
+          trustedPublicReferencesIsolated: true,
+          customPrototypeRejected: true,
+          nullPrototypeRejected: true,
+          nonEnumerableRejected: true,
+          symbolKeyRejected: true,
+          unknownKeyRejected: true,
+          prototypeSensitiveKeysRejected: true,
+        },
       },
     },
     null,

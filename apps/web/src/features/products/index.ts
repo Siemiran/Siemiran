@@ -11,7 +11,6 @@ export {
   getProductsBySeries,
   getFeaturedProducts,
   getInStockProducts,
-  searchProducts,
 } from "./repository/product.repository";
 
 export * from "./types/download.types";

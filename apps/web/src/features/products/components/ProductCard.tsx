@@ -1,4 +1,4 @@
-import type { Product } from "@/features/products/types/product.types";
+import type { ProductListItemViewModel } from "@/features/products/copy/product-copy.public-types";
 
 import ProductActions from "./ProductActions";
 import ProductBadge from "./ProductBadge";
@@ -7,15 +7,15 @@ import ProductImage from "./ProductImage";
 import ProductMeta from "./ProductMeta";
 
 interface ProductCardProps {
-  product: Product;
+  item: ProductListItemViewModel;
   comparisonSelected?: boolean;
   comparisonDisabled?: boolean;
-  onAddToComparison?: (product: Product) => void;
+  onAddToComparison?: (productId: string) => void;
   onRemoveFromComparison?: (productId: string) => void;
 }
 
 export default function ProductCard({
-  product,
+  item,
   comparisonSelected = false,
   comparisonDisabled = false,
   onAddToComparison,
@@ -24,17 +24,17 @@ export default function ProductCard({
   return (
     <article>
       <div>
-        <ProductImage product={product} />
-        <ProductBadge product={product} />
+        <ProductImage item={item} />
+        <ProductBadge item={item} />
       </div>
 
-      <ProductMeta product={product} />
+      <ProductMeta item={item} />
 
-      <ProductActions product={product} />
+      <ProductActions item={item} />
 
       {onAddToComparison && onRemoveFromComparison && (
         <ProductCompareButton
-          product={product}
+          item={item}
           selected={comparisonSelected}
           disabled={comparisonDisabled}
           onAdd={onAddToComparison}

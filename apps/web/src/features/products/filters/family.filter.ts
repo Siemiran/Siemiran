@@ -1,18 +1,26 @@
-import type { Product } from "../types/product.types";
+import type { ProductListItemViewModel } from "../copy/product-copy.public-types";
 
-export function getFamilies(products: Product[], category?: string) {
+export function getFamilies(
+  items: readonly ProductListItemViewModel[],
+  category?: string
+) {
   const source =
     category && category !== "all"
-      ? products.filter((p) => p.categoryId === category)
-      : products;
+      ? items.filter((item) => item.product.categoryId === category)
+      : items;
 
-  return Array.from(new Set(source.map((p) => p.familyId))).sort();
+  return Array.from(
+    new Set(source.map((item) => item.product.familyId))
+  ).sort();
 }
 
-export function filterByFamily(products: Product[], family?: string) {
+export function filterByFamily(
+  items: ProductListItemViewModel[],
+  family?: string
+) {
   if (!family || family === "all") {
-    return products;
+    return items;
   }
 
-  return products.filter((p) => p.familyId === family);
+  return items.filter((item) => item.product.familyId === family);
 }
