@@ -1,6 +1,45 @@
 # Siemiran — Project State
 
-## 2026-09-11 - Tasks BK-BL: Inactive Persian Product-copy Infrastructure Verified (Current State)
+## 2026-09-17 - Tasks BO-BW: Product-copy Consumer Integration (Current State)
+
+PR #52 squash-merged the Task BO Product-copy consumer integration as
+`454b2e2e79a04cc95fff9141c8a1f66b2bf88f65`. Task BW independently verified
+that exact `main` state and returned **PASS**. The integration is complete:
+Product listing, cards and meta, featured Products, related Products, Product
+detail header/body, search, metadata/OpenGraph/Twitter, Product JSON-LD,
+comparison, and the inquiry identity boundary all use the central
+resolver/presentation boundary.
+
+The Product-copy infrastructure is therefore no longer unwired, but publication
+remains inactive. The registry contains 0/382 entries, global publication is
+disabled, Persian Product copy drafted is 0, and Persian Product copy activated
+is 0. Both FA and EN Product prose intentionally resolves to canonical
+English/LTR while publication is disabled; Persian UI localization remains
+active independently. There is no partial Persian Product-copy fallback.
+
+The trusted server boundary owns registry/reviews, validation and cryptography,
+technical-token policy, publication/capability, resolver authenticity, trusted
+Product rendering, metadata, and Product JSON-LD. Client boundaries receive
+only inert public DTOs. Comparison now persists validated Product IDs only under
+`siemiran:product-comparison`, with safe migration of legacy stored Product
+objects. Search combines canonical title and part number with public DTO search
+text, and inquiry client data is limited to `id`, `title`, and `partNumber`.
+Private review, evidence, hash, registry, capability, and publication state is
+not client-reachable.
+
+The verified catalog remains 382 Products: S7-300 196/196 and S7-1200 186/186.
+Static generation is 774/774, with 382 FA Product-detail paths, 382 EN
+Product-detail paths, and a zero FA/EN slug-set difference. Exactly the
+established ten Products omit lifecycle. Canonical Product/source/database/
+adapter data is unchanged.
+
+Product-copy validation, lint, TypeScript, production build, client privacy and
+security scans, and supported production smoke verification passed. The next
+phase—controlled Persian Product-copy drafting and linguistic/technical
+review—has not started. Public activation remains blocked until the complete
+382/382 dual-approval gate passes.
+
+## 2026-09-11 - Tasks BK-BL: Inactive Persian Product-copy Infrastructure Verified (Historical Snapshot)
 
 PR #50 squash-merged Task BK as
 `c37272e4da8e7a7f509b917eacff833fea6b58b9`, and Task BL independently
@@ -176,8 +215,9 @@ the inventory before this approved deletion, not a valid current record.
 ## Current Baseline
 
 - Status: Active Development
-- Documentation synchronized: 2026-09-11
-- Repository source of truth: current `main` branch
+- Documentation synchronized: 2026-09-17
+- Repository source of truth: `main` at
+  `454b2e2e79a04cc95fff9141c8a1f66b2bf88f65`
 - No semantic release version is asserted by this document.
 
 ## Current Stack
@@ -198,9 +238,9 @@ the inventory before this approved deletion, not a valid current record.
 - Locale route tree under `apps/web/app/[locale]`, with `fa` routes unprefixed
   and `en` routes under `/en`
 - Shared UI under `apps/web/src/components`
-- Product feature areas: components, comparison, data, database, filters, hooks,
-  lib, pagination, repository, sections, sorting, types, and the inactive
-  server-only Product-copy infrastructure under `copy/`
+- Product feature areas: components, comparison, copy, data, database, filters,
+  hooks, lib, pagination, repository, sections, sorting, and types; `copy/`
+  contains the trusted resolver and public presentation boundary
 - `legacy/` is read-only and is not part of the current Next.js application
 
 ## Product Platform
@@ -209,12 +249,12 @@ the inventory before this approved deletion, not a valid current record.
 | --- | --- | --- |
 | Product listing and dynamic detail pages | IMPLEMENTED | Repository-backed listing, static product paths, and not-found handling |
 | Localization foundation | IMPLEMENTED | Persian-first FA/EN routing, matching UI catalogs, one-click equivalent-page switching, locale direction, and temporarily noindexed English routes |
-| Persian Product-copy infrastructure | INACTIVE | Typed server-only validation/resolution foundation; registry 0/382, publication disabled, and no consumer integration |
+| Product-copy consumer integration | IMPLEMENTED | All intended consumers use the central resolver/public DTO boundary; registry 0/382 and publication disabled |
 | Search, URL parameters, filters, sorting, pagination | IMPLEMENTED | Category, family, series, and product-type filters; 12-item pagination |
 | Gallery and specifications | IMPLEMENTED | Product gallery/image UI and technical specification rendering |
 | SEO and structured data | IMPLEMENTED | Metadata, canonical/Open Graph/Twitter fields, Product JSON-LD, breadcrumbs, and Breadcrumb JSON-LD |
 | Comparison | IMPLEMENTED | Selection, comparison bar, page, table, and difference highlighting |
-| Comparison persistence | IMPLEMENTED | Browser `localStorage` persistence |
+| Comparison persistence | IMPLEMENTED | Validated Product IDs only under `siemiran:product-comparison`, with safe legacy-object migration |
 | Inquiry UI | IMPLEMENTED | Product inquiry form with shared client/server validation |
 | Inquiry backend workflow | PARTIAL | API validates and acknowledges requests but does not deliver or persist them |
 | Downloads/resources | PARTIAL | Types and UI architecture exist; active product download arrays are empty |

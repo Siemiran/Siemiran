@@ -1,6 +1,6 @@
 # Siemiran — Roadmap
 
-Baseline: `main` at `c37272e4da8e7a7f509b917eacff833fea6b58b9`
+Baseline: `main` at `454b2e2e79a04cc95fff9141c8a1f66b2bf88f65`
 
 This roadmap distinguishes the completed repository baseline from future
 priorities. Ordering expresses current priority, not a finalized implementation
@@ -18,26 +18,37 @@ design or semantic release schedule.
 - Static generation completes 774/774.
 - UI catalogs contain 123 matched messages per locale.
 - English routes remain temporarily `noindex, follow`.
-- The inactive typed Product-copy infrastructure is merged and independently
-  verified.
-- Its server-only validation, publication, and resolution foundation fails
-  closed, with immutable snapshots and runtime-authenticated boundaries.
-- The Product-copy registry is 0/382 and publication is disabled.
+- The typed Product-copy infrastructure and all intended consumer integrations
+  are merged through PR #52 and independently verified with a Task BW **PASS**.
+- Product listing, cards/meta, featured and related Products, detail
+  header/body, search, metadata/OpenGraph/Twitter, Product JSON-LD, comparison,
+  and inquiry identity use the central resolver/presentation boundary.
+- Its server-only trusted boundary and inert public DTO boundary fail closed,
+  with descriptor-first validation, exhaustive field policy, independently
+  detached/deeply frozen snapshots, runtime-authenticated boundaries, and no
+  private review or publication state exposed to clients.
+- Comparison persists validated Product IDs under
+  `siemiran:product-comparison` and safely migrates legacy stored objects.
+- The Product-copy registry is 0/382, publication is disabled, Persian copy
+  drafted and activated are both 0, and canonical Product data is unchanged.
 
-## 1. Persian Product-copy Integration, Drafting, and Activation
+## 1. Persian Product-copy Drafting, Review, and Atomic Activation
 
-1. Wire the resolver into all Product-copy consumers while publication remains
-   disabled and prove unchanged canonical output across visible UI, Metadata,
-   OpenGraph/Twitter, JSON-LD, Product cards, related Products, and search.
-2. Ensure search and comparison persistence use safe locale-aware presentation
-   boundaries without shipping drafts or reviewer data.
-3. Draft accurate Persian Product copy in controlled batches while keeping
-   canonical Product/source data unchanged and canonical technical tokens
-   bidi-isolated.
-4. Complete linguistic and technical review with approvals bound to the current
-   deterministic content hash.
-5. Pass the complete, exact 382/382 activation gate.
-6. Activate Persian Product copy atomically, with no partial publication.
+1. Draft accurate Persian Product copy in controlled, reviewable batches while
+   keeping canonical Product/source data unchanged.
+2. Complete human linguistic review for each draft.
+3. Complete human technical review for each draft, with both approvals bound to
+   the current deterministic content hash.
+4. Pass complete 382/382 dual-approval validation.
+5. Perform one atomic public activation only after the complete gate passes;
+   drafting/review batches may never be partially activated.
+6. Only after the complete Product-copy gate, activate public bilingual SEO,
+   reciprocal hreflang, and localized sitemap coverage.
+
+Throughout drafting and review, canonical technical tokens remain untranslated:
+MLFBs, Product IDs, slugs, part numbers, official model/family names, protocols,
+standards, values, units, and URLs. This next phase is documented but has not
+started.
 
 ## 2. Bilingual SEO Activation
 
@@ -85,7 +96,7 @@ design or semantic release schedule.
 - Keep CMS, API, database, and cache evaluation as future architecture
   decisions.
 
-Product-copy consumer integration, Persian drafting and review, the 382/382
-activation gate, atomic publication, bilingual SEO activation, inquiry
-delivery, CI/CD, download population, and another Siemens-series expansion are
-not complete. The underlying inactive Product-copy infrastructure is complete.
+Persian Product-copy drafting and review, the 382/382 dual-approval gate, atomic
+publication, bilingual SEO activation, inquiry delivery, CI/CD, download
+population, and another Siemens-series expansion are not complete. Consumer
+integration and its trusted/public presentation boundaries are complete.

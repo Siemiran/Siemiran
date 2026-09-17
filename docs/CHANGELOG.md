@@ -3,6 +3,51 @@
 This file records completed repository changes. Connection status refers to the
 implementation on the current `main` branch.
 
+## 2026-09-17 - Tasks BO-BW: Integrate Product-copy Consumers
+
+### Changed
+
+- Added a public DTO boundary backed by the trusted central Product-copy
+  resolver; trusted full Product snapshots remain server-only.
+- Migrated Product listing, cards and meta, featured Products, related Products,
+  Product detail header/body, and search to the resolver/presentation boundary.
+- Resolved metadata, OpenGraph, Twitter, and Product JSON-LD through the same
+  trusted boundary.
+- Changed comparison persistence to validated Product IDs only under
+  `siemiran:product-comparison`, with safe migration of legacy stored Product
+  objects.
+- Limited the inquiry client boundary to Product `id`, `title`, and
+  `partNumber`.
+- Added fail-closed renderer and storage handling while preserving canonical
+  technical-segment LTR/English bidi isolation.
+
+### Verified
+
+- PR #52 squash-merged the Task BO consumer-integration implementation into
+  `main` as `454b2e2e79a04cc95fff9141c8a1f66b2bf88f65`.
+- Task BW then performed read-only post-merge verification of that exact `main`
+  SHA and returned **PASS**; it authored no source, Product, application, or
+  documentation change.
+- Product-copy validation, ESLint, TypeScript no-emit, and the production build
+  passed; static generation completed 774/774.
+- Product-detail generation covers 382 FA paths and 382 EN paths with a zero
+  slug-set difference.
+- Client privacy/security scans found no private review, evidence, hash,
+  registry, capability, or publication state reachability.
+- Catalog invariants remain 382 Products, S7-300 196/196, S7-1200 186/186, and
+  exactly the established ten lifecycle omissions.
+- Final verification found a clean repository state.
+
+### State
+
+- The registry is 0/382 and publication is disabled.
+- No Persian Product copy has been drafted or activated.
+- Canonical Product/source/database/adapter data is unchanged.
+- FA and EN Product prose remains canonical English/LTR while publication is
+  disabled; Persian UI localization remains active independently.
+- The next controlled drafting and linguistic/technical review phase has not
+  started, and no partial public activation is permitted.
+
 ## 2026-09-11 - Tasks BK-BL: Add and Verify Inactive Persian Product-copy Infrastructure
 
 ### Changed

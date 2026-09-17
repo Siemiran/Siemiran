@@ -2,9 +2,39 @@
 
 Repository source of truth: current `main` branch
 
-Last synchronized: 2026-09-11
+Last synchronized: 2026-09-17
 
-## 2026-09-11 - Tasks BK-BL: Inactive Persian Product-copy Infrastructure Verified (Current State)
+## 2026-09-17 - Tasks BO-BW: Product-copy Consumer Integration (Current State)
+
+Tasks BO-BW completed the atomic migration of every intended Product-copy
+consumer to the central resolver and public presentation boundary, followed by
+security corrections and independent final verification. PR #52 was
+squash-merged as `454b2e2e79a04cc95fff9141c8a1f66b2bf88f65`, and Task BW
+returned **PASS** on that exact `main` SHA.
+
+Listing, cards and meta, featured and related Products, detail header/body,
+search, metadata/OpenGraph/Twitter, Product JSON-LD, comparison, and the inquiry
+identity boundary are connected. Public DTOs exclude private Product prose
+fields, comparison persists validated IDs with safe legacy-object migration,
+search uses canonical identity plus public DTO text, and inquiry exposes only
+minimal Product identity. Private review, evidence, hash, registry, capability,
+and publication state is not client-reachable.
+
+The verified state remains 382 Products, S7-300 196/196, S7-1200 186/186,
+exactly ten lifecycle omissions, 382 FA and 382 EN Product paths with zero slug
+difference, and 774/774 static generation. The registry is 0/382, publication
+is disabled, Persian Product copy drafted is 0, and Persian Product copy
+activated is 0. Canonical Product/source/database/adapter data did not change.
+FA and EN Product prose therefore remains canonical English/LTR while Persian
+UI localization continues independently.
+
+Product-copy validation, lint, TypeScript, production build, privacy/security
+scans, and supported smoke verification passed. The next authorized milestone
+is controlled Persian Product-copy drafting and linguistic/technical review;
+it has not started. Public activation remains blocked until the complete
+382/382 dual-approval gate passes, with no partial activation.
+
+## 2026-09-11 - Tasks BK-BL: Inactive Persian Product-copy Infrastructure Verified (Historical Snapshot)
 
 PR #50 squash-merged Task BK as
 `c37272e4da8e7a7f509b917eacff833fea6b58b9`, and Task BL independently
@@ -184,9 +214,10 @@ the inventory before this approved deletion, not a valid current record.
 - Technical-token isolation and automatic direction for localized comparison
   values and Product-description presentation
 
-Persian Product-copy infrastructure is implemented but inactive. Product-copy
-consumer integration, drafting, review, the exact 382/382 activation gate,
-English indexing activation, reciprocal hreflang, and localized sitemap
+The Product-copy infrastructure is implemented and all intended consumers now
+use its resolver/presentation boundary. The registry remains 0/382 and
+publication remains disabled. Drafting, review, the exact 382/382 activation
+gate, English indexing activation, reciprocal hreflang, and localized sitemap
 coverage remain future gates.
 
 ## Completed Inactive Product-copy Infrastructure
@@ -201,7 +232,22 @@ coverage remain future gates.
   approvals
 - Exact 382/382 atomic activation gate and exact-ten lifecycle-omission
   invariant
-- Empty 0/382 registry with publication disabled and no connected consumers
+- Empty 0/382 registry with publication disabled; its resolver/presentation
+  boundary is now connected to all intended consumers
+
+## Completed Product-copy Consumer Integration
+
+- Atomic migration of listing, card/meta, featured, related, detail, search,
+  metadata/OpenGraph/Twitter, Product JSON-LD, comparison, and inquiry identity
+  consumers to the central resolver/presentation boundary
+- Trusted server-only full Product resolution and inert public DTOs that omit
+  private Product prose and review/publication state
+- Descriptor-first validation, exhaustive required/optional field policy,
+  detached deeply frozen trusted/public snapshots, and fail-closed renderers
+- Unified canonical-identity/public-copy search, ID-only comparison persistence
+  with safe legacy migration, and minimal inquiry identity
+- Task BW **PASS** on PR #52's squash commit
+  `454b2e2e79a04cc95fff9141c8a1f66b2bf88f65`
 
 ## Completed Product Experience
 
@@ -224,7 +270,8 @@ dataset does not currently populate their data.
 - Comparison page and responsive table
 - Comparison page state integration
 - Difference highlighting
-- Browser `localStorage` persistence
+- Validated Product-ID-only persistence under `siemiran:product-comparison`,
+  including safe migration from legacy stored Product objects
 
 Comparison integration is complete in the current implementation; it is not a
 pending milestone.
@@ -541,10 +588,13 @@ All six S7-300 source groups are connected with complete Product coverage at
 concern is lifecycle provenance only: 10 records are explicitly `unverified`
 and expose no public lifecycle value. Product integration is not pending.
 
-The inactive Persian Product-copy infrastructure is verified, with a 0/382
-registry and publication disabled. Product-copy consumer integration, drafting,
-linguistic and technical approval, the complete 382/382 activation gate, public
-activation, and bilingual SEO activation remain pending in that order.
+The Product-copy resolver/presentation boundary is verified and connected to
+all intended consumers. Its registry remains 0/382 and publication remains
+disabled, so both locales intentionally resolve canonical English/LTR Product
+prose while Persian UI localization remains active. Controlled drafting,
+linguistic and technical approval, the complete 382/382 activation gate, one
+atomic public activation, and bilingual SEO activation remain pending in that
+order; drafting has not started.
 
 ## 2026-09-04 — Function Module Source/Lifecycle Progress
 
