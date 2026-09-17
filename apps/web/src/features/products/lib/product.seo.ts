@@ -1,14 +1,20 @@
+import "server-only";
+
 import type { Metadata } from "next";
 import type { AppLocale } from "@/i18n/routing";
+import { resolveProductCopy } from "../copy/product-copy.resolver";
+import { serializeResolvedProductCopy } from "../copy/product-copy.serializer";
 import type { Product } from "../types/product.types";
 
 export function createProductMetadata(
   product: Product,
-  locale: AppLocale,
+  locale: AppLocale
 ): Metadata {
-  const title = `${product.title} | Siemiran`;
-
-  const description = product.shortDescription;
+  const copy = serializeResolvedProductCopy(
+    resolveProductCopy(product, locale)
+  );
+  const title = copy.seoTitle;
+  const description = copy.seoDescription;
   const localePrefix = locale === "en" ? "/en" : "";
   const pathname = `${localePrefix}/products/${product.slug}`;
 

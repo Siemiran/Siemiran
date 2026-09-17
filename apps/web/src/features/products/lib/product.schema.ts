@@ -1,6 +1,11 @@
-﻿import type { Product } from "../types/product.types";
+import "server-only";
 
 import type { AppLocale } from "@/i18n/routing";
+
+import { assertResolverIssuedProductCopy } from "../copy/product-copy.resolver";
+import { serializeProductCopyParagraph } from "../copy/product-copy.serializer";
+import type { ResolvedProductCopy } from "../copy/product-copy.types";
+import type { Product } from "../types/product.types";
 
 const DEFAULT_SITE_URL = "https://siemiran.com";
 
@@ -12,9 +17,12 @@ function toAbsoluteUrl(path: string, siteUrl: string): string {
 
 export function createProductSchema(
   product: Product,
+  copy: Readonly<ResolvedProductCopy>,
   locale: AppLocale,
-  siteUrl = DEFAULT_SITE_URL,
+  siteUrl = DEFAULT_SITE_URL
 ) {
+  assertResolverIssuedProductCopy(copy);
+
   const hasVerifiedImage = !product.images[0].includes("placeholder");
   const localePrefix = locale === "en" ? "/en" : "";
 
@@ -22,7 +30,7 @@ export function createProductSchema(
     "@context": "https://schema.org",
     "@type": "Product",
     name: product.title,
-    description: product.shortDescription,
+    description: serializeProductCopyParagraph(copy.seoDescription),
     sku: product.partNumber,
     mpn: product.manufacturerPartNumber ?? product.partNumber,
     url: `${siteUrl}${localePrefix}/products/${product.slug}`,

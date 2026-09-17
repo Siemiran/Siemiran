@@ -1,16 +1,17 @@
 import { useTranslations } from "next-intl";
 
 import { Link } from "@/i18n/navigation";
-import type { Product } from "@/features/products/types/product.types";
+import type { ProductListItemViewModel } from "@/features/products/copy/product-copy.public-types";
 
 interface ProductActionsProps {
-  product: Product;
+  item: ProductListItemViewModel;
 }
 
-export default function ProductActions({ product }: ProductActionsProps) {
+export default function ProductActions({ item }: ProductActionsProps) {
   const t = useTranslations("Products");
+  const { product } = item;
   const datasheet = product.downloads.find(
-    (download) => download.type === "datasheet",
+    (download) => download.type === "datasheet"
   );
 
   return (

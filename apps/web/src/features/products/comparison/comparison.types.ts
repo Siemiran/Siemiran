@@ -1,15 +1,19 @@
-import type { Product } from "../types/product.types";
+import type {
+  ProductId,
+  ProductListItemViewModel,
+} from "../copy/product-copy.public-types";
 
 export interface ProductComparisonState {
-  products: Product[];
+  productIds: readonly ProductId[];
+  products: readonly ProductListItemViewModel[];
   maxProducts: number;
 }
 
 export interface ProductComparisonActions {
-  addProduct: (product: Product) => void;
-  removeProduct: (productId: string) => void;
+  addProduct: (productId: ProductId) => void;
+  removeProduct: (productId: ProductId) => void;
   clearProducts: () => void;
-  hasProduct: (productId: string) => boolean;
+  hasProduct: (productId: ProductId) => boolean;
 }
 
 export interface ProductComparison

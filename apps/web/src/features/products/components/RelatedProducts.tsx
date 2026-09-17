@@ -1,15 +1,15 @@
-import type { Product } from "../types/product.types";
+import type { ProductListItemViewModel } from "../copy/product-copy.public-types";
 import ProductCard from "./ProductCard";
 import { useTranslations } from "next-intl";
 
 interface Props {
-  products: Product[];
+  items: readonly ProductListItemViewModel[];
 }
 
-export default function RelatedProducts({ products }: Props) {
+export default function RelatedProducts({ items }: Props) {
   const t = useTranslations("Comparison");
 
-  if (products.length === 0) return null;
+  if (items.length === 0) return null;
 
   return (
     <section className="mt-20">
@@ -18,8 +18,8 @@ export default function RelatedProducts({ products }: Props) {
       </h2>
 
       <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
-        {products.map((product) => (
-          <ProductCard key={product.id} product={product} />
+        {items.map((item) => (
+          <ProductCard key={item.product.id} item={item} />
         ))}
       </div>
     </section>

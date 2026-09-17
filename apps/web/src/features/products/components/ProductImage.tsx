@@ -1,12 +1,13 @@
 ﻿import Image from "next/image";
 
-import type { Product } from "@/features/products/types/product.types";
+import type { ProductListItemViewModel } from "@/features/products/copy/product-copy.public-types";
 
 interface ProductImageProps {
-  product: Product;
+  item: ProductListItemViewModel;
 }
 
-export default function ProductImage({ product }: ProductImageProps) {
+export default function ProductImage({ item }: ProductImageProps) {
+  const { product } = item;
   return (
     <div className="relative aspect-square overflow-hidden rounded-xl bg-slate-50">
       <Image

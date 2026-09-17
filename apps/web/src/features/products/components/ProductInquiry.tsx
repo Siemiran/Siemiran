@@ -3,12 +3,12 @@
 import { FormEvent, useState } from "react";
 import { useTranslations } from "next-intl";
 
-import type { Product } from "@/features/products/types/product.types";
+import type { ProductInquiryIdentityDTO } from "@/features/products/copy/product-copy.public-types";
 import type { ProductInquiryInput } from "../lib/inquiry.schema";
 import { validateProductInquiry } from "../lib/inquiry.validation";
 
 interface ProductInquiryProps {
-  product: Product;
+  product: ProductInquiryIdentityDTO;
   onClose?: () => void;
 }
 
@@ -33,11 +33,10 @@ export default function ProductInquiry({
 
   function localizeValidationErrors(
     validationErrors: Partial<Record<keyof ProductInquiryInput, string>>,
-    input: ProductInquiryInput,
+    input: ProductInquiryInput
   ) {
-    const localizedErrors: Partial<
-      Record<keyof ProductInquiryInput, string>
-    > = {};
+    const localizedErrors: Partial<Record<keyof ProductInquiryInput, string>> =
+      {};
 
     if (validationErrors.quantity) {
       localizedErrors.quantity = t("validation.quantityMin");
@@ -54,7 +53,7 @@ export default function ProductInquiry({
     }
 
     const hasUnmappedErrors = Object.keys(validationErrors).some(
-      (field) => !["quantity", "name", "email"].includes(field),
+      (field) => !["quantity", "name", "email"].includes(field)
     );
 
     return { localizedErrors, hasUnmappedErrors };
@@ -78,13 +77,15 @@ export default function ProductInquiry({
     const result = validateProductInquiry(input);
 
     if (!result.valid) {
-      const { localizedErrors, hasUnmappedErrors } =
-        localizeValidationErrors(result.errors, input);
+      const { localizedErrors, hasUnmappedErrors } = localizeValidationErrors(
+        result.errors,
+        input
+      );
       setErrors(localizedErrors);
       setSubmitError(
         hasUnmappedErrors || Object.keys(localizedErrors).length === 0
           ? t("submitError")
-          : "",
+          : ""
       );
       return;
     }
@@ -123,7 +124,7 @@ export default function ProductInquiry({
           setSubmitError(
             hasUnmappedErrors || Object.keys(localizedErrors).length === 0
               ? t("submitError")
-              : "",
+              : ""
           );
         } else {
           setSubmitError(t("submitError"));
@@ -153,9 +154,7 @@ export default function ProductInquiry({
               {t("title")}
             </h2>
 
-            <p className="mt-1 text-sm text-slate-500">
-              {t("description")}
-            </p>
+            <p className="mt-1 text-sm text-slate-500">{t("description")}</p>
           </div>
 
           {onClose && (

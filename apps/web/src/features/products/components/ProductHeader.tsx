@@ -1,11 +1,14 @@
 import type { Product } from "@/features/products/types/product.types";
+import { ProductCopyInline } from "@/features/products/copy/ProductCopyText";
+import type { ResolvedProductCopy } from "@/features/products/copy/product-copy.types";
 import { useTranslations } from "next-intl";
 
 interface ProductHeaderProps {
   product: Product;
+  copy: Readonly<ResolvedProductCopy>;
 }
 
-export default function ProductHeader({ product }: ProductHeaderProps) {
+export default function ProductHeader({ product, copy }: ProductHeaderProps) {
   const t = useTranslations("Product");
   const lifecycleLabel = product.lifecycle ? t(product.lifecycle) : null;
 
@@ -44,7 +47,7 @@ export default function ProductHeader({ product }: ProductHeaderProps) {
           dir="auto"
           className="mt-3 max-w-3xl text-base leading-7 text-slate-600"
         >
-          {product.shortDescription}
+          <ProductCopyInline copy={copy} field="shortDescription" />
         </p>
       </div>
 

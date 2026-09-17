@@ -1,16 +1,15 @@
-import type { Product } from "@/features/products/types/product.types";
+import { ProductCopyBlock } from "@/features/products/copy/ProductCopyText";
+import type { ResolvedProductCopy } from "@/features/products/copy/product-copy.types";
 import { useTranslations } from "next-intl";
 
 interface ProductDescriptionProps {
-  description?: Product["description"];
+  copy: Readonly<ResolvedProductCopy>;
 }
 
-export default function ProductDescription({
-  description,
-}: ProductDescriptionProps) {
+export default function ProductDescription({ copy }: ProductDescriptionProps) {
   const t = useTranslations("Product");
 
-  if (!description?.trim()) {
+  if (copy.description.length === 0) {
     return null;
   }
 
@@ -26,12 +25,12 @@ export default function ProductDescription({
         {t("description")}
       </h2>
 
-      <p
-        dir="auto"
-        className="mt-4 text-sm leading-7 whitespace-pre-line text-slate-600"
-      >
-        {description}
-      </p>
+      <ProductCopyBlock
+        copy={copy}
+        field="description"
+        className="mt-4"
+        paragraphClassName="text-sm leading-7 whitespace-pre-line text-slate-600"
+      />
     </section>
   );
 }

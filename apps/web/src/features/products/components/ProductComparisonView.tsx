@@ -4,10 +4,10 @@ import { Link } from "@/i18n/navigation";
 import { useTranslations } from "next-intl";
 
 import ProductComparisonTable from "./ProductComparisonTable";
-import type { Product } from "@/features/products/types/product.types";
+import type { ProductListItemViewModel } from "@/features/products/copy/product-copy.public-types";
 
 interface Props {
-  products: Product[];
+  products: readonly ProductListItemViewModel[];
   onRemove: (productId: string) => void;
   onClear: () => void;
 }
@@ -33,9 +33,7 @@ export default function ProductComparisonView({
             {t("compareProducts")}
           </h2>
 
-          <p className="mt-2 text-sm leading-6 text-slate-500">
-            {t("empty")}
-          </p>
+          <p className="mt-2 text-sm leading-6 text-slate-500">{t("empty")}</p>
 
           <Link
             href="/products"
@@ -56,9 +54,7 @@ export default function ProductComparisonView({
             {t("compareProducts")}
           </h2>
 
-          <p className="mt-1 text-sm text-slate-500">
-            {t("description")}
-          </p>
+          <p className="mt-1 text-sm text-slate-500">{t("description")}</p>
         </div>
 
         <button
@@ -71,15 +67,17 @@ export default function ProductComparisonView({
       </div>
 
       <div className="mb-4 flex flex-wrap gap-2">
-        {products.map((product) => (
+        {products.map((item) => (
           <button
-            key={product.id}
+            key={item.product.id}
             type="button"
-            onClick={() => onRemove(product.id)}
+            onClick={() => onRemove(item.product.id)}
             className="rounded-full bg-slate-100 px-3 py-1.5 text-xs font-medium text-slate-700 transition hover:bg-slate-200"
-            aria-label={t("removeFromComparison", { product: product.title })}
+            aria-label={t("removeFromComparison", {
+              product: item.product.title,
+            })}
           >
-            <bdi dir="ltr">{product.title}</bdi> ×
+            <bdi dir="ltr">{item.product.title}</bdi> ×
           </button>
         ))}
       </div>

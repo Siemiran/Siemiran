@@ -1,27 +1,30 @@
-import type { Product } from "../types/product.types";
+import type { ProductListItemViewModel } from "../copy/product-copy.public-types";
 
 export function getProductTypes(
-  products: Product[],
+  items: readonly ProductListItemViewModel[],
   series?: string
 ): string[] {
   const source =
     series && series !== "all"
-      ? products.filter((p) => p.seriesId === series)
-      : products;
+      ? items.filter((item) => item.product.seriesId === series)
+      : items;
 
   return Array.from(
     new Set(
       source
-        .map((p) => p.productTypeId)
+        .map((item) => item.product.productTypeId)
         .filter((item): item is string => Boolean(item))
     )
   ).sort();
 }
 
-export function filterByProductType(products: Product[], productType?: string) {
+export function filterByProductType(
+  items: ProductListItemViewModel[],
+  productType?: string
+) {
   if (!productType || productType === "all") {
-    return products;
+    return items;
   }
 
-  return products.filter((p) => p.productTypeId === productType);
+  return items.filter((item) => item.product.productTypeId === productType);
 }

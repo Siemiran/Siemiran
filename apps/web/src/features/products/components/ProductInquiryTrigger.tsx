@@ -3,11 +3,11 @@
 import { useState } from "react";
 import { useTranslations } from "next-intl";
 
-import type { Product } from "@/features/products/types/product.types";
+import type { ProductInquiryIdentityDTO } from "@/features/products/copy/product-copy.public-types";
 import ProductInquiry from "./ProductInquiry";
 
 interface ProductInquiryTriggerProps {
-  product: Product;
+  product: ProductInquiryIdentityDTO;
 }
 
 export default function ProductInquiryTrigger({

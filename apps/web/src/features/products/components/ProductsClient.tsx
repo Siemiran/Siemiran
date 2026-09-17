@@ -11,7 +11,7 @@ import { useProductSearchParams } from "../hooks/useProductSearchParams";
 
 import { getCategories } from "../filters/category.filter";
 
-import type { Product } from "../types/product.types";
+import type { ProductListItemViewModel } from "../copy/product-copy.public-types";
 
 import FamilyFilter from "./FamilyFilter";
 
@@ -36,10 +36,10 @@ import { useProductPagination } from "../hooks/useProductPagination";
 import ProductComparisonBar from "./ProductComparisonBar";
 import { useProductComparison } from "../hooks/useProductComparison";
 interface Props {
-  products: Product[];
+  items: readonly ProductListItemViewModel[];
 }
 
-export default function ProductsClient({ products }: Props) {
+export default function ProductsClient({ items }: Props) {
   const t = useTranslations("Products");
   const {
     search,
@@ -64,7 +64,7 @@ export default function ProductsClient({ products }: Props) {
   } = useProductSearchParams();
 
   const { filteredProducts } = useProductFilters({
-    products,
+    items,
     search,
     category,
     family,
@@ -73,10 +73,10 @@ export default function ProductsClient({ products }: Props) {
     sort,
   });
 
-  const categories = getCategories(products);
-  const families = getFamilies(products, category);
-  const seriesList = getSeries(products, family);
-  const productTypes = getProductTypes(products, series);
+  const categories = getCategories(items);
+  const families = getFamilies(items, category);
+  const seriesList = getSeries(items, family);
+  const productTypes = getProductTypes(items, series);
   const { page, setPage } = useProductPagination();
 
   const {
@@ -92,7 +92,7 @@ export default function ProductsClient({ products }: Props) {
     removeProduct,
     clearProducts,
     hasProduct,
-  } = useProductComparison();
+  } = useProductComparison({ catalog: items });
 
   return (
     <>
@@ -133,14 +133,14 @@ export default function ProductsClient({ products }: Props) {
       </div>
 
       <section className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
-        {paginatedProducts.map((product) => (
+        {paginatedProducts.map((item) => (
           <ProductCard
-            key={product.id}
-            product={product}
-            comparisonSelected={hasProduct(product.id)}
+            key={item.product.id}
+            item={item}
+            comparisonSelected={hasProduct(item.product.id)}
             comparisonDisabled={
               comparisonProducts.length >= maxProducts &&
-              !hasProduct(product.id)
+              !hasProduct(item.product.id)
             }
             onAddToComparison={addProduct}
             onRemoveFromComparison={removeProduct}
