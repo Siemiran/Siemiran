@@ -1,6 +1,6 @@
 # Siemiran — Current Architecture
 
-Baseline: `main` at `c37272e4da8e7a7f509b917eacff833fea6b58b9`
+Baseline: `main` at `454b2e2e79a04cc95fff9141c8a1f66b2bf88f65`
 
 ## Repository Structure
 
@@ -47,7 +47,7 @@ deferred.
 apps/web/src/features/products/
 ├── components/     Product-specific UI
 ├── comparison/     Comparison types and utilities
-├── copy/           Inactive Product-copy infrastructure
+├── copy/           Trusted Product-copy resolver and public DTO boundary
 ├── data/           Product aggregation
 ├── database/       Taxonomy and manufacturer source records
 ├── filters/        Catalog filtering functions
@@ -90,46 +90,60 @@ Classic and G2 source groups. Every active Siemens Product group is connected
 through validation/adapters and aggregation to the Product repository.
 
 Ten established S7-300 Products have unverified lifecycle provenance and
-invariantly omit the public `Product.lifecycle` property. The inactive copy
-layer may not supply, infer, or override lifecycle data.
+invariantly omit the public `Product.lifecycle` property. The copy layer may not
+supply, infer, or override lifecycle data.
 
-## Inactive Persian Product-copy Infrastructure
+## Product-copy Resolver and Trust Boundaries
 
-PR #50 added a server-only foundation under
-`apps/web/src/features/products/copy/`. It defines explicit `text` and
-`technical` segments, validation, deterministic serialization and content
-hashing, an activation capability, immutable validated publication snapshots,
-a locale resolver, and rendering support.
-
-The intended future presentation path is:
+Canonical Product/source/database/adapter data remains English and immutable.
+The separate Product-copy registry contains 0/382 entries, publication is
+globally disabled, and no Persian Product copy has been drafted or activated.
+The resolver is nevertheless the sole public Product-copy source for Product
+listing, cards and meta, featured and related Products, detail header/body,
+search, metadata/OpenGraph/Twitter, Product JSON-LD, comparison, and inquiry
+identity.
 
 ```text
-canonical Product
-  → locale resolver
-  → approved Persian overlay
-  → UI / Metadata / JSON-LD / search consumers
+canonical Product + optional approved Persian overlay
+  → trusted server-only resolver and renderer
+  → detached, deeply frozen public DTO
+  → UI / search / comparison / inquiry identity
+
+trusted resolved copy
+  → server-only metadata and Product JSON-LD
 ```
 
-Only the inactive infrastructure for this second path is implemented. No public
-Product-copy consumer is wired to it, the draft registry contains 0 entries,
-and publication is disabled. Consequently both locales still display canonical
-English Product descriptions; no Persian Product copy has been drafted or
-published.
+While publication is disabled, both FA and EN Product descriptions
+intentionally resolve to canonical English/LTR. Persian UI localization is a
+separate concern and remains active. The resolver has no partial Persian-copy
+fallback.
+
+The trusted server-only boundary contains registry and reviews, validation and
+cryptography, technical-token policy, publication and capability handling,
+resolver authenticity, the trusted Product renderer, metadata, and Product
+JSON-LD. Client boundaries receive inert public DTOs. Public Product records
+omit `shortDescription`, `description`, `seoTitle`, and `seoDescription`; no
+private review, evidence, hash, registry, capability, or publication state is
+client-reachable.
 
 The boundary fails closed:
 
-- Registry and validation inputs are server-only and runtime validated.
-- Validated publication snapshots are cloned, deeply frozen, and isolated from
-  subsequent registry mutation.
+- Original Product descriptors are validated before value traversal, and every
+  required or optional Product field is exhaustively bound to policy.
+- The resolver receives a trusted full Product snapshot, not the original
+  Product object.
+- Trusted and public records are independently detached and deeply frozen.
+- Public renderers reject malformed input instead of rendering partial or
+  untrusted content.
 - Activation capabilities and resolved-copy objects are runtime authenticated.
 - Activation requires exactly 382/382 canonical Product IDs, with no missing,
-  extra, or duplicate entries.
-- Every entry requires current linguistic and technical approvals bound to its
-  deterministic content hash.
-- Brand validation preserves `زیمیران` in Persian and `SIEMIRAN` in English.
-- Technical identifiers, MLFBs, part numbers, Product/model names, protocols,
-  standards, values, units, and URLs remain canonical English tokens and are
-  bidi-isolated at presentation.
+  extra, or duplicate entries; every entry needs current linguistic and
+  technical approvals bound to its deterministic content hash.
+- Brand validation preserves `زیمیران` in Persian and `SIEMIRAN` in English;
+  the incorrect active Persian token `سیمیران` has zero occurrences.
+- Technical segments retain LTR/English bidi isolation. MLFBs, Product IDs,
+  slugs, part numbers, official model/family names, protocols, standards,
+  values, units, and URLs remain canonical and untranslated.
 - The exact ten canonical lifecycle omissions remain an enforced invariant.
 - Mutation, malformed input, timestamps, normalization, brand, technical-token,
   lifecycle, coverage, capability, and resolved-copy boundaries are validated.
@@ -144,12 +158,18 @@ npm.cmd run validate:product-copy
 
 - Search, filters, sorting, and pagination are reflected in product-list URL
   parameters.
-- Comparison selections are client state persisted in browser `localStorage`.
+- Product search uses canonical title and part number plus public DTO search
+  text.
+- Comparison persists validated Product IDs only under
+  `siemiran:product-comparison`; legacy stored Product objects migrate safely to
+  ID storage.
 - Product detail pages are generated from repository data.
+- Inquiry client data contains only Product `id`, `title`, and `partNumber`.
 - The inquiry API performs request parsing and validation but has no connected
   persistence or delivery provider.
-- Product-copy registry, validation, publication, and resolution remain behind
-  their server-only boundary.
+- Product-copy registry, reviews, validation, cryptography, policy,
+  publication/capability, resolver authenticity, trusted rendering, metadata,
+  and Product JSON-LD remain behind their server-only boundary.
 
 ## Verified Local Production-runtime Caveat
 
