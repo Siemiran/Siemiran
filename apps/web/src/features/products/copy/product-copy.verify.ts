@@ -36,6 +36,7 @@ import {
 } from "./product-copy.publication";
 import { persianProductCopyDraftRegistry } from "./product-copy.registry";
 import { resolveProductCopy } from "./product-copy.resolver";
+import { getReviewedProductTechnicalTokenOverrideEntries } from "./product-copy.technical-token-overrides";
 import {
   normalizeProductCopySearchValue,
   serializeProductCopyParagraph,
@@ -55,6 +56,11 @@ import {
   validatePersianProductCopyForActivation,
   type ProductCopyActivationCapability,
 } from "./product-copy.validator";
+import {
+  createProductTechnicalTokenOverrideResolver,
+  deriveAllowedTechnicalTokens,
+  reviewedGlobalTechnicalTokens,
+} from "./technical-token-policy";
 
 type MutableSegment = {
   kind: "text" | "technical";
@@ -234,6 +240,24 @@ function assertDraftIssues(
 ): ValidationResult {
   const result = validateFixture(entry, canonicalProducts);
   assertIssues(result, expectedCodes, fixtureName);
+  return result;
+}
+
+function assertDraftIncludesIssues(
+  fixtureName: string,
+  entry: unknown,
+  expectedCodes: readonly string[],
+  canonicalProducts: readonly Readonly<Product>[] = products
+): ValidationResult {
+  const result = validateFixture(entry, canonicalProducts);
+  assert(!result.valid, `${fixtureName} must fail.`);
+  const actualCodes = issueCodes(result);
+  expectedCodes.forEach((code) =>
+    assert(
+      actualCodes.includes(code),
+      `${fixtureName} must report ${code}; received ${actualCodes.join(", ")}.`
+    )
+  );
   return result;
 }
 
@@ -544,6 +568,599 @@ draftCases.atomicSpecificationValue = validateFixture(
 assert(
   draftCases.atomicSpecificationValue.valid,
   "Canonical atomic engineering values must remain available."
+);
+
+const expectedBatch01TechnicalTokenOverrides = [
+  {
+    productId: "siemens-s7-1200-cpu-211-1ae40",
+    tokens: ["0-10 V DC"],
+  },
+  {
+    productId: "siemens-s7-1200-cpu-212-1ae40",
+    tokens: ["0-10 V DC"],
+  },
+  {
+    productId: "siemens-s7-1200-cpu-214-1ag40",
+    tokens: ["0-10 V DC"],
+  },
+  {
+    productId: "siemens-s7-1200-cpu-215-1ag40",
+    tokens: ["0-10 V DC", "0-20 mA DC"],
+  },
+  {
+    productId: "siemens-s7-1200-cpu-217-1ag40",
+    tokens: ["0-10 V DC", "0-20 mA DC", "RS-422/485"],
+  },
+] as const;
+
+const batch01TechnicalTokenOverrides =
+  getReviewedProductTechnicalTokenOverrideEntries();
+const protectedOverrideSnapshotBeforeMutation = JSON.stringify(
+  batch01TechnicalTokenOverrides
+);
+const protectedSnapshotMutationAttempts = [
+  Reflect.set(
+    batch01TechnicalTokenOverrides as unknown as Record<string, unknown>,
+    "0",
+    { productId: "mutated", tokens: ["MUTATED"] }
+  ),
+  Reflect.set(
+    batch01TechnicalTokenOverrides[0] as unknown as Record<string, unknown>,
+    "productId",
+    "mutated"
+  ),
+  Reflect.set(
+    batch01TechnicalTokenOverrides[0].tokens as unknown as Record<
+      string,
+      unknown
+    >,
+    "0",
+    "MUTATED"
+  ),
+];
+const secondBatch01TechnicalTokenOverrideSnapshot =
+  getReviewedProductTechnicalTokenOverrideEntries();
+const uniqueBatch01TechnicalTokenOverrides = new Set(
+  batch01TechnicalTokenOverrides.flatMap((entry) => entry.tokens)
+);
+
+assert(
+  JSON.stringify(batch01TechnicalTokenOverrides) ===
+    JSON.stringify(expectedBatch01TechnicalTokenOverrides),
+  "Batch 01 technical-token overrides must match the exact reviewed mapping."
+);
+assert(
+  batch01TechnicalTokenOverrides.length === 5 &&
+    batch01TechnicalTokenOverrides.reduce(
+      (count, entry) => count + entry.tokens.length,
+      0
+    ) === 8 &&
+    uniqueBatch01TechnicalTokenOverrides.size === 3,
+  "Batch 01 technical-token override mapping must contain exactly five Product IDs, eight assignments, and three unique strings."
+);
+assert(
+  Object.isFrozen(batch01TechnicalTokenOverrides) &&
+    batch01TechnicalTokenOverrides.every(
+      (entry) => Object.isFrozen(entry) && Object.isFrozen(entry.tokens)
+    ) &&
+    batch01TechnicalTokenOverrides !==
+      secondBatch01TechnicalTokenOverrideSnapshot &&
+    batch01TechnicalTokenOverrides.every(
+      (entry, index) =>
+        entry !== secondBatch01TechnicalTokenOverrideSnapshot[index] &&
+        entry.tokens !==
+          secondBatch01TechnicalTokenOverrideSnapshot[index]?.tokens
+    ) &&
+    protectedSnapshotMutationAttempts.every((result) => !result) &&
+    JSON.stringify(batch01TechnicalTokenOverrides) ===
+      protectedOverrideSnapshotBeforeMutation &&
+    JSON.stringify(secondBatch01TechnicalTokenOverrideSnapshot) ===
+      protectedOverrideSnapshotBeforeMutation,
+  "Batch 01 technical-token override mutation attempts must fail without changing source or later reads."
+);
+assert(
+  reviewedGlobalTechnicalTokens.length === 0,
+  "The global technical-token allowlist must remain empty."
+);
+
+const batch01Products = expectedBatch01TechnicalTokenOverrides.map(
+  (expectedEntry) => {
+    const matchedProduct = products.find(
+      (candidate) => candidate.id === expectedEntry.productId
+    );
+    assert(
+      matchedProduct !== undefined,
+      `Batch 01 Product must remain canonical: ${expectedEntry.productId}`
+    );
+    return matchedProduct;
+  }
+);
+const batch01ProductsById = new Map(
+  batch01Products.map((candidate) => [candidate.id, candidate])
+);
+const batch01ProductionResolver = createProductTechnicalTokenOverrideResolver(
+  batch01TechnicalTokenOverrides,
+  products
+);
+
+assert(
+  batch01ProductionResolver.valid &&
+    batch01ProductionResolver.entryCount === 5 &&
+    batch01ProductionResolver.tokenCount === 8 &&
+    JSON.stringify(batch01ProductionResolver.entries) ===
+      JSON.stringify(expectedBatch01TechnicalTokenOverrides),
+  `Batch 01 production technical-token resolver must validate: ${batch01ProductionResolver.issues
+    .map((issue) => issue.code)
+    .join(", ")}`
+);
+assert(
+  Object.isFrozen(batch01ProductionResolver) &&
+    Object.isFrozen(batch01ProductionResolver.entries) &&
+    Object.isFrozen(batch01ProductionResolver.issues) &&
+    batch01ProductionResolver.entries.every(
+      (entry) => Object.isFrozen(entry) && Object.isFrozen(entry.tokens)
+    ),
+  "The production resolver snapshot and every returned nested value must be frozen."
+);
+
+const mutableResolverSource: { productId: string; tokens: string[] }[] =
+  expectedBatch01TechnicalTokenOverrides.map((entry) => ({
+    productId: entry.productId,
+    tokens: [...entry.tokens],
+  }));
+const detachedResolver = createProductTechnicalTokenOverrideResolver(
+  mutableResolverSource,
+  products
+);
+const detached1211Tokens = detachedResolver.getTokensForProduct(
+  "siemens-s7-1200-cpu-211-1ae40"
+);
+const detached1212Tokens = detachedResolver.getTokensForProduct(
+  "siemens-s7-1200-cpu-212-1ae40"
+);
+mutableResolverSource[0].productId = "mutated";
+mutableResolverSource[0].tokens[0] = "MUTATED";
+const returnedTokenMutationAttempt = Reflect.set(
+  detached1211Tokens as unknown as Record<string, unknown>,
+  "0",
+  "MUTATED"
+);
+const returnedEntryMutationAttempt = Reflect.set(
+  detachedResolver.entries[0] as unknown as Record<string, unknown>,
+  "productId",
+  "mutated"
+);
+const later1211Tokens = detachedResolver.getTokensForProduct(
+  "siemens-s7-1200-cpu-211-1ae40"
+);
+const later1212Tokens = detachedResolver.getTokensForProduct(
+  "siemens-s7-1200-cpu-212-1ae40"
+);
+assert(
+  !returnedTokenMutationAttempt &&
+    !returnedEntryMutationAttempt &&
+    Object.isFrozen(detached1211Tokens) &&
+    Object.isFrozen(later1211Tokens) &&
+    detached1211Tokens !== later1211Tokens &&
+    detached1211Tokens !== detachedResolver.entries[0]?.tokens &&
+    JSON.stringify(later1211Tokens) === JSON.stringify(["0-10 V DC"]) &&
+    JSON.stringify(detached1212Tokens) === JSON.stringify(later1212Tokens) &&
+    JSON.stringify(later1212Tokens) === JSON.stringify(["0-10 V DC"]),
+  "Resolver snapshots must detach source and returned references while preserving later and cross-Product reads."
+);
+const unknownOverrideTokens = batch01ProductionResolver.getTokensForProduct(
+  "not-a-canonical-product"
+);
+assert(
+  Object.isFrozen(unknownOverrideTokens) && unknownOverrideTokens.length === 0,
+  "An unknown Product ID must receive no override authorization."
+);
+
+function overrideFixture(
+  fixtureProduct: Readonly<Product>,
+  token: string
+): MutableOverlay {
+  return fixture(
+    [
+      { kind: "text", value: `${PERSIAN_TEXT} ` },
+      { kind: "technical", value: token },
+    ],
+    fixtureProduct
+  );
+}
+
+const approvedOverrideResults: ValidationResult[] = [];
+batch01TechnicalTokenOverrides.forEach((entry) => {
+  const fixtureProduct = batch01ProductsById.get(entry.productId);
+  assert(
+    fixtureProduct !== undefined,
+    `Override Product must exist: ${entry.productId}`
+  );
+
+  entry.tokens.forEach((token) => {
+    const result = validateFixture(
+      overrideFixture(fixtureProduct, token),
+      products
+    );
+    assert(
+      result.valid,
+      `Approved override must pass only for its mapped Product: ${entry.productId} / ${token}`
+    );
+    approvedOverrideResults.push(result);
+    draftCases[`approvedOverride:${entry.productId}:${token}`] = result;
+  });
+});
+assert(
+  approvedOverrideResults.length === 8 &&
+    approvedOverrideResults.every((result) => result.valid),
+  "All eight approved assignments must pass through Product-copy validation."
+);
+
+const cpu1211 = batch01ProductsById.get("siemens-s7-1200-cpu-211-1ae40");
+const cpu1215 = batch01ProductsById.get("siemens-s7-1200-cpu-215-1ag40");
+const cpu1217 = batch01ProductsById.get("siemens-s7-1200-cpu-217-1ag40");
+assert(cpu1211 !== undefined, "CPU 1211C must remain canonical.");
+assert(cpu1215 !== undefined, "CPU 1215C must remain canonical.");
+assert(cpu1217 !== undefined, "CPU 1217C must remain canonical.");
+
+const expectedStandaloneProfinetProductIds = [
+  "siemens-s7-1200-cpu-211-1ae40",
+  "siemens-s7-1200-cpu-212-1ae40",
+  "siemens-s7-1200-cpu-214-1ag40",
+  "siemens-s7-1200-cpu-215-1ag40",
+] as const;
+const derivedTokenExpectations = [
+  ...expectedStandaloneProfinetProductIds.map((productId) => ({
+    productId,
+    token: "PROFINET",
+  })),
+  {
+    productId: "siemens-s7-1200-cpu-217-1ag40",
+    token: "PROFINET, RS-422/485",
+  },
+] as const;
+const derivedTokenResults = derivedTokenExpectations.map(
+  ({ productId, token }) => {
+    const fixtureProduct = batch01ProductsById.get(productId);
+    assert(
+      fixtureProduct !== undefined,
+      `Derived-token Product must remain canonical: ${productId}`
+    );
+    assert(
+      deriveAllowedTechnicalTokens(fixtureProduct).has(token),
+      `Derived token must remain available for ${productId}: ${token}`
+    );
+    const result = validateFixture(
+      overrideFixture(fixtureProduct, token),
+      products
+    );
+    assert(
+      result.valid,
+      `Derived token must pass Product-copy validation for ${productId}: ${token}`
+    );
+    return result;
+  }
+);
+batch01Products.forEach((fixtureProduct) => {
+  const titleResult = validateFixture(
+    overrideFixture(fixtureProduct, fixtureProduct.title),
+    products
+  );
+  assert(
+    titleResult.valid,
+    `Canonical title derivation must remain valid for ${fixtureProduct.id}.`
+  );
+});
+assert(
+  !deriveAllowedTechnicalTokens(cpu1217).has("PROFINET"),
+  "CPU 1217C must not derive standalone PROFINET from its combined interface value."
+);
+const cpu1217StandaloneProfinetResult = assertDraftIncludesIssues(
+  "CPU 1217C standalone PROFINET fixture",
+  overrideFixture(cpu1217, "PROFINET"),
+  ["unapproved-technical-token"],
+  products
+);
+assert(
+  cpu1217.specifications?.Interfaces === "PROFINET, RS-422/485",
+  "CPU 1217C must retain the complete combined canonical interface value."
+);
+
+const unrelatedS7300Product = products.find(
+  (candidate) =>
+    candidate.familyId === "S7-300" &&
+    !deriveAllowedTechnicalTokens(candidate).has("0-10 V DC")
+);
+assert(
+  unrelatedS7300Product !== undefined,
+  "An unrelated S7-300 isolation Product must exist."
+);
+const overrideIsolationCases = [
+  {
+    name: "0-10 V DC unrelated Product",
+    product: unrelatedS7300Product,
+    token: "0-10 V DC",
+  },
+  ...batch01Products
+    .filter(
+      (candidate) =>
+        candidate.id !== "siemens-s7-1200-cpu-215-1ag40" &&
+        candidate.id !== "siemens-s7-1200-cpu-217-1ag40"
+    )
+    .map((candidate) => ({
+      name: `0-20 mA DC ${candidate.id}`,
+      product: candidate,
+      token: "0-20 mA DC",
+    })),
+  ...batch01Products
+    .filter((candidate) => candidate.id !== "siemens-s7-1200-cpu-217-1ag40")
+    .map((candidate) => ({
+      name: `RS-422/485 ${candidate.id}`,
+      product: candidate,
+      token: "RS-422/485",
+    })),
+];
+const overrideIsolationResults = overrideIsolationCases.map(
+  ({ name, product: fixtureProduct, token }) =>
+    assertDraftIncludesIssues(
+      `Override isolation ${name} fixture`,
+      overrideFixture(fixtureProduct, token),
+      ["unapproved-technical-token"],
+      products
+    )
+);
+draftCases.batchOverrideRejectedForUnrelatedProduct =
+  overrideIsolationResults[0];
+const unknownProduct = {
+  ...cpu1211,
+  id: "not-a-canonical-product",
+} as Readonly<Product>;
+const unknownProductOverrideResult = assertDraftIncludesIssues(
+  "Unknown Product override fixture",
+  overrideFixture(unknownProduct, "0-10 V DC"),
+  ["unknown-product-id", "unapproved-technical-token"],
+  products
+);
+
+interface OverrideConfigurationFailureFixture {
+  readonly name: string;
+  readonly configuration: unknown;
+  readonly expectedCodes: readonly string[];
+}
+
+function runOverrideConfigurationFailureFixture({
+  name,
+  configuration,
+  expectedCodes,
+}: OverrideConfigurationFailureFixture) {
+  const resolver = createProductTechnicalTokenOverrideResolver(
+    configuration,
+    products
+  );
+  const actualCodes = issueCodes(resolver);
+  assert(!resolver.valid, `${name} configuration must fail.`);
+  expectedCodes.forEach((code) =>
+    assert(
+      actualCodes.includes(code),
+      `${name} configuration must report ${code}; received ${actualCodes.join(", ")}.`
+    )
+  );
+  assert(
+    resolver.entries.length === 0 &&
+      Object.isFrozen(resolver) &&
+      Object.isFrozen(resolver.entries) &&
+      Object.isFrozen(resolver.issues) &&
+      resolver.issues.every(Object.isFrozen) &&
+      resolver.diagnostic !== undefined,
+    `${name} configuration must expose only frozen diagnostics and zero authorization.`
+  );
+  assertThrows(
+    () => resolver.getTokensForProduct("siemens-s7-1200-cpu-211-1ae40"),
+    resolver.diagnostic,
+    `${name} fail-closed resolver`
+  );
+  return resolver;
+}
+
+const valid1211Override = {
+  productId: cpu1211.id,
+  tokens: ["0-10 V DC"],
+};
+const invalidUnrelatedConfiguration = [
+  valid1211Override,
+  { productId: cpu1215.id, tokens: ["10 is ok"] },
+];
+const sparseOverrideConfiguration: unknown[] = [];
+sparseOverrideConfiguration.length = 1;
+const sparseTokenConfiguration = [
+  { productId: cpu1211.id, tokens: [] as unknown[] },
+];
+sparseTokenConfiguration[0].tokens.length = 1;
+const overrideConfigurationFailureFixtures = [
+  {
+    name: "unknown Product ID",
+    configuration: [
+      { productId: "not-a-canonical-product", tokens: ["0-10 V DC"] },
+    ],
+    expectedCodes: ["unknown-override-product-id"],
+  },
+  {
+    name: "duplicate Product ID",
+    configuration: [valid1211Override, valid1211Override],
+    expectedCodes: ["duplicate-override-product-id"],
+  },
+  {
+    name: "duplicate token assignment",
+    configuration: [
+      { productId: cpu1211.id, tokens: ["0-10 V DC", "0-10 V DC"] },
+    ],
+    expectedCodes: ["duplicate-override-token"],
+  },
+  {
+    name: "malformed root shape",
+    configuration: { entries: [valid1211Override] },
+    expectedCodes: ["invalid-override-root"],
+  },
+  {
+    name: "malformed entry shape",
+    configuration: [null],
+    expectedCodes: ["invalid-override-entry"],
+  },
+  {
+    name: "sparse entry shape",
+    configuration: sparseOverrideConfiguration,
+    expectedCodes: ["invalid-override-entry"],
+  },
+  {
+    name: "missing required field",
+    configuration: [{ productId: cpu1211.id }],
+    expectedCodes: ["missing-override-field", "invalid-override-tokens"],
+  },
+  {
+    name: "extra unsupported field",
+    configuration: [{ ...valid1211Override, unsupported: true }],
+    expectedCodes: ["unsupported-override-field"],
+  },
+  {
+    name: "invalid Product-ID type",
+    configuration: [{ productId: 1211, tokens: ["0-10 V DC"] }],
+    expectedCodes: ["invalid-override-product-id"],
+  },
+  {
+    name: "invalid Product-ID value",
+    configuration: [{ productId: " CPU 1211 ", tokens: ["0-10 V DC"] }],
+    expectedCodes: ["invalid-override-product-id"],
+  },
+  {
+    name: "invalid token type",
+    configuration: [{ productId: cpu1211.id, tokens: [10] }],
+    expectedCodes: ["invalid-override-token"],
+  },
+  {
+    name: "sparse token shape",
+    configuration: sparseTokenConfiguration,
+    expectedCodes: ["invalid-override-token"],
+  },
+  {
+    name: "invalid token value",
+    configuration: [{ productId: cpu1211.id, tokens: ["10 is ok"] }],
+    expectedCodes: ["invalid-override-token"],
+  },
+  {
+    name: "missing canonical evidence",
+    configuration: [{ productId: cpu1211.id, tokens: ["0-30 V DC"] }],
+    expectedCodes: ["invalid-override-evidence"],
+  },
+  {
+    name: "cross-Product-only evidence",
+    configuration: [{ productId: cpu1211.id, tokens: ["0-20 mA DC"] }],
+    expectedCodes: ["invalid-override-evidence"],
+  },
+  {
+    name: "invalid unrelated entry blocks valid Product",
+    configuration: invalidUnrelatedConfiguration,
+    expectedCodes: ["invalid-override-token"],
+  },
+] satisfies readonly OverrideConfigurationFailureFixture[];
+const overrideConfigurationFailureResults =
+  overrideConfigurationFailureFixtures.map(
+    runOverrideConfigurationFailureFixture
+  );
+const repeatedInvalidUnrelatedResolver =
+  createProductTechnicalTokenOverrideResolver(
+    invalidUnrelatedConfiguration,
+    products
+  );
+assert(
+  overrideConfigurationFailureResults.every(
+    (resolver) => !resolver.valid && resolver.entries.length === 0
+  ) &&
+    repeatedInvalidUnrelatedResolver.diagnostic ===
+      overrideConfigurationFailureResults.at(-1)?.diagnostic,
+  "Every configuration failure must authorize zero tokens with deterministic diagnostics."
+);
+
+const cpu1211Description = cpu1211.description;
+assert(
+  cpu1211Description !== undefined,
+  "CPU 1211C must retain a canonical description."
+);
+const productionNegativeCases = [
+  { name: "leading whitespace", token: " 0-10 V DC", product: cpu1211 },
+  { name: "trailing whitespace", token: "0-10 V DC ", product: cpu1211 },
+  { name: "repeated spacing", token: "0-10 V  DC", product: cpu1211 },
+  { name: "tab", token: "0-10\tV DC", product: cpu1211 },
+  { name: "LF", token: "0-10\nV DC", product: cpu1211 },
+  { name: "CR", token: "0-10\rV DC", product: cpu1211 },
+  { name: "NBSP", token: "0-10\u00a0V DC", product: cpu1211 },
+  { name: "C0 control", token: "0-10\u0001 V DC", product: cpu1211 },
+  { name: "C1 control", token: "0-10\u0085 V DC", product: cpu1211 },
+  { name: "bidi control", token: "0-10\u202e V DC", product: cpu1211 },
+  { name: "zero-width", token: "0-10\u200b V DC", product: cpu1211 },
+  {
+    name: "non-NFC",
+    token: "CAFÉ-123".normalize("NFD"),
+    product: cpu1211,
+  },
+  { name: "alternate hyphen", token: "0–10 V DC", product: cpu1211 },
+  { name: "alternate minus", token: "0−10 V DC", product: cpu1211 },
+  { name: "alternate slash", token: "RS-422∕485", product: cpu1217 },
+  { name: "alternate decimal", token: "0,10 V DC", product: cpu1211 },
+  { name: "case change", token: "0-10 v dc", product: cpu1211 },
+  { name: "mixed-unit case change", token: "0-20 MA DC", product: cpu1215 },
+  {
+    name: "empty token",
+    token: "",
+    product: cpu1211,
+    expectedCodes: ["empty-segment"],
+  },
+  { name: "excessive length", token: "A".repeat(81), product: cpu1211 },
+  { name: "partial range", token: "0-10 V", product: cpu1211 },
+  { name: "concatenated token", token: "0-10VDC", product: cpu1211 },
+  { name: "embedded identifier", token: "X0-10 V DCY", product: cpu1211 },
+  { name: "prepended text", token: "X 0-10 V DC", product: cpu1211 },
+  { name: "appended text", token: "0-10 V DC EXTRA", product: cpu1211 },
+  {
+    name: "valid token plus punctuation",
+    token: "0-10 V DC.",
+    product: cpu1211,
+  },
+  {
+    name: "arbitrary lowercase prose",
+    token: "arbitrary lowercase prose",
+    product: cpu1211,
+  },
+  { name: "short lowercase prose", token: "10 is ok", product: cpu1211 },
+  {
+    name: "complete description",
+    token: cpu1211Description,
+    product: cpu1211,
+  },
+  { name: "protected I/O fragment", token: "I/O", product: cpu1211 },
+  { name: "protected SIMATIC fragment", token: "SIMATIC", product: cpu1211 },
+  { name: "protected Siemens fragment", token: "Siemens", product: cpu1211 },
+  { name: "protected model fragment", token: "1211C", product: cpu1211 },
+  {
+    name: "protected variant fragment",
+    token: "DC/DC/DC",
+    product: cpu1211,
+  },
+  { name: "cross-Product token", token: "0-20 mA DC", product: cpu1211 },
+] as const;
+const productionNegativeResults = productionNegativeCases.map(
+  ({ name, token, product: fixtureProduct, ...expectation }) =>
+    assertDraftIncludesIssues(
+      `Production token negative ${name} fixture`,
+      overrideFixture(fixtureProduct, token),
+      "expectedCodes" in expectation
+        ? expectation.expectedCodes
+        : ["unapproved-technical-token"],
+      products
+    )
+);
+assert(
+  productionNegativeResults.every((result) => !result.valid),
+  "Every production-path negative token fixture must execute and fail."
 );
 
 const reviewBase = fixture();
@@ -2552,6 +3169,14 @@ const s7300Count = products.filter((item) => item.familyId === "S7-300").length;
 const s71200Count = products.filter(
   (item) => item.familyId === "S7-1200"
 ).length;
+const faProductSlugs = products.map((item) => item.slug);
+const enProductSlugs = products.map((item) => item.slug);
+const faProductSlugSet = new Set(faProductSlugs);
+const enProductSlugSet = new Set(enProductSlugs);
+const localizedSlugDifferences = [
+  ...faProductSlugs.filter((slug) => !enProductSlugSet.has(slug)),
+  ...enProductSlugs.filter((slug) => !faProductSlugSet.has(slug)),
+];
 
 assert(
   persianProductCopyDraftRegistry.length === 0,
@@ -2565,6 +3190,14 @@ assert(products.length === 382, "Canonical Product count must remain 382.");
 assert(s7300Count === 196, "S7-300 Product count must remain 196.");
 assert(s71200Count === 186, "S7-1200 Product count must remain 186.");
 assert(
+  faProductSlugs.length === 382 &&
+    enProductSlugs.length === 382 &&
+    faProductSlugSet.size === 382 &&
+    enProductSlugSet.size === 382 &&
+    localizedSlugDifferences.length === 0,
+  "FA and EN Product slug sets must remain complete, unique, and identical."
+);
+assert(
   JSON.stringify(lifecycleOmissionIds) ===
     JSON.stringify(expectedLifecycleOmissionIds),
   "Lifecycle omission IDs must match the established exact set."
@@ -2577,8 +3210,56 @@ console.log(
       publicationState: PERSIAN_PRODUCT_COPY_PUBLICATION_STATE,
       canonicalProducts: products.length,
       productFamilies: { s7300: s7300Count, s71200: s71200Count },
-      localizedProductPaths: { fa: products.length, en: products.length },
+      localizedProductPaths: {
+        fa: faProductSlugs.length,
+        en: enProductSlugs.length,
+        slugDifferences: localizedSlugDifferences.length,
+      },
       lifecycleOmissions: lifecycleOmissionIds.length,
+      technicalTokenOverrides: {
+        entries: batch01ProductionResolver.entryCount,
+        tokens: batch01ProductionResolver.tokenCount,
+        uniqueTokens: uniqueBatch01TechnicalTokenOverrides.size,
+        exactMapping: batch01ProductionResolver.valid,
+        globalTokens: reviewedGlobalTechnicalTokens.length,
+        detachedDeepFrozen: batch01TechnicalTokenOverrides.every(
+          (entry) => Object.isFrozen(entry) && Object.isFrozen(entry.tokens)
+        ),
+        isolation:
+          overrideIsolationResults.every((result) => !result.valid) &&
+          !unknownProductOverrideResult.valid &&
+          !cpu1217StandaloneProfinetResult.valid,
+        fidelity: productionNegativeResults.every((result) => !result.valid),
+        malformedMappingRejected:
+          overrideConfigurationFailureResults.length ===
+            overrideConfigurationFailureFixtures.length &&
+          overrideConfigurationFailureResults.every(
+            (resolver) => !resolver.valid && resolver.entries.length === 0
+          ),
+        configurationFixtures: overrideConfigurationFailureResults.length,
+        productionNegativeFixtures: productionNegativeResults.length,
+        derivedTokenFixtures:
+          derivedTokenResults.length === derivedTokenExpectations.length &&
+          derivedTokenResults.every((result) => result.valid),
+        standaloneProfinetProductIds: expectedStandaloneProfinetProductIds,
+        cpu1217: {
+          standaloneProfinetDenied: !cpu1217StandaloneProfinetResult.valid,
+          combinedInterfaceDerived: derivedTokenResults.at(-1)?.valid === true,
+          exactRs422485Override: approvedOverrideResults.at(-1)?.valid === true,
+        },
+        sourceMutationAttemptsRejected: protectedSnapshotMutationAttempts.every(
+          (result) => !result
+        ),
+        resolverMutationAttemptsRejected:
+          !returnedTokenMutationAttempt && !returnedEntryMutationAttempt,
+        deterministicFailureDiagnostics:
+          repeatedInvalidUnrelatedResolver.diagnostic ===
+          overrideConfigurationFailureResults.at(-1)?.diagnostic,
+        zeroAuthorizationAfterFailure:
+          overrideConfigurationFailureResults.every(
+            (resolver) => resolver.entries.length === 0
+          ),
+      },
       draftCases: Object.fromEntries(
         Object.entries(draftCases).map(([name, result]) => [
           name,
