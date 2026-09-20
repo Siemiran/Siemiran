@@ -26,6 +26,7 @@ const reviewedProductTechnicalTokenOverrides = Object.freeze([
     "0-10 V DC",
     "0-20 mA DC",
     "RS-422/485",
+    "PROFINET",
   ]),
 ]);
 
