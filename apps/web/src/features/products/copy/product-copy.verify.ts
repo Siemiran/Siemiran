@@ -589,7 +589,7 @@ const expectedBatch01TechnicalTokenOverrides = [
   },
   {
     productId: "siemens-s7-1200-cpu-217-1ag40",
-    tokens: ["0-10 V DC", "0-20 mA DC", "RS-422/485"],
+    tokens: ["0-10 V DC", "0-20 mA DC", "RS-422/485", "PROFINET"],
   },
 ] as const;
 
@@ -634,9 +634,9 @@ assert(
     batch01TechnicalTokenOverrides.reduce(
       (count, entry) => count + entry.tokens.length,
       0
-    ) === 8 &&
-    uniqueBatch01TechnicalTokenOverrides.size === 3,
-  "Batch 01 technical-token override mapping must contain exactly five Product IDs, eight assignments, and three unique strings."
+    ) === 9 &&
+    uniqueBatch01TechnicalTokenOverrides.size === 4,
+  "Batch 01 technical-token override mapping must contain exactly five Product IDs, nine assignments, and four unique strings."
 );
 assert(
   Object.isFrozen(batch01TechnicalTokenOverrides) &&
@@ -686,7 +686,7 @@ const batch01ProductionResolver = createProductTechnicalTokenOverrideResolver(
 assert(
   batch01ProductionResolver.valid &&
     batch01ProductionResolver.entryCount === 5 &&
-    batch01ProductionResolver.tokenCount === 8 &&
+    batch01ProductionResolver.tokenCount === 9 &&
     JSON.stringify(batch01ProductionResolver.entries) ===
       JSON.stringify(expectedBatch01TechnicalTokenOverrides),
   `Batch 01 production technical-token resolver must validate: ${batch01ProductionResolver.issues
@@ -791,9 +791,9 @@ batch01TechnicalTokenOverrides.forEach((entry) => {
   });
 });
 assert(
-  approvedOverrideResults.length === 8 &&
+  approvedOverrideResults.length === 9 &&
     approvedOverrideResults.every((result) => result.valid),
-  "All eight approved assignments must pass through Product-copy validation."
+  "All nine approved assignments must pass through Product-copy validation."
 );
 
 const cpu1211 = batch01ProductsById.get("siemens-s7-1200-cpu-211-1ae40");
@@ -852,24 +852,93 @@ batch01Products.forEach((fixtureProduct) => {
   );
 });
 assert(
-  !deriveAllowedTechnicalTokens(cpu1217).has("PROFINET"),
-  "CPU 1217C must not derive standalone PROFINET from its combined interface value."
+  deriveAllowedTechnicalTokens(cpu1217).has("PROFINET") &&
+    batch01ProductionResolver
+      .getTokensForProduct(cpu1217.id)
+      .includes("PROFINET"),
+  "CPU 1217C production authorization must include its exact standalone PROFINET override."
 );
-const cpu1217StandaloneProfinetResult = assertDraftIncludesIssues(
-  "CPU 1217C standalone PROFINET fixture",
+const cpu1217StandaloneProfinetResult = validateFixture(
   overrideFixture(cpu1217, "PROFINET"),
-  ["unapproved-technical-token"],
   products
+);
+assert(
+  batch01ProductionResolver
+    .getTokensForProduct(cpu1217.id)
+    .includes("PROFINET") && cpu1217StandaloneProfinetResult.valid,
+  "CPU 1217C standalone PROFINET must pass only through its exact Product override."
+);
+const cpu1217Rs422485OverrideResult = validateFixture(
+  overrideFixture(cpu1217, "RS-422/485"),
+  products
+);
+assert(
+  batch01ProductionResolver
+    .getTokensForProduct(cpu1217.id)
+    .includes("RS-422/485") && cpu1217Rs422485OverrideResult.valid,
+  "CPU 1217C RS-422/485 must remain accepted through its exact Product override."
 );
 assert(
   cpu1217.specifications?.Interfaces === "PROFINET, RS-422/485",
   "CPU 1217C must retain the complete combined canonical interface value."
 );
+const cpu1217StandaloneProfinetEvidence = "2 PROFINET ports.";
+assert(
+  cpu1217.shortDescription.includes(cpu1217StandaloneProfinetEvidence) &&
+    cpu1217.description === cpu1217.shortDescription,
+  "CPU 1217C standalone PROFINET override evidence must remain in its own identical canonical short and long descriptions."
+);
+
+const customCpu1217CombinedInterfaceOnly = {
+  ...cpu1217,
+  id: "custom-cpu-1217-combined-interface-only",
+  shortDescription: cpu1217.shortDescription.replace(
+    ` ${cpu1217StandaloneProfinetEvidence}`,
+    ""
+  ),
+  description: cpu1217.description.replace(
+    ` ${cpu1217StandaloneProfinetEvidence}`,
+    ""
+  ),
+} as Readonly<Product>;
+const customCpu1217WithoutStandaloneProfinet = {
+  ...customCpu1217CombinedInterfaceOnly,
+  id: "custom-cpu-1217-without-profinet-evidence",
+  specifications: {
+    ...customCpu1217CombinedInterfaceOnly.specifications,
+    Interfaces: "RS-422/485",
+  },
+} as Readonly<Product>;
+const customCpu1217StandaloneProfinetResolver =
+  createProductTechnicalTokenOverrideResolver(
+    [
+      {
+        productId: customCpu1217WithoutStandaloneProfinet.id,
+        tokens: ["PROFINET"],
+      },
+    ],
+    [...products, customCpu1217WithoutStandaloneProfinet]
+  );
+assert(
+  !customCpu1217StandaloneProfinetResolver.valid &&
+    customCpu1217StandaloneProfinetResolver.entries.length === 0 &&
+    !deriveAllowedTechnicalTokens(customCpu1217CombinedInterfaceOnly).has(
+      "PROFINET"
+    ) &&
+    deriveAllowedTechnicalTokens(customCpu1217CombinedInterfaceOnly).has(
+      "PROFINET, RS-422/485"
+    ) &&
+    issueCodes(customCpu1217StandaloneProfinetResolver).includes(
+      "invalid-override-evidence"
+    ),
+  "A CPU 1217C-like Product with only combined-interface evidence must not authorize standalone PROFINET."
+);
 
 const unrelatedS7300Product = products.find(
   (candidate) =>
     candidate.familyId === "S7-300" &&
-    !deriveAllowedTechnicalTokens(candidate).has("0-10 V DC")
+    !deriveAllowedTechnicalTokens(candidate).has("0-10 V DC") &&
+    !deriveAllowedTechnicalTokens(candidate).has("PROFINET")
 );
 assert(
   unrelatedS7300Product !== undefined,
@@ -880,6 +949,11 @@ const overrideIsolationCases = [
     name: "0-10 V DC unrelated Product",
     product: unrelatedS7300Product,
     token: "0-10 V DC",
+  },
+  {
+    name: "PROFINET unrelated Product",
+    product: unrelatedS7300Product,
+    token: "PROFINET",
   },
   ...batch01Products
     .filter(
@@ -3177,10 +3251,201 @@ const localizedSlugDifferences = [
   ...faProductSlugs.filter((slug) => !enProductSlugSet.has(slug)),
   ...enProductSlugs.filter((slug) => !faProductSlugSet.has(slug)),
 ];
+const expectedBatch01DraftProducts = [
+  {
+    productId: "siemens-s7-1200-cpu-211-1ae40",
+    slug: "6es7211-1ae40-0xb0",
+    title: "SIMATIC S7-1200 CPU 1211C DC/DC/DC",
+    partNumber: "6ES7211-1AE40-0XB0",
+    canonicalDescription:
+      "SIMATIC S7-1200 compact CPU 1211C DC/DC/DC. Onboard I/O: 6 digital inputs and 4 digital outputs. 2 analog inputs 0-10 V DC.",
+    lifecycle: "active",
+    siemensUrl:
+      "https://mall.industry.siemens.com/mall/en/oeii/Catalog/Product?SiepCountryCode=OE&mlfb=6ES7211-1AE40-0XB0",
+  },
+  {
+    productId: "siemens-s7-1200-cpu-212-1ae40",
+    slug: "6es7212-1ae40-0xb0",
+    title: "SIMATIC S7-1200 CPU 1212C DC/DC/DC",
+    partNumber: "6ES7212-1AE40-0XB0",
+    canonicalDescription:
+      "SIMATIC S7-1200 compact CPU 1212C DC/DC/DC. Onboard I/O: 8 digital inputs and 6 digital outputs. 2 analog inputs 0-10 V DC.",
+    lifecycle: "active",
+    siemensUrl:
+      "https://mall.industry.siemens.com/mall/en/oeii/Catalog/Product?SiepCountryCode=OE&mlfb=6ES7212-1AE40-0XB0",
+  },
+  {
+    productId: "siemens-s7-1200-cpu-214-1ag40",
+    slug: "6es7214-1ag40-0xb0",
+    title: "SIMATIC S7-1200 CPU 1214C DC/DC/DC",
+    partNumber: "6ES7214-1AG40-0XB0",
+    canonicalDescription:
+      "SIMATIC S7-1200 compact CPU 1214C DC/DC/DC. Onboard I/O: 14 digital inputs and 10 digital outputs. 2 analog inputs 0-10 V DC.",
+    lifecycle: "active",
+    siemensUrl:
+      "https://mall.industry.siemens.com/mall/en/oeii/Catalog/Product?SiepCountryCode=OE&mlfb=6ES7214-1AG40-0XB0",
+  },
+  {
+    productId: "siemens-s7-1200-cpu-215-1ag40",
+    slug: "6es7215-1ag40-0xb0",
+    title: "SIMATIC S7-1200 CPU 1215C DC/DC/DC",
+    partNumber: "6ES7215-1AG40-0XB0",
+    canonicalDescription:
+      "SIMATIC S7-1200 compact CPU 1215C DC/DC/DC. Onboard I/O: 14 digital inputs and 10 digital outputs. 2 analog inputs 0-10 V DC. 2 analog outputs 0-20 mA DC. 2 PROFINET ports.",
+    lifecycle: "active",
+    siemensUrl:
+      "https://mall.industry.siemens.com/mall/en/oeii/Catalog/Product?SiepCountryCode=OE&mlfb=6ES7215-1AG40-0XB0",
+  },
+  {
+    productId: "siemens-s7-1200-cpu-217-1ag40",
+    slug: "6es7217-1ag40-0xb0",
+    title: "SIMATIC S7-1200 CPU 1217C DC/DC/DC",
+    partNumber: "6ES7217-1AG40-0XB0",
+    canonicalDescription:
+      "SIMATIC S7-1200 compact CPU 1217C DC/DC/DC. Onboard I/O: 10 digital inputs and 6 digital outputs, plus 4 RS-422/485 inputs and 4 RS-422/485 outputs for technology functions. 2 analog inputs 0-10 V DC and 2 analog outputs 0-20 mA DC. 2 PROFINET ports.",
+    lifecycle: "active",
+    siemensUrl:
+      "https://mall.industry.siemens.com/mall/en/oeii/Catalog/Product?SiepCountryCode=OE&mlfb=6ES7217-1AG40-0XB0",
+  },
+] as const;
+const expectedCpu1217DraftSegments = [
+  { kind: "text", value: "مدل " },
+  {
+    kind: "technical",
+    value: "SIMATIC S7-1200 CPU 1217C DC/DC/DC",
+  },
+  { kind: "text", value: "، یک " },
+  { kind: "technical", value: "CPU" },
+  {
+    kind: "text",
+    value: " کامپکت با ورودی‌ها و خروجی‌های داخلی شامل ",
+  },
+  { kind: "technical", value: "10" },
+  { kind: "text", value: " ورودی دیجیتال و " },
+  { kind: "technical", value: "6" },
+  {
+    kind: "text",
+    value: " خروجی دیجیتال است. برای توابع فناوری نیز چهار ورودی ",
+  },
+  { kind: "technical", value: "RS-422/485" },
+  { kind: "text", value: " و چهار خروجی " },
+  { kind: "technical", value: "RS-422/485" },
+  { kind: "text", value: " دارد. همچنین دارای " },
+  { kind: "technical", value: "2" },
+  { kind: "text", value: " ورودی آنالوگ " },
+  { kind: "technical", value: "0-10 V DC" },
+  { kind: "text", value: " و " },
+  { kind: "technical", value: "2" },
+  { kind: "text", value: " خروجی آنالوگ " },
+  { kind: "technical", value: "0-20 mA DC" },
+  { kind: "text", value: " است و " },
+  { kind: "technical", value: "2" },
+  { kind: "text", value: " پورت " },
+  { kind: "technical", value: "PROFINET" },
+  { kind: "text", value: " دارد." },
+] as const;
+const expectedCpu1217RenderedDraft =
+  "مدل SIMATIC S7-1200 CPU 1217C DC/DC/DC، یک CPU کامپکت با ورودی‌ها و خروجی‌های داخلی شامل 10 ورودی دیجیتال و 6 خروجی دیجیتال است. برای توابع فناوری نیز چهار ورودی RS-422/485 و چهار خروجی RS-422/485 دارد. همچنین دارای 2 ورودی آنالوگ 0-10 V DC و 2 خروجی آنالوگ 0-20 mA DC است و 2 پورت PROFINET دارد.";
+const registeredBatch01DraftBindings = persianProductCopyDraftRegistry.map(
+  (entry) => {
+    const product = products.find(
+      (candidate) => candidate.id === entry.productId
+    );
+    assert(
+      product !== undefined,
+      `Draft Product must remain canonical: ${entry.productId}`
+    );
+    return {
+      productId: product.id,
+      slug: product.slug,
+      title: product.title,
+      partNumber: product.partNumber,
+      canonicalDescription: product.description,
+      lifecycle: product.lifecycle,
+      siemensUrl: product.siemensUrl,
+    };
+  }
+);
+const registeredDraftValidation = validatePersianProductCopyDrafts(
+  persianProductCopyDraftRegistry,
+  products
+);
+const registeredDraftActivation = validatePersianProductCopyForActivation(
+  persianProductCopyDraftRegistry,
+  products
+);
+const isApprovedReview = (review: ProductCopyReview): boolean =>
+  review.decision === "approved";
+const registeredLinguisticApprovals = persianProductCopyDraftRegistry.filter(
+  (entry) => isApprovedReview(entry.linguisticReview)
+).length;
+const registeredTechnicalApprovals = persianProductCopyDraftRegistry.filter(
+  (entry) => isApprovedReview(entry.technicalReview)
+).length;
+const registeredCpu1217Draft = persianProductCopyDraftRegistry.find(
+  (entry) => entry.productId === "siemens-s7-1200-cpu-217-1ag40"
+);
+assert(registeredCpu1217Draft !== undefined, "CPU 1217C draft must exist.");
+const registeredCpu1217RenderedDraft = serializeProductCopyParagraphForSearch(
+  registeredCpu1217Draft.shortDescription
+);
+const registeredCpu1217TechnicalSegments =
+  registeredCpu1217Draft.shortDescription.filter(
+    (segment) => segment.kind === "technical"
+  );
 
 assert(
-  persianProductCopyDraftRegistry.length === 0,
-  "Registry must remain empty."
+  registeredDraftValidation.valid &&
+    persianProductCopyDraftRegistry.length === 5 &&
+    JSON.stringify(registeredBatch01DraftBindings) ===
+      JSON.stringify(expectedBatch01DraftProducts),
+  `Batch 01 draft registry and canonical bindings must be exact: ${registeredDraftValidation.issues
+    .map((issue) => issue.code)
+    .join(", ")}`
+);
+assert(
+  JSON.stringify(registeredCpu1217Draft.shortDescription) ===
+    JSON.stringify(expectedCpu1217DraftSegments) &&
+    registeredCpu1217Draft.description.length === 1 &&
+    JSON.stringify(registeredCpu1217Draft.description[0]) ===
+      JSON.stringify(expectedCpu1217DraftSegments) &&
+    registeredCpu1217RenderedDraft === expectedCpu1217RenderedDraft,
+  "CPU 1217C short and long drafts must use the identical exact corrected segment sequence."
+);
+assert(
+  registeredCpu1217Draft.shortDescription[9]?.kind === "technical" &&
+    registeredCpu1217Draft.shortDescription[9].value === "RS-422/485" &&
+    registeredCpu1217Draft.shortDescription[11]?.kind === "technical" &&
+    registeredCpu1217Draft.shortDescription[11].value === "RS-422/485" &&
+    registeredCpu1217TechnicalSegments.at(-1)?.value === "PROFINET",
+  "CPU 1217C must use RS-422/485 for both technology I/O positions and standalone PROFINET as its final technical token."
+);
+assert(
+  !registeredCpu1217RenderedDraft.includes("رابط نخست") &&
+    !registeredCpu1217RenderedDraft.includes("مجموعه رابط‌های آن"),
+  "CPU 1217C must omit the invented interface-set and first-interface wording."
+);
+assert(
+  persianProductCopyDraftRegistry.every(
+    (entry) =>
+      entry.provenance === "ai-assisted" &&
+      entry.linguisticReview.decision === "pending" &&
+      entry.technicalReview.decision === "pending" &&
+      Object.keys(entry.linguisticReview).length === 1 &&
+      Object.keys(entry.technicalReview).length === 1
+  ) &&
+    registeredLinguisticApprovals === 0 &&
+    registeredTechnicalApprovals === 0,
+  "Batch 01 drafts must remain unapproved with both reviews pending and no approval metadata."
+);
+assert(
+  !registeredDraftActivation.valid &&
+    registeredDraftActivation.overlayCount === 5 &&
+    registeredDraftActivation.canonicalCount === 382 &&
+    registeredDraftActivation.approvedCount === 0 &&
+    registeredDraftActivation.missingIds.length === 377 &&
+    !("capability" in registeredDraftActivation),
+  "Batch 01 activation must fail closed at exactly 5/382 with zero approvals."
 );
 assert(
   PERSIAN_PRODUCT_COPY_PUBLICATION_STATE === "disabled",
@@ -3216,6 +3481,19 @@ console.log(
         slugDifferences: localizedSlugDifferences.length,
       },
       lifecycleOmissions: lifecycleOmissionIds.length,
+      draftRegistry: {
+        valid: registeredDraftValidation.valid,
+        entries: persianProductCopyDraftRegistry.length,
+        exactBindings:
+          JSON.stringify(registeredBatch01DraftBindings) ===
+          JSON.stringify(expectedBatch01DraftProducts),
+        linguisticApprovals: registeredLinguisticApprovals,
+        technicalApprovals: registeredTechnicalApprovals,
+        activationValid: registeredDraftActivation.valid,
+        activationCoverage: `${registeredDraftActivation.overlayCount}/${registeredDraftActivation.canonicalCount}`,
+        activationApproved: registeredDraftActivation.approvedCount,
+        activationMissing: registeredDraftActivation.missingIds.length,
+      },
       technicalTokenOverrides: {
         entries: batch01ProductionResolver.entryCount,
         tokens: batch01ProductionResolver.tokenCount,
@@ -3228,7 +3506,7 @@ console.log(
         isolation:
           overrideIsolationResults.every((result) => !result.valid) &&
           !unknownProductOverrideResult.valid &&
-          !cpu1217StandaloneProfinetResult.valid,
+          !customCpu1217StandaloneProfinetResolver.valid,
         fidelity: productionNegativeResults.every((result) => !result.valid),
         malformedMappingRejected:
           overrideConfigurationFailureResults.length ===
@@ -3243,9 +3521,11 @@ console.log(
           derivedTokenResults.every((result) => result.valid),
         standaloneProfinetProductIds: expectedStandaloneProfinetProductIds,
         cpu1217: {
-          standaloneProfinetDenied: !cpu1217StandaloneProfinetResult.valid,
+          standaloneProfinetOverride: cpu1217StandaloneProfinetResult.valid,
           combinedInterfaceDerived: derivedTokenResults.at(-1)?.valid === true,
-          exactRs422485Override: approvedOverrideResults.at(-1)?.valid === true,
+          exactRs422485Override: cpu1217Rs422485OverrideResult.valid,
+          combinedOnlyLookalikeRejected:
+            !customCpu1217StandaloneProfinetResolver.valid,
         },
         sourceMutationAttemptsRejected: protectedSnapshotMutationAttempts.every(
           (result) => !result
