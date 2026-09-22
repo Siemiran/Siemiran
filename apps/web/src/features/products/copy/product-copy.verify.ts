@@ -44,6 +44,7 @@ import {
   serializeResolvedProductCopy,
 } from "./product-copy.serializer";
 import type {
+  PersianProductCopyOverlay,
   ProductCopyReview,
   ProductId,
   ResolvedProductCopy,
@@ -1277,6 +1278,32 @@ draftCases.missingEvidence = assertDraftIssues(
     technicalReview: { ...currentReview, evidenceRef: "" },
   },
   ["missing-evidence"]
+);
+const { reviewedAt: omittedReviewedAt, ...reviewWithoutTimestamp } =
+  currentReview;
+void omittedReviewedAt;
+draftCases.missingTimestamp = assertDraftIssues(
+  "Missing-timestamp fixture",
+  {
+    ...reviewBase,
+    linguisticReview: currentReview,
+    technicalReview: reviewWithoutTimestamp,
+  },
+  ["invalid-review-date"]
+);
+const {
+  reviewedContentHash: omittedReviewedContentHash,
+  ...reviewWithoutContentHash
+} = currentReview;
+void omittedReviewedContentHash;
+draftCases.missingContentHash = assertDraftIssues(
+  "Missing-content-hash fixture",
+  {
+    ...reviewBase,
+    linguisticReview: reviewWithoutContentHash,
+    technicalReview: currentReview,
+  },
+  ["stale-approval-hash"]
 );
 
 function timestampFixture(timestamp: string): MutableOverlay {
@@ -3308,6 +3335,49 @@ const expectedBatch01DraftProducts = [
       "https://mall.industry.siemens.com/mall/en/oeii/Catalog/Product?SiepCountryCode=OE&mlfb=6ES7217-1AG40-0XB0",
   },
 ] as const;
+const BATCH_01_LINGUISTIC_REVIEWED_AT = "2026-09-21T19:26:31Z";
+const BATCH_01_TECHNICAL_REVIEWED_AT = "2026-09-21T19:27:19Z";
+const BATCH_01_LINGUISTIC_NOTE =
+  "Reviewed Persian wording, terminology, grammar, punctuation, spacing, direction, and typed segmentation against the canonical Product copy; approved without content changes.";
+const BATCH_01_TECHNICAL_NOTE =
+  "Verified Product identity, MLFB, lifecycle, I/O quantities, electrical ranges, interfaces, port counts, technical tokens, and canonical Siemens source; approved without content changes.";
+const expectedBatch01ReviewMetadata = [
+  {
+    productId: "siemens-s7-1200-cpu-211-1ae40",
+    reviewedContentHash:
+      "sha256:9f4eb09fec28f71baef3c0ed074486afec042c0a20d779da51fc4a90d518e8f3",
+    evidenceRef:
+      "https://mall.industry.siemens.com/mall/en/oeii/Catalog/Product?SiepCountryCode=OE&mlfb=6ES7211-1AE40-0XB0",
+  },
+  {
+    productId: "siemens-s7-1200-cpu-212-1ae40",
+    reviewedContentHash:
+      "sha256:467e4c69ff60f302f22acc31bdb3521dfb9335d5171cc5131ba3514f5f6c11fb",
+    evidenceRef:
+      "https://mall.industry.siemens.com/mall/en/oeii/Catalog/Product?SiepCountryCode=OE&mlfb=6ES7212-1AE40-0XB0",
+  },
+  {
+    productId: "siemens-s7-1200-cpu-214-1ag40",
+    reviewedContentHash:
+      "sha256:5175b7456d490551af2627bc05aaa26c752555e565205a50fa29751b43b8e3ac",
+    evidenceRef:
+      "https://mall.industry.siemens.com/mall/en/oeii/Catalog/Product?SiepCountryCode=OE&mlfb=6ES7214-1AG40-0XB0",
+  },
+  {
+    productId: "siemens-s7-1200-cpu-215-1ag40",
+    reviewedContentHash:
+      "sha256:fa672b497d742bcc06e87ecb71b1128ad92c7771e968e0889c0954fb88ebe305",
+    evidenceRef:
+      "https://mall.industry.siemens.com/mall/en/oeii/Catalog/Product?SiepCountryCode=OE&mlfb=6ES7215-1AG40-0XB0",
+  },
+  {
+    productId: "siemens-s7-1200-cpu-217-1ag40",
+    reviewedContentHash:
+      "sha256:8d231e613502f35684728b238068d1e59aa1f67d17048dc7914a2469c38197c3",
+    evidenceRef:
+      "https://mall.industry.siemens.com/mall/en/oeii/Catalog/Product?SiepCountryCode=OE&mlfb=6ES7217-1AG40-0XB0",
+  },
+] as const;
 const expectedCpu1217DraftSegments = [
   { kind: "text", value: "مدل " },
   {
@@ -3346,6 +3416,20 @@ const expectedCpu1217DraftSegments = [
 ] as const;
 const expectedCpu1217RenderedDraft =
   "مدل SIMATIC S7-1200 CPU 1217C DC/DC/DC، یک CPU کامپکت با ورودی‌ها و خروجی‌های داخلی شامل 10 ورودی دیجیتال و 6 خروجی دیجیتال است. برای توابع فناوری نیز چهار ورودی RS-422/485 و چهار خروجی RS-422/485 دارد. همچنین دارای 2 ورودی آنالوگ 0-10 V DC و 2 خروجی آنالوگ 0-20 mA DC است و 2 پورت PROFINET دارد.";
+
+function cloneMutableOverlay(entry: PersianProductCopyOverlay): MutableOverlay {
+  return {
+    productId: entry.productId,
+    shortDescription: entry.shortDescription.map((segment) => ({ ...segment })),
+    description: entry.description.map((paragraph) =>
+      paragraph.map((segment) => ({ ...segment }))
+    ),
+    provenance: entry.provenance,
+    linguisticReview: { ...entry.linguisticReview },
+    technicalReview: { ...entry.technicalReview },
+  };
+}
+
 const registeredBatch01DraftBindings = persianProductCopyDraftRegistry.map(
   (entry) => {
     const product = products.find(
@@ -3382,6 +3466,133 @@ const registeredLinguisticApprovals = persianProductCopyDraftRegistry.filter(
 const registeredTechnicalApprovals = persianProductCopyDraftRegistry.filter(
   (entry) => isApprovedReview(entry.technicalReview)
 ).length;
+const registeredBatch01ApprovalRecords = persianProductCopyDraftRegistry.map(
+  (entry) => {
+    const expected = expectedBatch01ReviewMetadata.find(
+      (candidate) => candidate.productId === entry.productId
+    );
+    assert(
+      expected !== undefined,
+      `Batch 01 approval metadata must remain scoped to ${entry.productId}.`
+    );
+
+    const freshContentHash = createProductCopyContentHash(entry);
+    const expectedLinguisticReview = {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: BATCH_01_LINGUISTIC_REVIEWED_AT,
+      reviewedContentHash: expected.reviewedContentHash,
+      evidenceRef: expected.evidenceRef,
+      note: BATCH_01_LINGUISTIC_NOTE,
+    } as const;
+    const expectedTechnicalReview = {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: BATCH_01_TECHNICAL_REVIEWED_AT,
+      reviewedContentHash: expected.reviewedContentHash,
+      evidenceRef: expected.evidenceRef,
+      note: BATCH_01_TECHNICAL_NOTE,
+    } as const;
+
+    assert(
+      JSON.stringify(entry.linguisticReview) ===
+        JSON.stringify(expectedLinguisticReview),
+      `Batch 01 linguistic approval must be exact for ${entry.productId}.`
+    );
+    assert(
+      JSON.stringify(entry.technicalReview) ===
+        JSON.stringify(expectedTechnicalReview),
+      `Batch 01 technical approval must be exact for ${entry.productId}.`
+    );
+    assert(
+      entry.linguisticReview.decision === "approved" &&
+        entry.technicalReview.decision === "approved",
+      `Batch 01 must retain both approved role records for ${entry.productId}.`
+    );
+    assert(
+      !Object.is(entry.linguisticReview, entry.technicalReview) &&
+        entry.linguisticReview.reviewerId ===
+          entry.technicalReview.reviewerId &&
+        entry.linguisticReview.reviewedAt < entry.technicalReview.reviewedAt,
+      `Batch 01 same-reviewer role records must remain distinct and ordered for ${entry.productId}.`
+    );
+    assert(
+      freshContentHash === expected.reviewedContentHash &&
+        entry.linguisticReview.reviewedContentHash === freshContentHash &&
+        entry.technicalReview.reviewedContentHash === freshContentHash,
+      `Batch 01 approvals must bind the fresh production hash for ${entry.productId}.`
+    );
+
+    return {
+      productId: entry.productId,
+      freshContentHash,
+      evidenceRef: expected.evidenceRef,
+      roleObjectsDistinct: !Object.is(
+        entry.linguisticReview,
+        entry.technicalReview
+      ),
+    };
+  }
+);
+const registeredCurrentDualApprovals = persianProductCopyDraftRegistry.filter(
+  (entry) => {
+    const freshContentHash = createProductCopyContentHash(entry);
+    return (
+      entry.linguisticReview.decision === "approved" &&
+      entry.technicalReview.decision === "approved" &&
+      entry.linguisticReview.reviewedContentHash === freshContentHash &&
+      entry.technicalReview.reviewedContentHash === freshContentHash
+    );
+  }
+).length;
+const registeredBatch01ApprovalMutationResults =
+  persianProductCopyDraftRegistry.map((entry) => {
+    const copyMutation = cloneMutableOverlay(entry);
+    const finalShortSegment = copyMutation.shortDescription.at(-1);
+    assert(
+      finalShortSegment !== undefined,
+      `Batch 01 copy mutation requires a final segment for ${entry.productId}.`
+    );
+    finalShortSegment.value = `${finalShortSegment.value.slice(0, -1)}!`;
+    const copyMutationResult = validatePersianProductCopyDrafts(
+      [copyMutation],
+      products
+    );
+
+    const kindMutation = cloneMutableOverlay(entry);
+    const firstShortSegment = kindMutation.shortDescription[0];
+    assert(
+      firstShortSegment !== undefined,
+      `Batch 01 kind mutation requires a first segment for ${entry.productId}.`
+    );
+    firstShortSegment.kind =
+      firstShortSegment.kind === "text" ? "technical" : "text";
+    const kindMutationResult = validatePersianProductCopyDrafts(
+      [kindMutation],
+      products
+    );
+
+    const copyStaleApprovals = copyMutationResult.issues.filter(
+      (issue) =>
+        issue.code === "stale-approval-hash" &&
+        issue.productId === entry.productId
+    ).length;
+    const kindStaleApprovals = kindMutationResult.issues.filter(
+      (issue) =>
+        issue.code === "stale-approval-hash" &&
+        issue.productId === entry.productId
+    ).length;
+    assert(
+      copyStaleApprovals === 2 && kindStaleApprovals === 2,
+      `Batch 01 copy and segment-kind mutations must stale both approvals for ${entry.productId}.`
+    );
+
+    return {
+      productId: entry.productId,
+      copyStaleApprovals,
+      kindStaleApprovals,
+    };
+  });
 const registeredCpu1217Draft = persianProductCopyDraftRegistry.find(
   (entry) => entry.productId === "siemens-s7-1200-cpu-217-1ag40"
 );
@@ -3429,23 +3640,26 @@ assert(
   persianProductCopyDraftRegistry.every(
     (entry) =>
       entry.provenance === "ai-assisted" &&
-      entry.linguisticReview.decision === "pending" &&
-      entry.technicalReview.decision === "pending" &&
-      Object.keys(entry.linguisticReview).length === 1 &&
-      Object.keys(entry.technicalReview).length === 1
+      entry.linguisticReview.decision === "approved" &&
+      entry.technicalReview.decision === "approved"
   ) &&
-    registeredLinguisticApprovals === 0 &&
-    registeredTechnicalApprovals === 0,
-  "Batch 01 drafts must remain unapproved with both reviews pending and no approval metadata."
+    registeredLinguisticApprovals === 5 &&
+    registeredTechnicalApprovals === 5 &&
+    registeredCurrentDualApprovals === 5 &&
+    registeredBatch01ApprovalRecords.length === 5 &&
+    registeredBatch01ApprovalRecords.every(
+      (record) => record.roleObjectsDistinct
+    ),
+  "Batch 01 drafts must retain five exact, current, distinct dual approvals."
 );
 assert(
   !registeredDraftActivation.valid &&
     registeredDraftActivation.overlayCount === 5 &&
     registeredDraftActivation.canonicalCount === 382 &&
-    registeredDraftActivation.approvedCount === 0 &&
+    registeredDraftActivation.approvedCount === 5 &&
     registeredDraftActivation.missingIds.length === 377 &&
     !("capability" in registeredDraftActivation),
-  "Batch 01 activation must fail closed at exactly 5/382 with zero approvals."
+  "Batch 01 activation must fail closed at exactly 5/382 with five current dual approvals."
 );
 assert(
   PERSIAN_PRODUCT_COPY_PUBLICATION_STATE === "disabled",
@@ -3489,6 +3703,9 @@ console.log(
           JSON.stringify(expectedBatch01DraftProducts),
         linguisticApprovals: registeredLinguisticApprovals,
         technicalApprovals: registeredTechnicalApprovals,
+        currentDualApprovals: registeredCurrentDualApprovals,
+        exactApprovalRecords: registeredBatch01ApprovalRecords.length,
+        mutationStaleness: registeredBatch01ApprovalMutationResults,
         activationValid: registeredDraftActivation.valid,
         activationCoverage: `${registeredDraftActivation.overlayCount}/${registeredDraftActivation.canonicalCount}`,
         activationApproved: registeredDraftActivation.approvedCount,
