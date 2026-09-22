@@ -10,8 +10,6 @@ import type {
  * are observable by validation. Entries stay private until complete coverage
  * and current linguistic and technical approvals permit activation.
  */
-const pendingReview = { decision: "pending" } as const;
-
 const cpu1211Copy = [
   { kind: "text", value: "مدل " },
   {
@@ -151,39 +149,129 @@ export const persianProductCopyDraftRegistry = [
     shortDescription: cpu1211Copy,
     description: [cpu1211Copy],
     provenance: "ai-assisted",
-    linguisticReview: pendingReview,
-    technicalReview: pendingReview,
+    linguisticReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-09-21T19:26:31Z",
+      reviewedContentHash:
+        "sha256:9f4eb09fec28f71baef3c0ed074486afec042c0a20d779da51fc4a90d518e8f3",
+      evidenceRef:
+        "https://mall.industry.siemens.com/mall/en/oeii/Catalog/Product?SiepCountryCode=OE&mlfb=6ES7211-1AE40-0XB0",
+      note: "Reviewed Persian wording, terminology, grammar, punctuation, spacing, direction, and typed segmentation against the canonical Product copy; approved without content changes.",
+    },
+    technicalReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-09-21T19:27:19Z",
+      reviewedContentHash:
+        "sha256:9f4eb09fec28f71baef3c0ed074486afec042c0a20d779da51fc4a90d518e8f3",
+      evidenceRef:
+        "https://mall.industry.siemens.com/mall/en/oeii/Catalog/Product?SiepCountryCode=OE&mlfb=6ES7211-1AE40-0XB0",
+      note: "Verified Product identity, MLFB, lifecycle, I/O quantities, electrical ranges, interfaces, port counts, technical tokens, and canonical Siemens source; approved without content changes.",
+    },
   },
   {
     productId: "siemens-s7-1200-cpu-212-1ae40",
     shortDescription: cpu1212Copy,
     description: [cpu1212Copy],
     provenance: "ai-assisted",
-    linguisticReview: pendingReview,
-    technicalReview: pendingReview,
+    linguisticReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-09-21T19:26:31Z",
+      reviewedContentHash:
+        "sha256:467e4c69ff60f302f22acc31bdb3521dfb9335d5171cc5131ba3514f5f6c11fb",
+      evidenceRef:
+        "https://mall.industry.siemens.com/mall/en/oeii/Catalog/Product?SiepCountryCode=OE&mlfb=6ES7212-1AE40-0XB0",
+      note: "Reviewed Persian wording, terminology, grammar, punctuation, spacing, direction, and typed segmentation against the canonical Product copy; approved without content changes.",
+    },
+    technicalReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-09-21T19:27:19Z",
+      reviewedContentHash:
+        "sha256:467e4c69ff60f302f22acc31bdb3521dfb9335d5171cc5131ba3514f5f6c11fb",
+      evidenceRef:
+        "https://mall.industry.siemens.com/mall/en/oeii/Catalog/Product?SiepCountryCode=OE&mlfb=6ES7212-1AE40-0XB0",
+      note: "Verified Product identity, MLFB, lifecycle, I/O quantities, electrical ranges, interfaces, port counts, technical tokens, and canonical Siemens source; approved without content changes.",
+    },
   },
   {
     productId: "siemens-s7-1200-cpu-214-1ag40",
     shortDescription: cpu1214Copy,
     description: [cpu1214Copy],
     provenance: "ai-assisted",
-    linguisticReview: pendingReview,
-    technicalReview: pendingReview,
+    linguisticReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-09-21T19:26:31Z",
+      reviewedContentHash:
+        "sha256:5175b7456d490551af2627bc05aaa26c752555e565205a50fa29751b43b8e3ac",
+      evidenceRef:
+        "https://mall.industry.siemens.com/mall/en/oeii/Catalog/Product?SiepCountryCode=OE&mlfb=6ES7214-1AG40-0XB0",
+      note: "Reviewed Persian wording, terminology, grammar, punctuation, spacing, direction, and typed segmentation against the canonical Product copy; approved without content changes.",
+    },
+    technicalReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-09-21T19:27:19Z",
+      reviewedContentHash:
+        "sha256:5175b7456d490551af2627bc05aaa26c752555e565205a50fa29751b43b8e3ac",
+      evidenceRef:
+        "https://mall.industry.siemens.com/mall/en/oeii/Catalog/Product?SiepCountryCode=OE&mlfb=6ES7214-1AG40-0XB0",
+      note: "Verified Product identity, MLFB, lifecycle, I/O quantities, electrical ranges, interfaces, port counts, technical tokens, and canonical Siemens source; approved without content changes.",
+    },
   },
   {
     productId: "siemens-s7-1200-cpu-215-1ag40",
     shortDescription: cpu1215Copy,
     description: [cpu1215Copy],
     provenance: "ai-assisted",
-    linguisticReview: pendingReview,
-    technicalReview: pendingReview,
+    linguisticReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-09-21T19:26:31Z",
+      reviewedContentHash:
+        "sha256:fa672b497d742bcc06e87ecb71b1128ad92c7771e968e0889c0954fb88ebe305",
+      evidenceRef:
+        "https://mall.industry.siemens.com/mall/en/oeii/Catalog/Product?SiepCountryCode=OE&mlfb=6ES7215-1AG40-0XB0",
+      note: "Reviewed Persian wording, terminology, grammar, punctuation, spacing, direction, and typed segmentation against the canonical Product copy; approved without content changes.",
+    },
+    technicalReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-09-21T19:27:19Z",
+      reviewedContentHash:
+        "sha256:fa672b497d742bcc06e87ecb71b1128ad92c7771e968e0889c0954fb88ebe305",
+      evidenceRef:
+        "https://mall.industry.siemens.com/mall/en/oeii/Catalog/Product?SiepCountryCode=OE&mlfb=6ES7215-1AG40-0XB0",
+      note: "Verified Product identity, MLFB, lifecycle, I/O quantities, electrical ranges, interfaces, port counts, technical tokens, and canonical Siemens source; approved without content changes.",
+    },
   },
   {
     productId: "siemens-s7-1200-cpu-217-1ag40",
     shortDescription: cpu1217Copy,
     description: [cpu1217Copy],
     provenance: "ai-assisted",
-    linguisticReview: pendingReview,
-    technicalReview: pendingReview,
+    linguisticReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-09-21T19:26:31Z",
+      reviewedContentHash:
+        "sha256:8d231e613502f35684728b238068d1e59aa1f67d17048dc7914a2469c38197c3",
+      evidenceRef:
+        "https://mall.industry.siemens.com/mall/en/oeii/Catalog/Product?SiepCountryCode=OE&mlfb=6ES7217-1AG40-0XB0",
+      note: "Reviewed Persian wording, terminology, grammar, punctuation, spacing, direction, and typed segmentation against the canonical Product copy; approved without content changes.",
+    },
+    technicalReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-09-21T19:27:19Z",
+      reviewedContentHash:
+        "sha256:8d231e613502f35684728b238068d1e59aa1f67d17048dc7914a2469c38197c3",
+      evidenceRef:
+        "https://mall.industry.siemens.com/mall/en/oeii/Catalog/Product?SiepCountryCode=OE&mlfb=6ES7217-1AG40-0XB0",
+      note: "Verified Product identity, MLFB, lifecycle, I/O quantities, electrical ranges, interfaces, port counts, technical tokens, and canonical Siemens source; approved without content changes.",
+    },
   },
 ] as const satisfies readonly PersianProductCopyOverlay[];
