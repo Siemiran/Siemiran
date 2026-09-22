@@ -1,6 +1,6 @@
 # Siemiran — Roadmap
 
-Baseline: `main` at `454b2e2e79a04cc95fff9141c8a1f66b2bf88f65`
+Baseline: `main` at `2d7305e28b183c3f1bde0f6b773fc29ebc619eec`
 
 This roadmap distinguishes the completed repository baseline from future
 priorities. Ordering expresses current priority, not a finalized implementation
@@ -20,6 +20,12 @@ design or semantic release schedule.
 - English routes remain temporarily `noindex, follow`.
 - The typed Product-copy infrastructure and all intended consumer integrations
   are merged through PR #52 and independently verified with a Task BW **PASS**.
+- PR #54 (`c690216efc9895866f42586d3686b736da111155`) merged the
+  Product-specific technical-token policy.
+- PR #55 (`25c63e4f7926c782fa9015521734798a9b6f91c1`) merged the first five
+  private Persian Product-copy drafts.
+- PR #56 (`2d7305e28b183c3f1bde0f6b773fc29ebc619eec`) merged their exact
+  linguistic and technical approvals.
 - Product listing, cards/meta, featured and related Products, detail
   header/body, search, metadata/OpenGraph/Twitter, Product JSON-LD, comparison,
   and inquiry identity use the central resolver/presentation boundary.
@@ -29,8 +35,13 @@ design or semantic release schedule.
   private review or publication state exposed to clients.
 - Comparison persists validated Product IDs under
   `siemiran:product-comparison` and safely migrates legacy stored objects.
-- The Product-copy registry is 0/382, publication is disabled, Persian copy
-  drafted and activated are both 0, and canonical Product data is unchanged.
+- Private drafts, linguistic approvals, and technical approvals are each
+  5/382, with five current dual approvals and 377 Products not yet drafted or
+  approved.
+- Active Persian Product-copy coverage remains 0/382, no activation capability
+  exists, publication is disabled, and public FA/EN Product prose remains
+  canonical English/LTR. Batch 01 approval does not authorize publication or
+  partial activation, and canonical Product data is unchanged.
 
 ## 1. Persian Product-copy Drafting, Review, and Atomic Activation
 
@@ -47,8 +58,9 @@ design or semantic release schedule.
 
 Throughout drafting and review, canonical technical tokens remain untranslated:
 MLFBs, Product IDs, slugs, part numbers, official model/family names, protocols,
-standards, values, units, and URLs. This next phase is documented but has not
-started.
+standards, values, units, and URLs. Batch 01 private drafting and dual review
+are complete for five Products. The next unstarted implementation phase is
+another controlled private drafting batch, not activation.
 
 ## 2. Bilingual SEO Activation
 

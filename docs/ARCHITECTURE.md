@@ -1,6 +1,6 @@
 # Siemiran — Current Architecture
 
-Baseline: `main` at `454b2e2e79a04cc95fff9141c8a1f66b2bf88f65`
+Baseline: `main` at `2d7305e28b183c3f1bde0f6b773fc29ebc619eec`
 
 ## Repository Structure
 
@@ -96,12 +96,25 @@ supply, infer, or override lifecycle data.
 ## Product-copy Resolver and Trust Boundaries
 
 Canonical Product/source/database/adapter data remains English and immutable.
-The separate Product-copy registry contains 0/382 entries, publication is
-globally disabled, and no Persian Product copy has been drafted or activated.
-The resolver is nevertheless the sole public Product-copy source for Product
-listing, cards and meta, featured and related Products, detail header/body,
-search, metadata/OpenGraph/Twitter, Product JSON-LD, comparison, and inquiry
-identity.
+PR #54 (`c690216efc9895866f42586d3686b736da111155`) added the
+Product-specific technical-token policy, PR #55
+(`25c63e4f7926c782fa9015521734798a9b6f91c1`) added the first five private
+Persian Product-copy drafts, and PR #56
+(`2d7305e28b183c3f1bde0f6b773fc29ebc619eec`) recorded their exact linguistic
+and technical approvals.
+
+The separate private Product-copy registry therefore contains 5/382 drafts,
+with linguistic approvals at 5/382, technical approvals at 5/382, and five
+current dual approvals. Complete coverage is missing for 377 Products, which
+have not been drafted or approved. Publication remains globally disabled,
+activation is invalid, no activation capability exists, and active coverage
+remains 0/382. Batch 01 approval does not authorize publication or partial
+activation.
+The next implementation phase is another controlled private drafting batch,
+not activation. The resolver remains the sole public Product-copy source for
+Product listing, cards and meta, featured and related Products, detail
+header/body, search, metadata/OpenGraph/Twitter, Product JSON-LD, comparison,
+and inquiry identity.
 
 ```text
 canonical Product + optional approved Persian overlay

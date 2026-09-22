@@ -3,6 +3,39 @@
 This file records completed repository changes. Connection status refers to the
 implementation on the current `main` branch.
 
+## 2026-09-22 - PRs #54-#56: Complete Batch 01 Private Drafts and Dual Approvals
+
+### Changed
+
+- PR #54 merged the Product-specific technical-token policy as
+  `c690216efc9895866f42586d3686b736da111155`.
+- PR #55 merged the first five private Persian Product-copy drafts as
+  `25c63e4f7926c782fa9015521734798a9b6f91c1`.
+- PR #56 merged their exact linguistic and technical approvals as
+  `2d7305e28b183c3f1bde0f6b773fc29ebc619eec`.
+- Canonical Product/source/database/adapter data and public Product-copy output
+  remain unchanged.
+
+### Verified
+
+- The current `main` baseline is
+  `2d7305e28b183c3f1bde0f6b773fc29ebc619eec`.
+- Private drafts, linguistic approvals, and technical approvals are each
+  5/382, with five current dual approvals bound to exact production content
+  hashes and 377 Products not yet drafted or approved.
+- Product-copy validation passes with activation invalid and no activation
+  capability issued.
+
+### State
+
+- Active overlays remain 0/382 and publication remains disabled.
+- Public FA and EN Product prose remains canonical English/LTR; no Persian
+  Product copy is publicly active.
+- Batch 01 approval does not authorize publication, and partial activation
+  remains prohibited by the complete 382/382 gate.
+- The next implementation phase is another controlled private drafting batch,
+  not activation, bilingual SEO, hreflang, or sitemap work.
+
 ## 2026-09-17 - Tasks BO-BW: Integrate Product-copy Consumers
 
 ### Changed
