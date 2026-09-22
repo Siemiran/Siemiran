@@ -2,9 +2,32 @@
 
 Repository source of truth: current `main` branch
 
-Last synchronized: 2026-09-17
+Last synchronized: 2026-09-22
 
-## 2026-09-17 - Tasks BO-BW: Product-copy Consumer Integration (Current State)
+## 2026-09-22 - Batch 01 Private Drafts and Dual Approvals (Current State)
+
+The current baseline is `main` at
+`2d7305e28b183c3f1bde0f6b773fc29ebc619eec`. PR #54 merged the
+Product-specific technical-token policy as
+`c690216efc9895866f42586d3686b736da111155`; PR #55 merged the first five
+private Persian Product-copy drafts as
+`25c63e4f7926c782fa9015521734798a9b6f91c1`; and PR #56 merged their exact
+linguistic and technical approvals as
+`2d7305e28b183c3f1bde0f6b773fc29ebc619eec`.
+
+Private drafts, linguistic approvals, and technical approvals are each 5/382,
+with five current dual approvals and 377 Products not yet drafted or approved.
+The approvals remain bound to their current deterministic content hashes.
+Activation is invalid and has issued no capability; active overlays remain
+0/382 and publication remains disabled. Public FA and EN Product prose
+therefore remains canonical English/LTR.
+
+Batch 01 approval does not authorize publication, partial activation remains
+prohibited, and no Persian Product copy is publicly active. The next
+implementation phase is another controlled private drafting batch, not
+activation, bilingual SEO, hreflang, or sitemap work.
+
+## 2026-09-17 - Tasks BO-BW: Product-copy Consumer Integration (Historical Snapshot)
 
 Tasks BO-BW completed the atomic migration of every intended Product-copy
 consumer to the central resolver and public presentation boundary, followed by
@@ -215,10 +238,13 @@ the inventory before this approved deletion, not a valid current record.
   values and Product-description presentation
 
 The Product-copy infrastructure is implemented and all intended consumers now
-use its resolver/presentation boundary. The registry remains 0/382 and
-publication remains disabled. Drafting, review, the exact 382/382 activation
-gate, English indexing activation, reciprocal hreflang, and localized sitemap
-coverage remain future gates.
+use its resolver/presentation boundary. The private registry contains 5/382
+drafts, linguistic approvals are 5/382, technical approvals are 5/382, and
+five current dual approvals leave 377 Products not yet drafted or approved.
+Active overlays remain 0/382, no activation capability exists, and publication
+remains disabled. Further controlled private drafting, the exact 382/382
+activation gate, English indexing activation, reciprocal hreflang, and
+localized sitemap coverage remain future gates.
 
 ## Completed Inactive Product-copy Infrastructure
 
@@ -232,8 +258,10 @@ coverage remain future gates.
   approvals
 - Exact 382/382 atomic activation gate and exact-ten lifecycle-omission
   invariant
-- Empty 0/382 registry with publication disabled; its resolver/presentation
-  boundary is now connected to all intended consumers
+- Private 5/382 registry with five current dual approvals and 377 Products not
+  yet drafted or approved; active coverage remains 0/382, publication remains
+  disabled, and its resolver/presentation boundary is connected to all
+  intended consumers
 
 ## Completed Product-copy Consumer Integration
 
@@ -589,12 +617,16 @@ concern is lifecycle provenance only: 10 records are explicitly `unverified`
 and expose no public lifecycle value. Product integration is not pending.
 
 The Product-copy resolver/presentation boundary is verified and connected to
-all intended consumers. Its registry remains 0/382 and publication remains
-disabled, so both locales intentionally resolve canonical English/LTR Product
-prose while Persian UI localization remains active. Controlled drafting,
-linguistic and technical approval, the complete 382/382 activation gate, one
+all intended consumers. Its private registry contains 5/382 drafts, linguistic
+approvals are 5/382, technical approvals are 5/382, and all five drafts have
+current dual approvals. The remaining 377 Products are not drafted or
+approved. Active overlays remain 0/382, activation has issued no capability,
+and publication remains disabled, so both locales intentionally resolve
+canonical English/LTR Product prose while Persian UI localization remains
+active. Batch 01 approval does not authorize publication. The next phase is
+another controlled private drafting batch; the complete 382/382 gate, one
 atomic public activation, and bilingual SEO activation remain pending in that
-order; drafting has not started.
+order, with partial activation prohibited.
 
 ## 2026-09-04 — Function Module Source/Lifecycle Progress
 

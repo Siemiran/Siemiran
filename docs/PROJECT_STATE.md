@@ -1,6 +1,28 @@
 # Siemiran — Project State
 
-## 2026-09-17 - Tasks BO-BW: Product-copy Consumer Integration (Current State)
+## 2026-09-22 - Batch 01 Private Drafts and Dual Approvals (Current State)
+
+The current baseline is `main` at
+`2d7305e28b183c3f1bde0f6b773fc29ebc619eec`. PR #54 merged the
+Product-specific technical-token policy as
+`c690216efc9895866f42586d3686b736da111155`; PR #55 merged the first five
+private Persian Product-copy drafts as
+`25c63e4f7926c782fa9015521734798a9b6f91c1`; and PR #56 merged their exact
+linguistic and technical approvals as
+`2d7305e28b183c3f1bde0f6b773fc29ebc619eec`.
+
+Private drafts, linguistic approvals, and technical approvals are each 5/382.
+All five drafts have current dual approvals, leaving 377 Products not yet
+drafted or approved. Activation remains invalid and has issued no capability;
+active overlays remain 0/382 and publication remains disabled. Public FA and
+EN Product prose remains canonical English/LTR.
+
+Batch 01 approval does not authorize publication, no Persian Product copy is
+publicly active, and partial activation remains prohibited by the complete
+382/382 gate. The next implementation phase is another controlled private
+drafting batch, not activation.
+
+## 2026-09-17 - Tasks BO-BW: Product-copy Consumer Integration (Historical Snapshot)
 
 PR #52 squash-merged the Task BO Product-copy consumer integration as
 `454b2e2e79a04cc95fff9141c8a1f66b2bf88f65`. Task BW independently verified
@@ -215,9 +237,9 @@ the inventory before this approved deletion, not a valid current record.
 ## Current Baseline
 
 - Status: Active Development
-- Documentation synchronized: 2026-09-17
+- Documentation synchronized: 2026-09-22
 - Repository source of truth: `main` at
-  `454b2e2e79a04cc95fff9141c8a1f66b2bf88f65`
+  `2d7305e28b183c3f1bde0f6b773fc29ebc619eec`
 - No semantic release version is asserted by this document.
 
 ## Current Stack
@@ -249,7 +271,7 @@ the inventory before this approved deletion, not a valid current record.
 | --- | --- | --- |
 | Product listing and dynamic detail pages | IMPLEMENTED | Repository-backed listing, static product paths, and not-found handling |
 | Localization foundation | IMPLEMENTED | Persian-first FA/EN routing, matching UI catalogs, one-click equivalent-page switching, locale direction, and temporarily noindexed English routes |
-| Product-copy consumer integration | IMPLEMENTED | All intended consumers use the central resolver/public DTO boundary; registry 0/382 and publication disabled |
+| Product-copy consumer integration | IMPLEMENTED | All intended consumers use the central resolver/public DTO boundary; private drafts and both approval roles are 5/382 with five current dual approvals and 377 missing, while active overlays remain 0/382, activation capability is absent, and publication is disabled |
 | Search, URL parameters, filters, sorting, pagination | IMPLEMENTED | Category, family, series, and product-type filters; 12-item pagination |
 | Gallery and specifications | IMPLEMENTED | Product gallery/image UI and technical specification rendering |
 | SEO and structured data | IMPLEMENTED | Metadata, canonical/Open Graph/Twitter fields, Product JSON-LD, breadcrumbs, and Breadcrumb JSON-LD |
