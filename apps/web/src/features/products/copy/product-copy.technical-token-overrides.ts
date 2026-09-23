@@ -28,6 +28,27 @@ const reviewedProductTechnicalTokenOverrides = Object.freeze([
     "RS-422/485",
     "PROFINET",
   ]),
+  defineOverride("siemens-s7-300-cpu-315f-2dp-6es7315-6ff04-0ab0", [
+    "MPI",
+    "PROFIBUS DP",
+  ]),
+  defineOverride("siemens-s7-300-cpu-315f-2pn-dp-6es7315-2fj14-0ab0", [
+    "MPI/DP",
+    "PROFINET",
+  ]),
+  defineOverride("siemens-s7-300-cpu-317f-2dp-6es7317-6ff04-0ab0", [
+    "MPI/DP",
+    "PROFIBUS DP",
+  ]),
+  defineOverride("siemens-s7-300-cpu-317f-2pn-dp-6es7317-2fk14-0ab0", [
+    "MPI/DP",
+    "PROFINET",
+  ]),
+  defineOverride("siemens-s7-300-cpu-319f-3pn-dp-3fl01-0ab0", [
+    "MPI/DP",
+    "PROFIBUS DP",
+    "PROFINET",
+  ]),
 ]);
 
 /** Returns a detached, deeply frozen snapshot of the reviewed mapping. */

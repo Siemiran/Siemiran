@@ -594,14 +594,52 @@ const expectedBatch01TechnicalTokenOverrides = [
   },
 ] as const;
 
-const batch01TechnicalTokenOverrides =
+const expectedBatch02TechnicalTokenOverrides = [
+  {
+    productId: "siemens-s7-300-cpu-315f-2dp-6es7315-6ff04-0ab0",
+    tokens: ["MPI", "PROFIBUS DP"],
+  },
+  {
+    productId: "siemens-s7-300-cpu-315f-2pn-dp-6es7315-2fj14-0ab0",
+    tokens: ["MPI/DP", "PROFINET"],
+  },
+  {
+    productId: "siemens-s7-300-cpu-317f-2dp-6es7317-6ff04-0ab0",
+    tokens: ["MPI/DP", "PROFIBUS DP"],
+  },
+  {
+    productId: "siemens-s7-300-cpu-317f-2pn-dp-6es7317-2fk14-0ab0",
+    tokens: ["MPI/DP", "PROFINET"],
+  },
+  {
+    productId: "siemens-s7-300-cpu-319f-3pn-dp-3fl01-0ab0",
+    tokens: ["MPI/DP", "PROFIBUS DP", "PROFINET"],
+  },
+] as const;
+const expectedCombinedTechnicalTokenOverrides = [
+  ...expectedBatch01TechnicalTokenOverrides,
+  ...expectedBatch02TechnicalTokenOverrides,
+] as const;
+
+const reviewedTechnicalTokenOverrides =
   getReviewedProductTechnicalTokenOverrideEntries();
+const batch01TechnicalTokenOverrides = Object.freeze(
+  reviewedTechnicalTokenOverrides.slice(
+    0,
+    expectedBatch01TechnicalTokenOverrides.length
+  )
+);
+const batch02TechnicalTokenOverrides = Object.freeze(
+  reviewedTechnicalTokenOverrides.slice(
+    expectedBatch01TechnicalTokenOverrides.length
+  )
+);
 const protectedOverrideSnapshotBeforeMutation = JSON.stringify(
-  batch01TechnicalTokenOverrides
+  reviewedTechnicalTokenOverrides
 );
 const protectedSnapshotMutationAttempts = [
   Reflect.set(
-    batch01TechnicalTokenOverrides as unknown as Record<string, unknown>,
+    reviewedTechnicalTokenOverrides as unknown as Record<string, unknown>,
     "0",
     { productId: "mutated", tokens: ["MUTATED"] }
   ),
@@ -619,10 +657,16 @@ const protectedSnapshotMutationAttempts = [
     "MUTATED"
   ),
 ];
-const secondBatch01TechnicalTokenOverrideSnapshot =
+const secondReviewedTechnicalTokenOverrideSnapshot =
   getReviewedProductTechnicalTokenOverrideEntries();
 const uniqueBatch01TechnicalTokenOverrides = new Set(
   batch01TechnicalTokenOverrides.flatMap((entry) => entry.tokens)
+);
+const uniqueBatch02TechnicalTokenOverrides = new Set(
+  batch02TechnicalTokenOverrides.flatMap((entry) => entry.tokens)
+);
+const uniqueCombinedTechnicalTokenOverrides = new Set(
+  reviewedTechnicalTokenOverrides.flatMap((entry) => entry.tokens)
 );
 
 assert(
@@ -640,29 +684,112 @@ assert(
   "Batch 01 technical-token override mapping must contain exactly five Product IDs, nine assignments, and four unique strings."
 );
 assert(
-  Object.isFrozen(batch01TechnicalTokenOverrides) &&
-    batch01TechnicalTokenOverrides.every(
+  JSON.stringify(batch02TechnicalTokenOverrides) ===
+    JSON.stringify(expectedBatch02TechnicalTokenOverrides),
+  "Batch 02 technical-token overrides must match the exact reviewed mapping."
+);
+assert(
+  batch02TechnicalTokenOverrides.length === 5 &&
+    batch02TechnicalTokenOverrides.reduce(
+      (count, entry) => count + entry.tokens.length,
+      0
+    ) === 11 &&
+    uniqueBatch02TechnicalTokenOverrides.size === 4,
+  "Batch 02 technical-token override mapping must contain exactly five Product IDs, eleven assignments, and four unique strings."
+);
+assert(
+  JSON.stringify(reviewedTechnicalTokenOverrides) ===
+      JSON.stringify(expectedCombinedTechnicalTokenOverrides) &&
+    reviewedTechnicalTokenOverrides.length === 10 &&
+    reviewedTechnicalTokenOverrides.reduce(
+      (count, entry) => count + entry.tokens.length,
+      0
+    ) === 20 &&
+    uniqueCombinedTechnicalTokenOverrides.size === 7,
+  "Combined technical-token overrides must contain exactly ten Product IDs, twenty assignments, and seven unique strings."
+);
+assert(
+  Object.isFrozen(reviewedTechnicalTokenOverrides) &&
+    reviewedTechnicalTokenOverrides.every(
       (entry) => Object.isFrozen(entry) && Object.isFrozen(entry.tokens)
     ) &&
-    batch01TechnicalTokenOverrides !==
-      secondBatch01TechnicalTokenOverrideSnapshot &&
-    batch01TechnicalTokenOverrides.every(
+    reviewedTechnicalTokenOverrides !==
+      secondReviewedTechnicalTokenOverrideSnapshot &&
+    reviewedTechnicalTokenOverrides.every(
       (entry, index) =>
-        entry !== secondBatch01TechnicalTokenOverrideSnapshot[index] &&
+        entry !== secondReviewedTechnicalTokenOverrideSnapshot[index] &&
         entry.tokens !==
-          secondBatch01TechnicalTokenOverrideSnapshot[index]?.tokens
+          secondReviewedTechnicalTokenOverrideSnapshot[index]?.tokens
     ) &&
     protectedSnapshotMutationAttempts.every((result) => !result) &&
-    JSON.stringify(batch01TechnicalTokenOverrides) ===
+    JSON.stringify(reviewedTechnicalTokenOverrides) ===
       protectedOverrideSnapshotBeforeMutation &&
-    JSON.stringify(secondBatch01TechnicalTokenOverrideSnapshot) ===
+    JSON.stringify(secondReviewedTechnicalTokenOverrideSnapshot) ===
       protectedOverrideSnapshotBeforeMutation,
-  "Batch 01 technical-token override mutation attempts must fail without changing source or later reads."
+  "Combined technical-token override mutation attempts must fail without changing source or later reads."
 );
 assert(
   reviewedGlobalTechnicalTokens.length === 0,
   "The global technical-token allowlist must remain empty."
 );
+
+const expectedBatch02CanonicalProducts = [
+  {
+    productId: "siemens-s7-300-cpu-315f-2dp-6es7315-6ff04-0ab0",
+    title: "SIMATIC S7-300 CPU 315F-2 DP",
+    partNumber: "6ES7315-6FF04-0AB0",
+    canonicalDescription:
+      "SIMATIC S7-300 CPU 315F-2 DP fail-safe central processing unit with 384 KB work memory, MPI and PROFIBUS DP interfaces and second DP master/slave interface.",
+    workMemory: "384 KB",
+    interfaces: "MPI, PROFIBUS DP",
+    siemensUrl:
+      "https://mall.industry.siemens.com/mall/en/oeii/Catalog/Product?SiepCountryCode=OE&mlfb=6ES7315-6FF04-0AB0",
+  },
+  {
+    productId: "siemens-s7-300-cpu-315f-2pn-dp-6es7315-2fj14-0ab0",
+    title: "SIMATIC S7-300 CPU 315F-2 PN/DP",
+    partNumber: "6ES7315-2FJ14-0AB0",
+    canonicalDescription:
+      "SIMATIC S7-300 CPU 315F-2 PN/DP fail-safe central processing unit with 512 KB work memory, MPI/DP and Ethernet PROFINET interface with 2-port switch.",
+    workMemory: "512 KB",
+    interfaces: "MPI/DP, PROFINET",
+    siemensUrl:
+      "https://mall.industry.siemens.com/mall/en/br/Catalog/Product?SiepCountryCode=BR&mlfb=6ES7315-2FJ14-0AB0",
+  },
+  {
+    productId: "siemens-s7-300-cpu-317f-2dp-6es7317-6ff04-0ab0",
+    title: "SIMATIC S7-300 CPU 317F-2 DP",
+    partNumber: "6ES7317-6FF04-0AB0",
+    canonicalDescription:
+      "SIMATIC S7-300 CPU 317F-2 DP fail-safe central processing unit with 1.5 MB work memory, MPI/DP and second PROFIBUS DP master/slave interface.",
+    workMemory: "1.5 MB",
+    interfaces: "MPI/DP, PROFIBUS DP",
+    siemensUrl:
+      "https://mall.industry.siemens.com/mall/en/oeii/Catalog/Product?SiepCountryCode=OE&mlfb=6ES7317-6FF04-0AB0",
+  },
+  {
+    productId: "siemens-s7-300-cpu-317f-2pn-dp-6es7317-2fk14-0ab0",
+    title: "SIMATIC S7-300 CPU 317F-2 PN/DP",
+    partNumber: "6ES7317-2FK14-0AB0",
+    canonicalDescription:
+      "SIMATIC S7-300 CPU 317F-2 PN/DP fail-safe central processing unit with 1.5 MB work memory, MPI/DP and Ethernet PROFINET interface with 2-port switch.",
+    workMemory: "1.5 MB",
+    interfaces: "MPI/DP, PROFINET",
+    siemensUrl:
+      "https://mall.industry.siemens.com/mall/en/oeii/Catalog/Product?SiepCountryCode=OE&mlfb=6ES7317-2FK14-0AB0",
+  },
+  {
+    productId: "siemens-s7-300-cpu-319f-3pn-dp-3fl01-0ab0",
+    title: "SIMATIC S7-300 CPU 319F-3 PN/DP",
+    partNumber: "6ES7318-3FL01-0AB0",
+    canonicalDescription:
+      "SIMATIC S7-300 CPU 319F-3 PN/DP fail-safe central processing unit with 2.5 MB work memory, MPI/DP, DP master/slave and Ethernet PROFINET interfaces.",
+    workMemory: "2.5 MB",
+    interfaces: "MPI/DP, PROFIBUS DP, PROFINET",
+    siemensUrl:
+      "https://mall.industry.siemens.com/mall/en/inosatavtomatica/Catalog/Product?SiepCountryCode=OE&mlfb=6ES7318-3FL01-0AB0",
+  },
+] as const;
 
 const batch01Products = expectedBatch01TechnicalTokenOverrides.map(
   (expectedEntry) => {
@@ -681,6 +808,38 @@ const batch01ProductsById = new Map(
 );
 const batch01ProductionResolver = createProductTechnicalTokenOverrideResolver(
   batch01TechnicalTokenOverrides,
+  products
+);
+const batch02Products = expectedBatch02CanonicalProducts.map((expectedEntry) => {
+  const matchedProduct = products.find(
+    (candidate) => candidate.id === expectedEntry.productId
+  );
+  assert(
+    matchedProduct !== undefined,
+    `Batch 02 Product must remain canonical: ${expectedEntry.productId}`
+  );
+  assert(
+    matchedProduct.title === expectedEntry.title &&
+      matchedProduct.partNumber === expectedEntry.partNumber &&
+      matchedProduct.shortDescription === expectedEntry.canonicalDescription &&
+      matchedProduct.description === expectedEntry.canonicalDescription &&
+      matchedProduct.specifications?.["Work Memory"] ===
+        expectedEntry.workMemory &&
+      matchedProduct.specifications?.Interfaces === expectedEntry.interfaces &&
+      matchedProduct.siemensUrl === expectedEntry.siemensUrl,
+    `Batch 02 canonical Product binding must remain exact: ${expectedEntry.productId}`
+  );
+  return matchedProduct;
+});
+const batch02ProductsById = new Map(
+  batch02Products.map((candidate) => [candidate.id, candidate])
+);
+const batch02ProductionResolver = createProductTechnicalTokenOverrideResolver(
+  batch02TechnicalTokenOverrides,
+  products
+);
+const combinedProductionResolver = createProductTechnicalTokenOverrideResolver(
+  reviewedTechnicalTokenOverrides,
   products
 );
 
@@ -702,6 +861,26 @@ assert(
       (entry) => Object.isFrozen(entry) && Object.isFrozen(entry.tokens)
     ),
   "The production resolver snapshot and every returned nested value must be frozen."
+);
+assert(
+  batch02ProductionResolver.valid &&
+    batch02ProductionResolver.entryCount === 5 &&
+    batch02ProductionResolver.tokenCount === 11 &&
+    JSON.stringify(batch02ProductionResolver.entries) ===
+      JSON.stringify(expectedBatch02TechnicalTokenOverrides),
+  `Batch 02 production technical-token resolver must validate: ${batch02ProductionResolver.issues
+    .map((issue) => issue.code)
+    .join(", ")}`
+);
+assert(
+  combinedProductionResolver.valid &&
+    combinedProductionResolver.entryCount === 10 &&
+    combinedProductionResolver.tokenCount === 20 &&
+    JSON.stringify(combinedProductionResolver.entries) ===
+      JSON.stringify(expectedCombinedTechnicalTokenOverrides),
+  `Combined production technical-token resolver must validate: ${combinedProductionResolver.issues
+    .map((issue) => issue.code)
+    .join(", ")}`
 );
 
 const mutableResolverSource: { productId: string; tokens: string[] }[] =
@@ -796,6 +975,112 @@ assert(
     approvedOverrideResults.every((result) => result.valid),
   "All nine approved assignments must pass through Product-copy validation."
 );
+
+const approvedBatch02OverrideResults: ValidationResult[] = [];
+batch02TechnicalTokenOverrides.forEach((entry) => {
+  const fixtureProduct = batch02ProductsById.get(entry.productId);
+  assert(
+    fixtureProduct !== undefined,
+    `Batch 02 override Product must exist: ${entry.productId}`
+  );
+
+  entry.tokens.forEach((token) => {
+    const result = validateFixture(
+      overrideFixture(fixtureProduct, token),
+      products
+    );
+    assert(
+      result.valid,
+      `Batch 02 approved override must pass only for its mapped Product: ${entry.productId} / ${token}`
+    );
+    approvedBatch02OverrideResults.push(result);
+    draftCases[`approvedBatch02Override:${entry.productId}:${token}`] = result;
+  });
+});
+assert(
+  approvedBatch02OverrideResults.length === 11 &&
+    approvedBatch02OverrideResults.every((result) => result.valid),
+  "All eleven Batch 02 approved assignments must pass through Product-copy validation."
+);
+
+const batch02OverrideTokensByProduct = new Map(
+  batch02TechnicalTokenOverrides.map((entry) => [entry.productId, entry.tokens])
+);
+const batch02IsolationCases = batch02TechnicalTokenOverrides.flatMap((entry) =>
+  entry.tokens.flatMap((token) =>
+    batch02Products
+      .filter(
+        (candidate) =>
+          candidate.id !== entry.productId &&
+          !batch02OverrideTokensByProduct.get(candidate.id)?.includes(token)
+      )
+      .map((candidate) => ({ product: candidate, token }))
+  )
+);
+const batch02IsolationResults = batch02IsolationCases.map(
+  ({ product: fixtureProduct, token }) =>
+    assertDraftIncludesIssues(
+      `Batch 02 Product-level isolation ${fixtureProduct.id} / ${token}`,
+      overrideFixture(fixtureProduct, token),
+      ["unapproved-technical-token"],
+      products
+    )
+);
+assert(
+  batch02IsolationResults.length > 0 &&
+    batch02IsolationResults.every((result) => !result.valid),
+  "Batch 02 technical-token assignments must remain strictly isolated to their mapped Products."
+);
+
+const unauthorizedBatch02StandaloneTokens = [
+  "DP",
+  "Ethernet",
+  "master/slave",
+] as const;
+const unauthorizedBatch02StandaloneResults = batch02Products.flatMap(
+  (fixtureProduct) =>
+    unauthorizedBatch02StandaloneTokens.map((token) =>
+      assertDraftIncludesIssues(
+        `Batch 02 unauthorized standalone token ${fixtureProduct.id} / ${token}`,
+        overrideFixture(fixtureProduct, token),
+        ["unapproved-technical-token"],
+        products
+      )
+    )
+);
+assert(
+  unauthorizedBatch02StandaloneResults.every((result) => !result.valid),
+  "Batch 02 must not authorize standalone DP, Ethernet, or master/slave."
+);
+
+batch02Products.forEach((fixtureProduct) => {
+  const expectedProduct = expectedBatch02CanonicalProducts.find(
+    (candidate) => candidate.productId === fixtureProduct.id
+  );
+  assert(
+    expectedProduct !== undefined,
+    `Batch 02 canonical expectation must exist: ${fixtureProduct.id}`
+  );
+  const canonicalDerivedTokens = [
+    expectedProduct.title,
+    "CPU",
+    expectedProduct.workMemory,
+    "24 V DC",
+  ] as const;
+  const reviewedOverrides =
+    batch02ProductionResolver.getTokensForProduct(fixtureProduct.id);
+  canonicalDerivedTokens.forEach((token) => {
+    assert(
+      !reviewedOverrides.includes(token) &&
+        deriveAllowedTechnicalTokens(fixtureProduct).has(token) &&
+        validateFixture(
+          overrideFixture(fixtureProduct, token),
+          products
+        ).valid,
+      `Batch 02 canonical-derived token must remain valid without an override: ${fixtureProduct.id} / ${token}`
+    );
+  });
+});
 
 const cpu1211 = batch01ProductsById.get("siemens-s7-1200-cpu-211-1ae40");
 const cpu1215 = batch01ProductsById.get("siemens-s7-1200-cpu-215-1ag40");
@@ -2809,9 +3094,13 @@ const disabledPersianListItems = createProductListItemViewModels(
   products,
   "fa"
 );
+const activePersianOverlayCount = disabledPersianListItems.filter(
+  (item) => item.copy.language === "fa"
+).length;
 assert(
   englishListItems.length === 382 &&
     disabledPersianListItems.length === 382 &&
+    activePersianOverlayCount === 0 &&
     englishListItems.every((item) => item.copy.shortDescription.length > 0) &&
     disabledPersianListItems.every(
       (item) => item.copy.language === "en" && item.copy.direction === "ltr"
@@ -3416,6 +3705,107 @@ const expectedCpu1217DraftSegments = [
 ] as const;
 const expectedCpu1217RenderedDraft =
   "مدل SIMATIC S7-1200 CPU 1217C DC/DC/DC، یک CPU کامپکت با ورودی‌ها و خروجی‌های داخلی شامل 10 ورودی دیجیتال و 6 خروجی دیجیتال است. برای توابع فناوری نیز چهار ورودی RS-422/485 و چهار خروجی RS-422/485 دارد. همچنین دارای 2 ورودی آنالوگ 0-10 V DC و 2 خروجی آنالوگ 0-20 mA DC است و 2 پورت PROFINET دارد.";
+const expectedBatch02Drafts = [
+  {
+    productId: "siemens-s7-300-cpu-315f-2dp-6es7315-6ff04-0ab0",
+    rendered:
+      "مدل SIMATIC S7-300 CPU 315F-2 DP، یک واحد پردازش مرکزی ایمن در برابر خطا با حافظه کاری 384 KB است. دارای رابط‌های MPI و PROFIBUS DP است و رابط دوم می‌تواند در نقش اصلی یا تابع کار کند.",
+    technicalTokens: [
+      "SIMATIC S7-300 CPU 315F-2 DP",
+      "384 KB",
+      "MPI",
+      "PROFIBUS DP",
+    ],
+  },
+  {
+    productId: "siemens-s7-300-cpu-315f-2pn-dp-6es7315-2fj14-0ab0",
+    rendered:
+      "مدل SIMATIC S7-300 CPU 315F-2 PN/DP، یک واحد پردازش مرکزی ایمن در برابر خطا با حافظه کاری 512 KB است. دارای رابط‌های MPI/DP و PROFINET مبتنی بر اترنت با سوئیچ دو پورت است.",
+    technicalTokens: [
+      "SIMATIC S7-300 CPU 315F-2 PN/DP",
+      "512 KB",
+      "MPI/DP",
+      "PROFINET",
+    ],
+  },
+  {
+    productId: "siemens-s7-300-cpu-317f-2dp-6es7317-6ff04-0ab0",
+    rendered:
+      "مدل SIMATIC S7-300 CPU 317F-2 DP، یک واحد پردازش مرکزی ایمن در برابر خطا با حافظه کاری 1.5 MB است. دارای رابط‌های MPI/DP و PROFIBUS DP است و رابط دوم می‌تواند در نقش اصلی یا تابع کار کند.",
+    technicalTokens: [
+      "SIMATIC S7-300 CPU 317F-2 DP",
+      "1.5 MB",
+      "MPI/DP",
+      "PROFIBUS DP",
+    ],
+  },
+  {
+    productId: "siemens-s7-300-cpu-317f-2pn-dp-6es7317-2fk14-0ab0",
+    rendered:
+      "مدل SIMATIC S7-300 CPU 317F-2 PN/DP، یک واحد پردازش مرکزی ایمن در برابر خطا با حافظه کاری 1.5 MB است. دارای رابط‌های MPI/DP و PROFINET مبتنی بر اترنت با سوئیچ دو پورت است.",
+    technicalTokens: [
+      "SIMATIC S7-300 CPU 317F-2 PN/DP",
+      "1.5 MB",
+      "MPI/DP",
+      "PROFINET",
+    ],
+  },
+  {
+    productId: "siemens-s7-300-cpu-319f-3pn-dp-3fl01-0ab0",
+    rendered:
+      "مدل SIMATIC S7-300 CPU 319F-3 PN/DP، یک واحد پردازش مرکزی ایمن در برابر خطا با حافظه کاری 2.5 MB است. دارای رابط‌های MPI/DP، PROFIBUS DP با امکان کار در نقش اصلی یا تابع، و PROFINET مبتنی بر اترنت است.",
+    technicalTokens: [
+      "SIMATIC S7-300 CPU 319F-3 PN/DP",
+      "2.5 MB",
+      "MPI/DP",
+      "PROFIBUS DP",
+      "PROFINET",
+    ],
+  },
+] as const;
+const BATCH_02_LINGUISTIC_REVIEWED_AT = "2026-09-23T18:33:39Z";
+const BATCH_02_TECHNICAL_REVIEWED_AT = "2026-09-23T18:33:41Z";
+const BATCH_02_LINGUISTIC_NOTE =
+  "Reviewed Persian wording, terminology, grammar, punctuation, spacing, direction, and typed segmentation against the canonical Product copy; approved without content changes.";
+const BATCH_02_TECHNICAL_NOTE =
+  "Verified Product identity, MLFB, fail-safe CPU classification, work memory, interfaces, interface roles, technical tokens, and canonical Siemens source; approved without content changes.";
+const expectedBatch02ReviewMetadata = [
+  {
+    productId: "siemens-s7-300-cpu-315f-2dp-6es7315-6ff04-0ab0",
+    reviewedContentHash:
+      "sha256:8fc714b37de5c59d78c557945706fe0fb66202ff1782e81cdbfc4c3edbc598d8",
+    evidenceRef:
+      "https://mall.industry.siemens.com/mall/en/oeii/Catalog/Product?SiepCountryCode=OE&mlfb=6ES7315-6FF04-0AB0",
+  },
+  {
+    productId: "siemens-s7-300-cpu-315f-2pn-dp-6es7315-2fj14-0ab0",
+    reviewedContentHash:
+      "sha256:bc4e92906d0c8382cf2e79fdd5d4a8da363afef86660b3662500776670b07c6b",
+    evidenceRef:
+      "https://mall.industry.siemens.com/mall/en/br/Catalog/Product?SiepCountryCode=BR&mlfb=6ES7315-2FJ14-0AB0",
+  },
+  {
+    productId: "siemens-s7-300-cpu-317f-2dp-6es7317-6ff04-0ab0",
+    reviewedContentHash:
+      "sha256:669054b0662ee5211d27868ca430e6b1ad7b55756c6b3e4c05c98b678dd26372",
+    evidenceRef:
+      "https://mall.industry.siemens.com/mall/en/oeii/Catalog/Product?SiepCountryCode=OE&mlfb=6ES7317-6FF04-0AB0",
+  },
+  {
+    productId: "siemens-s7-300-cpu-317f-2pn-dp-6es7317-2fk14-0ab0",
+    reviewedContentHash:
+      "sha256:db77d0008754e81a0761dc55249b647a0d89b251d78c2d71bbb680ba6bc76300",
+    evidenceRef:
+      "https://mall.industry.siemens.com/mall/en/oeii/Catalog/Product?SiepCountryCode=OE&mlfb=6ES7317-2FK14-0AB0",
+  },
+  {
+    productId: "siemens-s7-300-cpu-319f-3pn-dp-3fl01-0ab0",
+    reviewedContentHash:
+      "sha256:b94828a69f8ffc1b03b357451e4d3f03550120f746636c80fd768a1dd41f48cf",
+    evidenceRef:
+      "https://mall.industry.siemens.com/mall/en/inosatavtomatica/Catalog/Product?SiepCountryCode=OE&mlfb=6ES7318-3FL01-0AB0",
+  },
+] as const;
 
 function cloneMutableOverlay(entry: PersianProductCopyOverlay): MutableOverlay {
   return {
@@ -3430,7 +3820,25 @@ function cloneMutableOverlay(entry: PersianProductCopyOverlay): MutableOverlay {
   };
 }
 
-const registeredBatch01DraftBindings = persianProductCopyDraftRegistry.map(
+const expectedBatch01DraftProductIds = expectedBatch01DraftProducts.map(
+  (entry) => entry.productId
+);
+const expectedBatch02DraftProductIds = expectedBatch02Drafts.map(
+  (entry) => entry.productId
+);
+const expectedBatch01DraftProductIdSet = new Set<ProductId>(
+  expectedBatch01DraftProductIds
+);
+const expectedBatch02DraftProductIdSet = new Set<ProductId>(
+  expectedBatch02DraftProductIds
+);
+const registeredBatch01Drafts = persianProductCopyDraftRegistry.filter(
+  (entry) => expectedBatch01DraftProductIdSet.has(entry.productId)
+);
+const registeredBatch02Drafts = persianProductCopyDraftRegistry.filter(
+  (entry) => expectedBatch02DraftProductIdSet.has(entry.productId)
+);
+const registeredBatch01DraftBindings = registeredBatch01Drafts.map(
   (entry) => {
     const product = products.find(
       (candidate) => candidate.id === entry.productId
@@ -3450,6 +3858,22 @@ const registeredBatch01DraftBindings = persianProductCopyDraftRegistry.map(
     };
   }
 );
+const registeredBatch02DraftBindings = registeredBatch02Drafts.map((entry) => {
+  const product = products.find((candidate) => candidate.id === entry.productId);
+  assert(
+    product !== undefined,
+    `Batch 02 draft Product must remain canonical: ${entry.productId}`
+  );
+  return {
+    productId: product.id,
+    title: product.title,
+    partNumber: product.partNumber,
+    canonicalDescription: product.description,
+    workMemory: product.specifications?.["Work Memory"],
+    interfaces: product.specifications?.Interfaces,
+    siemensUrl: product.siemensUrl,
+  };
+});
 const registeredDraftValidation = validatePersianProductCopyDrafts(
   persianProductCopyDraftRegistry,
   products
@@ -3466,7 +3890,7 @@ const registeredLinguisticApprovals = persianProductCopyDraftRegistry.filter(
 const registeredTechnicalApprovals = persianProductCopyDraftRegistry.filter(
   (entry) => isApprovedReview(entry.technicalReview)
 ).length;
-const registeredBatch01ApprovalRecords = persianProductCopyDraftRegistry.map(
+const registeredBatch01ApprovalRecords = registeredBatch01Drafts.map(
   (entry) => {
     const expected = expectedBatch01ReviewMetadata.find(
       (candidate) => candidate.productId === entry.productId
@@ -3534,6 +3958,71 @@ const registeredBatch01ApprovalRecords = persianProductCopyDraftRegistry.map(
     };
   }
 );
+const registeredBatch02ApprovalRecords = registeredBatch02Drafts.map(
+  (entry) => {
+    const expected = expectedBatch02ReviewMetadata.find(
+      (candidate) => candidate.productId === entry.productId
+    );
+    assert(
+      expected !== undefined,
+      `Batch 02 approval metadata must remain scoped to ${entry.productId}.`
+    );
+
+    const freshContentHash = createProductCopyContentHash(entry);
+    const expectedLinguisticReview = {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: BATCH_02_LINGUISTIC_REVIEWED_AT,
+      reviewedContentHash: expected.reviewedContentHash,
+      evidenceRef: expected.evidenceRef,
+      note: BATCH_02_LINGUISTIC_NOTE,
+    } as const;
+    const expectedTechnicalReview = {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: BATCH_02_TECHNICAL_REVIEWED_AT,
+      reviewedContentHash: expected.reviewedContentHash,
+      evidenceRef: expected.evidenceRef,
+      note: BATCH_02_TECHNICAL_NOTE,
+    } as const;
+
+    assert(
+      JSON.stringify(entry.linguisticReview) ===
+        JSON.stringify(expectedLinguisticReview),
+      `Batch 02 linguistic approval must be exact for ${entry.productId}.`
+    );
+    assert(
+      JSON.stringify(entry.technicalReview) ===
+        JSON.stringify(expectedTechnicalReview),
+      `Batch 02 technical approval must be exact for ${entry.productId}.`
+    );
+    assert(
+      entry.linguisticReview.decision === "approved" &&
+        entry.technicalReview.decision === "approved" &&
+        !Object.is(entry.linguisticReview, entry.technicalReview) &&
+        entry.linguisticReview.reviewerId ===
+          entry.technicalReview.reviewerId &&
+        entry.linguisticReview.reviewedAt < entry.technicalReview.reviewedAt,
+      `Batch 02 must retain distinct and ordered approved role records for ${entry.productId}.`
+    );
+    assert(
+      freshContentHash === expected.reviewedContentHash &&
+        entry.linguisticReview.reviewedContentHash === freshContentHash &&
+        entry.technicalReview.reviewedContentHash === freshContentHash,
+      `Batch 02 approvals must bind the fresh production hash for ${entry.productId}.`
+    );
+
+    return {
+      productId: entry.productId,
+      freshContentHash,
+      evidenceRef: expected.evidenceRef,
+      roleObjectsDistinct: !Object.is(
+        entry.linguisticReview,
+        entry.technicalReview
+      ),
+    };
+  }
+);
 const registeredCurrentDualApprovals = persianProductCopyDraftRegistry.filter(
   (entry) => {
     const freshContentHash = createProductCopyContentHash(entry);
@@ -3546,7 +4035,7 @@ const registeredCurrentDualApprovals = persianProductCopyDraftRegistry.filter(
   }
 ).length;
 const registeredBatch01ApprovalMutationResults =
-  persianProductCopyDraftRegistry.map((entry) => {
+  registeredBatch01Drafts.map((entry) => {
     const copyMutation = cloneMutableOverlay(entry);
     const finalShortSegment = copyMutation.shortDescription.at(-1);
     assert(
@@ -3593,6 +4082,54 @@ const registeredBatch01ApprovalMutationResults =
       kindStaleApprovals,
     };
   });
+const registeredBatch02ApprovalMutationResults =
+  registeredBatch02Drafts.map((entry) => {
+    const copyMutation = cloneMutableOverlay(entry);
+    const finalShortSegment = copyMutation.shortDescription.at(-1);
+    assert(
+      finalShortSegment !== undefined,
+      `Batch 02 copy mutation requires a final segment for ${entry.productId}.`
+    );
+    finalShortSegment.value = `${finalShortSegment.value.slice(0, -1)}!`;
+    const copyMutationResult = validatePersianProductCopyDrafts(
+      [copyMutation],
+      products
+    );
+
+    const kindMutation = cloneMutableOverlay(entry);
+    const firstShortSegment = kindMutation.shortDescription[0];
+    assert(
+      firstShortSegment !== undefined,
+      `Batch 02 kind mutation requires a first segment for ${entry.productId}.`
+    );
+    firstShortSegment.kind =
+      firstShortSegment.kind === "text" ? "technical" : "text";
+    const kindMutationResult = validatePersianProductCopyDrafts(
+      [kindMutation],
+      products
+    );
+
+    const copyStaleApprovals = copyMutationResult.issues.filter(
+      (issue) =>
+        issue.code === "stale-approval-hash" &&
+        issue.productId === entry.productId
+    ).length;
+    const kindStaleApprovals = kindMutationResult.issues.filter(
+      (issue) =>
+        issue.code === "stale-approval-hash" &&
+        issue.productId === entry.productId
+    ).length;
+    assert(
+      copyStaleApprovals === 2 && kindStaleApprovals === 2,
+      `Batch 02 copy and segment-kind mutations must stale both approvals for ${entry.productId}.`
+    );
+
+    return {
+      productId: entry.productId,
+      copyStaleApprovals,
+      kindStaleApprovals,
+    };
+  });
 const registeredCpu1217Draft = persianProductCopyDraftRegistry.find(
   (entry) => entry.productId === "siemens-s7-1200-cpu-217-1ag40"
 );
@@ -3604,15 +4141,95 @@ const registeredCpu1217TechnicalSegments =
   registeredCpu1217Draft.shortDescription.filter(
     (segment) => segment.kind === "technical"
   );
+const registeredBatch02DraftRecords = expectedBatch02Drafts.map((expected) => {
+  const entry = registeredBatch02Drafts.find(
+    (candidate) => candidate.productId === expected.productId
+  );
+  assert(entry !== undefined, `Batch 02 draft must exist: ${expected.productId}`);
+  const renderedShortDescription = serializeProductCopyParagraphForSearch(
+    entry.shortDescription
+  );
+  const technicalTokens = entry.shortDescription
+    .filter((segment) => segment.kind === "technical")
+    .map((segment) => segment.value);
+  assert(
+    renderedShortDescription === expected.rendered &&
+      entry.description.length === 1 &&
+      JSON.stringify(entry.description[0]) ===
+        JSON.stringify(entry.shortDescription) &&
+      JSON.stringify(technicalTokens) ===
+        JSON.stringify(expected.technicalTokens),
+    `Batch 02 short and long drafts and technical segmentation must be exact: ${expected.productId}`
+  );
+  assert(
+    entry.provenance === "ai-assisted",
+    `Batch 02 provenance must remain ai-assisted: ${expected.productId}`
+  );
+  assert(
+    !renderedShortDescription.includes("Ethernet") &&
+      !renderedShortDescription.includes("master/slave") &&
+      !renderedShortDescription.includes("lifecycle") &&
+      !renderedShortDescription.includes("phase-out") &&
+      !renderedShortDescription.includes("spare-part") &&
+      !renderedShortDescription.includes("discontinued") &&
+      !renderedShortDescription.includes("چرخه عمر") &&
+      !renderedShortDescription.includes("توقف تولید") &&
+      !renderedShortDescription.includes("قطعه یدکی"),
+    `Batch 02 drafts must use Persian prose for Ethernet and master/slave concepts and omit lifecycle: ${expected.productId}`
+  );
+  const freshContentHash = createProductCopyContentHash(entry);
+  return {
+    productId: entry.productId,
+    renderedShortDescription,
+    technicalTokens,
+    freshContentHash,
+  };
+});
+const batch02PublicResolutionResults = batch02Products.map((fixtureProduct) => {
+  const english = resolveProductCopy(fixtureProduct, "en");
+  const disabledPersian = resolveProductCopy(fixtureProduct, "fa");
+  const englishPublic = createPublicProductCardCopyDTO(english);
+  const disabledPersianPublic = createPublicProductCardCopyDTO(disabledPersian);
+  assert(
+    english.source === "canonical-en" &&
+      disabledPersian.source === "canonical-en" &&
+      serializeProductCopyParagraph(english.shortDescription) ===
+        fixtureProduct.shortDescription &&
+      serializeProductCopyParagraph(disabledPersian.shortDescription) ===
+        fixtureProduct.shortDescription &&
+      englishPublic.language === "en" &&
+      englishPublic.direction === "ltr" &&
+      disabledPersianPublic.language === "en" &&
+      disabledPersianPublic.direction === "ltr",
+    `Batch 02 public FA/EN copy must remain canonical English/LTR: ${fixtureProduct.id}`
+  );
+  return {
+    productId: fixtureProduct.id,
+    englishSource: english.source,
+    disabledPersianSource: disabledPersian.source,
+    language: disabledPersianPublic.language,
+    direction: disabledPersianPublic.direction,
+  };
+});
 
 assert(
   registeredDraftValidation.valid &&
-    persianProductCopyDraftRegistry.length === 5 &&
+    persianProductCopyDraftRegistry.length === 10 &&
+    registeredBatch01Drafts.length === 5 &&
     JSON.stringify(registeredBatch01DraftBindings) ===
       JSON.stringify(expectedBatch01DraftProducts),
   `Batch 01 draft registry and canonical bindings must be exact: ${registeredDraftValidation.issues
     .map((issue) => issue.code)
     .join(", ")}`
+);
+assert(
+  registeredBatch02Drafts.length === 5 &&
+    JSON.stringify(registeredBatch02Drafts.map((entry) => entry.productId)) ===
+      JSON.stringify(expectedBatch02DraftProductIds) &&
+    JSON.stringify(registeredBatch02DraftBindings) ===
+      JSON.stringify(expectedBatch02CanonicalProducts) &&
+    registeredBatch02DraftRecords.length === 5,
+  "Batch 02 draft IDs, canonical Product bindings, copy, and segmentation must be exact."
 );
 assert(
   JSON.stringify(registeredCpu1217Draft.shortDescription) ===
@@ -3638,28 +4255,39 @@ assert(
 );
 assert(
   persianProductCopyDraftRegistry.every(
-    (entry) =>
-      entry.provenance === "ai-assisted" &&
+    (entry) => entry.provenance === "ai-assisted"
+  ) &&
+    registeredBatch01Drafts.every(
+      (entry) =>
       entry.linguisticReview.decision === "approved" &&
       entry.technicalReview.decision === "approved"
-  ) &&
-    registeredLinguisticApprovals === 5 &&
-    registeredTechnicalApprovals === 5 &&
-    registeredCurrentDualApprovals === 5 &&
+    ) &&
+    registeredBatch02Drafts.every(
+      (entry) =>
+        entry.linguisticReview.decision === "approved" &&
+        entry.technicalReview.decision === "approved"
+    ) &&
+    registeredLinguisticApprovals === 10 &&
+    registeredTechnicalApprovals === 10 &&
+    registeredCurrentDualApprovals === 10 &&
     registeredBatch01ApprovalRecords.length === 5 &&
     registeredBatch01ApprovalRecords.every(
       (record) => record.roleObjectsDistinct
+    ) &&
+    registeredBatch02ApprovalRecords.length === 5 &&
+    registeredBatch02ApprovalRecords.every(
+      (record) => record.roleObjectsDistinct
     ),
-  "Batch 01 drafts must retain five exact, current, distinct dual approvals."
+  "Batches 01 and 02 must retain ten exact current dual approvals."
 );
 assert(
   !registeredDraftActivation.valid &&
-    registeredDraftActivation.overlayCount === 5 &&
+    registeredDraftActivation.overlayCount === 10 &&
     registeredDraftActivation.canonicalCount === 382 &&
-    registeredDraftActivation.approvedCount === 5 &&
-    registeredDraftActivation.missingIds.length === 377 &&
+    registeredDraftActivation.approvedCount === 10 &&
+    registeredDraftActivation.missingIds.length === 372 &&
     !("capability" in registeredDraftActivation),
-  "Batch 01 activation must fail closed at exactly 5/382 with five current dual approvals."
+  "Combined activation must fail closed at exactly 10/382 drafts, ten current dual approvals, and 372 missing Products."
 );
 assert(
   PERSIAN_PRODUCT_COPY_PUBLICATION_STATE === "disabled",
@@ -3698,30 +4326,82 @@ console.log(
       draftRegistry: {
         valid: registeredDraftValidation.valid,
         entries: persianProductCopyDraftRegistry.length,
-        exactBindings:
-          JSON.stringify(registeredBatch01DraftBindings) ===
-          JSON.stringify(expectedBatch01DraftProducts),
+        batch01: {
+          entries: registeredBatch01Drafts.length,
+          exactBindings:
+            JSON.stringify(registeredBatch01DraftBindings) ===
+            JSON.stringify(expectedBatch01DraftProducts),
+          approvalRecords: registeredBatch01ApprovalRecords.length,
+          mutationStaleness: registeredBatch01ApprovalMutationResults,
+        },
+        batch02: {
+          entries: registeredBatch02Drafts.length,
+          exactBindings:
+            JSON.stringify(registeredBatch02DraftBindings) ===
+            JSON.stringify(expectedBatch02CanonicalProducts),
+          linguisticApprovals: registeredBatch02Drafts.filter(
+            (entry) => entry.linguisticReview.decision === "approved"
+          ).length,
+          technicalApprovals: registeredBatch02Drafts.filter(
+            (entry) => entry.technicalReview.decision === "approved"
+          ).length,
+          currentDualApprovals: registeredBatch02ApprovalRecords.length,
+          approvalRecords: registeredBatch02ApprovalRecords.length,
+          mutationStaleness: registeredBatch02ApprovalMutationResults,
+          exactDrafts: registeredBatch02DraftRecords.length,
+          contentHashes: registeredBatch02DraftRecords.map((record) => ({
+            productId: record.productId,
+            hash: record.freshContentHash,
+          })),
+          publicCanonicalEnglishLtr: batch02PublicResolutionResults.every(
+            (result) =>
+              result.englishSource === "canonical-en" &&
+              result.disabledPersianSource === "canonical-en" &&
+              result.language === "en" &&
+              result.direction === "ltr"
+          ),
+        },
         linguisticApprovals: registeredLinguisticApprovals,
         technicalApprovals: registeredTechnicalApprovals,
         currentDualApprovals: registeredCurrentDualApprovals,
-        exactApprovalRecords: registeredBatch01ApprovalRecords.length,
-        mutationStaleness: registeredBatch01ApprovalMutationResults,
         activationValid: registeredDraftActivation.valid,
         activationCoverage: `${registeredDraftActivation.overlayCount}/${registeredDraftActivation.canonicalCount}`,
         activationApproved: registeredDraftActivation.approvedCount,
         activationMissing: registeredDraftActivation.missingIds.length,
+        activationCapability:
+          "capability" in registeredDraftActivation ? "present" : "absent",
+        activeOverlayCoverage: `${activePersianOverlayCount}/${disabledPersianListItems.length}`,
       },
       technicalTokenOverrides: {
-        entries: batch01ProductionResolver.entryCount,
-        tokens: batch01ProductionResolver.tokenCount,
-        uniqueTokens: uniqueBatch01TechnicalTokenOverrides.size,
-        exactMapping: batch01ProductionResolver.valid,
+        entries: combinedProductionResolver.entryCount,
+        tokens: combinedProductionResolver.tokenCount,
+        uniqueTokens: uniqueCombinedTechnicalTokenOverrides.size,
+        exactMapping: combinedProductionResolver.valid,
+        batch01: {
+          entries: batch01ProductionResolver.entryCount,
+          tokens: batch01ProductionResolver.tokenCount,
+          uniqueTokens: uniqueBatch01TechnicalTokenOverrides.size,
+        },
+        batch02: {
+          entries: batch02ProductionResolver.entryCount,
+          tokens: batch02ProductionResolver.tokenCount,
+          uniqueTokens: uniqueBatch02TechnicalTokenOverrides.size,
+          canonicalBindings: batch02Products.length,
+          assignmentValidation: approvedBatch02OverrideResults.length,
+          isolationFixtures: batch02IsolationResults.length,
+          unauthorizedStandaloneFixtures:
+            unauthorizedBatch02StandaloneResults.length,
+        },
         globalTokens: reviewedGlobalTechnicalTokens.length,
-        detachedDeepFrozen: batch01TechnicalTokenOverrides.every(
+        detachedDeepFrozen: reviewedTechnicalTokenOverrides.every(
           (entry) => Object.isFrozen(entry) && Object.isFrozen(entry.tokens)
         ),
         isolation:
           overrideIsolationResults.every((result) => !result.valid) &&
+          batch02IsolationResults.every((result) => !result.valid) &&
+          unauthorizedBatch02StandaloneResults.every(
+            (result) => !result.valid
+          ) &&
           !unknownProductOverrideResult.valid &&
           !customCpu1217StandaloneProfinetResolver.valid,
         fidelity: productionNegativeResults.every((result) => !result.valid),
