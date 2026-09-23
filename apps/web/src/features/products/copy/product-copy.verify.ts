@@ -3094,9 +3094,13 @@ const disabledPersianListItems = createProductListItemViewModels(
   products,
   "fa"
 );
+const activePersianOverlayCount = disabledPersianListItems.filter(
+  (item) => item.copy.language === "fa"
+).length;
 assert(
   englishListItems.length === 382 &&
     disabledPersianListItems.length === 382 &&
+    activePersianOverlayCount === 0 &&
     englishListItems.every((item) => item.copy.shortDescription.length > 0) &&
     disabledPersianListItems.every(
       (item) => item.copy.language === "en" && item.copy.direction === "ltr"
@@ -3759,6 +3763,49 @@ const expectedBatch02Drafts = [
     ],
   },
 ] as const;
+const BATCH_02_LINGUISTIC_REVIEWED_AT = "2026-09-23T18:33:39Z";
+const BATCH_02_TECHNICAL_REVIEWED_AT = "2026-09-23T18:33:41Z";
+const BATCH_02_LINGUISTIC_NOTE =
+  "Reviewed Persian wording, terminology, grammar, punctuation, spacing, direction, and typed segmentation against the canonical Product copy; approved without content changes.";
+const BATCH_02_TECHNICAL_NOTE =
+  "Verified Product identity, MLFB, fail-safe CPU classification, work memory, interfaces, interface roles, technical tokens, and canonical Siemens source; approved without content changes.";
+const expectedBatch02ReviewMetadata = [
+  {
+    productId: "siemens-s7-300-cpu-315f-2dp-6es7315-6ff04-0ab0",
+    reviewedContentHash:
+      "sha256:8fc714b37de5c59d78c557945706fe0fb66202ff1782e81cdbfc4c3edbc598d8",
+    evidenceRef:
+      "https://mall.industry.siemens.com/mall/en/oeii/Catalog/Product?SiepCountryCode=OE&mlfb=6ES7315-6FF04-0AB0",
+  },
+  {
+    productId: "siemens-s7-300-cpu-315f-2pn-dp-6es7315-2fj14-0ab0",
+    reviewedContentHash:
+      "sha256:bc4e92906d0c8382cf2e79fdd5d4a8da363afef86660b3662500776670b07c6b",
+    evidenceRef:
+      "https://mall.industry.siemens.com/mall/en/br/Catalog/Product?SiepCountryCode=BR&mlfb=6ES7315-2FJ14-0AB0",
+  },
+  {
+    productId: "siemens-s7-300-cpu-317f-2dp-6es7317-6ff04-0ab0",
+    reviewedContentHash:
+      "sha256:669054b0662ee5211d27868ca430e6b1ad7b55756c6b3e4c05c98b678dd26372",
+    evidenceRef:
+      "https://mall.industry.siemens.com/mall/en/oeii/Catalog/Product?SiepCountryCode=OE&mlfb=6ES7317-6FF04-0AB0",
+  },
+  {
+    productId: "siemens-s7-300-cpu-317f-2pn-dp-6es7317-2fk14-0ab0",
+    reviewedContentHash:
+      "sha256:db77d0008754e81a0761dc55249b647a0d89b251d78c2d71bbb680ba6bc76300",
+    evidenceRef:
+      "https://mall.industry.siemens.com/mall/en/oeii/Catalog/Product?SiepCountryCode=OE&mlfb=6ES7317-2FK14-0AB0",
+  },
+  {
+    productId: "siemens-s7-300-cpu-319f-3pn-dp-3fl01-0ab0",
+    reviewedContentHash:
+      "sha256:b94828a69f8ffc1b03b357451e4d3f03550120f746636c80fd768a1dd41f48cf",
+    evidenceRef:
+      "https://mall.industry.siemens.com/mall/en/inosatavtomatica/Catalog/Product?SiepCountryCode=OE&mlfb=6ES7318-3FL01-0AB0",
+  },
+] as const;
 
 function cloneMutableOverlay(entry: PersianProductCopyOverlay): MutableOverlay {
   return {
@@ -3911,6 +3958,71 @@ const registeredBatch01ApprovalRecords = registeredBatch01Drafts.map(
     };
   }
 );
+const registeredBatch02ApprovalRecords = registeredBatch02Drafts.map(
+  (entry) => {
+    const expected = expectedBatch02ReviewMetadata.find(
+      (candidate) => candidate.productId === entry.productId
+    );
+    assert(
+      expected !== undefined,
+      `Batch 02 approval metadata must remain scoped to ${entry.productId}.`
+    );
+
+    const freshContentHash = createProductCopyContentHash(entry);
+    const expectedLinguisticReview = {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: BATCH_02_LINGUISTIC_REVIEWED_AT,
+      reviewedContentHash: expected.reviewedContentHash,
+      evidenceRef: expected.evidenceRef,
+      note: BATCH_02_LINGUISTIC_NOTE,
+    } as const;
+    const expectedTechnicalReview = {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: BATCH_02_TECHNICAL_REVIEWED_AT,
+      reviewedContentHash: expected.reviewedContentHash,
+      evidenceRef: expected.evidenceRef,
+      note: BATCH_02_TECHNICAL_NOTE,
+    } as const;
+
+    assert(
+      JSON.stringify(entry.linguisticReview) ===
+        JSON.stringify(expectedLinguisticReview),
+      `Batch 02 linguistic approval must be exact for ${entry.productId}.`
+    );
+    assert(
+      JSON.stringify(entry.technicalReview) ===
+        JSON.stringify(expectedTechnicalReview),
+      `Batch 02 technical approval must be exact for ${entry.productId}.`
+    );
+    assert(
+      entry.linguisticReview.decision === "approved" &&
+        entry.technicalReview.decision === "approved" &&
+        !Object.is(entry.linguisticReview, entry.technicalReview) &&
+        entry.linguisticReview.reviewerId ===
+          entry.technicalReview.reviewerId &&
+        entry.linguisticReview.reviewedAt < entry.technicalReview.reviewedAt,
+      `Batch 02 must retain distinct and ordered approved role records for ${entry.productId}.`
+    );
+    assert(
+      freshContentHash === expected.reviewedContentHash &&
+        entry.linguisticReview.reviewedContentHash === freshContentHash &&
+        entry.technicalReview.reviewedContentHash === freshContentHash,
+      `Batch 02 approvals must bind the fresh production hash for ${entry.productId}.`
+    );
+
+    return {
+      productId: entry.productId,
+      freshContentHash,
+      evidenceRef: expected.evidenceRef,
+      roleObjectsDistinct: !Object.is(
+        entry.linguisticReview,
+        entry.technicalReview
+      ),
+    };
+  }
+);
 const registeredCurrentDualApprovals = persianProductCopyDraftRegistry.filter(
   (entry) => {
     const freshContentHash = createProductCopyContentHash(entry);
@@ -3970,6 +4082,54 @@ const registeredBatch01ApprovalMutationResults =
       kindStaleApprovals,
     };
   });
+const registeredBatch02ApprovalMutationResults =
+  registeredBatch02Drafts.map((entry) => {
+    const copyMutation = cloneMutableOverlay(entry);
+    const finalShortSegment = copyMutation.shortDescription.at(-1);
+    assert(
+      finalShortSegment !== undefined,
+      `Batch 02 copy mutation requires a final segment for ${entry.productId}.`
+    );
+    finalShortSegment.value = `${finalShortSegment.value.slice(0, -1)}!`;
+    const copyMutationResult = validatePersianProductCopyDrafts(
+      [copyMutation],
+      products
+    );
+
+    const kindMutation = cloneMutableOverlay(entry);
+    const firstShortSegment = kindMutation.shortDescription[0];
+    assert(
+      firstShortSegment !== undefined,
+      `Batch 02 kind mutation requires a first segment for ${entry.productId}.`
+    );
+    firstShortSegment.kind =
+      firstShortSegment.kind === "text" ? "technical" : "text";
+    const kindMutationResult = validatePersianProductCopyDrafts(
+      [kindMutation],
+      products
+    );
+
+    const copyStaleApprovals = copyMutationResult.issues.filter(
+      (issue) =>
+        issue.code === "stale-approval-hash" &&
+        issue.productId === entry.productId
+    ).length;
+    const kindStaleApprovals = kindMutationResult.issues.filter(
+      (issue) =>
+        issue.code === "stale-approval-hash" &&
+        issue.productId === entry.productId
+    ).length;
+    assert(
+      copyStaleApprovals === 2 && kindStaleApprovals === 2,
+      `Batch 02 copy and segment-kind mutations must stale both approvals for ${entry.productId}.`
+    );
+
+    return {
+      productId: entry.productId,
+      copyStaleApprovals,
+      kindStaleApprovals,
+    };
+  });
 const registeredCpu1217Draft = persianProductCopyDraftRegistry.find(
   (entry) => entry.productId === "siemens-s7-1200-cpu-217-1ag40"
 );
@@ -4002,12 +4162,8 @@ const registeredBatch02DraftRecords = expectedBatch02Drafts.map((expected) => {
     `Batch 02 short and long drafts and technical segmentation must be exact: ${expected.productId}`
   );
   assert(
-    entry.provenance === "ai-assisted" &&
-      JSON.stringify(entry.linguisticReview) ===
-        JSON.stringify({ decision: "pending" }) &&
-      JSON.stringify(entry.technicalReview) ===
-        JSON.stringify({ decision: "pending" }),
-    `Batch 02 provenance and both pending review records must be exact: ${expected.productId}`
+    entry.provenance === "ai-assisted",
+    `Batch 02 provenance must remain ai-assisted: ${expected.productId}`
   );
   assert(
     !renderedShortDescription.includes("Ethernet") &&
@@ -4021,10 +4177,12 @@ const registeredBatch02DraftRecords = expectedBatch02Drafts.map((expected) => {
       !renderedShortDescription.includes("قطعه یدکی"),
     `Batch 02 drafts must use Persian prose for Ethernet and master/slave concepts and omit lifecycle: ${expected.productId}`
   );
+  const freshContentHash = createProductCopyContentHash(entry);
   return {
     productId: entry.productId,
     renderedShortDescription,
     technicalTokens,
+    freshContentHash,
   };
 });
 const batch02PublicResolutionResults = batch02Products.map((fixtureProduct) => {
@@ -4106,26 +4264,30 @@ assert(
     ) &&
     registeredBatch02Drafts.every(
       (entry) =>
-        entry.linguisticReview.decision === "pending" &&
-        entry.technicalReview.decision === "pending"
+        entry.linguisticReview.decision === "approved" &&
+        entry.technicalReview.decision === "approved"
     ) &&
-    registeredLinguisticApprovals === 5 &&
-    registeredTechnicalApprovals === 5 &&
-    registeredCurrentDualApprovals === 5 &&
+    registeredLinguisticApprovals === 10 &&
+    registeredTechnicalApprovals === 10 &&
+    registeredCurrentDualApprovals === 10 &&
     registeredBatch01ApprovalRecords.length === 5 &&
     registeredBatch01ApprovalRecords.every(
       (record) => record.roleObjectsDistinct
+    ) &&
+    registeredBatch02ApprovalRecords.length === 5 &&
+    registeredBatch02ApprovalRecords.every(
+      (record) => record.roleObjectsDistinct
     ),
-  "Batch 01 must retain five exact current dual approvals while Batch 02 retains zero approvals and exact pending reviews."
+  "Batches 01 and 02 must retain ten exact current dual approvals."
 );
 assert(
   !registeredDraftActivation.valid &&
     registeredDraftActivation.overlayCount === 10 &&
     registeredDraftActivation.canonicalCount === 382 &&
-    registeredDraftActivation.approvedCount === 5 &&
+    registeredDraftActivation.approvedCount === 10 &&
     registeredDraftActivation.missingIds.length === 372 &&
     !("capability" in registeredDraftActivation),
-  "Combined activation must fail closed at exactly 10/382 drafts, five current dual approvals, and 372 missing Products."
+  "Combined activation must fail closed at exactly 10/382 drafts, ten current dual approvals, and 372 missing Products."
 );
 assert(
   PERSIAN_PRODUCT_COPY_PUBLICATION_STATE === "disabled",
@@ -4177,18 +4339,20 @@ console.log(
           exactBindings:
             JSON.stringify(registeredBatch02DraftBindings) ===
             JSON.stringify(expectedBatch02CanonicalProducts),
-          pendingLinguistic: registeredBatch02Drafts.filter(
-            (entry) => entry.linguisticReview.decision === "pending"
+          linguisticApprovals: registeredBatch02Drafts.filter(
+            (entry) => entry.linguisticReview.decision === "approved"
           ).length,
-          pendingTechnical: registeredBatch02Drafts.filter(
-            (entry) => entry.technicalReview.decision === "pending"
+          technicalApprovals: registeredBatch02Drafts.filter(
+            (entry) => entry.technicalReview.decision === "approved"
           ).length,
-          approvals: registeredBatch02Drafts.filter(
-            (entry) =>
-              entry.linguisticReview.decision === "approved" ||
-              entry.technicalReview.decision === "approved"
-          ).length,
+          currentDualApprovals: registeredBatch02ApprovalRecords.length,
+          approvalRecords: registeredBatch02ApprovalRecords.length,
+          mutationStaleness: registeredBatch02ApprovalMutationResults,
           exactDrafts: registeredBatch02DraftRecords.length,
+          contentHashes: registeredBatch02DraftRecords.map((record) => ({
+            productId: record.productId,
+            hash: record.freshContentHash,
+          })),
           publicCanonicalEnglishLtr: batch02PublicResolutionResults.every(
             (result) =>
               result.englishSource === "canonical-en" &&
@@ -4206,6 +4370,7 @@ console.log(
         activationMissing: registeredDraftActivation.missingIds.length,
         activationCapability:
           "capability" in registeredDraftActivation ? "present" : "absent",
+        activeOverlayCoverage: `${activePersianOverlayCount}/${disabledPersianListItems.length}`,
       },
       technicalTokenOverrides: {
         entries: combinedProductionResolver.entryCount,

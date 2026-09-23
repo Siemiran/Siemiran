@@ -382,39 +382,129 @@ export const persianProductCopyDraftRegistry = [
     shortDescription: cpu315f2DpCopy,
     description: [cpu315f2DpCopy],
     provenance: "ai-assisted",
-    linguisticReview: { decision: "pending" },
-    technicalReview: { decision: "pending" },
+    linguisticReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-09-23T18:33:39Z",
+      reviewedContentHash:
+        "sha256:8fc714b37de5c59d78c557945706fe0fb66202ff1782e81cdbfc4c3edbc598d8",
+      evidenceRef:
+        "https://mall.industry.siemens.com/mall/en/oeii/Catalog/Product?SiepCountryCode=OE&mlfb=6ES7315-6FF04-0AB0",
+      note: "Reviewed Persian wording, terminology, grammar, punctuation, spacing, direction, and typed segmentation against the canonical Product copy; approved without content changes.",
+    },
+    technicalReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-09-23T18:33:41Z",
+      reviewedContentHash:
+        "sha256:8fc714b37de5c59d78c557945706fe0fb66202ff1782e81cdbfc4c3edbc598d8",
+      evidenceRef:
+        "https://mall.industry.siemens.com/mall/en/oeii/Catalog/Product?SiepCountryCode=OE&mlfb=6ES7315-6FF04-0AB0",
+      note: "Verified Product identity, MLFB, fail-safe CPU classification, work memory, interfaces, interface roles, technical tokens, and canonical Siemens source; approved without content changes.",
+    },
   },
   {
     productId: "siemens-s7-300-cpu-315f-2pn-dp-6es7315-2fj14-0ab0",
     shortDescription: cpu315f2PnDpCopy,
     description: [cpu315f2PnDpCopy],
     provenance: "ai-assisted",
-    linguisticReview: { decision: "pending" },
-    technicalReview: { decision: "pending" },
+    linguisticReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-09-23T18:33:39Z",
+      reviewedContentHash:
+        "sha256:bc4e92906d0c8382cf2e79fdd5d4a8da363afef86660b3662500776670b07c6b",
+      evidenceRef:
+        "https://mall.industry.siemens.com/mall/en/br/Catalog/Product?SiepCountryCode=BR&mlfb=6ES7315-2FJ14-0AB0",
+      note: "Reviewed Persian wording, terminology, grammar, punctuation, spacing, direction, and typed segmentation against the canonical Product copy; approved without content changes.",
+    },
+    technicalReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-09-23T18:33:41Z",
+      reviewedContentHash:
+        "sha256:bc4e92906d0c8382cf2e79fdd5d4a8da363afef86660b3662500776670b07c6b",
+      evidenceRef:
+        "https://mall.industry.siemens.com/mall/en/br/Catalog/Product?SiepCountryCode=BR&mlfb=6ES7315-2FJ14-0AB0",
+      note: "Verified Product identity, MLFB, fail-safe CPU classification, work memory, interfaces, interface roles, technical tokens, and canonical Siemens source; approved without content changes.",
+    },
   },
   {
     productId: "siemens-s7-300-cpu-317f-2dp-6es7317-6ff04-0ab0",
     shortDescription: cpu317f2DpCopy,
     description: [cpu317f2DpCopy],
     provenance: "ai-assisted",
-    linguisticReview: { decision: "pending" },
-    technicalReview: { decision: "pending" },
+    linguisticReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-09-23T18:33:39Z",
+      reviewedContentHash:
+        "sha256:669054b0662ee5211d27868ca430e6b1ad7b55756c6b3e4c05c98b678dd26372",
+      evidenceRef:
+        "https://mall.industry.siemens.com/mall/en/oeii/Catalog/Product?SiepCountryCode=OE&mlfb=6ES7317-6FF04-0AB0",
+      note: "Reviewed Persian wording, terminology, grammar, punctuation, spacing, direction, and typed segmentation against the canonical Product copy; approved without content changes.",
+    },
+    technicalReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-09-23T18:33:41Z",
+      reviewedContentHash:
+        "sha256:669054b0662ee5211d27868ca430e6b1ad7b55756c6b3e4c05c98b678dd26372",
+      evidenceRef:
+        "https://mall.industry.siemens.com/mall/en/oeii/Catalog/Product?SiepCountryCode=OE&mlfb=6ES7317-6FF04-0AB0",
+      note: "Verified Product identity, MLFB, fail-safe CPU classification, work memory, interfaces, interface roles, technical tokens, and canonical Siemens source; approved without content changes.",
+    },
   },
   {
     productId: "siemens-s7-300-cpu-317f-2pn-dp-6es7317-2fk14-0ab0",
     shortDescription: cpu317f2PnDpCopy,
     description: [cpu317f2PnDpCopy],
     provenance: "ai-assisted",
-    linguisticReview: { decision: "pending" },
-    technicalReview: { decision: "pending" },
+    linguisticReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-09-23T18:33:39Z",
+      reviewedContentHash:
+        "sha256:db77d0008754e81a0761dc55249b647a0d89b251d78c2d71bbb680ba6bc76300",
+      evidenceRef:
+        "https://mall.industry.siemens.com/mall/en/oeii/Catalog/Product?SiepCountryCode=OE&mlfb=6ES7317-2FK14-0AB0",
+      note: "Reviewed Persian wording, terminology, grammar, punctuation, spacing, direction, and typed segmentation against the canonical Product copy; approved without content changes.",
+    },
+    technicalReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-09-23T18:33:41Z",
+      reviewedContentHash:
+        "sha256:db77d0008754e81a0761dc55249b647a0d89b251d78c2d71bbb680ba6bc76300",
+      evidenceRef:
+        "https://mall.industry.siemens.com/mall/en/oeii/Catalog/Product?SiepCountryCode=OE&mlfb=6ES7317-2FK14-0AB0",
+      note: "Verified Product identity, MLFB, fail-safe CPU classification, work memory, interfaces, interface roles, technical tokens, and canonical Siemens source; approved without content changes.",
+    },
   },
   {
     productId: "siemens-s7-300-cpu-319f-3pn-dp-3fl01-0ab0",
     shortDescription: cpu319f3PnDpCopy,
     description: [cpu319f3PnDpCopy],
     provenance: "ai-assisted",
-    linguisticReview: { decision: "pending" },
-    technicalReview: { decision: "pending" },
+    linguisticReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-09-23T18:33:39Z",
+      reviewedContentHash:
+        "sha256:b94828a69f8ffc1b03b357451e4d3f03550120f746636c80fd768a1dd41f48cf",
+      evidenceRef:
+        "https://mall.industry.siemens.com/mall/en/inosatavtomatica/Catalog/Product?SiepCountryCode=OE&mlfb=6ES7318-3FL01-0AB0",
+      note: "Reviewed Persian wording, terminology, grammar, punctuation, spacing, direction, and typed segmentation against the canonical Product copy; approved without content changes.",
+    },
+    technicalReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-09-23T18:33:41Z",
+      reviewedContentHash:
+        "sha256:b94828a69f8ffc1b03b357451e4d3f03550120f746636c80fd768a1dd41f48cf",
+      evidenceRef:
+        "https://mall.industry.siemens.com/mall/en/inosatavtomatica/Catalog/Product?SiepCountryCode=OE&mlfb=6ES7318-3FL01-0AB0",
+      note: "Verified Product identity, MLFB, fail-safe CPU classification, work memory, interfaces, interface roles, technical tokens, and canonical Siemens source; approved without content changes.",
+    },
   },
 ] as const satisfies readonly PersianProductCopyOverlay[];
