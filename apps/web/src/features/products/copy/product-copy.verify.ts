@@ -3701,6 +3701,64 @@ const expectedCpu1217DraftSegments = [
 ] as const;
 const expectedCpu1217RenderedDraft =
   "مدل SIMATIC S7-1200 CPU 1217C DC/DC/DC، یک CPU کامپکت با ورودی‌ها و خروجی‌های داخلی شامل 10 ورودی دیجیتال و 6 خروجی دیجیتال است. برای توابع فناوری نیز چهار ورودی RS-422/485 و چهار خروجی RS-422/485 دارد. همچنین دارای 2 ورودی آنالوگ 0-10 V DC و 2 خروجی آنالوگ 0-20 mA DC است و 2 پورت PROFINET دارد.";
+const expectedBatch02Drafts = [
+  {
+    productId: "siemens-s7-300-cpu-315f-2dp-6es7315-6ff04-0ab0",
+    rendered:
+      "مدل SIMATIC S7-300 CPU 315F-2 DP، یک واحد پردازش مرکزی ایمن در برابر خطا با حافظه کاری 384 KB است. دارای رابط‌های MPI و PROFIBUS DP است و رابط دوم می‌تواند در نقش اصلی یا تابع کار کند.",
+    technicalTokens: [
+      "SIMATIC S7-300 CPU 315F-2 DP",
+      "384 KB",
+      "MPI",
+      "PROFIBUS DP",
+    ],
+  },
+  {
+    productId: "siemens-s7-300-cpu-315f-2pn-dp-6es7315-2fj14-0ab0",
+    rendered:
+      "مدل SIMATIC S7-300 CPU 315F-2 PN/DP، یک واحد پردازش مرکزی ایمن در برابر خطا با حافظه کاری 512 KB است. دارای رابط‌های MPI/DP و PROFINET مبتنی بر اترنت با سوئیچ دو پورت است.",
+    technicalTokens: [
+      "SIMATIC S7-300 CPU 315F-2 PN/DP",
+      "512 KB",
+      "MPI/DP",
+      "PROFINET",
+    ],
+  },
+  {
+    productId: "siemens-s7-300-cpu-317f-2dp-6es7317-6ff04-0ab0",
+    rendered:
+      "مدل SIMATIC S7-300 CPU 317F-2 DP، یک واحد پردازش مرکزی ایمن در برابر خطا با حافظه کاری 1.5 MB است. دارای رابط‌های MPI/DP و PROFIBUS DP است و رابط دوم می‌تواند در نقش اصلی یا تابع کار کند.",
+    technicalTokens: [
+      "SIMATIC S7-300 CPU 317F-2 DP",
+      "1.5 MB",
+      "MPI/DP",
+      "PROFIBUS DP",
+    ],
+  },
+  {
+    productId: "siemens-s7-300-cpu-317f-2pn-dp-6es7317-2fk14-0ab0",
+    rendered:
+      "مدل SIMATIC S7-300 CPU 317F-2 PN/DP، یک واحد پردازش مرکزی ایمن در برابر خطا با حافظه کاری 1.5 MB است. دارای رابط‌های MPI/DP و PROFINET مبتنی بر اترنت با سوئیچ دو پورت است.",
+    technicalTokens: [
+      "SIMATIC S7-300 CPU 317F-2 PN/DP",
+      "1.5 MB",
+      "MPI/DP",
+      "PROFINET",
+    ],
+  },
+  {
+    productId: "siemens-s7-300-cpu-319f-3pn-dp-3fl01-0ab0",
+    rendered:
+      "مدل SIMATIC S7-300 CPU 319F-3 PN/DP، یک واحد پردازش مرکزی ایمن در برابر خطا با حافظه کاری 2.5 MB است. دارای رابط‌های MPI/DP، PROFIBUS DP با امکان کار در نقش اصلی یا تابع، و PROFINET مبتنی بر اترنت است.",
+    technicalTokens: [
+      "SIMATIC S7-300 CPU 319F-3 PN/DP",
+      "2.5 MB",
+      "MPI/DP",
+      "PROFIBUS DP",
+      "PROFINET",
+    ],
+  },
+] as const;
 
 function cloneMutableOverlay(entry: PersianProductCopyOverlay): MutableOverlay {
   return {
@@ -3715,7 +3773,25 @@ function cloneMutableOverlay(entry: PersianProductCopyOverlay): MutableOverlay {
   };
 }
 
-const registeredBatch01DraftBindings = persianProductCopyDraftRegistry.map(
+const expectedBatch01DraftProductIds = expectedBatch01DraftProducts.map(
+  (entry) => entry.productId
+);
+const expectedBatch02DraftProductIds = expectedBatch02Drafts.map(
+  (entry) => entry.productId
+);
+const expectedBatch01DraftProductIdSet = new Set<ProductId>(
+  expectedBatch01DraftProductIds
+);
+const expectedBatch02DraftProductIdSet = new Set<ProductId>(
+  expectedBatch02DraftProductIds
+);
+const registeredBatch01Drafts = persianProductCopyDraftRegistry.filter(
+  (entry) => expectedBatch01DraftProductIdSet.has(entry.productId)
+);
+const registeredBatch02Drafts = persianProductCopyDraftRegistry.filter(
+  (entry) => expectedBatch02DraftProductIdSet.has(entry.productId)
+);
+const registeredBatch01DraftBindings = registeredBatch01Drafts.map(
   (entry) => {
     const product = products.find(
       (candidate) => candidate.id === entry.productId
@@ -3735,6 +3811,22 @@ const registeredBatch01DraftBindings = persianProductCopyDraftRegistry.map(
     };
   }
 );
+const registeredBatch02DraftBindings = registeredBatch02Drafts.map((entry) => {
+  const product = products.find((candidate) => candidate.id === entry.productId);
+  assert(
+    product !== undefined,
+    `Batch 02 draft Product must remain canonical: ${entry.productId}`
+  );
+  return {
+    productId: product.id,
+    title: product.title,
+    partNumber: product.partNumber,
+    canonicalDescription: product.description,
+    workMemory: product.specifications?.["Work Memory"],
+    interfaces: product.specifications?.Interfaces,
+    siemensUrl: product.siemensUrl,
+  };
+});
 const registeredDraftValidation = validatePersianProductCopyDrafts(
   persianProductCopyDraftRegistry,
   products
@@ -3751,7 +3843,7 @@ const registeredLinguisticApprovals = persianProductCopyDraftRegistry.filter(
 const registeredTechnicalApprovals = persianProductCopyDraftRegistry.filter(
   (entry) => isApprovedReview(entry.technicalReview)
 ).length;
-const registeredBatch01ApprovalRecords = persianProductCopyDraftRegistry.map(
+const registeredBatch01ApprovalRecords = registeredBatch01Drafts.map(
   (entry) => {
     const expected = expectedBatch01ReviewMetadata.find(
       (candidate) => candidate.productId === entry.productId
@@ -3831,7 +3923,7 @@ const registeredCurrentDualApprovals = persianProductCopyDraftRegistry.filter(
   }
 ).length;
 const registeredBatch01ApprovalMutationResults =
-  persianProductCopyDraftRegistry.map((entry) => {
+  registeredBatch01Drafts.map((entry) => {
     const copyMutation = cloneMutableOverlay(entry);
     const finalShortSegment = copyMutation.shortDescription.at(-1);
     assert(
@@ -3889,15 +3981,97 @@ const registeredCpu1217TechnicalSegments =
   registeredCpu1217Draft.shortDescription.filter(
     (segment) => segment.kind === "technical"
   );
+const registeredBatch02DraftRecords = expectedBatch02Drafts.map((expected) => {
+  const entry = registeredBatch02Drafts.find(
+    (candidate) => candidate.productId === expected.productId
+  );
+  assert(entry !== undefined, `Batch 02 draft must exist: ${expected.productId}`);
+  const renderedShortDescription = serializeProductCopyParagraphForSearch(
+    entry.shortDescription
+  );
+  const technicalTokens = entry.shortDescription
+    .filter((segment) => segment.kind === "technical")
+    .map((segment) => segment.value);
+  assert(
+    renderedShortDescription === expected.rendered &&
+      entry.description.length === 1 &&
+      JSON.stringify(entry.description[0]) ===
+        JSON.stringify(entry.shortDescription) &&
+      JSON.stringify(technicalTokens) ===
+        JSON.stringify(expected.technicalTokens),
+    `Batch 02 short and long drafts and technical segmentation must be exact: ${expected.productId}`
+  );
+  assert(
+    entry.provenance === "ai-assisted" &&
+      JSON.stringify(entry.linguisticReview) ===
+        JSON.stringify({ decision: "pending" }) &&
+      JSON.stringify(entry.technicalReview) ===
+        JSON.stringify({ decision: "pending" }),
+    `Batch 02 provenance and both pending review records must be exact: ${expected.productId}`
+  );
+  assert(
+    !renderedShortDescription.includes("Ethernet") &&
+      !renderedShortDescription.includes("master/slave") &&
+      !renderedShortDescription.includes("lifecycle") &&
+      !renderedShortDescription.includes("phase-out") &&
+      !renderedShortDescription.includes("spare-part") &&
+      !renderedShortDescription.includes("discontinued") &&
+      !renderedShortDescription.includes("چرخه عمر") &&
+      !renderedShortDescription.includes("توقف تولید") &&
+      !renderedShortDescription.includes("قطعه یدکی"),
+    `Batch 02 drafts must use Persian prose for Ethernet and master/slave concepts and omit lifecycle: ${expected.productId}`
+  );
+  return {
+    productId: entry.productId,
+    renderedShortDescription,
+    technicalTokens,
+  };
+});
+const batch02PublicResolutionResults = batch02Products.map((fixtureProduct) => {
+  const english = resolveProductCopy(fixtureProduct, "en");
+  const disabledPersian = resolveProductCopy(fixtureProduct, "fa");
+  const englishPublic = createPublicProductCardCopyDTO(english);
+  const disabledPersianPublic = createPublicProductCardCopyDTO(disabledPersian);
+  assert(
+    english.source === "canonical-en" &&
+      disabledPersian.source === "canonical-en" &&
+      serializeProductCopyParagraph(english.shortDescription) ===
+        fixtureProduct.shortDescription &&
+      serializeProductCopyParagraph(disabledPersian.shortDescription) ===
+        fixtureProduct.shortDescription &&
+      englishPublic.language === "en" &&
+      englishPublic.direction === "ltr" &&
+      disabledPersianPublic.language === "en" &&
+      disabledPersianPublic.direction === "ltr",
+    `Batch 02 public FA/EN copy must remain canonical English/LTR: ${fixtureProduct.id}`
+  );
+  return {
+    productId: fixtureProduct.id,
+    englishSource: english.source,
+    disabledPersianSource: disabledPersian.source,
+    language: disabledPersianPublic.language,
+    direction: disabledPersianPublic.direction,
+  };
+});
 
 assert(
   registeredDraftValidation.valid &&
-    persianProductCopyDraftRegistry.length === 5 &&
+    persianProductCopyDraftRegistry.length === 10 &&
+    registeredBatch01Drafts.length === 5 &&
     JSON.stringify(registeredBatch01DraftBindings) ===
       JSON.stringify(expectedBatch01DraftProducts),
   `Batch 01 draft registry and canonical bindings must be exact: ${registeredDraftValidation.issues
     .map((issue) => issue.code)
     .join(", ")}`
+);
+assert(
+  registeredBatch02Drafts.length === 5 &&
+    JSON.stringify(registeredBatch02Drafts.map((entry) => entry.productId)) ===
+      JSON.stringify(expectedBatch02DraftProductIds) &&
+    JSON.stringify(registeredBatch02DraftBindings) ===
+      JSON.stringify(expectedBatch02CanonicalProducts) &&
+    registeredBatch02DraftRecords.length === 5,
+  "Batch 02 draft IDs, canonical Product bindings, copy, and segmentation must be exact."
 );
 assert(
   JSON.stringify(registeredCpu1217Draft.shortDescription) ===
@@ -3923,11 +4097,18 @@ assert(
 );
 assert(
   persianProductCopyDraftRegistry.every(
-    (entry) =>
-      entry.provenance === "ai-assisted" &&
+    (entry) => entry.provenance === "ai-assisted"
+  ) &&
+    registeredBatch01Drafts.every(
+      (entry) =>
       entry.linguisticReview.decision === "approved" &&
       entry.technicalReview.decision === "approved"
-  ) &&
+    ) &&
+    registeredBatch02Drafts.every(
+      (entry) =>
+        entry.linguisticReview.decision === "pending" &&
+        entry.technicalReview.decision === "pending"
+    ) &&
     registeredLinguisticApprovals === 5 &&
     registeredTechnicalApprovals === 5 &&
     registeredCurrentDualApprovals === 5 &&
@@ -3935,16 +4116,16 @@ assert(
     registeredBatch01ApprovalRecords.every(
       (record) => record.roleObjectsDistinct
     ),
-  "Batch 01 drafts must retain five exact, current, distinct dual approvals."
+  "Batch 01 must retain five exact current dual approvals while Batch 02 retains zero approvals and exact pending reviews."
 );
 assert(
   !registeredDraftActivation.valid &&
-    registeredDraftActivation.overlayCount === 5 &&
+    registeredDraftActivation.overlayCount === 10 &&
     registeredDraftActivation.canonicalCount === 382 &&
     registeredDraftActivation.approvedCount === 5 &&
-    registeredDraftActivation.missingIds.length === 377 &&
+    registeredDraftActivation.missingIds.length === 372 &&
     !("capability" in registeredDraftActivation),
-  "Batch 01 activation must fail closed at exactly 5/382 with five current dual approvals."
+  "Combined activation must fail closed at exactly 10/382 drafts, five current dual approvals, and 372 missing Products."
 );
 assert(
   PERSIAN_PRODUCT_COPY_PUBLICATION_STATE === "disabled",
@@ -3983,18 +4164,48 @@ console.log(
       draftRegistry: {
         valid: registeredDraftValidation.valid,
         entries: persianProductCopyDraftRegistry.length,
-        exactBindings:
-          JSON.stringify(registeredBatch01DraftBindings) ===
-          JSON.stringify(expectedBatch01DraftProducts),
+        batch01: {
+          entries: registeredBatch01Drafts.length,
+          exactBindings:
+            JSON.stringify(registeredBatch01DraftBindings) ===
+            JSON.stringify(expectedBatch01DraftProducts),
+          approvalRecords: registeredBatch01ApprovalRecords.length,
+          mutationStaleness: registeredBatch01ApprovalMutationResults,
+        },
+        batch02: {
+          entries: registeredBatch02Drafts.length,
+          exactBindings:
+            JSON.stringify(registeredBatch02DraftBindings) ===
+            JSON.stringify(expectedBatch02CanonicalProducts),
+          pendingLinguistic: registeredBatch02Drafts.filter(
+            (entry) => entry.linguisticReview.decision === "pending"
+          ).length,
+          pendingTechnical: registeredBatch02Drafts.filter(
+            (entry) => entry.technicalReview.decision === "pending"
+          ).length,
+          approvals: registeredBatch02Drafts.filter(
+            (entry) =>
+              entry.linguisticReview.decision === "approved" ||
+              entry.technicalReview.decision === "approved"
+          ).length,
+          exactDrafts: registeredBatch02DraftRecords.length,
+          publicCanonicalEnglishLtr: batch02PublicResolutionResults.every(
+            (result) =>
+              result.englishSource === "canonical-en" &&
+              result.disabledPersianSource === "canonical-en" &&
+              result.language === "en" &&
+              result.direction === "ltr"
+          ),
+        },
         linguisticApprovals: registeredLinguisticApprovals,
         technicalApprovals: registeredTechnicalApprovals,
         currentDualApprovals: registeredCurrentDualApprovals,
-        exactApprovalRecords: registeredBatch01ApprovalRecords.length,
-        mutationStaleness: registeredBatch01ApprovalMutationResults,
         activationValid: registeredDraftActivation.valid,
         activationCoverage: `${registeredDraftActivation.overlayCount}/${registeredDraftActivation.canonicalCount}`,
         activationApproved: registeredDraftActivation.approvedCount,
         activationMissing: registeredDraftActivation.missingIds.length,
+        activationCapability:
+          "capability" in registeredDraftActivation ? "present" : "absent",
       },
       technicalTokenOverrides: {
         entries: combinedProductionResolver.entryCount,

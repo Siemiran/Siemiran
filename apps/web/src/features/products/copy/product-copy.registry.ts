@@ -143,6 +143,109 @@ const cpu1217Copy = [
   { kind: "text", value: " دارد." },
 ] as const satisfies ProductCopyParagraph;
 
+const cpu315f2DpCopy = [
+  { kind: "text", value: "مدل " },
+  {
+    kind: "technical",
+    value: "SIMATIC S7-300 CPU 315F-2 DP",
+  },
+  {
+    kind: "text",
+    value:
+      "، یک واحد پردازش مرکزی ایمن در برابر خطا با حافظه کاری ",
+  },
+  { kind: "technical", value: "384 KB" },
+  { kind: "text", value: " است. دارای رابط‌های " },
+  { kind: "technical", value: "MPI" },
+  { kind: "text", value: " و " },
+  { kind: "technical", value: "PROFIBUS DP" },
+  {
+    kind: "text",
+    value: " است و رابط دوم می‌تواند در نقش اصلی یا تابع کار کند.",
+  },
+] as const satisfies ProductCopyParagraph;
+
+const cpu315f2PnDpCopy = [
+  { kind: "text", value: "مدل " },
+  {
+    kind: "technical",
+    value: "SIMATIC S7-300 CPU 315F-2 PN/DP",
+  },
+  {
+    kind: "text",
+    value:
+      "، یک واحد پردازش مرکزی ایمن در برابر خطا با حافظه کاری ",
+  },
+  { kind: "technical", value: "512 KB" },
+  { kind: "text", value: " است. دارای رابط‌های " },
+  { kind: "technical", value: "MPI/DP" },
+  { kind: "text", value: " و " },
+  { kind: "technical", value: "PROFINET" },
+  { kind: "text", value: " مبتنی بر اترنت با سوئیچ دو پورت است." },
+] as const satisfies ProductCopyParagraph;
+
+const cpu317f2DpCopy = [
+  { kind: "text", value: "مدل " },
+  {
+    kind: "technical",
+    value: "SIMATIC S7-300 CPU 317F-2 DP",
+  },
+  {
+    kind: "text",
+    value:
+      "، یک واحد پردازش مرکزی ایمن در برابر خطا با حافظه کاری ",
+  },
+  { kind: "technical", value: "1.5 MB" },
+  { kind: "text", value: " است. دارای رابط‌های " },
+  { kind: "technical", value: "MPI/DP" },
+  { kind: "text", value: " و " },
+  { kind: "technical", value: "PROFIBUS DP" },
+  {
+    kind: "text",
+    value: " است و رابط دوم می‌تواند در نقش اصلی یا تابع کار کند.",
+  },
+] as const satisfies ProductCopyParagraph;
+
+const cpu317f2PnDpCopy = [
+  { kind: "text", value: "مدل " },
+  {
+    kind: "technical",
+    value: "SIMATIC S7-300 CPU 317F-2 PN/DP",
+  },
+  {
+    kind: "text",
+    value:
+      "، یک واحد پردازش مرکزی ایمن در برابر خطا با حافظه کاری ",
+  },
+  { kind: "technical", value: "1.5 MB" },
+  { kind: "text", value: " است. دارای رابط‌های " },
+  { kind: "technical", value: "MPI/DP" },
+  { kind: "text", value: " و " },
+  { kind: "technical", value: "PROFINET" },
+  { kind: "text", value: " مبتنی بر اترنت با سوئیچ دو پورت است." },
+] as const satisfies ProductCopyParagraph;
+
+const cpu319f3PnDpCopy = [
+  { kind: "text", value: "مدل " },
+  {
+    kind: "technical",
+    value: "SIMATIC S7-300 CPU 319F-3 PN/DP",
+  },
+  {
+    kind: "text",
+    value:
+      "، یک واحد پردازش مرکزی ایمن در برابر خطا با حافظه کاری ",
+  },
+  { kind: "technical", value: "2.5 MB" },
+  { kind: "text", value: " است. دارای رابط‌های " },
+  { kind: "technical", value: "MPI/DP" },
+  { kind: "text", value: "، " },
+  { kind: "technical", value: "PROFIBUS DP" },
+  { kind: "text", value: " با امکان کار در نقش اصلی یا تابع، و " },
+  { kind: "technical", value: "PROFINET" },
+  { kind: "text", value: " مبتنی بر اترنت است." },
+] as const satisfies ProductCopyParagraph;
+
 export const persianProductCopyDraftRegistry = [
   {
     productId: "siemens-s7-1200-cpu-211-1ae40",
@@ -273,5 +376,45 @@ export const persianProductCopyDraftRegistry = [
         "https://mall.industry.siemens.com/mall/en/oeii/Catalog/Product?SiepCountryCode=OE&mlfb=6ES7217-1AG40-0XB0",
       note: "Verified Product identity, MLFB, lifecycle, I/O quantities, electrical ranges, interfaces, port counts, technical tokens, and canonical Siemens source; approved without content changes.",
     },
+  },
+  {
+    productId: "siemens-s7-300-cpu-315f-2dp-6es7315-6ff04-0ab0",
+    shortDescription: cpu315f2DpCopy,
+    description: [cpu315f2DpCopy],
+    provenance: "ai-assisted",
+    linguisticReview: { decision: "pending" },
+    technicalReview: { decision: "pending" },
+  },
+  {
+    productId: "siemens-s7-300-cpu-315f-2pn-dp-6es7315-2fj14-0ab0",
+    shortDescription: cpu315f2PnDpCopy,
+    description: [cpu315f2PnDpCopy],
+    provenance: "ai-assisted",
+    linguisticReview: { decision: "pending" },
+    technicalReview: { decision: "pending" },
+  },
+  {
+    productId: "siemens-s7-300-cpu-317f-2dp-6es7317-6ff04-0ab0",
+    shortDescription: cpu317f2DpCopy,
+    description: [cpu317f2DpCopy],
+    provenance: "ai-assisted",
+    linguisticReview: { decision: "pending" },
+    technicalReview: { decision: "pending" },
+  },
+  {
+    productId: "siemens-s7-300-cpu-317f-2pn-dp-6es7317-2fk14-0ab0",
+    shortDescription: cpu317f2PnDpCopy,
+    description: [cpu317f2PnDpCopy],
+    provenance: "ai-assisted",
+    linguisticReview: { decision: "pending" },
+    technicalReview: { decision: "pending" },
+  },
+  {
+    productId: "siemens-s7-300-cpu-319f-3pn-dp-3fl01-0ab0",
+    shortDescription: cpu319f3PnDpCopy,
+    description: [cpu319f3PnDpCopy],
+    provenance: "ai-assisted",
+    linguisticReview: { decision: "pending" },
+    technicalReview: { decision: "pending" },
   },
 ] as const satisfies readonly PersianProductCopyOverlay[];
