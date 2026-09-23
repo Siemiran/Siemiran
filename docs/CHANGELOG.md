@@ -1,9 +1,41 @@
 # Siemiran — Changelog
 
-This file records completed repository changes. Connection status refers to the
-implementation on the current `main` branch.
+This file records completed repository changes. The newest entry records the
+current `main` state; older dated entries are historical snapshots.
 
-## 2026-09-22 - PRs #54-#56: Complete Batch 01 Private Drafts and Dual Approvals
+## 2026-09-23 - PR #58: Complete Batch 02 Private Drafts and Dual Approvals
+
+### Changed
+
+- PR #58, `feat: add Batch 02 Persian product copy`, squash-merged at
+  `2026-09-23T19:42:52Z` as
+  `e1f844f11e6a29ec14dbe66e1531de37d6700342`.
+- Batch 02 adds private Persian Product copy for exactly five SIMATIC S7-300
+  fail-safe CPUs, their independently reviewed Product-specific technical-token
+  mappings, and current linguistic and technical approvals.
+- Batch 01 remains unchanged and is retained as historical state. Canonical
+  Product/source/database/adapter data and public Product-copy behavior remain
+  unchanged.
+
+### Verified
+
+- Private drafts, linguistic approvals, and technical approvals are each
+  10/382, with ten current dual approvals and 372 Products still missing
+  coverage.
+- Technical-token overrides cover 10 Products, 20 assignments, and 7 unique
+  strings; the global allowlist remains empty.
+- Product-copy validation passes with activation invalid and no activation
+  capability issued.
+
+### State
+
+- Active overlays remain 0/382 and publication remains disabled.
+- Public FA and EN Product prose remains canonical English/LTR; no Persian
+  Product copy is publicly active.
+- Activation and publication remain blocked until the complete 382/382 gate;
+  Batch 02 approval does not permit partial activation.
+
+## 2026-09-22 - PRs #54-#56: Complete Batch 01 Private Drafts and Dual Approvals (Historical Snapshot)
 
 ### Changed
 
@@ -18,22 +50,22 @@ implementation on the current `main` branch.
 
 ### Verified
 
-- The current `main` baseline is
+- At this historical snapshot, the `main` baseline was
   `2d7305e28b183c3f1bde0f6b773fc29ebc619eec`.
-- Private drafts, linguistic approvals, and technical approvals are each
-  5/382, with five current dual approvals bound to exact production content
+- Private drafts, linguistic approvals, and technical approvals were each
+  5/382, with five dual approvals bound to exact production content
   hashes and 377 Products not yet drafted or approved.
 - Product-copy validation passes with activation invalid and no activation
   capability issued.
 
 ### State
 
-- Active overlays remain 0/382 and publication remains disabled.
-- Public FA and EN Product prose remains canonical English/LTR; no Persian
+- Active overlays remained 0/382 and publication remained disabled.
+- Public FA and EN Product prose remained canonical English/LTR; no Persian
   Product copy is publicly active.
 - Batch 01 approval does not authorize publication, and partial activation
   remains prohibited by the complete 382/382 gate.
-- The next implementation phase is another controlled private drafting batch,
+- The next implementation phase was another controlled private drafting batch,
   not activation, bilingual SEO, hreflang, or sitemap work.
 
 ## 2026-09-17 - Tasks BO-BW: Integrate Product-copy Consumers

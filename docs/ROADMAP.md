@@ -1,6 +1,6 @@
 # Siemiran — Roadmap
 
-Baseline: `main` at `2d7305e28b183c3f1bde0f6b773fc29ebc619eec`
+Baseline: `main` at `e1f844f11e6a29ec14dbe66e1531de37d6700342`
 
 This roadmap distinguishes the completed repository baseline from future
 priorities. Ordering expresses current priority, not a finalized implementation
@@ -26,6 +26,12 @@ design or semantic release schedule.
   private Persian Product-copy drafts.
 - PR #56 (`2d7305e28b183c3f1bde0f6b773fc29ebc619eec`) merged their exact
   linguistic and technical approvals.
+- PR #58, `feat: add Batch 02 Persian product copy`, squash-merged at
+  `2026-09-23T19:42:52Z` as
+  `e1f844f11e6a29ec14dbe66e1531de37d6700342`. Batch 02 covers exactly five
+  SIMATIC S7-300 fail-safe CPUs with independently reviewed Product-specific
+  technical-token mappings and current dual approvals; Batch 01 remains
+  unchanged and historical.
 - Product listing, cards/meta, featured and related Products, detail
   header/body, search, metadata/OpenGraph/Twitter, Product JSON-LD, comparison,
   and inquiry identity use the central resolver/presentation boundary.
@@ -36,12 +42,15 @@ design or semantic release schedule.
 - Comparison persists validated Product IDs under
   `siemiran:product-comparison` and safely migrates legacy stored objects.
 - Private drafts, linguistic approvals, and technical approvals are each
-  5/382, with five current dual approvals and 377 Products not yet drafted or
+  10/382, with ten current dual approvals and 372 Products not yet drafted or
   approved.
+- Technical-token overrides cover 10 Products, 20 assignments, and 7 unique
+  strings; the global allowlist remains empty.
 - Active Persian Product-copy coverage remains 0/382, no activation capability
   exists, publication is disabled, and public FA/EN Product prose remains
-  canonical English/LTR. Batch 01 approval does not authorize publication or
-  partial activation, and canonical Product data is unchanged.
+  canonical English/LTR. Batch approvals do not authorize publication or
+  partial activation, and canonical Product data is unchanged. Activation and
+  publication remain blocked until the complete 382/382 gate.
 
 ## 1. Persian Product-copy Drafting, Review, and Atomic Activation
 
@@ -58,9 +67,11 @@ design or semantic release schedule.
 
 Throughout drafting and review, canonical technical tokens remain untranslated:
 MLFBs, Product IDs, slugs, part numbers, official model/family names, protocols,
-standards, values, units, and URLs. Batch 01 private drafting and dual review
-are complete for five Products. The next unstarted implementation phase is
-another controlled private drafting batch, not activation.
+standards, values, units, and URLs. Batch 01 remains the unchanged historical
+first five Products, and Batch 02 private drafting and dual review are complete
+for exactly five SIMATIC S7-300 fail-safe CPUs. The next unstarted
+implementation phase is another controlled private drafting batch, not
+activation.
 
 ## 2. Bilingual SEO Activation
 
@@ -108,7 +119,8 @@ another controlled private drafting batch, not activation.
 - Keep CMS, API, database, and cache evaluation as future architecture
   decisions.
 
-Persian Product-copy drafting and review, the 382/382 dual-approval gate, atomic
-publication, bilingual SEO activation, inquiry delivery, CI/CD, download
-population, and another Siemens-series expansion are not complete. Consumer
-integration and its trusted/public presentation boundaries are complete.
+Persian Product-copy drafting and review are complete for 10/382 Products but
+not for the remaining 372. The 382/382 dual-approval gate, atomic publication,
+bilingual SEO activation, inquiry delivery, CI/CD, download population, and
+another Siemens-series expansion are not complete. Consumer integration and
+its trusted/public presentation boundaries are complete.

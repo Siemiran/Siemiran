@@ -2,11 +2,30 @@
 
 Repository source of truth: current `main` branch
 
-Last synchronized: 2026-09-22
+Last synchronized: 2026-09-23
 
-## 2026-09-22 - Batch 01 Private Drafts and Dual Approvals (Current State)
+## 2026-09-23 - Batch 02 Private Drafts and Dual Approvals (Current State)
 
-The current baseline is `main` at
+The current implementation baseline is `main` at
+`e1f844f11e6a29ec14dbe66e1531de37d6700342`. PR #58,
+`feat: add Batch 02 Persian product copy`, squash-merged at
+`2026-09-23T19:42:52Z` with exactly five SIMATIC S7-300 fail-safe CPUs in its
+private Product-copy scope.
+
+Private drafts, linguistic approvals, and technical approvals are each 10/382,
+with ten current dual approvals and 372 Products still missing coverage. The
+technical-token overrides cover 10 Products, 20 assignments, and 7 unique
+strings; the global allowlist remains empty. Batch 01 remains unchanged and is
+retained as historical state.
+
+Activation is invalid and has issued no capability; active overlays remain
+0/382 and publication remains disabled. Public FA and EN Product prose remains
+canonical English/LTR. Activation and publication remain blocked until the
+complete 382/382 gate, with no partial activation permitted.
+
+## 2026-09-22 - Batch 01 Private Drafts and Dual Approvals (Historical Snapshot)
+
+The historical baseline was `main` at
 `2d7305e28b183c3f1bde0f6b773fc29ebc619eec`. PR #54 merged the
 Product-specific technical-token policy as
 `c690216efc9895866f42586d3686b736da111155`; PR #55 merged the first five
@@ -15,16 +34,16 @@ private Persian Product-copy drafts as
 linguistic and technical approvals as
 `2d7305e28b183c3f1bde0f6b773fc29ebc619eec`.
 
-Private drafts, linguistic approvals, and technical approvals are each 5/382,
-with five current dual approvals and 377 Products not yet drafted or approved.
-The approvals remain bound to their current deterministic content hashes.
-Activation is invalid and has issued no capability; active overlays remain
-0/382 and publication remains disabled. Public FA and EN Product prose
-therefore remains canonical English/LTR.
+Private drafts, linguistic approvals, and technical approvals were each 5/382,
+with five dual approvals and 377 Products not yet drafted or approved. The
+approvals were bound to their deterministic content hashes. Activation was
+invalid and had issued no capability; active overlays remained 0/382 and
+publication remained disabled. Public FA and EN Product prose therefore
+remained canonical English/LTR.
 
 Batch 01 approval does not authorize publication, partial activation remains
-prohibited, and no Persian Product copy is publicly active. The next
-implementation phase is another controlled private drafting batch, not
+prohibited, and no Persian Product copy was publicly active. The next
+implementation phase was another controlled private drafting batch, not
 activation, bilingual SEO, hreflang, or sitemap work.
 
 ## 2026-09-17 - Tasks BO-BW: Product-copy Consumer Integration (Historical Snapshot)
@@ -238,9 +257,9 @@ the inventory before this approved deletion, not a valid current record.
   values and Product-description presentation
 
 The Product-copy infrastructure is implemented and all intended consumers now
-use its resolver/presentation boundary. The private registry contains 5/382
-drafts, linguistic approvals are 5/382, technical approvals are 5/382, and
-five current dual approvals leave 377 Products not yet drafted or approved.
+use its resolver/presentation boundary. The private registry contains 10/382
+drafts, linguistic approvals are 10/382, technical approvals are 10/382, and
+ten current dual approvals leave 372 Products not yet drafted or approved.
 Active overlays remain 0/382, no activation capability exists, and publication
 remains disabled. Further controlled private drafting, the exact 382/382
 activation gate, English indexing activation, reciprocal hreflang, and
@@ -258,7 +277,7 @@ localized sitemap coverage remain future gates.
   approvals
 - Exact 382/382 atomic activation gate and exact-ten lifecycle-omission
   invariant
-- Private 5/382 registry with five current dual approvals and 377 Products not
+- Private 10/382 registry with ten current dual approvals and 372 Products not
   yet drafted or approved; active coverage remains 0/382, publication remains
   disabled, and its resolver/presentation boundary is connected to all
   intended consumers
@@ -617,16 +636,18 @@ concern is lifecycle provenance only: 10 records are explicitly `unverified`
 and expose no public lifecycle value. Product integration is not pending.
 
 The Product-copy resolver/presentation boundary is verified and connected to
-all intended consumers. Its private registry contains 5/382 drafts, linguistic
-approvals are 5/382, technical approvals are 5/382, and all five drafts have
-current dual approvals. The remaining 377 Products are not drafted or
-approved. Active overlays remain 0/382, activation has issued no capability,
-and publication remains disabled, so both locales intentionally resolve
-canonical English/LTR Product prose while Persian UI localization remains
-active. Batch 01 approval does not authorize publication. The next phase is
-another controlled private drafting batch; the complete 382/382 gate, one
-atomic public activation, and bilingual SEO activation remain pending in that
-order, with partial activation prohibited.
+all intended consumers. Its private registry contains 10/382 drafts,
+linguistic approvals are 10/382, technical approvals are 10/382, and all ten
+drafts have current dual approvals. The remaining 372 Products are not drafted
+or approved. Batch 02 covers exactly five SIMATIC S7-300 fail-safe CPUs; Batch
+01 remains unchanged and historical. Technical-token overrides cover 10
+Products, 20 assignments, and 7 unique strings, with an empty global allowlist.
+Active overlays remain 0/382, activation has issued no capability, and
+publication remains disabled, so both locales intentionally resolve canonical
+English/LTR Product prose while Persian UI localization remains active. The
+next phase is another controlled private drafting batch; the complete 382/382
+gate, one atomic public activation, and bilingual SEO activation remain pending
+in that order, with partial activation prohibited.
 
 ## 2026-09-04 — Function Module Source/Lifecycle Progress
 

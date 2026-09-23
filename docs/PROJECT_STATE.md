@@ -1,8 +1,28 @@
 # Siemiran — Project State
 
-## 2026-09-22 - Batch 01 Private Drafts and Dual Approvals (Current State)
+## 2026-09-23 - Batch 02 Private Drafts and Dual Approvals (Current State)
 
-The current baseline is `main` at
+The Batch 02 implementation baseline is `main` at
+`e1f844f11e6a29ec14dbe66e1531de37d6700342`. PR #58,
+`feat: add Batch 02 Persian product copy`, squash-merged at
+`2026-09-23T19:42:52Z`. Its scope is exactly five SIMATIC S7-300 fail-safe CPUs,
+including independently reviewed Product-specific technical-token mappings and
+current linguistic and technical approvals.
+
+Private drafts, linguistic approvals, and technical approvals are each 10/382.
+All ten drafts have current dual approvals, leaving 372 Products without
+coverage. Technical-token overrides cover 10 Products, 20 assignments, and 7
+unique strings; the global allowlist remains empty. Batch 01 is unchanged and
+retained as historical state.
+
+Activation remains invalid and has issued no capability; active overlays remain
+0/382 and publication remains disabled. Public FA and EN Product prose remains
+canonical English/LTR. No Persian Product copy is publicly active, and both
+activation and publication remain blocked until the complete 382/382 gate.
+
+## 2026-09-22 - Batch 01 Private Drafts and Dual Approvals (Historical Snapshot)
+
+The historical baseline was `main` at
 `2d7305e28b183c3f1bde0f6b773fc29ebc619eec`. PR #54 merged the
 Product-specific technical-token policy as
 `c690216efc9895866f42586d3686b736da111155`; PR #55 merged the first five
@@ -11,15 +31,15 @@ private Persian Product-copy drafts as
 linguistic and technical approvals as
 `2d7305e28b183c3f1bde0f6b773fc29ebc619eec`.
 
-Private drafts, linguistic approvals, and technical approvals are each 5/382.
-All five drafts have current dual approvals, leaving 377 Products not yet
-drafted or approved. Activation remains invalid and has issued no capability;
-active overlays remain 0/382 and publication remains disabled. Public FA and
-EN Product prose remains canonical English/LTR.
+Private drafts, linguistic approvals, and technical approvals were each 5/382.
+All five drafts had dual approvals, leaving 377 Products not yet drafted or
+approved. Activation was invalid and had issued no capability; active overlays
+remained 0/382 and publication remained disabled. Public FA and EN Product prose
+remained canonical English/LTR.
 
 Batch 01 approval does not authorize publication, no Persian Product copy is
-publicly active, and partial activation remains prohibited by the complete
-382/382 gate. The next implementation phase is another controlled private
+publicly active, and partial activation remained prohibited by the complete
+382/382 gate. The next implementation phase was another controlled private
 drafting batch, not activation.
 
 ## 2026-09-17 - Tasks BO-BW: Product-copy Consumer Integration (Historical Snapshot)
@@ -237,9 +257,9 @@ the inventory before this approved deletion, not a valid current record.
 ## Current Baseline
 
 - Status: Active Development
-- Documentation synchronized: 2026-09-22
+- Documentation synchronized: 2026-09-23
 - Repository source of truth: `main` at
-  `2d7305e28b183c3f1bde0f6b773fc29ebc619eec`
+  `e1f844f11e6a29ec14dbe66e1531de37d6700342`
 - No semantic release version is asserted by this document.
 
 ## Current Stack
@@ -271,7 +291,7 @@ the inventory before this approved deletion, not a valid current record.
 | --- | --- | --- |
 | Product listing and dynamic detail pages | IMPLEMENTED | Repository-backed listing, static product paths, and not-found handling |
 | Localization foundation | IMPLEMENTED | Persian-first FA/EN routing, matching UI catalogs, one-click equivalent-page switching, locale direction, and temporarily noindexed English routes |
-| Product-copy consumer integration | IMPLEMENTED | All intended consumers use the central resolver/public DTO boundary; private drafts and both approval roles are 5/382 with five current dual approvals and 377 missing, while active overlays remain 0/382, activation capability is absent, and publication is disabled |
+| Product-copy consumer integration | IMPLEMENTED | All intended consumers use the central resolver/public DTO boundary; private drafts and both approval roles are 10/382 with ten current dual approvals and 372 missing, while active overlays remain 0/382, activation capability is absent, and publication is disabled |
 | Search, URL parameters, filters, sorting, pagination | IMPLEMENTED | Category, family, series, and product-type filters; 12-item pagination |
 | Gallery and specifications | IMPLEMENTED | Product gallery/image UI and technical specification rendering |
 | SEO and structured data | IMPLEMENTED | Metadata, canonical/Open Graph/Twitter fields, Product JSON-LD, breadcrumbs, and Breadcrumb JSON-LD |

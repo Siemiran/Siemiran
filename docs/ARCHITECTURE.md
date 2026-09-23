@@ -1,6 +1,6 @@
 # Siemiran — Current Architecture
 
-Baseline: `main` at `2d7305e28b183c3f1bde0f6b773fc29ebc619eec`
+Baseline: `main` at `e1f844f11e6a29ec14dbe66e1531de37d6700342`
 
 ## Repository Structure
 
@@ -101,15 +101,21 @@ Product-specific technical-token policy, PR #55
 (`25c63e4f7926c782fa9015521734798a9b6f91c1`) added the first five private
 Persian Product-copy drafts, and PR #56
 (`2d7305e28b183c3f1bde0f6b773fc29ebc619eec`) recorded their exact linguistic
-and technical approvals.
+and technical approvals. That Batch 01 state remains unchanged and historical.
+PR #58 squash-merged Batch 02 at `2026-09-23T19:42:52Z` as
+`e1f844f11e6a29ec14dbe66e1531de37d6700342`; its scope is exactly five
+SIMATIC S7-300 fail-safe CPUs with independently reviewed Product-specific
+technical-token mappings and current linguistic and technical approvals.
 
-The separate private Product-copy registry therefore contains 5/382 drafts,
-with linguistic approvals at 5/382, technical approvals at 5/382, and five
-current dual approvals. Complete coverage is missing for 377 Products, which
-have not been drafted or approved. Publication remains globally disabled,
-activation is invalid, no activation capability exists, and active coverage
-remains 0/382. Batch 01 approval does not authorize publication or partial
-activation.
+The separate private Product-copy registry therefore contains 10/382 drafts,
+with linguistic approvals at 10/382, technical approvals at 10/382, and ten
+current dual approvals. Complete coverage is missing for 372 Products. The
+technical-token overrides cover 10 Products, 20 assignments, and 7 unique
+strings, while the global allowlist remains empty. Publication remains globally
+disabled, activation is invalid, no activation capability exists, and active
+coverage remains 0/382. Neither Batch 01 nor Batch 02 approval authorizes
+publication or partial activation; activation and publication remain blocked
+until the complete 382/382 gate passes.
 The next implementation phase is another controlled private drafting batch,
 not activation. The resolver remains the sole public Product-copy source for
 Product listing, cards and meta, featured and related Products, detail
