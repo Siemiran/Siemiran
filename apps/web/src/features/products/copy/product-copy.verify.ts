@@ -594,14 +594,52 @@ const expectedBatch01TechnicalTokenOverrides = [
   },
 ] as const;
 
-const batch01TechnicalTokenOverrides =
+const expectedBatch02TechnicalTokenOverrides = [
+  {
+    productId: "siemens-s7-300-cpu-315f-2dp-6es7315-6ff04-0ab0",
+    tokens: ["MPI", "PROFIBUS DP"],
+  },
+  {
+    productId: "siemens-s7-300-cpu-315f-2pn-dp-6es7315-2fj14-0ab0",
+    tokens: ["MPI/DP", "PROFINET"],
+  },
+  {
+    productId: "siemens-s7-300-cpu-317f-2dp-6es7317-6ff04-0ab0",
+    tokens: ["MPI/DP", "PROFIBUS DP"],
+  },
+  {
+    productId: "siemens-s7-300-cpu-317f-2pn-dp-6es7317-2fk14-0ab0",
+    tokens: ["MPI/DP", "PROFINET"],
+  },
+  {
+    productId: "siemens-s7-300-cpu-319f-3pn-dp-3fl01-0ab0",
+    tokens: ["MPI/DP", "PROFIBUS DP", "PROFINET"],
+  },
+] as const;
+const expectedCombinedTechnicalTokenOverrides = [
+  ...expectedBatch01TechnicalTokenOverrides,
+  ...expectedBatch02TechnicalTokenOverrides,
+] as const;
+
+const reviewedTechnicalTokenOverrides =
   getReviewedProductTechnicalTokenOverrideEntries();
+const batch01TechnicalTokenOverrides = Object.freeze(
+  reviewedTechnicalTokenOverrides.slice(
+    0,
+    expectedBatch01TechnicalTokenOverrides.length
+  )
+);
+const batch02TechnicalTokenOverrides = Object.freeze(
+  reviewedTechnicalTokenOverrides.slice(
+    expectedBatch01TechnicalTokenOverrides.length
+  )
+);
 const protectedOverrideSnapshotBeforeMutation = JSON.stringify(
-  batch01TechnicalTokenOverrides
+  reviewedTechnicalTokenOverrides
 );
 const protectedSnapshotMutationAttempts = [
   Reflect.set(
-    batch01TechnicalTokenOverrides as unknown as Record<string, unknown>,
+    reviewedTechnicalTokenOverrides as unknown as Record<string, unknown>,
     "0",
     { productId: "mutated", tokens: ["MUTATED"] }
   ),
@@ -619,10 +657,16 @@ const protectedSnapshotMutationAttempts = [
     "MUTATED"
   ),
 ];
-const secondBatch01TechnicalTokenOverrideSnapshot =
+const secondReviewedTechnicalTokenOverrideSnapshot =
   getReviewedProductTechnicalTokenOverrideEntries();
 const uniqueBatch01TechnicalTokenOverrides = new Set(
   batch01TechnicalTokenOverrides.flatMap((entry) => entry.tokens)
+);
+const uniqueBatch02TechnicalTokenOverrides = new Set(
+  batch02TechnicalTokenOverrides.flatMap((entry) => entry.tokens)
+);
+const uniqueCombinedTechnicalTokenOverrides = new Set(
+  reviewedTechnicalTokenOverrides.flatMap((entry) => entry.tokens)
 );
 
 assert(
@@ -640,29 +684,112 @@ assert(
   "Batch 01 technical-token override mapping must contain exactly five Product IDs, nine assignments, and four unique strings."
 );
 assert(
-  Object.isFrozen(batch01TechnicalTokenOverrides) &&
-    batch01TechnicalTokenOverrides.every(
+  JSON.stringify(batch02TechnicalTokenOverrides) ===
+    JSON.stringify(expectedBatch02TechnicalTokenOverrides),
+  "Batch 02 technical-token overrides must match the exact reviewed mapping."
+);
+assert(
+  batch02TechnicalTokenOverrides.length === 5 &&
+    batch02TechnicalTokenOverrides.reduce(
+      (count, entry) => count + entry.tokens.length,
+      0
+    ) === 11 &&
+    uniqueBatch02TechnicalTokenOverrides.size === 4,
+  "Batch 02 technical-token override mapping must contain exactly five Product IDs, eleven assignments, and four unique strings."
+);
+assert(
+  JSON.stringify(reviewedTechnicalTokenOverrides) ===
+      JSON.stringify(expectedCombinedTechnicalTokenOverrides) &&
+    reviewedTechnicalTokenOverrides.length === 10 &&
+    reviewedTechnicalTokenOverrides.reduce(
+      (count, entry) => count + entry.tokens.length,
+      0
+    ) === 20 &&
+    uniqueCombinedTechnicalTokenOverrides.size === 7,
+  "Combined technical-token overrides must contain exactly ten Product IDs, twenty assignments, and seven unique strings."
+);
+assert(
+  Object.isFrozen(reviewedTechnicalTokenOverrides) &&
+    reviewedTechnicalTokenOverrides.every(
       (entry) => Object.isFrozen(entry) && Object.isFrozen(entry.tokens)
     ) &&
-    batch01TechnicalTokenOverrides !==
-      secondBatch01TechnicalTokenOverrideSnapshot &&
-    batch01TechnicalTokenOverrides.every(
+    reviewedTechnicalTokenOverrides !==
+      secondReviewedTechnicalTokenOverrideSnapshot &&
+    reviewedTechnicalTokenOverrides.every(
       (entry, index) =>
-        entry !== secondBatch01TechnicalTokenOverrideSnapshot[index] &&
+        entry !== secondReviewedTechnicalTokenOverrideSnapshot[index] &&
         entry.tokens !==
-          secondBatch01TechnicalTokenOverrideSnapshot[index]?.tokens
+          secondReviewedTechnicalTokenOverrideSnapshot[index]?.tokens
     ) &&
     protectedSnapshotMutationAttempts.every((result) => !result) &&
-    JSON.stringify(batch01TechnicalTokenOverrides) ===
+    JSON.stringify(reviewedTechnicalTokenOverrides) ===
       protectedOverrideSnapshotBeforeMutation &&
-    JSON.stringify(secondBatch01TechnicalTokenOverrideSnapshot) ===
+    JSON.stringify(secondReviewedTechnicalTokenOverrideSnapshot) ===
       protectedOverrideSnapshotBeforeMutation,
-  "Batch 01 technical-token override mutation attempts must fail without changing source or later reads."
+  "Combined technical-token override mutation attempts must fail without changing source or later reads."
 );
 assert(
   reviewedGlobalTechnicalTokens.length === 0,
   "The global technical-token allowlist must remain empty."
 );
+
+const expectedBatch02CanonicalProducts = [
+  {
+    productId: "siemens-s7-300-cpu-315f-2dp-6es7315-6ff04-0ab0",
+    title: "SIMATIC S7-300 CPU 315F-2 DP",
+    partNumber: "6ES7315-6FF04-0AB0",
+    canonicalDescription:
+      "SIMATIC S7-300 CPU 315F-2 DP fail-safe central processing unit with 384 KB work memory, MPI and PROFIBUS DP interfaces and second DP master/slave interface.",
+    workMemory: "384 KB",
+    interfaces: "MPI, PROFIBUS DP",
+    siemensUrl:
+      "https://mall.industry.siemens.com/mall/en/oeii/Catalog/Product?SiepCountryCode=OE&mlfb=6ES7315-6FF04-0AB0",
+  },
+  {
+    productId: "siemens-s7-300-cpu-315f-2pn-dp-6es7315-2fj14-0ab0",
+    title: "SIMATIC S7-300 CPU 315F-2 PN/DP",
+    partNumber: "6ES7315-2FJ14-0AB0",
+    canonicalDescription:
+      "SIMATIC S7-300 CPU 315F-2 PN/DP fail-safe central processing unit with 512 KB work memory, MPI/DP and Ethernet PROFINET interface with 2-port switch.",
+    workMemory: "512 KB",
+    interfaces: "MPI/DP, PROFINET",
+    siemensUrl:
+      "https://mall.industry.siemens.com/mall/en/br/Catalog/Product?SiepCountryCode=BR&mlfb=6ES7315-2FJ14-0AB0",
+  },
+  {
+    productId: "siemens-s7-300-cpu-317f-2dp-6es7317-6ff04-0ab0",
+    title: "SIMATIC S7-300 CPU 317F-2 DP",
+    partNumber: "6ES7317-6FF04-0AB0",
+    canonicalDescription:
+      "SIMATIC S7-300 CPU 317F-2 DP fail-safe central processing unit with 1.5 MB work memory, MPI/DP and second PROFIBUS DP master/slave interface.",
+    workMemory: "1.5 MB",
+    interfaces: "MPI/DP, PROFIBUS DP",
+    siemensUrl:
+      "https://mall.industry.siemens.com/mall/en/oeii/Catalog/Product?SiepCountryCode=OE&mlfb=6ES7317-6FF04-0AB0",
+  },
+  {
+    productId: "siemens-s7-300-cpu-317f-2pn-dp-6es7317-2fk14-0ab0",
+    title: "SIMATIC S7-300 CPU 317F-2 PN/DP",
+    partNumber: "6ES7317-2FK14-0AB0",
+    canonicalDescription:
+      "SIMATIC S7-300 CPU 317F-2 PN/DP fail-safe central processing unit with 1.5 MB work memory, MPI/DP and Ethernet PROFINET interface with 2-port switch.",
+    workMemory: "1.5 MB",
+    interfaces: "MPI/DP, PROFINET",
+    siemensUrl:
+      "https://mall.industry.siemens.com/mall/en/oeii/Catalog/Product?SiepCountryCode=OE&mlfb=6ES7317-2FK14-0AB0",
+  },
+  {
+    productId: "siemens-s7-300-cpu-319f-3pn-dp-3fl01-0ab0",
+    title: "SIMATIC S7-300 CPU 319F-3 PN/DP",
+    partNumber: "6ES7318-3FL01-0AB0",
+    canonicalDescription:
+      "SIMATIC S7-300 CPU 319F-3 PN/DP fail-safe central processing unit with 2.5 MB work memory, MPI/DP, DP master/slave and Ethernet PROFINET interfaces.",
+    workMemory: "2.5 MB",
+    interfaces: "MPI/DP, PROFIBUS DP, PROFINET",
+    siemensUrl:
+      "https://mall.industry.siemens.com/mall/en/inosatavtomatica/Catalog/Product?SiepCountryCode=OE&mlfb=6ES7318-3FL01-0AB0",
+  },
+] as const;
 
 const batch01Products = expectedBatch01TechnicalTokenOverrides.map(
   (expectedEntry) => {
@@ -681,6 +808,38 @@ const batch01ProductsById = new Map(
 );
 const batch01ProductionResolver = createProductTechnicalTokenOverrideResolver(
   batch01TechnicalTokenOverrides,
+  products
+);
+const batch02Products = expectedBatch02CanonicalProducts.map((expectedEntry) => {
+  const matchedProduct = products.find(
+    (candidate) => candidate.id === expectedEntry.productId
+  );
+  assert(
+    matchedProduct !== undefined,
+    `Batch 02 Product must remain canonical: ${expectedEntry.productId}`
+  );
+  assert(
+    matchedProduct.title === expectedEntry.title &&
+      matchedProduct.partNumber === expectedEntry.partNumber &&
+      matchedProduct.shortDescription === expectedEntry.canonicalDescription &&
+      matchedProduct.description === expectedEntry.canonicalDescription &&
+      matchedProduct.specifications?.["Work Memory"] ===
+        expectedEntry.workMemory &&
+      matchedProduct.specifications?.Interfaces === expectedEntry.interfaces &&
+      matchedProduct.siemensUrl === expectedEntry.siemensUrl,
+    `Batch 02 canonical Product binding must remain exact: ${expectedEntry.productId}`
+  );
+  return matchedProduct;
+});
+const batch02ProductsById = new Map(
+  batch02Products.map((candidate) => [candidate.id, candidate])
+);
+const batch02ProductionResolver = createProductTechnicalTokenOverrideResolver(
+  batch02TechnicalTokenOverrides,
+  products
+);
+const combinedProductionResolver = createProductTechnicalTokenOverrideResolver(
+  reviewedTechnicalTokenOverrides,
   products
 );
 
@@ -702,6 +861,26 @@ assert(
       (entry) => Object.isFrozen(entry) && Object.isFrozen(entry.tokens)
     ),
   "The production resolver snapshot and every returned nested value must be frozen."
+);
+assert(
+  batch02ProductionResolver.valid &&
+    batch02ProductionResolver.entryCount === 5 &&
+    batch02ProductionResolver.tokenCount === 11 &&
+    JSON.stringify(batch02ProductionResolver.entries) ===
+      JSON.stringify(expectedBatch02TechnicalTokenOverrides),
+  `Batch 02 production technical-token resolver must validate: ${batch02ProductionResolver.issues
+    .map((issue) => issue.code)
+    .join(", ")}`
+);
+assert(
+  combinedProductionResolver.valid &&
+    combinedProductionResolver.entryCount === 10 &&
+    combinedProductionResolver.tokenCount === 20 &&
+    JSON.stringify(combinedProductionResolver.entries) ===
+      JSON.stringify(expectedCombinedTechnicalTokenOverrides),
+  `Combined production technical-token resolver must validate: ${combinedProductionResolver.issues
+    .map((issue) => issue.code)
+    .join(", ")}`
 );
 
 const mutableResolverSource: { productId: string; tokens: string[] }[] =
@@ -796,6 +975,112 @@ assert(
     approvedOverrideResults.every((result) => result.valid),
   "All nine approved assignments must pass through Product-copy validation."
 );
+
+const approvedBatch02OverrideResults: ValidationResult[] = [];
+batch02TechnicalTokenOverrides.forEach((entry) => {
+  const fixtureProduct = batch02ProductsById.get(entry.productId);
+  assert(
+    fixtureProduct !== undefined,
+    `Batch 02 override Product must exist: ${entry.productId}`
+  );
+
+  entry.tokens.forEach((token) => {
+    const result = validateFixture(
+      overrideFixture(fixtureProduct, token),
+      products
+    );
+    assert(
+      result.valid,
+      `Batch 02 approved override must pass only for its mapped Product: ${entry.productId} / ${token}`
+    );
+    approvedBatch02OverrideResults.push(result);
+    draftCases[`approvedBatch02Override:${entry.productId}:${token}`] = result;
+  });
+});
+assert(
+  approvedBatch02OverrideResults.length === 11 &&
+    approvedBatch02OverrideResults.every((result) => result.valid),
+  "All eleven Batch 02 approved assignments must pass through Product-copy validation."
+);
+
+const batch02OverrideTokensByProduct = new Map(
+  batch02TechnicalTokenOverrides.map((entry) => [entry.productId, entry.tokens])
+);
+const batch02IsolationCases = batch02TechnicalTokenOverrides.flatMap((entry) =>
+  entry.tokens.flatMap((token) =>
+    batch02Products
+      .filter(
+        (candidate) =>
+          candidate.id !== entry.productId &&
+          !batch02OverrideTokensByProduct.get(candidate.id)?.includes(token)
+      )
+      .map((candidate) => ({ product: candidate, token }))
+  )
+);
+const batch02IsolationResults = batch02IsolationCases.map(
+  ({ product: fixtureProduct, token }) =>
+    assertDraftIncludesIssues(
+      `Batch 02 Product-level isolation ${fixtureProduct.id} / ${token}`,
+      overrideFixture(fixtureProduct, token),
+      ["unapproved-technical-token"],
+      products
+    )
+);
+assert(
+  batch02IsolationResults.length > 0 &&
+    batch02IsolationResults.every((result) => !result.valid),
+  "Batch 02 technical-token assignments must remain strictly isolated to their mapped Products."
+);
+
+const unauthorizedBatch02StandaloneTokens = [
+  "DP",
+  "Ethernet",
+  "master/slave",
+] as const;
+const unauthorizedBatch02StandaloneResults = batch02Products.flatMap(
+  (fixtureProduct) =>
+    unauthorizedBatch02StandaloneTokens.map((token) =>
+      assertDraftIncludesIssues(
+        `Batch 02 unauthorized standalone token ${fixtureProduct.id} / ${token}`,
+        overrideFixture(fixtureProduct, token),
+        ["unapproved-technical-token"],
+        products
+      )
+    )
+);
+assert(
+  unauthorizedBatch02StandaloneResults.every((result) => !result.valid),
+  "Batch 02 must not authorize standalone DP, Ethernet, or master/slave."
+);
+
+batch02Products.forEach((fixtureProduct) => {
+  const expectedProduct = expectedBatch02CanonicalProducts.find(
+    (candidate) => candidate.productId === fixtureProduct.id
+  );
+  assert(
+    expectedProduct !== undefined,
+    `Batch 02 canonical expectation must exist: ${fixtureProduct.id}`
+  );
+  const canonicalDerivedTokens = [
+    expectedProduct.title,
+    "CPU",
+    expectedProduct.workMemory,
+    "24 V DC",
+  ] as const;
+  const reviewedOverrides =
+    batch02ProductionResolver.getTokensForProduct(fixtureProduct.id);
+  canonicalDerivedTokens.forEach((token) => {
+    assert(
+      !reviewedOverrides.includes(token) &&
+        deriveAllowedTechnicalTokens(fixtureProduct).has(token) &&
+        validateFixture(
+          overrideFixture(fixtureProduct, token),
+          products
+        ).valid,
+      `Batch 02 canonical-derived token must remain valid without an override: ${fixtureProduct.id} / ${token}`
+    );
+  });
+});
 
 const cpu1211 = batch01ProductsById.get("siemens-s7-1200-cpu-211-1ae40");
 const cpu1215 = batch01ProductsById.get("siemens-s7-1200-cpu-215-1ag40");
@@ -3712,16 +3997,35 @@ console.log(
         activationMissing: registeredDraftActivation.missingIds.length,
       },
       technicalTokenOverrides: {
-        entries: batch01ProductionResolver.entryCount,
-        tokens: batch01ProductionResolver.tokenCount,
-        uniqueTokens: uniqueBatch01TechnicalTokenOverrides.size,
-        exactMapping: batch01ProductionResolver.valid,
+        entries: combinedProductionResolver.entryCount,
+        tokens: combinedProductionResolver.tokenCount,
+        uniqueTokens: uniqueCombinedTechnicalTokenOverrides.size,
+        exactMapping: combinedProductionResolver.valid,
+        batch01: {
+          entries: batch01ProductionResolver.entryCount,
+          tokens: batch01ProductionResolver.tokenCount,
+          uniqueTokens: uniqueBatch01TechnicalTokenOverrides.size,
+        },
+        batch02: {
+          entries: batch02ProductionResolver.entryCount,
+          tokens: batch02ProductionResolver.tokenCount,
+          uniqueTokens: uniqueBatch02TechnicalTokenOverrides.size,
+          canonicalBindings: batch02Products.length,
+          assignmentValidation: approvedBatch02OverrideResults.length,
+          isolationFixtures: batch02IsolationResults.length,
+          unauthorizedStandaloneFixtures:
+            unauthorizedBatch02StandaloneResults.length,
+        },
         globalTokens: reviewedGlobalTechnicalTokens.length,
-        detachedDeepFrozen: batch01TechnicalTokenOverrides.every(
+        detachedDeepFrozen: reviewedTechnicalTokenOverrides.every(
           (entry) => Object.isFrozen(entry) && Object.isFrozen(entry.tokens)
         ),
         isolation:
           overrideIsolationResults.every((result) => !result.valid) &&
+          batch02IsolationResults.every((result) => !result.valid) &&
+          unauthorizedBatch02StandaloneResults.every(
+            (result) => !result.valid
+          ) &&
           !unknownProductOverrideResult.valid &&
           !customCpu1217StandaloneProfinetResolver.valid,
         fidelity: productionNegativeResults.every((result) => !result.valid),
