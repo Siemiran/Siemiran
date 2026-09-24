@@ -246,6 +246,71 @@ const cpu319f3PnDpCopy = [
   { kind: "text", value: " مبتنی بر اترنت است." },
 ] as const satisfies ProductCopyParagraph;
 
+const sm321Di16_24Vdc1Bh02Copy = [
+  { kind: "text", value: "مدل " },
+  {
+    kind: "technical",
+    value: "SIMATIC S7-300 SM 321 16 DI 24 V DC",
+  },
+  { kind: "text", value: "، یک ماژول ورودی دیجیتال با " },
+  { kind: "technical", value: "16" },
+  { kind: "text", value: " ورودی و ولتاژ ورودی " },
+  { kind: "technical", value: "24 V DC" },
+  { kind: "text", value: " است." },
+] as const satisfies ProductCopyParagraph;
+
+const sm321Di16_24Vdc1Bh10Copy = [
+  { kind: "text", value: "مدل " },
+  {
+    kind: "technical",
+    value: "SIMATIC S7-300 SM 321 16 DI 24 V DC HF",
+  },
+  { kind: "text", value: "، یک ماژول ورودی دیجیتال با " },
+  { kind: "technical", value: "16" },
+  { kind: "text", value: " ورودی و ولتاژ ورودی " },
+  { kind: "technical", value: "24 V DC" },
+  { kind: "text", value: " است." },
+] as const satisfies ProductCopyParagraph;
+
+const sm321Di32_24Vdc1Bl00Copy = [
+  { kind: "text", value: "مدل " },
+  {
+    kind: "technical",
+    value: "SIMATIC S7-300 SM 321 32 DI 24 V DC",
+  },
+  { kind: "text", value: "، یک ماژول ورودی دیجیتال با " },
+  { kind: "technical", value: "32" },
+  { kind: "text", value: " ورودی و ولتاژ ورودی " },
+  { kind: "technical", value: "24 V DC" },
+  { kind: "text", value: " است." },
+] as const satisfies ProductCopyParagraph;
+
+const sm321Di64_24Vdc1Bp00Copy = [
+  { kind: "text", value: "مدل " },
+  {
+    kind: "technical",
+    value: "SIMATIC S7-300 SM 321 64 DI 24 V DC",
+  },
+  { kind: "text", value: "، یک ماژول ورودی دیجیتال با " },
+  { kind: "technical", value: "64" },
+  { kind: "text", value: " ورودی و ولتاژ ورودی " },
+  { kind: "technical", value: "24 V DC" },
+  { kind: "text", value: " است." },
+] as const satisfies ProductCopyParagraph;
+
+const sm321Di16_48_125Vdc1Ch20Copy = [
+  { kind: "text", value: "مدل " },
+  {
+    kind: "technical",
+    value: "SIMATIC S7-300 SM 321 16 DI 48-125 V DC",
+  },
+  { kind: "text", value: "، یک ماژول ورودی دیجیتال با " },
+  { kind: "technical", value: "16" },
+  { kind: "text", value: " ورودی و ولتاژ ورودی " },
+  { kind: "technical", value: "48-125 V DC" },
+  { kind: "text", value: " است." },
+] as const satisfies ProductCopyParagraph;
+
 export const persianProductCopyDraftRegistry = [
   {
     productId: "siemens-s7-1200-cpu-211-1ae40",
@@ -506,5 +571,45 @@ export const persianProductCopyDraftRegistry = [
         "https://mall.industry.siemens.com/mall/en/inosatavtomatica/Catalog/Product?SiepCountryCode=OE&mlfb=6ES7318-3FL01-0AB0",
       note: "Verified Product identity, MLFB, fail-safe CPU classification, work memory, interfaces, interface roles, technical tokens, and canonical Siemens source; approved without content changes.",
     },
+  },
+  {
+    productId: "siemens-s7-300-sm321-di-16-24vdc-1bh02-0aa0",
+    shortDescription: sm321Di16_24Vdc1Bh02Copy,
+    description: [sm321Di16_24Vdc1Bh02Copy],
+    provenance: "ai-assisted",
+    linguisticReview: { decision: "pending" },
+    technicalReview: { decision: "pending" },
+  },
+  {
+    productId: "siemens-s7-300-sm321-di-16-24vdc-1bh10-0aa0",
+    shortDescription: sm321Di16_24Vdc1Bh10Copy,
+    description: [sm321Di16_24Vdc1Bh10Copy],
+    provenance: "ai-assisted",
+    linguisticReview: { decision: "pending" },
+    technicalReview: { decision: "pending" },
+  },
+  {
+    productId: "siemens-s7-300-sm321-di-32-24vdc-1bl00-0aa0",
+    shortDescription: sm321Di32_24Vdc1Bl00Copy,
+    description: [sm321Di32_24Vdc1Bl00Copy],
+    provenance: "ai-assisted",
+    linguisticReview: { decision: "pending" },
+    technicalReview: { decision: "pending" },
+  },
+  {
+    productId: "siemens-s7-300-sm321-di-64-24vdc-1bp00-0aa0",
+    shortDescription: sm321Di64_24Vdc1Bp00Copy,
+    description: [sm321Di64_24Vdc1Bp00Copy],
+    provenance: "ai-assisted",
+    linguisticReview: { decision: "pending" },
+    technicalReview: { decision: "pending" },
+  },
+  {
+    productId: "siemens-s7-300-sm321-di-16-48-125vdc-1ch20-0aa0",
+    shortDescription: sm321Di16_48_125Vdc1Ch20Copy,
+    description: [sm321Di16_48_125Vdc1Ch20Copy],
+    provenance: "ai-assisted",
+    linguisticReview: { decision: "pending" },
+    technicalReview: { decision: "pending" },
   },
 ] as const satisfies readonly PersianProductCopyOverlay[];
