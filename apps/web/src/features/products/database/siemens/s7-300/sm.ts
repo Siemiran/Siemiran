@@ -103,7 +103,7 @@ export const s7300SM: SiemensS7300SignalModule[] = [
     title: "SIMATIC S7-300 SM 321 16 DI 24 V DC HF",
 
     description:
-      "SIMATIC S7-300 digital input SM 321, isolated, 16 digital inputs, 24 V DC, 1 x 20-pole, with 0.05 ms input delay.",
+      "SIMATIC S7-300 digital input SM 321, isolated, 16 digital inputs, 24 V DC, 1 x 20-pole.",
 
     lifecycle: "phase-out",
 
@@ -112,8 +112,6 @@ export const s7300SM: SiemensS7300SignalModule[] = [
       inputVoltage: "24 V DC",
       terminalConnection: "1 x 20-pole",
       interfaces: ["Backplane bus"],
-      diagnostics: "Module diagnostics",
-      interrupts: "Process interrupt",
     },
 
     source:
