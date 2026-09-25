@@ -3,7 +3,47 @@
 This file records completed repository changes. The newest entry records the
 current `main` state; older dated entries are historical snapshots.
 
-## 2026-09-23 - PR #58: Complete Batch 02 Private Drafts and Dual Approvals
+## 2026-09-25 - PR #61: Complete Batch 03 Private Drafts and Dual Approvals
+
+### Changed
+
+- PR #61, `feat: add Batch 03 Persian product copy`, squash-merged at
+  `2026-09-25T08:01:51Z` as
+  `b7debb1d9c6b25a787f1cb534247bfba63d001c3`.
+- Batch 03 adds private Persian drafts and hash-bound linguistic and technical
+  approvals for exactly five S7-300 SM321 digital-input Products:
+  `6ES7321-1BH02-0AA0`, `6ES7321-1BH10-0AA0`, `6ES7321-1BL00-0AA0`,
+  `6ES7321-1BP00-0AA0`, and `6ES7321-1CH20-0AA0`.
+- PR #60's preceding squash commit
+  `ac99ce8579d3753a2d4f4aeb6bd22b4fd7f4e514` corrected the canonical
+  1BH10 specifications: unsupported diagnostics and interrupt claims were
+  removed, and the disputed delay was omitted because official evidence
+  conflicted. No replacement delay value was verified.
+- Batch 01-02 content and approvals remain unchanged. Batch 03 adds no
+  technical-token overrides.
+
+### Verified
+
+- Review used indexed content from exact-product official Siemens datasheets;
+  direct PDF requests returned HTTP 403, as recorded in the approval notes.
+- The corrected 1BH10 draft makes no delay, diagnostics, or interrupt claim.
+- Private drafts, linguistic approvals, and technical approvals are each
+  15/382, with 15 current dual approvals and 367 Products still missing
+  coverage.
+- Technical-token overrides remain at 10 Products, 20 assignments, and 7
+  unique strings; the global allowlist remains empty.
+- The independent audit passed Product-copy validation, lint, and the
+  production build with 774/774 static pages.
+
+### State
+
+- Active overlays remain 0/382; no activation capability exists and
+  publication remains disabled.
+- Public FA and EN Product prose remains canonical English/LTR.
+- Activation and publication remain blocked until all 382/382 Products have
+  current dual approvals; partial activation is prohibited.
+
+## 2026-09-23 - PR #58: Complete Batch 02 Private Drafts and Dual Approvals (Historical Snapshot)
 
 ### Changed
 
@@ -19,21 +59,21 @@ current `main` state; older dated entries are historical snapshots.
 
 ### Verified
 
-- Private drafts, linguistic approvals, and technical approvals are each
-  10/382, with ten current dual approvals and 372 Products still missing
-  coverage.
-- Technical-token overrides cover 10 Products, 20 assignments, and 7 unique
-  strings; the global allowlist remains empty.
-- Product-copy validation passes with activation invalid and no activation
+- At that snapshot, private drafts, linguistic approvals, and technical
+  approvals were each 10/382, with ten dual approvals and 372 Products still
+  missing coverage.
+- Technical-token overrides covered 10 Products, 20 assignments, and 7 unique
+  strings; the global allowlist was empty.
+- Product-copy validation passed with activation invalid and no activation
   capability issued.
 
 ### State
 
-- Active overlays remain 0/382 and publication remains disabled.
-- Public FA and EN Product prose remains canonical English/LTR; no Persian
-  Product copy is publicly active.
-- Activation and publication remain blocked until the complete 382/382 gate;
-  Batch 02 approval does not permit partial activation.
+- Active overlays remained 0/382 and publication remained disabled.
+- Public FA and EN Product prose remained canonical English/LTR; no Persian
+  Product copy was publicly active.
+- Activation and publication remained blocked by the complete 382/382 gate;
+  Batch 02 approval did not permit partial activation.
 
 ## 2026-09-22 - PRs #54-#56: Complete Batch 01 Private Drafts and Dual Approvals (Historical Snapshot)
 

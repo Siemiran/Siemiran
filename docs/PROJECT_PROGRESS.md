@@ -2,25 +2,54 @@
 
 Repository source of truth: current `main` branch
 
-Last synchronized: 2026-09-23
+Last synchronized: 2026-09-25
 
-## 2026-09-23 - Batch 02 Private Drafts and Dual Approvals (Current State)
+## 2026-09-25 - Batch 03 Private Drafts and Dual Approvals (Current State)
 
 The current implementation baseline is `main` at
+`b7debb1d9c6b25a787f1cb534247bfba63d001c3`. PR #61,
+`feat: add Batch 03 Persian product copy`, squash-merged at
+`2026-09-25T08:01:51Z` after PR #60's 1BH10 specification correction at
+`ac99ce8579d3753a2d4f4aeb6bd22b4fd7f4e514`.
+
+Batch 03 covers exactly five S7-300 SM321 digital-input Products:
+`6ES7321-1BH02-0AA0`, `6ES7321-1BH10-0AA0`, `6ES7321-1BL00-0AA0`,
+`6ES7321-1BP00-0AA0`, and `6ES7321-1CH20-0AA0`. Its private Persian drafts
+have linguistic and technical approvals bound to exact content hashes. Review
+used indexed content from exact-product official Siemens datasheets; direct
+PDF requests returned HTTP 403, as recorded in the approval notes. The 1BH10
+correction removed unsupported diagnostics and interrupt claims and omitted
+the disputed delay because official evidence conflicted; no replacement delay
+value was verified, and its draft makes none of those claims.
+
+Private drafts, linguistic approvals, and technical approvals are each 15/382,
+with 15 current dual approvals and 367 Products still missing coverage. Batch
+01-02 content and approvals remain unchanged. Batch 03 adds no technical-token
+overrides: the existing policy covers 10 Products, 20 assignments, and 7
+unique strings, with an empty global allowlist.
+
+Active overlays remain 0/382, no activation capability exists, and publication
+remains disabled. Public FA and EN Product prose remains canonical English/LTR.
+Activation and publication remain blocked until all 382/382 Products have
+current dual approvals, with no partial activation permitted.
+
+## 2026-09-23 - Batch 02 Private Drafts and Dual Approvals (Historical Snapshot)
+
+The historical implementation baseline was `main` at
 `e1f844f11e6a29ec14dbe66e1531de37d6700342`. PR #58,
 `feat: add Batch 02 Persian product copy`, squash-merged at
 `2026-09-23T19:42:52Z` with exactly five SIMATIC S7-300 fail-safe CPUs in its
 private Product-copy scope.
 
-Private drafts, linguistic approvals, and technical approvals are each 10/382,
-with ten current dual approvals and 372 Products still missing coverage. The
-technical-token overrides cover 10 Products, 20 assignments, and 7 unique
-strings; the global allowlist remains empty. Batch 01 remains unchanged and is
-retained as historical state.
+At this snapshot, private drafts, linguistic approvals, and technical approvals
+were each 10/382, with ten dual approvals and 372 Products still missing
+coverage. Technical-token overrides covered 10 Products, 20 assignments, and
+7 unique strings; the global allowlist was empty. Batch 01 remained unchanged
+and was retained as historical state.
 
-Activation is invalid and has issued no capability; active overlays remain
-0/382 and publication remains disabled. Public FA and EN Product prose remains
-canonical English/LTR. Activation and publication remain blocked until the
+Activation was invalid and had issued no capability; active overlays remained
+0/382 and publication remained disabled. Public FA and EN Product prose remained
+canonical English/LTR. Activation and publication were blocked until the
 complete 382/382 gate, with no partial activation permitted.
 
 ## 2026-09-22 - Batch 01 Private Drafts and Dual Approvals (Historical Snapshot)
@@ -257,9 +286,9 @@ the inventory before this approved deletion, not a valid current record.
   values and Product-description presentation
 
 The Product-copy infrastructure is implemented and all intended consumers now
-use its resolver/presentation boundary. The private registry contains 10/382
-drafts, linguistic approvals are 10/382, technical approvals are 10/382, and
-ten current dual approvals leave 372 Products not yet drafted or approved.
+use its resolver/presentation boundary. The private registry contains 15/382
+drafts, linguistic approvals are 15/382, technical approvals are 15/382, and
+15 current dual approvals leave 367 Products not yet drafted or approved.
 Active overlays remain 0/382, no activation capability exists, and publication
 remains disabled. Further controlled private drafting, the exact 382/382
 activation gate, English indexing activation, reciprocal hreflang, and
@@ -277,7 +306,7 @@ localized sitemap coverage remain future gates.
   approvals
 - Exact 382/382 atomic activation gate and exact-ten lifecycle-omission
   invariant
-- Private 10/382 registry with ten current dual approvals and 372 Products not
+- Private 15/382 registry with 15 current dual approvals and 367 Products not
   yet drafted or approved; active coverage remains 0/382, publication remains
   disabled, and its resolver/presentation boundary is connected to all
   intended consumers
@@ -636,12 +665,13 @@ concern is lifecycle provenance only: 10 records are explicitly `unverified`
 and expose no public lifecycle value. Product integration is not pending.
 
 The Product-copy resolver/presentation boundary is verified and connected to
-all intended consumers. Its private registry contains 10/382 drafts,
-linguistic approvals are 10/382, technical approvals are 10/382, and all ten
-drafts have current dual approvals. The remaining 372 Products are not drafted
-or approved. Batch 02 covers exactly five SIMATIC S7-300 fail-safe CPUs; Batch
-01 remains unchanged and historical. Technical-token overrides cover 10
-Products, 20 assignments, and 7 unique strings, with an empty global allowlist.
+all intended consumers. Its private registry contains 15/382 drafts,
+linguistic approvals are 15/382, technical approvals are 15/382, and all 15
+drafts have current dual approvals. The remaining 367 Products are not drafted
+or approved. Batch 03 covers exactly five S7-300 SM321 digital-input Products;
+Batch 01-02 remain unchanged and historical. Technical-token overrides cover
+10 Products, 20 assignments, and 7 unique strings, with an empty global
+allowlist; Batch 03 adds none.
 Active overlays remain 0/382, activation has issued no capability, and
 publication remains disabled, so both locales intentionally resolve canonical
 English/LTR Product prose while Persian UI localization remains active. The
