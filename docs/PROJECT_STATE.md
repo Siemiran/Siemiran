@@ -1,24 +1,59 @@
 # Siemiran — Project State
 
-## 2026-09-23 - Batch 02 Private Drafts and Dual Approvals (Current State)
+## 2026-09-25 - Batch 03 Private Drafts and Dual Approvals (Current State)
 
-The Batch 02 implementation baseline is `main` at
+The Batch 03 implementation baseline is `main` at
+`b7debb1d9c6b25a787f1cb534247bfba63d001c3`. PR #61,
+`feat: add Batch 03 Persian product copy`, squash-merged at
+`2026-09-25T08:01:51Z`. It adds private drafts with content-hash-bound
+linguistic and technical approvals for exactly five S7-300 SM321 digital-input
+Products:
+
+- `6ES7321-1BH02-0AA0`
+- `6ES7321-1BH10-0AA0`
+- `6ES7321-1BL00-0AA0`
+- `6ES7321-1BP00-0AA0`
+- `6ES7321-1CH20-0AA0`
+
+Technical review used indexed content from exact-product official Siemens
+datasheets. Direct PDF requests returned HTTP 403, and the approval notes
+preserve that limitation. Preceding PR #60, squash
+`ac99ce8579d3753a2d4f4aeb6bd22b4fd7f4e514`, removed unsupported 1BH10
+diagnostics and interrupt fields and omitted the disputed input-delay claim
+because official evidence conflicted; no replacement delay value was verified.
+The Batch 03 1BH10 draft makes no delay, diagnostics, or interrupt claim.
+
+Private drafts, linguistic approvals, and technical approvals are each 15/382.
+All 15 have current dual approvals, leaving 367 Products without coverage.
+Technical-token overrides remain at 10 Products, 20 assignments, and 7 unique
+strings; Batch 03 added no override entries and the global allowlist is empty.
+Batch 01-02 drafts and approvals remain intact.
+
+Activation has no capability; active overlays remain 0/382 and publication is
+disabled. Public FA and EN Product copy remains canonical English/LTR. Neither
+activation nor publication is permitted until complete 382/382 coverage has
+current dual approvals.
+
+## 2026-09-23 - Batch 02 Private Drafts and Dual Approvals (Historical Snapshot)
+
+The Batch 02 implementation baseline was `main` at
 `e1f844f11e6a29ec14dbe66e1531de37d6700342`. PR #58,
 `feat: add Batch 02 Persian product copy`, squash-merged at
 `2026-09-23T19:42:52Z`. Its scope is exactly five SIMATIC S7-300 fail-safe CPUs,
 including independently reviewed Product-specific technical-token mappings and
-current linguistic and technical approvals.
+then-current linguistic and technical approvals.
 
-Private drafts, linguistic approvals, and technical approvals are each 10/382.
-All ten drafts have current dual approvals, leaving 372 Products without
-coverage. Technical-token overrides cover 10 Products, 20 assignments, and 7
-unique strings; the global allowlist remains empty. Batch 01 is unchanged and
-retained as historical state.
+At that snapshot, private drafts, linguistic approvals, and technical
+approvals were each 10/382. All ten drafts had current dual approvals, leaving
+372 Products without coverage. Technical-token overrides covered 10 Products,
+20 assignments, and 7 unique strings; the global allowlist was empty. Batch 01
+was unchanged and retained as historical state.
 
-Activation remains invalid and has issued no capability; active overlays remain
-0/382 and publication remains disabled. Public FA and EN Product prose remains
-canonical English/LTR. No Persian Product copy is publicly active, and both
-activation and publication remain blocked until the complete 382/382 gate.
+Activation was invalid and had issued no capability; active overlays remained
+0/382 and publication remained disabled. Public FA and EN Product prose
+remained canonical English/LTR. No Persian Product copy was publicly active,
+and both activation and publication remained blocked by the complete 382/382
+gate.
 
 ## 2026-09-22 - Batch 01 Private Drafts and Dual Approvals (Historical Snapshot)
 
@@ -257,9 +292,9 @@ the inventory before this approved deletion, not a valid current record.
 ## Current Baseline
 
 - Status: Active Development
-- Documentation synchronized: 2026-09-23
+- Documentation synchronized: 2026-09-25
 - Repository source of truth: `main` at
-  `e1f844f11e6a29ec14dbe66e1531de37d6700342`
+  `b7debb1d9c6b25a787f1cb534247bfba63d001c3`
 - No semantic release version is asserted by this document.
 
 ## Current Stack
@@ -291,7 +326,7 @@ the inventory before this approved deletion, not a valid current record.
 | --- | --- | --- |
 | Product listing and dynamic detail pages | IMPLEMENTED | Repository-backed listing, static product paths, and not-found handling |
 | Localization foundation | IMPLEMENTED | Persian-first FA/EN routing, matching UI catalogs, one-click equivalent-page switching, locale direction, and temporarily noindexed English routes |
-| Product-copy consumer integration | IMPLEMENTED | All intended consumers use the central resolver/public DTO boundary; private drafts and both approval roles are 10/382 with ten current dual approvals and 372 missing, while active overlays remain 0/382, activation capability is absent, and publication is disabled |
+| Product-copy consumer integration | IMPLEMENTED | All intended consumers use the central resolver/public DTO boundary; private drafts and both approval roles are 15/382 with 15 current dual approvals and 367 missing, while active overlays remain 0/382, activation capability is absent, and publication is disabled |
 | Search, URL parameters, filters, sorting, pagination | IMPLEMENTED | Category, family, series, and product-type filters; 12-item pagination |
 | Gallery and specifications | IMPLEMENTED | Product gallery/image UI and technical specification rendering |
 | SEO and structured data | IMPLEMENTED | Metadata, canonical/Open Graph/Twitter fields, Product JSON-LD, breadcrumbs, and Breadcrumb JSON-LD |

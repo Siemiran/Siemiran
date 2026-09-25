@@ -1,6 +1,6 @@
 # Siemiran — Current Architecture
 
-Baseline: `main` at `e1f844f11e6a29ec14dbe66e1531de37d6700342`
+Baseline: `main` at `b7debb1d9c6b25a787f1cb534247bfba63d001c3`
 
 ## Repository Structure
 
@@ -106,16 +106,30 @@ PR #58 squash-merged Batch 02 at `2026-09-23T19:42:52Z` as
 `e1f844f11e6a29ec14dbe66e1531de37d6700342`; its scope is exactly five
 SIMATIC S7-300 fail-safe CPUs with independently reviewed Product-specific
 technical-token mappings and current linguistic and technical approvals.
+PR #60 (`ac99ce8579d3753a2d4f4aeb6bd22b4fd7f4e514`) corrected the canonical
+S7-300 SM321 1BH10 specifications by removing unsupported diagnostics and
+interrupt fields and omitting the disputed input-delay claim because official
+evidence conflicted; no replacement delay value was verified. PR #61
+squash-merged Batch 03 at
+`2026-09-25T08:01:51Z` as `b7debb1d9c6b25a787f1cb534247bfba63d001c3`.
+Its five private S7-300 SM321 digital-input drafts cover
+`6ES7321-1BH02-0AA0`, `6ES7321-1BH10-0AA0`, `6ES7321-1BL00-0AA0`,
+`6ES7321-1BP00-0AA0`, and `6ES7321-1CH20-0AA0`, with linguistic and technical
+approvals bound to their current content hashes. Technical review used indexed
+content from exact-product official Siemens datasheets; direct PDF requests
+returned HTTP 403, as the approval notes record. The corrected 1BH10 draft
+makes no delay, diagnostics, or interrupt claim. Batch 03 added no
+technical-token overrides. Batches 01 and 02 remain unchanged historical work.
 
-The separate private Product-copy registry therefore contains 10/382 drafts,
-with linguistic approvals at 10/382, technical approvals at 10/382, and ten
-current dual approvals. Complete coverage is missing for 372 Products. The
+The separate private Product-copy registry now contains 15/382 drafts,
+with linguistic approvals at 15/382, technical approvals at 15/382, and 15
+current dual approvals. Complete coverage is missing for 367 Products. The
 technical-token overrides cover 10 Products, 20 assignments, and 7 unique
 strings, while the global allowlist remains empty. Publication remains globally
 disabled, activation is invalid, no activation capability exists, and active
-coverage remains 0/382. Neither Batch 01 nor Batch 02 approval authorizes
+coverage remains 0/382. Approvals from Batches 01-03 do not authorize
 publication or partial activation; activation and publication remain blocked
-until the complete 382/382 gate passes.
+until all 382/382 Products have current dual approvals.
 The next implementation phase is another controlled private drafting batch,
 not activation. The resolver remains the sole public Product-copy source for
 Product listing, cards and meta, featured and related Products, detail
