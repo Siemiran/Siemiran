@@ -616,6 +616,16 @@ const expectedBatch02TechnicalTokenOverrides = [
     tokens: ["MPI/DP", "PROFIBUS DP", "PROFINET"],
   },
 ] as const;
+const expectedBatch03ProductIds = [
+  "siemens-s7-300-sm321-di-16-24vdc-1bh02-0aa0",
+  "siemens-s7-300-sm321-di-16-24vdc-1bh10-0aa0",
+  "siemens-s7-300-sm321-di-32-24vdc-1bl00-0aa0",
+  "siemens-s7-300-sm321-di-64-24vdc-1bp00-0aa0",
+  "siemens-s7-300-sm321-di-16-48-125vdc-1ch20-0aa0",
+] as const satisfies readonly ProductId[];
+const expectedBatch03ProductIdSet = new Set<ProductId>(
+  expectedBatch03ProductIds
+);
 const expectedCombinedTechnicalTokenOverrides = [
   ...expectedBatch01TechnicalTokenOverrides,
   ...expectedBatch02TechnicalTokenOverrides,
@@ -632,6 +642,11 @@ const batch01TechnicalTokenOverrides = Object.freeze(
 const batch02TechnicalTokenOverrides = Object.freeze(
   reviewedTechnicalTokenOverrides.slice(
     expectedBatch01TechnicalTokenOverrides.length
+  )
+);
+const batch03TechnicalTokenOverrides = Object.freeze(
+  reviewedTechnicalTokenOverrides.filter((entry) =>
+    expectedBatch03ProductIdSet.has(entry.productId)
   )
 );
 const protectedOverrideSnapshotBeforeMutation = JSON.stringify(
@@ -696,6 +711,10 @@ assert(
     ) === 11 &&
     uniqueBatch02TechnicalTokenOverrides.size === 4,
   "Batch 02 technical-token override mapping must contain exactly five Product IDs, eleven assignments, and four unique strings."
+);
+assert(
+  batch03TechnicalTokenOverrides.length === 0,
+  "Batch 03 must add no Product-level technical-token override entries."
 );
 assert(
   JSON.stringify(reviewedTechnicalTokenOverrides) ===
@@ -791,6 +810,64 @@ const expectedBatch02CanonicalProducts = [
   },
 ] as const;
 
+const expectedBatch03CanonicalProducts = [
+  {
+    productId: "siemens-s7-300-sm321-di-16-24vdc-1bh02-0aa0",
+    title: "SIMATIC S7-300 SM 321 16 DI 24 V DC",
+    partNumber: "6ES7321-1BH02-0AA0",
+    canonicalDescription:
+      "SIMATIC S7-300 digital input SM 321, isolated, 16 digital inputs, 24 V DC, 1 x 20-pole.",
+    digitalInputs: "16",
+    inputVoltage: "24 V DC",
+    siemensUrl:
+      "https://mall.industry.siemens.com/mall/en/oeii/Catalog/Product/6ES7321-1BH02-0AA0",
+  },
+  {
+    productId: "siemens-s7-300-sm321-di-16-24vdc-1bh10-0aa0",
+    title: "SIMATIC S7-300 SM 321 16 DI 24 V DC HF",
+    partNumber: "6ES7321-1BH10-0AA0",
+    canonicalDescription:
+      "SIMATIC S7-300 digital input SM 321, isolated, 16 digital inputs, 24 V DC, 1 x 20-pole.",
+    digitalInputs: "16",
+    inputVoltage: "24 V DC",
+    siemensUrl:
+      "https://mall.industry.siemens.com/mall/en/pt/Catalog/Product/?mlfb=6ES7321-1BH10-0AA0",
+  },
+  {
+    productId: "siemens-s7-300-sm321-di-32-24vdc-1bl00-0aa0",
+    title: "SIMATIC S7-300 SM 321 32 DI 24 V DC",
+    partNumber: "6ES7321-1BL00-0AA0",
+    canonicalDescription:
+      "SIMATIC S7-300 digital input SM 321, isolated, 32 digital inputs, 24 V DC, 1 x 40-pole.",
+    digitalInputs: "32",
+    inputVoltage: "24 V DC",
+    siemensUrl:
+      "https://mall.industry.siemens.com/mall/en/oeii/Catalog/Product/6ES7321-1BL00-0AA0",
+  },
+  {
+    productId: "siemens-s7-300-sm321-di-64-24vdc-1bp00-0aa0",
+    title: "SIMATIC S7-300 SM 321 64 DI 24 V DC",
+    partNumber: "6ES7321-1BP00-0AA0",
+    canonicalDescription:
+      "SIMATIC S7-300 digital input SM 321, isolated in groups of 16, 64 digital inputs, 24 V DC, 3 ms input delay, with sinking/sourcing terminal blocks.",
+    digitalInputs: "64",
+    inputVoltage: "24 V DC",
+    siemensUrl:
+      "https://mall.industry.siemens.com/mall/en/oeii/Catalog/Product/6ES7321-1BP00-0AA0",
+  },
+  {
+    productId: "siemens-s7-300-sm321-di-16-48-125vdc-1ch20-0aa0",
+    title: "SIMATIC S7-300 SM 321 16 DI 48-125 V DC",
+    partNumber: "6ES7321-1CH20-0AA0",
+    canonicalDescription:
+      "SIMATIC S7-300 digital input SM 321, isolated, 16 digital inputs, 48-125 V DC, 1 x 20-pole.",
+    digitalInputs: "16",
+    inputVoltage: "48-125 V DC",
+    siemensUrl:
+      "https://mall.industry.siemens.com/mall/en/oeii/Catalog/Product?SiepCountryCode=OE&mlfb=6ES7321-1CH20-0AA0",
+  },
+] as const;
+
 const batch01Products = expectedBatch01TechnicalTokenOverrides.map(
   (expectedEntry) => {
     const matchedProduct = products.find(
@@ -838,6 +915,39 @@ const batch02ProductionResolver = createProductTechnicalTokenOverrideResolver(
   batch02TechnicalTokenOverrides,
   products
 );
+const batch03Products = expectedBatch03CanonicalProducts.map((expectedEntry) => {
+  const matchedProduct = products.find(
+    (candidate) => candidate.id === expectedEntry.productId
+  );
+  assert(
+    matchedProduct !== undefined,
+    `Batch 03 Product must remain canonical: ${expectedEntry.productId}`
+  );
+  assert(
+    matchedProduct.title === expectedEntry.title &&
+      matchedProduct.partNumber === expectedEntry.partNumber &&
+      matchedProduct.shortDescription === expectedEntry.canonicalDescription &&
+      matchedProduct.description === expectedEntry.canonicalDescription &&
+      matchedProduct.brandId === "siemens" &&
+      matchedProduct.categoryId === "PLC" &&
+      matchedProduct.familyId === "S7-300" &&
+      matchedProduct.seriesId === "S7-300" &&
+      matchedProduct.productTypeId === "Signal Module" &&
+      matchedProduct.variantId === "digital-input" &&
+      matchedProduct.lifecycle === "legacy" &&
+      matchedProduct.specifications?.["Digital Inputs"] ===
+        expectedEntry.digitalInputs &&
+      matchedProduct.specifications?.["Input Voltage"] ===
+        expectedEntry.inputVoltage &&
+      matchedProduct.siemensUrl === expectedEntry.siemensUrl,
+    `Batch 03 canonical Product binding must remain exact: ${expectedEntry.productId}`
+  );
+  return matchedProduct;
+});
+const batch03ProductionResolver = createProductTechnicalTokenOverrideResolver(
+  batch03TechnicalTokenOverrides,
+  products
+);
 const combinedProductionResolver = createProductTechnicalTokenOverrideResolver(
   reviewedTechnicalTokenOverrides,
   products
@@ -869,6 +979,16 @@ assert(
     JSON.stringify(batch02ProductionResolver.entries) ===
       JSON.stringify(expectedBatch02TechnicalTokenOverrides),
   `Batch 02 production technical-token resolver must validate: ${batch02ProductionResolver.issues
+    .map((issue) => issue.code)
+    .join(", ")}`
+);
+assert(
+  batch03ProductionResolver.valid &&
+    batch03ProductionResolver.entryCount === 0 &&
+    batch03ProductionResolver.tokenCount === 0 &&
+    batch03ProductionResolver.issues.length === 0 &&
+    JSON.stringify(batch03ProductionResolver.entries) === "[]",
+  `Batch 03 production technical-token resolver must remain empty and valid: ${batch03ProductionResolver.issues
     .map((issue) => issue.code)
     .join(", ")}`
 );
@@ -1078,6 +1198,30 @@ batch02Products.forEach((fixtureProduct) => {
           products
         ).valid,
       `Batch 02 canonical-derived token must remain valid without an override: ${fixtureProduct.id} / ${token}`
+    );
+  });
+});
+
+batch03Products.forEach((fixtureProduct) => {
+  const expectedProduct = expectedBatch03CanonicalProducts.find(
+    (candidate) => candidate.productId === fixtureProduct.id
+  );
+  assert(
+    expectedProduct !== undefined,
+    `Batch 03 canonical expectation must exist: ${fixtureProduct.id}`
+  );
+  const canonicalDerivedTokens = [
+    expectedProduct.title,
+    expectedProduct.digitalInputs,
+    expectedProduct.inputVoltage,
+  ] as const;
+  canonicalDerivedTokens.forEach((token) => {
+    assert(
+      batch03ProductionResolver.getTokensForProduct(fixtureProduct.id)
+        .length === 0 &&
+        deriveAllowedTechnicalTokens(fixtureProduct).has(token) &&
+        validateFixture(overrideFixture(fixtureProduct, token), products).valid,
+      `Batch 03 canonical-derived token must remain valid without an override: ${fixtureProduct.id} / ${token}`
     );
   });
 });
@@ -3763,6 +3907,101 @@ const expectedBatch02Drafts = [
     ],
   },
 ] as const;
+const expectedBatch03Drafts = [
+  {
+    productId: "siemens-s7-300-sm321-di-16-24vdc-1bh02-0aa0",
+    rendered:
+      "مدل SIMATIC S7-300 SM 321 16 DI 24 V DC، یک ماژول ورودی دیجیتال با 16 ورودی و ولتاژ ورودی 24 V DC است.",
+    technicalTokens: [
+      "SIMATIC S7-300 SM 321 16 DI 24 V DC",
+      "16",
+      "24 V DC",
+    ],
+  },
+  {
+    productId: "siemens-s7-300-sm321-di-16-24vdc-1bh10-0aa0",
+    rendered:
+      "مدل SIMATIC S7-300 SM 321 16 DI 24 V DC HF، یک ماژول ورودی دیجیتال با 16 ورودی و ولتاژ ورودی 24 V DC است.",
+    technicalTokens: [
+      "SIMATIC S7-300 SM 321 16 DI 24 V DC HF",
+      "16",
+      "24 V DC",
+    ],
+  },
+  {
+    productId: "siemens-s7-300-sm321-di-32-24vdc-1bl00-0aa0",
+    rendered:
+      "مدل SIMATIC S7-300 SM 321 32 DI 24 V DC، یک ماژول ورودی دیجیتال با 32 ورودی و ولتاژ ورودی 24 V DC است.",
+    technicalTokens: [
+      "SIMATIC S7-300 SM 321 32 DI 24 V DC",
+      "32",
+      "24 V DC",
+    ],
+  },
+  {
+    productId: "siemens-s7-300-sm321-di-64-24vdc-1bp00-0aa0",
+    rendered:
+      "مدل SIMATIC S7-300 SM 321 64 DI 24 V DC، یک ماژول ورودی دیجیتال با 64 ورودی و ولتاژ ورودی 24 V DC است.",
+    technicalTokens: [
+      "SIMATIC S7-300 SM 321 64 DI 24 V DC",
+      "64",
+      "24 V DC",
+    ],
+  },
+  {
+    productId: "siemens-s7-300-sm321-di-16-48-125vdc-1ch20-0aa0",
+    rendered:
+      "مدل SIMATIC S7-300 SM 321 16 DI 48-125 V DC، یک ماژول ورودی دیجیتال با 16 ورودی و ولتاژ ورودی 48-125 V DC است.",
+    technicalTokens: [
+      "SIMATIC S7-300 SM 321 16 DI 48-125 V DC",
+      "16",
+      "48-125 V DC",
+    ],
+  },
+] as const;
+const BATCH_03_LINGUISTIC_REVIEWED_AT = "2026-09-24T18:38:52Z";
+const BATCH_03_TECHNICAL_REVIEWED_AT = "2026-09-24T18:38:53Z";
+const BATCH_03_LINGUISTIC_NOTE =
+  "Reviewed Persian grammar, punctuation, spacing, NFC, Persian ی/ک, and typed LTR segments in RTL copy; approved without content changes.";
+const BATCH_03_TECHNICAL_NOTE =
+  "Verified title against the canonical Product and input count and voltage against indexed exact-product Siemens datasheet content. Direct PDF returned HTTP 403; delay, diagnostics, and interrupts were not reviewed.";
+const expectedBatch03ReviewMetadata = [
+  {
+    productId: "siemens-s7-300-sm321-di-16-24vdc-1bh02-0aa0",
+    reviewedContentHash:
+      "sha256:1057b0253160356d5add3c8ce7639116fae7c8af48ccdc2630b7d648da29d410",
+    evidenceRef:
+      "https://support.industry.siemens.com/teddatasheet/?caller=SIOS&format=pdf&language=en&mlfbs=6ES7321-1BH02-0AA0",
+  },
+  {
+    productId: "siemens-s7-300-sm321-di-16-24vdc-1bh10-0aa0",
+    reviewedContentHash:
+      "sha256:5d64c61a0fb7f9c62e3ee9eda046b1a4337fe751694fe4096378c0b5f714dd07",
+    evidenceRef:
+      "https://support.industry.siemens.com/teddatasheet/?caller=SIOS&format=pdf&language=en&mlfbs=6ES7321-1BH10-0AA0",
+  },
+  {
+    productId: "siemens-s7-300-sm321-di-32-24vdc-1bl00-0aa0",
+    reviewedContentHash:
+      "sha256:5554a0e19f15bccce5c689fde62b5669189267143a09d41ef3fbc699d4c9430b",
+    evidenceRef:
+      "https://support.industry.siemens.com/teddatasheet/?caller=SIOS&format=pdf&language=en&mlfbs=6ES7321-1BL00-0AA0",
+  },
+  {
+    productId: "siemens-s7-300-sm321-di-64-24vdc-1bp00-0aa0",
+    reviewedContentHash:
+      "sha256:f276c29b5ef82e5567ed10c70d07080b54fdd7ae2a0bb48783cb3215638e765b",
+    evidenceRef:
+      "https://support.industry.siemens.com/teddatasheet/?caller=SIOS&format=pdf&language=en&mlfbs=6ES7321-1BP00-0AA0",
+  },
+  {
+    productId: "siemens-s7-300-sm321-di-16-48-125vdc-1ch20-0aa0",
+    reviewedContentHash:
+      "sha256:fd3901cc3a5c3f3ba356b2beaf2d46935fafa4b525b062efca63ff3db62fa754",
+    evidenceRef:
+      "https://support.industry.siemens.com/teddatasheet/?caller=SIOS&format=pdf&language=en&mlfbs=6ES7321-1CH20-0AA0",
+  },
+] as const;
 const BATCH_02_LINGUISTIC_REVIEWED_AT = "2026-09-23T18:33:39Z";
 const BATCH_02_TECHNICAL_REVIEWED_AT = "2026-09-23T18:33:41Z";
 const BATCH_02_LINGUISTIC_NOTE =
@@ -3826,17 +4065,26 @@ const expectedBatch01DraftProductIds = expectedBatch01DraftProducts.map(
 const expectedBatch02DraftProductIds = expectedBatch02Drafts.map(
   (entry) => entry.productId
 );
+const expectedBatch03DraftProductIds = expectedBatch03Drafts.map(
+  (entry) => entry.productId
+);
 const expectedBatch01DraftProductIdSet = new Set<ProductId>(
   expectedBatch01DraftProductIds
 );
 const expectedBatch02DraftProductIdSet = new Set<ProductId>(
   expectedBatch02DraftProductIds
 );
+const expectedBatch03DraftProductIdSet = new Set<ProductId>(
+  expectedBatch03DraftProductIds
+);
 const registeredBatch01Drafts = persianProductCopyDraftRegistry.filter(
   (entry) => expectedBatch01DraftProductIdSet.has(entry.productId)
 );
 const registeredBatch02Drafts = persianProductCopyDraftRegistry.filter(
   (entry) => expectedBatch02DraftProductIdSet.has(entry.productId)
+);
+const registeredBatch03Drafts = persianProductCopyDraftRegistry.filter(
+  (entry) => expectedBatch03DraftProductIdSet.has(entry.productId)
 );
 const registeredBatch01DraftBindings = registeredBatch01Drafts.map(
   (entry) => {
@@ -3871,6 +4119,22 @@ const registeredBatch02DraftBindings = registeredBatch02Drafts.map((entry) => {
     canonicalDescription: product.description,
     workMemory: product.specifications?.["Work Memory"],
     interfaces: product.specifications?.Interfaces,
+    siemensUrl: product.siemensUrl,
+  };
+});
+const registeredBatch03DraftBindings = registeredBatch03Drafts.map((entry) => {
+  const product = products.find((candidate) => candidate.id === entry.productId);
+  assert(
+    product !== undefined,
+    `Batch 03 draft Product must remain canonical: ${entry.productId}`
+  );
+  return {
+    productId: product.id,
+    title: product.title,
+    partNumber: product.partNumber,
+    canonicalDescription: product.description,
+    digitalInputs: product.specifications?.["Digital Inputs"],
+    inputVoltage: product.specifications?.["Input Voltage"],
     siemensUrl: product.siemensUrl,
   };
 });
@@ -4023,6 +4287,66 @@ const registeredBatch02ApprovalRecords = registeredBatch02Drafts.map(
     };
   }
 );
+const registeredBatch03ApprovalRecords = registeredBatch03Drafts.map(
+  (entry) => {
+    const expected = expectedBatch03ReviewMetadata.find(
+      (candidate) => candidate.productId === entry.productId
+    );
+    assert(
+      expected !== undefined,
+      `Batch 03 approval metadata must remain scoped to ${entry.productId}.`
+    );
+
+    const freshContentHash = createProductCopyContentHash(entry);
+    const expectedLinguisticReview = {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: BATCH_03_LINGUISTIC_REVIEWED_AT,
+      reviewedContentHash: expected.reviewedContentHash,
+      evidenceRef: expected.evidenceRef,
+      note: BATCH_03_LINGUISTIC_NOTE,
+    } as const;
+    const expectedTechnicalReview = {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: BATCH_03_TECHNICAL_REVIEWED_AT,
+      reviewedContentHash: expected.reviewedContentHash,
+      evidenceRef: expected.evidenceRef,
+      note: BATCH_03_TECHNICAL_NOTE,
+    } as const;
+
+    assert(
+      JSON.stringify(entry.linguisticReview) ===
+        JSON.stringify(expectedLinguisticReview) &&
+        JSON.stringify(entry.technicalReview) ===
+          JSON.stringify(expectedTechnicalReview),
+      `Batch 03 role approvals and evidence must be exact for ${entry.productId}.`
+    );
+    assert(
+      !Object.is(entry.linguisticReview, entry.technicalReview) &&
+        entry.linguisticReview.decision === "approved" &&
+        entry.technicalReview.decision === "approved" &&
+        entry.linguisticReview.reviewedAt < entry.technicalReview.reviewedAt,
+      `Batch 03 role approvals must be distinct and ordered for ${entry.productId}.`
+    );
+    assert(
+      freshContentHash === expected.reviewedContentHash &&
+        entry.linguisticReview.reviewedContentHash === freshContentHash &&
+        entry.technicalReview.reviewedContentHash === freshContentHash,
+      `Batch 03 approvals must bind the fresh production hash for ${entry.productId}.`
+    );
+
+    return {
+      productId: entry.productId,
+      freshContentHash,
+      evidenceRef: expected.evidenceRef,
+      roleObjectsDistinct: !Object.is(
+        entry.linguisticReview,
+        entry.technicalReview
+      ),
+    };
+  }
+);
 const registeredCurrentDualApprovals = persianProductCopyDraftRegistry.filter(
   (entry) => {
     const freshContentHash = createProductCopyContentHash(entry);
@@ -4130,6 +4454,54 @@ const registeredBatch02ApprovalMutationResults =
       kindStaleApprovals,
     };
   });
+const registeredBatch03ApprovalMutationResults =
+  registeredBatch03Drafts.map((entry) => {
+    const copyMutation = cloneMutableOverlay(entry);
+    const finalShortSegment = copyMutation.shortDescription.at(-1);
+    assert(
+      finalShortSegment !== undefined,
+      `Batch 03 copy mutation requires a final segment for ${entry.productId}.`
+    );
+    finalShortSegment.value = `${finalShortSegment.value.slice(0, -1)}!`;
+    const copyMutationResult = validatePersianProductCopyDrafts(
+      [copyMutation],
+      products
+    );
+
+    const kindMutation = cloneMutableOverlay(entry);
+    const firstShortSegment = kindMutation.shortDescription[0];
+    assert(
+      firstShortSegment !== undefined,
+      `Batch 03 kind mutation requires a first segment for ${entry.productId}.`
+    );
+    firstShortSegment.kind =
+      firstShortSegment.kind === "text" ? "technical" : "text";
+    const kindMutationResult = validatePersianProductCopyDrafts(
+      [kindMutation],
+      products
+    );
+
+    const copyStaleApprovals = copyMutationResult.issues.filter(
+      (issue) =>
+        issue.code === "stale-approval-hash" &&
+        issue.productId === entry.productId
+    ).length;
+    const kindStaleApprovals = kindMutationResult.issues.filter(
+      (issue) =>
+        issue.code === "stale-approval-hash" &&
+        issue.productId === entry.productId
+    ).length;
+    assert(
+      copyStaleApprovals === 2 && kindStaleApprovals === 2,
+      `Batch 03 copy and segment-kind mutations must stale both approvals for ${entry.productId}.`
+    );
+
+    return {
+      productId: entry.productId,
+      copyStaleApprovals,
+      kindStaleApprovals,
+    };
+  });
 const registeredCpu1217Draft = persianProductCopyDraftRegistry.find(
   (entry) => entry.productId === "siemens-s7-1200-cpu-217-1ag40"
 );
@@ -4185,6 +4557,79 @@ const registeredBatch02DraftRecords = expectedBatch02Drafts.map((expected) => {
     freshContentHash,
   };
 });
+const registeredBatch03DraftRecords = expectedBatch03Drafts.map((expected) => {
+  const entry = registeredBatch03Drafts.find(
+    (candidate) => candidate.productId === expected.productId
+  );
+  assert(entry !== undefined, `Batch 03 draft must exist: ${expected.productId}`);
+  const renderedShortDescription = serializeProductCopyParagraphForSearch(
+    entry.shortDescription
+  );
+  const technicalTokens: string[] = entry.shortDescription
+    .filter((segment) => segment.kind === "technical")
+    .map((segment) => segment.value);
+  assert(
+    renderedShortDescription === expected.rendered &&
+      entry.description.length === 1 &&
+      JSON.stringify(entry.description[0]) ===
+        JSON.stringify(entry.shortDescription) &&
+      JSON.stringify(technicalTokens) ===
+        JSON.stringify(expected.technicalTokens),
+    `Batch 03 short and long drafts and technical segmentation must be exact: ${expected.productId}`
+  );
+  assert(
+    entry.provenance === "ai-assisted" &&
+      entry.linguisticReview.decision === "approved" &&
+      entry.technicalReview.decision === "approved" &&
+      !Object.is(entry.linguisticReview, entry.technicalReview),
+    `Batch 03 provenance and distinct approved review roles must be exact: ${expected.productId}`
+  );
+  const forbiddenClaims = [
+    "Backplane bus",
+    "connector",
+    "diagnostic",
+    "interrupt",
+    "input delay",
+    "sinking",
+    "sourcing",
+    "کانکتور",
+    "بک‌پلین",
+    "تشخیص",
+    "وقفه",
+    "تأخیر",
+    "سینک",
+    "سورس",
+    "lifecycle",
+    "phase-out",
+    "spare-part",
+    "discontinued",
+    "چرخه عمر",
+    "توقف تولید",
+    "قطعه یدکی",
+  ] as const;
+  assert(
+    technicalTokens.every((token) => token !== "HF") &&
+      forbiddenClaims.every(
+        (claim) =>
+          !renderedShortDescription.toLocaleLowerCase("en").includes(
+            claim.toLocaleLowerCase("en")
+          )
+      ),
+    `Batch 03 drafts must omit unauthorized standalone or unsupported claims: ${expected.productId}`
+  );
+  if (entry.productId === "siemens-s7-300-sm321-di-16-24vdc-1bh10-0aa0") {
+    assert(
+      !renderedShortDescription.includes("0.05 ms"),
+      "Batch 03 SM321 1BH10 must not mention the disputed input delay."
+    );
+  }
+  return {
+    productId: entry.productId,
+    renderedShortDescription,
+    technicalTokens,
+    freshContentHash: createProductCopyContentHash(entry),
+  };
+});
 const batch02PublicResolutionResults = batch02Products.map((fixtureProduct) => {
   const english = resolveProductCopy(fixtureProduct, "en");
   const disabledPersian = resolveProductCopy(fixtureProduct, "fa");
@@ -4211,10 +4656,36 @@ const batch02PublicResolutionResults = batch02Products.map((fixtureProduct) => {
     direction: disabledPersianPublic.direction,
   };
 });
+const batch03PublicResolutionResults = batch03Products.map((fixtureProduct) => {
+  const english = resolveProductCopy(fixtureProduct, "en");
+  const disabledPersian = resolveProductCopy(fixtureProduct, "fa");
+  const englishPublic = createPublicProductCardCopyDTO(english);
+  const disabledPersianPublic = createPublicProductCardCopyDTO(disabledPersian);
+  assert(
+    english.source === "canonical-en" &&
+      disabledPersian.source === "canonical-en" &&
+      serializeProductCopyParagraph(english.shortDescription) ===
+        fixtureProduct.shortDescription &&
+      serializeProductCopyParagraph(disabledPersian.shortDescription) ===
+        fixtureProduct.shortDescription &&
+      englishPublic.language === "en" &&
+      englishPublic.direction === "ltr" &&
+      disabledPersianPublic.language === "en" &&
+      disabledPersianPublic.direction === "ltr",
+    `Batch 03 public FA/EN copy must remain canonical English/LTR: ${fixtureProduct.id}`
+  );
+  return {
+    productId: fixtureProduct.id,
+    englishSource: english.source,
+    disabledPersianSource: disabledPersian.source,
+    language: disabledPersianPublic.language,
+    direction: disabledPersianPublic.direction,
+  };
+});
 
 assert(
   registeredDraftValidation.valid &&
-    persianProductCopyDraftRegistry.length === 10 &&
+    persianProductCopyDraftRegistry.length === 15 &&
     registeredBatch01Drafts.length === 5 &&
     JSON.stringify(registeredBatch01DraftBindings) ===
       JSON.stringify(expectedBatch01DraftProducts),
@@ -4230,6 +4701,21 @@ assert(
       JSON.stringify(expectedBatch02CanonicalProducts) &&
     registeredBatch02DraftRecords.length === 5,
   "Batch 02 draft IDs, canonical Product bindings, copy, and segmentation must be exact."
+);
+assert(
+  registeredBatch03Drafts.length === 5 &&
+    JSON.stringify(expectedBatch03DraftProductIds) ===
+      JSON.stringify(expectedBatch03ProductIds) &&
+    expectedBatch03ReviewMetadata.length === 5 &&
+    JSON.stringify(
+      expectedBatch03ReviewMetadata.map((entry) => entry.productId)
+    ) === JSON.stringify(expectedBatch03ProductIds) &&
+    JSON.stringify(registeredBatch03Drafts.map((entry) => entry.productId)) ===
+      JSON.stringify(expectedBatch03ProductIds) &&
+    JSON.stringify(registeredBatch03DraftBindings) ===
+      JSON.stringify(expectedBatch03CanonicalProducts) &&
+    registeredBatch03DraftRecords.length === 5,
+  "Batch 03 draft IDs, canonical Product bindings, copy, and segmentation must be exact."
 );
 assert(
   JSON.stringify(registeredCpu1217Draft.shortDescription) ===
@@ -4267,9 +4753,14 @@ assert(
         entry.linguisticReview.decision === "approved" &&
         entry.technicalReview.decision === "approved"
     ) &&
-    registeredLinguisticApprovals === 10 &&
-    registeredTechnicalApprovals === 10 &&
-    registeredCurrentDualApprovals === 10 &&
+    registeredBatch03Drafts.every(
+      (entry) =>
+        entry.linguisticReview.decision === "approved" &&
+        entry.technicalReview.decision === "approved"
+    ) &&
+    registeredLinguisticApprovals === 15 &&
+    registeredTechnicalApprovals === 15 &&
+    registeredCurrentDualApprovals === 15 &&
     registeredBatch01ApprovalRecords.length === 5 &&
     registeredBatch01ApprovalRecords.every(
       (record) => record.roleObjectsDistinct
@@ -4277,17 +4768,21 @@ assert(
     registeredBatch02ApprovalRecords.length === 5 &&
     registeredBatch02ApprovalRecords.every(
       (record) => record.roleObjectsDistinct
+    ) &&
+    registeredBatch03ApprovalRecords.length === 5 &&
+    registeredBatch03ApprovalRecords.every(
+      (record) => record.roleObjectsDistinct
     ),
-  "Batches 01 and 02 must retain ten exact current dual approvals."
+  "Batches 01 and 02 must retain ten exact current dual approvals and Batch 03 must add five."
 );
 assert(
   !registeredDraftActivation.valid &&
-    registeredDraftActivation.overlayCount === 10 &&
+    registeredDraftActivation.overlayCount === 15 &&
     registeredDraftActivation.canonicalCount === 382 &&
-    registeredDraftActivation.approvedCount === 10 &&
-    registeredDraftActivation.missingIds.length === 372 &&
+    registeredDraftActivation.approvedCount === 15 &&
+    registeredDraftActivation.missingIds.length === 367 &&
     !("capability" in registeredDraftActivation),
-  "Combined activation must fail closed at exactly 10/382 drafts, ten current dual approvals, and 372 missing Products."
+  "Combined activation must fail closed at exactly 15/382 drafts and dual approvals with 367 missing Products."
 );
 assert(
   PERSIAN_PRODUCT_COPY_PUBLICATION_STATE === "disabled",
@@ -4361,6 +4856,37 @@ console.log(
               result.direction === "ltr"
           ),
         },
+        batch03: {
+          entries: registeredBatch03Drafts.length,
+          exactBindings:
+            JSON.stringify(registeredBatch03DraftBindings) ===
+            JSON.stringify(expectedBatch03CanonicalProducts),
+          linguisticApprovals: registeredBatch03Drafts.filter(
+            (entry) => entry.linguisticReview.decision === "approved"
+          ).length,
+          technicalApprovals: registeredBatch03Drafts.filter(
+            (entry) => entry.technicalReview.decision === "approved"
+          ).length,
+          currentDualApprovals: registeredBatch03Drafts.filter(
+            (entry) =>
+              entry.linguisticReview.decision === "approved" &&
+              entry.technicalReview.decision === "approved"
+          ).length,
+          approvalRecords: registeredBatch03ApprovalRecords.length,
+          mutationStaleness: registeredBatch03ApprovalMutationResults,
+          exactDrafts: registeredBatch03DraftRecords.length,
+          contentHashes: registeredBatch03DraftRecords.map((record) => ({
+            productId: record.productId,
+            hash: record.freshContentHash,
+          })),
+          publicCanonicalEnglishLtr: batch03PublicResolutionResults.every(
+            (result) =>
+              result.englishSource === "canonical-en" &&
+              result.disabledPersianSource === "canonical-en" &&
+              result.language === "en" &&
+              result.direction === "ltr"
+          ),
+        },
         linguisticApprovals: registeredLinguisticApprovals,
         technicalApprovals: registeredTechnicalApprovals,
         currentDualApprovals: registeredCurrentDualApprovals,
@@ -4391,6 +4917,15 @@ console.log(
           isolationFixtures: batch02IsolationResults.length,
           unauthorizedStandaloneFixtures:
             unauthorizedBatch02StandaloneResults.length,
+        },
+        batch03: {
+          entries: batch03ProductionResolver.entryCount,
+          tokens: batch03ProductionResolver.tokenCount,
+          uniqueTokens: new Set(
+            batch03ProductionResolver.entries.flatMap((entry) => entry.tokens)
+          ).size,
+          canonicalBindings: batch03Products.length,
+          issues: batch03ProductionResolver.issues.length,
         },
         globalTokens: reviewedGlobalTechnicalTokens.length,
         detachedDeepFrozen: reviewedTechnicalTokenOverrides.every(

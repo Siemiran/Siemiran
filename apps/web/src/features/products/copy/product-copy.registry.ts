@@ -246,6 +246,71 @@ const cpu319f3PnDpCopy = [
   { kind: "text", value: " مبتنی بر اترنت است." },
 ] as const satisfies ProductCopyParagraph;
 
+const sm321Di16_24Vdc1Bh02Copy = [
+  { kind: "text", value: "مدل " },
+  {
+    kind: "technical",
+    value: "SIMATIC S7-300 SM 321 16 DI 24 V DC",
+  },
+  { kind: "text", value: "، یک ماژول ورودی دیجیتال با " },
+  { kind: "technical", value: "16" },
+  { kind: "text", value: " ورودی و ولتاژ ورودی " },
+  { kind: "technical", value: "24 V DC" },
+  { kind: "text", value: " است." },
+] as const satisfies ProductCopyParagraph;
+
+const sm321Di16_24Vdc1Bh10Copy = [
+  { kind: "text", value: "مدل " },
+  {
+    kind: "technical",
+    value: "SIMATIC S7-300 SM 321 16 DI 24 V DC HF",
+  },
+  { kind: "text", value: "، یک ماژول ورودی دیجیتال با " },
+  { kind: "technical", value: "16" },
+  { kind: "text", value: " ورودی و ولتاژ ورودی " },
+  { kind: "technical", value: "24 V DC" },
+  { kind: "text", value: " است." },
+] as const satisfies ProductCopyParagraph;
+
+const sm321Di32_24Vdc1Bl00Copy = [
+  { kind: "text", value: "مدل " },
+  {
+    kind: "technical",
+    value: "SIMATIC S7-300 SM 321 32 DI 24 V DC",
+  },
+  { kind: "text", value: "، یک ماژول ورودی دیجیتال با " },
+  { kind: "technical", value: "32" },
+  { kind: "text", value: " ورودی و ولتاژ ورودی " },
+  { kind: "technical", value: "24 V DC" },
+  { kind: "text", value: " است." },
+] as const satisfies ProductCopyParagraph;
+
+const sm321Di64_24Vdc1Bp00Copy = [
+  { kind: "text", value: "مدل " },
+  {
+    kind: "technical",
+    value: "SIMATIC S7-300 SM 321 64 DI 24 V DC",
+  },
+  { kind: "text", value: "، یک ماژول ورودی دیجیتال با " },
+  { kind: "technical", value: "64" },
+  { kind: "text", value: " ورودی و ولتاژ ورودی " },
+  { kind: "technical", value: "24 V DC" },
+  { kind: "text", value: " است." },
+] as const satisfies ProductCopyParagraph;
+
+const sm321Di16_48_125Vdc1Ch20Copy = [
+  { kind: "text", value: "مدل " },
+  {
+    kind: "technical",
+    value: "SIMATIC S7-300 SM 321 16 DI 48-125 V DC",
+  },
+  { kind: "text", value: "، یک ماژول ورودی دیجیتال با " },
+  { kind: "technical", value: "16" },
+  { kind: "text", value: " ورودی و ولتاژ ورودی " },
+  { kind: "technical", value: "48-125 V DC" },
+  { kind: "text", value: " است." },
+] as const satisfies ProductCopyParagraph;
+
 export const persianProductCopyDraftRegistry = [
   {
     productId: "siemens-s7-1200-cpu-211-1ae40",
@@ -505,6 +570,116 @@ export const persianProductCopyDraftRegistry = [
       evidenceRef:
         "https://mall.industry.siemens.com/mall/en/inosatavtomatica/Catalog/Product?SiepCountryCode=OE&mlfb=6ES7318-3FL01-0AB0",
       note: "Verified Product identity, MLFB, fail-safe CPU classification, work memory, interfaces, interface roles, technical tokens, and canonical Siemens source; approved without content changes.",
+    },
+  },
+  {
+    productId: "siemens-s7-300-sm321-di-16-24vdc-1bh02-0aa0",
+    shortDescription: sm321Di16_24Vdc1Bh02Copy,
+    description: [sm321Di16_24Vdc1Bh02Copy],
+    provenance: "ai-assisted",
+    linguisticReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-09-24T18:38:52Z",
+      reviewedContentHash: "sha256:1057b0253160356d5add3c8ce7639116fae7c8af48ccdc2630b7d648da29d410",
+      evidenceRef: "https://support.industry.siemens.com/teddatasheet/?caller=SIOS&format=pdf&language=en&mlfbs=6ES7321-1BH02-0AA0",
+      note: "Reviewed Persian grammar, punctuation, spacing, NFC, Persian ی/ک, and typed LTR segments in RTL copy; approved without content changes.",
+    },
+    technicalReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-09-24T18:38:53Z",
+      reviewedContentHash: "sha256:1057b0253160356d5add3c8ce7639116fae7c8af48ccdc2630b7d648da29d410",
+      evidenceRef: "https://support.industry.siemens.com/teddatasheet/?caller=SIOS&format=pdf&language=en&mlfbs=6ES7321-1BH02-0AA0",
+      note: "Verified title against the canonical Product and input count and voltage against indexed exact-product Siemens datasheet content. Direct PDF returned HTTP 403; delay, diagnostics, and interrupts were not reviewed.",
+    },
+  },
+  {
+    productId: "siemens-s7-300-sm321-di-16-24vdc-1bh10-0aa0",
+    shortDescription: sm321Di16_24Vdc1Bh10Copy,
+    description: [sm321Di16_24Vdc1Bh10Copy],
+    provenance: "ai-assisted",
+    linguisticReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-09-24T18:38:52Z",
+      reviewedContentHash: "sha256:5d64c61a0fb7f9c62e3ee9eda046b1a4337fe751694fe4096378c0b5f714dd07",
+      evidenceRef: "https://support.industry.siemens.com/teddatasheet/?caller=SIOS&format=pdf&language=en&mlfbs=6ES7321-1BH10-0AA0",
+      note: "Reviewed Persian grammar, punctuation, spacing, NFC, Persian ی/ک, and typed LTR segments in RTL copy; approved without content changes.",
+    },
+    technicalReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-09-24T18:38:53Z",
+      reviewedContentHash: "sha256:5d64c61a0fb7f9c62e3ee9eda046b1a4337fe751694fe4096378c0b5f714dd07",
+      evidenceRef: "https://support.industry.siemens.com/teddatasheet/?caller=SIOS&format=pdf&language=en&mlfbs=6ES7321-1BH10-0AA0",
+      note: "Verified title against the canonical Product and input count and voltage against indexed exact-product Siemens datasheet content. Direct PDF returned HTTP 403; delay, diagnostics, and interrupts were not reviewed.",
+    },
+  },
+  {
+    productId: "siemens-s7-300-sm321-di-32-24vdc-1bl00-0aa0",
+    shortDescription: sm321Di32_24Vdc1Bl00Copy,
+    description: [sm321Di32_24Vdc1Bl00Copy],
+    provenance: "ai-assisted",
+    linguisticReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-09-24T18:38:52Z",
+      reviewedContentHash: "sha256:5554a0e19f15bccce5c689fde62b5669189267143a09d41ef3fbc699d4c9430b",
+      evidenceRef: "https://support.industry.siemens.com/teddatasheet/?caller=SIOS&format=pdf&language=en&mlfbs=6ES7321-1BL00-0AA0",
+      note: "Reviewed Persian grammar, punctuation, spacing, NFC, Persian ی/ک, and typed LTR segments in RTL copy; approved without content changes.",
+    },
+    technicalReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-09-24T18:38:53Z",
+      reviewedContentHash: "sha256:5554a0e19f15bccce5c689fde62b5669189267143a09d41ef3fbc699d4c9430b",
+      evidenceRef: "https://support.industry.siemens.com/teddatasheet/?caller=SIOS&format=pdf&language=en&mlfbs=6ES7321-1BL00-0AA0",
+      note: "Verified title against the canonical Product and input count and voltage against indexed exact-product Siemens datasheet content. Direct PDF returned HTTP 403; delay, diagnostics, and interrupts were not reviewed.",
+    },
+  },
+  {
+    productId: "siemens-s7-300-sm321-di-64-24vdc-1bp00-0aa0",
+    shortDescription: sm321Di64_24Vdc1Bp00Copy,
+    description: [sm321Di64_24Vdc1Bp00Copy],
+    provenance: "ai-assisted",
+    linguisticReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-09-24T18:38:52Z",
+      reviewedContentHash: "sha256:f276c29b5ef82e5567ed10c70d07080b54fdd7ae2a0bb48783cb3215638e765b",
+      evidenceRef: "https://support.industry.siemens.com/teddatasheet/?caller=SIOS&format=pdf&language=en&mlfbs=6ES7321-1BP00-0AA0",
+      note: "Reviewed Persian grammar, punctuation, spacing, NFC, Persian ی/ک, and typed LTR segments in RTL copy; approved without content changes.",
+    },
+    technicalReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-09-24T18:38:53Z",
+      reviewedContentHash: "sha256:f276c29b5ef82e5567ed10c70d07080b54fdd7ae2a0bb48783cb3215638e765b",
+      evidenceRef: "https://support.industry.siemens.com/teddatasheet/?caller=SIOS&format=pdf&language=en&mlfbs=6ES7321-1BP00-0AA0",
+      note: "Verified title against the canonical Product and input count and voltage against indexed exact-product Siemens datasheet content. Direct PDF returned HTTP 403; delay, diagnostics, and interrupts were not reviewed.",
+    },
+  },
+  {
+    productId: "siemens-s7-300-sm321-di-16-48-125vdc-1ch20-0aa0",
+    shortDescription: sm321Di16_48_125Vdc1Ch20Copy,
+    description: [sm321Di16_48_125Vdc1Ch20Copy],
+    provenance: "ai-assisted",
+    linguisticReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-09-24T18:38:52Z",
+      reviewedContentHash: "sha256:fd3901cc3a5c3f3ba356b2beaf2d46935fafa4b525b062efca63ff3db62fa754",
+      evidenceRef: "https://support.industry.siemens.com/teddatasheet/?caller=SIOS&format=pdf&language=en&mlfbs=6ES7321-1CH20-0AA0",
+      note: "Reviewed Persian grammar, punctuation, spacing, NFC, Persian ی/ک, and typed LTR segments in RTL copy; approved without content changes.",
+    },
+    technicalReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-09-24T18:38:53Z",
+      reviewedContentHash: "sha256:fd3901cc3a5c3f3ba356b2beaf2d46935fafa4b525b062efca63ff3db62fa754",
+      evidenceRef: "https://support.industry.siemens.com/teddatasheet/?caller=SIOS&format=pdf&language=en&mlfbs=6ES7321-1CH20-0AA0",
+      note: "Verified title against the canonical Product and input count and voltage against indexed exact-product Siemens datasheet content. Direct PDF returned HTTP 403; delay, diagnostics, and interrupts were not reviewed.",
     },
   },
 ] as const satisfies readonly PersianProductCopyOverlay[];
