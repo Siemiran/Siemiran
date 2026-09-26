@@ -226,7 +226,7 @@ export const s7300SM: SiemensS7300SignalModule[] = [
     description:
       "SIMATIC S7-300 digital input SM 321, isolated, 16 digital inputs, 24-48 V AC/DC, with single rooting, 1 x 40-pole.",
 
-    lifecycle: "phase-out",
+    lifecycle: "spare-part",
 
     specifications: {
       digitalInputs: 16,
