@@ -2,6 +2,25 @@
 
 Repository source of truth: current `main` branch
 
+## 2026-09-25 - S7-300 SM321 Lifecycle Provenance Review
+
+For `6ES7321-1CH00-0AA0`, source `lifecycle` is corrected from `phase-out`
+to `spare-part`. Reviewed indexed content for the [exact-product Siemens
+datasheet](https://support.industry.siemens.com/teddatasheet/?caller=SIOS&format=pdf&language=en&mlfbs=6ES7321-1CH00-0AA0)
+identifies this MLFB as a spare part. The document is dated 2026-02-09;
+that is a document date, not a lifecycle effective date. Direct PDF retrieval
+returned HTTP 403 during the 2026-09-25 review. The retained [Siemens Mall
+product link](https://mall.industry.siemens.com/mall/en/ww/Catalog/Product/6ES7321-1CH00-0AA0)
+provides historical PM400 phase-out evidence, not the newer lifecycle evidence.
+No current PM code or individual transition date was established.
+
+`6ES7321-1FF10-0AA0` remains unchanged provisionally. Its [historical
+exact-product Siemens Mall evidence](https://mall.industry.siemens.com/mall/en/se/Catalog/Product/6ES7321-1FF10-0AA0)
+supports phase-out, but its current exact-product lifecycle is unverified.
+The S7-300 family's planned cancellation does not establish this product's
+individual transition. Batch 04 drafting remains blocked pending sufficient
+evidence or a separately authorized uncertainty-handling decision.
+
 ## 2026-09-08 - Task BD: S7-300 Formal Closure (Current State)
 
 Task BD independently verified `main` at
