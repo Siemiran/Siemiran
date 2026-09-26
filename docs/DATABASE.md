@@ -8,8 +8,11 @@ For `6ES7321-1CH00-0AA0`, source `lifecycle` is corrected from `phase-out`
 to `spare-part`. Reviewed indexed content for the [exact-product Siemens
 datasheet](https://support.industry.siemens.com/teddatasheet/?caller=SIOS&format=pdf&language=en&mlfbs=6ES7321-1CH00-0AA0)
 identifies this MLFB as a spare part. The document is dated 2026-02-09;
-that is a document date, not a lifecycle effective date. Direct PDF retrieval
-returned HTTP 403 during the 2026-09-25 review. The retained [Siemens Mall
+that is a document date, not a lifecycle effective date. The earlier report
+records 2026-09-25 as its evidence-review date and reports HTTP 403 on direct
+PDF retrieval that day; no separate retrieval audit record was located for
+that response. The subsequent independent review on 2026-09-26 reproduced
+HTTP 403 on direct PDF retrieval. The retained [Siemens Mall
 product link](https://mall.industry.siemens.com/mall/en/ww/Catalog/Product/6ES7321-1CH00-0AA0)
 provides historical PM400 phase-out evidence, not the newer lifecycle evidence.
 No current PM code or individual transition date was established.
