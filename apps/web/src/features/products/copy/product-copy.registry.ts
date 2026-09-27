@@ -311,6 +311,56 @@ const sm321Di16_48_125Vdc1Ch20Copy = [
   { kind: "text", value: " است." },
 ] as const satisfies ProductCopyParagraph;
 
+const sm321Di16_24_48Vacdc1Ch00Copy = [
+  { kind: "text", value: "مدل " },
+  { kind: "technical", value: "SIMATIC S7-300 SM 321 16 DI 24-48 V AC/DC" },
+  { kind: "text", value: "، ماژول ورودی دیجیتال با " },
+  { kind: "technical", value: "16" },
+  { kind: "text", value: " ورودی است. ولتاژهای نامی مجزای ورودی آن " },
+  { kind: "technical", value: "24-48 V AC/DC" },
+  { kind: "text", value: " هستند." },
+] as const satisfies ProductCopyParagraph;
+
+const sm321Di32_120Vac1El00Copy = [
+  { kind: "text", value: "مدل " },
+  { kind: "technical", value: "SIMATIC S7-300 SM 321 32 DI 120 V AC" },
+  { kind: "text", value: "، ماژول ورودی دیجیتال با " },
+  { kind: "technical", value: "32" },
+  { kind: "text", value: " ورودی است. ولتاژ نامی ورودی آن " },
+  { kind: "technical", value: "120 V AC" },
+  { kind: "text", value: " است." },
+] as const satisfies ProductCopyParagraph;
+
+const sm321Di8_120_230Vac1Ff01Copy = [
+  { kind: "text", value: "مدل " },
+  { kind: "technical", value: "SIMATIC S7-300 SM 321 8 DI 120/230 V AC" },
+  { kind: "text", value: "، ماژول ورودی دیجیتال با " },
+  { kind: "technical", value: "8" },
+  { kind: "text", value: " ورودی است. ولتاژهای نامی مجزای ورودی آن " },
+  { kind: "technical", value: "120/230 V AC" },
+  { kind: "text", value: " هستند." },
+] as const satisfies ProductCopyParagraph;
+
+const sm321Di8_120_230Vac1Ff10Copy = [
+  { kind: "text", value: "مدل " },
+  { kind: "technical", value: "SIMATIC S7-300 SM 321 8 DI 120/230 V AC" },
+  { kind: "text", value: "، ماژول ورودی دیجیتال با " },
+  { kind: "technical", value: "8" },
+  { kind: "text", value: " ورودی است. ولتاژهای نامی مجزای ورودی آن " },
+  { kind: "technical", value: "120/230 V AC" },
+  { kind: "text", value: " هستند." },
+] as const satisfies ProductCopyParagraph;
+
+const sm321Di16_120_230Vac1Fh00Copy = [
+  { kind: "text", value: "مدل " },
+  { kind: "technical", value: "SIMATIC S7-300 SM 321 16 DI 120/230 V AC" },
+  { kind: "text", value: "، ماژول ورودی دیجیتال با " },
+  { kind: "technical", value: "16" },
+  { kind: "text", value: " ورودی است. ولتاژهای نامی مجزای ورودی آن " },
+  { kind: "technical", value: "120/230 V AC" },
+  { kind: "text", value: " هستند." },
+] as const satisfies ProductCopyParagraph;
+
 export const persianProductCopyDraftRegistry = [
   {
     productId: "siemens-s7-1200-cpu-211-1ae40",
@@ -681,5 +731,45 @@ export const persianProductCopyDraftRegistry = [
       evidenceRef: "https://support.industry.siemens.com/teddatasheet/?caller=SIOS&format=pdf&language=en&mlfbs=6ES7321-1CH20-0AA0",
       note: "Verified title against the canonical Product and input count and voltage against indexed exact-product Siemens datasheet content. Direct PDF returned HTTP 403; delay, diagnostics, and interrupts were not reviewed.",
     },
+  },
+  {
+    productId: "siemens-s7-300-sm321-di-16-24-48vacdc-1ch00-0aa0",
+    shortDescription: sm321Di16_24_48Vacdc1Ch00Copy,
+    description: [sm321Di16_24_48Vacdc1Ch00Copy],
+    provenance: "ai-assisted",
+    linguisticReview: { decision: "pending" },
+    technicalReview: { decision: "pending" },
+  },
+  {
+    productId: "siemens-s7-300-sm321-di-32-120vac-1el00-0aa0",
+    shortDescription: sm321Di32_120Vac1El00Copy,
+    description: [sm321Di32_120Vac1El00Copy],
+    provenance: "ai-assisted",
+    linguisticReview: { decision: "pending" },
+    technicalReview: { decision: "pending" },
+  },
+  {
+    productId: "siemens-s7-300-sm321-di-8-120-230vac-1ff01-0aa0",
+    shortDescription: sm321Di8_120_230Vac1Ff01Copy,
+    description: [sm321Di8_120_230Vac1Ff01Copy],
+    provenance: "ai-assisted",
+    linguisticReview: { decision: "pending" },
+    technicalReview: { decision: "pending" },
+  },
+  {
+    productId: "siemens-s7-300-sm321-di-8-120-230vac-1ff10-0aa0",
+    shortDescription: sm321Di8_120_230Vac1Ff10Copy,
+    description: [sm321Di8_120_230Vac1Ff10Copy],
+    provenance: "ai-assisted",
+    linguisticReview: { decision: "pending" },
+    technicalReview: { decision: "pending" },
+  },
+  {
+    productId: "siemens-s7-300-sm321-di-16-120-230vac-1fh00-0aa0",
+    shortDescription: sm321Di16_120_230Vac1Fh00Copy,
+    description: [sm321Di16_120_230Vac1Fh00Copy],
+    provenance: "ai-assisted",
+    linguisticReview: { decision: "pending" },
+    technicalReview: { decision: "pending" },
   },
 ] as const satisfies readonly PersianProductCopyOverlay[];
