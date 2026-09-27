@@ -4307,6 +4307,66 @@ const expectedBatch03ReviewMetadata = [
       "https://support.industry.siemens.com/teddatasheet/?caller=SIOS&format=pdf&language=en&mlfbs=6ES7321-1CH20-0AA0",
   },
 ] as const;
+const BATCH_04_LINGUISTIC_REVIEWED_AT = "2026-09-27T19:51:43Z";
+const BATCH_04_TECHNICAL_REVIEWED_AT = "2026-09-27T19:51:44Z";
+const BATCH_04_IDENTITY_LINGUISTIC_NOTE =
+  "Reviewed concise Persian identity and input-count wording, grammar, punctuation, spacing, NFC, Persian ی/ک, and typed LTR segments in RTL copy.";
+const BATCH_04_SIMPLE_LINGUISTIC_NOTE =
+  "Reviewed Persian wording, grammar, punctuation, spacing, NFC, Persian ی/ک, and typed LTR segments in RTL copy.";
+const BATCH_04_RATED_VALUE_LINGUISTIC_NOTE =
+  "Reviewed Persian rated-value wording, grammar, punctuation, spacing, NFC, Persian ی/ک, and typed LTR segments in RTL copy.";
+const expectedBatch04ReviewMetadata = [
+  {
+    productId: "siemens-s7-300-sm321-di-16-24-48vacdc-1ch00-0aa0",
+    reviewedContentHash:
+      "sha256:d7877cc55cc166b4cff3e96961b8c05e88a06cc38f1567ffafe558484175d632",
+    evidenceRef:
+      "https://support.industry.siemens.com/teddatasheet/?caller=SIOS&format=pdf&language=en&mlfbs=6ES7321-1CH00-0AA0",
+    linguisticNote: BATCH_04_IDENTITY_LINGUISTIC_NOTE,
+    technicalNote:
+      "Reviewed exact 1CH00 identity, canonical title, and 16 inputs using Siemens-indexed exact-product datasheet text and available Siemens product HTML. Direct PDF access returned HTTP 403 during review. The removed separate voltage sentence and lifecycle were not approved.",
+  },
+  {
+    productId: "siemens-s7-300-sm321-di-32-120vac-1el00-0aa0",
+    reviewedContentHash:
+      "sha256:ac298cff5d66e725944026417f976f0237650bc356ad50cce678f57d0e42a4e5",
+    evidenceRef:
+      "https://support.industry.siemens.com/teddatasheet/?caller=SIOS&format=pdf&language=en&mlfbs=6ES7321-1EL00-0AA0",
+    linguisticNote: BATCH_04_SIMPLE_LINGUISTIC_NOTE,
+    technicalNote:
+      "Reviewed exact 1EL00 identity, 32 inputs, and rated 120 V AC using Siemens-indexed exact-product datasheet text and available Siemens product HTML. Direct PDF access returned HTTP 403 during review. No lifecycle or other feature claim was approved.",
+  },
+  {
+    productId: "siemens-s7-300-sm321-di-8-120-230vac-1ff01-0aa0",
+    reviewedContentHash:
+      "sha256:42084ab3fc1652eac520c5bbabd0c034f91f3398dceb97525737754190534765",
+    evidenceRef:
+      "https://support.industry.siemens.com/teddatasheet/?caller=SIOS&format=pdf&language=en&mlfbs=6ES7321-1FF01-0AA0",
+    linguisticNote: BATCH_04_RATED_VALUE_LINGUISTIC_NOTE,
+    technicalNote:
+      "Reviewed exact 1FF01 identity, 8 inputs, and rated 120/230 V AC using Siemens-indexed exact-product datasheet text and available Siemens product HTML; distinguished 1FF10 by Product ID. Direct PDF access returned HTTP 403 during review. No lifecycle or other feature claim was approved.",
+  },
+  {
+    productId: "siemens-s7-300-sm321-di-8-120-230vac-1ff10-0aa0",
+    reviewedContentHash:
+      "sha256:71defd1d6395a23a116bf19da498e4d9f0c40335b1a520e1294177208830f3f9",
+    evidenceRef:
+      "https://support.industry.siemens.com/teddatasheet/?caller=SIOS&format=pdf&language=en&mlfbs=6ES7321-1FF10-0AA0",
+    linguisticNote: BATCH_04_RATED_VALUE_LINGUISTIC_NOTE,
+    technicalNote:
+      "Reviewed exact 1FF10 identity, 8 inputs, and rated 120/230 V AC using Siemens-indexed exact-product datasheet text and available Siemens product HTML; distinguished 1FF01 by Product ID. Direct PDF access returned HTTP 403 during review. Current lifecycle remains unknown and was neither claimed nor approved.",
+  },
+  {
+    productId: "siemens-s7-300-sm321-di-16-120-230vac-1fh00-0aa0",
+    reviewedContentHash:
+      "sha256:659f93e6818797378f02e46b89a8561f2722804b28b874a42801a442b1214a74",
+    evidenceRef:
+      "https://support.industry.siemens.com/teddatasheet/?caller=SIOS&format=pdf&language=en&mlfbs=6ES7321-1FH00-0AA0",
+    linguisticNote: BATCH_04_RATED_VALUE_LINGUISTIC_NOTE,
+    technicalNote:
+      "Reviewed exact 1FH00 identity, 16 inputs, and rated 120/230 V AC using Siemens-indexed exact-product datasheet text and available Siemens product HTML. Direct PDF access returned HTTP 403 during review. No lifecycle or other feature claim was approved.",
+  },
+] as const;
 const BATCH_02_LINGUISTIC_REVIEWED_AT = "2026-09-23T18:33:39Z";
 const BATCH_02_TECHNICAL_REVIEWED_AT = "2026-09-23T18:33:41Z";
 const BATCH_02_LINGUISTIC_NOTE =
@@ -4675,6 +4735,66 @@ const registeredBatch03ApprovalRecords = registeredBatch03Drafts.map(
     };
   }
 );
+const registeredBatch04ApprovalRecords = registeredBatch04Drafts.map(
+  (entry) => {
+    const expected = expectedBatch04ReviewMetadata.find(
+      (candidate) => candidate.productId === entry.productId
+    );
+    assert(
+      expected !== undefined,
+      `Batch 04 approval metadata must remain scoped to ${entry.productId}.`
+    );
+
+    const freshContentHash = createProductCopyContentHash(entry);
+    const expectedLinguisticReview = {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: BATCH_04_LINGUISTIC_REVIEWED_AT,
+      reviewedContentHash: expected.reviewedContentHash,
+      evidenceRef: expected.evidenceRef,
+      note: expected.linguisticNote,
+    } as const;
+    const expectedTechnicalReview = {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: BATCH_04_TECHNICAL_REVIEWED_AT,
+      reviewedContentHash: expected.reviewedContentHash,
+      evidenceRef: expected.evidenceRef,
+      note: expected.technicalNote,
+    } as const;
+
+    assert(
+      JSON.stringify(entry.linguisticReview) ===
+        JSON.stringify(expectedLinguisticReview) &&
+        JSON.stringify(entry.technicalReview) ===
+          JSON.stringify(expectedTechnicalReview),
+      `Batch 04 role approvals and evidence must be exact for ${entry.productId}.`
+    );
+    assert(
+      !Object.is(entry.linguisticReview, entry.technicalReview) &&
+        entry.linguisticReview.decision === "approved" &&
+        entry.technicalReview.decision === "approved" &&
+        entry.linguisticReview.reviewedAt < entry.technicalReview.reviewedAt,
+      `Batch 04 role approvals must be distinct and ordered for ${entry.productId}.`
+    );
+    assert(
+      freshContentHash === expected.reviewedContentHash &&
+        entry.linguisticReview.reviewedContentHash === freshContentHash &&
+        entry.technicalReview.reviewedContentHash === freshContentHash,
+      `Batch 04 approvals must bind the fresh production hash for ${entry.productId}.`
+    );
+
+    return {
+      productId: entry.productId,
+      freshContentHash,
+      evidenceRef: expected.evidenceRef,
+      roleObjectsDistinct: !Object.is(
+        entry.linguisticReview,
+        entry.technicalReview
+      ),
+    };
+  }
+);
 const registeredCurrentDualApprovals = persianProductCopyDraftRegistry.filter(
   (entry) => {
     const freshContentHash = createProductCopyContentHash(entry);
@@ -4822,6 +4942,54 @@ const registeredBatch03ApprovalMutationResults =
     assert(
       copyStaleApprovals === 2 && kindStaleApprovals === 2,
       `Batch 03 copy and segment-kind mutations must stale both approvals for ${entry.productId}.`
+    );
+
+    return {
+      productId: entry.productId,
+      copyStaleApprovals,
+      kindStaleApprovals,
+    };
+  });
+const registeredBatch04ApprovalMutationResults =
+  registeredBatch04Drafts.map((entry) => {
+    const copyMutation = cloneMutableOverlay(entry);
+    const finalShortSegment = copyMutation.shortDescription.at(-1);
+    assert(
+      finalShortSegment !== undefined,
+      `Batch 04 copy mutation requires a final segment for ${entry.productId}.`
+    );
+    finalShortSegment.value = `${finalShortSegment.value.slice(0, -1)}!`;
+    const copyMutationResult = validatePersianProductCopyDrafts(
+      [copyMutation],
+      products
+    );
+
+    const kindMutation = cloneMutableOverlay(entry);
+    const firstShortSegment = kindMutation.shortDescription[0];
+    assert(
+      firstShortSegment !== undefined,
+      `Batch 04 kind mutation requires a first segment for ${entry.productId}.`
+    );
+    firstShortSegment.kind =
+      firstShortSegment.kind === "text" ? "technical" : "text";
+    const kindMutationResult = validatePersianProductCopyDrafts(
+      [kindMutation],
+      products
+    );
+
+    const copyStaleApprovals = copyMutationResult.issues.filter(
+      (issue) =>
+        issue.code === "stale-approval-hash" &&
+        issue.productId === entry.productId
+    ).length;
+    const kindStaleApprovals = kindMutationResult.issues.filter(
+      (issue) =>
+        issue.code === "stale-approval-hash" &&
+        issue.productId === entry.productId
+    ).length;
+    assert(
+      copyStaleApprovals === 2 && kindStaleApprovals === 2,
+      `Batch 04 copy and segment-kind mutations must stale both approvals for ${entry.productId}.`
     );
 
     return {
@@ -4986,10 +5154,10 @@ const registeredBatch04DraftRecords = expectedBatch04Drafts.map((expected) => {
   );
   assert(
     entry.provenance === "ai-assisted" &&
-      JSON.stringify(entry.linguisticReview) === '{"decision":"pending"}' &&
-      JSON.stringify(entry.technicalReview) === '{"decision":"pending"}' &&
+      entry.linguisticReview.decision === "approved" &&
+      entry.technicalReview.decision === "approved" &&
       !Object.is(entry.linguisticReview, entry.technicalReview),
-    `Batch 04 must retain distinct pending review roles without approval metadata: ${expected.productId}`
+    `Batch 04 must retain ai-assisted provenance and distinct approved review roles: ${expected.productId}`
   );
   assert(
     technicalTokens.every(
@@ -5130,6 +5298,10 @@ assert(
   registeredBatch04Drafts.length === 5 &&
     JSON.stringify(expectedBatch04DraftProductIds) ===
       JSON.stringify(expectedBatch04ProductIds) &&
+    expectedBatch04ReviewMetadata.length === 5 &&
+    JSON.stringify(
+      expectedBatch04ReviewMetadata.map((entry) => entry.productId)
+    ) === JSON.stringify(expectedBatch04ProductIds) &&
     JSON.stringify(registeredBatch04Drafts.map((entry) => entry.productId)) ===
       JSON.stringify(expectedBatch04ProductIds) &&
     JSON.stringify(registeredBatch04DraftBindings) ===
@@ -5180,12 +5352,12 @@ assert(
     ) &&
     registeredBatch04Drafts.every(
       (entry) =>
-        entry.linguisticReview.decision === "pending" &&
-        entry.technicalReview.decision === "pending"
+        entry.linguisticReview.decision === "approved" &&
+        entry.technicalReview.decision === "approved"
     ) &&
-    registeredLinguisticApprovals === 15 &&
-    registeredTechnicalApprovals === 15 &&
-    registeredCurrentDualApprovals === 15 &&
+    registeredLinguisticApprovals === 20 &&
+    registeredTechnicalApprovals === 20 &&
+    registeredCurrentDualApprovals === 20 &&
     registeredBatch01ApprovalRecords.length === 5 &&
     registeredBatch01ApprovalRecords.every(
       (record) => record.roleObjectsDistinct
@@ -5197,17 +5369,21 @@ assert(
     registeredBatch03ApprovalRecords.length === 5 &&
     registeredBatch03ApprovalRecords.every(
       (record) => record.roleObjectsDistinct
+    ) &&
+    registeredBatch04ApprovalRecords.length === 5 &&
+    registeredBatch04ApprovalRecords.every(
+      (record) => record.roleObjectsDistinct
     ),
-  "Batches 01–03 must retain fifteen exact current dual approvals and Batch 04 must add none."
+  "Batches 01–03 must retain fifteen exact current dual approvals and Batch 04 must add five."
 );
 assert(
   !registeredDraftActivation.valid &&
     registeredDraftActivation.overlayCount === 20 &&
     registeredDraftActivation.canonicalCount === 382 &&
-    registeredDraftActivation.approvedCount === 15 &&
+    registeredDraftActivation.approvedCount === 20 &&
     registeredDraftActivation.missingIds.length === 362 &&
     !("capability" in registeredDraftActivation),
-  "Combined activation must fail closed at exactly 20/382 drafts, 15 dual approvals, and 362 missing Products."
+  "Combined activation must fail closed at exactly 20/382 drafts, 20 dual approvals, and 362 missing Products."
 );
 assert(
   PERSIAN_PRODUCT_COPY_PUBLICATION_STATE === "disabled",
@@ -5328,12 +5504,16 @@ console.log(
               entry.linguisticReview.decision === "approved" &&
               entry.technicalReview.decision === "approved"
           ).length,
-          pendingReviewRoles: registeredBatch04Drafts.filter(
-            (entry) =>
-              entry.linguisticReview.decision === "pending" &&
-              entry.technicalReview.decision === "pending"
-          ).length,
+          pendingReviewRoles:
+            registeredBatch04Drafts.length -
+            registeredBatch04ApprovalRecords.length,
+          approvalRecords: registeredBatch04ApprovalRecords.length,
+          mutationStaleness: registeredBatch04ApprovalMutationResults,
           exactDrafts: registeredBatch04DraftRecords.length,
+          contentHashes: registeredBatch04ApprovalRecords.map((record) => ({
+            productId: record.productId,
+            hash: record.freshContentHash,
+          })),
           publicCanonicalEnglishLtr: batch04PublicResolutionResults.every(
             (result) =>
               result.englishSource === "canonical-en" &&
