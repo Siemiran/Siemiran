@@ -1,6 +1,9 @@
 import { Children, isValidElement, type ReactNode } from "react";
 
 import { products } from "../data/products";
+import { validateSiemensPLCProduct } from "../database/siemens/plc.validator";
+import { mapSiemensS7300SignalModuleToProduct } from "../database/siemens/s7-300/sm.adapter";
+import { s7300SM } from "../database/siemens/s7-300/sm";
 import {
   createComparisonStorageAdapter,
   migrateStoredComparisonIds,
@@ -3699,6 +3702,131 @@ const lifecycleOmissionIds = products
 const expectedLifecycleOmissionIds = [
   ...EXPECTED_LIFECYCLE_OMISSION_IDS,
 ].sort();
+const sm321Id = "siemens-s7-300-sm321-di-8-120-230vac-1ff10-0aa0";
+const sm321Source = s7300SM.find((item) => item.id === sm321Id);
+assert(sm321Source !== undefined, "SM321 1FF10 source record must exist.");
+assert(
+  JSON.stringify(sm321Source) ===
+    JSON.stringify({
+      id: sm321Id,
+      mlfb: "6ES7321-1FF10-0AA0",
+      brandId: "siemens",
+      categoryId: "PLC",
+      familyId: "S7-300",
+      seriesId: "S7-300",
+      productTypeId: "Signal Module",
+      variantId: "digital-input",
+      title: "SIMATIC S7-300 SM 321 8 DI 120/230 V AC",
+      description:
+        "SIMATIC S7-300 digital input SM 321, isolated, 8 digital inputs, 120/230 V AC, 1 x 40-pole, with single rooting/channel.",
+      lifecycle: "unverified",
+      specifications: {
+        digitalInputs: 8,
+        inputVoltage: "120/230 V AC",
+        terminalConnection: "1 x 40-pole",
+        interfaces: ["Backplane bus"],
+      },
+      source:
+        "https://mall.industry.siemens.com/mall/en/se/Catalog/Product/6ES7321-1FF10-0AA0",
+    }),
+  "SM321 1FF10 must preserve its exact source data except for the approved unverified lifecycle."
+);
+assert(
+  s7300SM.length === 66 &&
+    s7300SM.every((item) => validateSiemensPLCProduct(item).valid),
+  "All 66 S7-300 Signal Module source records must validate."
+);
+const mappedSignalModules = s7300SM.map(mapSiemensS7300SignalModuleToProduct);
+assert(
+  mappedSignalModules.every(
+    (mapped) =>
+      JSON.stringify(mapped) ===
+      JSON.stringify(products.find((item) => item.id === mapped.id))
+  ),
+  "All 66 Signal Module records must match their canonical Products."
+);
+const sm321Product = products.find((item) => item.id === sm321Id);
+assert(sm321Product !== undefined, "SM321 1FF10 canonical Product must exist.");
+const sm321PriorProduct = mapSiemensS7300SignalModuleToProduct({
+  ...sm321Source,
+  lifecycle: "phase-out",
+});
+const { lifecycle: sm321PriorLifecycle, ...sm321PriorWithoutLifecycle } =
+  sm321PriorProduct;
+assert(
+  sm321PriorLifecycle === "legacy" &&
+    !("lifecycle" in sm321Product) &&
+    JSON.stringify(sm321Product) === JSON.stringify(sm321PriorWithoutLifecycle),
+  "SM321 1FF10 canonical Product must differ from its prior mapping only by removing legacy lifecycle."
+);
+assert(
+  lifecycleOmissionIds.length === 11 &&
+    expectedLifecycleOmissionIds.length === 11 &&
+    expectedLifecycleOmissionIds.includes(sm321Id),
+  "Exactly eleven expected Products, including SM321 1FF10, must omit lifecycle."
+);
+const restoredSm321LifecycleProducts = products.map((item) =>
+  item.id === sm321Id ? sm321PriorProduct : item
+);
+const missingExpectedLifecycleOmission = validatePersianProductCopyForActivation(
+  products.map(approvedFixture),
+  restoredSm321LifecycleProducts
+);
+assertIssues(
+  missingExpectedLifecycleOmission,
+  ["lifecycle-omission-set"],
+  "Missing expected SM321 lifecycle omission"
+);
+const additionalLifecycleOmissionProduct = products.find(
+  (item) => item.id !== sm321Id && item.lifecycle !== undefined
+);
+assert(
+  additionalLifecycleOmissionProduct !== undefined,
+  "An additional lifecycle omission fixture Product must exist."
+);
+const {
+  lifecycle: removedAdditionalLifecycle,
+  ...additionalWithoutLifecycle
+} = additionalLifecycleOmissionProduct;
+void removedAdditionalLifecycle;
+const additionalLifecycleOmission = validatePersianProductCopyForActivation(
+  products.map(approvedFixture),
+  products.map((item) =>
+    item.id === additionalLifecycleOmissionProduct.id
+      ? additionalWithoutLifecycle
+      : item
+  )
+);
+assertIssues(
+  additionalLifecycleOmission,
+  ["lifecycle-omission-set"],
+  "Unexpected additional lifecycle omission"
+);
+for (const locale of ["fa", "en"] as const) {
+  const currentCopy = resolveProductCopy(sm321Product, locale);
+  const priorCopy = resolveProductCopy(sm321PriorProduct, locale);
+  const publicItem = createProductListItemViewModel(sm321Product, locale);
+  assert(
+    !("lifecycle" in publicItem.product) &&
+      publicItem.copy.language === "en" &&
+      publicItem.copy.direction === "ltr" &&
+      !JSON.stringify(publicItem).includes("unverified"),
+    `SM321 1FF10 ${locale} public DTO must omit lifecycle and unverified text while retaining canonical English copy.`
+  );
+  assert(
+    JSON.stringify(serializeResolvedProductCopy(currentCopy)) ===
+      JSON.stringify(serializeResolvedProductCopy(priorCopy)) &&
+      JSON.stringify(createProductMetadata(sm321Product, locale)) ===
+        JSON.stringify(createProductMetadata(sm321PriorProduct, locale)) &&
+      JSON.stringify(createProductSchema(sm321Product, currentCopy, locale)) ===
+        JSON.stringify(
+          createProductSchema(sm321PriorProduct, priorCopy, locale)
+        ) &&
+      JSON.stringify([...deriveAllowedTechnicalTokens(sm321Product)].sort()) ===
+        JSON.stringify([...deriveAllowedTechnicalTokens(sm321PriorProduct)].sort()),
+    `SM321 1FF10 ${locale} copy, metadata, Product JSON-LD, and derived technical tokens must remain unchanged.`
+  );
+}
 const s7300Count = products.filter((item) => item.familyId === "S7-300").length;
 const s71200Count = products.filter(
   (item) => item.familyId === "S7-1200"

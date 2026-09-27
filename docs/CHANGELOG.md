@@ -3,6 +3,35 @@
 This file records completed repository changes. The newest entry records the
 current `main` state; older dated entries are historical snapshots.
 
+## 2026-09-27 - Record SM321 1FF10 Lifecycle as Unverified
+
+### Changed
+
+- The maintainer approved recording `6ES7321-1FF10-0AA0` source lifecycle as
+  `unverified` instead of `phase-out`. Previously recorded historical
+  exact-product Siemens Mall phase-out evidence remains documented; the current
+  exact-product lifecycle and individual transition date remain unresolved.
+- The same canonical Product now omits `lifecycle` through the established
+  omission behavior. Its public legacy label and badge disappear in FA and EN;
+  comparison uses its existing missing-value display. No public `unverified`
+  label is introduced. The supported 1CH00 `spare-part` correction is retained.
+
+### State
+
+- S7-300 lifecycle provenance is 185 Siemens-official verified / 11 explicit
+  unverified. Product coverage remains S7-300 196/196, S7-1200 186/186, and
+  global 382; exactly eleven Products omit public lifecycle.
+- Private copy drafts and each approval role remain 15/382; current dual
+  approvals remain 15 and missing Persian-copy coverage remains 367.
+  Technical-token overrides remain 10 Products / 20 assignments / 7 unique
+  strings, with an empty global allowlist.
+- Active overlays remain 0/382, activation capability is absent, publication
+  remains disabled, and FA/EN Product descriptions remain canonical English/LTR.
+  The full 382/382 dual-approval activation gate remains unchanged.
+- Batch 04 drafting awaits independent verification of this implementation and
+  separate drafting authorization; it has not begun. The maintainer website
+  inspection remains pending after Persian Product-copy completion.
+
 ## 2026-09-25 - PR #61: Complete Batch 03 Private Drafts and Dual Approvals
 
 ### Changed

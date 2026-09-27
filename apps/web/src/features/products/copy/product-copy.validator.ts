@@ -93,6 +93,7 @@ export const EXPECTED_LIFECYCLE_OMISSION_IDS = [
   "siemens-s7-300-siwarex-a-4421-1aa01",
   "siemens-siplus-s7-300-fm350-1-counter-1ah03-2ae0",
   "siemens-s7-300-fm357-2-positioning-4ah03-0ae0",
+  "siemens-s7-300-sm321-di-8-120-230vac-1ff10-0aa0",
 ] as const satisfies readonly ProductId[];
 
 function isRecord(value: unknown): value is Record<string, unknown> {
@@ -785,7 +786,7 @@ export function validatePersianProductCopyForActivation(
     addIssue(
       issues,
       "lifecycle-omission-set",
-      "Canonical lifecycle omissions do not match the established ten Product IDs."
+      "Canonical lifecycle omissions do not match the established eleven Product IDs."
     );
   }
 

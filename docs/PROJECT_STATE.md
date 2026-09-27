@@ -1,6 +1,32 @@
 # Siemiran — Project State
 
-## 2026-09-25 - Batch 03 Private Drafts and Dual Approvals (Current State)
+## 2026-09-27 - SM321 1FF10 Lifecycle Uncertainty (Current State)
+
+The maintainer approved changing the source lifecycle of
+`6ES7321-1FF10-0AA0` from `phase-out` to `unverified`. Previously recorded
+exact-product Siemens Mall evidence supports historical phase-out, while the
+current exact-product lifecycle and individual transition date remain
+unresolved. The existing omission rule now leaves this Product's canonical
+`lifecycle` property absent.
+Its public legacy label and badge disappear in FA and EN, comparison retains
+the existing missing-value display, and no public `unverified` label is added.
+The supported `6ES7321-1CH00-0AA0` correction to `spare-part` is retained.
+
+S7-300 provenance is 185 Siemens-official verified / 11 explicit unverified;
+Product coverage remains 196/196 for S7-300, 186/186 for S7-1200, and 382
+globally. The eleven unverified Products omit public lifecycle in both
+languages. Private drafts and each approval role remain 15/382, with 15 current
+dual approvals, 367 Products lacking Persian-copy coverage, and 0/382 active
+overlays. Technical-token overrides remain 10 Products / 20 assignments / 7
+unique strings with an empty global allowlist. No activation capability exists,
+publication is disabled, and public FA/EN Product descriptions remain canonical
+English/LTR. The complete 382/382 dual-approval gate is unchanged.
+
+Batch 04 drafting awaits independent verification of this implementation and
+a separate drafting authorization; it has not begun. The maintainer website
+inspection remains pending after Persian Product-copy completion.
+
+## 2026-09-25 - Batch 03 Private Drafts and Dual Approvals (Historical Snapshot)
 
 The Batch 03 implementation baseline is `main` at
 `b7debb1d9c6b25a787f1cb534247bfba63d001c3`. PR #61,
@@ -292,9 +318,9 @@ the inventory before this approved deletion, not a valid current record.
 ## Current Baseline
 
 - Status: Active Development
-- Documentation synchronized: 2026-09-25
-- Repository source of truth: `main` at
-  `b7debb1d9c6b25a787f1cb534247bfba63d001c3`
+- Documentation synchronized: 2026-09-27
+- Implementation base: `main` at
+  `843c7bf054e86f16c7b9065271e1e54faf715068`
 - No semantic release version is asserted by this document.
 
 ## Current Stack
@@ -400,6 +426,8 @@ These products flow through `data/products.ts`, the Product repository, and the 
 - All current S7-300 source groups are connected: CPU 36, Power Supply 13,
   Signal Module 66, Interface Module 7, Communication Processor 43, and
   Function Module 31. This reconciles to 196/196 Products.
+- Current S7-300 lifecycle provenance is 185 Siemens-official verified and 11
+  explicit unverified; the eleven Products omit public lifecycle.
 
 ### Historical Connection Milestones
 

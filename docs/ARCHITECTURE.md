@@ -1,6 +1,6 @@
 # Siemiran — Current Architecture
 
-Baseline: `main` at `b7debb1d9c6b25a787f1cb534247bfba63d001c3`
+Implementation base: `main` at `843c7bf054e86f16c7b9065271e1e54faf715068`
 
 ## Repository Structure
 
@@ -89,9 +89,15 @@ Processor, and Function Module. S7-1200 coverage is 186/186 across all verified
 Classic and G2 source groups. Every active Siemens Product group is connected
 through validation/adapters and aggregation to the Product repository.
 
-Ten established S7-300 Products have unverified lifecycle provenance and
+Eleven S7-300 Products have unverified lifecycle provenance and
 invariantly omit the public `Product.lifecycle` property. The copy layer may not
-supply, infer, or override lifecycle data.
+supply, infer, or override lifecycle data. For SM321 `6ES7321-1FF10-0AA0`,
+the maintainer approved `unverified` source lifecycle while current
+exact-product lifecycle remains unresolved. Previously recorded historical
+Siemens Mall phase-out evidence is retained; the public legacy label and badge
+disappear through the existing omission behavior, and comparison uses its existing
+missing-value display. No public `unverified` category is introduced. S7-300
+provenance is 185 Siemens-official verified / 11 explicit unverified.
 
 ## Product-copy Resolver and Trust Boundaries
 
@@ -130,10 +136,12 @@ disabled, activation is invalid, no activation capability exists, and active
 coverage remains 0/382. Approvals from Batches 01-03 do not authorize
 publication or partial activation; activation and publication remain blocked
 until all 382/382 Products have current dual approvals.
-The next implementation phase is another controlled private drafting batch,
-not activation. The resolver remains the sole public Product-copy source for
-Product listing, cards and meta, featured and related Products, detail
-header/body, search, metadata/OpenGraph/Twitter, Product JSON-LD, comparison,
+Batch 04 drafting awaits independent verification of the 1FF10 implementation
+and separate drafting authorization. The maintainer website inspection remains
+pending after Persian Product-copy completion. The resolver remains the sole
+public Product-copy source for Product listing, cards and meta, featured and
+related Products, detail header/body, search, metadata/OpenGraph/Twitter,
+Product JSON-LD, comparison,
 and inquiry identity.
 
 ```text
@@ -177,7 +185,7 @@ The boundary fails closed:
 - Technical segments retain LTR/English bidi isolation. MLFBs, Product IDs,
   slugs, part numbers, official model/family names, protocols, standards,
   values, units, and URLs remain canonical and untranslated.
-- The exact ten canonical lifecycle omissions remain an enforced invariant.
+- The exact eleven canonical lifecycle omissions remain an enforced invariant.
 - Mutation, malformed input, timestamps, normalization, brand, technical-token,
   lifecycle, coverage, capability, and resolved-copy boundaries are validated.
 

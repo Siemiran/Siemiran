@@ -2,6 +2,26 @@
 
 Repository source of truth: current `main` branch
 
+## 2026-09-27 - SM321 1FF10 Lifecycle Uncertainty (Current State)
+
+The maintainer approved recording the current lifecycle of
+`6ES7321-1FF10-0AA0` as `unverified`. Previously recorded historical
+exact-product [Siemens Mall evidence](https://mall.industry.siemens.com/mall/en/se/Catalog/Product/6ES7321-1FF10-0AA0)
+supports phase-out at that time, but does not establish the current
+exact-product lifecycle or an individual transition date. The S7-300 family's
+planned cancellation does not resolve that gap. This is an explicit unresolved
+provenance state, not a newly verified lifecycle category.
+
+The source record remains exposed as the same canonical Product, with
+`Product.lifecycle` intentionally omitted. Its legacy label and badge therefore
+disappear in both languages; comparison uses its existing missing-value display.
+No public `unverified` label is introduced. S7-300 lifecycle provenance is now
+185 Siemens-official verified / 11 explicit unverified across the same 196/196
+connected Products. The full 382/382 Product-copy activation gate is unchanged.
+Batch 04 drafting awaits independent verification of this implementation and a
+separate drafting authorization. The maintainer website inspection remains
+pending after Persian Product-copy completion.
+
 ## 2026-09-25 - S7-300 SM321 Lifecycle Provenance Review
 
 For `6ES7321-1CH00-0AA0`, source `lifecycle` is corrected from `phase-out`
@@ -24,7 +44,7 @@ The S7-300 family's planned cancellation does not establish this product's
 individual transition. Batch 04 drafting remains blocked pending sufficient
 evidence or a separately authorized uncertainty-handling decision.
 
-## 2026-09-08 - Task BD: S7-300 Formal Closure (Current State)
+## 2026-09-08 - Task BD: S7-300 Formal Closure (Historical Snapshot)
 
 Task BD independently verified `main` at
 `c3378ebdc2a4858b468a99ee49282fea95aeab89`, returned **PASS**, and formally
@@ -216,9 +236,9 @@ generic Product mapper with explicit product-type specification normalizers.
 Every source record maps to exactly one Product; no current exposure gate
 remains. CPU contributes 36 Products, PS 13, SM 66, IM 7, CP 43, and FM 31.
 
-The current lifecycle provenance matrix is 186 Siemens-official verified and 10
+The current lifecycle provenance matrix is 185 Siemens-official verified and 11
 explicit unverified, with 0 noncompliant secondary-history claims and 0 unknown.
-The ten known gaps remain exposed without a public lifecycle value. Historical
+The eleven known gaps remain exposed without a public lifecycle value. Historical
 source and integration milestones are preserved in the dated task sections
 below and do not define the current connection state.
 

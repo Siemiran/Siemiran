@@ -2,11 +2,35 @@
 
 Repository source of truth: current `main` branch
 
-Last synchronized: 2026-09-25
+Last synchronized: 2026-09-27
 
-## 2026-09-25 - Batch 03 Private Drafts and Dual Approvals (Current State)
+## 2026-09-27 - SM321 1FF10 Lifecycle Uncertainty (Current State)
 
-The current implementation baseline is `main` at
+The maintainer approved changing `6ES7321-1FF10-0AA0` source lifecycle from
+`phase-out` to `unverified`. Previously recorded historical exact-product
+Siemens Mall phase-out evidence remains documented; the current exact-product
+lifecycle and individual transition date remain unresolved. The canonical Product omits
+`lifecycle` through the existing rule, so its public legacy label and badge
+disappear in both languages and comparison uses its existing missing-value
+display. No public `unverified` label is introduced. The supported 1CH00
+`spare-part` correction remains intact.
+
+S7-300 lifecycle provenance is 185 Siemens-official verified / 11 explicit
+unverified. Product coverage remains S7-300 196/196, S7-1200 186/186, and
+global 382. Copy drafts and each approval role remain 15/382, current dual
+approvals 15, missing Persian-copy coverage 367, active overlays 0/382, and
+publication disabled with no activation capability. Technical-token overrides
+remain 10 Products / 20 assignments / 7 unique strings; the global allowlist
+is empty. Public FA/EN Product descriptions remain canonical English/LTR, and
+the full 382/382 dual-approval activation gate remains unchanged.
+
+Batch 04 drafting awaits independent verification of this implementation and
+separate drafting authorization; it has not begun. The maintainer website
+inspection remains pending after Persian Product-copy completion.
+
+## 2026-09-25 - Batch 03 Private Drafts and Dual Approvals (Historical Snapshot)
+
+The implementation baseline at that snapshot was `main` at
 `b7debb1d9c6b25a787f1cb534247bfba63d001c3`. PR #61,
 `feat: add Batch 03 Persian product copy`, squash-merged at
 `2026-09-25T08:01:51Z` after PR #60's 1BH10 specification correction at
@@ -304,7 +328,7 @@ localized sitemap coverage remain future gates.
   resolved-copy objects
 - Deterministic content hashes binding current linguistic and technical
   approvals
-- Exact 382/382 atomic activation gate and exact-ten lifecycle-omission
+- Exact 382/382 atomic activation gate and exact-eleven lifecycle-omission
   invariant
 - Private 15/382 registry with 15 current dual approvals and 367 Products not
   yet drafted or approved; active coverage remains 0/382, publication remains
@@ -661,8 +685,9 @@ place. The Siemens validation and common Product mapping pipeline is now
 generalized while product-type specification normalization remains explicit.
 All six S7-300 source groups are connected with complete Product coverage at
 196/196, and S7-1200 remains complete at 186/186. The current remaining S7-300
-concern is lifecycle provenance only: 10 records are explicitly `unverified`
-and expose no public lifecycle value. Product integration is not pending.
+concern is lifecycle provenance only: 185 lifecycles are Siemens-official
+verified, while 11 records are explicitly `unverified` and expose no public
+lifecycle value. Product integration is not pending.
 
 The Product-copy resolver/presentation boundary is verified and connected to
 all intended consumers. Its private registry contains 15/382 drafts,
@@ -675,9 +700,11 @@ allowlist; Batch 03 adds none.
 Active overlays remain 0/382, activation has issued no capability, and
 publication remains disabled, so both locales intentionally resolve canonical
 English/LTR Product prose while Persian UI localization remains active. The
-next phase is another controlled private drafting batch; the complete 382/382
-gate, one atomic public activation, and bilingual SEO activation remain pending
-in that order, with partial activation prohibited.
+next drafting phase is Batch 04, pending independent verification of the 1FF10
+implementation and separate drafting authorization. The complete 382/382 gate,
+one atomic public activation, and bilingual SEO activation remain pending in
+that order, with partial activation prohibited. The maintainer website
+inspection remains pending after Persian Product-copy completion.
 
 ## 2026-09-04 — Function Module Source/Lifecycle Progress
 
