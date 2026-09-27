@@ -316,9 +316,7 @@ const sm321Di16_24_48Vacdc1Ch00Copy = [
   { kind: "technical", value: "SIMATIC S7-300 SM 321 16 DI 24-48 V AC/DC" },
   { kind: "text", value: "، ماژول ورودی دیجیتال با " },
   { kind: "technical", value: "16" },
-  { kind: "text", value: " ورودی است. ولتاژهای نامی مجزای ورودی آن " },
-  { kind: "technical", value: "24-48 V AC/DC" },
-  { kind: "text", value: " هستند." },
+  { kind: "text", value: " ورودی است." },
 ] as const satisfies ProductCopyParagraph;
 
 const sm321Di32_120Vac1El00Copy = [
@@ -336,7 +334,7 @@ const sm321Di8_120_230Vac1Ff01Copy = [
   { kind: "technical", value: "SIMATIC S7-300 SM 321 8 DI 120/230 V AC" },
   { kind: "text", value: "، ماژول ورودی دیجیتال با " },
   { kind: "technical", value: "8" },
-  { kind: "text", value: " ورودی است. ولتاژهای نامی مجزای ورودی آن " },
+  { kind: "text", value: " ورودی است. ولتاژهای نامی ورودی آن " },
   { kind: "technical", value: "120/230 V AC" },
   { kind: "text", value: " هستند." },
 ] as const satisfies ProductCopyParagraph;
@@ -346,7 +344,7 @@ const sm321Di8_120_230Vac1Ff10Copy = [
   { kind: "technical", value: "SIMATIC S7-300 SM 321 8 DI 120/230 V AC" },
   { kind: "text", value: "، ماژول ورودی دیجیتال با " },
   { kind: "technical", value: "8" },
-  { kind: "text", value: " ورودی است. ولتاژهای نامی مجزای ورودی آن " },
+  { kind: "text", value: " ورودی است. ولتاژهای نامی ورودی آن " },
   { kind: "technical", value: "120/230 V AC" },
   { kind: "text", value: " هستند." },
 ] as const satisfies ProductCopyParagraph;
@@ -356,7 +354,7 @@ const sm321Di16_120_230Vac1Fh00Copy = [
   { kind: "technical", value: "SIMATIC S7-300 SM 321 16 DI 120/230 V AC" },
   { kind: "text", value: "، ماژول ورودی دیجیتال با " },
   { kind: "technical", value: "16" },
-  { kind: "text", value: " ورودی است. ولتاژهای نامی مجزای ورودی آن " },
+  { kind: "text", value: " ورودی است. ولتاژهای نامی ورودی آن " },
   { kind: "technical", value: "120/230 V AC" },
   { kind: "text", value: " هستند." },
 ] as const satisfies ProductCopyParagraph;

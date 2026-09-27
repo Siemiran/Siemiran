@@ -4217,11 +4217,10 @@ const expectedBatch04Drafts = [
   {
     productId: "siemens-s7-300-sm321-di-16-24-48vacdc-1ch00-0aa0",
     rendered:
-      "مدل SIMATIC S7-300 SM 321 16 DI 24-48 V AC/DC، ماژول ورودی دیجیتال با 16 ورودی است. ولتاژهای نامی مجزای ورودی آن 24-48 V AC/DC هستند.",
+      "مدل SIMATIC S7-300 SM 321 16 DI 24-48 V AC/DC، ماژول ورودی دیجیتال با 16 ورودی است.",
     technicalTokens: [
       "SIMATIC S7-300 SM 321 16 DI 24-48 V AC/DC",
       "16",
-      "24-48 V AC/DC",
     ],
   },
   {
@@ -4237,7 +4236,7 @@ const expectedBatch04Drafts = [
   {
     productId: "siemens-s7-300-sm321-di-8-120-230vac-1ff01-0aa0",
     rendered:
-      "مدل SIMATIC S7-300 SM 321 8 DI 120/230 V AC، ماژول ورودی دیجیتال با 8 ورودی است. ولتاژهای نامی مجزای ورودی آن 120/230 V AC هستند.",
+      "مدل SIMATIC S7-300 SM 321 8 DI 120/230 V AC، ماژول ورودی دیجیتال با 8 ورودی است. ولتاژهای نامی ورودی آن 120/230 V AC هستند.",
     technicalTokens: [
       "SIMATIC S7-300 SM 321 8 DI 120/230 V AC",
       "8",
@@ -4247,7 +4246,7 @@ const expectedBatch04Drafts = [
   {
     productId: "siemens-s7-300-sm321-di-8-120-230vac-1ff10-0aa0",
     rendered:
-      "مدل SIMATIC S7-300 SM 321 8 DI 120/230 V AC، ماژول ورودی دیجیتال با 8 ورودی است. ولتاژهای نامی مجزای ورودی آن 120/230 V AC هستند.",
+      "مدل SIMATIC S7-300 SM 321 8 DI 120/230 V AC، ماژول ورودی دیجیتال با 8 ورودی است. ولتاژهای نامی ورودی آن 120/230 V AC هستند.",
     technicalTokens: [
       "SIMATIC S7-300 SM 321 8 DI 120/230 V AC",
       "8",
@@ -4257,7 +4256,7 @@ const expectedBatch04Drafts = [
   {
     productId: "siemens-s7-300-sm321-di-16-120-230vac-1fh00-0aa0",
     rendered:
-      "مدل SIMATIC S7-300 SM 321 16 DI 120/230 V AC، ماژول ورودی دیجیتال با 16 ورودی است. ولتاژهای نامی مجزای ورودی آن 120/230 V AC هستند.",
+      "مدل SIMATIC S7-300 SM 321 16 DI 120/230 V AC، ماژول ورودی دیجیتال با 16 ورودی است. ولتاژهای نامی ورودی آن 120/230 V AC هستند.",
     technicalTokens: [
       "SIMATIC S7-300 SM 321 16 DI 120/230 V AC",
       "16",
