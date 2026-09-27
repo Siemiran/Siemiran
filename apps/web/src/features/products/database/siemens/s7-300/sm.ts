@@ -1,5 +1,5 @@
 export type SiemensS7300ModuleLifecycle =
-  "active" | "phase-out" | "spare-part" | "discontinued";
+  "active" | "phase-out" | "spare-part" | "discontinued" | "unverified";
 
 export interface SiemensS7300SignalModule {
   id: string;
@@ -316,7 +316,7 @@ export const s7300SM: SiemensS7300SignalModule[] = [
     description:
       "SIMATIC S7-300 digital input SM 321, isolated, 8 digital inputs, 120/230 V AC, 1 x 40-pole, with single rooting/channel.",
 
-    lifecycle: "phase-out",
+    lifecycle: "unverified",
 
     specifications: {
       digitalInputs: 8,

@@ -30,5 +30,5 @@ Principles:
   activated before the complete 382/382 approval gate passes.
 - Translation must not introduce unsupported lifecycle, availability,
   compatibility, or technical claims.
-- The ten unverified S7-300 records continue to omit public lifecycle in both
+- The eleven unverified S7-300 records continue to omit public lifecycle in both
   languages.
