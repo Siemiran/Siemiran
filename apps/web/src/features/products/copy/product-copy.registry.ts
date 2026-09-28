@@ -311,6 +311,54 @@ const sm321Di16_48_125Vdc1Ch20Copy = [
   { kind: "text", value: " است." },
 ] as const satisfies ProductCopyParagraph;
 
+const sm321Di16_24_48Vacdc1Ch00Copy = [
+  { kind: "text", value: "مدل " },
+  { kind: "technical", value: "SIMATIC S7-300 SM 321 16 DI 24-48 V AC/DC" },
+  { kind: "text", value: "، ماژول ورودی دیجیتال با " },
+  { kind: "technical", value: "16" },
+  { kind: "text", value: " ورودی است." },
+] as const satisfies ProductCopyParagraph;
+
+const sm321Di32_120Vac1El00Copy = [
+  { kind: "text", value: "مدل " },
+  { kind: "technical", value: "SIMATIC S7-300 SM 321 32 DI 120 V AC" },
+  { kind: "text", value: "، ماژول ورودی دیجیتال با " },
+  { kind: "technical", value: "32" },
+  { kind: "text", value: " ورودی است. ولتاژ نامی ورودی آن " },
+  { kind: "technical", value: "120 V AC" },
+  { kind: "text", value: " است." },
+] as const satisfies ProductCopyParagraph;
+
+const sm321Di8_120_230Vac1Ff01Copy = [
+  { kind: "text", value: "مدل " },
+  { kind: "technical", value: "SIMATIC S7-300 SM 321 8 DI 120/230 V AC" },
+  { kind: "text", value: "، ماژول ورودی دیجیتال با " },
+  { kind: "technical", value: "8" },
+  { kind: "text", value: " ورودی است. ولتاژهای نامی ورودی آن " },
+  { kind: "technical", value: "120/230 V AC" },
+  { kind: "text", value: " هستند." },
+] as const satisfies ProductCopyParagraph;
+
+const sm321Di8_120_230Vac1Ff10Copy = [
+  { kind: "text", value: "مدل " },
+  { kind: "technical", value: "SIMATIC S7-300 SM 321 8 DI 120/230 V AC" },
+  { kind: "text", value: "، ماژول ورودی دیجیتال با " },
+  { kind: "technical", value: "8" },
+  { kind: "text", value: " ورودی است. ولتاژهای نامی ورودی آن " },
+  { kind: "technical", value: "120/230 V AC" },
+  { kind: "text", value: " هستند." },
+] as const satisfies ProductCopyParagraph;
+
+const sm321Di16_120_230Vac1Fh00Copy = [
+  { kind: "text", value: "مدل " },
+  { kind: "technical", value: "SIMATIC S7-300 SM 321 16 DI 120/230 V AC" },
+  { kind: "text", value: "، ماژول ورودی دیجیتال با " },
+  { kind: "technical", value: "16" },
+  { kind: "text", value: " ورودی است. ولتاژهای نامی ورودی آن " },
+  { kind: "technical", value: "120/230 V AC" },
+  { kind: "text", value: " هستند." },
+] as const satisfies ProductCopyParagraph;
+
 export const persianProductCopyDraftRegistry = [
   {
     productId: "siemens-s7-1200-cpu-211-1ae40",
@@ -680,6 +728,116 @@ export const persianProductCopyDraftRegistry = [
       reviewedContentHash: "sha256:fd3901cc3a5c3f3ba356b2beaf2d46935fafa4b525b062efca63ff3db62fa754",
       evidenceRef: "https://support.industry.siemens.com/teddatasheet/?caller=SIOS&format=pdf&language=en&mlfbs=6ES7321-1CH20-0AA0",
       note: "Verified title against the canonical Product and input count and voltage against indexed exact-product Siemens datasheet content. Direct PDF returned HTTP 403; delay, diagnostics, and interrupts were not reviewed.",
+    },
+  },
+  {
+    productId: "siemens-s7-300-sm321-di-16-24-48vacdc-1ch00-0aa0",
+    shortDescription: sm321Di16_24_48Vacdc1Ch00Copy,
+    description: [sm321Di16_24_48Vacdc1Ch00Copy],
+    provenance: "ai-assisted",
+    linguisticReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-09-27T19:51:43Z",
+      reviewedContentHash: "sha256:d7877cc55cc166b4cff3e96961b8c05e88a06cc38f1567ffafe558484175d632",
+      evidenceRef: "https://support.industry.siemens.com/teddatasheet/?caller=SIOS&format=pdf&language=en&mlfbs=6ES7321-1CH00-0AA0",
+      note: "Reviewed concise Persian identity and input-count wording, grammar, punctuation, spacing, NFC, Persian ی/ک, and typed LTR segments in RTL copy.",
+    },
+    technicalReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-09-27T19:51:44Z",
+      reviewedContentHash: "sha256:d7877cc55cc166b4cff3e96961b8c05e88a06cc38f1567ffafe558484175d632",
+      evidenceRef: "https://support.industry.siemens.com/teddatasheet/?caller=SIOS&format=pdf&language=en&mlfbs=6ES7321-1CH00-0AA0",
+      note: "Reviewed exact 1CH00 identity, canonical title, and 16 inputs using Siemens-indexed exact-product datasheet text and available Siemens product HTML. Direct PDF access returned HTTP 403 during review. The removed separate voltage sentence and lifecycle were not approved.",
+    },
+  },
+  {
+    productId: "siemens-s7-300-sm321-di-32-120vac-1el00-0aa0",
+    shortDescription: sm321Di32_120Vac1El00Copy,
+    description: [sm321Di32_120Vac1El00Copy],
+    provenance: "ai-assisted",
+    linguisticReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-09-27T19:51:43Z",
+      reviewedContentHash: "sha256:ac298cff5d66e725944026417f976f0237650bc356ad50cce678f57d0e42a4e5",
+      evidenceRef: "https://support.industry.siemens.com/teddatasheet/?caller=SIOS&format=pdf&language=en&mlfbs=6ES7321-1EL00-0AA0",
+      note: "Reviewed Persian wording, grammar, punctuation, spacing, NFC, Persian ی/ک, and typed LTR segments in RTL copy.",
+    },
+    technicalReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-09-27T19:51:44Z",
+      reviewedContentHash: "sha256:ac298cff5d66e725944026417f976f0237650bc356ad50cce678f57d0e42a4e5",
+      evidenceRef: "https://support.industry.siemens.com/teddatasheet/?caller=SIOS&format=pdf&language=en&mlfbs=6ES7321-1EL00-0AA0",
+      note: "Reviewed exact 1EL00 identity, 32 inputs, and rated 120 V AC using Siemens-indexed exact-product datasheet text and available Siemens product HTML. Direct PDF access returned HTTP 403 during review. No lifecycle or other feature claim was approved.",
+    },
+  },
+  {
+    productId: "siemens-s7-300-sm321-di-8-120-230vac-1ff01-0aa0",
+    shortDescription: sm321Di8_120_230Vac1Ff01Copy,
+    description: [sm321Di8_120_230Vac1Ff01Copy],
+    provenance: "ai-assisted",
+    linguisticReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-09-27T19:51:43Z",
+      reviewedContentHash: "sha256:42084ab3fc1652eac520c5bbabd0c034f91f3398dceb97525737754190534765",
+      evidenceRef: "https://support.industry.siemens.com/teddatasheet/?caller=SIOS&format=pdf&language=en&mlfbs=6ES7321-1FF01-0AA0",
+      note: "Reviewed Persian rated-value wording, grammar, punctuation, spacing, NFC, Persian ی/ک, and typed LTR segments in RTL copy.",
+    },
+    technicalReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-09-27T19:51:44Z",
+      reviewedContentHash: "sha256:42084ab3fc1652eac520c5bbabd0c034f91f3398dceb97525737754190534765",
+      evidenceRef: "https://support.industry.siemens.com/teddatasheet/?caller=SIOS&format=pdf&language=en&mlfbs=6ES7321-1FF01-0AA0",
+      note: "Reviewed exact 1FF01 identity, 8 inputs, and rated 120/230 V AC using Siemens-indexed exact-product datasheet text and available Siemens product HTML; distinguished 1FF10 by Product ID. Direct PDF access returned HTTP 403 during review. No lifecycle or other feature claim was approved.",
+    },
+  },
+  {
+    productId: "siemens-s7-300-sm321-di-8-120-230vac-1ff10-0aa0",
+    shortDescription: sm321Di8_120_230Vac1Ff10Copy,
+    description: [sm321Di8_120_230Vac1Ff10Copy],
+    provenance: "ai-assisted",
+    linguisticReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-09-27T19:51:43Z",
+      reviewedContentHash: "sha256:71defd1d6395a23a116bf19da498e4d9f0c40335b1a520e1294177208830f3f9",
+      evidenceRef: "https://support.industry.siemens.com/teddatasheet/?caller=SIOS&format=pdf&language=en&mlfbs=6ES7321-1FF10-0AA0",
+      note: "Reviewed Persian rated-value wording, grammar, punctuation, spacing, NFC, Persian ی/ک, and typed LTR segments in RTL copy.",
+    },
+    technicalReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-09-27T19:51:44Z",
+      reviewedContentHash: "sha256:71defd1d6395a23a116bf19da498e4d9f0c40335b1a520e1294177208830f3f9",
+      evidenceRef: "https://support.industry.siemens.com/teddatasheet/?caller=SIOS&format=pdf&language=en&mlfbs=6ES7321-1FF10-0AA0",
+      note: "Reviewed exact 1FF10 identity, 8 inputs, and rated 120/230 V AC using Siemens-indexed exact-product datasheet text and available Siemens product HTML; distinguished 1FF01 by Product ID. Direct PDF access returned HTTP 403 during review. Current lifecycle remains unknown and was neither claimed nor approved.",
+    },
+  },
+  {
+    productId: "siemens-s7-300-sm321-di-16-120-230vac-1fh00-0aa0",
+    shortDescription: sm321Di16_120_230Vac1Fh00Copy,
+    description: [sm321Di16_120_230Vac1Fh00Copy],
+    provenance: "ai-assisted",
+    linguisticReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-09-27T19:51:43Z",
+      reviewedContentHash: "sha256:659f93e6818797378f02e46b89a8561f2722804b28b874a42801a442b1214a74",
+      evidenceRef: "https://support.industry.siemens.com/teddatasheet/?caller=SIOS&format=pdf&language=en&mlfbs=6ES7321-1FH00-0AA0",
+      note: "Reviewed Persian rated-value wording, grammar, punctuation, spacing, NFC, Persian ی/ک, and typed LTR segments in RTL copy.",
+    },
+    technicalReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-09-27T19:51:44Z",
+      reviewedContentHash: "sha256:659f93e6818797378f02e46b89a8561f2722804b28b874a42801a442b1214a74",
+      evidenceRef: "https://support.industry.siemens.com/teddatasheet/?caller=SIOS&format=pdf&language=en&mlfbs=6ES7321-1FH00-0AA0",
+      note: "Reviewed exact 1FH00 identity, 16 inputs, and rated 120/230 V AC using Siemens-indexed exact-product datasheet text and available Siemens product HTML. Direct PDF access returned HTTP 403 during review. No lifecycle or other feature claim was approved.",
     },
   },
 ] as const satisfies readonly PersianProductCopyOverlay[];
