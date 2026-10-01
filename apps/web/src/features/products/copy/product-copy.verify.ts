@@ -4490,6 +4490,65 @@ const expectedBatch04ReviewMetadata = [
       "Reviewed exact 1FH00 identity, 16 inputs, and rated 120/230 V AC using Siemens-indexed exact-product datasheet text and available Siemens product HTML. Direct PDF access returned HTTP 403 during review. No lifecycle or other feature claim was approved.",
   },
 ] as const;
+const BATCH_05_LINGUISTIC_REVIEWED_AT = "2026-10-01T17:45:15Z";
+const BATCH_05_TECHNICAL_REVIEWED_AT = "2026-10-01T17:45:26Z";
+const expectedBatch05ReviewMetadata = [
+  {
+    productId: "siemens-s7-300-sm321-di-16-24vdc-diagnostics-7bh01-0ab0",
+    reviewedContentHash:
+      "sha256:317aa317e2a9b3cab8b8f032cb3b307097c6a4452ff51a9ee986361235f95de7",
+    evidenceRef:
+      "https://cache.industry.siemens.com/dl/files/629/8859629/att_55794/v1/s7300_module_data_manual_en-US_en-US.pdf",
+    linguisticNote:
+      "Reviewed 6ES7321-7BH01-0AB0 Persian identity and sixteen-input wording, spacing, Persian comma and final period, NFC and Persian yeh/kaf; the complete Latin title and numeric 16 remain separate typed LTR segments.",
+    technicalNote:
+      "Reviewed exact 6ES7321-7BH01-0AB0: Module Data section 3.11, printed pp73-74. HF operation remains conditional; retaining the title does not approve unconditional HF behavior. Previously reviewed parsed cache-PDF text; visual page verification unavailable. Approves only identity, digital-input type and 16 inputs; the full canonical title is an identifier. No standalone voltage, lifecycle, availability, compatibility, operating-feature or unrelated specification is approved.",
+  },
+  {
+    productId: "siemens-s7-300-sm321-di-16-24-125vdc-7eh00-0ab0",
+    reviewedContentHash:
+      "sha256:b2fff655b1ac061b629dc798892a262f4e14cf5bc8bb46cf7afa26b95113eb08",
+    evidenceRef:
+      "https://cache.industry.siemens.com/dl/files/629/8859629/att_55794/v1/s7300_module_data_manual_en-US_en-US.pdf",
+    linguisticNote:
+      "Reviewed 6ES7321-7EH00-0AB0 Persian identity and sixteen-input wording, spacing, Persian comma and final period, NFC and Persian yeh/kaf; the complete Latin title and numeric 16 remain separate typed LTR segments.",
+    technicalNote:
+      "Reviewed exact 6ES7321-7EH00-0AB0: Module Data section 3.12, printed pp84-85. Previously reviewed parsed cache-PDF text; visual page verification unavailable. Approves only identity, digital-input type and 16 inputs; the full canonical title is an identifier. No standalone voltage, lifecycle, availability, compatibility, operating-feature or unrelated specification is approved.",
+  },
+  {
+    productId: "siemens-s7-300-sm321-di-16-24vdc-namur-7th00-0ab0",
+    reviewedContentHash:
+      "sha256:e5fd7c58fefaf24781f555ae6048689d8ac47dc50d5299c5f543bfe5f8d8d49b",
+    evidenceRef:
+      "https://cache.industry.siemens.com/dl/files/812/7215812/att_81952/v1/Signalbaugruppen_EN_en-US.pdf; https://cache.industry.siemens.com/dl/files/726/23060726/att_66629/v1/23060726_s7-300_kabel_und_zubehoer_zuordnung_stecker_baugruppe_d.pdf",
+    linguisticNote:
+      "Reviewed 6ES7321-7TH00-0AB0 Persian identity and sixteen-input wording, spacing, Persian comma and final period, NFC and Persian yeh/kaf; the complete Latin title and numeric 16 remain separate typed LTR segments.",
+    technicalNote:
+      "Reviewed exact 6ES7321-7TH00-0AB0: Process Automation manual section 6.2.1, printed 6-2 and 6-4 to 6-5; FAQ table 2, p6. inputVoltage semantics remain unresolved and unverified. Previously reviewed parsed cache-PDF text; visual page verification unavailable. Approves only identity, digital-input type and 16 inputs; the full canonical title is an identifier. No standalone voltage, lifecycle, availability, compatibility, operating-feature or unrelated specification is approved.",
+  },
+  {
+    productId: "siemens-s7-300-sm321-di-16-24vdc-sourcing-1bh50-0aa0",
+    reviewedContentHash:
+      "sha256:4b3c1b2f32fbc23fcfa9de3914a0dc8af215b6286ee43c8383861b906a87644c",
+    evidenceRef:
+      "https://cache.industry.siemens.com/dl/files/629/8859629/att_55794/v1/s7300_module_data_manual_en-US_en-US.pdf",
+    linguisticNote:
+      "Reviewed 6ES7321-1BH50-0AA0 Persian identity and sixteen-input wording, spacing, Persian comma and final period, NFC and Persian yeh/kaf; the complete Latin title and numeric 16 remain separate typed LTR segments.",
+    technicalNote:
+      "Reviewed exact 6ES7321-1BH50-0AA0: Module Data section 3.13, printed p92. Previously reviewed parsed cache-PDF text; visual page verification unavailable. Approves only identity, digital-input type and 16 inputs; the full canonical title is an identifier. No standalone voltage, lifecycle, availability, compatibility, operating-feature or unrelated specification is approved.",
+  },
+  {
+    productId: "siemens-s7-300-sm321-di16-24vdc-diagnostics-7bh00-0ab0",
+    reviewedContentHash:
+      "sha256:b9d498f47a5b5ed2a6f5bb3a32ef57fefe765211d67b9dc852c0520e15fc1e1f",
+    evidenceRef:
+      "https://cache.industry.siemens.com/dl/files/047/88868047/att_68363/v1/S7pcshwb.pdf",
+    linguisticNote:
+      "Reviewed 6ES7321-7BH00-0AB0 Persian identity and sixteen-input wording, spacing, Persian comma and final period, NFC and Persian yeh/kaf; the complete Latin title and numeric 16 remain separate typed LTR segments.",
+    technicalNote:
+      "Reviewed exact 6ES7321-7BH00-0AB0: Exact PCS 7 S7-300 SM-DI row, printed Page 24 of 41. The existing canonical source link points to a CPU410 manual; copy evidence uses this exact PCS 7 row, and source-link reconciliation remains separate. Previously reviewed parsed cache-PDF text; visual page verification unavailable. Approves only identity, digital-input type and 16 inputs; the full canonical title is an identifier. No standalone voltage, lifecycle, availability, compatibility, operating-feature or unrelated specification is approved.",
+  },
+] as const;
 const BATCH_02_LINGUISTIC_REVIEWED_AT = "2026-09-23T18:33:39Z";
 const BATCH_02_TECHNICAL_REVIEWED_AT = "2026-09-23T18:33:41Z";
 const BATCH_02_LINGUISTIC_NOTE =
@@ -4662,6 +4721,8 @@ const registeredDraftActivation = validatePersianProductCopyForActivation(
 );
 const isApprovedReview = (review: ProductCopyReview): boolean =>
   review.decision === "approved";
+const isPendingReview = (review: ProductCopyReview): boolean =>
+  review.decision === "pending";
 const registeredLinguisticApprovals = persianProductCopyDraftRegistry.filter(
   (entry) => isApprovedReview(entry.linguisticReview)
 ).length;
@@ -4921,6 +4982,66 @@ const registeredBatch04ApprovalRecords = registeredBatch04Drafts.map(
     };
   }
 );
+const registeredBatch05ApprovalRecords = registeredBatch05Drafts.map(
+  (entry) => {
+    const expected = expectedBatch05ReviewMetadata.find(
+      (candidate) => candidate.productId === entry.productId
+    );
+    assert(
+      expected !== undefined,
+      `Batch 05 approval metadata must remain scoped to ${entry.productId}.`
+    );
+
+    const freshContentHash = createProductCopyContentHash(entry);
+    const expectedLinguisticReview = {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: BATCH_05_LINGUISTIC_REVIEWED_AT,
+      reviewedContentHash: expected.reviewedContentHash,
+      evidenceRef: expected.evidenceRef,
+      note: expected.linguisticNote,
+    } as const;
+    const expectedTechnicalReview = {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: BATCH_05_TECHNICAL_REVIEWED_AT,
+      reviewedContentHash: expected.reviewedContentHash,
+      evidenceRef: expected.evidenceRef,
+      note: expected.technicalNote,
+    } as const;
+
+    assert(
+      JSON.stringify(entry.linguisticReview) ===
+        JSON.stringify(expectedLinguisticReview) &&
+        JSON.stringify(entry.technicalReview) ===
+          JSON.stringify(expectedTechnicalReview),
+      `Batch 05 role approvals and evidence must be exact for ${entry.productId}.`
+    );
+    assert(
+      !Object.is(entry.linguisticReview, entry.technicalReview) &&
+        entry.linguisticReview.decision === "approved" &&
+        entry.technicalReview.decision === "approved" &&
+        entry.linguisticReview.reviewedAt < entry.technicalReview.reviewedAt,
+      `Batch 05 role approvals must be distinct and ordered for ${entry.productId}.`
+    );
+    assert(
+      freshContentHash === expected.reviewedContentHash &&
+        entry.linguisticReview.reviewedContentHash === freshContentHash &&
+        entry.technicalReview.reviewedContentHash === freshContentHash,
+      `Batch 05 approvals must bind the unchanged reviewed production hash for ${entry.productId}.`
+    );
+
+    return {
+      productId: entry.productId,
+      freshContentHash,
+      evidenceRef: expected.evidenceRef,
+      roleObjectsDistinct: !Object.is(
+        entry.linguisticReview,
+        entry.technicalReview
+      ),
+    };
+  }
+);
 const registeredCurrentDualApprovals = persianProductCopyDraftRegistry.filter(
   (entry) => {
     const freshContentHash = createProductCopyContentHash(entry);
@@ -5116,6 +5237,54 @@ const registeredBatch04ApprovalMutationResults =
     assert(
       copyStaleApprovals === 2 && kindStaleApprovals === 2,
       `Batch 04 copy and segment-kind mutations must stale both approvals for ${entry.productId}.`
+    );
+
+    return {
+      productId: entry.productId,
+      copyStaleApprovals,
+      kindStaleApprovals,
+    };
+  });
+const registeredBatch05ApprovalMutationResults =
+  registeredBatch05Drafts.map((entry) => {
+    const copyMutation = cloneMutableOverlay(entry);
+    const finalShortSegment = copyMutation.shortDescription.at(-1);
+    assert(
+      finalShortSegment !== undefined,
+      `Batch 05 copy mutation requires a final segment for ${entry.productId}.`
+    );
+    finalShortSegment.value = `${finalShortSegment.value.slice(0, -1)}!`;
+    const copyMutationResult = validatePersianProductCopyDrafts(
+      [copyMutation],
+      products
+    );
+
+    const kindMutation = cloneMutableOverlay(entry);
+    const firstShortSegment = kindMutation.shortDescription[0];
+    assert(
+      firstShortSegment !== undefined,
+      `Batch 05 kind mutation requires a first segment for ${entry.productId}.`
+    );
+    firstShortSegment.kind =
+      firstShortSegment.kind === "text" ? "technical" : "text";
+    const kindMutationResult = validatePersianProductCopyDrafts(
+      [kindMutation],
+      products
+    );
+
+    const copyStaleApprovals = copyMutationResult.issues.filter(
+      (issue) =>
+        issue.code === "stale-approval-hash" &&
+        issue.productId === entry.productId
+    ).length;
+    const kindStaleApprovals = kindMutationResult.issues.filter(
+      (issue) =>
+        issue.code === "stale-approval-hash" &&
+        issue.productId === entry.productId
+    ).length;
+    assert(
+      copyStaleApprovals === 2 && kindStaleApprovals === 2,
+      `Batch 05 copy and segment-kind mutations must stale both approvals for ${entry.productId}.`
     );
 
     return {
@@ -5402,15 +5571,16 @@ const registeredBatch05DraftRecords = registeredBatch05Drafts.map((entry) => {
   );
   assert(
     entry.provenance === "ai-assisted" &&
-      JSON.stringify(entry.linguisticReview) === JSON.stringify(pendingReview) &&
-      JSON.stringify(entry.technicalReview) === JSON.stringify(pendingReview) &&
+      entry.linguisticReview.decision === "approved" &&
+      entry.technicalReview.decision === "approved" &&
+      !Object.is(entry.linguisticReview, entry.technicalReview) &&
       entry.description.length === 1 &&
       JSON.stringify(entry.description[0]) ===
         JSON.stringify(entry.shortDescription) &&
       JSON.stringify(entry.shortDescription.map((segment) => segment.kind)) ===
         JSON.stringify(["text", "technical", "text", "technical", "text"]) &&
       JSON.stringify(technicalTokens) === JSON.stringify([product.title, "16"]),
-    `Batch 05 short and long drafts must use only the complete title and 16 with both reviews pending and no reviewer metadata: ${entry.productId}`
+    `Batch 05 short and long drafts must retain only the complete title and 16 with distinct approved review roles: ${entry.productId}`
   );
   assert(
     technicalTokens.every((token) =>
@@ -5506,14 +5676,25 @@ assert(
     new Set(registeredBatch05Drafts.map((entry) => entry.productId)).size === 5 &&
     JSON.stringify(registeredBatch05Drafts.map((entry) => entry.productId)) ===
       JSON.stringify(expectedBatch05ProductIds) &&
+    expectedBatch05ReviewMetadata.length === 5 &&
+    JSON.stringify(
+      expectedBatch05ReviewMetadata.map((entry) => entry.productId)
+    ) === JSON.stringify(expectedBatch05ProductIds) &&
     registeredBatch05DraftRecords.length === 5 &&
+    registeredBatch05ApprovalRecords.length === 5 &&
+    new Set(
+      registeredBatch05Drafts.flatMap((entry) => [
+        entry.linguisticReview,
+        entry.technicalReview,
+      ])
+    ).size === 10 &&
     persianProductCopyDraftRegistry.filter(
-      (entry) => entry.linguisticReview.decision === "pending"
-    ).length === 5 &&
+      (entry) => isPendingReview(entry.linguisticReview)
+    ).length === 0 &&
     persianProductCopyDraftRegistry.filter(
-      (entry) => entry.technicalReview.decision === "pending"
-    ).length === 5,
-  "Batch 05 must add exactly five unique canonical bindings with five pending reviews per role."
+      (entry) => isPendingReview(entry.technicalReview)
+    ).length === 0,
+  "Batch 05 must retain exactly five unique canonical bindings, ten distinct approved role objects, and no pending reviews."
 );
 assert(
   JSON.stringify(registeredCpu1217Draft.shortDescription) ===
@@ -5561,9 +5742,14 @@ assert(
         entry.linguisticReview.decision === "approved" &&
         entry.technicalReview.decision === "approved"
     ) &&
-    registeredLinguisticApprovals === 20 &&
-    registeredTechnicalApprovals === 20 &&
-    registeredCurrentDualApprovals === 20 &&
+    registeredBatch05Drafts.every(
+      (entry) =>
+        entry.linguisticReview.decision === "approved" &&
+        entry.technicalReview.decision === "approved"
+    ) &&
+    registeredLinguisticApprovals === 25 &&
+    registeredTechnicalApprovals === 25 &&
+    registeredCurrentDualApprovals === 25 &&
     registeredBatch01ApprovalRecords.length === 5 &&
     registeredBatch01ApprovalRecords.every(
       (record) => record.roleObjectsDistinct
@@ -5579,17 +5765,21 @@ assert(
     registeredBatch04ApprovalRecords.length === 5 &&
     registeredBatch04ApprovalRecords.every(
       (record) => record.roleObjectsDistinct
+    ) &&
+    registeredBatch05ApprovalRecords.length === 5 &&
+    registeredBatch05ApprovalRecords.every(
+      (record) => record.roleObjectsDistinct
     ),
-  "Batches 01–04 must retain all twenty exact current dual approvals."
+  "Batches 01–05 must retain all twenty-five exact current dual approvals."
 );
 assert(
   !registeredDraftActivation.valid &&
     registeredDraftActivation.overlayCount === 25 &&
     registeredDraftActivation.canonicalCount === 382 &&
-    registeredDraftActivation.approvedCount === 20 &&
+    registeredDraftActivation.approvedCount === 25 &&
     registeredDraftActivation.missingIds.length === 357 &&
     !("capability" in registeredDraftActivation),
-  "Combined activation must fail closed at exactly 25/382 drafts, 20 dual approvals, and 357 missing Products."
+  "Combined activation must fail closed at exactly 25/382 drafts, 25 dual approvals, and 357 missing Products."
 );
 assert(
   PERSIAN_PRODUCT_COPY_PUBLICATION_STATE === "disabled",
@@ -5734,11 +5924,24 @@ console.log(
             JSON.stringify(registeredBatch05Drafts.map((entry) => entry.productId)) ===
             JSON.stringify(expectedBatch05ProductIds),
           linguisticPending: registeredBatch05Drafts.filter(
-            (entry) => entry.linguisticReview.decision === "pending"
+            (entry) => isPendingReview(entry.linguisticReview)
           ).length,
           technicalPending: registeredBatch05Drafts.filter(
-            (entry) => entry.technicalReview.decision === "pending"
+            (entry) => isPendingReview(entry.technicalReview)
           ).length,
+          linguisticApprovals: registeredBatch05Drafts.filter(
+            (entry) => entry.linguisticReview.decision === "approved"
+          ).length,
+          technicalApprovals: registeredBatch05Drafts.filter(
+            (entry) => entry.technicalReview.decision === "approved"
+          ).length,
+          currentDualApprovals: registeredBatch05ApprovalRecords.length,
+          approvalRecords: registeredBatch05ApprovalRecords.length,
+          mutationStaleness: registeredBatch05ApprovalMutationResults,
+          contentHashes: registeredBatch05ApprovalRecords.map((record) => ({
+            productId: record.productId,
+            hash: record.freshContentHash,
+          })),
           exactDrafts: registeredBatch05DraftRecords.length,
           drafts: registeredBatch05DraftRecords,
           publicCanonicalEnglishLtr: registeredBatch05DraftRecords.every(
