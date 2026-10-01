@@ -1,9 +1,76 @@
 # Siemiran — Changelog
 
 This file records completed repository changes. The newest entry records the
-current `main` state; older dated entries are historical snapshots.
+current implementation baseline; older dated entries are historical snapshots.
 
-## 2026-09-27 - Record SM321 1FF10 Lifecycle as Unverified
+## 2026-10-01 - Reconcile Batch 04 Documentation and Session Handoff
+
+- Reconciled current summaries to implementation baseline
+  `84d4fe14e82e7a922509a5ca8899cd50f1d3167d`: 20/382 private drafts and
+  approvals per role, 20 current dual approvals, and 362 missing Persian-copy
+  entries. Lifecycle omissions remain a separate count of eleven.
+- Marked provisional 1FF10 phase-out, pending PR #64 verification, and blocked
+  Batch 04 drafting language historical and superseded. The factual current
+  1FF10 lifecycle remains UNKNOWN; copy approval does not verify it.
+- Added [SESSION_HANDOFF.md](SESSION_HANDOFF.md) for prompt-by-prompt continuity,
+  evidence and validation applicability, outstanding work, and resume checks.
+  This local documentation branch still requires independent review, separately
+  authorized push/PR, guarded squash merge, and local synchronization.
+- NEW: Product-copy validation passed, exit 0. REUSED: PR #65's recorded
+  successful lint/build/TypeScript on unchanged application, dependency, and
+  build-configuration content; reviewed build generated 774/774 pages. Numeric
+  exit codes for those reused checks are not retained in the PR record.
+
+## 2026-09-28 - PR #65: Complete Batch 04 Private Drafts and Dual Approvals
+
+### Changed
+
+- [PR #65](https://github.com/Siemiran/Siemiran/pull/65),
+  `feat: add Batch 04 Persian product copy`, squash-merged at
+  `2026-09-28T18:03:45Z` as `84d4fe14e82e7a922509a5ca8899cd50f1d3167d`.
+  Its sole parent is `00af171572c427dba986340e7efd36f8ca0ad1d7`; reviewed head
+  `2eefce5487fb08872ed6a92f94e3b13d12659fa6` and squash share tree
+  `e567b87b9e7bb9274bab69fec9f3ed98e68964ad`.
+- Added exactly five private Persian SM321 drafts and current hash-bound
+  linguistic/technical approvals: `6ES7321-1CH00-0AA0`, `6ES7321-1EL00-0AA0`,
+  `6ES7321-1FF01-0AA0`, `6ES7321-1FF10-0AA0`, and `6ES7321-1FH00-0AA0`.
+  Batches 01-03 remain unchanged and Batch 04 added zero overrides.
+
+### Verified
+
+- Review used indexed exact-product Siemens text and available product HTML;
+  direct PDF requests returned HTTP 403. No fresh direct PDF access is claimed.
+  1CH00 has no separate voltage sentence; its canonical title is intact. 1FF10's
+  factual current lifecycle remains UNKNOWN and was neither claimed nor approved.
+- PR #65 records successful independent Product-copy, hash/history/stale-approval,
+  lint, build, TypeScript, and whitespace checks; the build generated 774/774 pages.
+- PR #64's maintainer-approved uncertainty handling passed independent verification
+  and resolved the representation blocker before Batch 04; it did not establish
+  1FF10's current lifecycle.
+
+### State
+
+- Drafts, linguistic approvals, and technical approvals: 20/382 each; current
+  dual approvals: 20; missing Persian-copy coverage: 362.
+- Overrides: 10 Products / 20 assignments / 7 unique strings; global allowlist:
+  empty. Catalog: 382, with S7-1200 186/186 and S7-300 196/196.
+- Exactly eleven canonical lifecycle omissions; S7-300 provenance: 185
+  Siemens-official verified / 11 explicitly unverified.
+- Active overlays: 0/382; capability: absent; publication: disabled; public
+  FA/EN Product copy: canonical English/LTR. Activation requires the complete
+  382/382 current dual-approval gate and separate authorization.
+- Batch 05 has not started and no scope is approved. The maintainer's website
+  inspection after Persian Product-copy completion remains pending; a later
+  preview task must define how completed copy is displayed. Private drafts
+  authorize neither activation nor publication.
+
+## 2026-09-27 - Record SM321 1FF10 Lifecycle as Unverified (Historical Snapshot)
+
+[PR #64](https://github.com/Siemiran/Siemiran/pull/64) merged at
+`2026-09-27T18:29:17Z` as `00af171572c427dba986340e7efd36f8ca0ad1d7`.
+Its uncertainty handling passed independent verification. The awaiting-review
+and unstarted Batch 04 wording below is historical, superseded by that verification
+and PR #65's completed private Batch 04.
 
 ### Changed
 
@@ -32,7 +99,7 @@ current `main` state; older dated entries are historical snapshots.
   separate drafting authorization; it has not begun. The maintainer website
   inspection remains pending after Persian Product-copy completion.
 
-## 2026-09-25 - PR #61: Complete Batch 03 Private Drafts and Dual Approvals
+## 2026-09-25 - PR #61: Complete Batch 03 Private Drafts and Dual Approvals (Historical Snapshot)
 
 ### Changed
 
@@ -1167,8 +1234,9 @@ the inventory before this approved deletion, not a valid current record.
 
 ## S7-1200 Source Database Expansion
 
-The following source datasets were added historically. At the current baseline,
-they remain DISCONNECTED from active Product aggregation and the UI.
+The following source datasets were added historically. At that source-expansion
+snapshot they remained DISCONNECTED from active Product aggregation and the UI;
+all 186 verified S7-1200 records are connected at the current baseline.
 
 - `2b9e885` — Added S7-1200 communication boards
 - `c00af82` — Added S7-1200 signal boards
@@ -1191,9 +1259,10 @@ repository, or UI pipeline.
 - `088c1c6` — Completed the S7-300 signal module baseline
 - `2249f9d` — Normalized SM335 variant classification
 
-These datasets remain DISCONNECTED at the current baseline. The previously
-completed S7-300 CPU source dataset is the Siemens dataset currently connected
-through validation and adapter mapping to active Products.
+At that source-expansion snapshot these datasets remained DISCONNECTED; only the
+previously completed S7-300 CPU source dataset was connected through validation
+and adapter mapping. All six S7-300 source groups are connected at the current
+196/196 baseline.
 
 ## Comparison Integration
 

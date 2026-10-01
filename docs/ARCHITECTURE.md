@@ -1,6 +1,8 @@
 # Siemiran — Current Architecture
 
-Implementation base: `main` at `843c7bf054e86f16c7b9065271e1e54faf715068`
+Implementation base: `main` at `84d4fe14e82e7a922509a5ca8899cd50f1d3167d`
+
+Current checkpoint and resume workflow: [SESSION_HANDOFF.md](SESSION_HANDOFF.md).
 
 ## Repository Structure
 
@@ -92,8 +94,12 @@ through validation/adapters and aggregation to the Product repository.
 Eleven S7-300 Products have unverified lifecycle provenance and
 invariantly omit the public `Product.lifecycle` property. The copy layer may not
 supply, infer, or override lifecycle data. For SM321 `6ES7321-1FF10-0AA0`,
-the maintainer approved `unverified` source lifecycle while current
-exact-product lifecycle remains unresolved. Previously recorded historical
+the maintainer approved `unverified` source lifecycle while its factual current
+exact-product lifecycle remains **UNKNOWN**. PR #64 merged at
+`2026-09-27T18:29:17Z` as `00af171572c427dba986340e7efd36f8ca0ad1d7`;
+independent verification returned **PASS** for the uncertainty representation.
+This resolved the policy/representation blocker, without verifying lifecycle.
+Previously recorded historical
 Siemens Mall phase-out evidence is retained; the public legacy label and badge
 disappear through the existing omission behavior, and comparison uses its existing
 missing-value display. No public `unverified` category is introduced. S7-300
@@ -127,18 +133,42 @@ returned HTTP 403, as the approval notes record. The corrected 1BH10 draft
 makes no delay, diagnostics, or interrupt claim. Batch 03 added no
 technical-token overrides. Batches 01 and 02 remain unchanged historical work.
 
-The separate private Product-copy registry now contains 15/382 drafts,
-with linguistic approvals at 15/382, technical approvals at 15/382, and 15
-current dual approvals. Complete coverage is missing for 367 Products. The
+PR #65, `feat: add Batch 04 Persian product copy`, squash-merged at
+`2026-09-28T18:03:45Z` as `84d4fe14e82e7a922509a5ca8899cd50f1d3167d`.
+Its sole parent is `00af171572c427dba986340e7efd36f8ca0ad1d7`; the reviewed
+head was `2eefce5487fb08872ed6a92f94e3b13d12659fa6`, and the identical
+squash/reviewed tree is `e567b87b9e7bb9274bab69fec9f3ed98e68964ad`.
+Batch 04 adds exactly five private SM321 drafts with current hash-bound
+linguistic and technical approvals: `6ES7321-1CH00-0AA0`,
+`6ES7321-1EL00-0AA0`, `6ES7321-1FF01-0AA0`, `6ES7321-1FF10-0AA0`, and
+`6ES7321-1FH00-0AA0`. Review used Siemens-indexed exact-product datasheet
+text and available Siemens product HTML; direct PDF access returned HTTP 403
+during review. This is not fresh direct PDF retrieval or lifecycle verification.
+Batch 04 added zero technical-token overrides and made no canonical Product
+data change. Batches 01–03 remain unchanged historical work.
+
+The separate private Product-copy registry now contains 20/382 drafts,
+with linguistic approvals at 20/382, technical approvals at 20/382, and 20
+current dual approvals. Complete coverage is missing for 362 Products. The
 technical-token overrides cover 10 Products, 20 assignments, and 7 unique
 strings, while the global allowlist remains empty. Publication remains globally
 disabled, activation is invalid, no activation capability exists, and active
-coverage remains 0/382. Approvals from Batches 01-03 do not authorize
+coverage remains 0/382. Approvals from Batches 01–04 do not authorize
 publication or partial activation; activation and publication remain blocked
-until all 382/382 Products have current dual approvals.
-Batch 04 drafting awaits independent verification of the 1FF10 implementation
-and separate drafting authorization. The maintainer website inspection remains
-pending after Persian Product-copy completion. The resolver remains the sole
+until all 382/382 Products have current dual approvals and separate
+authorization is given. Earlier Batch 04 drafting-blocker and pending PR #64
+review statements are historical and superseded. Batch 05 has not started and
+has no approved scope; after the documentation review, separately authorized
+push/PR, guarded squash merge, and local synchronization, a read-only readiness
+audit should recommend exactly five coherent Products for independent
+scope/token review.
+
+The dedicated local visual and functional website inspection with the maintainer
+remains pending after Persian Product-copy completion. It must cover FA/EN
+switching, Persian wording, RTL/LTR isolation, Product pages, cards, comparison,
+and responsive layouts. A later preview task must explicitly define how
+completed Persian copy is displayed; private drafts authorize neither activation
+nor publication. The resolver remains the sole
 public Product-copy source for Product listing, cards and meta, featured and
 related Products, detail header/body, search, metadata/OpenGraph/Twitter,
 Product JSON-LD, comparison,
@@ -179,7 +209,8 @@ The boundary fails closed:
 - Activation capabilities and resolved-copy objects are runtime authenticated.
 - Activation requires exactly 382/382 canonical Product IDs, with no missing,
   extra, or duplicate entries; every entry needs current linguistic and
-  technical approvals bound to its deterministic content hash.
+  technical approvals bound to its deterministic content hash. Passing this
+  gate still requires separate authorization for public activation.
 - Brand validation preserves `زیمیران` in Persian and `SIEMIRAN` in English;
   the incorrect active Persian token `سیمیران` has zero occurrences.
 - Technical segments retain LTR/English bidi isolation. MLFBs, Product IDs,
