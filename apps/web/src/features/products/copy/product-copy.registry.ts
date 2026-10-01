@@ -359,6 +359,52 @@ const sm321Di16_120_230Vac1Fh00Copy = [
   { kind: "text", value: " هستند." },
 ] as const satisfies ProductCopyParagraph;
 
+const sm321Di16_24Vdc7Bh01Copy = [
+  { kind: "text", value: "مدل " },
+  {
+    kind: "technical",
+    value: "SIMATIC S7-300 SM 321 16 DI 24 V DC HF Diagnostics",
+  },
+  { kind: "text", value: "، ماژول ورودی دیجیتال با " },
+  { kind: "technical", value: "16" },
+  { kind: "text", value: " ورودی است." },
+] as const satisfies ProductCopyParagraph;
+
+const sm321Di16_24_125Vdc7Eh00Copy = [
+  { kind: "text", value: "مدل " },
+  { kind: "technical", value: "SIMATIC S7-300 SM 321 16 DI 24/125 V DC" },
+  { kind: "text", value: "، ماژول ورودی دیجیتال با " },
+  { kind: "technical", value: "16" },
+  { kind: "text", value: " ورودی است." },
+] as const satisfies ProductCopyParagraph;
+
+const sm321Di16_24Vdc7Th00Copy = [
+  { kind: "text", value: "مدل " },
+  { kind: "technical", value: "SIMATIC S7-300 SM 321 16 DI 24 V DC NAMUR" },
+  { kind: "text", value: "، ماژول ورودی دیجیتال با " },
+  { kind: "technical", value: "16" },
+  { kind: "text", value: " ورودی است." },
+] as const satisfies ProductCopyParagraph;
+
+const sm321Di16_24Vdc1Bh50Copy = [
+  { kind: "text", value: "مدل " },
+  { kind: "technical", value: "SIMATIC S7-300 SM 321 16 DI 24 V DC Sourcing" },
+  { kind: "text", value: "، ماژول ورودی دیجیتال با " },
+  { kind: "technical", value: "16" },
+  { kind: "text", value: " ورودی است." },
+] as const satisfies ProductCopyParagraph;
+
+const sm321Di16_24Vdc7Bh00Copy = [
+  { kind: "text", value: "مدل " },
+  {
+    kind: "technical",
+    value: "SIMATIC S7-300 SM 321 16 DI 24 V DC Diagnostics",
+  },
+  { kind: "text", value: "، ماژول ورودی دیجیتال با " },
+  { kind: "technical", value: "16" },
+  { kind: "text", value: " ورودی است." },
+] as const satisfies ProductCopyParagraph;
+
 export const persianProductCopyDraftRegistry = [
   {
     productId: "siemens-s7-1200-cpu-211-1ae40",
@@ -839,5 +885,45 @@ export const persianProductCopyDraftRegistry = [
       evidenceRef: "https://support.industry.siemens.com/teddatasheet/?caller=SIOS&format=pdf&language=en&mlfbs=6ES7321-1FH00-0AA0",
       note: "Reviewed exact 1FH00 identity, 16 inputs, and rated 120/230 V AC using Siemens-indexed exact-product datasheet text and available Siemens product HTML. Direct PDF access returned HTTP 403 during review. No lifecycle or other feature claim was approved.",
     },
+  },
+  {
+    productId: "siemens-s7-300-sm321-di-16-24vdc-diagnostics-7bh01-0ab0",
+    shortDescription: sm321Di16_24Vdc7Bh01Copy,
+    description: [sm321Di16_24Vdc7Bh01Copy],
+    provenance: "ai-assisted",
+    linguisticReview: { decision: "pending" },
+    technicalReview: { decision: "pending" },
+  },
+  {
+    productId: "siemens-s7-300-sm321-di-16-24-125vdc-7eh00-0ab0",
+    shortDescription: sm321Di16_24_125Vdc7Eh00Copy,
+    description: [sm321Di16_24_125Vdc7Eh00Copy],
+    provenance: "ai-assisted",
+    linguisticReview: { decision: "pending" },
+    technicalReview: { decision: "pending" },
+  },
+  {
+    productId: "siemens-s7-300-sm321-di-16-24vdc-namur-7th00-0ab0",
+    shortDescription: sm321Di16_24Vdc7Th00Copy,
+    description: [sm321Di16_24Vdc7Th00Copy],
+    provenance: "ai-assisted",
+    linguisticReview: { decision: "pending" },
+    technicalReview: { decision: "pending" },
+  },
+  {
+    productId: "siemens-s7-300-sm321-di-16-24vdc-sourcing-1bh50-0aa0",
+    shortDescription: sm321Di16_24Vdc1Bh50Copy,
+    description: [sm321Di16_24Vdc1Bh50Copy],
+    provenance: "ai-assisted",
+    linguisticReview: { decision: "pending" },
+    technicalReview: { decision: "pending" },
+  },
+  {
+    productId: "siemens-s7-300-sm321-di16-24vdc-diagnostics-7bh00-0ab0",
+    shortDescription: sm321Di16_24Vdc7Bh00Copy,
+    description: [sm321Di16_24Vdc7Bh00Copy],
+    provenance: "ai-assisted",
+    linguisticReview: { decision: "pending" },
+    technicalReview: { decision: "pending" },
   },
 ] as const satisfies readonly PersianProductCopyOverlay[];

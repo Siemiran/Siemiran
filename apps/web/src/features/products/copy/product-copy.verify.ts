@@ -928,6 +928,40 @@ const expectedBatch04CanonicalProducts = [
   },
 ] as const;
 
+const expectedBatch05CanonicalProducts = [
+  {
+    productId: "siemens-s7-300-sm321-di-16-24vdc-diagnostics-7bh01-0ab0",
+    title: "SIMATIC S7-300 SM 321 16 DI 24 V DC HF Diagnostics",
+    partNumber: "6ES7321-7BH01-0AB0",
+  },
+  {
+    productId: "siemens-s7-300-sm321-di-16-24-125vdc-7eh00-0ab0",
+    title: "SIMATIC S7-300 SM 321 16 DI 24/125 V DC",
+    partNumber: "6ES7321-7EH00-0AB0",
+  },
+  {
+    productId: "siemens-s7-300-sm321-di-16-24vdc-namur-7th00-0ab0",
+    title: "SIMATIC S7-300 SM 321 16 DI 24 V DC NAMUR",
+    partNumber: "6ES7321-7TH00-0AB0",
+  },
+  {
+    productId: "siemens-s7-300-sm321-di-16-24vdc-sourcing-1bh50-0aa0",
+    title: "SIMATIC S7-300 SM 321 16 DI 24 V DC Sourcing",
+    partNumber: "6ES7321-1BH50-0AA0",
+  },
+  {
+    productId: "siemens-s7-300-sm321-di16-24vdc-diagnostics-7bh00-0ab0",
+    title: "SIMATIC S7-300 SM 321 16 DI 24 V DC Diagnostics",
+    partNumber: "6ES7321-7BH00-0AB0",
+  },
+] as const;
+const expectedBatch05ProductIds = expectedBatch05CanonicalProducts.map(
+  (entry) => entry.productId
+);
+const expectedBatch05ProductIdSet = new Set<ProductId>(
+  expectedBatch05ProductIds
+);
+
 const batch01Products = expectedBatch01TechnicalTokenOverrides.map(
   (expectedEntry) => {
     const matchedProduct = products.find(
@@ -1042,6 +1076,39 @@ const batch04Products = expectedBatch04CanonicalProducts.map((expectedEntry) => 
 const batch04ProductionResolver = createProductTechnicalTokenOverrideResolver(
   batch04TechnicalTokenOverrides,
   products
+);
+const batch05Products = expectedBatch05CanonicalProducts.map((expectedEntry) => {
+  const matches = products.filter(
+    (candidate) =>
+      candidate.id === expectedEntry.productId ||
+      candidate.partNumber === expectedEntry.partNumber
+  );
+  const matchedProduct = matches[0];
+  assert(
+    matches.length === 1 &&
+      matchedProduct !== undefined &&
+      matchedProduct.id === expectedEntry.productId &&
+      matchedProduct.slug === expectedEntry.partNumber.toLowerCase() &&
+      matchedProduct.title === expectedEntry.title &&
+      matchedProduct.partNumber === expectedEntry.partNumber &&
+      matchedProduct.manufacturerPartNumber === expectedEntry.partNumber &&
+      matchedProduct.brandId === "siemens" &&
+      matchedProduct.categoryId === "PLC" &&
+      matchedProduct.familyId === "S7-300" &&
+      matchedProduct.seriesId === "S7-300" &&
+      matchedProduct.productTypeId === "Signal Module" &&
+      matchedProduct.variantId === "digital-input" &&
+      matchedProduct.specifications?.["Digital Inputs"] === "16",
+    `Batch 05 canonical Product binding must remain unique and exact: ${expectedEntry.productId}`
+  );
+  return matchedProduct;
+});
+assert(
+  expectedBatch05ProductIdSet.size === 5 &&
+    reviewedTechnicalTokenOverrides.every(
+      (entry) => !expectedBatch05ProductIdSet.has(entry.productId)
+    ),
+  "Batch 05 must contain five unique Products and add zero technical-token overrides."
 );
 const combinedProductionResolver = createProductTechnicalTokenOverrideResolver(
   reviewedTechnicalTokenOverrides,
@@ -1353,6 +1420,62 @@ batch04Products.forEach((fixtureProduct) => {
       `Batch 04 canonical-derived token must remain valid without an override: ${fixtureProduct.id} / ${token}`
     );
   });
+});
+
+batch05Products.forEach((fixtureProduct) => {
+  const allowedTokens = deriveAllowedTechnicalTokens(fixtureProduct);
+  [fixtureProduct.title, fixtureProduct.partNumber, "16"].forEach((token) => {
+    assert(
+      combinedProductionResolver.getTokensForProduct(fixtureProduct.id)
+        .length === 0 &&
+        allowedTokens.has(token) &&
+        validateFixture(overrideFixture(fixtureProduct, token), products).valid,
+      `Batch 05 reviewed token must pass without an override: ${fixtureProduct.id} / ${token}`
+    );
+  });
+  const unauthorizedStandaloneTokens = [
+    "SIMATIC",
+    "SM321",
+    "SM 321",
+    "DI",
+    "HF",
+    "Diagnostics",
+    "HF Diagnostics",
+    "Sourcing",
+    "24VDC",
+    "24V",
+    "24 V",
+    "24/125",
+    "24",
+    "125",
+    "V",
+    "DC",
+    "V DC",
+    "18 V",
+    "8.2 V",
+  ];
+  unauthorizedStandaloneTokens.forEach((token) => {
+    assert(
+      !allowedTokens.has(token),
+      `Batch 05 title fragments must not acquire standalone authorization: ${fixtureProduct.id} / ${token}`
+    );
+    assertDraftIncludesIssues(
+      `Batch 05 unauthorized standalone token ${fixtureProduct.id} / ${token}`,
+      overrideFixture(fixtureProduct, token),
+      ["unapproved-technical-token"],
+      products
+    );
+  });
+  assert(
+    allowedTokens.has("S7-300") &&
+      allowedTokens.has("NAMUR") ===
+        (fixtureProduct.partNumber === "6ES7321-7TH00-0AB0") &&
+      allowedTokens.has("24 V DC") ===
+        (fixtureProduct.partNumber !== "6ES7321-7EH00-0AB0") &&
+      allowedTokens.has("24/125 V DC") ===
+        (fixtureProduct.partNumber === "6ES7321-7EH00-0AB0"),
+    `Batch 05 field-derived fragments must retain their exact boundaries outside the draft scope: ${fixtureProduct.id}`
+  );
 });
 
 const cpu1211 = batch01ProductsById.get("siemens-s7-1200-cpu-211-1ae40");
@@ -4460,6 +4583,9 @@ const registeredBatch03Drafts = persianProductCopyDraftRegistry.filter(
 const registeredBatch04Drafts = persianProductCopyDraftRegistry.filter(
   (entry) => expectedBatch04DraftProductIdSet.has(entry.productId)
 );
+const registeredBatch05Drafts = persianProductCopyDraftRegistry.filter(
+  (entry) => expectedBatch05ProductIdSet.has(entry.productId)
+);
 const registeredBatch01DraftBindings = registeredBatch01Drafts.map(
   (entry) => {
     const product = products.find(
@@ -5260,9 +5386,75 @@ const batch04PublicResolutionResults = batch04Products.map((fixtureProduct) => {
   };
 });
 
+const registeredBatch05DraftRecords = registeredBatch05Drafts.map((entry) => {
+  const product = batch05Products.find(
+    (candidate) => candidate.id === entry.productId
+  );
+  assert(
+    product !== undefined,
+    `Batch 05 draft must be canonical: ${entry.productId}`
+  );
+  const technicalTokens = entry.shortDescription
+    .filter((segment) => segment.kind === "technical")
+    .map((segment) => segment.value);
+  const renderedShortDescription = serializeProductCopyParagraph(
+    entry.shortDescription
+  );
+  assert(
+    entry.provenance === "ai-assisted" &&
+      JSON.stringify(entry.linguisticReview) === JSON.stringify(pendingReview) &&
+      JSON.stringify(entry.technicalReview) === JSON.stringify(pendingReview) &&
+      entry.description.length === 1 &&
+      JSON.stringify(entry.description[0]) ===
+        JSON.stringify(entry.shortDescription) &&
+      JSON.stringify(entry.shortDescription.map((segment) => segment.kind)) ===
+        JSON.stringify(["text", "technical", "text", "technical", "text"]) &&
+      JSON.stringify(technicalTokens) === JSON.stringify([product.title, "16"]),
+    `Batch 05 short and long drafts must use only the complete title and 16 with both reviews pending and no reviewer metadata: ${entry.productId}`
+  );
+  assert(
+    technicalTokens.every((token) =>
+      deriveAllowedTechnicalTokens(product).has(token)
+    ) &&
+      entry.shortDescription.every(
+        (segment) =>
+          segment.kind === "technical" ||
+          !/[A-Za-z0-9\u064A\u0643]/u.test(segment.value)
+      ) &&
+      renderedShortDescription === renderedShortDescription.normalize("NFC") &&
+      renderedShortDescription.includes("،"),
+    `Batch 05 prose must retain Persian letters, NFC, and comma with canonical-derived technical tokens: ${entry.productId}`
+  );
+  const english = resolveProductCopy(product, "en");
+  const disabledPersian = resolveProductCopy(product, "fa");
+  const englishPublic = createPublicProductCardCopyDTO(english);
+  const disabledPersianPublic = createPublicProductCardCopyDTO(disabledPersian);
+  assert(
+    english.source === "canonical-en" &&
+      disabledPersian.source === "canonical-en" &&
+      serializeProductCopyParagraph(english.shortDescription) ===
+        product.shortDescription &&
+      serializeProductCopyParagraph(disabledPersian.shortDescription) ===
+        product.shortDescription &&
+      englishPublic.language === "en" &&
+      englishPublic.direction === "ltr" &&
+      disabledPersianPublic.language === "en" &&
+      disabledPersianPublic.direction === "ltr",
+    `Batch 05 public FA/EN copy must remain canonical English/LTR: ${entry.productId}`
+  );
+  return {
+    productId: entry.productId,
+    renderedShortDescription,
+    technicalTokens,
+    segmentKinds: entry.shortDescription.map((segment) => segment.kind),
+    freshContentHash: createProductCopyContentHash(entry),
+    publicCanonicalEnglishLtr: true,
+  };
+});
+
 assert(
   registeredDraftValidation.valid &&
-    persianProductCopyDraftRegistry.length === 20 &&
+    persianProductCopyDraftRegistry.length === 25 &&
     registeredBatch01Drafts.length === 5 &&
     JSON.stringify(registeredBatch01DraftBindings) ===
       JSON.stringify(expectedBatch01DraftProducts),
@@ -5308,6 +5500,20 @@ assert(
       JSON.stringify(expectedBatch04CanonicalProducts) &&
     registeredBatch04DraftRecords.length === 5,
   "Batch 04 draft IDs, canonical Product bindings, copy, and segmentation must be exact."
+);
+assert(
+  registeredBatch05Drafts.length === 5 &&
+    new Set(registeredBatch05Drafts.map((entry) => entry.productId)).size === 5 &&
+    JSON.stringify(registeredBatch05Drafts.map((entry) => entry.productId)) ===
+      JSON.stringify(expectedBatch05ProductIds) &&
+    registeredBatch05DraftRecords.length === 5 &&
+    persianProductCopyDraftRegistry.filter(
+      (entry) => entry.linguisticReview.decision === "pending"
+    ).length === 5 &&
+    persianProductCopyDraftRegistry.filter(
+      (entry) => entry.technicalReview.decision === "pending"
+    ).length === 5,
+  "Batch 05 must add exactly five unique canonical bindings with five pending reviews per role."
 );
 assert(
   JSON.stringify(registeredCpu1217Draft.shortDescription) ===
@@ -5374,16 +5580,16 @@ assert(
     registeredBatch04ApprovalRecords.every(
       (record) => record.roleObjectsDistinct
     ),
-  "Batches 01–03 must retain fifteen exact current dual approvals and Batch 04 must add five."
+  "Batches 01–04 must retain all twenty exact current dual approvals."
 );
 assert(
   !registeredDraftActivation.valid &&
-    registeredDraftActivation.overlayCount === 20 &&
+    registeredDraftActivation.overlayCount === 25 &&
     registeredDraftActivation.canonicalCount === 382 &&
     registeredDraftActivation.approvedCount === 20 &&
-    registeredDraftActivation.missingIds.length === 362 &&
+    registeredDraftActivation.missingIds.length === 357 &&
     !("capability" in registeredDraftActivation),
-  "Combined activation must fail closed at exactly 20/382 drafts, 20 dual approvals, and 362 missing Products."
+  "Combined activation must fail closed at exactly 25/382 drafts, 20 dual approvals, and 357 missing Products."
 );
 assert(
   PERSIAN_PRODUCT_COPY_PUBLICATION_STATE === "disabled",
@@ -5522,6 +5728,23 @@ console.log(
               result.direction === "ltr"
           ),
         },
+        batch05: {
+          entries: registeredBatch05Drafts.length,
+          exactBindings:
+            JSON.stringify(registeredBatch05Drafts.map((entry) => entry.productId)) ===
+            JSON.stringify(expectedBatch05ProductIds),
+          linguisticPending: registeredBatch05Drafts.filter(
+            (entry) => entry.linguisticReview.decision === "pending"
+          ).length,
+          technicalPending: registeredBatch05Drafts.filter(
+            (entry) => entry.technicalReview.decision === "pending"
+          ).length,
+          exactDrafts: registeredBatch05DraftRecords.length,
+          drafts: registeredBatch05DraftRecords,
+          publicCanonicalEnglishLtr: registeredBatch05DraftRecords.every(
+            (record) => record.publicCanonicalEnglishLtr
+          ),
+        },
         linguisticApprovals: registeredLinguisticApprovals,
         technicalApprovals: registeredTechnicalApprovals,
         currentDualApprovals: registeredCurrentDualApprovals,
@@ -5567,6 +5790,17 @@ console.log(
           tokens: batch04ProductionResolver.tokenCount,
           canonicalBindings: batch04Products.length,
           issues: batch04ProductionResolver.issues.length,
+        },
+        batch05: {
+          entries: reviewedTechnicalTokenOverrides.filter(
+            (entry) => expectedBatch05ProductIdSet.has(entry.productId)
+          ).length,
+          tokens: batch05Products.reduce(
+            (count, product) =>
+              count + combinedProductionResolver.getTokensForProduct(product.id).length,
+            0
+          ),
+          canonicalBindings: batch05Products.length,
         },
         globalTokens: reviewedGlobalTechnicalTokens.length,
         detachedDeepFrozen: reviewedTechnicalTokenOverrides.every(
