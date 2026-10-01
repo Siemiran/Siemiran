@@ -1,11 +1,40 @@
 # Siemiran — Product Database
 
-Repository source of truth: current `main` branch
+Repository source of truth: `main` at
+`84d4fe14e82e7a922509a5ca8899cd50f1d3167d`.
+
+## 2026-09-28 - Batch 04 Private Product-copy Checkpoint (Current State)
+
+PR #65, `feat: add Batch 04 Persian product copy`, merged at
+`2026-09-28T18:03:45Z` as `84d4fe14e82e7a922509a5ca8899cd50f1d3167d`.
+It adds private drafts and current hash-bound linguistic and technical approvals
+for exactly `6ES7321-1CH00-0AA0`, `6ES7321-1EL00-0AA0`,
+`6ES7321-1FF01-0AA0`, `6ES7321-1FF10-0AA0`, and `6ES7321-1FH00-0AA0`.
+Canonical Product/source data remains unchanged: 382 Products, S7-300 196/196,
+and S7-1200 186/186. The registry now has 20/382 drafts, 20/382 linguistic
+approvals, 20/382 technical approvals, and 20 current dual approvals; 362
+Products lack complete Persian-copy coverage. This coverage count is separate
+from the eleven canonical lifecycle omissions.
+
+Batch 04 added zero overrides; Product-specific technical-token overrides remain
+10 Products / 20 assignments / 7 unique strings, with an empty global allowlist.
+Review used Siemens-indexed exact-product datasheet text and available Siemens
+product HTML, with direct PDF access returning HTTP 403 during review; no fresh
+direct PDF access is claimed. The copy approval does not establish 1FF10's
+factual current lifecycle. Active overlays remain 0/382, activation capability
+is absent, publication is disabled, and public FA/EN Product copy remains
+canonical English/LTR. Activation requires all 382/382 current dual approvals
+and separate authorization. See [SESSION_HANDOFF.md](SESSION_HANDOFF.md) for the
+pending documentation review and subsequent workflow; Batch 05 has not started
+and no scope is approved.
 
 ## 2026-09-27 - SM321 1FF10 Lifecycle Uncertainty (Current State)
 
-The maintainer approved recording the current lifecycle of
-`6ES7321-1FF10-0AA0` as `unverified`. Previously recorded historical
+The maintainer approved recording source lifecycle for
+`6ES7321-1FF10-0AA0` as `unverified`; its factual current exact-product lifecycle
+remains **UNKNOWN**. PR #64 merged at `2026-09-27T18:29:17Z` as
+`00af171572c427dba986340e7efd36f8ca0ad1d7`, and independent verification of
+the uncertainty handling returned **PASS**. Previously recorded historical
 exact-product [Siemens Mall evidence](https://mall.industry.siemens.com/mall/en/se/Catalog/Product/6ES7321-1FF10-0AA0)
 supports phase-out at that time, but does not establish the current
 exact-product lifecycle or an individual transition date. The S7-300 family's
@@ -17,12 +46,16 @@ The source record remains exposed as the same canonical Product, with
 disappear in both languages; comparison uses its existing missing-value display.
 No public `unverified` label is introduced. S7-300 lifecycle provenance is now
 185 Siemens-official verified / 11 explicit unverified across the same 196/196
-connected Products. The full 382/382 Product-copy activation gate is unchanged.
-Batch 04 drafting awaits independent verification of this implementation and a
-separate drafting authorization. The maintainer website inspection remains
-pending after Persian Product-copy completion.
+connected Products. The full 382/382 Product-copy activation gate and separate
+authorization requirement are unchanged. The policy/representation blocker was
+resolved; prior pending-review and Batch 04 drafting-blocker statements are
+historical and superseded by PR #64 verification and the completed private
+Batch 04. They do not imply that current lifecycle became verified. The
+maintainer website inspection remains pending after Persian Product-copy
+completion, with its scope and preview constraint in
+[SESSION_HANDOFF.md](SESSION_HANDOFF.md).
 
-## 2026-09-25 - S7-300 SM321 Lifecycle Provenance Review
+## 2026-09-25 - S7-300 SM321 Lifecycle Provenance Review (Historical Snapshot)
 
 For `6ES7321-1CH00-0AA0`, source `lifecycle` is corrected from `phase-out`
 to `spare-part`. Reviewed indexed content for the [exact-product Siemens
@@ -36,13 +69,21 @@ HTTP 403 on direct PDF retrieval. The retained [Siemens Mall
 product link](https://mall.industry.siemens.com/mall/en/ww/Catalog/Product/6ES7321-1CH00-0AA0)
 provides historical PM400 phase-out evidence, not the newer lifecycle evidence.
 No current PM code or individual transition date was established.
+The supported source lifecycle remains `spare-part`, canonical
+`Product.lifecycle` remains `legacy`, and the Mall product URL remains the
+public source link.
 
-`6ES7321-1FF10-0AA0` remains unchanged provisionally. Its [historical
+At this checkpoint, `6ES7321-1FF10-0AA0` remained provisionally `phase-out`.
+Its [historical
 exact-product Siemens Mall evidence](https://mall.industry.siemens.com/mall/en/se/Catalog/Product/6ES7321-1FF10-0AA0)
 supports phase-out, but its current exact-product lifecycle is unverified.
 The S7-300 family's planned cancellation does not establish this product's
-individual transition. Batch 04 drafting remains blocked pending sufficient
-evidence or a separately authorized uncertainty-handling decision.
+individual transition. Batch 04 drafting was blocked pending sufficient
+evidence or a separately authorized uncertainty-handling decision. This
+provisional representation and drafting blocker are historical and superseded
+by the maintainer-approved PR #64 uncertainty handling, its independent
+verification, and PR #65's private Batch 04 completion. Its factual current
+lifecycle remains UNKNOWN, as documented above.
 
 ## 2026-09-08 - Task BD: S7-300 Formal Closure (Historical Snapshot)
 
@@ -237,7 +278,9 @@ Every source record maps to exactly one Product; no current exposure gate
 remains. CPU contributes 36 Products, PS 13, SM 66, IM 7, CP 43, and FM 31.
 
 The current lifecycle provenance matrix is 185 Siemens-official verified and 11
-explicit unverified, with 0 noncompliant secondary-history claims and 0 unknown.
+explicit unverified, with 0 noncompliant secondary-history claims and 0
+unclassified provenance records (the matrix's `unknown` bucket). This classification
+does not verify the factual current lifecycle of 1FF10, which remains UNKNOWN.
 The eleven known gaps remain exposed without a public lifecycle value. Historical
 source and integration milestones are preserved in the dated task sections
 below and do not define the current connection state.
@@ -435,8 +478,9 @@ records cause adapter mapping to fail.
 Manufacturer source interfaces retain their product-type-specific
 `specifications` contracts. Common Product mapping does not inspect or
 arbitrarily serialize those objects; every connected product type must supply
-an explicit specification normalizer. Task C establishes this boundary while
-preserving the existing S7-300 CPU mapping and adds no new source integration.
+an explicit specification normalizer. Historical Task C established this boundary
+while preserving the then-existing S7-300 CPU mapping and adding no new source
+integration in that task.
 
 This enforcement must not be inferred for disconnected source files. Until a
 dataset is connected to the validation/adapter/aggregation path, normal builds
@@ -448,10 +492,16 @@ do not establish that every record satisfies the active Product contract.
 - Access active Products through the repository.
 - Treat manufacturer files as source data until explicitly connected.
 - Do not invent prices, stock, specifications, taxonomy, or lifecycle values.
-- Do not call disconnected or unverified source records active products.
+- Expose source records only after identity/specification validation and explicit
+  integration; an unverified lifecycle remains omitted from public Product data.
 - Reconcile taxonomy and validation before controlled dataset integration.
 
-## S7-300 Communication Processor Verification — 2026-09-03
+## S7-300 Communication Processor Verification — 2026-09-03 (Historical Snapshot)
+
+The dated CP/FM sections below preserve their historical evidence, counts, and
+next steps. Their references to current totals, provisional lifecycle, pending
+audits, or disconnected records describe those checkpoints, not the current
+382-Product dataset or completed 196/196 S7-300 pipeline.
 
 Task AJ reconciled all 43 Communication Processor identities and found no
 taxonomy or adapter blocker, while identifying 30 lifecycle records requiring
@@ -503,7 +553,7 @@ After its integration and strict S7-300 closure audit, the locked decision gate
 requires stopping before another Siemens series and evaluating additional
 Siemens data versus Persian-first bilingual site completion.
 
-## 2026-09-04 — S7-300 Function Module Reconciliation
+## 2026-09-04 — S7-300 Function Module Reconciliation (Historical Snapshot)
 
 Task AO audited 32 unique FM records and confirmed the project placement of SM
 338 POS as `Function Module` / `position-input` and CM35 as S7-300 `Function
@@ -521,7 +571,7 @@ functional variants covering all 32 records, but verified taxonomy and an FM
 adapter have not been created. FM remains 0/32, Product remains 351, S7-300
 remains 165/197, and S7-1200 remains 186/186.
 
-## 2026-09-04 — FM Targeted Identity/Lifecycle Reconciliation
+## 2026-09-04 — FM Targeted Identity/Lifecycle Reconciliation (Historical Snapshot)
 
 Task AQ targets only the 11 open records. The SIPLUS FM 350-1 identity is now
 `6AG1350-1AH03-2AE0` with internal ID
@@ -538,7 +588,7 @@ blockers remain: `6AG1350-1AH03-2AE0`, `6AT1735-0AA01-0AA0`,
 13-variant taxonomy, and explicit adapter remain deferred. FM remains 0/32,
 Product 351, S7-300 165/197, and S7-1200 186/186.
 
-## 2026-09-04 — Function Module Functional Pipeline
+## 2026-09-04 — Function Module Functional Pipeline (Historical Snapshot)
 
 Task AS normalizes the three SIPLUS environmental leaks without changing any
 identity or lifecycle: `6AG1350-1AH03-2AE0` and `6AG1350-2AH01-4AE0` now use
@@ -562,7 +612,7 @@ but not functional preparation: `6AG1350-1AH03-2AE0`,
 `6ES7356-4BM00-0AE0`, `6ES7357-4AH03-0AE0`, and `7MH4904-2AA01`. FM remains
 0/32 connected; Product 351, S7-300 165/197, and S7-1200 186/186 are unchanged.
 
-## 2026-09-04 — Function Module Verified-Subset Exposure
+## 2026-09-04 — Function Module Verified-Subset Exposure (Historical Snapshot)
 
 Task AS prepared all 32 FM source records structurally. Task AT adds a single
 Siemens-official evidence gate in `fm.ts` for the eight lifecycle-unresolved
@@ -589,7 +639,7 @@ records remain source records, and S7-300 is not complete. Repeated third-party
 lifecycle research is prohibited; only official Siemens evidence may remove a
 record from the exposure gate.
 
-## 2026-09-04 — Final Eight FM Lifecycle Reconciliation
+## 2026-09-04 — Final Eight FM Lifecycle Reconciliation (Historical Snapshot)
 
 The exact Siemens Industry Mall page for FM354 `6ES7354-1AH01-0AE0` states
 PM410 "Product cancellation" effective 2017-03-01. Its before/after lifecycle
@@ -626,7 +676,7 @@ S7-300 reaches 197/197 does the strict S7-300 closure audit begin. After S7-300
 completion, the deferred Siemens-only provenance compliance audit precedes the
 locked Persian-first bilingual versus additional-Siemens-series decision.
 
-## 2026-09-04 — Final Seven FM Identity Integrity
+## 2026-09-04 — Final Seven FM Identity Integrity (Historical Snapshot)
 
 Task AV closed 0/7 lifecycle debts and exposed a malformed FM356-4 8 MB
 identity. Task AW replaces that source record and exposure-gate key with exact
@@ -648,7 +698,7 @@ SIWAREX A model/function without displaying that MLFB. Both remain gated and
 unchanged pending management review. Source stays 32 unique records; exposure
 stays 25/32; Product stays 376; S7-300 stays 190/197; S7-1200 stays 186/186.
 
-## 2026-09-04 — Final Seven FM Exact Identity Closure
+## 2026-09-04 — Final Seven FM Exact Identity Closure (Historical Snapshot)
 
 Task AX corrects the SIWAREX A source MLFB from `7MH4904-2AA01` to Siemens
 MLFB `7MH4421-1AA01`, corrects its internal ID to

@@ -1,6 +1,66 @@
 # Siemiran — Project State
 
-## 2026-09-27 - SM321 1FF10 Lifecycle Uncertainty (Current State)
+## 2026-10-01 - Batch 04 Reconciliation (Current State)
+
+Implementation baseline: `84d4fe14e82e7a922509a5ca8899cd50f1d3167d`.
+[PR #65](https://github.com/Siemiran/Siemiran/pull/65),
+`feat: add Batch 04 Persian product copy`, squash-merged at
+`2026-09-28T18:03:45Z`. Its sole parent is
+`00af171572c427dba986340e7efd36f8ca0ad1d7`; reviewed head
+`2eefce5487fb08872ed6a92f94e3b13d12659fa6` and squash share tree
+`e567b87b9e7bb9274bab69fec9f3ed98e68964ad`.
+
+Batch 04 privately completes exactly these five SM321 Products:
+
+- `6ES7321-1CH00-0AA0`
+- `6ES7321-1EL00-0AA0`
+- `6ES7321-1FF01-0AA0`
+- `6ES7321-1FF10-0AA0`
+- `6ES7321-1FH00-0AA0`
+
+Private drafts, linguistic approvals, and technical approvals are each 20/382,
+with 20 current dual approvals and 362 Products missing Persian-copy coverage.
+Batches 01-03 remain intact. Overrides remain 10 Products / 20 assignments /
+7 unique strings; Batch 04 added zero and the global allowlist is empty.
+Active overlays remain 0/382, activation capability is absent, and publication
+is disabled. Public FA/EN Product copy remains canonical English/LTR. Activation
+requires all 382/382 current dual approvals and separate authorization.
+
+Catalog coverage remains 382: S7-1200 186/186 and S7-300 196/196. Exactly eleven
+canonical Products omit lifecycle; S7-300 provenance is 185 Siemens-official
+verified / 11 explicitly unverified. These lifecycle gaps are separate from the
+362 missing Persian-copy entries.
+
+[PR #64](https://github.com/Siemiran/Siemiran/pull/64) merged at
+`2026-09-27T18:29:17Z` as `00af171572c427dba986340e7efd36f8ca0ad1d7`;
+its maintainer-approved uncertainty handling passed independent verification.
+The representation/policy blocker is resolved. 1FF10's factual current lifecycle
+remains **UNKNOWN**, its source is `unverified`, canonical `Product.lifecycle`
+is absent, public legacy labels are removed, and comparison uses the missing-value
+display. No public `unverified` label is introduced. Batch 04 copy approval does
+not verify that lifecycle. Review used indexed exact-product Siemens text and
+available product HTML; direct PDF access returned HTTP 403 during review.
+This reconciliation claims no fresh direct PDF access. The precise 1CH00
+provenance chronology remains in [DATABASE.md](DATABASE.md); PR #60's 1BH10
+correction is recorded in [ARCHITECTURE.md](ARCHITECTURE.md).
+
+The documentation branch still needs independent review, separately authorized
+push/PR, guarded squash merge, and local synchronization. Then a read-only Batch
+05 readiness audit should recommend exactly five coherent Products for independent
+scope/token review. Batch 05 has not started; no scope is approved. See
+[SESSION_HANDOFF.md](SESSION_HANDOFF.md) for the durable resume checkpoint.
+
+After Persian Product-copy completion, the maintainer's dedicated local visual
+and functional inspection remains pending: FA/EN switching, Persian wording,
+RTL/LTR isolation, Product pages, cards, comparison, and responsive layouts.
+A later preview task must explicitly define how completed Persian copy is
+displayed; private drafts authorize neither activation nor publication.
+
+## 2026-09-27 - SM321 1FF10 Lifecycle Uncertainty (Historical Snapshot)
+
+The pending verification/drafting wording below records the pre-merge snapshot.
+It is superseded by independently verified PR #64 and completed private Batch 04
+in PR #65; it is no longer a current blocker.
 
 The maintainer approved changing the source lifecycle of
 `6ES7321-1FF10-0AA0` from `phase-out` to `unverified`. Previously recorded
@@ -318,9 +378,9 @@ the inventory before this approved deletion, not a valid current record.
 ## Current Baseline
 
 - Status: Active Development
-- Documentation synchronized: 2026-09-27
+- Documentation synchronized: 2026-10-01
 - Implementation base: `main` at
-  `843c7bf054e86f16c7b9065271e1e54faf715068`
+  `84d4fe14e82e7a922509a5ca8899cd50f1d3167d`
 - No semantic release version is asserted by this document.
 
 ## Current Stack
@@ -352,7 +412,7 @@ the inventory before this approved deletion, not a valid current record.
 | --- | --- | --- |
 | Product listing and dynamic detail pages | IMPLEMENTED | Repository-backed listing, static product paths, and not-found handling |
 | Localization foundation | IMPLEMENTED | Persian-first FA/EN routing, matching UI catalogs, one-click equivalent-page switching, locale direction, and temporarily noindexed English routes |
-| Product-copy consumer integration | IMPLEMENTED | All intended consumers use the central resolver/public DTO boundary; private drafts and both approval roles are 15/382 with 15 current dual approvals and 367 missing, while active overlays remain 0/382, activation capability is absent, and publication is disabled |
+| Product-copy consumer integration | IMPLEMENTED | All intended consumers use the central resolver/public DTO boundary; private drafts and both approval roles are 20/382 with 20 current dual approvals and 362 missing, while active overlays remain 0/382, activation capability is absent, and publication is disabled |
 | Search, URL parameters, filters, sorting, pagination | IMPLEMENTED | Category, family, series, and product-type filters; 12-item pagination |
 | Gallery and specifications | IMPLEMENTED | Product gallery/image UI and technical specification rendering |
 | SEO and structured data | IMPLEMENTED | Metadata, canonical/Open Graph/Twitter fields, Product JSON-LD, breadcrumbs, and Breadcrumb JSON-LD |
@@ -598,16 +658,22 @@ each milestone was recorded; they are not the current connection state.
   connected. The current verified S7-1200 source integration is 186/186 complete,
   and the Product collection total is 308.
 
-## Latest Local Quality Verification
+## Validation at the Documentation Checkpoint
 
-- ESLint: PASS
-- TypeScript (`tsc --noEmit`): PASS
-- Production build: PASS
-- Product-copy validation harness: PASS
-- Static generation: 774/774
-- Supported production smoke invocation: PASS
-- Automated tests: NOT ESTABLISHED
+- NEW: `npm.cmd run validate:product-copy` passed on 2026-10-01, exit 0,
+  against unchanged baseline application content; 20 dual approvals, 362 missing,
+  0 active overlays, and eleven lifecycle omissions.
+- REUSED: PR #65's recorded independent lint, production build, and TypeScript
+  PASS on reviewed head `2eefce5487fb08872ed6a92f94e3b13d12659fa6`, whose tree
+  matches the implementation squash. The reviewed build generated 774/774 pages.
+  Application, dependency, and build-configuration content is unchanged; these
+  checks were not newly run. The PR record does not retain numeric exit codes.
+- Historical supported production smoke invocation: PASS; not rerun here.
+- Broader automated test baseline: NOT ESTABLISHED
 - GitHub Actions CI/CD: NOT FOUND
+
+See [SESSION_HANDOFF.md](SESSION_HANDOFF.md) for whitespace/scope verification
+and the session-end checklist.
 
 ## S7-300 Communication Processor Source Verification — 2026-09-03
 
