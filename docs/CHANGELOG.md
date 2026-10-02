@@ -3,7 +3,83 @@
 This file records completed repository changes. The newest entry records the
 current implementation baseline; older dated entries are historical snapshots.
 
-## 2026-10-01 - Reconcile Batch 04 Documentation and Session Handoff
+## 2026-10-02 - PR #67: Complete Batch 05 Private Drafts and Dual Approvals
+
+### Changed
+
+- [PR #67](https://github.com/Siemiran/Siemiran/pull/67),
+  `feat: add Batch 05 Persian product copy`, squash-merged at
+  `2026-10-02T09:46:57Z` (Tehran: `2026-10-02 13:16:57`) as
+  `04a302c9b587954131289e8624a1f90344b9ffdd`. Its sole parent is
+  `3becc93356a3e46780f7f36f947b184c234cc376`; reviewed feature head
+  `a3270bb3ef856cff15d54679a65073d5b676f0d2` and squash share exact tree
+  `199d0286dbb0b80123c4f4b51a7d5b1c9ddaf9ce`. PR creation, merge, and local
+  main synchronization are complete; the feature branch remains at that head.
+- Added five private, ai-assisted Persian S7-300 SM321 entries:
+  `6ES7321-7BH01-0AB0`, `6ES7321-7EH00-0AB0`, `6ES7321-7TH00-0AB0`,
+  `6ES7321-1BH50-0AA0`, and `6ES7321-7BH00-0AB0`. Approved copy uses each
+  complete canonical title as an identifier, digital-input module type, and
+  sixteen inputs. All prior twenty entries, metadata, and approval hashes
+  remain unchanged; Batch 05 adds zero overrides.
+- Each Product has separate linguistic and technical approval records bound
+  to its unchanged production content hash. Reviewer: `Siemiran`; linguistic
+  timestamp: `2026-10-01T17:45:15Z`; technical timestamp:
+  `2026-10-01T17:45:26Z`.
+- The implementation changes only the copy registry and verification harness:
+  two files, 602 insertions and 9 deletions. Documentation reconciliation is
+  on the new, unmerged `docs/reconcile-fifth-persian-product-copy-batch`
+  branch and awaits independent review, separately authorized push/PR,
+  guarded merge, and synchronization.
+
+### Verified and Deferred
+
+- NEW documentation-task validation on 2026-10-02: from `apps/web`,
+  `npm.cmd run validate:product-copy` passed once with exit 0, confirming the
+  current counts, exact eleven omissions, zero overlays, disabled publication,
+  and all 764 canonical public FA/EN resolutions.
+- Recorded Batch 05 validator, lint, and build exited 0; the build generated
+  774/774 pages with TypeScript checked within the build. Independent
+  linguistic, technical, and approval-integrity reviews passed. Recorded
+  text/kind mutations staled both approvals for each of the five Products.
+  Lint/build/TypeScript evidence is reused through exact reviewed/squash tree
+  equality and unchanged application, dependency, and build configuration;
+  those checks are not fresh documentation-task executions.
+- Parsed cache-PDF text was reviewed successfully; visual verification was
+  unavailable. Historical HTTP 403 observations remain distinct from the
+  later 7BH01 support-hosted Internal Error without an exposed HTTP status.
+  No fresh manufacturer retrieval or lifecycle verification is claimed.
+- 7TH00 `inputVoltage` semantics remain unresolved and unverified; its complete
+  title is an identifier and approval adds no standalone voltage assertion.
+  7BH01 HF operation remains conditional. 7BH00's CPU410 source-link
+  reconciliation remains a separate data task; its copy evidence uses the
+  exact PCS 7 row, distinct from 7BH01.
+- Recorded pre-merge GitHub reads found zero required approvals/checks, no merge
+  queue, and no blocking review feedback. Zero check runs/status contexts with
+  combined status pending represented absent CI, not passed CI.
+
+### Current State
+
+- Catalog: 382 canonical Products, S7-1200 186 and S7-300 196. Private drafts,
+  current linguistic approvals, and current technical approvals: 25/382 each;
+  current dual approvals: 25; pending roles: zero; missing copy entries: 357.
+- Overrides remain 10 Products / 20 assignments / 7 unique strings; the global
+  allowlist is empty and Batches 03-05 add zero new overrides. Exactly eleven
+  lifecycle omissions and S7-300 provenance classification of 185
+  Siemens-official verified / 11 explicitly unverified remain unchanged and
+  separate from copy coverage. The 1CH00 chronology and PR #60 correction are
+  preserved; independently verified PR #64 resolved the representation blocker,
+  while 1FF10's factual current lifecycle remains UNKNOWN.
+- Active overlays remain zero, activation capability is absent, publication
+  is disabled, and all 764 public FA/EN resolutions retain canonical
+  English/LTR Product copy. Activation requires 382/382 current dual approvals
+  and separate launch authorization. Batch 06 scope/readiness remains
+  unapproved and unstarted; maintainer website inspection and the existing
+  preview constraints remain pending.
+
+## 2026-10-01 - Reconcile Batch 04 Documentation and Session Handoff (Historical Snapshot)
+
+The counts and pending workflow below describe that dated checkpoint. Its
+unstarted Batch 05 state is superseded by PR #67 and the current checkpoint above.
 
 - Reconciled current summaries to implementation baseline
   `84d4fe14e82e7a922509a5ca8899cd50f1d3167d`: 20/382 private drafts and
@@ -21,7 +97,10 @@ current implementation baseline; older dated entries are historical snapshots.
   build-configuration content; reviewed build generated 774/774 pages. Numeric
   exit codes for those reused checks are not retained in the PR record.
 
-## 2026-09-28 - PR #65: Complete Batch 04 Private Drafts and Dual Approvals
+## 2026-09-28 - PR #65: Complete Batch 04 Private Drafts and Dual Approvals (Historical Snapshot)
+
+The 20/382 coverage and unstarted Batch 05 wording below are historical,
+superseded by PR #67's completed private Batch 05.
 
 ### Changed
 

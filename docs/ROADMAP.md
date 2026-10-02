@@ -1,6 +1,6 @@
 # Siemiran — Roadmap
 
-Baseline: `main` at `84d4fe14e82e7a922509a5ca8899cd50f1d3167d`
+Baseline: `main` at `04a302c9b587954131289e8624a1f90344b9ffdd`
 
 This roadmap distinguishes the completed repository baseline from future
 priorities. Ordering expresses current priority, not a finalized implementation
@@ -67,6 +67,30 @@ design or semantic release schedule.
   review. No fresh direct PDF access or 1FF10 lifecycle verification is claimed.
   Batch 04 added zero overrides and made no canonical Product-data change.
   Batches 01–03 remain unchanged historical work.
+- PR #67, `feat: add Batch 05 Persian product copy`, squash-merged at
+  `2026-10-02T09:46:57Z` (Tehran: `2026-10-02 13:16:57`) as
+  `04a302c9b587954131289e8624a1f90344b9ffdd`. Its sole parent is
+  `3becc93356a3e46780f7f36f947b184c234cc376`; reviewed head was
+  `a3270bb3ef856cff15d54679a65073d5b676f0d2`, with identical squash/reviewed
+  tree `199d0286dbb0b80123c4f4b51a7d5b1c9ddaf9ce`. Merge and local main
+  synchronization are complete. Its two-file implementation scope is
+  602 insertions and 9 deletions.
+  Batch 05 covers `6ES7321-7BH01-0AB0`, `6ES7321-7EH00-0AB0`,
+  `6ES7321-7TH00-0AB0`, `6ES7321-1BH50-0AA0`, and `6ES7321-7BH00-0AB0`.
+  The approved ai-assisted private copy is limited to complete canonical titles
+  as identifiers, digital-input module type and sixteen inputs. Each Product
+  has separate current linguistic and technical approvals bound to its exact
+  production content hash, reviewed by `Siemiran` at
+  `2026-10-01T17:45:15Z` and `2026-10-01T17:45:26Z`, respectively.
+  7TH00 `inputVoltage` semantics remain unresolved/unverified, with no
+  standalone voltage assertion approved; 7BH01 HF operation remains
+  conditional. 7BH00's CPU410 source-link reconciliation remains a separate
+  data task; copy evidence uses its exact PCS 7 row, distinct from 7BH01.
+  Parsed cache-PDF text was reviewed; visual verification was unavailable.
+  Historical HTTP 403 observations are distinct from the later 7BH01
+  support-hosted Internal Error without an exposed HTTP status. No fresh
+  manufacturer retrieval or lifecycle verification is claimed. All prior
+  twenty entries, metadata and approval hashes remain unchanged.
 - Product listing, cards/meta, featured and related Products, detail
   header/body, search, metadata/OpenGraph/Twitter, Product JSON-LD, comparison,
   and inquiry identity use the central resolver/presentation boundary.
@@ -77,10 +101,11 @@ design or semantic release schedule.
 - Comparison persists validated Product IDs under
   `siemiran:product-comparison` and safely migrates legacy stored objects.
 - Private drafts, linguistic approvals, and technical approvals are each
-  20/382, with 20 current dual approvals and 362 Products not yet drafted or
-  approved.
+  25/382, with 25 current dual approvals, zero pending roles and 357 Products
+  missing private copy entries.
 - Technical-token overrides cover 10 Products, 20 assignments, and 7 unique
-  strings; the global allowlist remains empty.
+  strings; the global allowlist remains empty. Batches 03–05 added zero
+  overrides.
 - Active Persian Product-copy coverage remains 0/382, no activation capability
   exists, publication is disabled, and public FA/EN Product prose remains
   canonical English/LTR. Batch approvals do not authorize publication or
@@ -92,16 +117,16 @@ design or semantic release schedule.
 ## Next Resume Workflow
 
 1. Complete independent review of the documentation reconciliation on
-   `docs/reconcile-fourth-persian-product-copy-batch`.
+   `docs/reconcile-fifth-persian-product-copy-batch`.
 2. Obtain separate authorization for push/PR creation.
 3. Perform a guarded squash merge and local synchronization in the authorized
    follow-up workflow.
-4. Then perform a read-only Batch 05 readiness audit recommending exactly five
-   coherent Products for independent scope/token review. Batch 05 has not
-   started and no scope is approved.
+4. Batch 06 readiness and scope work requires separate authorization; it
+   remains unapproved and unstarted.
 
-The documentation review, push/PR, and merge are pending. The durable checkpoint
-and session-end/resume checklist are in
+The fifth documentation branch is unmerged; its independent review, push/PR,
+and guarded merge remain pending. The merged implementation baseline is
+complete. The durable checkpoint and session-end/resume checklist are in
 [SESSION_HANDOFF.md](SESSION_HANDOFF.md).
 
 ## 1. Persian Product-copy Drafting, Review, and Atomic Activation
@@ -120,10 +145,10 @@ and session-end/resume checklist are in
 
 Throughout drafting and review, canonical technical tokens remain untranslated:
 MLFBs, Product IDs, slugs, part numbers, official model/family names, protocols,
-standards, values, units, and URLs. Batches 01–03 remain unchanged historical
-work; Batch 04 private drafting and dual review are complete for exactly five
+standards, values, units, and URLs. Batches 01–04 remain unchanged historical
+work; Batch 05 private drafting and dual review are complete for exactly five
 S7-300 SM321 digital-input Products. Future drafting requires separately
-approved scope after the Batch 05 readiness and independent scope/token review.
+authorized Batch 06 readiness work and approved independent scope/token review.
 
 After Persian Product-copy completion, perform a dedicated local visual and
 functional website inspection with the maintainer: FA/EN switching, Persian
@@ -178,8 +203,8 @@ nor publication.
 - Keep CMS, API, database, and cache evaluation as future architecture
   decisions.
 
-Persian Product-copy drafting and review are complete privately for 20/382
-Products but not for the remaining 362. The 382/382 current dual-approval gate,
+Persian Product-copy drafting and review are complete privately for 25/382
+Products but not for the remaining 357. The 382/382 current dual-approval gate,
 separate activation authorization, atomic publication, maintainer website inspection,
 bilingual SEO activation, inquiry delivery, CI/CD, download population, and
 another Siemens-series expansion are not complete. Consumer integration and

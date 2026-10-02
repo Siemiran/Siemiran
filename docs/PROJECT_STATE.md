@@ -1,6 +1,73 @@
 # Siemiran — Project State
 
-## 2026-10-01 - Batch 04 Reconciliation (Current State)
+## 2026-10-02 - Batch 05 Reconciliation (Current State)
+
+Merged implementation baseline: `04a302c9b587954131289e8624a1f90344b9ffdd`.
+[PR #67](https://github.com/Siemiran/Siemiran/pull/67),
+`feat: add Batch 05 Persian product copy`, squash-merged at
+`2026-10-02T09:46:57Z` (Tehran: `2026-10-02 13:16:57`). Its sole parent is
+`3becc93356a3e46780f7f36f947b184c234cc376`; reviewed feature head
+`a3270bb3ef856cff15d54679a65073d5b676f0d2` and squash share tree
+`199d0286dbb0b80123c4f4b51a7d5b1c9ddaf9ce`. Merge verification and main-only
+fetch/fast-forward synchronization completed. The feature branch remains at the
+reviewed head. Implementation changed only the copy registry and verification
+harness: two files, 602 insertions and 9 deletions.
+
+Batch 05 privately completes exactly these five existing S7-300 SM321 Products:
+
+- `6ES7321-7BH01-0AB0`
+- `6ES7321-7EH00-0AB0`
+- `6ES7321-7TH00-0AB0`
+- `6ES7321-1BH50-0AA0`
+- `6ES7321-7BH00-0AB0`
+
+Approved copy is limited to complete canonical titles as identifiers,
+digital-input module type, and sixteen inputs. Provenance is `ai-assisted`;
+each Product has separate linguistic and technical approval records bound to
+its unchanged production content hash. Reviewer is `Siemiran`, with linguistic
+timestamp `2026-10-01T17:45:15Z` and technical timestamp
+`2026-10-01T17:45:26Z`. All prior twenty entries, metadata, and approval hashes
+remain unchanged.
+
+Current private drafts, linguistic approvals, and technical approvals are each
+25/382, with 25 current dual approvals, zero pending roles, and 357 Products
+missing private copy entries. Canonical coverage remains 382: S7-1200 186/186
+and S7-300 196/196. Overrides remain 10 Products / 20 assignments / 7 unique
+strings, with an empty global allowlist and zero new overrides in Batches 03-05.
+Exactly eleven Products omit lifecycle; the recorded S7-300 provenance
+classification remains 185 Siemens-official verified / 11 explicitly unverified,
+separate from private-copy coverage.
+
+Active overlays remain 0/382, activation capability is absent, and publication
+is disabled. All 764 public FA/EN resolutions retain canonical English/LTR copy.
+Activation requires 382/382 current dual approvals and separate launch
+authorization; private approvals do not authorize activation or publication.
+
+7TH00 `inputVoltage` semantics remain unresolved and unverified; its complete
+title is an identifier and adds no standalone voltage assertion. 7BH01 HF
+operation remains conditional. 7BH00's existing CPU410 source link needs a
+separate data reconciliation; copy evidence uses its exact PCS 7 row, distinct
+from 7BH01. Parsed cache-PDF text was reviewed successfully, but visual
+verification was unavailable. Historical HTTP 403 observations remain distinct
+from the later recorded 7BH01 support-hosted `Internal Error`, which exposed no
+HTTP status. No fresh manufacturer retrieval or lifecycle verification is
+claimed. PR #64 resolved the earlier representation blocker; 1FF10's factual
+lifecycle remains **UNKNOWN**. The recorded 1CH00 chronology and PR #60 correction
+remain unchanged.
+
+This reconciliation is on the separate, unmerged documentation branch
+`docs/reconcile-fifth-persian-product-copy-batch`, based on the merged
+implementation SHA above. Independent documentation review, separately
+authorized push/PR, and guarded documentation merge remain pending. Batch 06
+scope/readiness work is unapproved and unstarted. Maintainer website inspection
+and the existing preview constraints remain pending; see
+[SESSION_HANDOFF.md](SESSION_HANDOFF.md).
+
+## 2026-10-01 - Batch 04 Reconciliation (Historical Snapshot)
+
+This dated 20/362 checkpoint and its prospective next-step wording are preserved
+as history, superseded by completed Batch 05 in PR #67 and the current section
+above.
 
 Implementation baseline: `84d4fe14e82e7a922509a5ca8899cd50f1d3167d`.
 [PR #65](https://github.com/Siemiran/Siemiran/pull/65),
@@ -378,9 +445,9 @@ the inventory before this approved deletion, not a valid current record.
 ## Current Baseline
 
 - Status: Active Development
-- Documentation synchronized: 2026-10-01
+- Documentation reconciled locally: 2026-10-02; independent review pending
 - Implementation base: `main` at
-  `84d4fe14e82e7a922509a5ca8899cd50f1d3167d`
+  `04a302c9b587954131289e8624a1f90344b9ffdd`
 - No semantic release version is asserted by this document.
 
 ## Current Stack
@@ -412,7 +479,7 @@ the inventory before this approved deletion, not a valid current record.
 | --- | --- | --- |
 | Product listing and dynamic detail pages | IMPLEMENTED | Repository-backed listing, static product paths, and not-found handling |
 | Localization foundation | IMPLEMENTED | Persian-first FA/EN routing, matching UI catalogs, one-click equivalent-page switching, locale direction, and temporarily noindexed English routes |
-| Product-copy consumer integration | IMPLEMENTED | All intended consumers use the central resolver/public DTO boundary; private drafts and both approval roles are 20/382 with 20 current dual approvals and 362 missing, while active overlays remain 0/382, activation capability is absent, and publication is disabled |
+| Product-copy consumer integration | IMPLEMENTED | All intended consumers use the central resolver/public DTO boundary; private drafts and both approval roles are 25/382 with 25 current dual approvals, zero pending roles, and 357 missing, while active overlays remain 0/382, activation capability is absent, and publication is disabled |
 | Search, URL parameters, filters, sorting, pagination | IMPLEMENTED | Category, family, series, and product-type filters; 12-item pagination |
 | Gallery and specifications | IMPLEMENTED | Product gallery/image UI and technical specification rendering |
 | SEO and structured data | IMPLEMENTED | Metadata, canonical/Open Graph/Twitter fields, Product JSON-LD, breadcrumbs, and Breadcrumb JSON-LD |
@@ -660,14 +727,19 @@ each milestone was recorded; they are not the current connection state.
 
 ## Validation at the Documentation Checkpoint
 
-- NEW: `npm.cmd run validate:product-copy` passed on 2026-10-01, exit 0,
-  against unchanged baseline application content; 20 dual approvals, 362 missing,
-  0 active overlays, and eleven lifecycle omissions.
-- REUSED: PR #65's recorded independent lint, production build, and TypeScript
-  PASS on reviewed head `2eefce5487fb08872ed6a92f94e3b13d12659fa6`, whose tree
-  matches the implementation squash. The reviewed build generated 774/774 pages.
-  Application, dependency, and build-configuration content is unchanged; these
-  checks were not newly run. The PR record does not retain numeric exit codes.
+- NEW: `npm.cmd run validate:product-copy` ran once from `apps/web` on
+  2026-10-02 and exited 0 against unchanged Batch 05 application content.
+  It confirms 25 entries/approvals per role, 25 current dual approvals, zero
+  pending roles, 357 missing, 0 active overlays, and eleven lifecycle omissions.
+  Each text/kind mutation still stales both approvals for all five Batch 05
+  Products; complete-activation fixtures do not describe live registry readiness.
+- REUSED: recorded Batch 05 validator/lint/build evidence exited 0; the build
+  generated 774/774 pages with TypeScript checked within the build. Independent
+  linguistic, technical, and approval-integrity reviews passed on reviewed head
+  `a3270bb3ef856cff15d54679a65073d5b676f0d2`, whose tree equals the PR #67
+  implementation squash tree. Application, dependency, and build-configuration
+  content remains unchanged by this documentation task. Lint/build/TypeScript
+  were not newly run; older PR #65 evidence is not substituted for Batch 05.
 - Historical supported production smoke invocation: PASS; not rerun here.
 - Broader automated test baseline: NOT ESTABLISHED
 - GitHub Actions CI/CD: NOT FOUND
