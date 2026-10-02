@@ -359,6 +359,52 @@ const sm321Di16_120_230Vac1Fh00Copy = [
   { kind: "text", value: " هستند." },
 ] as const satisfies ProductCopyParagraph;
 
+const sm321Di16_24Vdc7Bh01Copy = [
+  { kind: "text", value: "مدل " },
+  {
+    kind: "technical",
+    value: "SIMATIC S7-300 SM 321 16 DI 24 V DC HF Diagnostics",
+  },
+  { kind: "text", value: "، ماژول ورودی دیجیتال با " },
+  { kind: "technical", value: "16" },
+  { kind: "text", value: " ورودی است." },
+] as const satisfies ProductCopyParagraph;
+
+const sm321Di16_24_125Vdc7Eh00Copy = [
+  { kind: "text", value: "مدل " },
+  { kind: "technical", value: "SIMATIC S7-300 SM 321 16 DI 24/125 V DC" },
+  { kind: "text", value: "، ماژول ورودی دیجیتال با " },
+  { kind: "technical", value: "16" },
+  { kind: "text", value: " ورودی است." },
+] as const satisfies ProductCopyParagraph;
+
+const sm321Di16_24Vdc7Th00Copy = [
+  { kind: "text", value: "مدل " },
+  { kind: "technical", value: "SIMATIC S7-300 SM 321 16 DI 24 V DC NAMUR" },
+  { kind: "text", value: "، ماژول ورودی دیجیتال با " },
+  { kind: "technical", value: "16" },
+  { kind: "text", value: " ورودی است." },
+] as const satisfies ProductCopyParagraph;
+
+const sm321Di16_24Vdc1Bh50Copy = [
+  { kind: "text", value: "مدل " },
+  { kind: "technical", value: "SIMATIC S7-300 SM 321 16 DI 24 V DC Sourcing" },
+  { kind: "text", value: "، ماژول ورودی دیجیتال با " },
+  { kind: "technical", value: "16" },
+  { kind: "text", value: " ورودی است." },
+] as const satisfies ProductCopyParagraph;
+
+const sm321Di16_24Vdc7Bh00Copy = [
+  { kind: "text", value: "مدل " },
+  {
+    kind: "technical",
+    value: "SIMATIC S7-300 SM 321 16 DI 24 V DC Diagnostics",
+  },
+  { kind: "text", value: "، ماژول ورودی دیجیتال با " },
+  { kind: "technical", value: "16" },
+  { kind: "text", value: " ورودی است." },
+] as const satisfies ProductCopyParagraph;
+
 export const persianProductCopyDraftRegistry = [
   {
     productId: "siemens-s7-1200-cpu-211-1ae40",
@@ -838,6 +884,116 @@ export const persianProductCopyDraftRegistry = [
       reviewedContentHash: "sha256:659f93e6818797378f02e46b89a8561f2722804b28b874a42801a442b1214a74",
       evidenceRef: "https://support.industry.siemens.com/teddatasheet/?caller=SIOS&format=pdf&language=en&mlfbs=6ES7321-1FH00-0AA0",
       note: "Reviewed exact 1FH00 identity, 16 inputs, and rated 120/230 V AC using Siemens-indexed exact-product datasheet text and available Siemens product HTML. Direct PDF access returned HTTP 403 during review. No lifecycle or other feature claim was approved.",
+    },
+  },
+  {
+    productId: "siemens-s7-300-sm321-di-16-24vdc-diagnostics-7bh01-0ab0",
+    shortDescription: sm321Di16_24Vdc7Bh01Copy,
+    description: [sm321Di16_24Vdc7Bh01Copy],
+    provenance: "ai-assisted",
+    linguisticReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-10-01T17:45:15Z",
+      reviewedContentHash: "sha256:317aa317e2a9b3cab8b8f032cb3b307097c6a4452ff51a9ee986361235f95de7",
+      evidenceRef: "https://cache.industry.siemens.com/dl/files/629/8859629/att_55794/v1/s7300_module_data_manual_en-US_en-US.pdf",
+      note: "Reviewed 6ES7321-7BH01-0AB0 Persian identity and sixteen-input wording, spacing, Persian comma and final period, NFC and Persian yeh/kaf; the complete Latin title and numeric 16 remain separate typed LTR segments.",
+    },
+    technicalReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-10-01T17:45:26Z",
+      reviewedContentHash: "sha256:317aa317e2a9b3cab8b8f032cb3b307097c6a4452ff51a9ee986361235f95de7",
+      evidenceRef: "https://cache.industry.siemens.com/dl/files/629/8859629/att_55794/v1/s7300_module_data_manual_en-US_en-US.pdf",
+      note: "Reviewed exact 6ES7321-7BH01-0AB0: Module Data section 3.11, printed pp73-74. HF operation remains conditional; retaining the title does not approve unconditional HF behavior. Previously reviewed parsed cache-PDF text; visual page verification unavailable. Approves only identity, digital-input type and 16 inputs; the full canonical title is an identifier. No standalone voltage, lifecycle, availability, compatibility, operating-feature or unrelated specification is approved.",
+    },
+  },
+  {
+    productId: "siemens-s7-300-sm321-di-16-24-125vdc-7eh00-0ab0",
+    shortDescription: sm321Di16_24_125Vdc7Eh00Copy,
+    description: [sm321Di16_24_125Vdc7Eh00Copy],
+    provenance: "ai-assisted",
+    linguisticReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-10-01T17:45:15Z",
+      reviewedContentHash: "sha256:b2fff655b1ac061b629dc798892a262f4e14cf5bc8bb46cf7afa26b95113eb08",
+      evidenceRef: "https://cache.industry.siemens.com/dl/files/629/8859629/att_55794/v1/s7300_module_data_manual_en-US_en-US.pdf",
+      note: "Reviewed 6ES7321-7EH00-0AB0 Persian identity and sixteen-input wording, spacing, Persian comma and final period, NFC and Persian yeh/kaf; the complete Latin title and numeric 16 remain separate typed LTR segments.",
+    },
+    technicalReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-10-01T17:45:26Z",
+      reviewedContentHash: "sha256:b2fff655b1ac061b629dc798892a262f4e14cf5bc8bb46cf7afa26b95113eb08",
+      evidenceRef: "https://cache.industry.siemens.com/dl/files/629/8859629/att_55794/v1/s7300_module_data_manual_en-US_en-US.pdf",
+      note: "Reviewed exact 6ES7321-7EH00-0AB0: Module Data section 3.12, printed pp84-85. Previously reviewed parsed cache-PDF text; visual page verification unavailable. Approves only identity, digital-input type and 16 inputs; the full canonical title is an identifier. No standalone voltage, lifecycle, availability, compatibility, operating-feature or unrelated specification is approved.",
+    },
+  },
+  {
+    productId: "siemens-s7-300-sm321-di-16-24vdc-namur-7th00-0ab0",
+    shortDescription: sm321Di16_24Vdc7Th00Copy,
+    description: [sm321Di16_24Vdc7Th00Copy],
+    provenance: "ai-assisted",
+    linguisticReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-10-01T17:45:15Z",
+      reviewedContentHash: "sha256:e5fd7c58fefaf24781f555ae6048689d8ac47dc50d5299c5f543bfe5f8d8d49b",
+      evidenceRef: "https://cache.industry.siemens.com/dl/files/812/7215812/att_81952/v1/Signalbaugruppen_EN_en-US.pdf; https://cache.industry.siemens.com/dl/files/726/23060726/att_66629/v1/23060726_s7-300_kabel_und_zubehoer_zuordnung_stecker_baugruppe_d.pdf",
+      note: "Reviewed 6ES7321-7TH00-0AB0 Persian identity and sixteen-input wording, spacing, Persian comma and final period, NFC and Persian yeh/kaf; the complete Latin title and numeric 16 remain separate typed LTR segments.",
+    },
+    technicalReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-10-01T17:45:26Z",
+      reviewedContentHash: "sha256:e5fd7c58fefaf24781f555ae6048689d8ac47dc50d5299c5f543bfe5f8d8d49b",
+      evidenceRef: "https://cache.industry.siemens.com/dl/files/812/7215812/att_81952/v1/Signalbaugruppen_EN_en-US.pdf; https://cache.industry.siemens.com/dl/files/726/23060726/att_66629/v1/23060726_s7-300_kabel_und_zubehoer_zuordnung_stecker_baugruppe_d.pdf",
+      note: "Reviewed exact 6ES7321-7TH00-0AB0: Process Automation manual section 6.2.1, printed 6-2 and 6-4 to 6-5; FAQ table 2, p6. inputVoltage semantics remain unresolved and unverified. Previously reviewed parsed cache-PDF text; visual page verification unavailable. Approves only identity, digital-input type and 16 inputs; the full canonical title is an identifier. No standalone voltage, lifecycle, availability, compatibility, operating-feature or unrelated specification is approved.",
+    },
+  },
+  {
+    productId: "siemens-s7-300-sm321-di-16-24vdc-sourcing-1bh50-0aa0",
+    shortDescription: sm321Di16_24Vdc1Bh50Copy,
+    description: [sm321Di16_24Vdc1Bh50Copy],
+    provenance: "ai-assisted",
+    linguisticReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-10-01T17:45:15Z",
+      reviewedContentHash: "sha256:4b3c1b2f32fbc23fcfa9de3914a0dc8af215b6286ee43c8383861b906a87644c",
+      evidenceRef: "https://cache.industry.siemens.com/dl/files/629/8859629/att_55794/v1/s7300_module_data_manual_en-US_en-US.pdf",
+      note: "Reviewed 6ES7321-1BH50-0AA0 Persian identity and sixteen-input wording, spacing, Persian comma and final period, NFC and Persian yeh/kaf; the complete Latin title and numeric 16 remain separate typed LTR segments.",
+    },
+    technicalReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-10-01T17:45:26Z",
+      reviewedContentHash: "sha256:4b3c1b2f32fbc23fcfa9de3914a0dc8af215b6286ee43c8383861b906a87644c",
+      evidenceRef: "https://cache.industry.siemens.com/dl/files/629/8859629/att_55794/v1/s7300_module_data_manual_en-US_en-US.pdf",
+      note: "Reviewed exact 6ES7321-1BH50-0AA0: Module Data section 3.13, printed p92. Previously reviewed parsed cache-PDF text; visual page verification unavailable. Approves only identity, digital-input type and 16 inputs; the full canonical title is an identifier. No standalone voltage, lifecycle, availability, compatibility, operating-feature or unrelated specification is approved.",
+    },
+  },
+  {
+    productId: "siemens-s7-300-sm321-di16-24vdc-diagnostics-7bh00-0ab0",
+    shortDescription: sm321Di16_24Vdc7Bh00Copy,
+    description: [sm321Di16_24Vdc7Bh00Copy],
+    provenance: "ai-assisted",
+    linguisticReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-10-01T17:45:15Z",
+      reviewedContentHash: "sha256:b9d498f47a5b5ed2a6f5bb3a32ef57fefe765211d67b9dc852c0520e15fc1e1f",
+      evidenceRef: "https://cache.industry.siemens.com/dl/files/047/88868047/att_68363/v1/S7pcshwb.pdf",
+      note: "Reviewed 6ES7321-7BH00-0AB0 Persian identity and sixteen-input wording, spacing, Persian comma and final period, NFC and Persian yeh/kaf; the complete Latin title and numeric 16 remain separate typed LTR segments.",
+    },
+    technicalReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-10-01T17:45:26Z",
+      reviewedContentHash: "sha256:b9d498f47a5b5ed2a6f5bb3a32ef57fefe765211d67b9dc852c0520e15fc1e1f",
+      evidenceRef: "https://cache.industry.siemens.com/dl/files/047/88868047/att_68363/v1/S7pcshwb.pdf",
+      note: "Reviewed exact 6ES7321-7BH00-0AB0: Exact PCS 7 S7-300 SM-DI row, printed Page 24 of 41. The existing canonical source link points to a CPU410 manual; copy evidence uses this exact PCS 7 row, and source-link reconciliation remains separate. Previously reviewed parsed cache-PDF text; visual page verification unavailable. Approves only identity, digital-input type and 16 inputs; the full canonical title is an identifier. No standalone voltage, lifecycle, availability, compatibility, operating-feature or unrelated specification is approved.",
     },
   },
 ] as const satisfies readonly PersianProductCopyOverlay[];
