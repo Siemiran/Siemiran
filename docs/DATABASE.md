@@ -1,18 +1,69 @@
 # Siemiran — Product Database
 
 Repository source of truth: `main` at
-`84d4fe14e82e7a922509a5ca8899cd50f1d3167d`.
+`04a302c9b587954131289e8624a1f90344b9ffdd`.
 
-## 2026-09-28 - Batch 04 Private Product-copy Checkpoint (Current State)
+## 2026-10-02 - Batch 05 Private Product-copy Checkpoint (Current State)
+
+[PR #67](https://github.com/Siemiran/Siemiran/pull/67),
+`feat: add Batch 05 Persian product copy`, squash-merged at
+`2026-10-02T09:46:57Z` (Tehran `2026-10-02 13:16:57`) as
+`04a302c9b587954131289e8624a1f90344b9ffdd`, with sole parent
+`3becc93356a3e46780f7f36f947b184c234cc376`. Local main synchronization is
+complete. Reviewed head `a3270bb3ef856cff15d54679a65073d5b676f0d2` remains
+on `feat/fa-product-copy-batch-05`; reviewed and squash trees are identical at
+`199d0286dbb0b80123c4f4b51a7d5b1c9ddaf9ce`. Implementation scope was exactly
+the copy registry and verification harness: two modified files, 602 insertions
+and 9 deletions, with no canonical Product/source data change.
+
+Batch 05 adds private `ai-assisted` drafts for exactly `6ES7321-7BH01-0AB0`,
+`6ES7321-7EH00-0AB0`, `6ES7321-7TH00-0AB0`, `6ES7321-1BH50-0AA0`, and
+`6ES7321-7BH00-0AB0`. Approved copy covers complete canonical titles used as
+identifiers, digital-input module type, and sixteen inputs. Each Product has
+separate linguistic and technical approvals bound to its unchanged production
+content hash. Reviewer `Siemiran` recorded linguistic approvals at
+`2026-10-01T17:45:15Z` and technical approvals at `2026-10-01T17:45:26Z`.
+All prior twenty entries, metadata, and approval hashes remain unchanged.
+
+Canonical coverage remains 382 Products: 186 S7-1200 and 196 S7-300. Current
+private copy coverage is 25/382 drafts, 25/382 linguistic approvals, 25/382
+technical approvals, and 25 current dual approvals, with zero pending roles and
+357 Products missing private entries. Product-specific overrides remain
+10 Products / 20 assignments / 7 unique strings; Batches 03–05 added zero,
+and the global allowlist remains empty. The exact eleven public lifecycle
+omissions and recorded S7-300 185 Siemens-official verified / 11 explicit
+unverified provenance classification remain unchanged and separate from copy
+coverage.
+
+7TH00 `inputVoltage` semantics remain unresolved and unverified; its complete
+title is an identifier and copy approval adds no standalone voltage assertion.
+7BH01 HF operation remains conditional. 7BH00's CPU410 source-link
+reconciliation remains a separate data task; copy evidence uses its exact PCS 7
+row, distinct from 7BH01. Previously reviewed parsed cache-PDF text was
+successfully read; visual verification was unavailable. Recorded historical
+HTTP 403 responses remain distinct from the later 7BH01 support-hosted
+`Internal Error` without an exposed HTTP status. No fresh manufacturer
+retrieval or lifecycle verification is claimed.
+
+Active overlays remain 0/382, activation capability is absent, publication is
+disabled, and public FA/EN Product copy remains canonical English/LTR.
+Activation requires all 382/382 current dual approvals and separate launch
+authorization. The new `docs/reconcile-fifth-persian-product-copy-batch` branch
+is unmerged; independent documentation review, push/PR, and guarded merge
+remain pending. Batch 06 scope/readiness work is unapproved and unstarted.
+The maintainer website inspection and existing preview constraints remain
+pending; see [SESSION_HANDOFF.md](SESSION_HANDOFF.md).
+
+## 2026-09-28 - Batch 04 Private Product-copy Checkpoint (Historical Snapshot)
 
 PR #65, `feat: add Batch 04 Persian product copy`, merged at
 `2026-09-28T18:03:45Z` as `84d4fe14e82e7a922509a5ca8899cd50f1d3167d`.
-It adds private drafts and current hash-bound linguistic and technical approvals
+It added private drafts and current hash-bound linguistic and technical approvals
 for exactly `6ES7321-1CH00-0AA0`, `6ES7321-1EL00-0AA0`,
 `6ES7321-1FF01-0AA0`, `6ES7321-1FF10-0AA0`, and `6ES7321-1FH00-0AA0`.
 Canonical Product/source data remains unchanged: 382 Products, S7-300 196/196,
-and S7-1200 186/186. The registry now has 20/382 drafts, 20/382 linguistic
-approvals, 20/382 technical approvals, and 20 current dual approvals; 362
+and S7-1200 186/186. At this checkpoint the registry had 20/382 drafts, 20/382
+linguistic approvals, 20/382 technical approvals, and 20 current dual approvals; 362
 Products lack complete Persian-copy coverage. This coverage count is separate
 from the eleven canonical lifecycle omissions.
 
@@ -24,9 +75,8 @@ direct PDF access is claimed. The copy approval does not establish 1FF10's
 factual current lifecycle. Active overlays remain 0/382, activation capability
 is absent, publication is disabled, and public FA/EN Product copy remains
 canonical English/LTR. Activation requires all 382/382 current dual approvals
-and separate authorization. See [SESSION_HANDOFF.md](SESSION_HANDOFF.md) for the
-pending documentation review and subsequent workflow; Batch 05 has not started
-and no scope is approved.
+and separate authorization. This dated 20/362 copy checkpoint is historical
+and superseded by the merged Batch 05 current state above.
 
 ## 2026-09-27 - SM321 1FF10 Lifecycle Uncertainty (Current State)
 

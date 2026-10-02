@@ -1,6 +1,6 @@
 # Siemiran — Current Architecture
 
-Implementation base: `main` at `84d4fe14e82e7a922509a5ca8899cd50f1d3167d`
+Implementation base: `main` at `04a302c9b587954131289e8624a1f90344b9ffdd`
 
 Current checkpoint and resume workflow: [SESSION_HANDOFF.md](SESSION_HANDOFF.md).
 
@@ -147,21 +147,51 @@ during review. This is not fresh direct PDF retrieval or lifecycle verification.
 Batch 04 added zero technical-token overrides and made no canonical Product
 data change. Batches 01–03 remain unchanged historical work.
 
-The separate private Product-copy registry now contains 20/382 drafts,
-with linguistic approvals at 20/382, technical approvals at 20/382, and 20
-current dual approvals. Complete coverage is missing for 362 Products. The
-technical-token overrides cover 10 Products, 20 assignments, and 7 unique
+[PR #67](https://github.com/Siemiran/Siemiran/pull/67),
+`feat: add Batch 05 Persian product copy`, squash-merged at
+`2026-10-02T09:46:57Z` (Tehran `2026-10-02 13:16:57`) as
+`04a302c9b587954131289e8624a1f90344b9ffdd`, and local main synchronization
+is complete. Its sole parent is `3becc93356a3e46780f7f36f947b184c234cc376`.
+The reviewed head `a3270bb3ef856cff15d54679a65073d5b676f0d2` remains on
+`feat/fa-product-copy-batch-05`; the reviewed and squash trees are exactly
+`199d0286dbb0b80123c4f4b51a7d5b1c9ddaf9ce`. Implementation changed only the
+copy registry and verification harness, with 602 insertions and 9 deletions.
+Batch 05 adds five private SM321 drafts: `6ES7321-7BH01-0AB0`,
+`6ES7321-7EH00-0AB0`, `6ES7321-7TH00-0AB0`, `6ES7321-1BH50-0AA0`, and
+`6ES7321-7BH00-0AB0`. Their approved scope is complete canonical titles as
+identifiers, digital-input module type, and sixteen inputs, with `ai-assisted`
+provenance. Each Product has separate linguistic and technical approval records
+bound to its unchanged production content hash. Reviewer `Siemiran` recorded
+linguistic approvals at `2026-10-01T17:45:15Z` and technical approvals at
+`2026-10-01T17:45:26Z`; all prior twenty entries, metadata, and approval hashes
+remain unchanged. Batches 03–05 added zero technical-token overrides.
+
+7TH00 `inputVoltage` semantics remain unresolved and unverified; retaining its
+complete title adds no standalone voltage assertion. 7BH01 HF operation remains
+conditional. 7BH00's canonical CPU410 source-link reconciliation remains a
+separate data task: its copy evidence is the exact PCS 7 row, distinct from
+7BH01 evidence. Previously reviewed parsed cache-PDF text was successfully
+read, while visual verification was unavailable. Recorded historical HTTP 403
+responses remain distinct from the later 7BH01 support-hosted `Internal Error`,
+which exposed no HTTP status. No fresh manufacturer retrieval or lifecycle
+verification is claimed.
+
+The separate private Product-copy registry now contains 25/382 drafts,
+with linguistic approvals at 25/382, technical approvals at 25/382, and 25
+current dual approvals; pending roles are zero. Complete coverage is missing for
+357 Products. The technical-token overrides cover 10 Products, 20 assignments,
+and 7 unique
 strings, while the global allowlist remains empty. Publication remains globally
 disabled, activation is invalid, no activation capability exists, and active
-coverage remains 0/382. Approvals from Batches 01–04 do not authorize
+coverage remains 0/382. Approvals from Batches 01–05 do not authorize
 publication or partial activation; activation and publication remain blocked
 until all 382/382 Products have current dual approvals and separate
 authorization is given. Earlier Batch 04 drafting-blocker and pending PR #64
-review statements are historical and superseded. Batch 05 has not started and
-has no approved scope; after the documentation review, separately authorized
-push/PR, guarded squash merge, and local synchronization, a read-only readiness
-audit should recommend exactly five coherent Products for independent
-scope/token review.
+review statements are historical and superseded. Dated Batch 01–04 checkpoints
+retain 5/10/15/20 entries and 377/372/367/362 missing Products respectively.
+The new `docs/reconcile-fifth-persian-product-copy-batch` branch is unmerged;
+independent documentation review, push/PR, and guarded merge remain pending.
+Batch 06 scope/readiness work is unapproved and unstarted.
 
 The dedicated local visual and functional website inspection with the maintainer
 remains pending after Persian Product-copy completion. It must cover FA/EN

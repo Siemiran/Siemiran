@@ -34,13 +34,15 @@ Principles:
 - The eleven unverified S7-300 records continue to omit public lifecycle in both
   languages.
 
-Current implementation checkpoint: `84d4fe14e82e7a922509a5ca8899cd50f1d3167d`
-(merged PR #65, Batch 04). Batches 01–04 are complete privately: 20/382 drafts,
-20/382 linguistic approvals, 20/382 technical approvals, and 20 current dual
-approvals, with 362 Products missing complete Persian-copy coverage. Active
-overlays remain 0/382, activation capability is absent, publication is disabled,
-and public FA/EN Product copy remains canonical English/LTR. Batch 05 has not
-started and no scope is approved. The next workflow is recorded in
+Current implementation checkpoint: `04a302c9b587954131289e8624a1f90344b9ffdd`
+(merged PR #67, Batch 05; local main synchronized). Batches 01–05 are complete
+privately: 25/382 drafts, 25/382 current linguistic approvals, 25/382 current
+technical approvals, and 25 current dual approvals, with zero pending roles and
+357 Products missing private copy entries. Active overlays remain 0/382,
+activation capability is absent, publication is disabled,
+and public FA/EN Product copy remains canonical English/LTR. Batch 06 scope and
+readiness work is unapproved and unstarted. Independent review of the unmerged
+Batch 05 documentation reconciliation is next, as recorded in
 [SESSION_HANDOFF.md](SESSION_HANDOFF.md).
 
 After Persian Product-copy completion, the dedicated local visual and functional
