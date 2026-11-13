@@ -5792,6 +5792,42 @@ const registeredBatch06DraftRecords = registeredBatch06Drafts.map(
   }
 );
 
+const expectedBatch08CanonicalProducts = [
+  {
+    productId: "siemens-s7-300-sm322-do-8-ac-120-230v-2a-5ff00-0ab0",
+    partNumber: "6ES7322-5FF00-0AB0",
+    title: "SIMATIC S7-300 SM 322 8 DO 120/230 V AC",
+    count: "8",
+  },
+  {
+    productId: "siemens-s7-300-sm322-do-32-ac-120-230v-1a-1fl00-0aa0",
+    partNumber: "6ES7322-1FL00-0AA0",
+    title: "SIMATIC S7-300 SM 322 32 DO 120/230 V AC",
+    count: "32",
+  },
+  {
+    productId: "siemens-s7-300-sm322-do-64-24vdc-0-3a-1bp00-0aa0",
+    partNumber: "6ES7322-1BP00-0AA0",
+    title: "SIMATIC S7-300 SM 322 64 DO 24 V DC",
+    count: "64",
+  },
+  {
+    productId: "siemens-s7-300-sm322-do-64-24vdc-0-3a-sinking-1bp50-0aa0",
+    partNumber: "6ES7322-1BP50-0AA0",
+    title: "SIMATIC S7-300 SM 322 64 DO 24 V DC Sinking",
+    count: "64",
+  },
+  {
+    productId: "siemens-s7-300-sm322-do-16-24vdc-0-5a-diagnostics-8bh10-0ab0",
+    partNumber: "6ES7322-8BH10-0AB0",
+    title: "SIMATIC S7-300 SM 322 16 DO 24 V DC Diagnostics",
+    count: "16",
+  },
+] as const;
+const expectedBatch08ProductIdSet = new Set<ProductId>(
+  expectedBatch08CanonicalProducts.map((entry) => entry.productId)
+);
+
 const BATCH_07_DRAFT_COMMIT = "e952ecf2036f5d191b712191d637cb042b4426f6";
 const BATCH_07_LINGUISTIC_REVIEWED_AT = "2026-11-13T15:45:00Z";
 const BATCH_07_TECHNICAL_REVIEWED_AT = "2026-11-13T15:45:06Z";
@@ -5855,7 +5891,9 @@ const registeredBatch07Drafts = persianProductCopyDraftRegistry.filter(
 );
 const registeredPreviouslyApprovedDrafts =
   persianProductCopyDraftRegistry.filter(
-    (entry) => !expectedBatch07ProductIdSet.has(entry.productId)
+    (entry) =>
+      !expectedBatch07ProductIdSet.has(entry.productId) &&
+      !expectedBatch08ProductIdSet.has(entry.productId)
   );
 assert(
   expectedBatch07ProductIdSet.size === 5 &&
@@ -5869,10 +5907,10 @@ assert(
         entry.technicalReview,
       ])
     ).size === 10 &&
-    persianProductCopyDraftRegistry.filter((entry) =>
+    registeredBatch07Drafts.filter((entry) =>
       isPendingReview(entry.linguisticReview)
     ).length === 0 &&
-    persianProductCopyDraftRegistry.filter((entry) =>
+    registeredBatch07Drafts.filter((entry) =>
       isPendingReview(entry.technicalReview)
     ).length === 0,
   "Batch 07 must contain five exact ordered bindings, ten distinct approved role objects, and no pending reviews."
@@ -5960,9 +5998,91 @@ const registeredBatch07DraftRecords = registeredBatch07Drafts.map(
   }
 );
 
+const registeredBatch08Drafts = persianProductCopyDraftRegistry.filter(
+  (entry) => expectedBatch08ProductIdSet.has(entry.productId)
+);
+assert(
+  expectedBatch08ProductIdSet.size === 5 &&
+    JSON.stringify(registeredBatch08Drafts.map((entry) => entry.productId)) ===
+      JSON.stringify(
+        expectedBatch08CanonicalProducts.map((entry) => entry.productId)
+      ) &&
+    new Set(
+      registeredBatch08Drafts.flatMap((entry) => [
+        entry.linguisticReview,
+        entry.technicalReview,
+      ])
+    ).size === 10 &&
+    persianProductCopyDraftRegistry.filter((entry) =>
+      isPendingReview(entry.linguisticReview)
+    ).length === 5 &&
+    persianProductCopyDraftRegistry.filter((entry) =>
+      isPendingReview(entry.technicalReview)
+    ).length === 5,
+  "Batch 08 must contain five exact ordered bindings, ten distinct pending role objects, and the only pending reviews."
+);
+const registeredBatch08DraftRecords = registeredBatch08Drafts.map(
+  (entry, index) => {
+    const expected = expectedBatch08CanonicalProducts[index];
+    assert(expected !== undefined, "Batch 08 binding must exist.");
+    const matches = products.filter(
+      (product) =>
+        product.id === expected.productId ||
+        product.partNumber === expected.partNumber ||
+        product.manufacturerPartNumber === expected.partNumber
+    );
+    const product = matches[0];
+    const count = product?.specifications?.["Digital Outputs"];
+    assert(
+      matches.length === 1 &&
+        product !== undefined &&
+        product.id === entry.productId &&
+        product.id === expected.productId &&
+        product.partNumber === expected.partNumber &&
+        product.manufacturerPartNumber === expected.partNumber &&
+        product.title === expected.title &&
+        product.variantId === "digital-output" &&
+        count === expected.count &&
+        getReviewedProductTechnicalTokenOverrideEntries().every(
+          (override) => override.productId !== product.id
+        ),
+      `Batch 08 production binding, count and absence of overrides must be exact: ${entry.productId}`
+    );
+    const expectedSegments = [
+      { kind: "text", value: "مدل " },
+      { kind: "technical", value: product.title },
+      { kind: "text", value: "، ماژول خروجی دیجیتال با " },
+      { kind: "technical", value: count },
+      { kind: "text", value: " خروجی است." },
+    ];
+    assert(
+      entry.provenance === "ai-assisted" &&
+        JSON.stringify(entry.shortDescription) ===
+          JSON.stringify(expectedSegments) &&
+        JSON.stringify(entry.description) ===
+          JSON.stringify([expectedSegments]) &&
+        [entry.linguisticReview, entry.technicalReview].every(
+          (review) => JSON.stringify(review) === JSON.stringify(pendingReview)
+        ) &&
+        [product.title, count].every((token) =>
+          deriveAllowedTechnicalTokens(product).has(token)
+        ),
+      `Batch 08 must retain exact typed title/count paragraphs and metadata-free pending reviews: ${entry.productId}`
+    );
+    return {
+      productId: entry.productId,
+      partNumber: product.partNumber,
+      renderedShortDescription: serializeProductCopyParagraphForSearch(
+        entry.shortDescription
+      ),
+      freshContentHash: createProductCopyContentHash(entry),
+    };
+  }
+);
+
 assert(
   registeredDraftValidation.valid &&
-    persianProductCopyDraftRegistry.length === 35 &&
+    persianProductCopyDraftRegistry.length === 40 &&
     registeredBatch01Drafts.length === 5 &&
     JSON.stringify(registeredBatch01DraftBindings) ===
       JSON.stringify(expectedBatch01DraftProducts),
@@ -6120,12 +6240,12 @@ assert(
 );
 assert(
   !registeredDraftActivation.valid &&
-    registeredDraftActivation.overlayCount === 35 &&
+    registeredDraftActivation.overlayCount === 40 &&
     registeredDraftActivation.canonicalCount === 382 &&
     registeredDraftActivation.approvedCount === 35 &&
-    registeredDraftActivation.missingIds.length === 347 &&
+    registeredDraftActivation.missingIds.length === 342 &&
     !("capability" in registeredDraftActivation),
-  "Combined activation must fail closed at exactly 35/382 drafts, 35 dual approvals, and 347 missing Products."
+  "Combined activation must fail closed at exactly 40/382 drafts, 35 dual approvals, and 342 missing Products."
 );
 assert(
   PERSIAN_PRODUCT_COPY_PUBLICATION_STATE === "disabled",
@@ -6302,6 +6422,10 @@ console.log(
         batch07: {
           entries: registeredBatch07Drafts.length,
           drafts: registeredBatch07DraftRecords,
+        },
+        batch08: {
+          entries: registeredBatch08Drafts.length,
+          drafts: registeredBatch08DraftRecords,
         },
         linguisticPending: persianProductCopyDraftRegistry.filter((entry) =>
           isPendingReview(entry.linguisticReview)
