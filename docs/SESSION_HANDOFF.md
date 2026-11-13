@@ -1,6 +1,6 @@
 # Siemiran — Session Handoff
 
-Checkpoint: **2026-11-13 (Asia/Tehran)**. Implementation: private Batch 06
+Checkpoint: **2026-11-13 (Asia/Tehran)**. Implementation: private Batch 07
 merged and local main synchronized. Documentation workflow status belongs in
 the task report and PR, rather than this durable implementation checkpoint.
 
@@ -19,16 +19,18 @@ then merged PR/review evidence, then current repository summaries. Dated older
 snapshots preserve history. Maintainer instructions define authorization; a
 historical next-step statement does not authorize new work.
 
-Merged implementation baseline: `e1238d59fde168d86f9491546bc4686fb263ab63`.
-[PR #69](https://github.com/Siemiran/Siemiran/pull/69),
-`feat: add Batch 06 Persian product copy`, merged at `2026-11-13T10:42:08Z`
-(Tehran: `2026-11-13 14:12:08`). Sole parent:
-`d74ee4f6d3f2c6927629a4cd82ab01662ad912bc`. Reviewed feature head:
-`c8974245a187d81ad97be05e0034f5bdc3e57016`; reviewed/squash tree:
-`7e82b98b766f9e8f6b5763a0585b541fbb44a800`. Its two-file implementation
-scope was +356/-11. Guarded squash merge, remote result
-verification, and local main-only fetch/fast-forward synchronization completed.
-`feat/fa-product-copy-batch-06` remains at the reviewed head locally and remotely.
+Merged implementation baseline: `e93dd9229386153ee3a192a22ef3c977be3cb57d`.
+[PR #71](https://github.com/Siemiran/Siemiran/pull/71),
+`feat: add Batch 07 Persian product copy`, merged at `2026-11-13T16:06:26Z`
+(Tehran: `2026-11-13 19:36:26`). Sole parent:
+`977d8e3aa825abcbe951858e2d5c5cd1ee7c245d`. Reviewed feature head:
+`81b2c5dbe7fd86d609380068c6d4ec9a4626acc7`; reviewed/squash tree:
+`590d66a9ea00d05954afbb69f9b0e53b6e772222`. Reviewed chain: draft
+`e952ecf2036f5d191b712191d637cb042b4426f6`, then approval head. Its two-file
+implementation scope was +788/-370 including formatting. Guarded squash merge,
+remote parent/tree verification and main-only fetch/switch/fast-forward completed.
+At that checkpoint `feat/fa-product-copy-batch-07` remained preserved locally,
+cached and live at the reviewed head. Recheck live refs on resume.
 
 ## Collaboration and resume policy
 
@@ -65,39 +67,36 @@ Follow [AGENTS.md](../AGENTS.md): Feature First, repository access, one canonica
 
 | Current measure | State |
 | --- | --- |
-| Private drafts / linguistic approvals / technical approvals | 30/382 each |
-| Current dual approvals / pending roles / missing private entries | 30 / zero / 352 |
+| Private drafts / linguistic approvals / technical approvals | 35/382 each |
+| Current dual approvals / pending roles / missing private entries | 35 / zero / 347 |
 | Active overlays / activation capability / publication | 0/382 / absent / disabled |
 | Public FA/EN Product copy | Canonical English/LTR |
 | Overrides | 10 Products / 20 assignments / 7 unique strings |
-| Batch 06 added overrides / global allowlist | Zero / empty |
+| Batch 07 added overrides / global allowlist | Zero / empty |
 | Canonical lifecycle omissions | Exactly eleven |
 | S7-300 lifecycle provenance | 185 Siemens-official verified / 11 explicitly unverified |
 
-Batches 01-06 are complete **privately**. Batch 06 contains exactly
-`6ES7321-7RD00-0AB0`, `6ES7322-1BF01-0AA0`, `6ES7322-1BH01-0AA0`,
-`6ES7322-1BH10-0AA0`, and `6ES7322-1BL00-0AA0`. Its approved `ai-assisted`
-copy covers full model identifiers, digital-input/output type and channel counts
-4/8/16/16/32 respectively. Each Product has separate hash-bound approval records
-by `Siemiran`: linguistic `2026-11-13T10:10:19Z`, technical
-`2026-11-13T10:10:47Z`. Recorded machine comparison preserves all previous
-25 complete entries, metadata and hashes. Historical Batch 01-05 coverage remains
-5/10/15/20/25 entries and 377/372/367/362/357 missing respectively. For 7RD00,
-24 V concerns electronic load supply; copy approval verifies neither
-`inputVoltage` semantics nor Ex application claims. High Speed remains part of
-the 1BH10 model identifier. All 764 public
-FA/EN resolutions remain canonical English/LTR. Lifecycle omission debt is separate from missing
+Batches 01-07 are complete **privately**. Batch 07 contains exactly
+`6ES7322-1FH00-0AA0`, `6ES7322-5GH00-0AB0`, `6ES7322-1HF01-0AA0`,
+`6ES7322-1HF10-0AA0` and `6ES7322-1HH01-0AA0`. Its approved `ai-assisted`
+copy covers complete model identifiers, digital-output module type and counts
+16/16/8/8/16 respectively. Reviewer `Siemiran` recorded distinct hash-bound
+linguistic approvals at `2026-11-13T15:45:00Z` and technical approvals at
+`2026-11-13T15:45:06Z`. Recorded machine comparison preserves all previous
+30 complete entries, metadata and hashes. Detailed evidence and technical limits
+are in [DATABASE.md](DATABASE.md#2026-11-13---batch-07-private-product-copy-checkpoint-current-state).
+All 764 public FA/EN resolutions remain canonical English/LTR. Lifecycle omission debt is separate from missing
 Persian-copy coverage. Activation requires the complete 382/382 current
 content-hash-bound dual-approval gate **and separate authorization**; partial
 activation is prohibited. Private drafts authorize neither activation nor publication.
 
 ## Outstanding work and evidence limits
 
-1. Batch 07 readiness/scope work remains **unapproved and unstarted**. A later
+1. Batch 08 readiness/scope work remains **unapproved and unstarted**. A later
    read-only readiness audit and independent scope/token review require separate
    authorization; do not draft copy or change policy/approvals as part of this
    documentation task.
-2. Complete the remaining 352 private drafts and both review roles through later
+2. Complete the remaining 347 private drafts and both review roles through later
    separately authorized batches. Public activation and bilingual SEO remain
    separate future tasks; English indexing, hreflang, and localized sitemap work
    remain deferred.
@@ -140,6 +139,12 @@ not the later recorded 7BH01 support-hosted `Internal Error`, which exposed no
 HTTP status. This reconciliation makes no fresh manufacturer retrieval or
 lifecycle-verification claim.
 
+For Batch 07 5GH00, the manual designation is **UC 24/48 V**. Official indexed
+exact-product datasheet text supports the canonical identifier; direct PDF
+retrieval returned **HTTP 403**, and visual inspection is **NOT OBSERVED**.
+No standalone voltage/current or relay-performance claims are approved.
+No fresh manufacturer retrieval or lifecycle verification is claimed here.
+
 Other deferred work: inquiry delivery/persistence, broader automated tests/CI/CD,
 verified download/relation population, and owner-selected catalog expansion. See
 [ARCHITECTURE.md](ARCHITECTURE.md), [DATABASE.md](DATABASE.md),
@@ -148,6 +153,52 @@ verified download/relation population, and owner-selected catalog expansion. See
 [CHANGELOG.md](CHANGELOG.md) for details and dated history.
 
 ## Validation applicability
+
+- **PASS (REUSED)**: recorded Batch 07 product-copy validator, scoped lint and
+  build including TypeScript each exited 0 at reviewed approval head
+  `81b2c5dbe7fd86d609380068c6d4ec9a4626acc7`. Its tree
+  `590d66a9ea00d05954afbb69f9b0e53b6e772222` equals the PR #71 squash tree.
+  This Markdown-only task leaves application, dependency and build-configuration
+  content unchanged; no application checks or approval-hash audits are newly run.
+- Recorded Batch 07 pre-merge CI: **NOT RUN**; zero check runs/status contexts,
+  with empty combined pending status. This is not passed CI. Guarded squash
+  merge and main synchronization passed; completed-copy inspection is pending.
+
+Current coverage is 35 drafts/current approvals per role, 35 dual approvals,
+zero pending roles and 347 missing entries, with publication safeguards unchanged.
+
+- Fresh documentation consistency, link/anchor, scope and whitespace results
+  belong in the task report/PR with actual counts and exit evidence. Dedicated
+  completed-copy visual/functional inspection remains pending.
+
+### Historical Batch 06 checkpoint and validation
+
+The former implementation identity, counts, timestamps and validation below are
+historical; Batch 07 above supersedes their next-step statements.
+
+Merged implementation baseline: `e1238d59fde168d86f9491546bc4686fb263ab63`.
+[PR #69](https://github.com/Siemiran/Siemiran/pull/69),
+`feat: add Batch 06 Persian product copy`, merged at `2026-11-13T10:42:08Z`
+(Tehran: `2026-11-13 14:12:08`). Sole parent:
+`d74ee4f6d3f2c6927629a4cd82ab01662ad912bc`. Reviewed feature head:
+`c8974245a187d81ad97be05e0034f5bdc3e57016`; reviewed/squash tree:
+`7e82b98b766f9e8f6b5763a0585b541fbb44a800`. Its two-file implementation
+scope was +356/-11. Guarded squash merge, remote result
+verification, and local main-only fetch/fast-forward synchronization completed.
+`feat/fa-product-copy-batch-06` remains at the reviewed head locally and remotely.
+
+Batches 01-06 are complete **privately**. Batch 06 contains exactly
+`6ES7321-7RD00-0AB0`, `6ES7322-1BF01-0AA0`, `6ES7322-1BH01-0AA0`,
+`6ES7322-1BH10-0AA0`, and `6ES7322-1BL00-0AA0`. Its approved `ai-assisted`
+copy covers full model identifiers, digital-input/output type and channel counts
+4/8/16/16/32 respectively. Each Product has separate hash-bound approval records
+by `Siemiran`: linguistic `2026-11-13T10:10:19Z`, technical
+`2026-11-13T10:10:47Z`. Recorded machine comparison preserves all previous
+25 complete entries, metadata and hashes. Historical Batch 01-05 coverage remains
+5/10/15/20/25 entries and 377/372/367/362/357 missing respectively. For 7RD00,
+24 V concerns electronic load supply; copy approval verifies neither
+`inputVoltage` semantics nor Ex application claims. High Speed remains part of
+the 1BH10 model identifier.
 
 - **PASS (REUSED)**: recorded Batch 06 product-copy validator, scoped lint,
   build including TypeScript, and whitespace checks exited **0** at approval
@@ -161,9 +212,6 @@ verified download/relation population, and owner-selected catalog expansion. See
 - Focused approval integrity, guarded merge verification and main-only
   fetch/switch/fast-forward synchronization passed. Recorded pre-merge CI was
   **NOT RUN**: zero check runs/status contexts with combined pending, not passed CI.
-- Fresh documentation consistency, link/anchor, scope and whitespace results
-  belong in the task report/PR with actual counts and exit evidence. Dedicated
-  completed-copy visual/functional inspection remains pending.
 
 ### Historical Validation — 2026-10-02
 
@@ -196,7 +244,7 @@ counts and evidence; they are not current coverage or new task executions.
 
 - Record branch, exact HEAD, sole parent/base, index/worktree clean or dirty state,
   and live/local `main` refs. The durable implementation baseline is
-  `e1238d59fde168d86f9491546bc4686fb263ab63`; task-specific workflow status and
+  `e93dd9229386153ee3a192a22ef3c977be3cb57d`; task-specific workflow status and
   commit/PR identities belong in the task report rather than this file.
 - Identify existing task branches, patches, and commits before starting; preserve
   identifiable partial work and finish only missing authorized work. If refs or
@@ -207,6 +255,6 @@ counts and evidence; they are not current coverage or new task executions.
 - Record validation commands, exit codes, NEW versus REUSED status, exact checked
   content, and evidence limitations. Check Markdown links/anchors, whitespace
   and unchanged outside content; report actual results and final clean state.
-- Batch 07 readiness/scope remains unapproved and unstarted. Overlay activation,
+- Batch 08 readiness/scope remains unapproved and unstarted. Overlay activation,
   publication, English indexing and completed-copy website inspection remain
   separately authorized future work.

@@ -1,6 +1,6 @@
 # Siemiran — Roadmap
 
-Baseline: `main` at `e1238d59fde168d86f9491546bc4686fb263ab63`
+Baseline: `main` at `e93dd9229386153ee3a192a22ef3c977be3cb57d`
 
 This roadmap distinguishes the completed repository baseline from future
 priorities. Ordering expresses current priority, not a finalized implementation
@@ -106,11 +106,19 @@ design or semantic release schedule.
   identifiers, module direction and counts 4/8/16/16/32 only. Products, review
   timestamps and evidence limits are in [CHANGELOG.md](CHANGELOG.md) and
   [DATABASE.md](DATABASE.md). Prior 25 entries, metadata and hashes are preserved.
+- [PR #71](https://github.com/Siemiran/Siemiran/pull/71) completed private Batch 07
+  and merged as `e93dd9229386153ee3a192a22ef3c977be3cb57d`; main synchronization
+  completed. Five digital-output entries approve complete model identifiers and
+  counts 16/16/8/8/16 only. The previous 30 complete entries, metadata and hashes
+  were preserved by recorded machine comparison. Products, reviews and the 5GH00
+  qualification are in [DATABASE.md](DATABASE.md); merge evidence is in
+  [CHANGELOG.md](CHANGELOG.md). No fresh manufacturer retrieval or lifecycle
+  verification is claimed.
 - Private drafts, linguistic approvals, and technical approvals are each
-  30/382, with 30 current dual approvals, zero pending roles and 352 Products
+  35/382, with 35 current dual approvals, zero pending roles and 347 Products
   missing private copy entries.
 - Technical-token overrides cover 10 Products, 20 assignments, and 7 unique
-  strings; the global allowlist remains empty. Batches 03–06 added zero
+  strings; the global allowlist remains empty. Batches 03–07 added zero
   overrides.
 - Active Persian Product-copy coverage remains 0/382, no activation capability
   exists, publication is disabled, and public FA/EN Product prose remains
@@ -122,14 +130,14 @@ design or semantic release schedule.
 
 ## Next Resume Workflow
 
-1. Batch 07 readiness and scope require separate authorization; they remain
+1. Batch 08 readiness and scope require separate authorization; they remain
    unapproved and unstarted in this workflow.
 2. Preserve closed-batch entries with machine comparison, review only affected
    files/evidence, and reuse successful validation while relevant content is unchanged.
 3. Keep Admin Panel and Automation gated. Dedicated completed-copy inspection,
    the full 382/382 dual-approval gate and separately authorized launch remain pending.
 
-The merged Batch 06 implementation is complete. Documentation publication/review
+The merged Batch 07 implementation is complete. Documentation publication/review
 status belongs in its task report and PR. Durable checkpoint and resume policy are in
 [SESSION_HANDOFF.md](SESSION_HANDOFF.md).
 
@@ -149,9 +157,9 @@ status belongs in its task report and PR. Durable checkpoint and resume policy a
 
 Throughout drafting and review, canonical technical tokens remain untranslated:
 MLFBs, Product IDs, slugs, part numbers, official model/family names, protocols,
-standards, values, units, and URLs. Batches 01–06 are complete privately;
+standards, values, units, and URLs. Batches 01–07 are complete privately;
 dated earlier checkpoints retain their historical counts. Future drafting requires
-separately authorized Batch 07 readiness and independent scope/token review.
+separately authorized Batch 08 readiness and independent scope/token review.
 
 After Persian Product-copy completion, perform a dedicated local visual and
 functional website inspection with the maintainer: FA/EN switching, Persian
@@ -206,8 +214,8 @@ nor publication.
 - Keep CMS, API, database, and cache evaluation as future architecture
   decisions.
 
-Persian Product-copy drafting and review are complete privately for 30/382
-Products but not for the remaining 352. The 382/382 current dual-approval gate,
+Persian Product-copy drafting and review are complete privately for 35/382
+Products but not for the remaining 347. The 382/382 current dual-approval gate,
 separate activation authorization, atomic publication, maintainer website inspection,
 bilingual SEO activation, inquiry delivery, CI/CD, download population, and
 another Siemens-series expansion are not complete. Consumer integration and
