@@ -1,6 +1,30 @@
 # Siemiran — Project State
 
-## 2026-11-13 - Batch 07 Reconciliation (Current State)
+## 2026-11-13 - Batch 08 Reconciliation (Current State)
+
+Implementation baseline: `1fc04eb68d1d1149bf05863a75a37d8c9103c47b`, merged
+[PR #73](https://github.com/Siemiran/Siemiran/pull/73); main synchronization completed.
+Catalog: 382 Products (186 S7-1200 / 196 S7-300). Private drafts and current
+approvals per role: 40/382; current dual approvals: 40; pending roles: zero;
+missing entries: 342. Recorded machine comparison preserved the prior 35
+complete entries, metadata and hashes; ten text/kind mutations each staled both
+approvals. Products, recording-time observations and the unresolved 1BP00
+sink/sourcing issue are in [DATABASE.md](DATABASE.md#2026-11-13---batch-08-private-product-copy-checkpoint-current-state); merge identity is in
+[CHANGELOG.md](CHANGELOG.md).
+
+Overrides remain 10 Products / 20 assignments / 7 unique strings; Batch 08 adds
+zero, the global allowlist is empty, lifecycle omissions remain eleven, and the
+separate S7-300 lifecycle provenance classification remains 185/11. Publication
+is disabled, capability absent and overlays zero; public FA/EN copy stays
+canonical English/LTR. Full 382/382 current dual approvals and separate launch
+authorization remain required. Batch 09 is unapproved and unstarted; Admin Panel
+and Automation remain gated, and completed-Persian-copy inspection is pending.
+Resume checks are in [SESSION_HANDOFF.md](SESSION_HANDOFF.md).
+
+## 2026-11-13 - Batch 07 Reconciliation (Historical Snapshot)
+
+The dated Batch 07 35/347 checkpoint, recording evidence and prospective workflow
+below are historical, superseded by Batch 08 above.
 
 Merged implementation baseline: `e93dd9229386153ee3a192a22ef3c977be3cb57d`.
 [PR #71](https://github.com/Siemiran/Siemiran/pull/71) merged at
@@ -504,7 +528,7 @@ the inventory before this approved deletion, not a valid current record.
 - Status: Active Development
 - Documentation checkpoint: 2026-11-13; workflow status is reported separately
 - Implementation base: `main` at
-  `e93dd9229386153ee3a192a22ef3c977be3cb57d`
+  `1fc04eb68d1d1149bf05863a75a37d8c9103c47b`
 - No semantic release version is asserted by this document.
 
 ## Current Stack
@@ -536,7 +560,7 @@ the inventory before this approved deletion, not a valid current record.
 | --- | --- | --- |
 | Product listing and dynamic detail pages | IMPLEMENTED | Repository-backed listing, static product paths, and not-found handling |
 | Localization foundation | IMPLEMENTED | Persian-first FA/EN routing, matching UI catalogs, one-click equivalent-page switching, locale direction, and temporarily noindexed English routes |
-| Product-copy consumer integration | IMPLEMENTED | All intended consumers use the central resolver/public DTO boundary; private drafts and both approval roles are 35/382 with 35 current dual approvals, zero pending roles, and 347 missing, while active overlays remain 0/382, activation capability is absent, and publication is disabled |
+| Product-copy consumer integration | IMPLEMENTED | All intended consumers use the central resolver/public DTO boundary; private drafts and both approval roles are 40/382 with 40 current dual approvals, zero pending roles, and 342 missing, while active overlays remain 0/382, activation capability is absent, and publication is disabled |
 | Search, URL parameters, filters, sorting, pagination | IMPLEMENTED | Category, family, series, and product-type filters; 12-item pagination |
 | Gallery and specifications | IMPLEMENTED | Product gallery/image UI and technical specification rendering |
 | SEO and structured data | IMPLEMENTED | Metadata, canonical/Open Graph/Twitter fields, Product JSON-LD, breadcrumbs, and Breadcrumb JSON-LD |
@@ -783,6 +807,19 @@ each milestone was recorded; they are not the current connection state.
   and the Product collection total is 308.
 
 ## Validation at the Documentation Checkpoint
+
+- **PASS (REUSED)**: recorded Batch 08 validator, scoped lint and build including
+  TypeScript each exited 0 at reviewed head
+  `65572825232a1d9d4b2b9f440b1619f2aeada275`. Reviewed/squash tree
+  `775a12a26ff6c77fc0c219094df4c0a9cbe03589` is identical. Application,
+  dependency and build-configuration content is unchanged by this Markdown-only
+  task; no validator/lint/build/TypeScript, public-resolution or historical-hash
+  audit is newly run. Recorded mutation checks each staled both approvals.
+- Recorded Batch 08 pre-merge CI: **NOT RUN**; zero checks/statuses/workflows,
+  with combined pending. This is absent CI, not passed CI. Guarded squash and
+  main synchronization passed; dedicated completed-copy inspection is pending.
+
+### Historical Validation — Batch 07
 
 - **PASS (REUSED)**: recorded Batch 07 product-copy validator, scoped lint and
   build including TypeScript each exited 0 at reviewed approval head

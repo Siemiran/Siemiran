@@ -1,11 +1,35 @@
 # Siemiran — Project Progress
 
 Repository implementation source of truth: merged `main` baseline
-`e93dd9229386153ee3a192a22ef3c977be3cb57d`
+`1fc04eb68d1d1149bf05863a75a37d8c9103c47b`
 
 Last synchronized: 2026-11-13
 
-## 2026-11-13 - Batch 07 Reconciliation (Current State)
+## 2026-11-13 - Batch 08 Reconciliation (Current State)
+
+Implementation baseline: `1fc04eb68d1d1149bf05863a75a37d8c9103c47b`, merged
+[PR #73](https://github.com/Siemiran/Siemiran/pull/73); main synchronization completed.
+Catalog: 382 Products (186 S7-1200 / 196 S7-300). Private drafts and current
+approvals per role: 40/382; current dual approvals: 40; pending roles: zero;
+missing entries: 342. Recorded machine comparison preserved the prior 35
+complete entries, metadata and hashes; ten text/kind mutations each staled both
+approvals. Products, recording-time observations and the unresolved 1BP00
+sink/sourcing issue are in [DATABASE.md](DATABASE.md#2026-11-13---batch-08-private-product-copy-checkpoint-current-state); merge identity is in
+[CHANGELOG.md](CHANGELOG.md).
+
+Overrides remain 10 Products / 20 assignments / 7 unique strings; Batch 08 adds
+zero, the global allowlist is empty, lifecycle omissions remain eleven, and the
+separate S7-300 lifecycle provenance classification remains 185/11. Publication
+is disabled, capability absent and overlays zero; public FA/EN copy stays
+canonical English/LTR. Full 382/382 current dual approvals and separate launch
+authorization remain required. Batch 09 is unapproved and unstarted; Admin Panel
+and Automation remain gated, and completed-Persian-copy inspection is pending.
+Resume checks are in [SESSION_HANDOFF.md](SESSION_HANDOFF.md).
+
+## 2026-11-13 - Batch 07 Reconciliation (Historical Snapshot)
+
+The dated Batch 07 35/347 checkpoint, recording evidence and prospective workflow
+below are historical, superseded by Batch 08 above.
 
 Merged implementation baseline: `e93dd9229386153ee3a192a22ef3c977be3cb57d`.
 [PR #71](https://github.com/Siemiran/Siemiran/pull/71) merged at
@@ -465,9 +489,9 @@ the inventory before this approved deletion, not a valid current record.
   values and Product-description presentation
 
 The Product-copy infrastructure is implemented and all intended consumers now
-use its resolver/presentation boundary. The private registry contains 35/382
-drafts, linguistic approvals are 35/382, technical approvals are 35/382, and
-35 current dual approvals with zero pending roles leave 347 Products not yet
+use its resolver/presentation boundary. The private registry contains 40/382
+drafts, linguistic approvals are 40/382, technical approvals are 40/382, and
+40 current dual approvals with zero pending roles leave 342 Products not yet
 drafted or approved.
 Active overlays remain 0/382, no activation capability exists, and publication
 remains disabled. Further controlled private drafting, the exact 382/382
@@ -486,8 +510,8 @@ localized sitemap coverage remain future gates.
   approvals
 - Exact 382/382 atomic activation gate and exact-eleven lifecycle-omission
   invariant
-- Private 35/382 registry with 35 current dual approvals, zero pending roles,
-  and 347 Products not yet drafted or approved; active coverage remains 0/382,
+- Private 40/382 registry with 40 current dual approvals, zero pending roles,
+  and 342 Products not yet drafted or approved; active coverage remains 0/382,
   publication remains disabled, and its resolver/presentation boundary is
   connected to all intended consumers
 
@@ -833,6 +857,19 @@ after Task Y merge.
 
 ## Quality Progress
 
+- **PASS (REUSED)**: recorded Batch 08 validator, scoped lint and build including
+  TypeScript each exited 0 at reviewed head
+  `65572825232a1d9d4b2b9f440b1619f2aeada275`. Reviewed/squash tree
+  `775a12a26ff6c77fc0c219094df4c0a9cbe03589` is identical. Application,
+  dependency and build-configuration content is unchanged by this Markdown-only
+  task; no validator/lint/build/TypeScript, public-resolution or historical-hash
+  audit is newly run. Recorded mutation checks each staled both approvals.
+- Recorded Batch 08 pre-merge CI: **NOT RUN**; zero checks/statuses/workflows,
+  with combined pending. This is absent CI, not passed CI. Guarded squash and
+  main synchronization passed; dedicated completed-copy inspection is pending.
+
+### Historical Validation — Batch 07
+
 - **PASS (REUSED)**: recorded Batch 07 product-copy validator, scoped lint and
   build including TypeScript each exited 0 at reviewed approval head
   `81b2c5dbe7fd86d609380068c6d4ec9a4626acc7`. Its tree
@@ -892,16 +929,16 @@ verified, while 11 records are explicitly `unverified` and expose no public
 lifecycle value. Product integration is not pending.
 
 The Product-copy resolver/presentation boundary is verified and connected to
-all intended consumers. Its private registry contains 35/382 drafts,
-linguistic approvals are 35/382, technical approvals are 35/382, and all 35
-drafts have current dual approvals, with zero pending roles. The remaining 347
-Products are not drafted or approved. Batches 01-07 are complete privately; the
+all intended consumers. Its private registry contains 40/382 drafts,
+linguistic approvals are 40/382, technical approvals are 40/382, and all 40
+drafts have current dual approvals, with zero pending roles. The remaining 342
+Products are not drafted or approved. Batches 01-08 are complete privately; the
 earlier dated entries retain their historical counts. Technical-token overrides cover
 10 Products, 20 assignments, and 7 unique strings, with an empty global
-allowlist; Batches 03-07 added none.
+allowlist; Batches 03-08 added none.
 Active overlays remain 0/382, activation has issued no capability, and
 publication remains disabled, so both locales intentionally resolve canonical
-English/LTR Product prose while Persian UI localization remains active. Batch 08
+English/LTR Product prose while Persian UI localization remains active. Batch 09
 readiness/scope remains unapproved and unstarted; Admin Panel and Automation
 remain gated. The complete 382/382 gate and separately authorized
 atomic public activation remain pending,
