@@ -1272,39 +1272,129 @@ export const persianProductCopyDraftRegistry = [
     shortDescription: sm322Do16_120_230Vac1Fh00Copy,
     description: [sm322Do16_120_230Vac1Fh00Copy],
     provenance: "ai-assisted",
-    linguisticReview: { decision: "pending" },
-    technicalReview: { decision: "pending" },
+    linguisticReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-11-13T15:45:00Z",
+      reviewedContentHash:
+        "sha256:2899dd2ecbae2223558f50070ada47d0a4a70f7c0fda3d4d737d9f3c2b74ba0e",
+      evidenceRef:
+        "PM linguistic approval in this conversation; draft commit e952ecf2036f5d191b712191d637cb042b4426f6; Product siemens-s7-300-sm322-do-16-ac-120-230v-1a-1fh00-0aa0; MLFB 6ES7322-1FH00-0AA0.",
+      note: "6ES7322-1FH00-0AA0: PM-approved Persian wording, punctuation and spacing; machine-verified NFC, Persian yeh/kaf and typed full-title/count segmentation.",
+    },
+    technicalReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-11-13T15:45:06Z",
+      reviewedContentHash:
+        "sha256:2899dd2ecbae2223558f50070ada47d0a4a70f7c0fda3d4d737d9f3c2b74ba0e",
+      evidenceRef:
+        "PM technical approval in this conversation; draft commit e952ecf2036f5d191b712191d637cb042b4426f6; Product siemens-s7-300-sm322-do-16-ac-120-230v-1a-1fh00-0aa0; MLFB 6ES7322-1FH00-0AA0; previously reviewed Siemens Module Data 05/2022 A5E00105505-AK, section 3.27 pp145-146; https://cache.industry.siemens.com/dl/files/629/8859629/att_55794/v1/s7300_module_data_manual_en-US_en-US.pdf.",
+      note: "6ES7322-1FH00-0AA0: PM-approved full-title identification, digital-output module type and 16 outputs only. The full canonical title is an identifier. No standalone voltage/current, relay-performance, lifecycle, availability or compatibility claims are approved.",
+    },
   },
   {
     productId: "siemens-s7-300-sm322-do-16-acdc-24-48v-0-5a-5gh00-0ab0",
     shortDescription: sm322Do16_24_48VacDc5Gh00Copy,
     description: [sm322Do16_24_48VacDc5Gh00Copy],
     provenance: "ai-assisted",
-    linguisticReview: { decision: "pending" },
-    technicalReview: { decision: "pending" },
+    linguisticReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-11-13T15:45:00Z",
+      reviewedContentHash:
+        "sha256:dcd2e368e9e3c1d8c0fa775d4d217f705a48d156264a6c85ba16fbe780d27ad3",
+      evidenceRef:
+        "PM linguistic approval in this conversation; draft commit e952ecf2036f5d191b712191d637cb042b4426f6; Product siemens-s7-300-sm322-do-16-acdc-24-48v-0-5a-5gh00-0ab0; MLFB 6ES7322-5GH00-0AB0.",
+      note: "6ES7322-5GH00-0AB0: PM-approved Persian wording, punctuation and spacing; machine-verified NFC, Persian yeh/kaf and typed full-title/count segmentation.",
+    },
+    technicalReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-11-13T15:45:06Z",
+      reviewedContentHash:
+        "sha256:dcd2e368e9e3c1d8c0fa775d4d217f705a48d156264a6c85ba16fbe780d27ad3",
+      evidenceRef:
+        "PM technical approval in this conversation; draft commit e952ecf2036f5d191b712191d637cb042b4426f6; Product siemens-s7-300-sm322-do-16-acdc-24-48v-0-5a-5gh00-0ab0; MLFB 6ES7322-5GH00-0AB0; previously reviewed Siemens Module Data 05/2022 A5E00105505-AK, section 3.26 pp140-142; https://cache.industry.siemens.com/dl/files/629/8859629/att_55794/v1/s7300_module_data_manual_en-US_en-US.pdf; Manual UC 24/48 V; official indexed exact-product datasheet text supports the canonical identifier; direct PDF retrieval returned HTTP 403; visual inspection NOT OBSERVED..",
+      note: "6ES7322-5GH00-0AB0: PM-approved full-title identification, digital-output module type and 16 outputs only. The full canonical title is an identifier. No standalone voltage/current, relay-performance, lifecycle, availability or compatibility claims are approved. Manual UC 24/48 V; official indexed exact-product datasheet text supports the canonical identifier; direct PDF retrieval returned HTTP 403; visual inspection NOT OBSERVED.",
+    },
   },
   {
     productId: "siemens-s7-300-sm322-do-8-relay-24vdc-230vac-2a-1hf01-0aa0",
     shortDescription: sm322Do8Relay1Hf01Copy,
     description: [sm322Do8Relay1Hf01Copy],
     provenance: "ai-assisted",
-    linguisticReview: { decision: "pending" },
-    technicalReview: { decision: "pending" },
+    linguisticReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-11-13T15:45:00Z",
+      reviewedContentHash:
+        "sha256:fd82f3f5548c850671b0f0b5c1dfb06d8230e7051e59e70e964eaeea9889b561",
+      evidenceRef:
+        "PM linguistic approval in this conversation; draft commit e952ecf2036f5d191b712191d637cb042b4426f6; Product siemens-s7-300-sm322-do-8-relay-24vdc-230vac-2a-1hf01-0aa0; MLFB 6ES7322-1HF01-0AA0.",
+      note: "6ES7322-1HF01-0AA0: PM-approved Persian wording, punctuation and spacing; machine-verified NFC, Persian yeh/kaf and typed full-title/count segmentation.",
+    },
+    technicalReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-11-13T15:45:06Z",
+      reviewedContentHash:
+        "sha256:fd82f3f5548c850671b0f0b5c1dfb06d8230e7051e59e70e964eaeea9889b561",
+      evidenceRef:
+        "PM technical approval in this conversation; draft commit e952ecf2036f5d191b712191d637cb042b4426f6; Product siemens-s7-300-sm322-do-8-relay-24vdc-230vac-2a-1hf01-0aa0; MLFB 6ES7322-1HF01-0AA0; previously reviewed Siemens Module Data 05/2022 A5E00105505-AK, section 3.34 pp172-173; https://cache.industry.siemens.com/dl/files/629/8859629/att_55794/v1/s7300_module_data_manual_en-US_en-US.pdf.",
+      note: "6ES7322-1HF01-0AA0: PM-approved full-title identification, digital-output module type and 8 outputs only. The full canonical title is an identifier. No standalone voltage/current, relay-performance, lifecycle, availability or compatibility claims are approved.",
+    },
   },
   {
     productId: "siemens-s7-300-sm322-do-8-relay-24vdc-230vac-5a-1hf10-0aa0",
     shortDescription: sm322Do8Relay5A1Hf10Copy,
     description: [sm322Do8Relay5A1Hf10Copy],
     provenance: "ai-assisted",
-    linguisticReview: { decision: "pending" },
-    technicalReview: { decision: "pending" },
+    linguisticReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-11-13T15:45:00Z",
+      reviewedContentHash:
+        "sha256:8bfc480b7998bd17ec55ffc46b70d35f9b088d67523e15192a48296ca7c9a7e5",
+      evidenceRef:
+        "PM linguistic approval in this conversation; draft commit e952ecf2036f5d191b712191d637cb042b4426f6; Product siemens-s7-300-sm322-do-8-relay-24vdc-230vac-5a-1hf10-0aa0; MLFB 6ES7322-1HF10-0AA0.",
+      note: "6ES7322-1HF10-0AA0: PM-approved Persian wording, punctuation and spacing; machine-verified NFC, Persian yeh/kaf and typed full-title/count segmentation.",
+    },
+    technicalReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-11-13T15:45:06Z",
+      reviewedContentHash:
+        "sha256:8bfc480b7998bd17ec55ffc46b70d35f9b088d67523e15192a48296ca7c9a7e5",
+      evidenceRef:
+        "PM technical approval in this conversation; draft commit e952ecf2036f5d191b712191d637cb042b4426f6; Product siemens-s7-300-sm322-do-8-relay-24vdc-230vac-5a-1hf10-0aa0; MLFB 6ES7322-1HF10-0AA0; previously reviewed Siemens Module Data 05/2022 A5E00105505-AK, section 3.36 pp182-185; https://cache.industry.siemens.com/dl/files/629/8859629/att_55794/v1/s7300_module_data_manual_en-US_en-US.pdf.",
+      note: "6ES7322-1HF10-0AA0: PM-approved full-title identification, digital-output module type and 8 outputs only. The full canonical title is an identifier. No standalone voltage/current, relay-performance, lifecycle, availability or compatibility claims are approved.",
+    },
   },
   {
     productId: "siemens-s7-300-sm322-do-16-relay-120vdc-230vac-2a-1hh01-0aa0",
     shortDescription: sm322Do16Relay1Hh01Copy,
     description: [sm322Do16Relay1Hh01Copy],
     provenance: "ai-assisted",
-    linguisticReview: { decision: "pending" },
-    technicalReview: { decision: "pending" },
+    linguisticReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-11-13T15:45:00Z",
+      reviewedContentHash:
+        "sha256:527c73b9abff604dacc97629ec9cec3421eed355227cdc0437ca7232c4ba591b",
+      evidenceRef:
+        "PM linguistic approval in this conversation; draft commit e952ecf2036f5d191b712191d637cb042b4426f6; Product siemens-s7-300-sm322-do-16-relay-120vdc-230vac-2a-1hh01-0aa0; MLFB 6ES7322-1HH01-0AA0.",
+      note: "6ES7322-1HH01-0AA0: PM-approved Persian wording, punctuation and spacing; machine-verified NFC, Persian yeh/kaf and typed full-title/count segmentation.",
+    },
+    technicalReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-11-13T15:45:06Z",
+      reviewedContentHash:
+        "sha256:527c73b9abff604dacc97629ec9cec3421eed355227cdc0437ca7232c4ba591b",
+      evidenceRef:
+        "PM technical approval in this conversation; draft commit e952ecf2036f5d191b712191d637cb042b4426f6; Product siemens-s7-300-sm322-do-16-relay-120vdc-230vac-2a-1hh01-0aa0; MLFB 6ES7322-1HH01-0AA0; previously reviewed Siemens Module Data 05/2022 A5E00105505-AK, section 3.33 pp169-171; https://cache.industry.siemens.com/dl/files/629/8859629/att_55794/v1/s7300_module_data_manual_en-US_en-US.pdf.",
+      note: "6ES7322-1HH01-0AA0: PM-approved full-title identification, digital-output module type and 16 outputs only. The full canonical title is an identifier. No standalone voltage/current, relay-performance, lifecycle, availability or compatibility claims are approved.",
+    },
   },
 ] as const satisfies readonly PersianProductCopyOverlay[];

@@ -5792,36 +5792,59 @@ const registeredBatch06DraftRecords = registeredBatch06Drafts.map(
   }
 );
 
+const BATCH_07_DRAFT_COMMIT = "e952ecf2036f5d191b712191d637cb042b4426f6";
+const BATCH_07_LINGUISTIC_REVIEWED_AT = "2026-11-13T15:45:00Z";
+const BATCH_07_TECHNICAL_REVIEWED_AT = "2026-11-13T15:45:06Z";
 const expectedBatch07CanonicalProducts = [
   {
     productId: "siemens-s7-300-sm322-do-16-ac-120-230v-1a-1fh00-0aa0",
     partNumber: "6ES7322-1FH00-0AA0",
     title: "SIMATIC S7-300 SM 322 16 DO 120/230 V AC",
     count: "16",
+    reviewedContentHash:
+      "sha256:2899dd2ecbae2223558f50070ada47d0a4a70f7c0fda3d4d737d9f3c2b74ba0e",
+    previouslyReviewedSiemensEvidence:
+      "Module Data 05/2022 A5E00105505-AK, section 3.27 pp145-146; https://cache.industry.siemens.com/dl/files/629/8859629/att_55794/v1/s7300_module_data_manual_en-US_en-US.pdf",
   },
   {
     productId: "siemens-s7-300-sm322-do-16-acdc-24-48v-0-5a-5gh00-0ab0",
     partNumber: "6ES7322-5GH00-0AB0",
     title: "SIMATIC S7-300 SM 322 16 DO 24-48 V AC/DC",
     count: "16",
+    reviewedContentHash:
+      "sha256:dcd2e368e9e3c1d8c0fa775d4d217f705a48d156264a6c85ba16fbe780d27ad3",
+    previouslyReviewedSiemensEvidence:
+      "Module Data 05/2022 A5E00105505-AK, section 3.26 pp140-142; https://cache.industry.siemens.com/dl/files/629/8859629/att_55794/v1/s7300_module_data_manual_en-US_en-US.pdf; Manual UC 24/48 V; official indexed exact-product datasheet text supports the canonical identifier; direct PDF retrieval returned HTTP 403; visual inspection NOT OBSERVED.",
   },
   {
     productId: "siemens-s7-300-sm322-do-8-relay-24vdc-230vac-2a-1hf01-0aa0",
     partNumber: "6ES7322-1HF01-0AA0",
     title: "SIMATIC S7-300 SM 322 8 DO Relay",
     count: "8",
+    reviewedContentHash:
+      "sha256:fd82f3f5548c850671b0f0b5c1dfb06d8230e7051e59e70e964eaeea9889b561",
+    previouslyReviewedSiemensEvidence:
+      "Module Data 05/2022 A5E00105505-AK, section 3.34 pp172-173; https://cache.industry.siemens.com/dl/files/629/8859629/att_55794/v1/s7300_module_data_manual_en-US_en-US.pdf",
   },
   {
     productId: "siemens-s7-300-sm322-do-8-relay-24vdc-230vac-5a-1hf10-0aa0",
     partNumber: "6ES7322-1HF10-0AA0",
     title: "SIMATIC S7-300 SM 322 8 DO Relay 5 A",
     count: "8",
+    reviewedContentHash:
+      "sha256:8bfc480b7998bd17ec55ffc46b70d35f9b088d67523e15192a48296ca7c9a7e5",
+    previouslyReviewedSiemensEvidence:
+      "Module Data 05/2022 A5E00105505-AK, section 3.36 pp182-185; https://cache.industry.siemens.com/dl/files/629/8859629/att_55794/v1/s7300_module_data_manual_en-US_en-US.pdf",
   },
   {
     productId: "siemens-s7-300-sm322-do-16-relay-120vdc-230vac-2a-1hh01-0aa0",
     partNumber: "6ES7322-1HH01-0AA0",
     title: "SIMATIC S7-300 SM 322 16 DO Relay 120 V DC / 230 V AC",
     count: "16",
+    reviewedContentHash:
+      "sha256:527c73b9abff604dacc97629ec9cec3421eed355227cdc0437ca7232c4ba591b",
+    previouslyReviewedSiemensEvidence:
+      "Module Data 05/2022 A5E00105505-AK, section 3.33 pp169-171; https://cache.industry.siemens.com/dl/files/629/8859629/att_55794/v1/s7300_module_data_manual_en-US_en-US.pdf",
   },
 ] as const;
 const expectedBatch07ProductIdSet = new Set<ProductId>(
@@ -5848,11 +5871,11 @@ assert(
     ).size === 10 &&
     persianProductCopyDraftRegistry.filter((entry) =>
       isPendingReview(entry.linguisticReview)
-    ).length === 5 &&
+    ).length === 0 &&
     persianProductCopyDraftRegistry.filter((entry) =>
       isPendingReview(entry.technicalReview)
-    ).length === 5,
-  "Batch 07 must contain five exact ordered bindings, ten distinct pending role objects, and the only pending reviews."
+    ).length === 0,
+  "Batch 07 must contain five exact ordered bindings, ten distinct approved role objects, and no pending reviews."
 );
 const registeredBatch07DraftRecords = registeredBatch07Drafts.map(
   (entry, index) => {
@@ -5881,6 +5904,33 @@ const registeredBatch07DraftRecords = registeredBatch07Drafts.map(
         ),
       `Batch 07 production binding, count and absence of overrides must be exact: ${entry.productId}`
     );
+    const freshContentHash = createProductCopyContentHash(entry);
+    assert(
+      freshContentHash === expected.reviewedContentHash,
+      `Batch 07 reviewed draft hash must remain unchanged: ${entry.productId}`
+    );
+    for (const [review, reviewedAt, evidenceRef] of [
+      [
+        entry.linguisticReview,
+        BATCH_07_LINGUISTIC_REVIEWED_AT,
+        `PM linguistic approval in this conversation; draft commit ${BATCH_07_DRAFT_COMMIT}; Product ${entry.productId}; MLFB ${expected.partNumber}.`,
+      ],
+      [
+        entry.technicalReview,
+        BATCH_07_TECHNICAL_REVIEWED_AT,
+        `PM technical approval in this conversation; draft commit ${BATCH_07_DRAFT_COMMIT}; Product ${entry.productId}; MLFB ${expected.partNumber}; previously reviewed Siemens ${expected.previouslyReviewedSiemensEvidence}.`,
+      ],
+    ] as const) {
+      assert(
+        review.decision === "approved" &&
+          review.reviewerId === "Siemiran" &&
+          review.reviewedAt === reviewedAt &&
+          review.reviewedContentHash === freshContentHash &&
+          review.evidenceRef === evidenceRef &&
+          review.note?.startsWith(`${expected.partNumber}:`) === true,
+        `Batch 07 role approval must match its observed timestamp, PM evidence and current hash: ${entry.productId}`
+      );
+    }
     const expectedSegments = [
       { kind: "text", value: "مدل " },
       { kind: "technical", value: product.title },
@@ -5894,13 +5944,10 @@ const registeredBatch07DraftRecords = registeredBatch07Drafts.map(
           JSON.stringify(expectedSegments) &&
         JSON.stringify(entry.description) ===
           JSON.stringify([expectedSegments]) &&
-        [entry.linguisticReview, entry.technicalReview].every(
-          (review) => JSON.stringify(review) === JSON.stringify(pendingReview)
-        ) &&
         [product.title, count].every((token) =>
           deriveAllowedTechnicalTokens(product).has(token)
         ),
-      `Batch 07 must retain exact typed title/count paragraphs and metadata-free pending reviews: ${entry.productId}`
+      `Batch 07 must retain exact typed title/count paragraphs and approved review hashes: ${entry.productId}`
     );
     return {
       productId: entry.productId,
@@ -5908,7 +5955,7 @@ const registeredBatch07DraftRecords = registeredBatch07Drafts.map(
       renderedShortDescription: serializeProductCopyParagraphForSearch(
         entry.shortDescription
       ),
-      freshContentHash: createProductCopyContentHash(entry),
+      freshContentHash,
     };
   }
 );
@@ -6040,9 +6087,9 @@ assert(
         entry.technicalReview.decision === "approved"
     ) &&
     registeredPreviouslyApprovedDrafts.length === 30 &&
-    registeredLinguisticApprovals === 30 &&
-    registeredTechnicalApprovals === 30 &&
-    registeredCurrentDualApprovals === 30 &&
+    registeredLinguisticApprovals === 35 &&
+    registeredTechnicalApprovals === 35 &&
+    registeredCurrentDualApprovals === 35 &&
     registeredPreviouslyApprovedDrafts.filter((entry) =>
       isPendingReview(entry.linguisticReview)
     ).length === 0 &&
@@ -6075,10 +6122,10 @@ assert(
   !registeredDraftActivation.valid &&
     registeredDraftActivation.overlayCount === 35 &&
     registeredDraftActivation.canonicalCount === 382 &&
-    registeredDraftActivation.approvedCount === 30 &&
+    registeredDraftActivation.approvedCount === 35 &&
     registeredDraftActivation.missingIds.length === 347 &&
     !("capability" in registeredDraftActivation),
-  "Combined activation must fail closed at exactly 35/382 drafts, 30 dual approvals, and 347 missing Products."
+  "Combined activation must fail closed at exactly 35/382 drafts, 35 dual approvals, and 347 missing Products."
 );
 assert(
   PERSIAN_PRODUCT_COPY_PUBLICATION_STATE === "disabled",
