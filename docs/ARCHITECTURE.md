@@ -1,6 +1,6 @@
 # Siemiran — Current Architecture
 
-Implementation base: `main` at `e93dd9229386153ee3a192a22ef3c977be3cb57d`
+Implementation base: `main` at `1fc04eb68d1d1149bf05863a75a37d8c9103c47b`
 
 Current checkpoint and resume workflow: [SESSION_HANDOFF.md](SESSION_HANDOFF.md).
 
@@ -186,30 +186,37 @@ for merge/review evidence and [DATABASE.md](DATABASE.md) for technical limits,
 including 7RD00 load-supply versus `inputVoltage` semantics and the 1BH10
 High Speed identifier. No fresh manufacturer or lifecycle verification is claimed.
 
-[PR #71](https://github.com/Siemiran/Siemiran/pull/71) completed private Batch 07
+Historical Batch 07 checkpoint: [PR #71](https://github.com/Siemiran/Siemiran/pull/71) completed private Batch 07
 and merged as `e93dd9229386153ee3a192a22ef3c977be3cb57d`; local main synchronization
 completed. Its five entries approve complete model identifiers, digital-output
 module type and counts 16/16/8/8/16 only. Recorded machine comparison preserves
 the prior 30 complete entries, metadata and hashes. Products, separate review
 timestamps and the 5GH00 evidence qualification are in
-[DATABASE.md](DATABASE.md#2026-11-13---batch-07-private-product-copy-checkpoint-current-state).
+[DATABASE.md](DATABASE.md#2026-11-13---batch-07-private-product-copy-checkpoint-historical-snapshot).
 No fresh manufacturer retrieval or lifecycle verification is claimed.
 
-The separate private Product-copy registry now contains 35/382 drafts,
-with linguistic approvals at 35/382, technical approvals at 35/382, and 35
+[PR #73](https://github.com/Siemiran/Siemiran/pull/73) completed private Batch 08
+at `1fc04eb68d1d1149bf05863a75a37d8c9103c47b`; main synchronization completed. Its
+five SM322 entries approve complete titles as identifiers, digital-output type
+and counts 8/32/64/64/16 only. Recorded preservation and mutation checks passed;
+Product/evidence details and the unresolved 1BP00 issue are in
+[DATABASE.md](DATABASE.md#2026-11-13---batch-08-private-product-copy-checkpoint-current-state).
+
+The separate private Product-copy registry now contains 40/382 drafts,
+with linguistic approvals at 40/382, technical approvals at 40/382, and 40
 current dual approvals; pending roles are zero. Complete coverage is missing for
-347 Products. The technical-token overrides cover 10 Products, 20 assignments,
+342 Products. The technical-token overrides cover 10 Products, 20 assignments,
 and 7 unique
 strings, while the global allowlist remains empty. Publication remains globally
 disabled, activation is invalid, no activation capability exists, and active
-coverage remains 0/382. Batch 07 adds zero overrides. Approvals from Batches 01–07 do not authorize
+coverage remains 0/382. Batch 08 adds zero overrides. Approvals from Batches 01–08 do not authorize
 publication or partial activation; activation and publication remain blocked
 until all 382/382 Products have current dual approvals and separate
 authorization is given. Earlier Batch 04 drafting-blocker and pending PR #64
-review statements are historical and superseded. Dated Batch 01–06 checkpoints
-retain 5/10/15/20/25/30 entries and 377/372/367/362/357/352 missing Products respectively.
+review statements are historical and superseded. Dated Batch 01–07 checkpoints
+retain 5/10/15/20/25/30/35 entries and 377/372/367/362/357/352/347 missing Products respectively.
 Public FA/EN Product copy remains canonical English/LTR.
-Batch 08 readiness/scope work is unapproved and unstarted. Admin Panel and
+Batch 09 readiness/scope work is unapproved and unstarted. Admin Panel and
 Automation remain gated.
 
 The dedicated local visual and functional website inspection with the maintainer

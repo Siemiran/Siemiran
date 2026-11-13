@@ -1,9 +1,62 @@
 # Siemiran — Product Database
 
 Repository source of truth: `main` at
-`e93dd9229386153ee3a192a22ef3c977be3cb57d`.
+`1fc04eb68d1d1149bf05863a75a37d8c9103c47b`.
 
-## 2026-11-13 - Batch 07 Private Product-copy Checkpoint (Current State)
+## 2026-11-13 - Batch 08 Private Product-copy Checkpoint (Current State)
+
+[PR #73](https://github.com/Siemiran/Siemiran/pull/73) merged at
+`2026-11-13T17:31:44Z` / `2026-11-13 21:01:44` Asia/Tehran. Its guarded
+squash and main synchronization completed; full merge identity and scope are in
+[CHANGELOG.md](CHANGELOG.md). Approved `ai-assisted` copy covers complete
+canonical titles as identifiers, digital-output module type and these counts only:
+
+| MLFB | Direction | Outputs | Previously reviewed Module Data section / printed pages |
+| --- | --- | --- | --- |
+| `6ES7322-5FF00-0AB0` | DO | 8 | 3.32 / 164–165 |
+| `6ES7322-1FL00-0AA0` | DO | 32 | 3.22 / 122–124 |
+| `6ES7322-1BP00-0AA0` | DO | 64 | 3.19 / 106–108 |
+| `6ES7322-1BP50-0AA0` | DO | 64 | 3.20 / 112–115 |
+| `6ES7322-8BH10-0AB0` | DO | 16 | 3.24 / 129 |
+
+Ten distinct linguistic/technical approval records use reviewer `Siemiran` and
+unchanged production content hashes. Actual UTC recording-time observations were
+linguistic `2026-11-13T17:07:03Z` and technical `2026-11-13T17:07:54Z`;
+these are **not claimed PM review timestamps**. Recorded machine comparison
+preserved the previous 35 complete entries, metadata and hashes. Ten independent
+text/kind mutation cases each staled both approvals.
+
+Evidence reuses parsed text of
+[Siemens Module Data, 05/2022, A5E00105505-AK](https://cache.industry.siemens.com/dl/files/629/8859629/att_55794/v1/s7300_module_data_manual_en-US_en-US.pdf).
+Visual PDF inspection was **NOT OBSERVED**; no fresh retrieval or lifecycle
+verification is claimed. No standalone voltage/current, operating-feature,
+lifecycle, availability or compatibility claims are approved. `Sinking` remains
+within 1BP50's supported complete title only.
+
+**Unresolved 1BP00 discrepancy:** `6ES7322-1BP00-0AA0`'s canonical English
+description says “sink,” while the reviewed Siemens manual says “sourcing.”
+The approved Persian copy asserts neither. The disputed field is **not verified**
+and requires a separately scoped canonical-data review; no correction is made here.
+Existing qualifications, including 5GH00 evidence/access limits and the deferred
+issues below, remain unchanged.
+
+Current totals: 382 Products (186 S7-1200 / 196 S7-300); 40/382 private drafts
+and current approvals per role; 40 current dual approvals; zero pending roles;
+342 missing entries. Overrides remain 10 Products / 20 assignments / 7 unique
+strings, global allowlist empty and zero Batch 08 overrides. Exactly eleven
+lifecycle omissions and the separate 185 Siemens-official verified / 11 explicitly
+unverified S7-300 provenance classification remain unchanged.
+
+Publication is disabled, capability absent and active overlays zero; public FA/EN
+copy remains canonical English/LTR. Full 382/382 current dual approvals plus
+separate launch authorization remain required. Batch 09 is unapproved and
+unstarted; Admin Panel/Automation remain gated and completed-copy inspection
+remains pending. Durable checks are in [SESSION_HANDOFF.md](SESSION_HANDOFF.md).
+
+## 2026-11-13 - Batch 07 Private Product-copy Checkpoint (Historical Snapshot)
+
+The former Batch 07 35/347 checkpoint, review evidence and next-step statements
+below are historical, superseded by Batch 08 above.
 
 [PR #71](https://github.com/Siemiran/Siemiran/pull/71) merged at
 `2026-11-13T16:06:26Z` / `2026-11-13 19:36:26` Tehran; main synchronization
