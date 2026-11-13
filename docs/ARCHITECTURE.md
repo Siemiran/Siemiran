@@ -1,6 +1,6 @@
 # Siemiran — Current Architecture
 
-Implementation base: `main` at `04a302c9b587954131289e8624a1f90344b9ffdd`
+Implementation base: `main` at `e1238d59fde168d86f9491546bc4686fb263ab63`
 
 Current checkpoint and resume workflow: [SESSION_HANDOFF.md](SESSION_HANDOFF.md).
 
@@ -176,22 +176,31 @@ responses remain distinct from the later 7BH01 support-hosted `Internal Error`,
 which exposed no HTTP status. No fresh manufacturer retrieval or lifecycle
 verification is claimed.
 
-The separate private Product-copy registry now contains 25/382 drafts,
-with linguistic approvals at 25/382, technical approvals at 25/382, and 25
+[PR #69](https://github.com/Siemiran/Siemiran/pull/69) completed private Batch 06
+and merged as `e1238d59fde168d86f9491546bc4686fb263ab63`; local main is
+synchronized. Its five entries retain full model identifiers and claim only
+digital-input/output type and channel counts 4/8/16/16/32. Separate reviews are
+bound to unchanged production hashes; recorded machine comparison preserves
+the previous 25 complete entries and metadata. See [CHANGELOG.md](CHANGELOG.md)
+for merge/review evidence and [DATABASE.md](DATABASE.md) for technical limits,
+including 7RD00 load-supply versus `inputVoltage` semantics and the 1BH10
+High Speed identifier. No fresh manufacturer or lifecycle verification is claimed.
+
+The separate private Product-copy registry now contains 30/382 drafts,
+with linguistic approvals at 30/382, technical approvals at 30/382, and 30
 current dual approvals; pending roles are zero. Complete coverage is missing for
-357 Products. The technical-token overrides cover 10 Products, 20 assignments,
+352 Products. The technical-token overrides cover 10 Products, 20 assignments,
 and 7 unique
 strings, while the global allowlist remains empty. Publication remains globally
 disabled, activation is invalid, no activation capability exists, and active
-coverage remains 0/382. Approvals from Batches 01–05 do not authorize
+coverage remains 0/382. Batch 06 adds zero overrides. Approvals from Batches 01–06 do not authorize
 publication or partial activation; activation and publication remain blocked
 until all 382/382 Products have current dual approvals and separate
 authorization is given. Earlier Batch 04 drafting-blocker and pending PR #64
-review statements are historical and superseded. Dated Batch 01–04 checkpoints
-retain 5/10/15/20 entries and 377/372/367/362 missing Products respectively.
-The new `docs/reconcile-fifth-persian-product-copy-batch` branch is unmerged;
-independent documentation review, push/PR, and guarded merge remain pending.
-Batch 06 scope/readiness work is unapproved and unstarted.
+review statements are historical and superseded. Dated Batch 01–05 checkpoints
+retain 5/10/15/20/25 entries and 377/372/367/362/357 missing Products respectively.
+Batch 07 readiness/scope work is unapproved and unstarted. Admin Panel and
+Automation remain gated.
 
 The dedicated local visual and functional website inspection with the maintainer
 remains pending after Persian Product-copy completion. It must cover FA/EN
