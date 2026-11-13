@@ -405,6 +405,46 @@ const sm321Di16_24Vdc7Bh00Copy = [
   { kind: "text", value: " ورودی است." },
 ] as const satisfies ProductCopyParagraph;
 
+const sm321Di4_24VdcNamur7Rd00Copy = [
+  { kind: "text", value: "مدل " },
+  { kind: "technical", value: "SIMATIC S7-300 SM 321 4 DI 24 V DC NAMUR" },
+  { kind: "text", value: "، ماژول ورودی دیجیتال با " },
+  { kind: "technical", value: "4" },
+  { kind: "text", value: " ورودی است." },
+] as const satisfies ProductCopyParagraph;
+
+const sm322Do8_24Vdc1Bf01Copy = [
+  { kind: "text", value: "مدل " },
+  { kind: "technical", value: "SIMATIC S7-300 SM 322 8 DO 24 V DC" },
+  { kind: "text", value: "، ماژول خروجی دیجیتال با " },
+  { kind: "technical", value: "8" },
+  { kind: "text", value: " خروجی است." },
+] as const satisfies ProductCopyParagraph;
+
+const sm322Do16_24Vdc1Bh01Copy = [
+  { kind: "text", value: "مدل " },
+  { kind: "technical", value: "SIMATIC S7-300 SM 322 16 DO 24 V DC" },
+  { kind: "text", value: "، ماژول خروجی دیجیتال با " },
+  { kind: "technical", value: "16" },
+  { kind: "text", value: " خروجی است." },
+] as const satisfies ProductCopyParagraph;
+
+const sm322Do16_24Vdc1Bh10Copy = [
+  { kind: "text", value: "مدل " },
+  { kind: "technical", value: "SIMATIC S7-300 SM 322 High Speed 16 DO 24 V DC" },
+  { kind: "text", value: "، ماژول خروجی دیجیتال با " },
+  { kind: "technical", value: "16" },
+  { kind: "text", value: " خروجی است." },
+] as const satisfies ProductCopyParagraph;
+
+const sm322Do32_24Vdc1Bl00Copy = [
+  { kind: "text", value: "مدل " },
+  { kind: "technical", value: "SIMATIC S7-300 SM 322 32 DO 24 V DC" },
+  { kind: "text", value: "، ماژول خروجی دیجیتال با " },
+  { kind: "technical", value: "32" },
+  { kind: "text", value: " خروجی است." },
+] as const satisfies ProductCopyParagraph;
+
 export const persianProductCopyDraftRegistry = [
   {
     productId: "siemens-s7-1200-cpu-211-1ae40",
@@ -994,6 +1034,136 @@ export const persianProductCopyDraftRegistry = [
       reviewedContentHash: "sha256:b9d498f47a5b5ed2a6f5bb3a32ef57fefe765211d67b9dc852c0520e15fc1e1f",
       evidenceRef: "https://cache.industry.siemens.com/dl/files/047/88868047/att_68363/v1/S7pcshwb.pdf",
       note: "Reviewed exact 6ES7321-7BH00-0AB0: Exact PCS 7 S7-300 SM-DI row, printed Page 24 of 41. The existing canonical source link points to a CPU410 manual; copy evidence uses this exact PCS 7 row, and source-link reconciliation remains separate. Previously reviewed parsed cache-PDF text; visual page verification unavailable. Approves only identity, digital-input type and 16 inputs; the full canonical title is an identifier. No standalone voltage, lifecycle, availability, compatibility, operating-feature or unrelated specification is approved.",
+    },
+  },
+  {
+    productId: "siemens-s7-300-sm321-di-4-24vdc-namur-7rd00-0ab0",
+    shortDescription: sm321Di4_24VdcNamur7Rd00Copy,
+    description: [sm321Di4_24VdcNamur7Rd00Copy],
+    provenance: "ai-assisted",
+    linguisticReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-11-13T10:10:19Z",
+      reviewedContentHash:
+        "sha256:a87a378c221bd7fae8d5eac58fb451c2e100232bfb8358cc2f366c46bc6e7d49",
+      evidenceRef:
+        "PM linguistic approval in this conversation; draft commit 02d2ea2b17db358a617024b5e05e3cfdb084f113; Product siemens-s7-300-sm321-di-4-24vdc-namur-7rd00-0ab0; MLFB 6ES7321-7RD00-0AB0.",
+      note: "6ES7321-7RD00-0AB0: PM-approved Persian wording, punctuation, spacing, NFC and typed full-title/count segmentation.",
+    },
+    technicalReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-11-13T10:10:47Z",
+      reviewedContentHash:
+        "sha256:a87a378c221bd7fae8d5eac58fb451c2e100232bfb8358cc2f366c46bc6e7d49",
+      evidenceRef:
+        "PM technical approval in this conversation; draft commit 02d2ea2b17db358a617024b5e05e3cfdb084f113; Product siemens-s7-300-sm321-di-4-24vdc-namur-7rd00-0ab0; MLFB 6ES7321-7RD00-0AB0; previously reviewed Siemens A5E00348721-03, English PDF pp4-6; https://cache.industry.siemens.com/dl/files/861/30332861/att_108633/v1/sm321_di_namur_product_information.pdf.",
+      note: "6ES7321-7RD00-0AB0: PM-approved full-title identification, digital-input type and 4 inputs only. 24 V concerns electronic load supply; inputVoltage and Ex application claims are not approved.",
+    },
+  },
+  {
+    productId: "siemens-s7-300-sm322-do-8-24vdc-2a-1bf01-0aa0",
+    shortDescription: sm322Do8_24Vdc1Bf01Copy,
+    description: [sm322Do8_24Vdc1Bf01Copy],
+    provenance: "ai-assisted",
+    linguisticReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-11-13T10:10:19Z",
+      reviewedContentHash:
+        "sha256:06946f86824902d2e68cc8d91cd69836c998e8bfc059275d8b768ebb5da6edc9",
+      evidenceRef:
+        "PM linguistic approval in this conversation; draft commit 02d2ea2b17db358a617024b5e05e3cfdb084f113; Product siemens-s7-300-sm322-do-8-24vdc-2a-1bf01-0aa0; MLFB 6ES7322-1BF01-0AA0.",
+      note: "6ES7322-1BF01-0AA0: PM-approved Persian wording, punctuation, spacing, NFC and typed full-title/count segmentation.",
+    },
+    technicalReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-11-13T10:10:47Z",
+      reviewedContentHash:
+        "sha256:06946f86824902d2e68cc8d91cd69836c998e8bfc059275d8b768ebb5da6edc9",
+      evidenceRef:
+        "PM technical approval in this conversation; draft commit 02d2ea2b17db358a617024b5e05e3cfdb084f113; Product siemens-s7-300-sm322-do-8-24vdc-2a-1bf01-0aa0; MLFB 6ES7322-1BF01-0AA0; previously reviewed Siemens Module Data 05/2022 A5E00105505-AK, section 3.28 pp148-149; https://cache.industry.siemens.com/dl/files/629/8859629/att_55794/v1/s7300_module_data_manual_en-US_en-US.pdf.",
+      note: "6ES7322-1BF01-0AA0: PM-approved full-title identification, digital-output type and 8 outputs only. Prior Siemens evidence reused.",
+    },
+  },
+  {
+    productId: "siemens-s7-300-sm322-do-16-24vdc-0-5a-1bh01-0aa0",
+    shortDescription: sm322Do16_24Vdc1Bh01Copy,
+    description: [sm322Do16_24Vdc1Bh01Copy],
+    provenance: "ai-assisted",
+    linguisticReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-11-13T10:10:19Z",
+      reviewedContentHash:
+        "sha256:083edd9853d43518ecc020878a3756a79dd6dbbe63866e564da4ca0310c45110",
+      evidenceRef:
+        "PM linguistic approval in this conversation; draft commit 02d2ea2b17db358a617024b5e05e3cfdb084f113; Product siemens-s7-300-sm322-do-16-24vdc-0-5a-1bh01-0aa0; MLFB 6ES7322-1BH01-0AA0.",
+      note: "6ES7322-1BH01-0AA0: PM-approved Persian wording, punctuation, spacing, NFC and typed full-title/count segmentation.",
+    },
+    technicalReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-11-13T10:10:47Z",
+      reviewedContentHash:
+        "sha256:083edd9853d43518ecc020878a3756a79dd6dbbe63866e564da4ca0310c45110",
+      evidenceRef:
+        "PM technical approval in this conversation; draft commit 02d2ea2b17db358a617024b5e05e3cfdb084f113; Product siemens-s7-300-sm322-do-16-24vdc-0-5a-1bh01-0aa0; MLFB 6ES7322-1BH01-0AA0; previously reviewed Siemens Module Data 05/2022 A5E00105505-AK, section 3.23 pp125-127; https://cache.industry.siemens.com/dl/files/629/8859629/att_55794/v1/s7300_module_data_manual_en-US_en-US.pdf.",
+      note: "6ES7322-1BH01-0AA0: PM-approved full-title identification, digital-output type and 16 outputs only. Prior Siemens evidence reused.",
+    },
+  },
+  {
+    productId: "siemens-s7-300-sm322-do-16-24vdc-high-speed-1bh10-0aa0",
+    shortDescription: sm322Do16_24Vdc1Bh10Copy,
+    description: [sm322Do16_24Vdc1Bh10Copy],
+    provenance: "ai-assisted",
+    linguisticReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-11-13T10:10:19Z",
+      reviewedContentHash:
+        "sha256:13fa669b8a3ff684445ebc642a032025ee69b8435c539c21fb043967c0f0b7ed",
+      evidenceRef:
+        "PM linguistic approval in this conversation; draft commit 02d2ea2b17db358a617024b5e05e3cfdb084f113; Product siemens-s7-300-sm322-do-16-24vdc-high-speed-1bh10-0aa0; MLFB 6ES7322-1BH10-0AA0.",
+      note: "6ES7322-1BH10-0AA0: PM-approved Persian wording, punctuation, spacing, NFC and typed full-title/count segmentation.",
+    },
+    technicalReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-11-13T10:10:47Z",
+      reviewedContentHash:
+        "sha256:13fa669b8a3ff684445ebc642a032025ee69b8435c539c21fb043967c0f0b7ed",
+      evidenceRef:
+        "PM technical approval in this conversation; draft commit 02d2ea2b17db358a617024b5e05e3cfdb084f113; Product siemens-s7-300-sm322-do-16-24vdc-high-speed-1bh10-0aa0; MLFB 6ES7322-1BH10-0AA0; previously reviewed Siemens Module Data 05/2022 A5E00105505-AK, section 3.25 pp137-138; https://cache.industry.siemens.com/dl/files/629/8859629/att_55794/v1/s7300_module_data_manual_en-US_en-US.pdf.",
+      note: "6ES7322-1BH10-0AA0: PM-approved full-title identification, digital-output type and 16 outputs only. High Speed remains part of the full model identifier.",
+    },
+  },
+  {
+    productId: "siemens-s7-300-sm322-do-32-24vdc-0-5a-1bl00-0aa0",
+    shortDescription: sm322Do32_24Vdc1Bl00Copy,
+    description: [sm322Do32_24Vdc1Bl00Copy],
+    provenance: "ai-assisted",
+    linguisticReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-11-13T10:10:19Z",
+      reviewedContentHash:
+        "sha256:f2a0464dc66280cf7906f4f1b25f713c830bb588d0a418b4a350391d5384a4dc",
+      evidenceRef:
+        "PM linguistic approval in this conversation; draft commit 02d2ea2b17db358a617024b5e05e3cfdb084f113; Product siemens-s7-300-sm322-do-32-24vdc-0-5a-1bl00-0aa0; MLFB 6ES7322-1BL00-0AA0.",
+      note: "6ES7322-1BL00-0AA0: PM-approved Persian wording, punctuation, spacing, NFC and typed full-title/count segmentation.",
+    },
+    technicalReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-11-13T10:10:47Z",
+      reviewedContentHash:
+        "sha256:f2a0464dc66280cf7906f4f1b25f713c830bb588d0a418b4a350391d5384a4dc",
+      evidenceRef:
+        "PM technical approval in this conversation; draft commit 02d2ea2b17db358a617024b5e05e3cfdb084f113; Product siemens-s7-300-sm322-do-32-24vdc-0-5a-1bl00-0aa0; MLFB 6ES7322-1BL00-0AA0; previously reviewed Siemens Module Data 05/2022 A5E00105505-AK, section 3.21 pp119-121; https://cache.industry.siemens.com/dl/files/629/8859629/att_55794/v1/s7300_module_data_manual_en-US_en-US.pdf.",
+      note: "6ES7322-1BL00-0AA0: PM-approved full-title identification, digital-output type and 32 outputs only. Prior Siemens evidence reused.",
     },
   },
 ] as const satisfies readonly PersianProductCopyOverlay[];
