@@ -3,7 +3,52 @@
 This file records completed repository changes. The newest entry records the
 current implementation baseline; older dated entries are historical snapshots.
 
-## 2026-10-02 - PR #67: Complete Batch 05 Private Drafts and Dual Approvals
+## 2026-11-13 - PR #69: Complete Batch 06 Private Drafts and Dual Approvals
+
+- [PR #69](https://github.com/Siemiran/Siemiran/pull/69),
+  `feat: add Batch 06 Persian product copy`, squash-merged at
+  `2026-11-13T10:42:08Z` (Tehran: `2026-11-13 14:12:08`) as
+  `e1238d59fde168d86f9491546bc4686fb263ab63`, with sole parent
+  `d74ee4f6d3f2c6927629a4cd82ab01662ad912bc`. Reviewed head
+  `c8974245a187d81ad97be05e0034f5bdc3e57016` and squash share tree
+  `7e82b98b766f9e8f6b5763a0585b541fbb44a800`. Implementation scope was
+  exactly two files, +356/-11; merge verification and local main synchronization
+  completed, with the feature branch preserved.
+- Added five private `ai-assisted` drafts: `6ES7321-7RD00-0AB0`,
+  `6ES7322-1BF01-0AA0`, `6ES7322-1BH01-0AA0`, `6ES7322-1BH10-0AA0`, and
+  `6ES7322-1BL00-0AA0`. Approval covers full model identifiers,
+  digital-input/output module type and channel counts 4/8/16/16/32 respectively.
+  Reviewer `Siemiran` recorded separate linguistic approvals at
+  `2026-11-13T10:10:19Z` and technical approvals at `2026-11-13T10:10:47Z`,
+  bound to the unchanged production content hashes. Machine comparison
+  preserved all previous 25 complete entries, metadata and hashes.
+- Catalog remains 382 Products (186 S7-1200 / 196 S7-300). Private drafts and
+  current approvals per role are 30/382; current dual approvals are 30, pending
+  roles zero and missing entries 352. Overrides remain 10 Products / 20
+  assignments / 7 unique strings; Batch 06 adds zero and the global allowlist
+  is empty. Eleven lifecycle omissions and the 185 Siemens-official verified /
+  11 explicitly unverified S7-300 provenance classification are unchanged.
+- 7RD00's 24 V concerns electronic load supply; copy approval does not verify
+  `inputVoltage` semantics or Ex application claims. High Speed remains part of
+  the 1BH10 model identifier. Prior technical issues and evidence qualifications
+  in [DATABASE.md](DATABASE.md) remain deferred. No fresh manufacturer retrieval,
+  visual inspection or lifecycle verification is claimed.
+- **PASS (REUSED)**: Batch 06 validator, scoped lint, build including TypeScript,
+  and whitespace checks exited 0 at the approval commit. Their applicability
+  was confirmed through exact reviewed/squash tree equality; these are not new
+  documentation-task executions. Focused integrity and guarded merge passed.
+  Recorded pre-merge CI had zero check runs/status contexts and combined pending:
+  **NOT RUN**, not passed CI.
+- Publication remains disabled, activation capability absent and overlays zero;
+  public FA/EN Product copy stays canonical English/LTR. The 382/382 current
+  dual-approval gate and separate launch authorization remain mandatory.
+  Batch 07 readiness/scope is unapproved and unstarted; dedicated inspection
+  of completed Persian copy remains pending. Admin Panel and Automation stay gated.
+
+## 2026-10-02 - PR #67: Complete Batch 05 Private Drafts and Dual Approvals (Historical Snapshot)
+
+The dated counts, validation and prospective workflow below describe the former
+Batch 05 checkpoint, superseded by merged Batch 06 above.
 
 ### Changed
 

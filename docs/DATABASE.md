@@ -1,9 +1,49 @@
 # Siemiran — Product Database
 
 Repository source of truth: `main` at
-`04a302c9b587954131289e8624a1f90344b9ffdd`.
+`e1238d59fde168d86f9491546bc4686fb263ab63`.
 
-## 2026-10-02 - Batch 05 Private Product-copy Checkpoint (Current State)
+## 2026-11-13 - Batch 06 Private Product-copy Checkpoint (Current State)
+
+[PR #69](https://github.com/Siemiran/Siemiran/pull/69) merged Batch 06 at
+`2026-11-13T10:42:08Z` / `2026-11-13 14:12:08` Tehran. Merge identity,
+review timestamps and reused validation are recorded in [CHANGELOG.md](CHANGELOG.md).
+The five private, `ai-assisted` entries cover only full model identifiers,
+digital-input/output module type and these canonical channel counts:
+
+| MLFB | Direction | Channels |
+| --- | --- | --- |
+| `6ES7321-7RD00-0AB0` | DI | 4 |
+| `6ES7322-1BF01-0AA0` | DO | 8 |
+| `6ES7322-1BH01-0AA0` | DO | 16 |
+| `6ES7322-1BH10-0AA0` | DO | 16 |
+| `6ES7322-1BL00-0AA0` | DO | 32 |
+
+7RD00's 24 V concerns electronic load supply, not verified `inputVoltage`
+semantics; copy approval does not approve Ex application claims. High Speed is
+part of the 1BH10 model identifier. Existing deferred issues and evidence
+qualifications below are preserved without fresh manufacturer retrieval,
+visual inspection or lifecycle verification.
+
+Canonical coverage remains 382 Products (186 S7-1200 / 196 S7-300). Private
+drafts and current approvals per role are 30/382, with 30 current dual approvals,
+zero pending roles and 352 missing entries. The previous 25 complete entries,
+metadata and hashes are preserved by recorded machine comparison. Overrides
+remain 10 Products / 20 assignments / 7 unique strings, the global allowlist
+is empty and Batch 06 adds zero overrides. Eleven lifecycle omissions and the
+185 Siemens-official verified / 11 explicitly unverified S7-300 classification
+remain unchanged and separate from copy coverage.
+
+Publication is disabled, activation capability absent and active overlays zero;
+public FA/EN Product copy remains canonical English/LTR. Activation requires
+382/382 current dual approvals and separate launch authorization. Batch 07
+readiness/scope remains unapproved and unstarted; the completed-copy inspection
+remains pending. Resume limits are in [SESSION_HANDOFF.md](SESSION_HANDOFF.md).
+
+## 2026-10-02 - Batch 05 Private Product-copy Checkpoint (Historical Snapshot)
+
+The dated coverage and prospective workflow below describe the former Batch 05
+checkpoint, superseded by Batch 06 above; technical qualifications remain applicable.
 
 [PR #67](https://github.com/Siemiran/Siemiran/pull/67),
 `feat: add Batch 05 Persian product copy`, squash-merged at

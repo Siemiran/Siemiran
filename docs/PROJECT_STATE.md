@@ -1,6 +1,34 @@
 # Siemiran — Project State
 
-## 2026-10-02 - Batch 05 Reconciliation (Current State)
+## 2026-11-13 - Batch 06 Reconciliation (Current State)
+
+Merged implementation baseline: `e1238d59fde168d86f9491546bc4686fb263ab63`.
+[PR #69](https://github.com/Siemiran/Siemiran/pull/69) merged at
+`2026-11-13T10:42:08Z` / `2026-11-13 14:12:08` Tehran; main synchronization
+completed. Full merge identity and the five Products are in
+[CHANGELOG.md](CHANGELOG.md); narrow copy scope and technical limits are in
+[DATABASE.md](DATABASE.md).
+
+Catalog coverage remains 382 Products (186 S7-1200 / 196 S7-300). Private drafts
+and current approvals per role are 30/382, with 30 current dual approvals, zero
+pending roles and 352 missing entries. Recorded machine comparison preserves
+the previous 25 complete entries, metadata and hashes. Overrides remain
+10 Products / 20 assignments / 7 unique strings, the global allowlist is empty
+and Batch 06 adds zero overrides. Eleven lifecycle omissions and the separate
+185 Siemens-official verified / 11 explicitly unverified S7-300 classification
+are unchanged.
+
+Publication stays disabled, activation capability absent and active overlays
+zero. Public FA/EN Product copy stays canonical English/LTR; activation still
+requires 382/382 current dual approvals and separate launch authorization.
+Batch 07 readiness/scope is unapproved and unstarted. Admin Panel and Automation
+remain gated, and dedicated completed-copy inspection remains pending. Durable
+resume policy is in [SESSION_HANDOFF.md](SESSION_HANDOFF.md).
+
+## 2026-10-02 - Batch 05 Reconciliation (Historical Snapshot)
+
+The dated counts, validation and prospective workflow below describe the former
+Batch 05 checkpoint, superseded by Batch 06 above; evidence limits remain applicable.
 
 Merged implementation baseline: `04a302c9b587954131289e8624a1f90344b9ffdd`.
 [PR #67](https://github.com/Siemiran/Siemiran/pull/67),
@@ -445,9 +473,9 @@ the inventory before this approved deletion, not a valid current record.
 ## Current Baseline
 
 - Status: Active Development
-- Documentation reconciled locally: 2026-10-02; independent review pending
+- Documentation checkpoint: 2026-11-13; workflow status is reported separately
 - Implementation base: `main` at
-  `04a302c9b587954131289e8624a1f90344b9ffdd`
+  `e1238d59fde168d86f9491546bc4686fb263ab63`
 - No semantic release version is asserted by this document.
 
 ## Current Stack
@@ -479,7 +507,7 @@ the inventory before this approved deletion, not a valid current record.
 | --- | --- | --- |
 | Product listing and dynamic detail pages | IMPLEMENTED | Repository-backed listing, static product paths, and not-found handling |
 | Localization foundation | IMPLEMENTED | Persian-first FA/EN routing, matching UI catalogs, one-click equivalent-page switching, locale direction, and temporarily noindexed English routes |
-| Product-copy consumer integration | IMPLEMENTED | All intended consumers use the central resolver/public DTO boundary; private drafts and both approval roles are 25/382 with 25 current dual approvals, zero pending roles, and 357 missing, while active overlays remain 0/382, activation capability is absent, and publication is disabled |
+| Product-copy consumer integration | IMPLEMENTED | All intended consumers use the central resolver/public DTO boundary; private drafts and both approval roles are 30/382 with 30 current dual approvals, zero pending roles, and 352 missing, while active overlays remain 0/382, activation capability is absent, and publication is disabled |
 | Search, URL parameters, filters, sorting, pagination | IMPLEMENTED | Category, family, series, and product-type filters; 12-item pagination |
 | Gallery and specifications | IMPLEMENTED | Product gallery/image UI and technical specification rendering |
 | SEO and structured data | IMPLEMENTED | Metadata, canonical/Open Graph/Twitter fields, Product JSON-LD, breadcrumbs, and Breadcrumb JSON-LD |
@@ -726,6 +754,20 @@ each milestone was recorded; they are not the current connection state.
   and the Product collection total is 308.
 
 ## Validation at the Documentation Checkpoint
+
+- **PASS (REUSED)**: Batch 06 validator, scoped lint, build including TypeScript,
+  and whitespace checks exited 0 at approval head
+  `c8974245a187d81ad97be05e0034f5bdc3e57016`. Its tree equals the PR #69
+  squash tree `7e82b98b766f9e8f6b5763a0585b541fbb44a800`; this Markdown-only
+  task leaves application, dependency and build-configuration content unchanged.
+  No application checks or approval-hash audits are newly run. Counts and
+  publication safeguards are the current Batch 06 state above.
+- Recorded Batch 06 pre-merge CI: **NOT RUN**; zero check runs/status contexts,
+  combined pending. Completed Persian-copy inspection remains pending.
+
+### Historical Validation — 2026-10-02
+
+The following dated Batch 05 validation record is retained as history.
 
 - NEW: `npm.cmd run validate:product-copy` ran once from `apps/web` on
   2026-10-02 and exited 0 against unchanged Batch 05 application content.

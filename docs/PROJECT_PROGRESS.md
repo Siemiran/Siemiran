@@ -1,11 +1,37 @@
 # Siemiran — Project Progress
 
 Repository implementation source of truth: merged `main` baseline
-`04a302c9b587954131289e8624a1f90344b9ffdd`
+`e1238d59fde168d86f9491546bc4686fb263ab63`
 
-Last synchronized: 2026-10-02
+Last synchronized: 2026-11-13
 
-## 2026-10-02 - Batch 05 Reconciliation (Current State)
+## 2026-11-13 - Batch 06 Reconciliation (Current State)
+
+[PR #69](https://github.com/Siemiran/Siemiran/pull/69) merged at
+`2026-11-13T10:42:08Z` / `2026-11-13 14:12:08` Tehran as the baseline above;
+guarded merge verification and local main synchronization completed. Merge
+identity, the five Products and separate review timestamps are recorded in
+[CHANGELOG.md](CHANGELOG.md); narrow technical scope is in [DATABASE.md](DATABASE.md).
+
+Catalog remains 382 Products (186 S7-1200 / 196 S7-300). Private drafts and
+current approvals per role are 30/382, with 30 current dual approvals, zero
+pending roles and 352 missing entries. Machine comparison preserved the prior
+25 complete entries, metadata and hashes. Overrides remain 10 Products /
+20 assignments / 7 unique strings; Batch 06 adds zero and the global allowlist
+is empty. Eleven lifecycle omissions and the separate 185 Siemens-official
+verified / 11 explicitly unverified S7-300 classification remain unchanged.
+
+Publication is disabled, capability absent and active overlays zero; public
+FA/EN Product copy stays canonical English/LTR. The complete 382/382 current
+dual-approval gate and separate launch authorization remain required. Batch 07
+readiness/scope is unapproved and unstarted; completed-copy inspection remains
+pending and Admin Panel/Automation remain gated. Resume policy is in
+[SESSION_HANDOFF.md](SESSION_HANDOFF.md).
+
+## 2026-10-02 - Batch 05 Reconciliation (Historical Snapshot)
+
+The dated counts, validation and prospective workflow below describe the former
+Batch 05 checkpoint, superseded by Batch 06 above; evidence limits remain applicable.
 
 [PR #67](https://github.com/Siemiran/Siemiran/pull/67),
 `feat: add Batch 05 Persian product copy`, merged at `2026-10-02T09:46:57Z`
@@ -410,9 +436,9 @@ the inventory before this approved deletion, not a valid current record.
   values and Product-description presentation
 
 The Product-copy infrastructure is implemented and all intended consumers now
-use its resolver/presentation boundary. The private registry contains 25/382
-drafts, linguistic approvals are 25/382, technical approvals are 25/382, and
-25 current dual approvals with zero pending roles leave 357 Products not yet
+use its resolver/presentation boundary. The private registry contains 30/382
+drafts, linguistic approvals are 30/382, technical approvals are 30/382, and
+30 current dual approvals with zero pending roles leave 352 Products not yet
 drafted or approved.
 Active overlays remain 0/382, no activation capability exists, and publication
 remains disabled. Further controlled private drafting, the exact 382/382
@@ -431,8 +457,8 @@ localized sitemap coverage remain future gates.
   approvals
 - Exact 382/382 atomic activation gate and exact-eleven lifecycle-omission
   invariant
-- Private 25/382 registry with 25 current dual approvals, zero pending roles,
-  and 357 Products not yet drafted or approved; active coverage remains 0/382,
+- Private 30/382 registry with 30 current dual approvals, zero pending roles,
+  and 352 Products not yet drafted or approved; active coverage remains 0/382,
   publication remains disabled, and its resolver/presentation boundary is
   connected to all intended consumers
 
@@ -778,6 +804,19 @@ after Task Y merge.
 
 ## Quality Progress
 
+- **PASS (REUSED)**: Batch 06 validator, scoped lint, build including TypeScript
+  and whitespace checks exited 0 at approval head
+  `c8974245a187d81ad97be05e0034f5bdc3e57016`. Its tree equals the PR #69
+  squash tree `7e82b98b766f9e8f6b5763a0585b541fbb44a800`. Documentation-only
+  changes preserve application, dependency and build configuration; no application
+  validation or approval-hash audits are newly run. Focused approval integrity passed.
+- Batch 06 pre-merge CI: **NOT RUN**; zero check runs/status contexts with
+  combined pending. Dedicated completed-copy inspection remains pending.
+
+### Historical Validation — 2026-10-02
+
+The following dated Batch 05 validation record is retained as history.
+
 - NEW: From `apps/web`, `npm.cmd run validate:product-copy` passed once on
   2026-10-02 with exit 0. It confirms 25 private drafts, current approvals
   25 per role / 25 dual, zero pending roles, 357 missing entries, exact eleven
@@ -812,19 +851,18 @@ verified, while 11 records are explicitly `unverified` and expose no public
 lifecycle value. Product integration is not pending.
 
 The Product-copy resolver/presentation boundary is verified and connected to
-all intended consumers. Its private registry contains 25/382 drafts,
-linguistic approvals are 25/382, technical approvals are 25/382, and all 25
-drafts have current dual approvals, with zero pending roles. The remaining 357
-Products are not drafted or approved. Batches 01-05 are complete privately; the
+all intended consumers. Its private registry contains 30/382 drafts,
+linguistic approvals are 30/382, technical approvals are 30/382, and all 30
+drafts have current dual approvals, with zero pending roles. The remaining 352
+Products are not drafted or approved. Batches 01-06 are complete privately; the
 earlier dated entries retain their historical counts. Technical-token overrides cover
 10 Products, 20 assignments, and 7 unique strings, with an empty global
-allowlist; Batches 03-05 added none.
+allowlist; Batches 03-06 added none.
 Active overlays remain 0/382, activation has issued no capability, and
 publication remains disabled, so both locales intentionally resolve canonical
-English/LTR Product prose while Persian UI localization remains active. The
-next workflow is independent documentation review, separately authorized push/PR,
-guarded merge and local synchronization. Batch 06 scope/readiness work remains
-unapproved and unstarted. The complete 382/382 gate and separately authorized
+English/LTR Product prose while Persian UI localization remains active. Batch 07
+readiness/scope remains unapproved and unstarted; Admin Panel and Automation
+remain gated. The complete 382/382 gate and separately authorized
 atomic public activation remain pending,
 followed by separately authorized bilingual SEO work. Partial activation is
 prohibited. After Persian Product-copy completion, the maintainer's dedicated
