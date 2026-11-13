@@ -1,9 +1,56 @@
 # Siemiran — Product Database
 
 Repository source of truth: `main` at
-`e1238d59fde168d86f9491546bc4686fb263ab63`.
+`e93dd9229386153ee3a192a22ef3c977be3cb57d`.
 
-## 2026-11-13 - Batch 06 Private Product-copy Checkpoint (Current State)
+## 2026-11-13 - Batch 07 Private Product-copy Checkpoint (Current State)
+
+[PR #71](https://github.com/Siemiran/Siemiran/pull/71) merged at
+`2026-11-13T16:06:26Z` / `2026-11-13 19:36:26` Tehran; main synchronization
+completed. Full merge identity is in [CHANGELOG.md](CHANGELOG.md).
+The five private, `ai-assisted` entries approve complete canonical model
+identifiers, digital-output module type and only the following counts:
+
+| MLFB | Direction | Channels | Previously reviewed Module Data section / printed pages |
+| --- | --- | --- | --- |
+| `6ES7322-1FH00-0AA0` | DO | 16 | 3.27 / 145–146 |
+| `6ES7322-5GH00-0AB0` | DO | 16 | 3.26 / 140–142 |
+| `6ES7322-1HF01-0AA0` | DO | 8 | 3.34 / 172–173 |
+| `6ES7322-1HF10-0AA0` | DO | 8 | 3.36 / 182–185 |
+| `6ES7322-1HH01-0AA0` | DO | 16 | 3.33 / 169–171 |
+
+Reviewer `Siemiran` recorded distinct linguistic approvals at
+`2026-11-13T15:45:00Z` and technical approvals at `2026-11-13T15:45:06Z`,
+bound to unchanged production hashes. Evidence is previously reviewed
+[Siemens Module Data, 05/2022, A5E00105505-AK](https://cache.industry.siemens.com/dl/files/629/8859629/att_55794/v1/s7300_module_data_manual_en-US_en-US.pdf).
+For 5GH00 the manual designation is **UC 24/48 V**; official indexed
+exact-product datasheet text supports the canonical identifier. Direct PDF
+retrieval returned **HTTP 403**; visual inspection is **NOT OBSERVED**.
+Titles remain identifiers. No standalone voltage/current or relay-performance
+claims are approved. No fresh manufacturer retrieval or lifecycle verification
+is performed for this documentation task; prior deferred technical issues below
+remain unchanged.
+
+Catalog remains 382 Products (186 S7-1200 / 196 S7-300). Private drafts and
+current approvals per role are 35/382, with 35 current dual approvals, zero
+pending roles and 347 missing entries. Recorded machine comparison preserved
+the previous 30 complete entries, metadata and hashes. Overrides remain
+10 Products / 20 assignments / 7 unique strings; Batch 07 adds zero and the
+global allowlist is empty. Eleven lifecycle omissions and the separate
+185 Siemens-official verified / 11 explicitly unverified S7-300 classification
+are unchanged.
+
+Publication remains disabled, activation capability absent and active overlays
+zero; public FA/EN Product copy remains canonical English/LTR. Full 382/382
+current dual approvals and separate launch authorization remain required.
+Batch 08 readiness/scope is unapproved and unstarted. Admin Panel and Automation
+remain gated; dedicated completed-Persian-copy inspection remains pending.
+Resume checks are in [SESSION_HANDOFF.md](SESSION_HANDOFF.md).
+
+## 2026-11-13 - Batch 06 Private Product-copy Checkpoint (Historical Snapshot)
+
+The dated counts, review evidence and next-step statements below describe the
+former Batch 06 checkpoint, superseded by Batch 07 above.
 
 [PR #69](https://github.com/Siemiran/Siemiran/pull/69) merged Batch 06 at
 `2026-11-13T10:42:08Z` / `2026-11-13 14:12:08` Tehran. Merge identity,

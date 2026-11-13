@@ -34,16 +34,16 @@ Principles:
 - The eleven unverified S7-300 records continue to omit public lifecycle in both
   languages.
 
-Current implementation checkpoint: `e1238d59fde168d86f9491546bc4686fb263ab63`
-(merged PR #69, Batch 06; local main synchronized). Batches 01–06 are complete
-privately: 30/382 drafts, 30/382 current linguistic approvals, 30/382 current
-technical approvals, and 30 current dual approvals, with zero pending roles and
-352 Products missing private copy entries. Catalog coverage remains 382 Products
+Current implementation checkpoint: `e93dd9229386153ee3a192a22ef3c977be3cb57d`
+(merged PR #71, Batch 07; local main synchronized). Batches 01–07 are complete
+privately: 35/382 drafts, 35/382 current linguistic approvals, 35/382 current
+technical approvals, and 35 current dual approvals, with zero pending roles and
+347 Products missing private copy entries. Catalog coverage remains 382 Products
 (186 S7-1200 / 196 S7-300). Active overlays remain 0/382,
 activation capability is absent, publication is disabled,
-and public FA/EN Product copy remains canonical English/LTR. Batch 07 readiness
+and public FA/EN Product copy remains canonical English/LTR. Batch 08 readiness
 and scope work is unapproved and unstarted; Admin Panel and Automation remain
-gated. Batch 06's limited model/type/count approvals and evidence qualifications
+gated. Batch 07's limited model/type/count approvals and evidence qualifications
 are recorded in [CHANGELOG.md](CHANGELOG.md). Durable resume policy is in
 [SESSION_HANDOFF.md](SESSION_HANDOFF.md).
 

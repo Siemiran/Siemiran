@@ -3,7 +3,43 @@
 This file records completed repository changes. The newest entry records the
 current implementation baseline; older dated entries are historical snapshots.
 
-## 2026-11-13 - PR #69: Complete Batch 06 Private Drafts and Dual Approvals
+## 2026-11-13 - PR #71: Complete Batch 07 Private Drafts and Dual Approvals
+
+- [PR #71](https://github.com/Siemiran/Siemiran/pull/71),
+  `feat: add Batch 07 Persian product copy`, squash-merged at
+  `2026-11-13T16:06:26Z` / `2026-11-13 19:36:26` Tehran as
+  `e93dd9229386153ee3a192a22ef3c977be3cb57d`, with sole parent
+  `977d8e3aa825abcbe951858e2d5c5cd1ee7c245d`. Reviewed head
+  `81b2c5dbe7fd86d609380068c6d4ec9a4626acc7` and squash share tree
+  `590d66a9ea00d05954afbb69f9b0e53b6e772222`. Scope: two files,
+  +788/-370 including formatting; guarded merge and main synchronization passed.
+- Five private `ai-assisted` entries: `6ES7322-1FH00-0AA0`,
+  `6ES7322-5GH00-0AB0`, `6ES7322-1HF01-0AA0`, `6ES7322-1HF10-0AA0`,
+  `6ES7322-1HH01-0AA0`. Approval covers complete model identifiers,
+  digital-output module type and counts 16/16/8/8/16 only. Reviewer `Siemiran`:
+  linguistic `2026-11-13T15:45:00Z`; technical `2026-11-13T15:45:06Z`.
+  All five production hashes and the previous 30 complete entries, metadata and
+  hashes were preserved by recorded machine comparison.
+- 382 Products (186 S7-1200 / 196 S7-300); 35 drafts/current approvals per role,
+  35 current dual approvals, zero pending roles and 347 missing entries.
+  Overrides remain 10 Products / 20 assignments / 7 unique strings, with zero
+  new Batch 07 overrides and an empty global allowlist. Eleven lifecycle
+  omissions and the recorded provenance classification remain unchanged.
+- The 5GH00 qualification and other deferred technical issues remain in
+  [DATABASE.md](DATABASE.md#2026-11-13---batch-07-private-product-copy-checkpoint-current-state).
+  No fresh manufacturer retrieval or lifecycle verification is claimed.
+- **PASS (REUSED)**: Batch 07 validator, scoped lint and build including TypeScript,
+  each exit 0; no new application execution. Recorded pre-merge CI: **NOT RUN**
+  (zero runs/statuses, empty combined pending). Publication is disabled,
+  capability absent and overlays zero; public FA/EN copy is canonical English/LTR.
+  Full 382/382 current dual approvals and separate launch authorization remain
+  required. Batch 08 readiness/scope is unapproved and unstarted; Admin Panel,
+  Automation and dedicated completed-copy inspection remain gated or pending.
+
+## 2026-11-13 - PR #69: Complete Batch 06 Private Drafts and Dual Approvals (Historical Snapshot)
+
+The dated Batch 06 counts, timestamps, validation and next-step statements below
+are historical, superseded by the merged Batch 07 checkpoint above.
 
 - [PR #69](https://github.com/Siemiran/Siemiran/pull/69),
   `feat: add Batch 06 Persian product copy`, squash-merged at
