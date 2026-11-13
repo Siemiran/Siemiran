@@ -151,8 +151,7 @@ const cpu315f2DpCopy = [
   },
   {
     kind: "text",
-    value:
-      "، یک واحد پردازش مرکزی ایمن در برابر خطا با حافظه کاری ",
+    value: "، یک واحد پردازش مرکزی ایمن در برابر خطا با حافظه کاری ",
   },
   { kind: "technical", value: "384 KB" },
   { kind: "text", value: " است. دارای رابط‌های " },
@@ -173,8 +172,7 @@ const cpu315f2PnDpCopy = [
   },
   {
     kind: "text",
-    value:
-      "، یک واحد پردازش مرکزی ایمن در برابر خطا با حافظه کاری ",
+    value: "، یک واحد پردازش مرکزی ایمن در برابر خطا با حافظه کاری ",
   },
   { kind: "technical", value: "512 KB" },
   { kind: "text", value: " است. دارای رابط‌های " },
@@ -192,8 +190,7 @@ const cpu317f2DpCopy = [
   },
   {
     kind: "text",
-    value:
-      "، یک واحد پردازش مرکزی ایمن در برابر خطا با حافظه کاری ",
+    value: "، یک واحد پردازش مرکزی ایمن در برابر خطا با حافظه کاری ",
   },
   { kind: "technical", value: "1.5 MB" },
   { kind: "text", value: " است. دارای رابط‌های " },
@@ -214,8 +211,7 @@ const cpu317f2PnDpCopy = [
   },
   {
     kind: "text",
-    value:
-      "، یک واحد پردازش مرکزی ایمن در برابر خطا با حافظه کاری ",
+    value: "، یک واحد پردازش مرکزی ایمن در برابر خطا با حافظه کاری ",
   },
   { kind: "technical", value: "1.5 MB" },
   { kind: "text", value: " است. دارای رابط‌های " },
@@ -233,8 +229,7 @@ const cpu319f3PnDpCopy = [
   },
   {
     kind: "text",
-    value:
-      "، یک واحد پردازش مرکزی ایمن در برابر خطا با حافظه کاری ",
+    value: "، یک واحد پردازش مرکزی ایمن در برابر خطا با حافظه کاری ",
   },
   { kind: "technical", value: "2.5 MB" },
   { kind: "text", value: " است. دارای رابط‌های " },
@@ -431,7 +426,10 @@ const sm322Do16_24Vdc1Bh01Copy = [
 
 const sm322Do16_24Vdc1Bh10Copy = [
   { kind: "text", value: "مدل " },
-  { kind: "technical", value: "SIMATIC S7-300 SM 322 High Speed 16 DO 24 V DC" },
+  {
+    kind: "technical",
+    value: "SIMATIC S7-300 SM 322 High Speed 16 DO 24 V DC",
+  },
   { kind: "text", value: "، ماژول خروجی دیجیتال با " },
   { kind: "technical", value: "16" },
   { kind: "text", value: " خروجی است." },
@@ -442,6 +440,49 @@ const sm322Do32_24Vdc1Bl00Copy = [
   { kind: "technical", value: "SIMATIC S7-300 SM 322 32 DO 24 V DC" },
   { kind: "text", value: "، ماژول خروجی دیجیتال با " },
   { kind: "technical", value: "32" },
+  { kind: "text", value: " خروجی است." },
+] as const satisfies ProductCopyParagraph;
+
+const sm322Do16_120_230Vac1Fh00Copy = [
+  { kind: "text", value: "مدل " },
+  { kind: "technical", value: "SIMATIC S7-300 SM 322 16 DO 120/230 V AC" },
+  { kind: "text", value: "، ماژول خروجی دیجیتال با " },
+  { kind: "technical", value: "16" },
+  { kind: "text", value: " خروجی است." },
+] as const satisfies ProductCopyParagraph;
+
+const sm322Do16_24_48VacDc5Gh00Copy = [
+  { kind: "text", value: "مدل " },
+  { kind: "technical", value: "SIMATIC S7-300 SM 322 16 DO 24-48 V AC/DC" },
+  { kind: "text", value: "، ماژول خروجی دیجیتال با " },
+  { kind: "technical", value: "16" },
+  { kind: "text", value: " خروجی است." },
+] as const satisfies ProductCopyParagraph;
+
+const sm322Do8Relay1Hf01Copy = [
+  { kind: "text", value: "مدل " },
+  { kind: "technical", value: "SIMATIC S7-300 SM 322 8 DO Relay" },
+  { kind: "text", value: "، ماژول خروجی دیجیتال با " },
+  { kind: "technical", value: "8" },
+  { kind: "text", value: " خروجی است." },
+] as const satisfies ProductCopyParagraph;
+
+const sm322Do8Relay5A1Hf10Copy = [
+  { kind: "text", value: "مدل " },
+  { kind: "technical", value: "SIMATIC S7-300 SM 322 8 DO Relay 5 A" },
+  { kind: "text", value: "، ماژول خروجی دیجیتال با " },
+  { kind: "technical", value: "8" },
+  { kind: "text", value: " خروجی است." },
+] as const satisfies ProductCopyParagraph;
+
+const sm322Do16Relay1Hh01Copy = [
+  { kind: "text", value: "مدل " },
+  {
+    kind: "technical",
+    value: "SIMATIC S7-300 SM 322 16 DO Relay 120 V DC / 230 V AC",
+  },
+  { kind: "text", value: "، ماژول خروجی دیجیتال با " },
+  { kind: "technical", value: "16" },
   { kind: "text", value: " خروجی است." },
 ] as const satisfies ProductCopyParagraph;
 
@@ -715,16 +756,20 @@ export const persianProductCopyDraftRegistry = [
       decision: "approved",
       reviewerId: "Siemiran",
       reviewedAt: "2026-09-24T18:38:52Z",
-      reviewedContentHash: "sha256:1057b0253160356d5add3c8ce7639116fae7c8af48ccdc2630b7d648da29d410",
-      evidenceRef: "https://support.industry.siemens.com/teddatasheet/?caller=SIOS&format=pdf&language=en&mlfbs=6ES7321-1BH02-0AA0",
+      reviewedContentHash:
+        "sha256:1057b0253160356d5add3c8ce7639116fae7c8af48ccdc2630b7d648da29d410",
+      evidenceRef:
+        "https://support.industry.siemens.com/teddatasheet/?caller=SIOS&format=pdf&language=en&mlfbs=6ES7321-1BH02-0AA0",
       note: "Reviewed Persian grammar, punctuation, spacing, NFC, Persian ی/ک, and typed LTR segments in RTL copy; approved without content changes.",
     },
     technicalReview: {
       decision: "approved",
       reviewerId: "Siemiran",
       reviewedAt: "2026-09-24T18:38:53Z",
-      reviewedContentHash: "sha256:1057b0253160356d5add3c8ce7639116fae7c8af48ccdc2630b7d648da29d410",
-      evidenceRef: "https://support.industry.siemens.com/teddatasheet/?caller=SIOS&format=pdf&language=en&mlfbs=6ES7321-1BH02-0AA0",
+      reviewedContentHash:
+        "sha256:1057b0253160356d5add3c8ce7639116fae7c8af48ccdc2630b7d648da29d410",
+      evidenceRef:
+        "https://support.industry.siemens.com/teddatasheet/?caller=SIOS&format=pdf&language=en&mlfbs=6ES7321-1BH02-0AA0",
       note: "Verified title against the canonical Product and input count and voltage against indexed exact-product Siemens datasheet content. Direct PDF returned HTTP 403; delay, diagnostics, and interrupts were not reviewed.",
     },
   },
@@ -737,16 +782,20 @@ export const persianProductCopyDraftRegistry = [
       decision: "approved",
       reviewerId: "Siemiran",
       reviewedAt: "2026-09-24T18:38:52Z",
-      reviewedContentHash: "sha256:5d64c61a0fb7f9c62e3ee9eda046b1a4337fe751694fe4096378c0b5f714dd07",
-      evidenceRef: "https://support.industry.siemens.com/teddatasheet/?caller=SIOS&format=pdf&language=en&mlfbs=6ES7321-1BH10-0AA0",
+      reviewedContentHash:
+        "sha256:5d64c61a0fb7f9c62e3ee9eda046b1a4337fe751694fe4096378c0b5f714dd07",
+      evidenceRef:
+        "https://support.industry.siemens.com/teddatasheet/?caller=SIOS&format=pdf&language=en&mlfbs=6ES7321-1BH10-0AA0",
       note: "Reviewed Persian grammar, punctuation, spacing, NFC, Persian ی/ک, and typed LTR segments in RTL copy; approved without content changes.",
     },
     technicalReview: {
       decision: "approved",
       reviewerId: "Siemiran",
       reviewedAt: "2026-09-24T18:38:53Z",
-      reviewedContentHash: "sha256:5d64c61a0fb7f9c62e3ee9eda046b1a4337fe751694fe4096378c0b5f714dd07",
-      evidenceRef: "https://support.industry.siemens.com/teddatasheet/?caller=SIOS&format=pdf&language=en&mlfbs=6ES7321-1BH10-0AA0",
+      reviewedContentHash:
+        "sha256:5d64c61a0fb7f9c62e3ee9eda046b1a4337fe751694fe4096378c0b5f714dd07",
+      evidenceRef:
+        "https://support.industry.siemens.com/teddatasheet/?caller=SIOS&format=pdf&language=en&mlfbs=6ES7321-1BH10-0AA0",
       note: "Verified title against the canonical Product and input count and voltage against indexed exact-product Siemens datasheet content. Direct PDF returned HTTP 403; delay, diagnostics, and interrupts were not reviewed.",
     },
   },
@@ -759,16 +808,20 @@ export const persianProductCopyDraftRegistry = [
       decision: "approved",
       reviewerId: "Siemiran",
       reviewedAt: "2026-09-24T18:38:52Z",
-      reviewedContentHash: "sha256:5554a0e19f15bccce5c689fde62b5669189267143a09d41ef3fbc699d4c9430b",
-      evidenceRef: "https://support.industry.siemens.com/teddatasheet/?caller=SIOS&format=pdf&language=en&mlfbs=6ES7321-1BL00-0AA0",
+      reviewedContentHash:
+        "sha256:5554a0e19f15bccce5c689fde62b5669189267143a09d41ef3fbc699d4c9430b",
+      evidenceRef:
+        "https://support.industry.siemens.com/teddatasheet/?caller=SIOS&format=pdf&language=en&mlfbs=6ES7321-1BL00-0AA0",
       note: "Reviewed Persian grammar, punctuation, spacing, NFC, Persian ی/ک, and typed LTR segments in RTL copy; approved without content changes.",
     },
     technicalReview: {
       decision: "approved",
       reviewerId: "Siemiran",
       reviewedAt: "2026-09-24T18:38:53Z",
-      reviewedContentHash: "sha256:5554a0e19f15bccce5c689fde62b5669189267143a09d41ef3fbc699d4c9430b",
-      evidenceRef: "https://support.industry.siemens.com/teddatasheet/?caller=SIOS&format=pdf&language=en&mlfbs=6ES7321-1BL00-0AA0",
+      reviewedContentHash:
+        "sha256:5554a0e19f15bccce5c689fde62b5669189267143a09d41ef3fbc699d4c9430b",
+      evidenceRef:
+        "https://support.industry.siemens.com/teddatasheet/?caller=SIOS&format=pdf&language=en&mlfbs=6ES7321-1BL00-0AA0",
       note: "Verified title against the canonical Product and input count and voltage against indexed exact-product Siemens datasheet content. Direct PDF returned HTTP 403; delay, diagnostics, and interrupts were not reviewed.",
     },
   },
@@ -781,16 +834,20 @@ export const persianProductCopyDraftRegistry = [
       decision: "approved",
       reviewerId: "Siemiran",
       reviewedAt: "2026-09-24T18:38:52Z",
-      reviewedContentHash: "sha256:f276c29b5ef82e5567ed10c70d07080b54fdd7ae2a0bb48783cb3215638e765b",
-      evidenceRef: "https://support.industry.siemens.com/teddatasheet/?caller=SIOS&format=pdf&language=en&mlfbs=6ES7321-1BP00-0AA0",
+      reviewedContentHash:
+        "sha256:f276c29b5ef82e5567ed10c70d07080b54fdd7ae2a0bb48783cb3215638e765b",
+      evidenceRef:
+        "https://support.industry.siemens.com/teddatasheet/?caller=SIOS&format=pdf&language=en&mlfbs=6ES7321-1BP00-0AA0",
       note: "Reviewed Persian grammar, punctuation, spacing, NFC, Persian ی/ک, and typed LTR segments in RTL copy; approved without content changes.",
     },
     technicalReview: {
       decision: "approved",
       reviewerId: "Siemiran",
       reviewedAt: "2026-09-24T18:38:53Z",
-      reviewedContentHash: "sha256:f276c29b5ef82e5567ed10c70d07080b54fdd7ae2a0bb48783cb3215638e765b",
-      evidenceRef: "https://support.industry.siemens.com/teddatasheet/?caller=SIOS&format=pdf&language=en&mlfbs=6ES7321-1BP00-0AA0",
+      reviewedContentHash:
+        "sha256:f276c29b5ef82e5567ed10c70d07080b54fdd7ae2a0bb48783cb3215638e765b",
+      evidenceRef:
+        "https://support.industry.siemens.com/teddatasheet/?caller=SIOS&format=pdf&language=en&mlfbs=6ES7321-1BP00-0AA0",
       note: "Verified title against the canonical Product and input count and voltage against indexed exact-product Siemens datasheet content. Direct PDF returned HTTP 403; delay, diagnostics, and interrupts were not reviewed.",
     },
   },
@@ -803,16 +860,20 @@ export const persianProductCopyDraftRegistry = [
       decision: "approved",
       reviewerId: "Siemiran",
       reviewedAt: "2026-09-24T18:38:52Z",
-      reviewedContentHash: "sha256:fd3901cc3a5c3f3ba356b2beaf2d46935fafa4b525b062efca63ff3db62fa754",
-      evidenceRef: "https://support.industry.siemens.com/teddatasheet/?caller=SIOS&format=pdf&language=en&mlfbs=6ES7321-1CH20-0AA0",
+      reviewedContentHash:
+        "sha256:fd3901cc3a5c3f3ba356b2beaf2d46935fafa4b525b062efca63ff3db62fa754",
+      evidenceRef:
+        "https://support.industry.siemens.com/teddatasheet/?caller=SIOS&format=pdf&language=en&mlfbs=6ES7321-1CH20-0AA0",
       note: "Reviewed Persian grammar, punctuation, spacing, NFC, Persian ی/ک, and typed LTR segments in RTL copy; approved without content changes.",
     },
     technicalReview: {
       decision: "approved",
       reviewerId: "Siemiran",
       reviewedAt: "2026-09-24T18:38:53Z",
-      reviewedContentHash: "sha256:fd3901cc3a5c3f3ba356b2beaf2d46935fafa4b525b062efca63ff3db62fa754",
-      evidenceRef: "https://support.industry.siemens.com/teddatasheet/?caller=SIOS&format=pdf&language=en&mlfbs=6ES7321-1CH20-0AA0",
+      reviewedContentHash:
+        "sha256:fd3901cc3a5c3f3ba356b2beaf2d46935fafa4b525b062efca63ff3db62fa754",
+      evidenceRef:
+        "https://support.industry.siemens.com/teddatasheet/?caller=SIOS&format=pdf&language=en&mlfbs=6ES7321-1CH20-0AA0",
       note: "Verified title against the canonical Product and input count and voltage against indexed exact-product Siemens datasheet content. Direct PDF returned HTTP 403; delay, diagnostics, and interrupts were not reviewed.",
     },
   },
@@ -825,16 +886,20 @@ export const persianProductCopyDraftRegistry = [
       decision: "approved",
       reviewerId: "Siemiran",
       reviewedAt: "2026-09-27T19:51:43Z",
-      reviewedContentHash: "sha256:d7877cc55cc166b4cff3e96961b8c05e88a06cc38f1567ffafe558484175d632",
-      evidenceRef: "https://support.industry.siemens.com/teddatasheet/?caller=SIOS&format=pdf&language=en&mlfbs=6ES7321-1CH00-0AA0",
+      reviewedContentHash:
+        "sha256:d7877cc55cc166b4cff3e96961b8c05e88a06cc38f1567ffafe558484175d632",
+      evidenceRef:
+        "https://support.industry.siemens.com/teddatasheet/?caller=SIOS&format=pdf&language=en&mlfbs=6ES7321-1CH00-0AA0",
       note: "Reviewed concise Persian identity and input-count wording, grammar, punctuation, spacing, NFC, Persian ی/ک, and typed LTR segments in RTL copy.",
     },
     technicalReview: {
       decision: "approved",
       reviewerId: "Siemiran",
       reviewedAt: "2026-09-27T19:51:44Z",
-      reviewedContentHash: "sha256:d7877cc55cc166b4cff3e96961b8c05e88a06cc38f1567ffafe558484175d632",
-      evidenceRef: "https://support.industry.siemens.com/teddatasheet/?caller=SIOS&format=pdf&language=en&mlfbs=6ES7321-1CH00-0AA0",
+      reviewedContentHash:
+        "sha256:d7877cc55cc166b4cff3e96961b8c05e88a06cc38f1567ffafe558484175d632",
+      evidenceRef:
+        "https://support.industry.siemens.com/teddatasheet/?caller=SIOS&format=pdf&language=en&mlfbs=6ES7321-1CH00-0AA0",
       note: "Reviewed exact 1CH00 identity, canonical title, and 16 inputs using Siemens-indexed exact-product datasheet text and available Siemens product HTML. Direct PDF access returned HTTP 403 during review. The removed separate voltage sentence and lifecycle were not approved.",
     },
   },
@@ -847,16 +912,20 @@ export const persianProductCopyDraftRegistry = [
       decision: "approved",
       reviewerId: "Siemiran",
       reviewedAt: "2026-09-27T19:51:43Z",
-      reviewedContentHash: "sha256:ac298cff5d66e725944026417f976f0237650bc356ad50cce678f57d0e42a4e5",
-      evidenceRef: "https://support.industry.siemens.com/teddatasheet/?caller=SIOS&format=pdf&language=en&mlfbs=6ES7321-1EL00-0AA0",
+      reviewedContentHash:
+        "sha256:ac298cff5d66e725944026417f976f0237650bc356ad50cce678f57d0e42a4e5",
+      evidenceRef:
+        "https://support.industry.siemens.com/teddatasheet/?caller=SIOS&format=pdf&language=en&mlfbs=6ES7321-1EL00-0AA0",
       note: "Reviewed Persian wording, grammar, punctuation, spacing, NFC, Persian ی/ک, and typed LTR segments in RTL copy.",
     },
     technicalReview: {
       decision: "approved",
       reviewerId: "Siemiran",
       reviewedAt: "2026-09-27T19:51:44Z",
-      reviewedContentHash: "sha256:ac298cff5d66e725944026417f976f0237650bc356ad50cce678f57d0e42a4e5",
-      evidenceRef: "https://support.industry.siemens.com/teddatasheet/?caller=SIOS&format=pdf&language=en&mlfbs=6ES7321-1EL00-0AA0",
+      reviewedContentHash:
+        "sha256:ac298cff5d66e725944026417f976f0237650bc356ad50cce678f57d0e42a4e5",
+      evidenceRef:
+        "https://support.industry.siemens.com/teddatasheet/?caller=SIOS&format=pdf&language=en&mlfbs=6ES7321-1EL00-0AA0",
       note: "Reviewed exact 1EL00 identity, 32 inputs, and rated 120 V AC using Siemens-indexed exact-product datasheet text and available Siemens product HTML. Direct PDF access returned HTTP 403 during review. No lifecycle or other feature claim was approved.",
     },
   },
@@ -869,16 +938,20 @@ export const persianProductCopyDraftRegistry = [
       decision: "approved",
       reviewerId: "Siemiran",
       reviewedAt: "2026-09-27T19:51:43Z",
-      reviewedContentHash: "sha256:42084ab3fc1652eac520c5bbabd0c034f91f3398dceb97525737754190534765",
-      evidenceRef: "https://support.industry.siemens.com/teddatasheet/?caller=SIOS&format=pdf&language=en&mlfbs=6ES7321-1FF01-0AA0",
+      reviewedContentHash:
+        "sha256:42084ab3fc1652eac520c5bbabd0c034f91f3398dceb97525737754190534765",
+      evidenceRef:
+        "https://support.industry.siemens.com/teddatasheet/?caller=SIOS&format=pdf&language=en&mlfbs=6ES7321-1FF01-0AA0",
       note: "Reviewed Persian rated-value wording, grammar, punctuation, spacing, NFC, Persian ی/ک, and typed LTR segments in RTL copy.",
     },
     technicalReview: {
       decision: "approved",
       reviewerId: "Siemiran",
       reviewedAt: "2026-09-27T19:51:44Z",
-      reviewedContentHash: "sha256:42084ab3fc1652eac520c5bbabd0c034f91f3398dceb97525737754190534765",
-      evidenceRef: "https://support.industry.siemens.com/teddatasheet/?caller=SIOS&format=pdf&language=en&mlfbs=6ES7321-1FF01-0AA0",
+      reviewedContentHash:
+        "sha256:42084ab3fc1652eac520c5bbabd0c034f91f3398dceb97525737754190534765",
+      evidenceRef:
+        "https://support.industry.siemens.com/teddatasheet/?caller=SIOS&format=pdf&language=en&mlfbs=6ES7321-1FF01-0AA0",
       note: "Reviewed exact 1FF01 identity, 8 inputs, and rated 120/230 V AC using Siemens-indexed exact-product datasheet text and available Siemens product HTML; distinguished 1FF10 by Product ID. Direct PDF access returned HTTP 403 during review. No lifecycle or other feature claim was approved.",
     },
   },
@@ -891,16 +964,20 @@ export const persianProductCopyDraftRegistry = [
       decision: "approved",
       reviewerId: "Siemiran",
       reviewedAt: "2026-09-27T19:51:43Z",
-      reviewedContentHash: "sha256:71defd1d6395a23a116bf19da498e4d9f0c40335b1a520e1294177208830f3f9",
-      evidenceRef: "https://support.industry.siemens.com/teddatasheet/?caller=SIOS&format=pdf&language=en&mlfbs=6ES7321-1FF10-0AA0",
+      reviewedContentHash:
+        "sha256:71defd1d6395a23a116bf19da498e4d9f0c40335b1a520e1294177208830f3f9",
+      evidenceRef:
+        "https://support.industry.siemens.com/teddatasheet/?caller=SIOS&format=pdf&language=en&mlfbs=6ES7321-1FF10-0AA0",
       note: "Reviewed Persian rated-value wording, grammar, punctuation, spacing, NFC, Persian ی/ک, and typed LTR segments in RTL copy.",
     },
     technicalReview: {
       decision: "approved",
       reviewerId: "Siemiran",
       reviewedAt: "2026-09-27T19:51:44Z",
-      reviewedContentHash: "sha256:71defd1d6395a23a116bf19da498e4d9f0c40335b1a520e1294177208830f3f9",
-      evidenceRef: "https://support.industry.siemens.com/teddatasheet/?caller=SIOS&format=pdf&language=en&mlfbs=6ES7321-1FF10-0AA0",
+      reviewedContentHash:
+        "sha256:71defd1d6395a23a116bf19da498e4d9f0c40335b1a520e1294177208830f3f9",
+      evidenceRef:
+        "https://support.industry.siemens.com/teddatasheet/?caller=SIOS&format=pdf&language=en&mlfbs=6ES7321-1FF10-0AA0",
       note: "Reviewed exact 1FF10 identity, 8 inputs, and rated 120/230 V AC using Siemens-indexed exact-product datasheet text and available Siemens product HTML; distinguished 1FF01 by Product ID. Direct PDF access returned HTTP 403 during review. Current lifecycle remains unknown and was neither claimed nor approved.",
     },
   },
@@ -913,16 +990,20 @@ export const persianProductCopyDraftRegistry = [
       decision: "approved",
       reviewerId: "Siemiran",
       reviewedAt: "2026-09-27T19:51:43Z",
-      reviewedContentHash: "sha256:659f93e6818797378f02e46b89a8561f2722804b28b874a42801a442b1214a74",
-      evidenceRef: "https://support.industry.siemens.com/teddatasheet/?caller=SIOS&format=pdf&language=en&mlfbs=6ES7321-1FH00-0AA0",
+      reviewedContentHash:
+        "sha256:659f93e6818797378f02e46b89a8561f2722804b28b874a42801a442b1214a74",
+      evidenceRef:
+        "https://support.industry.siemens.com/teddatasheet/?caller=SIOS&format=pdf&language=en&mlfbs=6ES7321-1FH00-0AA0",
       note: "Reviewed Persian rated-value wording, grammar, punctuation, spacing, NFC, Persian ی/ک, and typed LTR segments in RTL copy.",
     },
     technicalReview: {
       decision: "approved",
       reviewerId: "Siemiran",
       reviewedAt: "2026-09-27T19:51:44Z",
-      reviewedContentHash: "sha256:659f93e6818797378f02e46b89a8561f2722804b28b874a42801a442b1214a74",
-      evidenceRef: "https://support.industry.siemens.com/teddatasheet/?caller=SIOS&format=pdf&language=en&mlfbs=6ES7321-1FH00-0AA0",
+      reviewedContentHash:
+        "sha256:659f93e6818797378f02e46b89a8561f2722804b28b874a42801a442b1214a74",
+      evidenceRef:
+        "https://support.industry.siemens.com/teddatasheet/?caller=SIOS&format=pdf&language=en&mlfbs=6ES7321-1FH00-0AA0",
       note: "Reviewed exact 1FH00 identity, 16 inputs, and rated 120/230 V AC using Siemens-indexed exact-product datasheet text and available Siemens product HTML. Direct PDF access returned HTTP 403 during review. No lifecycle or other feature claim was approved.",
     },
   },
@@ -935,16 +1016,20 @@ export const persianProductCopyDraftRegistry = [
       decision: "approved",
       reviewerId: "Siemiran",
       reviewedAt: "2026-10-01T17:45:15Z",
-      reviewedContentHash: "sha256:317aa317e2a9b3cab8b8f032cb3b307097c6a4452ff51a9ee986361235f95de7",
-      evidenceRef: "https://cache.industry.siemens.com/dl/files/629/8859629/att_55794/v1/s7300_module_data_manual_en-US_en-US.pdf",
+      reviewedContentHash:
+        "sha256:317aa317e2a9b3cab8b8f032cb3b307097c6a4452ff51a9ee986361235f95de7",
+      evidenceRef:
+        "https://cache.industry.siemens.com/dl/files/629/8859629/att_55794/v1/s7300_module_data_manual_en-US_en-US.pdf",
       note: "Reviewed 6ES7321-7BH01-0AB0 Persian identity and sixteen-input wording, spacing, Persian comma and final period, NFC and Persian yeh/kaf; the complete Latin title and numeric 16 remain separate typed LTR segments.",
     },
     technicalReview: {
       decision: "approved",
       reviewerId: "Siemiran",
       reviewedAt: "2026-10-01T17:45:26Z",
-      reviewedContentHash: "sha256:317aa317e2a9b3cab8b8f032cb3b307097c6a4452ff51a9ee986361235f95de7",
-      evidenceRef: "https://cache.industry.siemens.com/dl/files/629/8859629/att_55794/v1/s7300_module_data_manual_en-US_en-US.pdf",
+      reviewedContentHash:
+        "sha256:317aa317e2a9b3cab8b8f032cb3b307097c6a4452ff51a9ee986361235f95de7",
+      evidenceRef:
+        "https://cache.industry.siemens.com/dl/files/629/8859629/att_55794/v1/s7300_module_data_manual_en-US_en-US.pdf",
       note: "Reviewed exact 6ES7321-7BH01-0AB0: Module Data section 3.11, printed pp73-74. HF operation remains conditional; retaining the title does not approve unconditional HF behavior. Previously reviewed parsed cache-PDF text; visual page verification unavailable. Approves only identity, digital-input type and 16 inputs; the full canonical title is an identifier. No standalone voltage, lifecycle, availability, compatibility, operating-feature or unrelated specification is approved.",
     },
   },
@@ -957,16 +1042,20 @@ export const persianProductCopyDraftRegistry = [
       decision: "approved",
       reviewerId: "Siemiran",
       reviewedAt: "2026-10-01T17:45:15Z",
-      reviewedContentHash: "sha256:b2fff655b1ac061b629dc798892a262f4e14cf5bc8bb46cf7afa26b95113eb08",
-      evidenceRef: "https://cache.industry.siemens.com/dl/files/629/8859629/att_55794/v1/s7300_module_data_manual_en-US_en-US.pdf",
+      reviewedContentHash:
+        "sha256:b2fff655b1ac061b629dc798892a262f4e14cf5bc8bb46cf7afa26b95113eb08",
+      evidenceRef:
+        "https://cache.industry.siemens.com/dl/files/629/8859629/att_55794/v1/s7300_module_data_manual_en-US_en-US.pdf",
       note: "Reviewed 6ES7321-7EH00-0AB0 Persian identity and sixteen-input wording, spacing, Persian comma and final period, NFC and Persian yeh/kaf; the complete Latin title and numeric 16 remain separate typed LTR segments.",
     },
     technicalReview: {
       decision: "approved",
       reviewerId: "Siemiran",
       reviewedAt: "2026-10-01T17:45:26Z",
-      reviewedContentHash: "sha256:b2fff655b1ac061b629dc798892a262f4e14cf5bc8bb46cf7afa26b95113eb08",
-      evidenceRef: "https://cache.industry.siemens.com/dl/files/629/8859629/att_55794/v1/s7300_module_data_manual_en-US_en-US.pdf",
+      reviewedContentHash:
+        "sha256:b2fff655b1ac061b629dc798892a262f4e14cf5bc8bb46cf7afa26b95113eb08",
+      evidenceRef:
+        "https://cache.industry.siemens.com/dl/files/629/8859629/att_55794/v1/s7300_module_data_manual_en-US_en-US.pdf",
       note: "Reviewed exact 6ES7321-7EH00-0AB0: Module Data section 3.12, printed pp84-85. Previously reviewed parsed cache-PDF text; visual page verification unavailable. Approves only identity, digital-input type and 16 inputs; the full canonical title is an identifier. No standalone voltage, lifecycle, availability, compatibility, operating-feature or unrelated specification is approved.",
     },
   },
@@ -979,16 +1068,20 @@ export const persianProductCopyDraftRegistry = [
       decision: "approved",
       reviewerId: "Siemiran",
       reviewedAt: "2026-10-01T17:45:15Z",
-      reviewedContentHash: "sha256:e5fd7c58fefaf24781f555ae6048689d8ac47dc50d5299c5f543bfe5f8d8d49b",
-      evidenceRef: "https://cache.industry.siemens.com/dl/files/812/7215812/att_81952/v1/Signalbaugruppen_EN_en-US.pdf; https://cache.industry.siemens.com/dl/files/726/23060726/att_66629/v1/23060726_s7-300_kabel_und_zubehoer_zuordnung_stecker_baugruppe_d.pdf",
+      reviewedContentHash:
+        "sha256:e5fd7c58fefaf24781f555ae6048689d8ac47dc50d5299c5f543bfe5f8d8d49b",
+      evidenceRef:
+        "https://cache.industry.siemens.com/dl/files/812/7215812/att_81952/v1/Signalbaugruppen_EN_en-US.pdf; https://cache.industry.siemens.com/dl/files/726/23060726/att_66629/v1/23060726_s7-300_kabel_und_zubehoer_zuordnung_stecker_baugruppe_d.pdf",
       note: "Reviewed 6ES7321-7TH00-0AB0 Persian identity and sixteen-input wording, spacing, Persian comma and final period, NFC and Persian yeh/kaf; the complete Latin title and numeric 16 remain separate typed LTR segments.",
     },
     technicalReview: {
       decision: "approved",
       reviewerId: "Siemiran",
       reviewedAt: "2026-10-01T17:45:26Z",
-      reviewedContentHash: "sha256:e5fd7c58fefaf24781f555ae6048689d8ac47dc50d5299c5f543bfe5f8d8d49b",
-      evidenceRef: "https://cache.industry.siemens.com/dl/files/812/7215812/att_81952/v1/Signalbaugruppen_EN_en-US.pdf; https://cache.industry.siemens.com/dl/files/726/23060726/att_66629/v1/23060726_s7-300_kabel_und_zubehoer_zuordnung_stecker_baugruppe_d.pdf",
+      reviewedContentHash:
+        "sha256:e5fd7c58fefaf24781f555ae6048689d8ac47dc50d5299c5f543bfe5f8d8d49b",
+      evidenceRef:
+        "https://cache.industry.siemens.com/dl/files/812/7215812/att_81952/v1/Signalbaugruppen_EN_en-US.pdf; https://cache.industry.siemens.com/dl/files/726/23060726/att_66629/v1/23060726_s7-300_kabel_und_zubehoer_zuordnung_stecker_baugruppe_d.pdf",
       note: "Reviewed exact 6ES7321-7TH00-0AB0: Process Automation manual section 6.2.1, printed 6-2 and 6-4 to 6-5; FAQ table 2, p6. inputVoltage semantics remain unresolved and unverified. Previously reviewed parsed cache-PDF text; visual page verification unavailable. Approves only identity, digital-input type and 16 inputs; the full canonical title is an identifier. No standalone voltage, lifecycle, availability, compatibility, operating-feature or unrelated specification is approved.",
     },
   },
@@ -1001,16 +1094,20 @@ export const persianProductCopyDraftRegistry = [
       decision: "approved",
       reviewerId: "Siemiran",
       reviewedAt: "2026-10-01T17:45:15Z",
-      reviewedContentHash: "sha256:4b3c1b2f32fbc23fcfa9de3914a0dc8af215b6286ee43c8383861b906a87644c",
-      evidenceRef: "https://cache.industry.siemens.com/dl/files/629/8859629/att_55794/v1/s7300_module_data_manual_en-US_en-US.pdf",
+      reviewedContentHash:
+        "sha256:4b3c1b2f32fbc23fcfa9de3914a0dc8af215b6286ee43c8383861b906a87644c",
+      evidenceRef:
+        "https://cache.industry.siemens.com/dl/files/629/8859629/att_55794/v1/s7300_module_data_manual_en-US_en-US.pdf",
       note: "Reviewed 6ES7321-1BH50-0AA0 Persian identity and sixteen-input wording, spacing, Persian comma and final period, NFC and Persian yeh/kaf; the complete Latin title and numeric 16 remain separate typed LTR segments.",
     },
     technicalReview: {
       decision: "approved",
       reviewerId: "Siemiran",
       reviewedAt: "2026-10-01T17:45:26Z",
-      reviewedContentHash: "sha256:4b3c1b2f32fbc23fcfa9de3914a0dc8af215b6286ee43c8383861b906a87644c",
-      evidenceRef: "https://cache.industry.siemens.com/dl/files/629/8859629/att_55794/v1/s7300_module_data_manual_en-US_en-US.pdf",
+      reviewedContentHash:
+        "sha256:4b3c1b2f32fbc23fcfa9de3914a0dc8af215b6286ee43c8383861b906a87644c",
+      evidenceRef:
+        "https://cache.industry.siemens.com/dl/files/629/8859629/att_55794/v1/s7300_module_data_manual_en-US_en-US.pdf",
       note: "Reviewed exact 6ES7321-1BH50-0AA0: Module Data section 3.13, printed p92. Previously reviewed parsed cache-PDF text; visual page verification unavailable. Approves only identity, digital-input type and 16 inputs; the full canonical title is an identifier. No standalone voltage, lifecycle, availability, compatibility, operating-feature or unrelated specification is approved.",
     },
   },
@@ -1023,16 +1120,20 @@ export const persianProductCopyDraftRegistry = [
       decision: "approved",
       reviewerId: "Siemiran",
       reviewedAt: "2026-10-01T17:45:15Z",
-      reviewedContentHash: "sha256:b9d498f47a5b5ed2a6f5bb3a32ef57fefe765211d67b9dc852c0520e15fc1e1f",
-      evidenceRef: "https://cache.industry.siemens.com/dl/files/047/88868047/att_68363/v1/S7pcshwb.pdf",
+      reviewedContentHash:
+        "sha256:b9d498f47a5b5ed2a6f5bb3a32ef57fefe765211d67b9dc852c0520e15fc1e1f",
+      evidenceRef:
+        "https://cache.industry.siemens.com/dl/files/047/88868047/att_68363/v1/S7pcshwb.pdf",
       note: "Reviewed 6ES7321-7BH00-0AB0 Persian identity and sixteen-input wording, spacing, Persian comma and final period, NFC and Persian yeh/kaf; the complete Latin title and numeric 16 remain separate typed LTR segments.",
     },
     technicalReview: {
       decision: "approved",
       reviewerId: "Siemiran",
       reviewedAt: "2026-10-01T17:45:26Z",
-      reviewedContentHash: "sha256:b9d498f47a5b5ed2a6f5bb3a32ef57fefe765211d67b9dc852c0520e15fc1e1f",
-      evidenceRef: "https://cache.industry.siemens.com/dl/files/047/88868047/att_68363/v1/S7pcshwb.pdf",
+      reviewedContentHash:
+        "sha256:b9d498f47a5b5ed2a6f5bb3a32ef57fefe765211d67b9dc852c0520e15fc1e1f",
+      evidenceRef:
+        "https://cache.industry.siemens.com/dl/files/047/88868047/att_68363/v1/S7pcshwb.pdf",
       note: "Reviewed exact 6ES7321-7BH00-0AB0: Exact PCS 7 S7-300 SM-DI row, printed Page 24 of 41. The existing canonical source link points to a CPU410 manual; copy evidence uses this exact PCS 7 row, and source-link reconciliation remains separate. Previously reviewed parsed cache-PDF text; visual page verification unavailable. Approves only identity, digital-input type and 16 inputs; the full canonical title is an identifier. No standalone voltage, lifecycle, availability, compatibility, operating-feature or unrelated specification is approved.",
     },
   },
@@ -1164,6 +1265,136 @@ export const persianProductCopyDraftRegistry = [
       evidenceRef:
         "PM technical approval in this conversation; draft commit 02d2ea2b17db358a617024b5e05e3cfdb084f113; Product siemens-s7-300-sm322-do-32-24vdc-0-5a-1bl00-0aa0; MLFB 6ES7322-1BL00-0AA0; previously reviewed Siemens Module Data 05/2022 A5E00105505-AK, section 3.21 pp119-121; https://cache.industry.siemens.com/dl/files/629/8859629/att_55794/v1/s7300_module_data_manual_en-US_en-US.pdf.",
       note: "6ES7322-1BL00-0AA0: PM-approved full-title identification, digital-output type and 32 outputs only. Prior Siemens evidence reused.",
+    },
+  },
+  {
+    productId: "siemens-s7-300-sm322-do-16-ac-120-230v-1a-1fh00-0aa0",
+    shortDescription: sm322Do16_120_230Vac1Fh00Copy,
+    description: [sm322Do16_120_230Vac1Fh00Copy],
+    provenance: "ai-assisted",
+    linguisticReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-11-13T15:45:00Z",
+      reviewedContentHash:
+        "sha256:2899dd2ecbae2223558f50070ada47d0a4a70f7c0fda3d4d737d9f3c2b74ba0e",
+      evidenceRef:
+        "PM linguistic approval in this conversation; draft commit e952ecf2036f5d191b712191d637cb042b4426f6; Product siemens-s7-300-sm322-do-16-ac-120-230v-1a-1fh00-0aa0; MLFB 6ES7322-1FH00-0AA0.",
+      note: "6ES7322-1FH00-0AA0: PM-approved Persian wording, punctuation and spacing; machine-verified NFC, Persian yeh/kaf and typed full-title/count segmentation.",
+    },
+    technicalReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-11-13T15:45:06Z",
+      reviewedContentHash:
+        "sha256:2899dd2ecbae2223558f50070ada47d0a4a70f7c0fda3d4d737d9f3c2b74ba0e",
+      evidenceRef:
+        "PM technical approval in this conversation; draft commit e952ecf2036f5d191b712191d637cb042b4426f6; Product siemens-s7-300-sm322-do-16-ac-120-230v-1a-1fh00-0aa0; MLFB 6ES7322-1FH00-0AA0; previously reviewed Siemens Module Data 05/2022 A5E00105505-AK, section 3.27 pp145-146; https://cache.industry.siemens.com/dl/files/629/8859629/att_55794/v1/s7300_module_data_manual_en-US_en-US.pdf.",
+      note: "6ES7322-1FH00-0AA0: PM-approved full-title identification, digital-output module type and 16 outputs only. The full canonical title is an identifier. No standalone voltage/current, relay-performance, lifecycle, availability or compatibility claims are approved.",
+    },
+  },
+  {
+    productId: "siemens-s7-300-sm322-do-16-acdc-24-48v-0-5a-5gh00-0ab0",
+    shortDescription: sm322Do16_24_48VacDc5Gh00Copy,
+    description: [sm322Do16_24_48VacDc5Gh00Copy],
+    provenance: "ai-assisted",
+    linguisticReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-11-13T15:45:00Z",
+      reviewedContentHash:
+        "sha256:dcd2e368e9e3c1d8c0fa775d4d217f705a48d156264a6c85ba16fbe780d27ad3",
+      evidenceRef:
+        "PM linguistic approval in this conversation; draft commit e952ecf2036f5d191b712191d637cb042b4426f6; Product siemens-s7-300-sm322-do-16-acdc-24-48v-0-5a-5gh00-0ab0; MLFB 6ES7322-5GH00-0AB0.",
+      note: "6ES7322-5GH00-0AB0: PM-approved Persian wording, punctuation and spacing; machine-verified NFC, Persian yeh/kaf and typed full-title/count segmentation.",
+    },
+    technicalReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-11-13T15:45:06Z",
+      reviewedContentHash:
+        "sha256:dcd2e368e9e3c1d8c0fa775d4d217f705a48d156264a6c85ba16fbe780d27ad3",
+      evidenceRef:
+        "PM technical approval in this conversation; draft commit e952ecf2036f5d191b712191d637cb042b4426f6; Product siemens-s7-300-sm322-do-16-acdc-24-48v-0-5a-5gh00-0ab0; MLFB 6ES7322-5GH00-0AB0; previously reviewed Siemens Module Data 05/2022 A5E00105505-AK, section 3.26 pp140-142; https://cache.industry.siemens.com/dl/files/629/8859629/att_55794/v1/s7300_module_data_manual_en-US_en-US.pdf; Manual UC 24/48 V; official indexed exact-product datasheet text supports the canonical identifier; direct PDF retrieval returned HTTP 403; visual inspection NOT OBSERVED..",
+      note: "6ES7322-5GH00-0AB0: PM-approved full-title identification, digital-output module type and 16 outputs only. The full canonical title is an identifier. No standalone voltage/current, relay-performance, lifecycle, availability or compatibility claims are approved. Manual UC 24/48 V; official indexed exact-product datasheet text supports the canonical identifier; direct PDF retrieval returned HTTP 403; visual inspection NOT OBSERVED.",
+    },
+  },
+  {
+    productId: "siemens-s7-300-sm322-do-8-relay-24vdc-230vac-2a-1hf01-0aa0",
+    shortDescription: sm322Do8Relay1Hf01Copy,
+    description: [sm322Do8Relay1Hf01Copy],
+    provenance: "ai-assisted",
+    linguisticReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-11-13T15:45:00Z",
+      reviewedContentHash:
+        "sha256:fd82f3f5548c850671b0f0b5c1dfb06d8230e7051e59e70e964eaeea9889b561",
+      evidenceRef:
+        "PM linguistic approval in this conversation; draft commit e952ecf2036f5d191b712191d637cb042b4426f6; Product siemens-s7-300-sm322-do-8-relay-24vdc-230vac-2a-1hf01-0aa0; MLFB 6ES7322-1HF01-0AA0.",
+      note: "6ES7322-1HF01-0AA0: PM-approved Persian wording, punctuation and spacing; machine-verified NFC, Persian yeh/kaf and typed full-title/count segmentation.",
+    },
+    technicalReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-11-13T15:45:06Z",
+      reviewedContentHash:
+        "sha256:fd82f3f5548c850671b0f0b5c1dfb06d8230e7051e59e70e964eaeea9889b561",
+      evidenceRef:
+        "PM technical approval in this conversation; draft commit e952ecf2036f5d191b712191d637cb042b4426f6; Product siemens-s7-300-sm322-do-8-relay-24vdc-230vac-2a-1hf01-0aa0; MLFB 6ES7322-1HF01-0AA0; previously reviewed Siemens Module Data 05/2022 A5E00105505-AK, section 3.34 pp172-173; https://cache.industry.siemens.com/dl/files/629/8859629/att_55794/v1/s7300_module_data_manual_en-US_en-US.pdf.",
+      note: "6ES7322-1HF01-0AA0: PM-approved full-title identification, digital-output module type and 8 outputs only. The full canonical title is an identifier. No standalone voltage/current, relay-performance, lifecycle, availability or compatibility claims are approved.",
+    },
+  },
+  {
+    productId: "siemens-s7-300-sm322-do-8-relay-24vdc-230vac-5a-1hf10-0aa0",
+    shortDescription: sm322Do8Relay5A1Hf10Copy,
+    description: [sm322Do8Relay5A1Hf10Copy],
+    provenance: "ai-assisted",
+    linguisticReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-11-13T15:45:00Z",
+      reviewedContentHash:
+        "sha256:8bfc480b7998bd17ec55ffc46b70d35f9b088d67523e15192a48296ca7c9a7e5",
+      evidenceRef:
+        "PM linguistic approval in this conversation; draft commit e952ecf2036f5d191b712191d637cb042b4426f6; Product siemens-s7-300-sm322-do-8-relay-24vdc-230vac-5a-1hf10-0aa0; MLFB 6ES7322-1HF10-0AA0.",
+      note: "6ES7322-1HF10-0AA0: PM-approved Persian wording, punctuation and spacing; machine-verified NFC, Persian yeh/kaf and typed full-title/count segmentation.",
+    },
+    technicalReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-11-13T15:45:06Z",
+      reviewedContentHash:
+        "sha256:8bfc480b7998bd17ec55ffc46b70d35f9b088d67523e15192a48296ca7c9a7e5",
+      evidenceRef:
+        "PM technical approval in this conversation; draft commit e952ecf2036f5d191b712191d637cb042b4426f6; Product siemens-s7-300-sm322-do-8-relay-24vdc-230vac-5a-1hf10-0aa0; MLFB 6ES7322-1HF10-0AA0; previously reviewed Siemens Module Data 05/2022 A5E00105505-AK, section 3.36 pp182-185; https://cache.industry.siemens.com/dl/files/629/8859629/att_55794/v1/s7300_module_data_manual_en-US_en-US.pdf.",
+      note: "6ES7322-1HF10-0AA0: PM-approved full-title identification, digital-output module type and 8 outputs only. The full canonical title is an identifier. No standalone voltage/current, relay-performance, lifecycle, availability or compatibility claims are approved.",
+    },
+  },
+  {
+    productId: "siemens-s7-300-sm322-do-16-relay-120vdc-230vac-2a-1hh01-0aa0",
+    shortDescription: sm322Do16Relay1Hh01Copy,
+    description: [sm322Do16Relay1Hh01Copy],
+    provenance: "ai-assisted",
+    linguisticReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-11-13T15:45:00Z",
+      reviewedContentHash:
+        "sha256:527c73b9abff604dacc97629ec9cec3421eed355227cdc0437ca7232c4ba591b",
+      evidenceRef:
+        "PM linguistic approval in this conversation; draft commit e952ecf2036f5d191b712191d637cb042b4426f6; Product siemens-s7-300-sm322-do-16-relay-120vdc-230vac-2a-1hh01-0aa0; MLFB 6ES7322-1HH01-0AA0.",
+      note: "6ES7322-1HH01-0AA0: PM-approved Persian wording, punctuation and spacing; machine-verified NFC, Persian yeh/kaf and typed full-title/count segmentation.",
+    },
+    technicalReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-11-13T15:45:06Z",
+      reviewedContentHash:
+        "sha256:527c73b9abff604dacc97629ec9cec3421eed355227cdc0437ca7232c4ba591b",
+      evidenceRef:
+        "PM technical approval in this conversation; draft commit e952ecf2036f5d191b712191d637cb042b4426f6; Product siemens-s7-300-sm322-do-16-relay-120vdc-230vac-2a-1hh01-0aa0; MLFB 6ES7322-1HH01-0AA0; previously reviewed Siemens Module Data 05/2022 A5E00105505-AK, section 3.33 pp169-171; https://cache.industry.siemens.com/dl/files/629/8859629/att_55794/v1/s7300_module_data_manual_en-US_en-US.pdf.",
+      note: "6ES7322-1HH01-0AA0: PM-approved full-title identification, digital-output module type and 16 outputs only. The full canonical title is an identifier. No standalone voltage/current, relay-performance, lifecycle, availability or compatibility claims are approved.",
     },
   },
 ] as const satisfies readonly PersianProductCopyOverlay[];
