@@ -486,6 +486,49 @@ const sm322Do16Relay1Hh01Copy = [
   { kind: "text", value: " خروجی است." },
 ] as const satisfies ProductCopyParagraph;
 
+const sm322Do8_120_230Vac5Ff00Copy = [
+  { kind: "text", value: "مدل " },
+  { kind: "technical", value: "SIMATIC S7-300 SM 322 8 DO 120/230 V AC" },
+  { kind: "text", value: "، ماژول خروجی دیجیتال با " },
+  { kind: "technical", value: "8" },
+  { kind: "text", value: " خروجی است." },
+] as const satisfies ProductCopyParagraph;
+
+const sm322Do32_120_230Vac1Fl00Copy = [
+  { kind: "text", value: "مدل " },
+  { kind: "technical", value: "SIMATIC S7-300 SM 322 32 DO 120/230 V AC" },
+  { kind: "text", value: "، ماژول خروجی دیجیتال با " },
+  { kind: "technical", value: "32" },
+  { kind: "text", value: " خروجی است." },
+] as const satisfies ProductCopyParagraph;
+
+const sm322Do64_24Vdc1Bp00Copy = [
+  { kind: "text", value: "مدل " },
+  { kind: "technical", value: "SIMATIC S7-300 SM 322 64 DO 24 V DC" },
+  { kind: "text", value: "، ماژول خروجی دیجیتال با " },
+  { kind: "technical", value: "64" },
+  { kind: "text", value: " خروجی است." },
+] as const satisfies ProductCopyParagraph;
+
+const sm322Do64_24VdcSinking1Bp50Copy = [
+  { kind: "text", value: "مدل " },
+  { kind: "technical", value: "SIMATIC S7-300 SM 322 64 DO 24 V DC Sinking" },
+  { kind: "text", value: "، ماژول خروجی دیجیتال با " },
+  { kind: "technical", value: "64" },
+  { kind: "text", value: " خروجی است." },
+] as const satisfies ProductCopyParagraph;
+
+const sm322Do16_24VdcDiagnostics8Bh10Copy = [
+  { kind: "text", value: "مدل " },
+  {
+    kind: "technical",
+    value: "SIMATIC S7-300 SM 322 16 DO 24 V DC Diagnostics",
+  },
+  { kind: "text", value: "، ماژول خروجی دیجیتال با " },
+  { kind: "technical", value: "16" },
+  { kind: "text", value: " خروجی است." },
+] as const satisfies ProductCopyParagraph;
+
 export const persianProductCopyDraftRegistry = [
   {
     productId: "siemens-s7-1200-cpu-211-1ae40",
@@ -1395,6 +1438,136 @@ export const persianProductCopyDraftRegistry = [
       evidenceRef:
         "PM technical approval in this conversation; draft commit e952ecf2036f5d191b712191d637cb042b4426f6; Product siemens-s7-300-sm322-do-16-relay-120vdc-230vac-2a-1hh01-0aa0; MLFB 6ES7322-1HH01-0AA0; previously reviewed Siemens Module Data 05/2022 A5E00105505-AK, section 3.33 pp169-171; https://cache.industry.siemens.com/dl/files/629/8859629/att_55794/v1/s7300_module_data_manual_en-US_en-US.pdf.",
       note: "6ES7322-1HH01-0AA0: PM-approved full-title identification, digital-output module type and 16 outputs only. The full canonical title is an identifier. No standalone voltage/current, relay-performance, lifecycle, availability or compatibility claims are approved.",
+    },
+  },
+  {
+    productId: "siemens-s7-300-sm322-do-8-ac-120-230v-2a-5ff00-0ab0",
+    shortDescription: sm322Do8_120_230Vac5Ff00Copy,
+    description: [sm322Do8_120_230Vac5Ff00Copy],
+    provenance: "ai-assisted",
+    linguisticReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-11-13T17:07:03Z",
+      reviewedContentHash:
+        "sha256:2452c2cbf649d43da05803d06d78a607b26d7df8cace1844f21632ce3b7cbf34",
+      evidenceRef:
+        "PM linguistic approval in the supplied Batch 08 continuation; draft commit 58ecfa94d0e9565fd23967196f358c0f8cb7eccc; Product siemens-s7-300-sm322-do-8-ac-120-230v-2a-5ff00-0ab0; MLFB 6ES7322-5FF00-0AB0.",
+      note: "6ES7322-5FF00-0AB0: PM-approved Persian wording, punctuation and spacing; complete Latin title and numeric count retain separate typed isolation.",
+    },
+    technicalReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-11-13T17:07:54Z",
+      reviewedContentHash:
+        "sha256:2452c2cbf649d43da05803d06d78a607b26d7df8cace1844f21632ce3b7cbf34",
+      evidenceRef:
+        "PM technical approval in the supplied Batch 08 continuation; draft commit 58ecfa94d0e9565fd23967196f358c0f8cb7eccc; Product siemens-s7-300-sm322-do-8-ac-120-230v-2a-5ff00-0ab0; MLFB 6ES7322-5FF00-0AB0; reused previously reviewed parsed text of Siemens Module Data, 05/2022, A5E00105505-AK; https://cache.industry.siemens.com/dl/files/629/8859629/att_55794/v1/s7300_module_data_manual_en-US_en-US.pdf; visual PDF inspection NOT OBSERVED; no fresh retrieval; section 3.32, printed pp164-165.",
+      note: "6ES7322-5FF00-0AB0: PM-approved complete canonical title as an identifier, digital-output module type and 8 outputs only. No additional standalone voltage/current, operating-feature, lifecycle, availability or compatibility claims are approved.",
+    },
+  },
+  {
+    productId: "siemens-s7-300-sm322-do-32-ac-120-230v-1a-1fl00-0aa0",
+    shortDescription: sm322Do32_120_230Vac1Fl00Copy,
+    description: [sm322Do32_120_230Vac1Fl00Copy],
+    provenance: "ai-assisted",
+    linguisticReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-11-13T17:07:03Z",
+      reviewedContentHash:
+        "sha256:5906dc1fb0ae7c9a71a0a2e5c5f866878cd49d6f1f2d27bf100809a3930ee3da",
+      evidenceRef:
+        "PM linguistic approval in the supplied Batch 08 continuation; draft commit 58ecfa94d0e9565fd23967196f358c0f8cb7eccc; Product siemens-s7-300-sm322-do-32-ac-120-230v-1a-1fl00-0aa0; MLFB 6ES7322-1FL00-0AA0.",
+      note: "6ES7322-1FL00-0AA0: PM-approved Persian wording, punctuation and spacing; complete Latin title and numeric count retain separate typed isolation.",
+    },
+    technicalReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-11-13T17:07:54Z",
+      reviewedContentHash:
+        "sha256:5906dc1fb0ae7c9a71a0a2e5c5f866878cd49d6f1f2d27bf100809a3930ee3da",
+      evidenceRef:
+        "PM technical approval in the supplied Batch 08 continuation; draft commit 58ecfa94d0e9565fd23967196f358c0f8cb7eccc; Product siemens-s7-300-sm322-do-32-ac-120-230v-1a-1fl00-0aa0; MLFB 6ES7322-1FL00-0AA0; reused previously reviewed parsed text of Siemens Module Data, 05/2022, A5E00105505-AK; https://cache.industry.siemens.com/dl/files/629/8859629/att_55794/v1/s7300_module_data_manual_en-US_en-US.pdf; visual PDF inspection NOT OBSERVED; no fresh retrieval; section 3.22, printed pp122-124.",
+      note: "6ES7322-1FL00-0AA0: PM-approved complete canonical title as an identifier, digital-output module type and 32 outputs only. No additional standalone voltage/current, operating-feature, lifecycle, availability or compatibility claims are approved.",
+    },
+  },
+  {
+    productId: "siemens-s7-300-sm322-do-64-24vdc-0-3a-1bp00-0aa0",
+    shortDescription: sm322Do64_24Vdc1Bp00Copy,
+    description: [sm322Do64_24Vdc1Bp00Copy],
+    provenance: "ai-assisted",
+    linguisticReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-11-13T17:07:03Z",
+      reviewedContentHash:
+        "sha256:eb7c550ce67f8f1b72b92132d73082f9b0ebf2b469c4df2f32dadd3a94cde211",
+      evidenceRef:
+        "PM linguistic approval in the supplied Batch 08 continuation; draft commit 58ecfa94d0e9565fd23967196f358c0f8cb7eccc; Product siemens-s7-300-sm322-do-64-24vdc-0-3a-1bp00-0aa0; MLFB 6ES7322-1BP00-0AA0.",
+      note: "6ES7322-1BP00-0AA0: PM-approved Persian wording, punctuation and spacing; complete Latin title and numeric count retain separate typed isolation.",
+    },
+    technicalReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-11-13T17:07:54Z",
+      reviewedContentHash:
+        "sha256:eb7c550ce67f8f1b72b92132d73082f9b0ebf2b469c4df2f32dadd3a94cde211",
+      evidenceRef:
+        'PM technical approval in the supplied Batch 08 continuation; draft commit 58ecfa94d0e9565fd23967196f358c0f8cb7eccc; Product siemens-s7-300-sm322-do-64-24vdc-0-3a-1bp00-0aa0; MLFB 6ES7322-1BP00-0AA0; reused previously reviewed parsed text of Siemens Module Data, 05/2022, A5E00105505-AK; https://cache.industry.siemens.com/dl/files/629/8859629/att_55794/v1/s7300_module_data_manual_en-US_en-US.pdf; visual PDF inspection NOT OBSERVED; no fresh retrieval; section 3.19, printed pp106-108. Unresolved discrepancy: canonical English description says "sink", while the reviewed manual says "sourcing"; approved Persian copy asserts neither; canonical data is unchanged.',
+      note: '6ES7322-1BP00-0AA0: PM-approved complete canonical title as an identifier, digital-output module type and 64 outputs only. No additional standalone voltage/current, operating-feature, lifecycle, availability or compatibility claims are approved. Unresolved discrepancy: canonical English description says "sink", while the reviewed manual says "sourcing"; approved Persian copy asserts neither; canonical data is unchanged.',
+    },
+  },
+  {
+    productId: "siemens-s7-300-sm322-do-64-24vdc-0-3a-sinking-1bp50-0aa0",
+    shortDescription: sm322Do64_24VdcSinking1Bp50Copy,
+    description: [sm322Do64_24VdcSinking1Bp50Copy],
+    provenance: "ai-assisted",
+    linguisticReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-11-13T17:07:03Z",
+      reviewedContentHash:
+        "sha256:865291d13beef6ecf53fa7ab667d7dd353d88db89938e56215ce1048131efefb",
+      evidenceRef:
+        "PM linguistic approval in the supplied Batch 08 continuation; draft commit 58ecfa94d0e9565fd23967196f358c0f8cb7eccc; Product siemens-s7-300-sm322-do-64-24vdc-0-3a-sinking-1bp50-0aa0; MLFB 6ES7322-1BP50-0AA0.",
+      note: "6ES7322-1BP50-0AA0: PM-approved Persian wording, punctuation and spacing; complete Latin title and numeric count retain separate typed isolation.",
+    },
+    technicalReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-11-13T17:07:54Z",
+      reviewedContentHash:
+        "sha256:865291d13beef6ecf53fa7ab667d7dd353d88db89938e56215ce1048131efefb",
+      evidenceRef:
+        "PM technical approval in the supplied Batch 08 continuation; draft commit 58ecfa94d0e9565fd23967196f358c0f8cb7eccc; Product siemens-s7-300-sm322-do-64-24vdc-0-3a-sinking-1bp50-0aa0; MLFB 6ES7322-1BP50-0AA0; reused previously reviewed parsed text of Siemens Module Data, 05/2022, A5E00105505-AK; https://cache.industry.siemens.com/dl/files/629/8859629/att_55794/v1/s7300_module_data_manual_en-US_en-US.pdf; visual PDF inspection NOT OBSERVED; no fresh retrieval; section 3.20, printed pp112-115. Sinking remains only within the supported complete canonical title; no independent operating claim is approved.",
+      note: "6ES7322-1BP50-0AA0: PM-approved complete canonical title as an identifier, digital-output module type and 64 outputs only. No additional standalone voltage/current, operating-feature, lifecycle, availability or compatibility claims are approved. Sinking remains only within the supported complete canonical title; no independent operating claim is approved.",
+    },
+  },
+  {
+    productId: "siemens-s7-300-sm322-do-16-24vdc-0-5a-diagnostics-8bh10-0ab0",
+    shortDescription: sm322Do16_24VdcDiagnostics8Bh10Copy,
+    description: [sm322Do16_24VdcDiagnostics8Bh10Copy],
+    provenance: "ai-assisted",
+    linguisticReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-11-13T17:07:03Z",
+      reviewedContentHash:
+        "sha256:402de473e8334628845168be88edc7a2b7c99ce78dad01f5ab4c205088820935",
+      evidenceRef:
+        "PM linguistic approval in the supplied Batch 08 continuation; draft commit 58ecfa94d0e9565fd23967196f358c0f8cb7eccc; Product siemens-s7-300-sm322-do-16-24vdc-0-5a-diagnostics-8bh10-0ab0; MLFB 6ES7322-8BH10-0AB0.",
+      note: "6ES7322-8BH10-0AB0: PM-approved Persian wording, punctuation and spacing; complete Latin title and numeric count retain separate typed isolation.",
+    },
+    technicalReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-11-13T17:07:54Z",
+      reviewedContentHash:
+        "sha256:402de473e8334628845168be88edc7a2b7c99ce78dad01f5ab4c205088820935",
+      evidenceRef:
+        "PM technical approval in the supplied Batch 08 continuation; draft commit 58ecfa94d0e9565fd23967196f358c0f8cb7eccc; Product siemens-s7-300-sm322-do-16-24vdc-0-5a-diagnostics-8bh10-0ab0; MLFB 6ES7322-8BH10-0AB0; reused previously reviewed parsed text of Siemens Module Data, 05/2022, A5E00105505-AK; https://cache.industry.siemens.com/dl/files/629/8859629/att_55794/v1/s7300_module_data_manual_en-US_en-US.pdf; visual PDF inspection NOT OBSERVED; no fresh retrieval; section 3.24, printed p129.",
+      note: "6ES7322-8BH10-0AB0: PM-approved complete canonical title as an identifier, digital-output module type and 16 outputs only. No additional standalone voltage/current, operating-feature, lifecycle, availability or compatibility claims are approved.",
     },
   },
 ] as const satisfies readonly PersianProductCopyOverlay[];
