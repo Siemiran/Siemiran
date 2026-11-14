@@ -1615,39 +1615,139 @@ export const persianProductCopyDraftRegistry = [
     shortDescription: sm322Do4Ex5Rd00Copy,
     description: [sm322Do4Ex5Rd00Copy],
     provenance: "ai-assisted",
-    linguisticReview: { decision: "pending" },
-    technicalReview: { decision: "pending" },
+    linguisticReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-11-14T18:23:04Z",
+      reviewedContentHash:
+        "sha256:30129c7354a1fa60198fee2f54feb4074612e873f2566f9fac62849c2e9ae2e9",
+      evidenceRef:
+        "PM linguistic approval in the supplied Batch 09 approval request; draft commit cb9b8f629591d0f32f4a2ebf46da720c50f13305; Product siemens-s7-300-sm322-do-4-ex-15v-20ma-5rd00-0ab0; MLFB 6ES7322-5RD00-0AB0. Recording time is an actual UTC observation, not the PM review timestamp.",
+      note:
+        "6ES7322-5RD00-0AB0: PM-approved Product-specific Persian wording, punctuation and spacing; complete Latin title and numeric count retain separate typed isolation.",
+    },
+    technicalReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-11-14T18:23:11Z",
+      reviewedContentHash:
+        "sha256:30129c7354a1fa60198fee2f54feb4074612e873f2566f9fac62849c2e9ae2e9",
+      evidenceRef:
+        "PM technical approval in the supplied Batch 09 approval request; draft commit cb9b8f629591d0f32f4a2ebf46da720c50f13305; Product siemens-s7-300-sm322-do-4-ex-15v-20ma-5rd00-0ab0; MLFB 6ES7322-5RD00-0AB0. Recording time is an actual UTC observation, not the PM review timestamp. Reused readiness-reviewed parsed text of Siemens S7-300, ET 200M Ex I/O Modules, 04/2022, A5E00172008-AP; https://cache.industry.siemens.com/dl/files/709/1096709/att_885614/v2/s7300_et200m_ex_io_modules_manual_en_en-US.pdf?download=true; section 2.4.1, printed pp77-78; visual inspection and direct-origin HTTP status NOT OBSERVED; no fresh retrieval. Ex remains only within the supported complete canonical identifier; no independent installation or certification claim.",
+      note:
+        "6ES7322-5RD00-0AB0: PM-approved complete canonical title as an identifier, digital-output module type and 4 outputs only. No independent voltage/current, Ex certification or hazardous-area suitability, Diagnostics performance, RC protection, lifecycle, availability or compatibility claims are approved. Ex remains only within the supported complete canonical identifier; no independent installation or certification claim.",
+    },
   },
   {
     productId: "siemens-s7-300-sm322-do-4-ex-24v-10ma-5sd00-0ab0",
     shortDescription: sm322Do4Ex5Sd00Copy,
     description: [sm322Do4Ex5Sd00Copy],
     provenance: "ai-assisted",
-    linguisticReview: { decision: "pending" },
-    technicalReview: { decision: "pending" },
+    linguisticReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-11-14T18:23:04Z",
+      reviewedContentHash:
+        "sha256:bf78d3e02989c4df9f06c614bccef6db89d03f50d8da24fb2336f98704bb8ddf",
+      evidenceRef:
+        "PM linguistic approval in the supplied Batch 09 approval request; draft commit cb9b8f629591d0f32f4a2ebf46da720c50f13305; Product siemens-s7-300-sm322-do-4-ex-24v-10ma-5sd00-0ab0; MLFB 6ES7322-5SD00-0AB0. Recording time is an actual UTC observation, not the PM review timestamp.",
+      note:
+        "6ES7322-5SD00-0AB0: PM-approved Product-specific Persian wording, punctuation and spacing; complete Latin title and numeric count retain separate typed isolation.",
+    },
+    technicalReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-11-14T18:23:11Z",
+      reviewedContentHash:
+        "sha256:bf78d3e02989c4df9f06c614bccef6db89d03f50d8da24fb2336f98704bb8ddf",
+      evidenceRef:
+        "PM technical approval in the supplied Batch 09 approval request; draft commit cb9b8f629591d0f32f4a2ebf46da720c50f13305; Product siemens-s7-300-sm322-do-4-ex-24v-10ma-5sd00-0ab0; MLFB 6ES7322-5SD00-0AB0. Recording time is an actual UTC observation, not the PM review timestamp. Reused readiness-reviewed parsed text of Siemens S7-300, ET 200M Ex I/O Modules, 04/2022, A5E00172008-AP; https://cache.industry.siemens.com/dl/files/709/1096709/att_885614/v2/s7300_et200m_ex_io_modules_manual_en_en-US.pdf?download=true; section 2.3.1, printed pp66-69; visual inspection and direct-origin HTTP status NOT OBSERVED; no fresh retrieval. Ex remains only within the supported complete canonical identifier; no independent installation or certification claim.",
+      note:
+        "6ES7322-5SD00-0AB0: PM-approved complete canonical title as an identifier, digital-output module type and 4 outputs only. No independent voltage/current, Ex certification or hazardous-area suitability, Diagnostics performance, RC protection, lifecycle, availability or compatibility claims are approved. Ex remains only within the supported complete canonical identifier; no independent installation or certification claim.",
+    },
   },
   {
     productId: "siemens-s7-300-sm322-do-8-24vdc-0-5a-diagnostics-8bf00-0ab0",
     shortDescription: sm322Do8Diagnostics8Bf00Copy,
     description: [sm322Do8Diagnostics8Bf00Copy],
     provenance: "ai-assisted",
-    linguisticReview: { decision: "pending" },
-    technicalReview: { decision: "pending" },
+    linguisticReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-11-14T18:23:04Z",
+      reviewedContentHash:
+        "sha256:261c51a45d9c502af6e81277423025fa5ec9b2effba4338b699d6d78680fcb16",
+      evidenceRef:
+        "PM linguistic approval in the supplied Batch 09 approval request; draft commit cb9b8f629591d0f32f4a2ebf46da720c50f13305; Product siemens-s7-300-sm322-do-8-24vdc-0-5a-diagnostics-8bf00-0ab0; MLFB 6ES7322-8BF00-0AB0. Recording time is an actual UTC observation, not the PM review timestamp.",
+      note:
+        "6ES7322-8BF00-0AB0: PM-approved Product-specific Persian wording, punctuation and spacing; complete Latin title and numeric count retain separate typed isolation.",
+    },
+    technicalReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-11-14T18:23:11Z",
+      reviewedContentHash:
+        "sha256:261c51a45d9c502af6e81277423025fa5ec9b2effba4338b699d6d78680fcb16",
+      evidenceRef:
+        "PM technical approval in the supplied Batch 09 approval request; draft commit cb9b8f629591d0f32f4a2ebf46da720c50f13305; Product siemens-s7-300-sm322-do-8-24vdc-0-5a-diagnostics-8bf00-0ab0; MLFB 6ES7322-8BF00-0AB0. Recording time is an actual UTC observation, not the PM review timestamp. Reused readiness-reviewed parsed text of Siemens S7-300 Module Data, 05/2022, A5E00105505-AK; https://cache.industry.siemens.com/dl/files/629/8859629/att_55794/v1/s7300_module_data_manual_en-US_en-US.pdf; section 3.29, printed p151; visual inspection and direct-origin HTTP status NOT OBSERVED; no fresh retrieval. Diagnostics remains only within the supported complete canonical identifier; no Diagnostics performance claim.",
+      note:
+        "6ES7322-8BF00-0AB0: PM-approved complete canonical title as an identifier, digital-output module type and 8 outputs only. No independent voltage/current, Ex certification or hazardous-area suitability, Diagnostics performance, RC protection, lifecycle, availability or compatibility claims are approved. Diagnostics remains only within the supported complete canonical identifier; no Diagnostics performance claim.",
+    },
   },
   {
     productId: "siemens-s7-300-sm322-do-8-48-125vdc-1-5a-1cf00-0aa0",
     shortDescription: sm322Do8_48_125Vdc1Cf00Copy,
     description: [sm322Do8_48_125Vdc1Cf00Copy],
     provenance: "ai-assisted",
-    linguisticReview: { decision: "pending" },
-    technicalReview: { decision: "pending" },
+    linguisticReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-11-14T18:23:04Z",
+      reviewedContentHash:
+        "sha256:2ffd2d15d399972bd875501d45858f0b4d5e079b0ad7d484996ebf6066a5a250",
+      evidenceRef:
+        "PM linguistic approval in the supplied Batch 09 approval request; draft commit cb9b8f629591d0f32f4a2ebf46da720c50f13305; Product siemens-s7-300-sm322-do-8-48-125vdc-1-5a-1cf00-0aa0; MLFB 6ES7322-1CF00-0AA0. Recording time is an actual UTC observation, not the PM review timestamp.",
+      note:
+        "6ES7322-1CF00-0AA0: PM-approved Product-specific Persian wording, punctuation and spacing; complete Latin title and numeric count retain separate typed isolation.",
+    },
+    technicalReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-11-14T18:23:11Z",
+      reviewedContentHash:
+        "sha256:2ffd2d15d399972bd875501d45858f0b4d5e079b0ad7d484996ebf6066a5a250",
+      evidenceRef:
+        "PM technical approval in the supplied Batch 09 approval request; draft commit cb9b8f629591d0f32f4a2ebf46da720c50f13305; Product siemens-s7-300-sm322-do-8-48-125vdc-1-5a-1cf00-0aa0; MLFB 6ES7322-1CF00-0AA0. Recording time is an actual UTC observation, not the PM review timestamp. Reused readiness-reviewed parsed text of Siemens S7-300 Module Data, 05/2022, A5E00105505-AK; https://cache.industry.siemens.com/dl/files/629/8859629/att_55794/v1/s7300_module_data_manual_en-US_en-US.pdf; section 3.30, printed pp158-159; visual inspection and direct-origin HTTP status NOT OBSERVED; no fresh retrieval. Manual describes a 48-125 V DC range; canonical title retains 48/125 V DC as an identifier. No standalone voltage assertion or canonical-data correction.",
+      note:
+        "6ES7322-1CF00-0AA0: PM-approved complete canonical title as an identifier, digital-output module type and 8 outputs only. No independent voltage/current, Ex certification or hazardous-area suitability, Diagnostics performance, RC protection, lifecycle, availability or compatibility claims are approved. Manual describes a 48-125 V DC range; canonical title retains 48/125 V DC as an identifier. No standalone voltage assertion or canonical-data correction.",
+    },
   },
   {
     productId: "siemens-s7-300-sm322-do-8-relay-230vac-5a-rc-5hf00-0ab0",
     shortDescription: sm322Do8RelayRc5Hf00Copy,
     description: [sm322Do8RelayRc5Hf00Copy],
     provenance: "ai-assisted",
-    linguisticReview: { decision: "pending" },
-    technicalReview: { decision: "pending" },
+    linguisticReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-11-14T18:23:04Z",
+      reviewedContentHash:
+        "sha256:eb38af6a708f702bd04da99b086fb94492d85e9f2b4a5581b321e8322b4ca4c0",
+      evidenceRef:
+        "PM linguistic approval in the supplied Batch 09 approval request; draft commit cb9b8f629591d0f32f4a2ebf46da720c50f13305; Product siemens-s7-300-sm322-do-8-relay-230vac-5a-rc-5hf00-0ab0; MLFB 6ES7322-5HF00-0AB0. Recording time is an actual UTC observation, not the PM review timestamp.",
+      note:
+        "6ES7322-5HF00-0AB0: PM-approved Product-specific Persian wording, punctuation and spacing; complete Latin title and numeric count retain separate typed isolation.",
+    },
+    technicalReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-11-14T18:23:11Z",
+      reviewedContentHash:
+        "sha256:eb38af6a708f702bd04da99b086fb94492d85e9f2b4a5581b321e8322b4ca4c0",
+      evidenceRef:
+        "PM technical approval in the supplied Batch 09 approval request; draft commit cb9b8f629591d0f32f4a2ebf46da720c50f13305; Product siemens-s7-300-sm322-do-8-relay-230vac-5a-rc-5hf00-0ab0; MLFB 6ES7322-5HF00-0AB0. Recording time is an actual UTC observation, not the PM review timestamp. Reused readiness-reviewed parsed text of Siemens S7-300 Module Data, 05/2022, A5E00105505-AK; https://cache.industry.siemens.com/dl/files/629/8859629/att_55794/v1/s7300_module_data_manual_en-US_en-US.pdf; section 3.35, printed pp176 and 180; visual inspection and direct-origin HTTP status NOT OBSERVED; no fresh retrieval. RC protection requires a jumper; no unconditional RC protection claim is approved.",
+      note:
+        "6ES7322-5HF00-0AB0: PM-approved complete canonical title as an identifier, digital-output module type and 8 outputs only. No independent voltage/current, Ex certification or hazardous-area suitability, Diagnostics performance, RC protection, lifecycle, availability or compatibility claims are approved. RC protection requires a jumper; no unconditional RC protection claim is approved.",
+    },
   },
 ] as const satisfies readonly PersianProductCopyOverlay[];
