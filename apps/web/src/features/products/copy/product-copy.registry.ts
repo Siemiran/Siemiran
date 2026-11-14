@@ -529,6 +529,46 @@ const sm322Do16_24VdcDiagnostics8Bh10Copy = [
   { kind: "text", value: " خروجی است." },
 ] as const satisfies ProductCopyParagraph;
 
+const sm322Do4Ex5Rd00Copy = [
+  { kind: "text", value: "مدل " },
+  { kind: "technical", value: "SIMATIC S7-300 SM 322 4 DO 15 V / 20 mA Ex" },
+  { kind: "text", value: "، ماژول خروجی دیجیتال با " },
+  { kind: "technical", value: "4" },
+  { kind: "text", value: " خروجی است." },
+] as const satisfies ProductCopyParagraph;
+
+const sm322Do4Ex5Sd00Copy = [
+  { kind: "text", value: "مدل " },
+  { kind: "technical", value: "SIMATIC S7-300 SM 322 4 DO 24 V DC / 10 mA Ex" },
+  { kind: "text", value: "، ماژول خروجی دیجیتال با " },
+  { kind: "technical", value: "4" },
+  { kind: "text", value: " خروجی است." },
+] as const satisfies ProductCopyParagraph;
+
+const sm322Do8Diagnostics8Bf00Copy = [
+  { kind: "text", value: "مدل " },
+  { kind: "technical", value: "SIMATIC S7-300 SM 322 8 DO 24 V DC Diagnostics" },
+  { kind: "text", value: "، ماژول خروجی دیجیتال با " },
+  { kind: "technical", value: "8" },
+  { kind: "text", value: " خروجی است." },
+] as const satisfies ProductCopyParagraph;
+
+const sm322Do8_48_125Vdc1Cf00Copy = [
+  { kind: "text", value: "مدل " },
+  { kind: "technical", value: "SIMATIC S7-300 SM 322 8 DO 48/125 V DC" },
+  { kind: "text", value: "، ماژول خروجی دیجیتال با " },
+  { kind: "technical", value: "8" },
+  { kind: "text", value: " خروجی است." },
+] as const satisfies ProductCopyParagraph;
+
+const sm322Do8RelayRc5Hf00Copy = [
+  { kind: "text", value: "مدل " },
+  { kind: "technical", value: "SIMATIC S7-300 SM 322 8 DO Relay 230 V AC 5 A RC" },
+  { kind: "text", value: "، ماژول خروجی دیجیتال با " },
+  { kind: "technical", value: "8" },
+  { kind: "text", value: " خروجی است." },
+] as const satisfies ProductCopyParagraph;
+
 export const persianProductCopyDraftRegistry = [
   {
     productId: "siemens-s7-1200-cpu-211-1ae40",
@@ -1569,5 +1609,45 @@ export const persianProductCopyDraftRegistry = [
         "PM technical approval in the supplied Batch 08 continuation; draft commit 58ecfa94d0e9565fd23967196f358c0f8cb7eccc; Product siemens-s7-300-sm322-do-16-24vdc-0-5a-diagnostics-8bh10-0ab0; MLFB 6ES7322-8BH10-0AB0; reused previously reviewed parsed text of Siemens Module Data, 05/2022, A5E00105505-AK; https://cache.industry.siemens.com/dl/files/629/8859629/att_55794/v1/s7300_module_data_manual_en-US_en-US.pdf; visual PDF inspection NOT OBSERVED; no fresh retrieval; section 3.24, printed p129.",
       note: "6ES7322-8BH10-0AB0: PM-approved complete canonical title as an identifier, digital-output module type and 16 outputs only. No additional standalone voltage/current, operating-feature, lifecycle, availability or compatibility claims are approved.",
     },
+  },
+  {
+    productId: "siemens-s7-300-sm322-do-4-ex-15v-20ma-5rd00-0ab0",
+    shortDescription: sm322Do4Ex5Rd00Copy,
+    description: [sm322Do4Ex5Rd00Copy],
+    provenance: "ai-assisted",
+    linguisticReview: { decision: "pending" },
+    technicalReview: { decision: "pending" },
+  },
+  {
+    productId: "siemens-s7-300-sm322-do-4-ex-24v-10ma-5sd00-0ab0",
+    shortDescription: sm322Do4Ex5Sd00Copy,
+    description: [sm322Do4Ex5Sd00Copy],
+    provenance: "ai-assisted",
+    linguisticReview: { decision: "pending" },
+    technicalReview: { decision: "pending" },
+  },
+  {
+    productId: "siemens-s7-300-sm322-do-8-24vdc-0-5a-diagnostics-8bf00-0ab0",
+    shortDescription: sm322Do8Diagnostics8Bf00Copy,
+    description: [sm322Do8Diagnostics8Bf00Copy],
+    provenance: "ai-assisted",
+    linguisticReview: { decision: "pending" },
+    technicalReview: { decision: "pending" },
+  },
+  {
+    productId: "siemens-s7-300-sm322-do-8-48-125vdc-1-5a-1cf00-0aa0",
+    shortDescription: sm322Do8_48_125Vdc1Cf00Copy,
+    description: [sm322Do8_48_125Vdc1Cf00Copy],
+    provenance: "ai-assisted",
+    linguisticReview: { decision: "pending" },
+    technicalReview: { decision: "pending" },
+  },
+  {
+    productId: "siemens-s7-300-sm322-do-8-relay-230vac-5a-rc-5hf00-0ab0",
+    shortDescription: sm322Do8RelayRc5Hf00Copy,
+    description: [sm322Do8RelayRc5Hf00Copy],
+    provenance: "ai-assisted",
+    linguisticReview: { decision: "pending" },
+    technicalReview: { decision: "pending" },
   },
 ] as const satisfies readonly PersianProductCopyOverlay[];
