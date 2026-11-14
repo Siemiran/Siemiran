@@ -1,6 +1,32 @@
 # Siemiran — Project State
 
-## 2026-11-13 - Batch 08 Reconciliation (Current State)
+## 2026-11-14 - Batch 09 Reconciliation (Current State)
+
+Implementation baseline: `fca25e9134aae5aa9d42d9437cccefe37196eb39`, merged
+[PR #75](https://github.com/Siemiran/Siemiran/pull/75); guarded squash and main
+synchronization completed. Catalog: 382 Products (186 S7-1200 / 196 S7-300).
+Private drafts and current approvals per role: 45/382; current dual approvals:
+45; pending roles: zero; missing entries: 337. Ten distinct `Siemiran` records
+approve complete title identifiers, digital-output type and counts 4/4/8/8/8 only.
+Recorded implementation comparison preserved the previous 40 complete entries,
+metadata and hashes; ten text/kind cases each staled both approvals. Product
+evidence and Ex/Diagnostics/1CF00/RC limits are in
+[DATABASE.md](DATABASE.md#2026-11-14---batch-09-private-product-copy-checkpoint-current-state);
+merge identity is in [CHANGELOG.md](CHANGELOG.md).
+
+Overrides remain 10/20/7, global allowlist empty, zero Batch 09 overrides,
+eleven lifecycle omissions and separate S7-300 provenance 185/11. Activation-
+validation `overlayCount` is 45; active overlays remain zero, capability absent,
+publication disabled and public FA/EN copy canonical English/LTR. Full 382/382
+current dual approvals and separate launch authorization remain required.
+Batch 10 is unapproved and unstarted; Admin Panel and Automation remain gated;
+completed-copy inspection remains pending. Resume policy is in
+[SESSION_HANDOFF.md](SESSION_HANDOFF.md).
+
+## 2026-11-13 - Batch 08 Reconciliation (Historical Snapshot)
+
+The dated Batch 08 40/342 checkpoint, evidence and prospective workflow below
+are historical, superseded by merged Batch 09 above.
 
 Implementation baseline: `1fc04eb68d1d1149bf05863a75a37d8c9103c47b`, merged
 [PR #73](https://github.com/Siemiran/Siemiran/pull/73); main synchronization completed.
@@ -9,7 +35,7 @@ approvals per role: 40/382; current dual approvals: 40; pending roles: zero;
 missing entries: 342. Recorded machine comparison preserved the prior 35
 complete entries, metadata and hashes; ten text/kind mutations each staled both
 approvals. Products, recording-time observations and the unresolved 1BP00
-sink/sourcing issue are in [DATABASE.md](DATABASE.md#2026-11-13---batch-08-private-product-copy-checkpoint-current-state); merge identity is in
+sink/sourcing issue are in [DATABASE.md](DATABASE.md#2026-11-13---batch-08-private-product-copy-checkpoint-historical-snapshot); merge identity is in
 [CHANGELOG.md](CHANGELOG.md).
 
 Overrides remain 10 Products / 20 assignments / 7 unique strings; Batch 08 adds
@@ -526,9 +552,9 @@ the inventory before this approved deletion, not a valid current record.
 ## Current Baseline
 
 - Status: Active Development
-- Documentation checkpoint: 2026-11-13; workflow status is reported separately
+- Documentation checkpoint: 2026-11-14; workflow status is reported separately
 - Implementation base: `main` at
-  `1fc04eb68d1d1149bf05863a75a37d8c9103c47b`
+  `fca25e9134aae5aa9d42d9437cccefe37196eb39`
 - No semantic release version is asserted by this document.
 
 ## Current Stack
@@ -560,7 +586,7 @@ the inventory before this approved deletion, not a valid current record.
 | --- | --- | --- |
 | Product listing and dynamic detail pages | IMPLEMENTED | Repository-backed listing, static product paths, and not-found handling |
 | Localization foundation | IMPLEMENTED | Persian-first FA/EN routing, matching UI catalogs, one-click equivalent-page switching, locale direction, and temporarily noindexed English routes |
-| Product-copy consumer integration | IMPLEMENTED | All intended consumers use the central resolver/public DTO boundary; private drafts and both approval roles are 40/382 with 40 current dual approvals, zero pending roles, and 342 missing, while active overlays remain 0/382, activation capability is absent, and publication is disabled |
+| Product-copy consumer integration | IMPLEMENTED | All intended consumers use the central resolver/public DTO boundary; private drafts and both approval roles are 45/382 with 45 current dual approvals, zero pending roles, and 337 missing, while active overlays remain 0/382, activation capability is absent, and publication is disabled |
 | Search, URL parameters, filters, sorting, pagination | IMPLEMENTED | Category, family, series, and product-type filters; 12-item pagination |
 | Gallery and specifications | IMPLEMENTED | Product gallery/image UI and technical specification rendering |
 | SEO and structured data | IMPLEMENTED | Metadata, canonical/Open Graph/Twitter fields, Product JSON-LD, breadcrumbs, and Breadcrumb JSON-LD |
@@ -807,6 +833,20 @@ each milestone was recorded; they are not the current connection state.
   and the Product collection total is 308.
 
 ## Validation at the Documentation Checkpoint
+
+- **PASS (REUSED)**: recorded Batch 09 validator, scoped lint and build including
+  TypeScript each exited 0 at reviewed head
+  `6ab823a9588c162fd4dd505bab1a21cdf2fb9a6a`. Reviewed/squash tree
+  `ee75437291dada3c677e2815dcc37ae42381c8a6` is identical. Application,
+  dependency and build-configuration content is unchanged by this Markdown-only
+  task; no application checks, public-resolution checks, historical hash audits
+  or manufacturer research are newly run. Recorded ten text/kind cases each
+  staled both approvals; this is reused implementation evidence.
+- Recorded Batch 09 implementation CI: **NOT RUN**; zero checks/statuses/workflows
+  and combined pending, not passed CI. Guarded squash and main synchronization
+  completed. Dedicated completed-copy inspection remains pending.
+
+### Historical Validation — Batch 08
 
 - **PASS (REUSED)**: recorded Batch 08 validator, scoped lint and build including
   TypeScript each exited 0 at reviewed head

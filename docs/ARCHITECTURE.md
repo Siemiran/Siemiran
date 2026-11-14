@@ -1,6 +1,6 @@
 # Siemiran — Current Architecture
 
-Implementation base: `main` at `1fc04eb68d1d1149bf05863a75a37d8c9103c47b`
+Implementation base: `main` at `fca25e9134aae5aa9d42d9437cccefe37196eb39`
 
 Current checkpoint and resume workflow: [SESSION_HANDOFF.md](SESSION_HANDOFF.md).
 
@@ -200,23 +200,33 @@ at `1fc04eb68d1d1149bf05863a75a37d8c9103c47b`; main synchronization completed. I
 five SM322 entries approve complete titles as identifiers, digital-output type
 and counts 8/32/64/64/16 only. Recorded preservation and mutation checks passed;
 Product/evidence details and the unresolved 1BP00 issue are in
-[DATABASE.md](DATABASE.md#2026-11-13---batch-08-private-product-copy-checkpoint-current-state).
+[DATABASE.md](DATABASE.md#2026-11-13---batch-08-private-product-copy-checkpoint-historical-snapshot).
 
-The separate private Product-copy registry now contains 40/382 drafts,
-with linguistic approvals at 40/382, technical approvals at 40/382, and 40
+[PR #75](https://github.com/Siemiran/Siemiran/pull/75) completed private Batch 09
+at `fca25e9134aae5aa9d42d9437cccefe37196eb39`; guarded squash and main
+synchronization completed. Five SM322 entries approve complete title identifiers,
+digital-output type and counts 4/4/8/8/8 only. Recorded implementation checks
+preserved the prior 40 complete entries and staled both approvals in each of ten
+text/kind cases. Product evidence and Ex/Diagnostics/1CF00/RC limits are in
+[DATABASE.md](DATABASE.md#2026-11-14---batch-09-private-product-copy-checkpoint-current-state).
+
+The separate private Product-copy registry now contains 45/382 drafts,
+with linguistic approvals at 45/382, technical approvals at 45/382, and 45
 current dual approvals; pending roles are zero. Complete coverage is missing for
-342 Products. The technical-token overrides cover 10 Products, 20 assignments,
+337 Products. The technical-token overrides cover 10 Products, 20 assignments,
 and 7 unique
 strings, while the global allowlist remains empty. Publication remains globally
 disabled, activation is invalid, no activation capability exists, and active
-coverage remains 0/382. Batch 08 adds zero overrides. Approvals from Batches 01–08 do not authorize
+coverage remains 0/382; activation-validation `overlayCount` is 45. Batch 09 adds
+zero overrides. Approvals from Batches 01–09 do not authorize
 publication or partial activation; activation and publication remain blocked
 until all 382/382 Products have current dual approvals and separate
 authorization is given. Earlier Batch 04 drafting-blocker and pending PR #64
-review statements are historical and superseded. Dated Batch 01–07 checkpoints
-retain 5/10/15/20/25/30/35 entries and 377/372/367/362/357/352/347 missing Products respectively.
+review statements are historical and superseded. Dated Batch 01–08 checkpoints
+retain 5/10/15/20/25/30/35/40 entries and
+377/372/367/362/357/352/347/342 missing Products respectively.
 Public FA/EN Product copy remains canonical English/LTR.
-Batch 09 readiness/scope work is unapproved and unstarted. Admin Panel and
+Batch 10 readiness/scope work is unapproved and unstarted. Admin Panel and
 Automation remain gated.
 
 The dedicated local visual and functional website inspection with the maintainer

@@ -1,9 +1,73 @@
 # Siemiran — Product Database
 
 Repository source of truth: `main` at
-`1fc04eb68d1d1149bf05863a75a37d8c9103c47b`.
+`fca25e9134aae5aa9d42d9437cccefe37196eb39`.
 
-## 2026-11-13 - Batch 08 Private Product-copy Checkpoint (Current State)
+## 2026-11-14 - Batch 09 Private Product-copy Checkpoint (Current State)
+
+[PR #75](https://github.com/Siemiran/Siemiran/pull/75) merged at
+`2026-11-14T18:38:22Z` / `2026-11-14 22:08:22` Asia/Tehran as
+`fca25e9134aae5aa9d42d9437cccefe37196eb39`. Guarded squash and main
+synchronization completed; merge identities and scope are in
+[CHANGELOG.md](CHANGELOG.md#2026-11-14---pr-75-complete-batch-09-private-drafts-and-dual-approvals).
+Approved `ai-assisted` copy covers complete canonical titles as identifiers,
+digital-output module type and output count only:
+
+| MLFB | Complete canonical title | Outputs | Evidence / section / printed pages |
+| --- | --- | --- | --- |
+| `6ES7322-5RD00-0AB0` | SIMATIC S7-300 SM 322 4 DO 15 V / 20 mA Ex | 4 | E1 / 2.4.1 / 77–78 |
+| `6ES7322-5SD00-0AB0` | SIMATIC S7-300 SM 322 4 DO 24 V DC / 10 mA Ex | 4 | E1 / 2.3.1 / 66–69 |
+| `6ES7322-8BF00-0AB0` | SIMATIC S7-300 SM 322 8 DO 24 V DC Diagnostics | 8 | E2 / 3.29 / 151 |
+| `6ES7322-1CF00-0AA0` | SIMATIC S7-300 SM 322 8 DO 48/125 V DC | 8 | E2 / 3.30 / 158–159 |
+| `6ES7322-5HF00-0AB0` | SIMATIC S7-300 SM 322 8 DO Relay 230 V AC 5 A RC | 8 | E2 / 3.35 / 176 and 180 |
+
+Ten distinct linguistic/technical records use reviewer `Siemiran` and unchanged
+production content hashes. Actual UTC recording observations were linguistic
+`2026-11-14T18:23:04Z` and technical `2026-11-14T18:23:11Z`; these are **not PM
+review timestamps**. Recorded implementation checks preserved the previous 40
+complete entries, metadata and hashes; ten independent text/kind mutation cases
+each staled both approvals. These results are reused, not new documentation-task
+approval or hash audits.
+
+- **E1:** [Siemens S7-300, ET 200M Ex I/O Modules, 04/2022, A5E00172008-AP](https://cache.industry.siemens.com/dl/files/709/1096709/att_885614/v2/s7300_et200m_ex_io_modules_manual_en_en-US.pdf?download=true).
+- **E2:** [Siemens S7-300 Module Data, 05/2022, A5E00105505-AK](https://cache.industry.siemens.com/dl/files/629/8859629/att_55794/v1/s7300_module_data_manual_en-US_en-US.pdf).
+
+Evidence was parsed text accessed during readiness and reused for approvals.
+References above are printed pages, not assumed PDF viewer indices. Visual
+inspection and direct-origin HTTP status were **NOT OBSERVED**. This task
+performs no fresh manufacturer retrieval or lifecycle verification and makes no
+new HTTP 403 observation.
+
+Ex remains within supported complete identifiers, with no independent
+installation, certification or hazardous-area suitability claim. Diagnostics adds
+no independent performance claim. For 1CF00, the manual describes a **48–125 V DC
+range**; the exact canonical title retains **48/125 V DC** as an identifier, with
+no canonical correction or standalone voltage assertion. For 5HF00, **RC
+protection requires a jumper**; approval adds no unconditional RC protection
+claim. No standalone electrical, lifecycle, availability or compatibility claims
+are approved. Batch 08's [1BP00 sink/sourcing discrepancy](#2026-11-13---batch-08-private-product-copy-checkpoint-historical-snapshot)
+remains unresolved and unverified. Existing 5GH00, 7TH00, 7BH01, 7BH00 and 1FF10
+qualifications remain unchanged; durable limits are in
+[SESSION_HANDOFF.md](SESSION_HANDOFF.md#outstanding-work-and-evidence-limits).
+
+Current totals: 382 Products (186 S7-1200 / 196 S7-300); 45/382 private drafts
+and current approvals per role; 45 current dual approvals; zero pending roles;
+337 missing entries. Overrides remain 10 Products / 20 assignments / 7 unique
+strings, global allowlist empty and zero Batch 09 overrides. Exactly eleven
+lifecycle omissions and the separate 185 Siemens-official verified / 11 explicitly
+unverified S7-300 provenance classification remain unchanged.
+
+Activation-validation `overlayCount` is 45; active published overlays remain
+0/382. Publication is disabled, capability absent and public FA/EN copy remains
+canonical English/LTR. Full 382/382 current dual approvals plus separate launch
+authorization remain required. Batch 10 is unapproved and unstarted; Admin Panel
+and Automation remain gated. Dedicated completed-Persian-copy website inspection
+remains pending; a preview or unreported observation is not inspection PASS.
+
+## 2026-11-13 - Batch 08 Private Product-copy Checkpoint (Historical Snapshot)
+
+The dated Batch 08 40/342 checkpoint, evidence and prospective workflow below
+are historical, superseded by merged Batch 09 above.
 
 [PR #73](https://github.com/Siemiran/Siemiran/pull/73) merged at
 `2026-11-13T17:31:44Z` / `2026-11-13 21:01:44` Asia/Tehran. Its guarded

@@ -1,6 +1,6 @@
 # Siemiran — Session Handoff
 
-Checkpoint: **2026-11-13 (Asia/Tehran)**. Implementation: private Batch 08
+Checkpoint: **2026-11-14 (Asia/Tehran)**. Implementation: private Batch 09
 merged and local main synchronized. Documentation workflow status belongs in
 the task report and PR, rather than this durable implementation checkpoint.
 
@@ -19,17 +19,17 @@ then merged PR/review evidence, then current repository summaries. Dated older
 snapshots preserve history. Maintainer instructions define authorization; a
 historical next-step statement does not authorize new work.
 
-Merged implementation baseline: `1fc04eb68d1d1149bf05863a75a37d8c9103c47b`.
-[PR #73](https://github.com/Siemiran/Siemiran/pull/73),
-`feat: add Batch 08 Persian product copy`, merged at `2026-11-13T17:31:44Z`
-(Asia/Tehran: `2026-11-13 21:01:44`). Sole parent:
-`7387413e5cb6a411562c37619dded82684187384`. Reviewed feature head:
-`65572825232a1d9d4b2b9f440b1619f2aeada275`; draft:
-`58ecfa94d0e9565fd23967196f358c0f8cb7eccc`; reviewed/squash tree:
-`775a12a26ff6c77fc0c219094df4c0a9cbe03589`. Implementation scope: registry
-+173/-0, verifier +229/-11; two files +402/-11. Guarded squash and main-only
+Merged implementation baseline: `fca25e9134aae5aa9d42d9437cccefe37196eb39`.
+[PR #75](https://github.com/Siemiran/Siemiran/pull/75),
+`feat: add Batch 09 Persian product copy`, merged at `2026-11-14T18:38:22Z`
+(Asia/Tehran: `2026-11-14 22:08:22`). Sole parent:
+`7af11af9376a0b12146ce37615f95d056f2e9f85`. Reviewed feature head:
+`6ab823a9588c162fd4dd505bab1a21cdf2fb9a6a`; draft:
+`cb9b8f629591d0f32f4a2ebf46da720c50f13305`; reviewed/squash tree:
+`ee75437291dada3c677e2815dcc37ae42381c8a6`. Implementation scope: registry
++180/-0, verifier +247/-13; two files +427/-13. Guarded squash and main-only
 fetch/switch/fast-forward synchronization completed. At that checkpoint
-`feat/fa-product-copy-batch-08` remained locally/cached/live at the reviewed
+`feat/fa-product-copy-batch-09` remained locally/cached/live at the reviewed
 head. Recheck actual refs and index/worktree on resume.
 
 ## Collaboration and resume policy
@@ -67,35 +67,37 @@ Follow [AGENTS.md](../AGENTS.md): Feature First, repository access, one canonica
 
 | Current measure | State |
 | --- | --- |
-| Private drafts / linguistic approvals / technical approvals | 40/382 each |
-| Current dual approvals / pending roles / missing private entries | 40 / zero / 342 |
+| Private drafts / linguistic approvals / technical approvals | 45/382 each |
+| Current dual approvals / pending roles / missing private entries | 45 / zero / 337 |
+| Activation-validation overlayCount | 45 |
 | Active overlays / activation capability / publication | 0/382 / absent / disabled |
 | Public FA/EN Product copy | Canonical English/LTR |
 | Overrides | 10 Products / 20 assignments / 7 unique strings |
-| Batch 08 added overrides / global allowlist | Zero / empty |
+| Batch 09 added overrides / global allowlist | Zero / empty |
 | Canonical lifecycle omissions | Exactly eleven |
 | S7-300 lifecycle provenance | 185 Siemens-official verified / 11 explicitly unverified |
 
-Batches 01-08 are complete **privately**. Batch 08's five `ai-assisted` entries
+Batches 01-09 are complete **privately**. Batch 09's five `ai-assisted` entries
 approve complete titles as identifiers, digital-output type and counts
-8/32/64/64/16 only. Ten distinct `Siemiran` role records bind unchanged hashes.
-Observed UTC recording times: linguistic `2026-11-13T17:07:03Z`; technical
-`2026-11-13T17:07:54Z`. These are recording-time observations, not claimed PM
-review timestamps. Recorded machine comparison preserved the previous 35 complete
+4/4/8/8/8 only. Ten distinct `Siemiran` role records bind unchanged hashes.
+Observed UTC recording times: linguistic `2026-11-14T18:23:04Z`; technical
+`2026-11-14T18:23:11Z`. These are recording-time observations, not claimed PM
+review timestamps. Recorded implementation comparison preserved the previous 40 complete
 entries, metadata and hashes; ten independent text/kind cases each staled both
-approvals. Product/evidence details are in [DATABASE.md](DATABASE.md#2026-11-13---batch-08-private-product-copy-checkpoint-current-state).
-All 764 public FA/EN resolutions remain canonical English/LTR. Lifecycle omission debt is separate from missing
+approvals. These are reused results, not new documentation-task audits.
+Product/evidence details are in [DATABASE.md](DATABASE.md#2026-11-14---batch-09-private-product-copy-checkpoint-current-state).
+Recorded public FA/EN resolution checks remain canonical English/LTR. Lifecycle omission debt is separate from missing
 Persian-copy coverage. Activation requires the complete 382/382 current
 content-hash-bound dual-approval gate **and separate authorization**; partial
 activation is prohibited. Private drafts authorize neither activation nor publication.
 
 ## Outstanding work and evidence limits
 
-1. Batch 09 readiness/scope work remains **unapproved and unstarted**. A later
+1. Batch 10 readiness/scope work remains **unapproved and unstarted**. A later
    read-only readiness audit and independent scope/token review require separate
    authorization; do not draft copy or change policy/approvals as part of this
    documentation task.
-2. Complete the remaining 342 private drafts and both review roles through later
+2. Complete the remaining 337 private drafts and both review roles through later
    separately authorized batches. Public activation and bilingual SEO remain
    separate future tasks; English indexing, hreflang, and localized sitemap work
    remain deferred.
@@ -151,7 +153,21 @@ separately scoped canonical-data review is required. Do not silently correct it
 or turn title/token authorization into verification. 1BP50's `Sinking` remains
 within its supported complete title only. Batch 08 evidence reuses parsed Module
 Data text; visual PDF inspection was **NOT OBSERVED**, with no fresh retrieval or
-lifecycle verification. See [DATABASE.md](DATABASE.md#2026-11-13---batch-08-private-product-copy-checkpoint-current-state).
+lifecycle verification. See [DATABASE.md](DATABASE.md#2026-11-13---batch-08-private-product-copy-checkpoint-historical-snapshot).
+
+Batch 09 reuses readiness-accessed parsed Siemens evidence: Ex I/O Modules,
+04/2022, A5E00172008-AP, and Module Data, 05/2022, A5E00105505-AK. Detailed
+exact-product sections and printed pages are in
+[DATABASE.md](DATABASE.md#2026-11-14---batch-09-private-product-copy-checkpoint-current-state).
+Visual inspection and direct-origin HTTP status were **NOT OBSERVED**; no fresh
+manufacturer retrieval or lifecycle verification is claimed. Ex remains within
+supported complete identifiers, without independent installation, certification
+or hazardous-area suitability claims. Diagnostics adds no performance claim.
+1CF00's manual describes a **48–125 V DC range**, while its canonical title
+retains **48/125 V DC** as an identifier; no correction or standalone voltage
+assertion is approved. **5HF00 RC protection requires a jumper**; no unconditional
+RC protection claim is approved. The unresolved Batch 08 1BP00 issue above and
+all earlier evidence qualifications remain unchanged.
 
 Other deferred work: inquiry delivery/persistence, broader automated tests/CI/CD,
 verified download/relation population, and owner-selected catalog expansion. See
@@ -161,6 +177,30 @@ verified download/relation population, and owner-selected catalog expansion. See
 [CHANGELOG.md](CHANGELOG.md) for details and dated history.
 
 ## Validation applicability
+
+- **PASS (REUSED)**: recorded Batch 09 validator, scoped lint and build including
+  TypeScript each exited 0 at reviewed head
+  `6ab823a9588c162fd4dd505bab1a21cdf2fb9a6a`. Reviewed/squash tree
+  `ee75437291dada3c677e2815dcc37ae42381c8a6` is identical. Application,
+  dependency and build-configuration content is unchanged by this Markdown-only
+  task; no validator/lint/build/standalone TypeScript, public-resolution checks,
+  historical hash audits or manufacturer research are newly run. Recorded ten
+  text/kind cases each staled both approvals; previous 40 complete entries,
+  metadata and hashes were preserved by recorded implementation comparison.
+- Recorded Batch 09 implementation CI: **NOT RUN**; zero checks/statuses/workflows
+  and combined pending, not passed CI. Guarded squash and main synchronization
+  completed; dedicated completed-copy inspection remains pending.
+- Current coverage: 45 drafts/current approvals per role, 45 dual approvals,
+  zero pending roles and 337 missing entries. Activation-validation `overlayCount`
+  is 45; active overlays remain zero, capability absent and publication disabled.
+  Fresh documentation checks belong in the task report and PR.
+
+### Historical Batch 08 checkpoint and validation
+
+The dated Batch 08 40/342 checkpoint below is historical, superseded by Batch 09.
+Its merged implementation was `1fc04eb68d1d1149bf05863a75a37d8c9103c47b`;
+Product/review evidence remains in
+[DATABASE.md](DATABASE.md#2026-11-13---batch-08-private-product-copy-checkpoint-historical-snapshot).
 
 - **PASS (REUSED)**: recorded Batch 08 validator, scoped lint and build including
   TypeScript each exited 0 at reviewed head
@@ -275,7 +315,7 @@ counts and evidence; they are not current coverage or new task executions.
 
 - Record branch, exact HEAD, sole parent/base, index/worktree clean or dirty state,
   and live/local `main` refs. The durable implementation baseline is
-  `1fc04eb68d1d1149bf05863a75a37d8c9103c47b`; task-specific workflow status and
+  `fca25e9134aae5aa9d42d9437cccefe37196eb39`; task-specific workflow status and
   commit/PR identities belong in the task report rather than this file.
 - Identify existing task branches, patches, and commits before starting; preserve
   identifiable partial work and finish only missing authorized work. If refs or
@@ -286,6 +326,6 @@ counts and evidence; they are not current coverage or new task executions.
 - Record validation commands, exit codes, NEW versus REUSED status, exact checked
   content, and evidence limitations. Check Markdown links/anchors, whitespace
   and unchanged outside content; report actual results and final clean state.
-- Batch 09 readiness/scope remains unapproved and unstarted. Overlay activation,
+- Batch 10 readiness/scope remains unapproved and unstarted. Overlay activation,
   publication, English indexing and completed-copy website inspection remain
   separately authorized future work.
