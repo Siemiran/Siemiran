@@ -3,7 +3,43 @@
 This file records completed repository changes. The newest entry records the
 current implementation baseline; older dated entries are historical snapshots.
 
-## 2026-11-13 - PR #73: Complete Batch 08 Private Drafts and Dual Approvals
+## 2026-11-14 - PR #75: Complete Batch 09 Private Drafts and Dual Approvals
+
+- [PR #75](https://github.com/Siemiran/Siemiran/pull/75),
+  `feat: add Batch 09 Persian product copy`, merged at `2026-11-14T18:38:22Z`
+  / `2026-11-14 22:08:22` Asia/Tehran as `fca25e9134aae5aa9d42d9437cccefe37196eb39`.
+  Sole parent: `7af11af9376a0b12146ce37615f95d056f2e9f85`; reviewed head:
+  `6ab823a9588c162fd4dd505bab1a21cdf2fb9a6a`; draft:
+  `cb9b8f629591d0f32f4a2ebf46da720c50f13305`. Reviewed/squash tree:
+  `ee75437291dada3c677e2815dcc37ae42381c8a6`. Registry +180/-0,
+  verifier +247/-13; cumulative two-file scope +427/-13. Guarded squash and
+  main synchronization completed; feature refs were preserved at the reviewed head.
+- Five private `ai-assisted` SM322 entries approve complete title identifiers,
+  digital-output type and counts 4/4/8/8/8 only. Ten distinct `Siemiran` role
+  records bind unchanged hashes; recorded machine comparison preserved the prior
+  40 complete entries/metadata/hashes, and ten text/kind cases each staled both
+  approvals. Product evidence, recording-time observations and Ex/Diagnostics/
+  1CF00/RC qualifications are in
+  [DATABASE.md](DATABASE.md#2026-11-14---batch-09-private-product-copy-checkpoint-current-state).
+- Catalog: 382 Products (186 S7-1200 / 196 S7-300); 45 drafts/current approvals
+  per role, 45 dual approvals, zero pending roles, 337 missing entries. Overrides
+  remain 10/20/7, global allowlist empty, zero Batch 09 overrides, eleven lifecycle
+  omissions and separate 185/11 provenance classification. Activation-validation
+  `overlayCount` is 45; active overlays are zero, capability absent and publication
+  disabled. Public FA/EN copy stays canonical English/LTR; full 382/382 current
+  dual approvals and separate launch authorization remain required.
+- **PASS (REUSED):** recorded Batch 09 validator, scoped lint and build including
+  TypeScript, each exit 0, through exact reviewed/squash tree equality. No new
+  application checks or manufacturer/lifecycle research. Recorded CI: **NOT RUN**
+  (zero checks/statuses/workflows, combined pending), not passed CI. Visual
+  inspection and direct-origin HTTP status: **NOT OBSERVED**. The Batch 08 1BP00
+  discrepancy remains unresolved. Batch 10 is unapproved/unstarted; Admin Panel
+  and Automation stay gated; completed-copy inspection remains pending.
+
+## 2026-11-13 - PR #73: Complete Batch 08 Private Drafts and Dual Approvals (Historical Snapshot)
+
+The dated Batch 08 40/342 checkpoint, evidence and prospective workflow below
+are historical, superseded by merged Batch 09 above.
 
 - [PR #73](https://github.com/Siemiran/Siemiran/pull/73),
   `feat: add Batch 08 Persian product copy`, merged at `2026-11-13T17:31:44Z`
@@ -18,7 +54,7 @@ current implementation baseline; older dated entries are historical snapshots.
   identifiers, digital-output type and counts 8/32/64/64/16. Detailed Products,
   `Siemiran` recording-time observations, reused parsed-text evidence and the
   unresolved 1BP00 sink/sourcing discrepancy are in
-  [DATABASE.md](DATABASE.md#2026-11-13---batch-08-private-product-copy-checkpoint-current-state). Ten distinct role records
+  [DATABASE.md](DATABASE.md#2026-11-13---batch-08-private-product-copy-checkpoint-historical-snapshot). Ten distinct role records
   bind unchanged hashes; the prior 35 complete entries/metadata/hashes were
   machine-preserved, and ten independent text/kind cases each staled both approvals.
 - Catalog: 382 Products (186 S7-1200 / 196 S7-300); 40 drafts/current approvals
