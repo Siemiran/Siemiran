@@ -1,6 +1,6 @@
 # Siemiran — Roadmap
 
-Baseline: `main` at `1fc04eb68d1d1149bf05863a75a37d8c9103c47b`
+Baseline: `main` at `fca25e9134aae5aa9d42d9437cccefe37196eb39`
 
 This roadmap distinguishes the completed repository baseline from future
 priorities. Ordering expresses current priority, not a finalized implementation
