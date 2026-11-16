@@ -3,7 +3,39 @@
 This file records completed repository changes. The newest entry records the
 current implementation baseline; older dated entries are historical snapshots.
 
-## 2026-11-16 - PR #77: Complete Batch 10 Private Drafts and Dual Approvals
+## 2026-11-16 - PR #79: Complete Batch 11 Private Drafts and Dual Approvals
+
+- [PR #79](https://github.com/Siemiran/Siemiran/pull/79),
+  `feat: add Batch 11 Persian product copy`, merged at `2026-11-16T19:10:14Z`
+  / `2026-11-16 22:40:14` Asia/Tehran as `e1755b027ebf1f869e20b2cb05e45b5e76d61350`.
+  Sole parent: `0909b7bfb5960f4e1b23653ffd5f893ead734114`; reviewed head:
+  `ffc46c2fadb8fa9fa3bfb4b1c849ff079509b46d`; draft:
+  `e2fbdd84911764be9b25dc3f7ddf3c2c51b2c900`. Reviewed/squash tree:
+  `c7cbe90a28b947f0347c201f7f068d7ee0f9599d`. Registry +170/-0,
+  verifier +264/-10; cumulative two-file scope +434/-10. Guarded squash and
+  main synchronization completed; feature refs remained at the reviewed head.
+- Five private `ai-assisted` entries approve only exact MLFB identity and
+  analog-input module type, with identical three-segment short/long content and
+  ten distinct `Siemiran` role records. Full titles, counts and operating claims
+  remain outside approval. Product evidence, qualifications, recording observations
+  and reused preservation/mutation results are in
+  [DATABASE.md](DATABASE.md#2026-11-16---batch-11-private-product-copy-checkpoint-current-state).
+- Current checkpoint: 55/382 drafts/current approvals per role, 55 dual approvals,
+  zero pending roles, 327 missing entries; activation-validation `overlayCount`
+  55, active overlays zero, capability absent and publication disabled. Full
+  382/382 current dual approvals and separate launch authorization remain required.
+  Canonical data, overrides and lifecycle omissions remain unchanged.
+- **PASS (REUSED):** Batch 11 validator, focused lint and build including TypeScript,
+  each exit 0, through exact reviewed/squash tree equality and unchanged application
+  content. Recorded CI was absent (zero checks/statuses, combined pending), not
+  passed CI. Visual inspection and direct-origin HTTP status: **NOT OBSERVED**.
+  No fresh retrieval or lifecycle verification. Batch 12 is unapproved/unstarted;
+  Admin Panel and Automation remain gated; completed-copy inspection remains pending.
+
+## 2026-11-16 - PR #77: Complete Batch 10 Private Drafts and Dual Approvals (Historical Snapshot)
+
+The dated Batch 10 50/332 checkpoint, evidence and prospective workflow below
+are historical, superseded by merged Batch 11 above.
 
 - [PR #77](https://github.com/Siemiran/Siemiran/pull/77),
   `feat: add Batch 10 Persian product copy`, merged at `2026-11-16T17:55:14Z`
@@ -18,7 +50,7 @@ current implementation baseline; older dated entries are historical snapshots.
   SM327 covers fixed inputs and individually configurable channels; 7KB02 covers
   MLFB/type only; the 1KF01 SDK table authorizes no compatibility claim. Detailed
   Product scopes, reused evidence and recording-time observations are in
-  [DATABASE.md](DATABASE.md#2026-11-16---batch-10-private-product-copy-checkpoint-current-state).
+  [DATABASE.md](DATABASE.md#2026-11-16---batch-10-private-product-copy-checkpoint-historical-snapshot).
 - Current checkpoint: 50/382 drafts/current approvals per role, 50 dual approvals,
   zero pending roles, 332 missing entries; active overlays zero, capability absent,
   publication disabled. Full 382/382 current dual approvals and separate launch
