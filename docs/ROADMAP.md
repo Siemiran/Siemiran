@@ -1,6 +1,6 @@
 # Siemiran — Roadmap
 
-Baseline: `main` at `fca25e9134aae5aa9d42d9437cccefe37196eb39`
+Baseline: `main` at `8b88ef4eac08d7cbb8e49b315d91f5f2b49ebaa9`
 
 This roadmap distinguishes the completed repository baseline from future
 priorities. Ordering expresses current priority, not a finalized implementation
@@ -125,18 +125,24 @@ design or semantic release schedule.
   synchronization completed. Five SM322 entries approve complete title identifiers,
   digital-output type and counts 4/4/8/8/8 only. Product evidence, recording-time
   observations and Ex/Diagnostics/1CF00/RC limits are in
-  [DATABASE.md](DATABASE.md#2026-11-14---batch-09-private-product-copy-checkpoint-current-state).
+  [DATABASE.md](DATABASE.md#2026-11-14---batch-09-private-product-copy-checkpoint-historical-snapshot).
   Batch 08's 40/342 checkpoint remains historical; its 1BP00 discrepancy remains
   unresolved and unverified.
+- [PR #77](https://github.com/Siemiran/Siemiran/pull/77) completed private Batch 10
+  at `8b88ef4eac08d7cbb8e49b315d91f5f2b49ebaa9`; guarded squash and main
+  synchronization completed. Precise Product scopes and reused evidence are in
+  [DATABASE.md](DATABASE.md#2026-11-16---batch-10-private-product-copy-checkpoint-current-state); durable SM327,
+  7KB02 and SDK qualifications are in [SESSION_HANDOFF.md](SESSION_HANDOFF.md).
+  Batch 09's 45/337 checkpoint remains historical.
 - Private drafts, linguistic approvals, and technical approvals are each
-  45/382, with 45 current dual approvals, zero pending roles and 337 Products
+  50/382, with 50 current dual approvals, zero pending roles and 332 Products
   missing private copy entries.
 - Technical-token overrides cover 10 Products, 20 assignments, and 7 unique
-  strings; the global allowlist remains empty. Batches 03–09 added zero
+  strings; the global allowlist remains empty. Batches 03–10 added zero
   overrides.
 - Active Persian Product-copy coverage remains 0/382, no activation capability
   exists, publication is disabled, and public FA/EN Product prose remains
-  canonical English/LTR. Activation-validation `overlayCount` is 45.
+  canonical English/LTR. Activation-validation `overlayCount` is 50.
   Batch approvals do not authorize publication or
   partial activation.
   Activation and publication remain blocked until all 382/382 Products have
@@ -145,14 +151,14 @@ design or semantic release schedule.
 
 ## Next Resume Workflow
 
-1. Batch 10 readiness and scope require separate authorization; they remain
+1. Batch 11 readiness and scope require separate authorization; they remain
    unapproved and unstarted in this workflow.
 2. Preserve closed-batch entries with machine comparison, review only affected
    files/evidence, and reuse successful validation while relevant content is unchanged.
 3. Keep Admin Panel and Automation gated. Dedicated completed-copy inspection,
    the full 382/382 dual-approval gate and separately authorized launch remain pending.
 
-The merged Batch 09 implementation is complete. Documentation publication/review
+The merged Batch 10 implementation is complete. Documentation publication/review
 status belongs in its task report and PR. Durable checkpoint and resume policy are in
 [SESSION_HANDOFF.md](SESSION_HANDOFF.md).
 
@@ -172,9 +178,9 @@ status belongs in its task report and PR. Durable checkpoint and resume policy a
 
 Throughout drafting and review, canonical technical tokens remain untranslated:
 MLFBs, Product IDs, slugs, part numbers, official model/family names, protocols,
-standards, values, units, and URLs. Batches 01–09 are complete privately;
+standards, values, units, and URLs. Batches 01–10 are complete privately;
 dated earlier checkpoints retain their historical counts. Future drafting requires
-separately authorized Batch 10 readiness and independent scope/token review.
+separately authorized Batch 11 readiness and independent scope/token review.
 
 After Persian Product-copy completion, perform a dedicated local visual and
 functional website inspection with the maintainer: FA/EN switching, Persian
@@ -229,8 +235,8 @@ nor publication.
 - Keep CMS, API, database, and cache evaluation as future architecture
   decisions.
 
-Persian Product-copy drafting and review are complete privately for 45/382
-Products but not for the remaining 337. The 382/382 current dual-approval gate,
+Persian Product-copy drafting and review are complete privately for 50/382
+Products but not for the remaining 332. The 382/382 current dual-approval gate,
 separate activation authorization, atomic publication, maintainer website inspection,
 bilingual SEO activation, inquiry delivery, CI/CD, download population, and
 another Siemens-series expansion are not complete. Consumer integration and
