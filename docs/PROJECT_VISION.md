@@ -34,22 +34,21 @@ Principles:
 - The eleven unverified S7-300 records continue to omit public lifecycle in both
   languages.
 
-Current implementation checkpoint: `fca25e9134aae5aa9d42d9437cccefe37196eb39`
-(merged PR #75, Batch 09; local main synchronized). Batches 01–09 are complete
-privately: 45/382 drafts, 45/382 current linguistic approvals, 45/382 current
-technical approvals, and 45 current dual approvals, with zero pending roles and
-337 Products missing private copy entries. Catalog coverage remains 382 Products
-(186 S7-1200 / 196 S7-300). Active overlays remain 0/382,
-activation capability is absent, publication is disabled,
-and public FA/EN Product copy remains canonical English/LTR. Activation-validation
-`overlayCount` is 45; the full 382/382 current dual-approval and separate launch
-gates remain required. Batch 10 readiness
-and scope work is unapproved and unstarted; Admin Panel and Automation remain
-gated. Batch 09's identifier/type/count limits and Ex/Diagnostics/1CF00/RC
-qualifications are in [DATABASE.md](DATABASE.md#2026-11-14---batch-09-private-product-copy-checkpoint-current-state).
-The historical Batch 08 40/342 checkpoint and unresolved 1BP00 issue remain there.
-Durable resume policy is in
-[SESSION_HANDOFF.md](SESSION_HANDOFF.md).
+Current implementation checkpoint: `8b88ef4eac08d7cbb8e49b315d91f5f2b49ebaa9`
+(merged PR #77, Batch 10; local main synchronized). Batches 01–10 are complete
+privately: 50/382 drafts, 50/382 current linguistic approvals, 50/382 current
+technical approvals, and 50 current dual approvals, with zero pending roles and
+332 Products missing private copy entries. Catalog coverage remains 382 Products
+(186 S7-1200 / 196 S7-300). Active overlays remain 0/382, activation capability is
+absent, publication is disabled, and public FA/EN Product copy remains canonical
+English/LTR. Activation-validation `overlayCount` is 50; full 382/382 current
+dual approvals and separate launch authorization remain required. Batch 11
+readiness/scope work is unapproved and unstarted; Admin Panel and Automation
+remain gated. Product-specific Batch 10 scopes and evidence limits are in
+[DATABASE.md](DATABASE.md#2026-11-16---batch-10-private-product-copy-checkpoint-current-state); durable qualifications and
+resume policy are in [SESSION_HANDOFF.md](SESSION_HANDOFF.md). The Batch 09
+45/337 and Batch 08 40/342 checkpoints remain historical; earlier Ex/RC/1CF00
+limits and the unresolved 1BP00 discrepancy remain unchanged.
 
 After Persian Product-copy completion, the dedicated local visual and functional
 website inspection with the maintainer remains pending: FA/EN switching,

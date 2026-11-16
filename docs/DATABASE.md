@@ -1,15 +1,86 @@
 # Siemiran — Product Database
 
 Repository source of truth: `main` at
-`fca25e9134aae5aa9d42d9437cccefe37196eb39`.
+`8b88ef4eac08d7cbb8e49b315d91f5f2b49ebaa9`.
 
-## 2026-11-14 - Batch 09 Private Product-copy Checkpoint (Current State)
+## 2026-11-16 - Batch 10 Private Product-copy Checkpoint (Current State)
+
+[PR #77](https://github.com/Siemiran/Siemiran/pull/77),
+`feat: add Batch 10 Persian product copy`, merged at `2026-11-16T17:55:14Z`
+/ `2026-11-16 21:25:14` Asia/Tehran as
+`8b88ef4eac08d7cbb8e49b315d91f5f2b49ebaa9`. Guarded squash and main synchronization
+completed; exact merge identities and two-file scope are in
+[CHANGELOG.md](CHANGELOG.md#2026-11-16---pr-77-complete-batch-10-private-drafts-and-dual-approvals).
+Five private `ai-assisted` entries retain identical short and single-paragraph
+long typed content, unchanged production bindings and provenance. Approved
+technical scope is limited to:
+
+| MLFB | Approved identifier, module type and channel scope | Evidence / section / printed pages |
+| --- | --- | --- |
+| `6ES7323-1BH01-0AA0` | Complete canonical identifier `SIMATIC S7-300 SM 323 8 DI / 8 DO 24 V DC`; digital input/output module; 8 inputs and 8 outputs | E1 / 3.38 / 190–192 |
+| `6ES7323-1BL00-0AA0` | Complete canonical identifier `SIMATIC S7-300 SM 323 16 DI / 16 DO 24 V DC`; digital input/output module; 16 inputs and 16 outputs | E1 / 3.37 / 187–189 |
+| `6ES7327-1BH00-0AB0` | Complete canonical identifier `SIMATIC S7-300 SM 327 8 DI / 8 DX 24 V DC`; digital input/output module; 8 fixed digital inputs plus 8 individually configurable input/output channels | E1 / 3.39 / 193–195 |
+| `6ES7331-7KB02-0AB0` | Exact MLFB and analog-input module type only; full canonical title, Universal qualifier and input count are outside approval | E1 / 6.8.1 / 305 and 310; 6.8.2 / 313–314 |
+| `6ES7331-1KF01-0AB0` | Complete canonical identifier `SIMATIC S7-300 SM 331 8 AI 13 Bit`; analog-input module; 8 analog inputs | E2 / A.3, Table A-4 / 54 |
+
+Ten distinct linguistic/technical records use reviewer `Siemiran` and unchanged
+production content hashes. Actual UTC recording observations were linguistic
+`2026-11-16T17:32:37Z` and technical `2026-11-16T17:33:11Z`; these are **not PM
+review timestamps**. Linguistic approval covers Product-specific Persian wording,
+spacing, punctuation and typed Latin/numeric isolation, including SM327's correct
+configuration wording and 7KB02's MLFB-only identifier.
+
+Recorded implementation checks preserved the previous 45 complete entries,
+metadata and hashes, and all 50 draft contents/bindings/provenance. All 12 Batch 10
+technical segments were authorized; ten independent text/kind mutation cases each
+staled both approvals. These are reused implementation results, not new
+documentation-task approval or hash audits.
+
+- **E1:** [Siemens Module Data, 05/2022, A5E00105505-AK](https://cache.industry.siemens.com/dl/files/629/8859629/att_55794/v1/s7300_module_data_manual_en-US_en-US.pdf).
+- **E2:** [Siemens Software Development Kit for EC31, 08/2010, A5E01716340-03](https://cache.industry.siemens.com/dl/files/383/46360383/att_84101/v1/s7_mec_sdk_programming_manual_en-US_en-US.pdf).
+
+Evidence reuses readiness-accessed parsed text; references are printed pages,
+not assumed PDF viewer indices. Visual inspection and direct-origin HTTP status
+were **NOT OBSERVED**. No fresh manufacturer retrieval or lifecycle verification
+is performed here; no new HTTP 403 result is claimed.
+
+SM327's configurable channels are individually selectable as input or output;
+approval does **not** assert 8 permanently assigned outputs or infer them from
+normalized fields. For 7KB02, the manufacturer's exact **Universal** label was
+not observed; two inputs is nominal and resistance measurement uses one
+measurement channel. Neither its full canonical title nor that nominal count is
+approved Persian copy; canonical data remains unchanged. The 1KF01 SDK table
+supports the stated identifier/type/count scope and does **not** authorize
+compatibility claims. No additional standalone electrical, lifecycle,
+availability, compatibility or operating-performance claims are approved.
+
+Current totals: 382 Products (186 S7-1200 / 196 S7-300); 50/382 private drafts
+and current approvals per role; 50 current dual approvals; zero pending roles;
+332 missing entries. Overrides remain 10 Products / 20 assignments / 7 unique
+strings, global allowlist empty and zero Batch 10 overrides. Eleven lifecycle
+omissions and the separate 185 Siemens-official verified / 11 explicitly
+unverified S7-300 provenance classification remain unchanged.
+
+Activation-validation `overlayCount` is 50; active published overlays remain
+0/382. Publication is disabled, capability absent and public FA/EN copy remains
+canonical English/LTR. Full 382/382 current dual approvals plus separate launch
+authorization remain required. Batch 11 is unapproved and unstarted; Admin Panel
+and Automation remain gated. Dedicated completed-Persian-copy website inspection
+remains pending. Batch 09's Ex/RC/1CF00 limits, Batch 08's unresolved 1BP00 issue
+and earlier 5GH00, 7TH00, 7BH01, 7BH00 and 1FF10 qualifications remain unchanged;
+see the historical checkpoints below and durable limits in
+[SESSION_HANDOFF.md](SESSION_HANDOFF.md#outstanding-work-and-evidence-limits).
+
+## 2026-11-14 - Batch 09 Private Product-copy Checkpoint (Historical Snapshot)
+
+The dated Batch 09 45/337 checkpoint, evidence and prospective workflow below
+are historical, superseded by merged Batch 10 above.
 
 [PR #75](https://github.com/Siemiran/Siemiran/pull/75) merged at
 `2026-11-14T18:38:22Z` / `2026-11-14 22:08:22` Asia/Tehran as
 `fca25e9134aae5aa9d42d9437cccefe37196eb39`. Guarded squash and main
 synchronization completed; merge identities and scope are in
-[CHANGELOG.md](CHANGELOG.md#2026-11-14---pr-75-complete-batch-09-private-drafts-and-dual-approvals).
+[CHANGELOG.md](CHANGELOG.md#2026-11-14---pr-75-complete-batch-09-private-drafts-and-dual-approvals-historical-snapshot).
 Approved `ai-assisted` copy covers complete canonical titles as identifiers,
 digital-output module type and output count only:
 
