@@ -569,6 +569,53 @@ const sm322Do8RelayRc5Hf00Copy = [
   { kind: "text", value: " خروجی است." },
 ] as const satisfies ProductCopyParagraph;
 
+const sm323Di8Do8_1Bh01Copy = [
+  { kind: "text", value: "مدل " },
+  { kind: "technical", value: "SIMATIC S7-300 SM 323 8 DI / 8 DO 24 V DC" },
+  { kind: "text", value: "، ماژول ورودی و خروجی دیجیتال با " },
+  { kind: "technical", value: "8" },
+  { kind: "text", value: " ورودی و " },
+  { kind: "technical", value: "8" },
+  { kind: "text", value: " خروجی است." },
+] as const satisfies ProductCopyParagraph;
+
+const sm323Di16Do16_1Bl00Copy = [
+  { kind: "text", value: "مدل " },
+  { kind: "technical", value: "SIMATIC S7-300 SM 323 16 DI / 16 DO 24 V DC" },
+  { kind: "text", value: "، ماژول ورودی و خروجی دیجیتال با " },
+  { kind: "technical", value: "16" },
+  { kind: "text", value: " ورودی و " },
+  { kind: "technical", value: "16" },
+  { kind: "text", value: " خروجی است." },
+] as const satisfies ProductCopyParagraph;
+
+const sm327Di8Dx8_1Bh00Copy = [
+  { kind: "text", value: "مدل " },
+  { kind: "technical", value: "SIMATIC S7-300 SM 327 8 DI / 8 DX 24 V DC" },
+  { kind: "text", value: "، ماژول ورودی و خروجی دیجیتال با " },
+  { kind: "technical", value: "8" },
+  { kind: "text", value: " ورودی ثابت و " },
+  { kind: "technical", value: "8" },
+  {
+    kind: "text",
+    value: " کانال قابل پیکربندی به‌صورت ورودی یا خروجی است.",
+  },
+] as const satisfies ProductCopyParagraph;
+
+const sm331MlfbOnly7Kb02Copy = [
+  { kind: "text", value: "مدل " },
+  { kind: "technical", value: "6ES7331-7KB02-0AB0" },
+  { kind: "text", value: "، ماژول ورودی آنالوگ است." },
+] as const satisfies ProductCopyParagraph;
+
+const sm331Ai8_13Bit1Kf01Copy = [
+  { kind: "text", value: "مدل " },
+  { kind: "technical", value: "SIMATIC S7-300 SM 331 8 AI 13 Bit" },
+  { kind: "text", value: "، ماژول ورودی آنالوگ با " },
+  { kind: "technical", value: "8" },
+  { kind: "text", value: " ورودی است." },
+] as const satisfies ProductCopyParagraph;
+
 export const persianProductCopyDraftRegistry = [
   {
     productId: "siemens-s7-1200-cpu-211-1ae40",
@@ -1748,6 +1795,146 @@ export const persianProductCopyDraftRegistry = [
         "PM technical approval in the supplied Batch 09 approval request; draft commit cb9b8f629591d0f32f4a2ebf46da720c50f13305; Product siemens-s7-300-sm322-do-8-relay-230vac-5a-rc-5hf00-0ab0; MLFB 6ES7322-5HF00-0AB0. Recording time is an actual UTC observation, not the PM review timestamp. Reused readiness-reviewed parsed text of Siemens S7-300 Module Data, 05/2022, A5E00105505-AK; https://cache.industry.siemens.com/dl/files/629/8859629/att_55794/v1/s7300_module_data_manual_en-US_en-US.pdf; section 3.35, printed pp176 and 180; visual inspection and direct-origin HTTP status NOT OBSERVED; no fresh retrieval. RC protection requires a jumper; no unconditional RC protection claim is approved.",
       note:
         "6ES7322-5HF00-0AB0: PM-approved complete canonical title as an identifier, digital-output module type and 8 outputs only. No independent voltage/current, Ex certification or hazardous-area suitability, Diagnostics performance, RC protection, lifecycle, availability or compatibility claims are approved. RC protection requires a jumper; no unconditional RC protection claim is approved.",
+    },
+  },
+  {
+    productId: "siemens-s7-300-sm323-di8-do8-24vdc-0-5a-1bh01-0aa0",
+    shortDescription: sm323Di8Do8_1Bh01Copy,
+    description: [sm323Di8Do8_1Bh01Copy],
+    provenance: "ai-assisted",
+    linguisticReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-11-16T17:32:37Z",
+      reviewedContentHash:
+        "sha256:230d011bba459015aaa2a9ddfd8991a69a4cbd540cd1023c863fa99d67816c42",
+      evidenceRef:
+        "PM linguistic approval in the supplied Batch 10 approval request; draft commit e203b34b5e19bafa85efaf76cf58fbb7721e909e; Product siemens-s7-300-sm323-di8-do8-24vdc-0-5a-1bh01-0aa0; MLFB 6ES7323-1BH01-0AA0. Recording time is an actual UTC observation, not the PM review timestamp.",
+      note:
+        "6ES7323-1BH01-0AA0: PM-approved Product-specific Persian wording, spacing and punctuation; complete Latin identifier and both numeric counts retain separate typed isolation.",
+    },
+    technicalReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-11-16T17:33:11Z",
+      reviewedContentHash:
+        "sha256:230d011bba459015aaa2a9ddfd8991a69a4cbd540cd1023c863fa99d67816c42",
+      evidenceRef:
+        "PM technical approval in the supplied Batch 10 approval request; draft commit e203b34b5e19bafa85efaf76cf58fbb7721e909e; Product siemens-s7-300-sm323-di8-do8-24vdc-0-5a-1bh01-0aa0; MLFB 6ES7323-1BH01-0AA0. Recording time is an actual UTC observation, not the PM review timestamp. Reused readiness-reviewed parsed text of Siemens Module Data, 05/2022, A5E00105505-AK; https://cache.industry.siemens.com/dl/files/629/8859629/att_55794/v1/s7300_module_data_manual_en-US_en-US.pdf; section 3.38, printed pp190-192; visual inspection and direct-origin HTTP status NOT OBSERVED; no fresh retrieval.",
+      note:
+        "6ES7323-1BH01-0AA0: PM-approved complete canonical identifier, digital input/output module type, 8 inputs and 8 outputs only. No additional standalone electrical, lifecycle, availability, compatibility or operating-performance claims are approved.",
+    },
+  },
+  {
+    productId: "siemens-s7-300-sm323-di16-do16-24vdc-0-5a-1bl00-0aa0",
+    shortDescription: sm323Di16Do16_1Bl00Copy,
+    description: [sm323Di16Do16_1Bl00Copy],
+    provenance: "ai-assisted",
+    linguisticReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-11-16T17:32:37Z",
+      reviewedContentHash:
+        "sha256:7d7b40e0f621db4e6c5e85c4e8502ebf6e4fa65d3219364c88d85e87828392c6",
+      evidenceRef:
+        "PM linguistic approval in the supplied Batch 10 approval request; draft commit e203b34b5e19bafa85efaf76cf58fbb7721e909e; Product siemens-s7-300-sm323-di16-do16-24vdc-0-5a-1bl00-0aa0; MLFB 6ES7323-1BL00-0AA0. Recording time is an actual UTC observation, not the PM review timestamp.",
+      note:
+        "6ES7323-1BL00-0AA0: PM-approved Product-specific Persian wording, spacing and punctuation; complete Latin identifier and both numeric counts retain separate typed isolation.",
+    },
+    technicalReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-11-16T17:33:11Z",
+      reviewedContentHash:
+        "sha256:7d7b40e0f621db4e6c5e85c4e8502ebf6e4fa65d3219364c88d85e87828392c6",
+      evidenceRef:
+        "PM technical approval in the supplied Batch 10 approval request; draft commit e203b34b5e19bafa85efaf76cf58fbb7721e909e; Product siemens-s7-300-sm323-di16-do16-24vdc-0-5a-1bl00-0aa0; MLFB 6ES7323-1BL00-0AA0. Recording time is an actual UTC observation, not the PM review timestamp. Reused readiness-reviewed parsed text of Siemens Module Data, 05/2022, A5E00105505-AK; https://cache.industry.siemens.com/dl/files/629/8859629/att_55794/v1/s7300_module_data_manual_en-US_en-US.pdf; section 3.37, printed pp187-189; visual inspection and direct-origin HTTP status NOT OBSERVED; no fresh retrieval.",
+      note:
+        "6ES7323-1BL00-0AA0: PM-approved complete canonical identifier, digital input/output module type, 16 inputs and 16 outputs only. No additional standalone electrical, lifecycle, availability, compatibility or operating-performance claims are approved.",
+    },
+  },
+  {
+    productId: "siemens-s7-300-sm327-di8-do8-24vdc-0-5a-1bh00-0ab0",
+    shortDescription: sm327Di8Dx8_1Bh00Copy,
+    description: [sm327Di8Dx8_1Bh00Copy],
+    provenance: "ai-assisted",
+    linguisticReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-11-16T17:32:37Z",
+      reviewedContentHash:
+        "sha256:6bead8934643a3532b824141de26f3b41962713829bdb36693a9bed296ad7a0d",
+      evidenceRef:
+        "PM linguistic approval in the supplied Batch 10 approval request; draft commit e203b34b5e19bafa85efaf76cf58fbb7721e909e; Product siemens-s7-300-sm327-di8-do8-24vdc-0-5a-1bh00-0ab0; MLFB 6ES7327-1BH00-0AB0. Recording time is an actual UTC observation, not the PM review timestamp.",
+      note:
+        "6ES7327-1BH00-0AB0: PM-approved Product-specific Persian wording, spacing and punctuation; complete Latin identifier and both numeric counts retain separate typed isolation; wording correctly describes fixed inputs and channels individually configurable as input or output.",
+    },
+    technicalReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-11-16T17:33:11Z",
+      reviewedContentHash:
+        "sha256:6bead8934643a3532b824141de26f3b41962713829bdb36693a9bed296ad7a0d",
+      evidenceRef:
+        "PM technical approval in the supplied Batch 10 approval request; draft commit e203b34b5e19bafa85efaf76cf58fbb7721e909e; Product siemens-s7-300-sm327-di8-do8-24vdc-0-5a-1bh00-0ab0; MLFB 6ES7327-1BH00-0AB0. Recording time is an actual UTC observation, not the PM review timestamp. Reused readiness-reviewed parsed text of Siemens Module Data, 05/2022, A5E00105505-AK; https://cache.industry.siemens.com/dl/files/629/8859629/att_55794/v1/s7300_module_data_manual_en-US_en-US.pdf; section 3.39, printed pp193-195; visual inspection and direct-origin HTTP status NOT OBSERVED; no fresh retrieval.",
+      note:
+        "6ES7327-1BH00-0AB0: PM-approved complete canonical identifier, digital input/output module type, 8 fixed digital inputs plus 8 individually configurable input/output channels only. No approval of 8 permanently assigned outputs or inference from normalized output fields. No additional standalone electrical, lifecycle, availability, compatibility or operating-performance claims are approved.",
+    },
+  },
+  {
+    productId: "siemens-s7-300-sm331-ai2-9-12-14bit-7kb02-0ab0",
+    shortDescription: sm331MlfbOnly7Kb02Copy,
+    description: [sm331MlfbOnly7Kb02Copy],
+    provenance: "ai-assisted",
+    linguisticReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-11-16T17:32:37Z",
+      reviewedContentHash:
+        "sha256:2a3d107c79fffcb9ada9893bd8ea1be89529b774a44dccfd6755ce259ab157a4",
+      evidenceRef:
+        "PM linguistic approval in the supplied Batch 10 approval request; draft commit e203b34b5e19bafa85efaf76cf58fbb7721e909e; Product siemens-s7-300-sm331-ai2-9-12-14bit-7kb02-0ab0; MLFB 6ES7331-7KB02-0AB0. Recording time is an actual UTC observation, not the PM review timestamp.",
+      note:
+        "6ES7331-7KB02-0AB0: PM-approved Product-specific Persian wording, spacing and punctuation; the Latin identifier remains MLFB-only with typed isolation; no complete canonical title or input count is introduced.",
+    },
+    technicalReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-11-16T17:33:11Z",
+      reviewedContentHash:
+        "sha256:2a3d107c79fffcb9ada9893bd8ea1be89529b774a44dccfd6755ce259ab157a4",
+      evidenceRef:
+        "PM technical approval in the supplied Batch 10 approval request; draft commit e203b34b5e19bafa85efaf76cf58fbb7721e909e; Product siemens-s7-300-sm331-ai2-9-12-14bit-7kb02-0ab0; MLFB 6ES7331-7KB02-0AB0. Recording time is an actual UTC observation, not the PM review timestamp. Reused readiness-reviewed parsed text of Siemens Module Data, 05/2022, A5E00105505-AK; https://cache.industry.siemens.com/dl/files/629/8859629/att_55794/v1/s7300_module_data_manual_en-US_en-US.pdf; section 6.8.1, printed pp305 and 310; section 6.8.2, printed pp313-314; visual inspection and direct-origin HTTP status NOT OBSERVED; no fresh retrieval.",
+      note:
+        "6ES7331-7KB02-0AB0: PM-approved exact MLFB and analog-input module type only. No approval of the Universal qualifier, complete canonical title or input count. The manufacturer's exact Universal label was not observed; two inputs is nominal and resistance measurement uses one measurement channel. Canonical data remains unchanged. No additional standalone electrical, lifecycle, availability, compatibility or operating-performance claims are approved.",
+    },
+  },
+  {
+    productId: "siemens-s7-300-sm331-ai8-13bit-1kf01-0ab0",
+    shortDescription: sm331Ai8_13Bit1Kf01Copy,
+    description: [sm331Ai8_13Bit1Kf01Copy],
+    provenance: "ai-assisted",
+    linguisticReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-11-16T17:32:37Z",
+      reviewedContentHash:
+        "sha256:9b8015c893fda3c9a340f6d2e9e0a3539312326ff1ce1918f1623119c30109f9",
+      evidenceRef:
+        "PM linguistic approval in the supplied Batch 10 approval request; draft commit e203b34b5e19bafa85efaf76cf58fbb7721e909e; Product siemens-s7-300-sm331-ai8-13bit-1kf01-0ab0; MLFB 6ES7331-1KF01-0AB0. Recording time is an actual UTC observation, not the PM review timestamp.",
+      note:
+        "6ES7331-1KF01-0AB0: PM-approved Product-specific Persian wording, spacing and punctuation; complete Latin identifier and numeric input count retain separate typed isolation.",
+    },
+    technicalReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-11-16T17:33:11Z",
+      reviewedContentHash:
+        "sha256:9b8015c893fda3c9a340f6d2e9e0a3539312326ff1ce1918f1623119c30109f9",
+      evidenceRef:
+        "PM technical approval in the supplied Batch 10 approval request; draft commit e203b34b5e19bafa85efaf76cf58fbb7721e909e; Product siemens-s7-300-sm331-ai8-13bit-1kf01-0ab0; MLFB 6ES7331-1KF01-0AB0. Recording time is an actual UTC observation, not the PM review timestamp. Reused readiness-reviewed parsed text of Siemens Software Development Kit for EC31, 08/2010, A5E01716340-03; https://cache.industry.siemens.com/dl/files/383/46360383/att_84101/v1/s7_mec_sdk_programming_manual_en-US_en-US.pdf; section A.3, Table A-4, printed p54; visual inspection and direct-origin HTTP status NOT OBSERVED; no fresh retrieval.",
+      note:
+        "6ES7331-1KF01-0AB0: PM-approved complete canonical identifier, analog-input module type and 8 analog inputs only. The cited SDK Table A-4 does not authorize compatibility claims. No additional standalone electrical, lifecycle, availability, compatibility or operating-performance claims are approved.",
     },
   },
 ] as const satisfies readonly PersianProductCopyOverlay[];
