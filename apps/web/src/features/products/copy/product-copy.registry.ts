@@ -616,6 +616,36 @@ const sm331Ai8_13Bit1Kf01Copy = [
   { kind: "text", value: " ورودی است." },
 ] as const satisfies ProductCopyParagraph;
 
+const sm331MlfbOnly1Kf02Copy = [
+  { kind: "text", value: "مدل " },
+  { kind: "technical", value: "6ES7331-1KF02-0AB0" },
+  { kind: "text", value: "، ماژول ورودی آنالوگ است." },
+] as const satisfies ProductCopyParagraph;
+
+const sm331MlfbOnly7Kf02Copy = [
+  { kind: "text", value: "مدل " },
+  { kind: "technical", value: "6ES7331-7KF02-0AB0" },
+  { kind: "text", value: "، ماژول ورودی آنالوگ است." },
+] as const satisfies ProductCopyParagraph;
+
+const sm331MlfbOnly7Hf01Copy = [
+  { kind: "text", value: "مدل " },
+  { kind: "technical", value: "6ES7331-7HF01-0AB0" },
+  { kind: "text", value: "، ماژول ورودی آنالوگ است." },
+] as const satisfies ProductCopyParagraph;
+
+const sm331MlfbOnly7Nf00Copy = [
+  { kind: "text", value: "مدل " },
+  { kind: "technical", value: "6ES7331-7NF00-0AB0" },
+  { kind: "text", value: "، ماژول ورودی آنالوگ است." },
+] as const satisfies ProductCopyParagraph;
+
+const sm331MlfbOnly7Nf10Copy = [
+  { kind: "text", value: "مدل " },
+  { kind: "technical", value: "6ES7331-7NF10-0AB0" },
+  { kind: "text", value: "، ماژول ورودی آنالوگ است." },
+] as const satisfies ProductCopyParagraph;
+
 export const persianProductCopyDraftRegistry = [
   {
     productId: "siemens-s7-1200-cpu-211-1ae40",
@@ -1936,5 +1966,45 @@ export const persianProductCopyDraftRegistry = [
       note:
         "6ES7331-1KF01-0AB0: PM-approved complete canonical identifier, analog-input module type and 8 analog inputs only. The cited SDK Table A-4 does not authorize compatibility claims. No additional standalone electrical, lifecycle, availability, compatibility or operating-performance claims are approved.",
     },
+  },
+  {
+    productId: "siemens-s7-300-sm331-ai8-13bit-universal-1kf02-0ab0",
+    shortDescription: sm331MlfbOnly1Kf02Copy,
+    description: [sm331MlfbOnly1Kf02Copy],
+    provenance: "ai-assisted",
+    linguisticReview: { decision: "pending" },
+    technicalReview: { decision: "pending" },
+  },
+  {
+    productId: "siemens-s7-300-sm331-ai8-9-12-14bit-7kf02-0ab0",
+    shortDescription: sm331MlfbOnly7Kf02Copy,
+    description: [sm331MlfbOnly7Kf02Copy],
+    provenance: "ai-assisted",
+    linguisticReview: { decision: "pending" },
+    technicalReview: { decision: "pending" },
+  },
+  {
+    productId: "siemens-s7-300-sm331-ai8-14bit-isochronous-7hf01-0ab0",
+    shortDescription: sm331MlfbOnly7Hf01Copy,
+    description: [sm331MlfbOnly7Hf01Copy],
+    provenance: "ai-assisted",
+    linguisticReview: { decision: "pending" },
+    technicalReview: { decision: "pending" },
+  },
+  {
+    productId: "siemens-s7-300-sm331-ai8-16bit-voltage-current-7nf00-0ab0",
+    shortDescription: sm331MlfbOnly7Nf00Copy,
+    description: [sm331MlfbOnly7Nf00Copy],
+    provenance: "ai-assisted",
+    linguisticReview: { decision: "pending" },
+    technicalReview: { decision: "pending" },
+  },
+  {
+    productId: "siemens-s7-300-sm331-ai8-16bit-voltage-current-fast-7nf10-0ab0",
+    shortDescription: sm331MlfbOnly7Nf10Copy,
+    description: [sm331MlfbOnly7Nf10Copy],
+    provenance: "ai-assisted",
+    linguisticReview: { decision: "pending" },
+    technicalReview: { decision: "pending" },
   },
 ] as const satisfies readonly PersianProductCopyOverlay[];
