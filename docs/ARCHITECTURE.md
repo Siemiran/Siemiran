@@ -1,6 +1,6 @@
 # Siemiran — Current Architecture
 
-Implementation base: `main` at `e1755b027ebf1f869e20b2cb05e45b5e76d61350`
+Implementation base: `main` at `b62b5fccebf748d09a0164271bb477be23887570`
 
 Current checkpoint and resume workflow: [SESSION_HANDOFF.md](SESSION_HANDOFF.md).
 
@@ -223,27 +223,32 @@ at `e1755b027ebf1f869e20b2cb05e45b5e76d61350`; guarded squash and main
 synchronization completed. All five entries approve only exact MLFB identity and
 analog-input module type; full titles, channel counts and operating characteristics
 remain outside approval. Product evidence and reused checks are in
-[DATABASE.md](DATABASE.md#2026-11-16---batch-11-private-product-copy-checkpoint-current-state); durable qualifications are in
+[DATABASE.md](DATABASE.md#2026-11-16---batch-11-private-product-copy-checkpoint-historical-snapshot); durable qualifications are in
 [SESSION_HANDOFF.md](SESSION_HANDOFF.md#outstanding-work-and-evidence-limits).
 
-The separate private Product-copy registry now contains 55/382 drafts,
-with linguistic approvals at 55/382, technical approvals at 55/382, and 55
-current dual approvals; pending roles are zero. Complete coverage is missing for
-327 Products. The technical-token overrides cover 10 Products, 20 assignments,
-and 7 unique
-strings, while the global allowlist remains empty. Publication remains globally
-disabled, activation is invalid, no activation capability exists, and active
-coverage remains 0/382; activation-validation `overlayCount` is 55. Batch 11 adds
-zero overrides. Approvals from Batches 01–11 do not authorize
-publication or partial activation; activation and publication remain blocked
-until all 382/382 Products have current dual approvals and separate
-authorization is given. Earlier Batch 04 drafting-blocker and pending PR #64
-review statements are historical and superseded. Dated Batch 01–10 checkpoints
+[PR #81](https://github.com/Siemiran/Siemiran/pull/81) completed private Batch 12
+at `b62b5fccebf748d09a0164271bb477be23887570`; guarded squash and main
+synchronization completed. All five entries approve only exact MLFB identity
+and analog-input module type. Evidence access kinds, channel-mode qualifications
+and raw footer strings are preserved in [DATABASE.md](DATABASE.md#2026-11-17---batch-12-private-product-copy-checkpoint-current-state);
+durable qualifications are in
+[SESSION_HANDOFF.md](SESSION_HANDOFF.md#outstanding-work-and-evidence-limits).
+
+The separate private Product-copy registry now contains 60/382 drafts,
+60/382 current approvals per role and 60 current dual approvals; pending roles
+are zero and 322 Products remain missing. Overrides remain 10 Products /
+20 assignments / 7 unique strings, global allowlist empty and zero Batch 12
+overrides. Activation validation remains invalid: `overlayCount` 60,
+`approvedCount` 60, `missingIds.length` 322, capability absent. Publication is
+disabled, active coverage remains 0/382 and public FA/EN copy stays canonical
+English/LTR. Batches 01–12 do not authorize publication or partial activation;
+all 382/382 current dual approvals and separate launch authorization are required.
+Fixed 30/50/55 membership boundaries remain intact. Batch 11's 55/327 checkpoint
+and earlier dated counts remain historical. Dated Batch 01–10 checkpoints
 retain 5/10/15/20/25/30/35/40/45/50 entries and
 377/372/367/362/357/352/347/342/337/332 missing Products respectively.
-Public FA/EN Product copy remains canonical English/LTR.
-Batch 12 readiness/scope work is unapproved and unstarted. Admin Panel and
-Automation remain gated.
+Earlier scopes, canonical data and deferred issues are unchanged. Batch 13
+readiness/scope is unapproved and unstarted; Admin Panel and Automation remain gated.
 
 The dedicated local visual and functional website inspection with the maintainer
 remains pending after Persian Product-copy completion. It must cover FA/EN

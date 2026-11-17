@@ -1,6 +1,34 @@
 # Siemiran — Project State
 
-## 2026-11-16 - Batch 11 Reconciliation (Current State)
+## 2026-11-17 - Batch 12 Reconciliation (Current State)
+
+Implementation baseline: `b62b5fccebf748d09a0164271bb477be23887570`, merged
+[PR #81](https://github.com/Siemiran/Siemiran/pull/81); guarded squash and main
+synchronization completed. Catalog: 382 Products (186 S7-1200 / 196 S7-300).
+Private drafts and current approvals per role: 60/382; current dual approvals:
+60; pending roles: zero; missing entries: 322. All five Batch 12 entries approve
+only exact MLFB identity and analog-input module type. Full titles, counts,
+RTD/thermocouple characteristics, Ex certification/suitability and other
+operating claims remain outside approval. Product evidence, distinct access
+limitations, recording observations and reused preservation/mutation results
+are in [DATABASE.md](DATABASE.md#2026-11-17---batch-12-private-product-copy-checkpoint-current-state); durable qualifications are in
+[SESSION_HANDOFF.md](SESSION_HANDOFF.md#outstanding-work-and-evidence-limits).
+
+Overrides remain 10/20/7, global allowlist empty, zero Batch 12 overrides,
+eleven lifecycle omissions and separate S7-300 provenance 185/11. Activation
+validation remains invalid: `overlayCount` 60, `approvedCount` 60,
+`missingIds.length` 322, capability absent. Active overlays remain zero,
+publication disabled and public FA/EN copy canonical English/LTR. Full 382/382
+current dual approvals and separate launch authorization remain required.
+Batch 13 is unapproved and unstarted; Admin Panel and Automation remain gated;
+completed-copy website inspection remains pending. Merge identity is in
+[CHANGELOG.md](CHANGELOG.md); resume policy is in
+[SESSION_HANDOFF.md](SESSION_HANDOFF.md).
+
+## 2026-11-16 - Batch 11 Reconciliation (Historical Snapshot)
+
+The dated Batch 11 55/327 checkpoint, evidence and prospective workflow below
+are historical, superseded by merged Batch 12 above.
 
 Implementation baseline: `e1755b027ebf1f869e20b2cb05e45b5e76d61350`, merged
 [PR #79](https://github.com/Siemiran/Siemiran/pull/79); guarded squash and main
@@ -10,7 +38,7 @@ Private drafts and current approvals per role: 55/382; current dual approvals:
 only exact MLFB identity and analog-input module type. Full titles, channel
 counts and operating characteristics remain outside approval. Product evidence,
 recording observations and reused preservation/mutation results are in
-[DATABASE.md](DATABASE.md#2026-11-16---batch-11-private-product-copy-checkpoint-current-state); durable qualifications are in
+[DATABASE.md](DATABASE.md#2026-11-16---batch-11-private-product-copy-checkpoint-historical-snapshot); durable qualifications are in
 [SESSION_HANDOFF.md](SESSION_HANDOFF.md#outstanding-work-and-evidence-limits).
 
 Overrides remain 10/20/7, global allowlist empty, zero Batch 11 overrides,
@@ -603,9 +631,9 @@ the inventory before this approved deletion, not a valid current record.
 ## Current Baseline
 
 - Status: Active Development
-- Documentation checkpoint: 2026-11-16; workflow status is reported separately
+- Documentation checkpoint: 2026-11-17; workflow status is reported separately
 - Implementation base: `main` at
-  `e1755b027ebf1f869e20b2cb05e45b5e76d61350`
+  `b62b5fccebf748d09a0164271bb477be23887570`
 - No semantic release version is asserted by this document.
 
 ## Current Stack
@@ -637,7 +665,7 @@ the inventory before this approved deletion, not a valid current record.
 | --- | --- | --- |
 | Product listing and dynamic detail pages | IMPLEMENTED | Repository-backed listing, static product paths, and not-found handling |
 | Localization foundation | IMPLEMENTED | Persian-first FA/EN routing, matching UI catalogs, one-click equivalent-page switching, locale direction, and temporarily noindexed English routes |
-| Product-copy consumer integration | IMPLEMENTED | All intended consumers use the central resolver/public DTO boundary; private drafts and both approval roles are 55/382 with 55 current dual approvals, zero pending roles, and 327 missing, while active overlays remain 0/382, activation capability is absent, and publication is disabled |
+| Product-copy consumer integration | IMPLEMENTED | All intended consumers use the central resolver/public DTO boundary; private drafts and both approval roles are 60/382 with 60 current dual approvals, zero pending roles, and 322 missing, while active overlays remain 0/382, activation capability is absent, and publication is disabled |
 | Search, URL parameters, filters, sorting, pagination | IMPLEMENTED | Category, family, series, and product-type filters; 12-item pagination |
 | Gallery and specifications | IMPLEMENTED | Product gallery/image UI and technical specification rendering |
 | SEO and structured data | IMPLEMENTED | Metadata, canonical/Open Graph/Twitter fields, Product JSON-LD, breadcrumbs, and Breadcrumb JSON-LD |
@@ -884,6 +912,24 @@ each milestone was recorded; they are not the current connection state.
   and the Product collection total is 308.
 
 ## Validation at the Documentation Checkpoint
+
+- **PASS (REUSED)**: recorded Batch 12 validator, focused lint and build including
+  TypeScript and 774/774 static pages each exited 0 at reviewed head
+  `d0ee57798a0e9ec862a9cf1f7d788605796330f7`. Reviewed/squash tree
+  `3149e013ed052457772aacea0ae4d43b84370af1` is identical. Application,
+  dependency and build-configuration content is unchanged by this Markdown-only
+  task; no validator/lint/build/standalone TypeScript, public-resolution checks,
+  historical hash audits or manufacturer research are newly run. Recorded
+  preservation of all previous 55 complete entries/metadata/hashes and all 60
+  draft contents/bindings/provenance, authorization of five MLFB segments and
+  ten independent text/kind cases each staling both approvals are reused
+  implementation results. Fixed 30/50/55 membership boundaries remain intact;
+  these are not fresh documentation-task audits.
+- Recorded Batch 12 implementation CI was **absent**: zero checks/statuses,
+  combined pending, not passed CI. Guarded squash and main synchronization
+  completed. Dedicated completed-copy inspection remains pending.
+
+### Historical Validation — Batch 11
 
 - **PASS (REUSED)**: recorded Batch 11 validator, focused lint and build including
   TypeScript each exited 0 at reviewed head
