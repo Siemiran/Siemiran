@@ -34,21 +34,22 @@ Principles:
 - The eleven unverified S7-300 records continue to omit public lifecycle in both
   languages.
 
-Current implementation checkpoint: `8b88ef4eac08d7cbb8e49b315d91f5f2b49ebaa9`
-(merged PR #77, Batch 10; local main synchronized). Batches 01–10 are complete
-privately: 50/382 drafts, 50/382 current linguistic approvals, 50/382 current
-technical approvals, and 50 current dual approvals, with zero pending roles and
-332 Products missing private copy entries. Catalog coverage remains 382 Products
+Current implementation checkpoint: `e1755b027ebf1f869e20b2cb05e45b5e76d61350`
+(merged PR #79, Batch 11; local main synchronized). Batches 01–11 are complete
+privately: 55/382 drafts, 55/382 current linguistic approvals, 55/382 current
+technical approvals, and 55 current dual approvals, with zero pending roles and
+327 Products missing private copy entries. Catalog coverage remains 382 Products
 (186 S7-1200 / 196 S7-300). Active overlays remain 0/382, activation capability is
 absent, publication is disabled, and public FA/EN Product copy remains canonical
-English/LTR. Activation-validation `overlayCount` is 50; full 382/382 current
-dual approvals and separate launch authorization remain required. Batch 11
+English/LTR. Activation-validation `overlayCount` is 55; full 382/382 current
+dual approvals and separate launch authorization remain required. Batch 12
 readiness/scope work is unapproved and unstarted; Admin Panel and Automation
-remain gated. Product-specific Batch 10 scopes and evidence limits are in
-[DATABASE.md](DATABASE.md#2026-11-16---batch-10-private-product-copy-checkpoint-current-state); durable qualifications and
-resume policy are in [SESSION_HANDOFF.md](SESSION_HANDOFF.md). The Batch 09
-45/337 and Batch 08 40/342 checkpoints remain historical; earlier Ex/RC/1CF00
-limits and the unresolved 1BP00 discrepancy remain unchanged.
+remain gated. Batch 11 approves exact MLFB/analog-input type only; full titles,
+counts and operating characteristics remain outside approval. Product evidence
+and qualifications are in [DATABASE.md](DATABASE.md#2026-11-16---batch-11-private-product-copy-checkpoint-current-state); durable
+resume policy is in [SESSION_HANDOFF.md](SESSION_HANDOFF.md). Batch 10's 50/332
+checkpoint and earlier counts remain historical; earlier scopes and unresolved
+issues remain unchanged.
 
 After Persian Product-copy completion, the dedicated local visual and functional
 website inspection with the maintainer remains pending: FA/EN switching,

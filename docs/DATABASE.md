@@ -1,16 +1,92 @@
 # Siemiran — Product Database
 
 Repository source of truth: `main` at
-`8b88ef4eac08d7cbb8e49b315d91f5f2b49ebaa9`.
+`e1755b027ebf1f869e20b2cb05e45b5e76d61350`.
 
-## 2026-11-16 - Batch 10 Private Product-copy Checkpoint (Current State)
+## 2026-11-16 - Batch 11 Private Product-copy Checkpoint (Current State)
+
+[PR #79](https://github.com/Siemiran/Siemiran/pull/79),
+`feat: add Batch 11 Persian product copy`, merged at `2026-11-16T19:10:14Z`
+/ `2026-11-16 22:40:14` Asia/Tehran as
+`e1755b027ebf1f869e20b2cb05e45b5e76d61350`. Guarded squash and main synchronization
+completed; exact merge identities and two-file scope are in
+[CHANGELOG.md](CHANGELOG.md#2026-11-16---pr-79-complete-batch-11-private-drafts-and-dual-approvals).
+All five approved descriptions cover **only exact MLFB identity and analog-input
+module type**. They retain `ai-assisted` provenance and identical three-segment
+short/single-paragraph long content: Persian model introduction, one typed exact
+MLFB, and Persian analog-input module type. No full canonical title, channel count
+or operating characteristic is approved.
+
+| MLFB | Official Module Data section / printed pages |
+| --- | --- |
+| `6ES7331-1KF02-0AB0` | §6.6, pp283 and 287; §6.6.3, p292 |
+| `6ES7331-7KF02-0AB0` | §6.7.1, pp293 and 298–299; §6.7.2, pp301–303 |
+| `6ES7331-7HF01-0AB0` | §6.5, p274 |
+| `6ES7331-7NF00-0AB0` | §6.3, pp255, 259 and 261 |
+| `6ES7331-7NF10-0AB0` | §6.4, pp263–264; §6.4.3, pp270–272 |
+
+Ten distinct `Siemiran` linguistic/technical role records bind unchanged
+production hashes. Actual UTC recording observations were linguistic
+`2026-11-16T18:54:19Z` and technical `2026-11-16T18:54:26Z`; these are
+recording observations, **not PM review timestamps**.
+
+Recorded implementation checks preserved all previous 50 complete entries,
+metadata and hashes, and all 55 draft contents/bindings/provenance. Five MLFB
+technical segments remained authorized; ten independent text/kind mutation cases
+each staled both approvals. The 30- and 50-entry membership boundaries remain
+intact. These are reused results, not fresh documentation-task approval or hash
+audits.
+
+Evidence reuses readiness-reviewed accessible parsed text of
+[Siemens S7-300 Module Data, 05/2022, A5E00105505-AK](https://cache.industry.siemens.com/dl/files/629/8859629/att_55794/v1/s7300_module_data_manual_en-US_en-US.pdf).
+References above are printed pages, not assumed viewer indices. Visual inspection
+and direct-origin HTTP status were **NOT OBSERVED**. No fresh retrieval or
+lifecycle verification is performed here; no new HTTP 403 result is claimed.
+
+Qualifications below are separate from the approved Persian prose:
+
+- **1KF02:** the exact Universal label was not observed; PTC mode supplies no
+  analog values.
+- **7KF02:** eight nominal inputs versus four with resistive transducers;
+  resolution depends on integration time; Universal was not observed.
+- **7NF10:** distinct four- and eight-channel modes; no unconditional eight-channel
+  Fast claim.
+- **7HF01 and 7NF00:** approval remains identity/type-only despite documented
+  additional characteristics.
+
+Approval deliberately excludes full titles, channel counts, Universal, resolution,
+speed, isochronous operation, diagnostics, electrical capabilities, compatibility,
+lifecycle and availability. Exclusion does not imply that every characteristic
+is false or unsupported. Canonical data remains unchanged. Earlier SM327, 7KB02,
+1KF01 SDK and 1BP00 qualifications and older deferred issues remain unchanged;
+see the historical checkpoints below and
+[SESSION_HANDOFF.md](SESSION_HANDOFF.md#outstanding-work-and-evidence-limits).
+
+Current totals: 382 Products (186 S7-1200 / 196 S7-300); 55/382 private drafts
+and current approvals per role; 55 current dual approvals; zero pending roles;
+327 missing entries. Overrides remain 10 Products / 20 assignments / 7 unique
+strings, global allowlist empty and zero Batch 11 overrides. Eleven lifecycle
+omissions and the separate 185 Siemens-official verified / 11 explicitly
+unverified S7-300 provenance classification remain unchanged.
+
+Activation-validation `overlayCount` is 55; active published overlays remain
+0/382. Publication is disabled, capability absent and public FA/EN copy remains
+canonical English/LTR. Full 382/382 current dual approvals plus separate launch
+authorization remain required. Batch 12 is unapproved and unstarted; Admin Panel
+and Automation remain gated. Dedicated completed-Persian-copy website inspection
+remains pending.
+
+## 2026-11-16 - Batch 10 Private Product-copy Checkpoint (Historical Snapshot)
+
+The dated Batch 10 50/332 checkpoint, evidence and prospective workflow below
+are historical, superseded by merged Batch 11 above.
 
 [PR #77](https://github.com/Siemiran/Siemiran/pull/77),
 `feat: add Batch 10 Persian product copy`, merged at `2026-11-16T17:55:14Z`
 / `2026-11-16 21:25:14` Asia/Tehran as
 `8b88ef4eac08d7cbb8e49b315d91f5f2b49ebaa9`. Guarded squash and main synchronization
 completed; exact merge identities and two-file scope are in
-[CHANGELOG.md](CHANGELOG.md#2026-11-16---pr-77-complete-batch-10-private-drafts-and-dual-approvals).
+[CHANGELOG.md](CHANGELOG.md#2026-11-16---pr-77-complete-batch-10-private-drafts-and-dual-approvals-historical-snapshot).
 Five private `ai-assisted` entries retain identical short and single-paragraph
 long typed content, unchanged production bindings and provenance. Approved
 technical scope is limited to:
