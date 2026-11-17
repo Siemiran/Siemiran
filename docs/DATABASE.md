@@ -1,16 +1,104 @@
 # Siemiran — Product Database
 
 Repository source of truth: `main` at
-`e1755b027ebf1f869e20b2cb05e45b5e76d61350`.
+`b62b5fccebf748d09a0164271bb477be23887570`.
 
-## 2026-11-16 - Batch 11 Private Product-copy Checkpoint (Current State)
+## 2026-11-17 - Batch 12 Private Product-copy Checkpoint (Current State)
+
+[PR #81](https://github.com/Siemiran/Siemiran/pull/81),
+`feat: add Batch 12 Persian product copy`, merged at `2026-11-17T18:15:39Z`
+/ `2026-11-17 21:45:39` Asia/Tehran as
+`b62b5fccebf748d09a0164271bb477be23887570`. Guarded squash and main synchronization
+completed; exact merge identities and the two-file +479/-10 scope are in
+[CHANGELOG.md](CHANGELOG.md#2026-11-17---pr-81-complete-batch-12-private-drafts-and-dual-approvals).
+
+All five approved descriptions cover **only exact MLFB identity and analog-input
+module type**. They retain `ai-assisted` provenance and identical three-segment
+short/single-paragraph long content: Persian model introduction, one typed exact
+MLFB, and Persian analog-input module type. Full canonical titles, channel counts,
+RTD/thermocouple characteristics, Ex certification/suitability, resolution,
+electrical ranges, performance, compatibility, lifecycle and availability are
+outside approval. Canonical titles and normalized counts remain unchanged and
+do not constitute approval of those claims.
+
+| MLFB | Stable Product ID | Evidence / section / printed pages |
+| --- | --- | --- |
+| `6ES7331-7PF01-0AB0` | `siemens-s7-300-sm331-ai8-rtd-7pf01-0ab0` | E1 / §6.9.1, pp316–317; §6.9.4, pp325–328 |
+| `6ES7331-7PE10-0AB0` | `siemens-s7-300-sm331-ai6-thermocouple-16bit-7pe10-0ab0` | E1 / §6.11, pp342–343 |
+| `6ES7331-7PF11-0AB0` | `siemens-s7-300-sm331-ai8-thermocouple-7pf11-0ab0` | E1 / §6.10, pp329–330; §6.10.3, pp339–341 |
+| `6ES7331-7RD00-0AB0` | `siemens-s7-300-sm331-ai4-0-4-20ma-ex-7rd00-0ab0` | E2 / product description and Analog inputs / p1/3 |
+| `6ES7331-7SF00-0AB0` | `siemens-s7-300-sm331-ai8-tc-ai4-pt100-ex-7sf00-0ab0` | E3 / product description and Analog inputs / p1/3 |
+
+Ten distinct `Siemiran` linguistic/technical role records bind unchanged
+production hashes. Actual UTC recording observations were linguistic
+`2026-11-17T17:56:09Z` and technical `2026-11-17T17:56:19Z`; these are
+recording observations, **not PM review timestamps**.
+
+Recorded implementation checks preserved all previous 55 complete entries,
+metadata and hashes, and all 60 draft contents/bindings/provenance. Five MLFB
+technical segments remained authorized; ten independent text/kind mutation cases
+each staled both approvals. Fixed 30/50/55 membership boundaries remain intact.
+These are reused implementation results, not fresh documentation-task audits.
+
+- **E1:** [Siemens S7-300 Module Data, 05/2022, A5E00105505-AK](https://cache.industry.siemens.com/dl/files/629/8859629/att_55794/v1/s7300_module_data_manual_en-US_en-US.pdf).
+  Evidence reuses readiness-reviewed parsed text for 7PF01, 7PE10 and 7PF11.
+- **E2:** [Siemens exact-product datasheet, 7RD00](https://support.industry.siemens.com/teddatasheet/?caller=SIOS&format=pdf&language=en&mlfbs=6ES7331-7RD00-0AB0).
+  Evidence is readiness-reviewed official indexed exact-product datasheet text.
+  Readiness-reported direct tool retrieval returned **403 Forbidden**; this was
+  **not a successful PDF read or parsed-PDF access**. Recorded footer string:
+  `1/29/2026`.
+- **E3:** [Siemens exact-product datasheet, 7SF00](https://support.industry.siemens.com/teddatasheet/?caller=SIOS&format=pdf&language=en&mlfbs=6ES73317SF000AB0).
+  Evidence is readiness-accessed parsed exact-product datasheet text. Recorded
+  footer string: `11/4/2025`.
+
+All page references are printed pages, distinct from viewer indices. Footer
+strings are document observations without date-format interpretation or lifecycle
+inference. Visual inspection and successful direct-origin HTTP status for
+accessible parsed documents were **NOT OBSERVED**. The separate 7RD00 403
+observation remains preserved. No fresh retrieval or lifecycle verification is
+performed here.
+
+Qualifications below are separate from the approved Persian prose:
+
+- **7PF01:** four/eight-channel operating modes; no unconditional usable-channel
+  count or performance claim is approved.
+- **7PE10:** exact identity and analog-input type established; no additional
+  characteristic is approved.
+- **7PF11:** four/eight-channel modes and compensation-wiring-dependent usable
+  channels; no unconditional count or performance claim is approved.
+- **7SF00:** eight thermocouple versus four RTD inputs are mode-dependent
+  alternatives outside approval.
+- **7RD00:** indexed-text evidence supports only the approved identity/type scope;
+  no Ex certification/suitability or lifecycle claim is approved.
+
+Current totals: 382 Products (186 S7-1200 / 196 S7-300); 60/382 private drafts
+and current approvals per role; 60 current dual approvals; zero pending roles;
+322 missing entries. Overrides remain 10 Products / 20 assignments / 7 unique
+strings, global allowlist empty and zero Batch 12 overrides. Eleven lifecycle
+omissions and separate S7-300 provenance of 185 Siemens-official verified / 11
+explicitly unverified remain unchanged.
+
+Activation validation remains invalid: `overlayCount` 60, `approvedCount` 60,
+`missingIds.length` 322, capability absent. Active published overlays remain
+0/382; publication is disabled and public FA/EN copy remains canonical English/LTR.
+Full 382/382 current dual approvals plus separate launch authorization remain
+required. Canonical data, earlier scopes and deferred issues remain unchanged;
+durable qualifications are in
+[SESSION_HANDOFF.md](SESSION_HANDOFF.md#outstanding-work-and-evidence-limits).
+Batch 13 is unapproved and unstarted; Admin Panel and Automation remain gated.
+Dedicated completed-Persian-copy website inspection remains pending.
+
+## 2026-11-16 - Batch 11 Private Product-copy Checkpoint (Historical Snapshot)
+
+The dated Batch 11 55/327 checkpoint, evidence and prospective workflow below
+are historical, superseded by merged Batch 12 above.
 
 [PR #79](https://github.com/Siemiran/Siemiran/pull/79),
 `feat: add Batch 11 Persian product copy`, merged at `2026-11-16T19:10:14Z`
 / `2026-11-16 22:40:14` Asia/Tehran as
 `e1755b027ebf1f869e20b2cb05e45b5e76d61350`. Guarded squash and main synchronization
 completed; exact merge identities and two-file scope are in
-[CHANGELOG.md](CHANGELOG.md#2026-11-16---pr-79-complete-batch-11-private-drafts-and-dual-approvals).
+[CHANGELOG.md](CHANGELOG.md#2026-11-16---pr-79-complete-batch-11-private-drafts-and-dual-approvals-historical-snapshot).
 All five approved descriptions cover **only exact MLFB identity and analog-input
 module type**. They retain `ai-assisted` provenance and identical three-segment
 short/single-paragraph long content: Persian model introduction, one typed exact

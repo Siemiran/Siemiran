@@ -1,6 +1,6 @@
 # Siemiran — Session Handoff
 
-Checkpoint: **2026-11-16 (Asia/Tehran)**. Implementation: private Batch 11
+Checkpoint: **2026-11-17 (Asia/Tehran)**. Implementation: private Batch 12
 merged and local main synchronized. Documentation workflow status belongs in
 the task report and PR, rather than this durable implementation checkpoint.
 
@@ -19,17 +19,17 @@ then merged PR/review evidence, then current repository summaries. Dated older
 snapshots preserve history. Maintainer instructions define authorization; a
 historical next-step statement does not authorize new work.
 
-Merged implementation baseline: `e1755b027ebf1f869e20b2cb05e45b5e76d61350`.
-[PR #79](https://github.com/Siemiran/Siemiran/pull/79),
-`feat: add Batch 11 Persian product copy`, merged at `2026-11-16T19:10:14Z`
-(Asia/Tehran: `2026-11-16 22:40:14`). Sole parent:
-`0909b7bfb5960f4e1b23653ffd5f893ead734114`. Reviewed feature head:
-`ffc46c2fadb8fa9fa3bfb4b1c849ff079509b46d`; draft:
-`e2fbdd84911764be9b25dc3f7ddf3c2c51b2c900`; reviewed/squash tree:
-`c7cbe90a28b947f0347c201f7f068d7ee0f9599d`. Implementation scope: registry
-+170/-0, verifier +264/-10; two files +434/-10. Guarded squash and main-only
+Merged implementation baseline: `b62b5fccebf748d09a0164271bb477be23887570`.
+[PR #81](https://github.com/Siemiran/Siemiran/pull/81),
+`feat: add Batch 12 Persian product copy`, merged at `2026-11-17T18:15:39Z`
+(Asia/Tehran: `2026-11-17 21:45:39`). Sole parent:
+`3d1507eef5732b08b1bc0f507993d92c7b84f266`. Reviewed feature head:
+`d0ee57798a0e9ec862a9cf1f7d788605796330f7`; draft:
+`fafb281b45ff88903742a611acafec31a22f6063`; reviewed/squash tree:
+`3149e013ed052457772aacea0ae4d43b84370af1`. Implementation scope: registry
++170/-0, verifier +309/-10; two files +479/-10. Guarded squash and main-only
 fetch/switch/fast-forward synchronization completed. At that checkpoint
-`feat/fa-product-copy-batch-11` remained locally/cached/live at the reviewed
+`feat/fa-product-copy-batch-12` remained locally/cached/live at the reviewed
 head. Recheck actual refs and index/worktree on resume.
 
 ## Collaboration and resume policy
@@ -67,27 +67,29 @@ Follow [AGENTS.md](../AGENTS.md): Feature First, repository access, one canonica
 
 | Current measure | State |
 | --- | --- |
-| Private drafts / linguistic approvals / technical approvals | 55/382 each |
-| Current dual approvals / pending roles / missing private entries | 55 / zero / 327 |
-| Activation-validation overlayCount | 55 |
+| Private drafts / linguistic approvals / technical approvals | 60/382 each |
+| Current dual approvals / pending roles / missing private entries | 60 / zero / 322 |
+| Activation validation / overlayCount / approvedCount / missingIds | Invalid / 60 / 60 / 322 |
 | Active overlays / activation capability / publication | 0/382 / absent / disabled |
 | Public FA/EN Product copy | Canonical English/LTR |
 | Overrides | 10 Products / 20 assignments / 7 unique strings |
-| Batch 11 added overrides / global allowlist | Zero / empty |
+| Batch 12 added overrides / global allowlist | Zero / empty |
 | Canonical lifecycle omissions | Exactly eleven |
 | S7-300 lifecycle provenance | 185 Siemens-official verified / 11 explicitly unverified |
 
-Batches 01-11 are complete **privately**. All five Batch 11 `ai-assisted` entries
+Batches 01-12 are complete **privately**. All five Batch 12 `ai-assisted` entries
 approve only exact MLFB identity and analog-input module type, with identical
 three-segment short/single-paragraph long content. Ten distinct `Siemiran` role
 records bind unchanged production hashes. Observed UTC recording times:
-linguistic `2026-11-16T18:54:19Z`; technical `2026-11-16T18:54:26Z`.
-These are recording observations, not PM review timestamps. Reused implementation
-checks preserved all previous 50 complete entries/metadata/hashes and all 55 draft
-contents/bindings/provenance. Five MLFB segments remained authorized; ten text/kind
-cases each staled both approvals. The 30- and 50-entry boundaries remain intact.
-These are reused results, not fresh documentation-task audits. Precise Product/
-evidence information is in [DATABASE.md](DATABASE.md#2026-11-16---batch-11-private-product-copy-checkpoint-current-state).
+linguistic `2026-11-17T17:56:09Z`; technical `2026-11-17T17:56:19Z`.
+These are recording observations, not PM review timestamps. Recorded implementation
+checks preserved all previous 55 complete entries/metadata/hashes and all 60
+draft contents/bindings/provenance. Five MLFB segments remained authorized; ten
+independent text/kind cases each staled both approvals. Fixed 30/50/55 membership
+boundaries remain intact. These are reused results, not fresh documentation-task
+audits. Product/evidence details are in [DATABASE.md](DATABASE.md#2026-11-17---batch-12-private-product-copy-checkpoint-current-state).
+Batch 11's 55/327 checkpoint remains historical below; earlier scopes and
+deferred issues remain unchanged.
 Recorded public FA/EN resolution checks remain canonical English/LTR. Lifecycle omission debt is separate from missing
 Persian-copy coverage. Activation requires the complete 382/382 current
 content-hash-bound dual-approval gate **and separate authorization**; partial
@@ -95,11 +97,11 @@ activation is prohibited. Private drafts authorize neither activation nor public
 
 ## Outstanding work and evidence limits
 
-1. Batch 12 readiness/scope work remains **unapproved and unstarted**. A later
+1. Batch 13 readiness/scope work remains **unapproved and unstarted**. A later
    read-only readiness audit and independent scope/token review require separate
    authorization; do not draft copy or change policy/approvals as part of this
    documentation task.
-2. Complete the remaining 327 private drafts and both review roles through later
+2. Complete the remaining 322 private drafts and both review roles through later
    separately authorized batches. Public activation and bilingual SEO remain
    separate future tasks; English indexing, hreflang, and localized sitemap work
    remain deferred.
@@ -200,7 +202,7 @@ compatibility or operating-performance claims are approved. All earlier
 qualifications and unresolved issues above remain unchanged.
 
 Batch 11 approval and evidence limits (sections and printed pages in
-[DATABASE.md](DATABASE.md#2026-11-16---batch-11-private-product-copy-checkpoint-current-state)):
+[DATABASE.md](DATABASE.md#2026-11-16---batch-11-private-product-copy-checkpoint-historical-snapshot)):
 
 - All five Products — `6ES7331-1KF02-0AB0`, `6ES7331-7KF02-0AB0`,
   `6ES7331-7HF01-0AB0`, `6ES7331-7NF00-0AB0` and `6ES7331-7NF10-0AB0` —
@@ -223,6 +225,35 @@ no new HTTP 403 result is claimed. Canonical data, SM327 configurable-channel
 semantics, 7KB02's MLFB/type-only scope, the 1KF01 SDK limitation, unresolved
 1BP00 and older qualifications above remain unchanged.
 
+Batch 12 approval and evidence limits (detailed references and printed pages in
+[DATABASE.md](DATABASE.md#2026-11-17---batch-12-private-product-copy-checkpoint-current-state)):
+
+- All five Products — `6ES7331-7PF01-0AB0`, `6ES7331-7PE10-0AB0`,
+  `6ES7331-7PF11-0AB0`, `6ES7331-7RD00-0AB0` and `6ES7331-7SF00-0AB0` —
+  approve exact MLFB identity and analog-input module type only. Full titles,
+  counts, RTD/thermocouple characteristics, Ex certification/suitability,
+  resolution, electrical ranges, performance, compatibility, lifecycle and
+  availability remain outside approval.
+- **7PF01 / 7PE10 / 7PF11:** reuse readiness-reviewed parsed text of Module Data,
+  05/2022, A5E00105505-AK. 7PF01 has four/eight-channel operating modes; 7PF11 has
+  four/eight-channel modes and compensation-wiring-dependent usable channels.
+  No unconditional count or performance claim is approved.
+- **7RD00:** evidence remains readiness-reviewed official indexed exact-product
+  datasheet text, printed p1/3, product description and Analog inputs.
+  Readiness-reported direct tool retrieval returned **403 Forbidden**; this was
+  **not a successful PDF read or parsed-PDF access**. Raw footer string:
+  `1/29/2026`.
+- **7SF00:** evidence remains readiness-accessed parsed exact-product datasheet
+  text, printed p1/3, product description and Analog inputs. Eight thermocouple
+  versus four RTD inputs are mode-dependent alternatives outside approval.
+  Raw footer string: `11/4/2025`.
+- Footer strings are document observations without date-format interpretation
+  or lifecycle inference. Printed pages are distinct from viewer indices.
+  Visual inspection and successful direct-origin HTTP status for accessible
+  parsed documents were **NOT OBSERVED**; preserve the separate 7RD00 403
+  observation. No fresh retrieval or lifecycle verification is performed here.
+  Canonical data, all earlier qualifications and deferred issues remain unchanged.
+
 Other deferred work: inquiry delivery/persistence, broader automated tests/CI/CD,
 verified download/relation population, and owner-selected catalog expansion. See
 [ARCHITECTURE.md](ARCHITECTURE.md), [DATABASE.md](DATABASE.md),
@@ -231,6 +262,47 @@ verified download/relation population, and owner-selected catalog expansion. See
 [CHANGELOG.md](CHANGELOG.md) for details and dated history.
 
 ## Validation applicability
+
+- **PASS (REUSED)**: recorded Batch 12 validator, focused lint and build including
+  TypeScript and 774/774 static pages each exited 0 at reviewed head
+  `d0ee57798a0e9ec862a9cf1f7d788605796330f7`. Reviewed/squash tree
+  `3149e013ed052457772aacea0ae4d43b84370af1` is identical. Application,
+  dependency and build-configuration content is unchanged by this Markdown-only
+  task; no validator/lint/build/standalone TypeScript, public-resolution checks,
+  historical hash audits or manufacturer research are newly run. Recorded
+  preservation of all previous 55 complete entries/metadata/hashes and all 60
+  draft contents/bindings/provenance, authorization of five MLFB segments and
+  ten independent text/kind cases each staling both approvals are reused
+  implementation results. Fixed 30/50/55 membership boundaries remain intact;
+  these are not fresh documentation-task audits.
+- Recorded Batch 12 implementation CI was **absent**: zero checks/statuses,
+  combined pending, not passed CI. Guarded squash and main synchronization
+  completed. Dedicated completed-copy inspection remains pending.
+
+- Current coverage: 60 drafts/current approvals per role, 60 dual approvals,
+  zero pending roles and 322 missing entries. Activation validation remains invalid:
+  `overlayCount` 60, `approvedCount` 60, `missingIds.length` 322, capability absent.
+  Active overlays remain zero and publication disabled. Fresh documentation checks
+  belong in the task report and PR.
+
+### Historical Batch 11 checkpoint and validation
+
+The dated Batch 11 55/327 checkpoint and prospective workflow are historical,
+superseded by Batch 12. Product/evidence limits remain in
+[DATABASE.md](DATABASE.md#2026-11-16---batch-11-private-product-copy-checkpoint-historical-snapshot).
+
+Merged implementation baseline: `e1755b027ebf1f869e20b2cb05e45b5e76d61350`.
+[PR #79](https://github.com/Siemiran/Siemiran/pull/79),
+`feat: add Batch 11 Persian product copy`, merged at `2026-11-16T19:10:14Z`
+(Asia/Tehran: `2026-11-16 22:40:14`). Sole parent:
+`0909b7bfb5960f4e1b23653ffd5f893ead734114`. Reviewed feature head:
+`ffc46c2fadb8fa9fa3bfb4b1c849ff079509b46d`; draft:
+`e2fbdd84911764be9b25dc3f7ddf3c2c51b2c900`; reviewed/squash tree:
+`c7cbe90a28b947f0347c201f7f068d7ee0f9599d`. Implementation scope: registry
++170/-0, verifier +264/-10; two files +434/-10. Guarded squash and main-only
+fetch/switch/fast-forward synchronization completed. At that checkpoint
+`feat/fa-product-copy-batch-11` remained locally/cached/live at the reviewed
+head. Recheck actual refs and index/worktree on resume.
 
 - **PASS (REUSED)**: recorded Batch 11 validator, focused lint and build including
   TypeScript each exited 0 at reviewed head
@@ -248,7 +320,7 @@ verified download/relation population, and owner-selected catalog expansion. See
   combined pending, not passed CI. Guarded squash and main synchronization
   completed. Dedicated completed-copy inspection remains pending.
 
-- Current coverage: 55 drafts/current approvals per role, 55 dual approvals,
+- Historical coverage: 55 drafts/current approvals per role, 55 dual approvals,
   zero pending roles and 327 missing entries. Activation-validation `overlayCount`
   is 55; active overlays remain zero, capability absent and publication disabled.
   Fresh documentation checks belong in the task report and PR.
@@ -447,7 +519,7 @@ counts and evidence; they are not current coverage or new task executions.
 
 - Record branch, exact HEAD, sole parent/base, index/worktree clean or dirty state,
   and live/local `main` refs. The durable implementation baseline is
-  `e1755b027ebf1f869e20b2cb05e45b5e76d61350`; task-specific workflow status and
+  `b62b5fccebf748d09a0164271bb477be23887570`; task-specific workflow status and
   commit/PR identities belong in the task report rather than this file.
 - Identify existing task branches, patches, and commits before starting; preserve
   identifiable partial work and finish only missing authorized work. If refs or
@@ -458,6 +530,6 @@ counts and evidence; they are not current coverage or new task executions.
 - Record validation commands, exit codes, NEW versus REUSED status, exact checked
   content, and evidence limitations. Check Markdown links/anchors, whitespace
   and unchanged outside content; report actual results and final clean state.
-- Batch 12 readiness/scope remains unapproved and unstarted. Overlay activation,
+- Batch 13 readiness/scope remains unapproved and unstarted. Overlay activation,
   publication, English indexing and completed-copy website inspection remain
   separately authorized future work.
