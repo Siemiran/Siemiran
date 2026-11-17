@@ -2142,39 +2142,139 @@ export const persianProductCopyDraftRegistry = [
     shortDescription: sm331MlfbOnly7Pf01Copy,
     description: [sm331MlfbOnly7Pf01Copy],
     provenance: "ai-assisted",
-    linguisticReview: { decision: "pending" },
-    technicalReview: { decision: "pending" },
+    linguisticReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-11-17T17:56:09Z",
+      reviewedContentHash:
+        "sha256:4b2fd6f390cc22aa86d7a436f921fddfe48220399f02dfdc344add49aa264e1a",
+      evidenceRef:
+        "PM linguistic approval in the supplied Batch 12 approval request; draft commit fafb281b45ff88903742a611acafec31a22f6063; Product siemens-s7-300-sm331-ai8-rtd-7pf01-0ab0; MLFB 6ES7331-7PF01-0AB0. Recording time is an actual UTC observation, not the PM review timestamp.",
+      note:
+        "6ES7331-7PF01-0AB0: PM-approved Product-specific Persian wording, punctuation and spacing; the exact MLFB retains its own typed technical segment and Latin/numeric isolation in identical short and single-paragraph long copy.",
+    },
+    technicalReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-11-17T17:56:19Z",
+      reviewedContentHash:
+        "sha256:4b2fd6f390cc22aa86d7a436f921fddfe48220399f02dfdc344add49aa264e1a",
+      evidenceRef:
+        "PM technical approval in the supplied Batch 12 approval request; draft commit fafb281b45ff88903742a611acafec31a22f6063; Product siemens-s7-300-sm331-ai8-rtd-7pf01-0ab0; MLFB 6ES7331-7PF01-0AB0. Recording time is an actual UTC observation, not the PM review timestamp. Reused readiness-reviewed parsed text of Siemens S7-300 Module Data, 05/2022, A5E00105505-AK; https://cache.industry.siemens.com/dl/files/629/8859629/att_55794/v1/s7300_module_data_manual_en-US_en-US.pdf; section 6.9.1, printed pp316-317; section 6.9.4, printed pp325-328. Four- and eight-channel operating modes remain outside approval. Visual inspection and successful direct-origin HTTP status for accessible parsed documents NOT OBSERVED; no fresh retrieval or lifecycle verification.",
+      note:
+        "6ES7331-7PF01-0AB0: PM-approved exact MLFB identity and analog-input module type only. No approval of complete canonical titles, channel counts, RTD/thermocouple characteristics, Ex certification/suitability, resolution, electrical ranges, performance, compatibility, lifecycle or availability. Four- and eight-channel operating modes remain outside approval. Canonical data, earlier scopes and deferred issues remain unchanged.",
+    },
   },
   {
     productId: "siemens-s7-300-sm331-ai6-thermocouple-16bit-7pe10-0ab0",
     shortDescription: sm331MlfbOnly7Pe10Copy,
     description: [sm331MlfbOnly7Pe10Copy],
     provenance: "ai-assisted",
-    linguisticReview: { decision: "pending" },
-    technicalReview: { decision: "pending" },
+    linguisticReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-11-17T17:56:09Z",
+      reviewedContentHash:
+        "sha256:f151e41395474c7ea56d74f247daefabe984f2c874f712ca6157549b1c77d194",
+      evidenceRef:
+        "PM linguistic approval in the supplied Batch 12 approval request; draft commit fafb281b45ff88903742a611acafec31a22f6063; Product siemens-s7-300-sm331-ai6-thermocouple-16bit-7pe10-0ab0; MLFB 6ES7331-7PE10-0AB0. Recording time is an actual UTC observation, not the PM review timestamp.",
+      note:
+        "6ES7331-7PE10-0AB0: PM-approved Product-specific Persian wording, punctuation and spacing; the exact MLFB retains its own typed technical segment and Latin/numeric isolation in identical short and single-paragraph long copy.",
+    },
+    technicalReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-11-17T17:56:19Z",
+      reviewedContentHash:
+        "sha256:f151e41395474c7ea56d74f247daefabe984f2c874f712ca6157549b1c77d194",
+      evidenceRef:
+        "PM technical approval in the supplied Batch 12 approval request; draft commit fafb281b45ff88903742a611acafec31a22f6063; Product siemens-s7-300-sm331-ai6-thermocouple-16bit-7pe10-0ab0; MLFB 6ES7331-7PE10-0AB0. Recording time is an actual UTC observation, not the PM review timestamp. Reused readiness-reviewed parsed text of Siemens S7-300 Module Data, 05/2022, A5E00105505-AK; https://cache.industry.siemens.com/dl/files/629/8859629/att_55794/v1/s7300_module_data_manual_en-US_en-US.pdf; section 6.11, printed pp342-343. Exact identity and analog-input type established; no additional characteristic is approved. Visual inspection and successful direct-origin HTTP status for accessible parsed documents NOT OBSERVED; no fresh retrieval or lifecycle verification.",
+      note:
+        "6ES7331-7PE10-0AB0: PM-approved exact MLFB identity and analog-input module type only. No approval of complete canonical titles, channel counts, RTD/thermocouple characteristics, Ex certification/suitability, resolution, electrical ranges, performance, compatibility, lifecycle or availability. Exact identity and analog-input type established; no additional characteristic is approved. Canonical data, earlier scopes and deferred issues remain unchanged.",
+    },
   },
   {
     productId: "siemens-s7-300-sm331-ai8-thermocouple-7pf11-0ab0",
     shortDescription: sm331MlfbOnly7Pf11Copy,
     description: [sm331MlfbOnly7Pf11Copy],
     provenance: "ai-assisted",
-    linguisticReview: { decision: "pending" },
-    technicalReview: { decision: "pending" },
+    linguisticReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-11-17T17:56:09Z",
+      reviewedContentHash:
+        "sha256:3f64cb913ca57a3f6eea0845bdcd7c1234c6cab4dae4dc5698d343f86c58cc4d",
+      evidenceRef:
+        "PM linguistic approval in the supplied Batch 12 approval request; draft commit fafb281b45ff88903742a611acafec31a22f6063; Product siemens-s7-300-sm331-ai8-thermocouple-7pf11-0ab0; MLFB 6ES7331-7PF11-0AB0. Recording time is an actual UTC observation, not the PM review timestamp.",
+      note:
+        "6ES7331-7PF11-0AB0: PM-approved Product-specific Persian wording, punctuation and spacing; the exact MLFB retains its own typed technical segment and Latin/numeric isolation in identical short and single-paragraph long copy.",
+    },
+    technicalReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-11-17T17:56:19Z",
+      reviewedContentHash:
+        "sha256:3f64cb913ca57a3f6eea0845bdcd7c1234c6cab4dae4dc5698d343f86c58cc4d",
+      evidenceRef:
+        "PM technical approval in the supplied Batch 12 approval request; draft commit fafb281b45ff88903742a611acafec31a22f6063; Product siemens-s7-300-sm331-ai8-thermocouple-7pf11-0ab0; MLFB 6ES7331-7PF11-0AB0. Recording time is an actual UTC observation, not the PM review timestamp. Reused readiness-reviewed parsed text of Siemens S7-300 Module Data, 05/2022, A5E00105505-AK; https://cache.industry.siemens.com/dl/files/629/8859629/att_55794/v1/s7300_module_data_manual_en-US_en-US.pdf; section 6.10, printed pp329-330; section 6.10.3, printed pp339-341. Four- and eight-channel modes and compensation-wiring-dependent usable channels remain outside approval. Visual inspection and successful direct-origin HTTP status for accessible parsed documents NOT OBSERVED; no fresh retrieval or lifecycle verification.",
+      note:
+        "6ES7331-7PF11-0AB0: PM-approved exact MLFB identity and analog-input module type only. No approval of complete canonical titles, channel counts, RTD/thermocouple characteristics, Ex certification/suitability, resolution, electrical ranges, performance, compatibility, lifecycle or availability. Four- and eight-channel modes and compensation-wiring-dependent usable channels remain outside approval. Canonical data, earlier scopes and deferred issues remain unchanged.",
+    },
   },
   {
     productId: "siemens-s7-300-sm331-ai4-0-4-20ma-ex-7rd00-0ab0",
     shortDescription: sm331MlfbOnly7Rd00Copy,
     description: [sm331MlfbOnly7Rd00Copy],
     provenance: "ai-assisted",
-    linguisticReview: { decision: "pending" },
-    technicalReview: { decision: "pending" },
+    linguisticReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-11-17T17:56:09Z",
+      reviewedContentHash:
+        "sha256:34b333674940106446f9e5a4da38aea5fd7d3a951943c917c22acfd742eee33f",
+      evidenceRef:
+        "PM linguistic approval in the supplied Batch 12 approval request; draft commit fafb281b45ff88903742a611acafec31a22f6063; Product siemens-s7-300-sm331-ai4-0-4-20ma-ex-7rd00-0ab0; MLFB 6ES7331-7RD00-0AB0. Recording time is an actual UTC observation, not the PM review timestamp.",
+      note:
+        "6ES7331-7RD00-0AB0: PM-approved Product-specific Persian wording, punctuation and spacing; the exact MLFB retains its own typed technical segment and Latin/numeric isolation in identical short and single-paragraph long copy.",
+    },
+    technicalReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-11-17T17:56:19Z",
+      reviewedContentHash:
+        "sha256:34b333674940106446f9e5a4da38aea5fd7d3a951943c917c22acfd742eee33f",
+      evidenceRef:
+        "PM technical approval in the supplied Batch 12 approval request; draft commit fafb281b45ff88903742a611acafec31a22f6063; Product siemens-s7-300-sm331-ai4-0-4-20ma-ex-7rd00-0ab0; MLFB 6ES7331-7RD00-0AB0. Recording time is an actual UTC observation, not the PM review timestamp. Reused readiness-reviewed official indexed exact-product datasheet text; https://support.industry.siemens.com/teddatasheet/?caller=SIOS&format=pdf&language=en&mlfbs=6ES7331-7RD00-0AB0; printed p1/3, product description and Analog inputs. Readiness-reported direct tool retrieval returned 403 Forbidden; not a successful PDF read or parsed-PDF access. Recorded footer string: 1/29/2026; document observation only, no date-format interpretation or lifecycle inference. Visual inspection and successful direct-origin HTTP status for accessible parsed documents NOT OBSERVED; no fresh retrieval or lifecycle verification.",
+      note:
+        "6ES7331-7RD00-0AB0: PM-approved exact MLFB identity and analog-input module type only. No approval of complete canonical titles, channel counts, RTD/thermocouple characteristics, Ex certification/suitability, resolution, electrical ranges, performance, compatibility, lifecycle or availability. Readiness-reported direct tool retrieval returned 403 Forbidden; not a successful PDF read or parsed-PDF access. Recorded footer string: 1/29/2026; document observation only, no date-format interpretation or lifecycle inference. Canonical data, earlier scopes and deferred issues remain unchanged.",
+    },
   },
   {
     productId: "siemens-s7-300-sm331-ai8-tc-ai4-pt100-ex-7sf00-0ab0",
     shortDescription: sm331MlfbOnly7Sf00Copy,
     description: [sm331MlfbOnly7Sf00Copy],
     provenance: "ai-assisted",
-    linguisticReview: { decision: "pending" },
-    technicalReview: { decision: "pending" },
+    linguisticReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-11-17T17:56:09Z",
+      reviewedContentHash:
+        "sha256:f0fd456293f7046a9e9d1a9bb3457bef6104cde1aca1f85000977cef9e23b344",
+      evidenceRef:
+        "PM linguistic approval in the supplied Batch 12 approval request; draft commit fafb281b45ff88903742a611acafec31a22f6063; Product siemens-s7-300-sm331-ai8-tc-ai4-pt100-ex-7sf00-0ab0; MLFB 6ES7331-7SF00-0AB0. Recording time is an actual UTC observation, not the PM review timestamp.",
+      note:
+        "6ES7331-7SF00-0AB0: PM-approved Product-specific Persian wording, punctuation and spacing; the exact MLFB retains its own typed technical segment and Latin/numeric isolation in identical short and single-paragraph long copy.",
+    },
+    technicalReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-11-17T17:56:19Z",
+      reviewedContentHash:
+        "sha256:f0fd456293f7046a9e9d1a9bb3457bef6104cde1aca1f85000977cef9e23b344",
+      evidenceRef:
+        "PM technical approval in the supplied Batch 12 approval request; draft commit fafb281b45ff88903742a611acafec31a22f6063; Product siemens-s7-300-sm331-ai8-tc-ai4-pt100-ex-7sf00-0ab0; MLFB 6ES7331-7SF00-0AB0. Recording time is an actual UTC observation, not the PM review timestamp. Reused readiness-accessed parsed exact-product datasheet text; https://support.industry.siemens.com/teddatasheet/?caller=SIOS&format=pdf&language=en&mlfbs=6ES73317SF000AB0; printed p1/3, product description and Analog inputs. Recorded footer string: 11/4/2025; document observation only, no date-format interpretation or lifecycle inference. Eight thermocouple versus four RTD inputs are mode-dependent alternatives, outside approval. Visual inspection and successful direct-origin HTTP status for accessible parsed documents NOT OBSERVED; no fresh retrieval or lifecycle verification.",
+      note:
+        "6ES7331-7SF00-0AB0: PM-approved exact MLFB identity and analog-input module type only. No approval of complete canonical titles, channel counts, RTD/thermocouple characteristics, Ex certification/suitability, resolution, electrical ranges, performance, compatibility, lifecycle or availability. Recorded footer string: 11/4/2025; document observation only, no date-format interpretation or lifecycle inference. Eight thermocouple versus four RTD inputs are mode-dependent alternatives, outside approval. Canonical data, earlier scopes and deferred issues remain unchanged.",
+    },
   },
 ] as const satisfies readonly PersianProductCopyOverlay[];
