@@ -646,6 +646,36 @@ const sm331MlfbOnly7Nf10Copy = [
   { kind: "text", value: "، ماژول ورودی آنالوگ است." },
 ] as const satisfies ProductCopyParagraph;
 
+const sm331MlfbOnly7Pf01Copy = [
+  { kind: "text", value: "مدل " },
+  { kind: "technical", value: "6ES7331-7PF01-0AB0" },
+  { kind: "text", value: "، ماژول ورودی آنالوگ است." },
+] as const satisfies ProductCopyParagraph;
+
+const sm331MlfbOnly7Pe10Copy = [
+  { kind: "text", value: "مدل " },
+  { kind: "technical", value: "6ES7331-7PE10-0AB0" },
+  { kind: "text", value: "، ماژول ورودی آنالوگ است." },
+] as const satisfies ProductCopyParagraph;
+
+const sm331MlfbOnly7Pf11Copy = [
+  { kind: "text", value: "مدل " },
+  { kind: "technical", value: "6ES7331-7PF11-0AB0" },
+  { kind: "text", value: "، ماژول ورودی آنالوگ است." },
+] as const satisfies ProductCopyParagraph;
+
+const sm331MlfbOnly7Rd00Copy = [
+  { kind: "text", value: "مدل " },
+  { kind: "technical", value: "6ES7331-7RD00-0AB0" },
+  { kind: "text", value: "، ماژول ورودی آنالوگ است." },
+] as const satisfies ProductCopyParagraph;
+
+const sm331MlfbOnly7Sf00Copy = [
+  { kind: "text", value: "مدل " },
+  { kind: "technical", value: "6ES7331-7SF00-0AB0" },
+  { kind: "text", value: "، ماژول ورودی آنالوگ است." },
+] as const satisfies ProductCopyParagraph;
+
 export const persianProductCopyDraftRegistry = [
   {
     productId: "siemens-s7-1200-cpu-211-1ae40",
@@ -2106,5 +2136,45 @@ export const persianProductCopyDraftRegistry = [
       note:
         "6ES7331-7NF10-0AB0: PM-approved exact MLFB identity and analog-input module type only. No approval of the complete canonical title, channel count, Universal, resolution, speed, isochronous operation, diagnostics, electrical capabilities, compatibility, lifecycle or availability. Distinct four- and eight-channel modes; no unconditional eight-channel Fast claim. Canonical data and earlier deferred issues remain unchanged.",
     },
+  },
+  {
+    productId: "siemens-s7-300-sm331-ai8-rtd-7pf01-0ab0",
+    shortDescription: sm331MlfbOnly7Pf01Copy,
+    description: [sm331MlfbOnly7Pf01Copy],
+    provenance: "ai-assisted",
+    linguisticReview: { decision: "pending" },
+    technicalReview: { decision: "pending" },
+  },
+  {
+    productId: "siemens-s7-300-sm331-ai6-thermocouple-16bit-7pe10-0ab0",
+    shortDescription: sm331MlfbOnly7Pe10Copy,
+    description: [sm331MlfbOnly7Pe10Copy],
+    provenance: "ai-assisted",
+    linguisticReview: { decision: "pending" },
+    technicalReview: { decision: "pending" },
+  },
+  {
+    productId: "siemens-s7-300-sm331-ai8-thermocouple-7pf11-0ab0",
+    shortDescription: sm331MlfbOnly7Pf11Copy,
+    description: [sm331MlfbOnly7Pf11Copy],
+    provenance: "ai-assisted",
+    linguisticReview: { decision: "pending" },
+    technicalReview: { decision: "pending" },
+  },
+  {
+    productId: "siemens-s7-300-sm331-ai4-0-4-20ma-ex-7rd00-0ab0",
+    shortDescription: sm331MlfbOnly7Rd00Copy,
+    description: [sm331MlfbOnly7Rd00Copy],
+    provenance: "ai-assisted",
+    linguisticReview: { decision: "pending" },
+    technicalReview: { decision: "pending" },
+  },
+  {
+    productId: "siemens-s7-300-sm331-ai8-tc-ai4-pt100-ex-7sf00-0ab0",
+    shortDescription: sm331MlfbOnly7Sf00Copy,
+    description: [sm331MlfbOnly7Sf00Copy],
+    provenance: "ai-assisted",
+    linguisticReview: { decision: "pending" },
+    technicalReview: { decision: "pending" },
   },
 ] as const satisfies readonly PersianProductCopyOverlay[];
