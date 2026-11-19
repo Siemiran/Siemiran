@@ -3,7 +3,34 @@
 This file records completed repository changes. The newest entry records the
 current implementation baseline; older dated entries are historical snapshots.
 
-## 2026-11-19 - PR #83: Complete Batch 13 Private Drafts and Dual Approvals
+## 2026-11-19 - PR #85: Complete Batch 14 Private Drafts and Dual Approvals
+
+- [PR #85](https://github.com/Siemiran/Siemiran/pull/85) (`feat: add Batch 14 Persian product copy`) merged at
+  `2026-11-19T09:15:36Z` / `2026-11-19 12:45:36` Asia/Tehran as
+  `74668d494683525d8128d9950309b511fc1b373a`. Sole parent:
+  `2d80cf4fb448757654d101ced8234b818e313f1c`. Reviewed head:
+  `ccedae932c330b4220bcff82a5dd0324432e664b`. Draft:
+  `31cc7c87d22df51dde622c5f1ef34c942acefad6`. Reviewed/squash tree:
+  `7d5b276ba50cf7e3e7047024297b39cdcf8d9896`. Registry +170/-0, verifier +319/-16,
+  total +489/-16. Guarded squash and local fast-forward completed, with
+  feature refs at the reviewed head.
+- Five private analog-output entries approve only exact MLFB and module type.
+  See [DATABASE.md](DATABASE.md#2026-11-19---batch-14-private-product-copy-checkpoint-current-state) for the ten hash-bound
+  role observations, evidence limits and recorded preservation results.
+- At merge, 70/382 drafts and current approvals per role, 70 dual approvals,
+  zero pending roles and 312 missing. Activation remains invalid at 70 checked,
+  70 approved and 312 missing, with capability absent. Active overlays are zero
+  and publication is disabled. Full 382/382 current dual approvals plus separate
+  launch authorization are required.
+- **PASS (REUSED)** — The Batch 14 validator, focused lint and build, including
+  TypeScript and 774/774 static pages, each exited 0 at reviewed head
+  `ccedae932c330b4220bcff82a5dd0324432e664b`. The squash has the same tree
+  `7d5b276ba50cf7e3e7047024297b39cdcf8d9896`. Application, dependency and build
+  configuration content is unchanged through this documentation checkpoint.
+- Recorded Batch 14 implementation CI was absent with zero check runs, status
+  contexts and workflow runs. The combined status was pending.
+
+## 2026-11-19 - PR #83: Complete Batch 13 Private Drafts and Dual Approvals (Historical Snapshot)
 
 - [PR #83](https://github.com/Siemiran/Siemiran/pull/83) (`feat: add Batch 13 Persian product copy`) merged at
   `2026-11-19T08:09:31Z` / `2026-11-19 11:39:31` Asia/Tehran as
@@ -15,7 +42,7 @@ current implementation baseline; older dated entries are historical snapshots.
   total +512/-10 across two files. Guarded squash and main synchronization
   completed with feature refs preserved at the reviewed head.
 - Five private entries approve exact MLFB and module type only (two analog inputs
-  and three analog outputs). See [DATABASE.md](DATABASE.md#2026-11-19---batch-13-private-product-copy-checkpoint-current-state)
+  and three analog outputs). See [DATABASE.md](DATABASE.md#2026-11-19---batch-13-private-product-copy-checkpoint-historical-snapshot)
   for the ten hash-bound role observations, distinct evidence access and
   recorded preservation results.
 - At merge, 65/382 drafts and current approvals per role, 65 dual approvals,
