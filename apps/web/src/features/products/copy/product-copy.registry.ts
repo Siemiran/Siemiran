@@ -2652,39 +2652,139 @@ export const persianProductCopyDraftRegistry = [
     shortDescription: siplusSm332MlfbOnly5Hf00Copy,
     description: [siplusSm332MlfbOnly5Hf00Copy],
     provenance: "ai-assisted",
-    linguisticReview: { decision: "pending" },
-    technicalReview: { decision: "pending" },
+    linguisticReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-11-19T09:57:17Z",
+      reviewedContentHash:
+        "sha256:335779e11d5d493187d7dccc5663fe7836ae473f0771d1f18311b828c56973d9",
+      evidenceRef:
+        "PM linguistic approval in the supplied Batch 15 approval request; draft commit 55aafe89238e3c68dac886358e9d9fcda753b4a2; Product siemens-siplus-s7-300-sm332-ao8-ui-5hf00-2ab0; MLFB 6AG1332-5HF00-2AB0; module type analog-output. Recording time is an actual UTC observation, not the PM review timestamp.",
+      note:
+        "6AG1332-5HF00-2AB0: PM-approved Persian wording, punctuation and spacing, typed MLFB isolation, and the exact خروجی آنالوگ wording in identical short and single-paragraph long descriptions.",
+    },
+    technicalReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-11-19T09:57:18Z",
+      reviewedContentHash:
+        "sha256:335779e11d5d493187d7dccc5663fe7836ae473f0771d1f18311b828c56973d9",
+      evidenceRef:
+        "PM technical approval in the supplied Batch 15 approval request; draft commit 55aafe89238e3c68dac886358e9d9fcda753b4a2; Product siemens-siplus-s7-300-sm332-ao8-ui-5hf00-2ab0; MLFB 6AG1332-5HF00-2AB0; module type analog-output. Recording time is an actual UTC observation, not the PM review timestamp. Reused readiness parsed text from Siemens S7-300 Module Data, 05/2022, A5E00105505-AK; https://cache.industry.siemens.com/dl/files/629/8859629/att_55794/v1/s7300_module_data_manual_en-US_en-US.pdf; section 1.7, printed p28 and section 6.12, printed p367. Distinct from the standard order number 6ES7332-5HF00-0AB0. Printed pages are not assumed viewer indices. Visual inspection and successful direct-origin HTTP status for parsed material were NOT OBSERVED. No fresh retrieval or lifecycle verification.",
+      note:
+        "6AG1332-5HF00-2AB0: PM-approved exact MLFB identity and analog-output module type only. Full titles, counts, resolution, speed, electrical or operating characteristics, compatibility, certification, lifecycle and availability remain outside approval.",
+    },
   },
   {
     productId: "siemens-s7-300-sm334-ai4-ao2-8bit-0ce01-0aa0",
     shortDescription: sm334MlfbOnly0Ce01Copy,
     description: [sm334MlfbOnly0Ce01Copy],
     provenance: "ai-assisted",
-    linguisticReview: { decision: "pending" },
-    technicalReview: { decision: "pending" },
+    linguisticReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-11-19T09:57:17Z",
+      reviewedContentHash:
+        "sha256:e4d3dfb326ba107c2fd3b278b53a02f994b88a1f58b222431d260f85da229f11",
+      evidenceRef:
+        "PM linguistic approval in the supplied Batch 15 approval request; draft commit 55aafe89238e3c68dac886358e9d9fcda753b4a2; Product siemens-s7-300-sm334-ai4-ao2-8bit-0ce01-0aa0; MLFB 6ES7334-0CE01-0AA0; module type analog-io. Recording time is an actual UTC observation, not the PM review timestamp.",
+      note:
+        "6ES7334-0CE01-0AA0: PM-approved Persian wording, punctuation and spacing, typed MLFB isolation, and the exact ورودی و خروجی آنالوگ wording in identical short and single-paragraph long descriptions.",
+    },
+    technicalReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-11-19T09:57:18Z",
+      reviewedContentHash:
+        "sha256:e4d3dfb326ba107c2fd3b278b53a02f994b88a1f58b222431d260f85da229f11",
+      evidenceRef:
+        "PM technical approval in the supplied Batch 15 approval request; draft commit 55aafe89238e3c68dac886358e9d9fcda753b4a2; Product siemens-s7-300-sm334-ai4-ao2-8bit-0ce01-0aa0; MLFB 6ES7334-0CE01-0AA0; module type analog-io. Recording time is an actual UTC observation, not the PM review timestamp. Reused readiness parsed text from Siemens S7-300 Module Data, 05/2022, A5E00105505-AK; https://cache.industry.siemens.com/dl/files/629/8859629/att_55794/v1/s7300_module_data_manual_en-US_en-US.pdf; section 6.16, printed p395. Printed pages are not assumed viewer indices. Visual inspection and successful direct-origin HTTP status for parsed material were NOT OBSERVED. No fresh retrieval or lifecycle verification.",
+      note:
+        "6ES7334-0CE01-0AA0: PM-approved exact MLFB identity and mixed analog input and output module type only. Full titles, counts, resolution, speed, electrical or operating characteristics, compatibility, certification, lifecycle and availability remain outside approval.",
+    },
   },
   {
     productId: "siemens-s7-300-sm334-ai4-ao2-12bit-0ke00-0ab0",
     shortDescription: sm334MlfbOnly0Ke00Copy,
     description: [sm334MlfbOnly0Ke00Copy],
     provenance: "ai-assisted",
-    linguisticReview: { decision: "pending" },
-    technicalReview: { decision: "pending" },
+    linguisticReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-11-19T09:57:17Z",
+      reviewedContentHash:
+        "sha256:b8d05d32718ace7c27bba9c90964e672228b8960fa504062bb6e7a7f0fe390bf",
+      evidenceRef:
+        "PM linguistic approval in the supplied Batch 15 approval request; draft commit 55aafe89238e3c68dac886358e9d9fcda753b4a2; Product siemens-s7-300-sm334-ai4-ao2-12bit-0ke00-0ab0; MLFB 6ES7334-0KE00-0AB0; module type analog-io. Recording time is an actual UTC observation, not the PM review timestamp.",
+      note:
+        "6ES7334-0KE00-0AB0: PM-approved Persian wording, punctuation and spacing, typed MLFB isolation, and the exact ورودی و خروجی آنالوگ wording in identical short and single-paragraph long descriptions.",
+    },
+    technicalReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-11-19T09:57:18Z",
+      reviewedContentHash:
+        "sha256:b8d05d32718ace7c27bba9c90964e672228b8960fa504062bb6e7a7f0fe390bf",
+      evidenceRef:
+        "PM technical approval in the supplied Batch 15 approval request; draft commit 55aafe89238e3c68dac886358e9d9fcda753b4a2; Product siemens-s7-300-sm334-ai4-ao2-12bit-0ke00-0ab0; MLFB 6ES7334-0KE00-0AB0; module type analog-io. Recording time is an actual UTC observation, not the PM review timestamp. Reused readiness parsed text from Siemens S7-300 Module Data, 05/2022, A5E00105505-AK; https://cache.industry.siemens.com/dl/files/629/8859629/att_55794/v1/s7300_module_data_manual_en-US_en-US.pdf; section 6.17, printed p401. Printed pages are not assumed viewer indices. Visual inspection and successful direct-origin HTTP status for parsed material were NOT OBSERVED. No fresh retrieval or lifecycle verification.",
+      note:
+        "6ES7334-0KE00-0AB0: PM-approved exact MLFB identity and mixed analog input and output module type only. Full titles, counts, resolution, speed, electrical or operating characteristics, compatibility, certification, lifecycle and availability remain outside approval.",
+    },
   },
   {
     productId: "siemens-siplus-s7-300-sm334-ai4-ao2-12bit-0ke00-7ab0",
     shortDescription: siplusSm334MlfbOnly0Ke00Copy,
     description: [siplusSm334MlfbOnly0Ke00Copy],
     provenance: "ai-assisted",
-    linguisticReview: { decision: "pending" },
-    technicalReview: { decision: "pending" },
+    linguisticReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-11-19T09:57:17Z",
+      reviewedContentHash:
+        "sha256:31c4b179029b64012767dae1d797942be038a1fd2864b31386de93e7c3941fbb",
+      evidenceRef:
+        "PM linguistic approval in the supplied Batch 15 approval request; draft commit 55aafe89238e3c68dac886358e9d9fcda753b4a2; Product siemens-siplus-s7-300-sm334-ai4-ao2-12bit-0ke00-7ab0; MLFB 6AG1334-0KE00-7AB0; module type analog-io. Recording time is an actual UTC observation, not the PM review timestamp.",
+      note:
+        "6AG1334-0KE00-7AB0: PM-approved Persian wording, punctuation and spacing, typed MLFB isolation, and the exact ورودی و خروجی آنالوگ wording in identical short and single-paragraph long descriptions.",
+    },
+    technicalReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-11-19T09:57:18Z",
+      reviewedContentHash:
+        "sha256:31c4b179029b64012767dae1d797942be038a1fd2864b31386de93e7c3941fbb",
+      evidenceRef:
+        "PM technical approval in the supplied Batch 15 approval request; draft commit 55aafe89238e3c68dac886358e9d9fcda753b4a2; Product siemens-siplus-s7-300-sm334-ai4-ao2-12bit-0ke00-7ab0; MLFB 6AG1334-0KE00-7AB0; module type analog-io. Recording time is an actual UTC observation, not the PM review timestamp. Reused readiness parsed text from Siemens S7-300 Module Data, 05/2022, A5E00105505-AK; https://cache.industry.siemens.com/dl/files/629/8859629/att_55794/v1/s7300_module_data_manual_en-US_en-US.pdf; section 1.7, printed p28. Siemens ST 70, 2023, SIPLUS SM 334; https://cache.industry.siemens.com/dl/files/167/109744167/att_1145924/v1/simatic-st70-complete-english-2023.pdf; printed p5/104. Module Data section 6.17, printed p401 lists a separate SIPLUS -2AB0 order number and is not evidence for -7AB0. Printed pages are not assumed viewer indices. Visual inspection and successful direct-origin HTTP status for parsed material were NOT OBSERVED. No fresh retrieval or lifecycle verification.",
+      note:
+        "6AG1334-0KE00-7AB0: PM-approved exact MLFB identity and mixed analog input and output module type only. Full titles, counts, resolution, speed, electrical or operating characteristics, compatibility, certification, lifecycle and availability remain outside approval.",
+    },
   },
   {
     productId: "siemens-s7-300-sm335-ai4-ao4-14bit-7hg01-0ab0",
     shortDescription: sm335MlfbOnly7Hg01Copy,
     description: [sm335MlfbOnly7Hg01Copy],
     provenance: "ai-assisted",
-    linguisticReview: { decision: "pending" },
-    technicalReview: { decision: "pending" },
+    linguisticReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-11-19T09:57:17Z",
+      reviewedContentHash:
+        "sha256:5977e85f4e4304fe10efa342a31b69830981b800d55a7f2d7d6797a0915359a8",
+      evidenceRef:
+        "PM linguistic approval in the supplied Batch 15 approval request; draft commit 55aafe89238e3c68dac886358e9d9fcda753b4a2; Product siemens-s7-300-sm335-ai4-ao4-14bit-7hg01-0ab0; MLFB 6ES7335-7HG01-0AB0; module type analog-io. Recording time is an actual UTC observation, not the PM review timestamp.",
+      note:
+        "6ES7335-7HG01-0AB0: PM-approved Persian wording, punctuation and spacing, typed MLFB isolation, and the exact ورودی و خروجی آنالوگ wording in identical short and single-paragraph long descriptions.",
+    },
+    technicalReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-11-19T09:57:18Z",
+      reviewedContentHash:
+        "sha256:5977e85f4e4304fe10efa342a31b69830981b800d55a7f2d7d6797a0915359a8",
+      evidenceRef:
+        "PM technical approval in the supplied Batch 15 approval request; draft commit 55aafe89238e3c68dac886358e9d9fcda753b4a2; Product siemens-s7-300-sm335-ai4-ao4-14bit-7hg01-0ab0; MLFB 6ES7335-7HG01-0AB0; module type analog-io. Recording time is an actual UTC observation, not the PM review timestamp. Reused readiness indexed and parsed FAQ text from Siemens Front Connector Selection, V2.0, 15 October 2008, ID 23060726; https://cache.industry.siemens.com/dl/files/726/23060726/att_66628/v1/23060726_s7-300_kabel_und_zubehoer_zuordnung_stecker_baugruppe_e.pdf; section 1.3 Table 7, printed p13/16. The separate SM 335 manual request returned 403 in the reader and supplied no evidence. The usable indexed and parsed FAQ is a separate source. Printed pages are not assumed viewer indices. Visual inspection and successful direct-origin HTTP status for parsed material were NOT OBSERVED. No fresh retrieval or lifecycle verification.",
+      note:
+        "6ES7335-7HG01-0AB0: PM-approved exact MLFB identity and mixed analog input and output module type only. Full titles, counts, resolution, speed, electrical or operating characteristics, compatibility, certification, lifecycle and availability remain outside approval.",
+    },
   },
 ] as const satisfies readonly PersianProductCopyOverlay[];
