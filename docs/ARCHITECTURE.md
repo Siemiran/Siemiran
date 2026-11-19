@@ -1,6 +1,6 @@
 # Siemiran — Current Architecture
 
-Implementation base: `main` at `f30da51f62eb8bfeb9ea2b5b9c0a05e0cf7ac6c2` (2026-11-19)
+Implementation base: `main` at `74668d494683525d8128d9950309b511fc1b373a` (2026-11-19)
 
 Current checkpoint and resume workflow: [SESSION_HANDOFF.md](SESSION_HANDOFF.md).
 
@@ -237,26 +237,32 @@ durable qualifications are in
 [PR #83](https://github.com/Siemiran/Siemiran/pull/83) completed private Batch 13 at
 `f30da51f62eb8bfeb9ea2b5b9c0a05e0cf7ac6c2`. The five entries approve only exact MLFB identity and the respective module
 type: two analog inputs and three analog outputs.
-See [DATABASE.md](DATABASE.md#2026-11-19---batch-13-private-product-copy-checkpoint-current-state) for the exact bindings and access qualifications.
+See [DATABASE.md](DATABASE.md#2026-11-19---batch-13-private-product-copy-checkpoint-historical-snapshot) for the exact bindings and access qualifications.
 
-The catalog contains 382 Products (186 S7-1200 / 196 S7-300). There are
-65 private drafts, 65 current approvals per role, 65 current dual approvals,
-zero pending roles and 317 missing entries. Activation validation remains
-invalid at `overlayCount` 65, `approvedCount` 65 and `missingIds.length` 317,
-with capability absent. Active overlays remain 0/382, publication is disabled,
-and public FA/EN copy stays canonical English/LTR. Complete 382/382 current dual
-approvals and separate launch authorization remain required.
+[PR #85](https://github.com/Siemiran/Siemiran/pull/85) completed private Batch 14 at
+`74668d494683525d8128d9950309b511fc1b373a`. The five private entries approve only
+exact MLFB identity and analog-output module type.
+See [DATABASE.md](DATABASE.md#2026-11-19---batch-14-private-product-copy-checkpoint-current-state) for evidence and access qualifications.
 
-Overrides remain 10 Products / 20 assignments / 7 unique strings. The global
-allowlist is empty and Batch 13 added zero overrides. The eleven public
-lifecycle omissions and separate S7-300 provenance classification (185
-Siemens-official verified / 11 explicitly unverified) remain in effect.
-Fixed 30/50/55/60 membership boundaries remain intact. Batch 12's 60/322
-checkpoint and earlier dated counts are historical. Batch 11 recorded 55/327.
+The catalog contains 382 Products (186 S7-1200 / 196 S7-300). There are 70 private
+drafts, 70 current approvals per role, 70 current dual approvals, zero pending
+roles and 312 missing entries. Activation validation remains invalid at
+`overlayCount` 70, `approvedCount` 70 and `missingIds.length` 312, with capability
+absent. Active overlays remain 0/382, publication is disabled, and public FA/EN
+copy stays canonical English/LTR. Complete 382/382 current dual approvals and
+separate launch authorization remain required.
+
+Overrides remain 10 Products / 20 assignments / 7 unique strings with an empty
+global allowlist. Batch 14 added zero overrides. The eleven public lifecycle
+omissions and separate S7-300 provenance classification (185 Siemens-official
+verified / 11 explicitly unverified) remain in effect.
+Fixed 30/50/55/60 membership boundaries and the separate 65-ID set for completed
+Batches 01–13 remain intact. Batch 13's 65/317 and Batch 12's 60/322 checkpoints
+are historical. Batch 11 recorded 55/327.
 Dated Batch 01–10 checkpoints retain 5/10/15/20/25/30/35/40/45/50 entries and
 377/372/367/362/357/352/347/342/337/332 missing Products respectively. Partial
-activation remains prohibited. Batch 14 remains unapproved and unstarted. Admin Panel and Automation remain
-gated, and dedicated completed-Persian-copy website inspection remains pending.
+activation remains prohibited. Batch 15 remains unapproved and unstarted.
+Admin Panel and Automation remain gated.
 
 The dedicated local visual and functional website inspection with the maintainer
 remains pending after Persian Product-copy completion. It must cover FA/EN

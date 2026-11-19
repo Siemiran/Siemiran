@@ -1,12 +1,41 @@
 # Siemiran — Project State
 
-## 2026-11-19 - Batch 13 Reconciliation (Current State)
+## 2026-11-19 - Batch 14 Reconciliation (Current State)
+
+[PR #85](https://github.com/Siemiran/Siemiran/pull/85) completed private Batch 14 at
+`74668d494683525d8128d9950309b511fc1b373a`. Guarded squash and local fast-forward
+completed. The five private entries approve only exact MLFB identity and
+analog-output module type.
+See [DATABASE.md](DATABASE.md#2026-11-19---batch-14-private-product-copy-checkpoint-current-state) for bindings, evidence and
+recorded preservation results, and [CHANGELOG.md](CHANGELOG.md#2026-11-19---pr-85-complete-batch-14-private-drafts-and-dual-approvals) for merge identity.
+
+The catalog contains 382 Products (186 S7-1200 / 196 S7-300). There are 70 private
+drafts, 70 current approvals per role, 70 current dual approvals, zero pending
+roles and 312 missing entries. Activation validation remains invalid at
+`overlayCount` 70, `approvedCount` 70 and `missingIds.length` 312, with capability
+absent. Active overlays remain 0/382, publication is disabled, and public FA/EN
+copy stays canonical English/LTR. Complete 382/382 current dual approvals and
+separate launch authorization remain required.
+
+Overrides remain 10 Products / 20 assignments / 7 unique strings with an empty
+global allowlist. Batch 14 added zero overrides. The eleven public lifecycle
+omissions and separate S7-300 provenance classification (185 Siemens-official
+verified / 11 explicitly unverified) remain in effect.
+
+Batch 15 remains unapproved and unstarted. Admin Panel and Automation remain
+gated, and the dedicated completed-copy website inspection remains pending.
+See [SESSION_HANDOFF.md](SESSION_HANDOFF.md) for resume checks.
+
+## 2026-11-19 - Batch 13 Reconciliation (Historical Snapshot)
+
+The 65/317 checkpoint and prospective workflow below describe Batch 13 at its
+merge. Batch 14 is the current checkpoint.
 
 [PR #83](https://github.com/Siemiran/Siemiran/pull/83) completed private Batch 13 at
 `f30da51f62eb8bfeb9ea2b5b9c0a05e0cf7ac6c2`. Guarded squash and main
 synchronization completed. The five entries approve only exact MLFB identity and the respective module
 type: two analog inputs and three analog outputs. Product details, recording times, evidence
-access and reused implementation checks are in [DATABASE.md](DATABASE.md#2026-11-19---batch-13-private-product-copy-checkpoint-current-state).
+access and reused implementation checks are in [DATABASE.md](DATABASE.md#2026-11-19---batch-13-private-product-copy-checkpoint-historical-snapshot).
 
 The catalog contains 382 Products (186 S7-1200 / 196 S7-300). There are
 65 private drafts, 65 current approvals per role, 65 current dual approvals,
@@ -22,13 +51,13 @@ lifecycle omissions and separate S7-300 provenance classification (185
 Siemens-official verified / 11 explicitly unverified) remain in effect.
 Batch 14 remains unapproved and unstarted. Admin Panel and Automation remain
 gated, and dedicated completed-Persian-copy website inspection remains pending.
-See [CHANGELOG.md](CHANGELOG.md#2026-11-19---pr-83-complete-batch-13-private-drafts-and-dual-approvals) for merge identity and
+See [CHANGELOG.md](CHANGELOG.md#2026-11-19---pr-83-complete-batch-13-private-drafts-and-dual-approvals-historical-snapshot) for merge identity and
 [SESSION_HANDOFF.md](SESSION_HANDOFF.md) for resume checks.
 
 ## 2026-11-17 - Batch 12 Reconciliation (Historical Snapshot)
 
 The 60/322 checkpoint and prospective workflow below describe Batch 12 at its
-merge. The current checkpoint is Batch 13.
+merge. Batch 13 superseded this checkpoint.
 
 Implementation baseline: `b62b5fccebf748d09a0164271bb477be23887570`, merged
 [PR #81](https://github.com/Siemiran/Siemiran/pull/81); guarded squash and main
@@ -661,7 +690,7 @@ the inventory before this approved deletion, not a valid current record.
 - Status: Active Development
 - Documentation checkpoint: 2026-11-19; workflow status is reported separately
 - Implementation base: `main` at
-  `f30da51f62eb8bfeb9ea2b5b9c0a05e0cf7ac6c2`
+  `74668d494683525d8128d9950309b511fc1b373a`
 - No semantic release version is asserted by this document.
 
 ## Current Stack
@@ -693,7 +722,7 @@ the inventory before this approved deletion, not a valid current record.
 | --- | --- | --- |
 | Product listing and dynamic detail pages | IMPLEMENTED | Repository-backed listing, static product paths, and not-found handling |
 | Localization foundation | IMPLEMENTED | Persian-first FA/EN routing, matching UI catalogs, one-click equivalent-page switching, locale direction, and temporarily noindexed English routes |
-| Product-copy consumer integration | IMPLEMENTED | All intended consumers use the central resolver/public DTO boundary; private drafts and both approval roles are 65/382 with 65 current dual approvals, zero pending roles, and 317 missing, while active overlays remain 0/382, activation capability is absent, and publication is disabled |
+| Product-copy consumer integration | IMPLEMENTED | All intended consumers use the central resolver/public DTO boundary; private drafts and both approval roles are 70/382 with 70 current dual approvals, zero pending roles, and 312 missing, while active overlays remain 0/382, activation capability is absent, and publication is disabled |
 | Search, URL parameters, filters, sorting, pagination | IMPLEMENTED | Category, family, series, and product-type filters; 12-item pagination |
 | Gallery and specifications | IMPLEMENTED | Product gallery/image UI and technical specification rendering |
 | SEO and structured data | IMPLEMENTED | Metadata, canonical/Open Graph/Twitter fields, Product JSON-LD, breadcrumbs, and Breadcrumb JSON-LD |
@@ -940,6 +969,16 @@ each milestone was recorded; they are not the current connection state.
   and the Product collection total is 308.
 
 ## Validation at the Documentation Checkpoint
+
+- **PASS (REUSED)** — The Batch 14 validator, focused lint and build, including
+  TypeScript and 774/774 static pages, each exited 0 at reviewed head
+  `ccedae932c330b4220bcff82a5dd0324432e664b`. The squash has the same tree
+  `7d5b276ba50cf7e3e7047024297b39cdcf8d9896`. Application, dependency and build
+  configuration content is unchanged through this documentation checkpoint.
+- Recorded Batch 14 implementation CI was absent with zero check runs, status
+  contexts and workflow runs. The combined status was pending.
+
+### Historical Validation — Batch 13
 
 - **PASS (REUSED)** — The Batch 13 validator, focused lint and build, including
   TypeScript and 774/774 static pages, each exited 0 at reviewed head

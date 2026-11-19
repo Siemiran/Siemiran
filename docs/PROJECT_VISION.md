@@ -35,23 +35,22 @@ Principles:
   languages.
 
 Current implementation checkpoint (2026-11-19)
-`f30da51f62eb8bfeb9ea2b5b9c0a05e0cf7ac6c2` (merged [PR #83](https://github.com/Siemiran/Siemiran/pull/83)).
-Batches 01–13 are complete privately. Batch 13 approves only exact MLFB
-identity and the respective module type: two analog inputs and three analog
-outputs.
-Product evidence is in [DATABASE.md](DATABASE.md#2026-11-19---batch-13-private-product-copy-checkpoint-current-state), with durable
-qualifications and resume checks in [SESSION_HANDOFF.md](SESSION_HANDOFF.md).
+`74668d494683525d8128d9950309b511fc1b373a` (merged [PR #85](https://github.com/Siemiran/Siemiran/pull/85)).
+Batches 01–14 are complete privately. The five Batch 14 entries approve only
+exact MLFB identity and analog-output module type.
+See [DATABASE.md](DATABASE.md#2026-11-19---batch-14-private-product-copy-checkpoint-current-state) for Product evidence and
+[SESSION_HANDOFF.md](SESSION_HANDOFF.md) for durable qualifications.
 
-The catalog contains 382 Products (186 S7-1200 / 196 S7-300). There are
-65 private drafts, 65 current approvals per role, 65 current dual approvals,
-zero pending roles and 317 missing entries. Activation validation remains
-invalid at `overlayCount` 65, `approvedCount` 65 and `missingIds.length` 317,
-with capability absent. Active overlays remain 0/382, publication is disabled,
-and public FA/EN copy stays canonical English/LTR. Complete 382/382 current dual
-approvals and separate launch authorization remain required.
+The catalog contains 382 Products (186 S7-1200 / 196 S7-300). There are 70 private
+drafts, 70 current approvals per role, 70 current dual approvals, zero pending
+roles and 312 missing entries. Activation validation remains invalid at
+`overlayCount` 70, `approvedCount` 70 and `missingIds.length` 312, with capability
+absent. Active overlays remain 0/382, publication is disabled, and public FA/EN
+copy stays canonical English/LTR. Complete 382/382 current dual approvals and
+separate launch authorization remain required.
 
-Batch 14 remains unapproved and unstarted. Admin Panel and Automation remain
-gated. Batch 12's 60/322 checkpoint and earlier counts are historical.
+Batch 15 remains unapproved and unstarted. Admin Panel and Automation remain
+gated. Batch 13's 65/317 checkpoint and earlier counts are historical.
 
 After Persian Product-copy completion, the dedicated local visual and functional
 website inspection with the maintainer remains pending: FA/EN switching,
