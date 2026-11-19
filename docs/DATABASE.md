@@ -1,16 +1,82 @@
 # Siemiran — Product Database
 
 Repository source of truth: `main` at
-`b62b5fccebf748d09a0164271bb477be23887570`.
+`f30da51f62eb8bfeb9ea2b5b9c0a05e0cf7ac6c2` (2026-11-19).
 
-## 2026-11-17 - Batch 12 Private Product-copy Checkpoint (Current State)
+## 2026-11-19 - Batch 13 Private Product-copy Checkpoint (Current State)
+
+[PR #83](https://github.com/Siemiran/Siemiran/pull/83) merged as `f30da51f62eb8bfeb9ea2b5b9c0a05e0cf7ac6c2`
+on 2026-11-19. See [CHANGELOG.md](CHANGELOG.md#2026-11-19---pr-83-complete-batch-13-private-drafts-and-dual-approvals) for the exact merge identity and scope.
+
+The five entries approve only exact MLFB identity and the respective module
+type: two analog inputs and three analog outputs. The `ai-assisted` copy uses identical three-segment short and
+single-paragraph long descriptions: a Persian introduction, one typed exact
+MLFB, and the respective Persian module type. Full titles, counts, HART/U/I
+characteristics, resolution, diagnostics, electrical ranges, compatibility,
+certification, lifecycle, availability and performance are outside approval.
+
+| Exact MLFB | Stable Product ID | Approved module type | Evidence / section / printed pages |
+| --- | --- | --- | --- |
+| `6ES7331-7TB00-0AB0` | `siemens-s7-300-sm331-ai2-hart-7tb00-0ab0` | analog-input | E1 / §4.4.4 / p176 |
+| `6ES7331-7TF01-0AB0` | `siemens-s7-300-sm331-ai8-hart-7tf01-0ab0` | analog-input | E2 / §6.1 / p55 |
+| `6ES7332-5HB01-0AB0` | `siemens-s7-300-sm332-ao2-ui-11-12bit-5hb01-0ab0` | analog-output | E3 / §6.15 / pp388–389 |
+| `6ES7332-5HD01-0AB0` | `siemens-s7-300-sm332-ao4-ui-diagnostics-5hd01-0ab0` | analog-output | E3 / §6.14 / p382 |
+| `6ES7332-5HF00-0AB0` | `siemens-s7-300-sm332-ao8-ui-diagnostics-5hf00-0ab0` | analog-output | E3 / §6.12 / p367 |
+
+- **E1:** [Siemens S7-300, ET 200M Ex I/O Modules, 04/2022, A5E00172008-AP](https://support.industry.siemens.com/cs/attachments/1096709/s7300_et200m_ex_io_modules_manual_en_en-US.pdf).
+- **E2:** [Siemens HART analog modules, 11/2020, A5E00434623-AG](https://support.industry.siemens.com/cs/attachments/22063748/et200m_hart_analog_modules_manual_en-US_en-US.pdf).
+- **E3:** [Siemens S7-300 Module Data, 05/2022, A5E00105505-AK](https://cache.industry.siemens.com/dl/files/629/8859629/att_55794/v1/s7300_module_data_manual_en-US_en-US.pdf).
+
+- **7TB00 / 7TF01 (analog-input):** Reuse readiness-reviewed official indexed
+  text. The reported direct tool fetches returned **403 Forbidden** and yielded
+  no PDF reads or parsed text. HART measurement modes and nominal counts remain
+  outside approval.
+- **5HB01 / 5HD01 / 5HF00 (analog-output):** Reuse readiness-accessible parsed
+  Siemens S7-300 Module Data text. Voltage/current output configuration and
+  nominal counts remain outside approval.
+- Printed page references do not establish viewer indices. Visual inspection and
+  successful direct-origin HTTP status for the accessible parsed material were
+  **NOT OBSERVED**. There was no fresh retrieval or lifecycle verification for
+  this checkpoint. The separate input-reference 403 observations still apply.
+
+Ten distinct `Siemiran` role records bind unchanged production hashes. The UTC
+recording observations were linguistic `2026-11-17T19:13:24Z` and technical
+`2026-11-17T19:13:41Z`. They record role entries separately from PM review
+and the November 19 merge.
+
+The recorded implementation checks preserved the previous 60 complete entries
+with their metadata, order and production hashes, and all 65 draft contents,
+bindings and provenance. Five MLFB technical segments were authorized, and the
+two input and three output bindings and Persian suffixes passed. Each of ten
+independent text/kind mutations staled both approvals. Fixed 30/50/55/60
+membership boundaries and the Batch 12 checks were preserved. These results come from the implementation checkpoint.
+
+The catalog contains 382 Products (186 S7-1200 / 196 S7-300). There are
+65 private drafts, 65 current approvals per role, 65 current dual approvals,
+zero pending roles and 317 missing entries. Activation validation remains
+invalid at `overlayCount` 65, `approvedCount` 65 and `missingIds.length` 317,
+with capability absent. Active overlays remain 0/382, publication is disabled,
+and public FA/EN copy stays canonical English/LTR. Complete 382/382 current dual
+approvals and separate launch authorization remain required.
+
+Overrides remain 10 Products / 20 assignments / 7 unique strings. The global
+allowlist is empty and Batch 13 added zero overrides. The eleven public
+lifecycle omissions and separate S7-300 provenance classification (185
+Siemens-official verified / 11 explicitly unverified) remain in effect.
+Batch 14 remains unapproved and unstarted. Admin Panel and Automation remain
+gated, and dedicated completed-Persian-copy website inspection remains pending.
+
+## 2026-11-17 - Batch 12 Private Product-copy Checkpoint (Historical Snapshot)
+
+The 60/322 checkpoint and prospective workflow below describe Batch 12 at its
+merge. The current checkpoint is Batch 13.
 
 [PR #81](https://github.com/Siemiran/Siemiran/pull/81),
 `feat: add Batch 12 Persian product copy`, merged at `2026-11-17T18:15:39Z`
 / `2026-11-17 21:45:39` Asia/Tehran as
 `b62b5fccebf748d09a0164271bb477be23887570`. Guarded squash and main synchronization
 completed; exact merge identities and the two-file +479/-10 scope are in
-[CHANGELOG.md](CHANGELOG.md#2026-11-17---pr-81-complete-batch-12-private-drafts-and-dual-approvals).
+[CHANGELOG.md](CHANGELOG.md#2026-11-17---pr-81-complete-batch-12-private-drafts-and-dual-approvals-historical-snapshot).
 
 All five approved descriptions cover **only exact MLFB identity and analog-input
 module type**. They retain `ai-assisted` provenance and identical three-segment
@@ -71,7 +137,7 @@ Qualifications below are separate from the approved Persian prose:
 - **7RD00:** indexed-text evidence supports only the approved identity/type scope;
   no Ex certification/suitability or lifecycle claim is approved.
 
-Current totals: 382 Products (186 S7-1200 / 196 S7-300); 60/382 private drafts
+Batch 12 totals at merge: 382 Products (186 S7-1200 / 196 S7-300); 60/382 private drafts
 and current approvals per role; 60 current dual approvals; zero pending roles;
 322 missing entries. Overrides remain 10 Products / 20 assignments / 7 unique
 strings, global allowlist empty and zero Batch 12 overrides. Eleven lifecycle

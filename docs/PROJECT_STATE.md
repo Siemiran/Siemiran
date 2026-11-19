@@ -1,6 +1,34 @@
 # Siemiran — Project State
 
-## 2026-11-17 - Batch 12 Reconciliation (Current State)
+## 2026-11-19 - Batch 13 Reconciliation (Current State)
+
+[PR #83](https://github.com/Siemiran/Siemiran/pull/83) completed private Batch 13 at
+`f30da51f62eb8bfeb9ea2b5b9c0a05e0cf7ac6c2`. Guarded squash and main
+synchronization completed. The five entries approve only exact MLFB identity and the respective module
+type: two analog inputs and three analog outputs. Product details, recording times, evidence
+access and reused implementation checks are in [DATABASE.md](DATABASE.md#2026-11-19---batch-13-private-product-copy-checkpoint-current-state).
+
+The catalog contains 382 Products (186 S7-1200 / 196 S7-300). There are
+65 private drafts, 65 current approvals per role, 65 current dual approvals,
+zero pending roles and 317 missing entries. Activation validation remains
+invalid at `overlayCount` 65, `approvedCount` 65 and `missingIds.length` 317,
+with capability absent. Active overlays remain 0/382, publication is disabled,
+and public FA/EN copy stays canonical English/LTR. Complete 382/382 current dual
+approvals and separate launch authorization remain required.
+
+Overrides remain 10 Products / 20 assignments / 7 unique strings. The global
+allowlist is empty and Batch 13 added zero overrides. The eleven public
+lifecycle omissions and separate S7-300 provenance classification (185
+Siemens-official verified / 11 explicitly unverified) remain in effect.
+Batch 14 remains unapproved and unstarted. Admin Panel and Automation remain
+gated, and dedicated completed-Persian-copy website inspection remains pending.
+See [CHANGELOG.md](CHANGELOG.md#2026-11-19---pr-83-complete-batch-13-private-drafts-and-dual-approvals) for merge identity and
+[SESSION_HANDOFF.md](SESSION_HANDOFF.md) for resume checks.
+
+## 2026-11-17 - Batch 12 Reconciliation (Historical Snapshot)
+
+The 60/322 checkpoint and prospective workflow below describe Batch 12 at its
+merge. The current checkpoint is Batch 13.
 
 Implementation baseline: `b62b5fccebf748d09a0164271bb477be23887570`, merged
 [PR #81](https://github.com/Siemiran/Siemiran/pull/81); guarded squash and main
@@ -11,7 +39,7 @@ only exact MLFB identity and analog-input module type. Full titles, counts,
 RTD/thermocouple characteristics, Ex certification/suitability and other
 operating claims remain outside approval. Product evidence, distinct access
 limitations, recording observations and reused preservation/mutation results
-are in [DATABASE.md](DATABASE.md#2026-11-17---batch-12-private-product-copy-checkpoint-current-state); durable qualifications are in
+are in [DATABASE.md](DATABASE.md#2026-11-17---batch-12-private-product-copy-checkpoint-historical-snapshot); durable qualifications are in
 [SESSION_HANDOFF.md](SESSION_HANDOFF.md#outstanding-work-and-evidence-limits).
 
 Overrides remain 10/20/7, global allowlist empty, zero Batch 12 overrides,
@@ -631,9 +659,9 @@ the inventory before this approved deletion, not a valid current record.
 ## Current Baseline
 
 - Status: Active Development
-- Documentation checkpoint: 2026-11-17; workflow status is reported separately
+- Documentation checkpoint: 2026-11-19; workflow status is reported separately
 - Implementation base: `main` at
-  `b62b5fccebf748d09a0164271bb477be23887570`
+  `f30da51f62eb8bfeb9ea2b5b9c0a05e0cf7ac6c2`
 - No semantic release version is asserted by this document.
 
 ## Current Stack
@@ -665,7 +693,7 @@ the inventory before this approved deletion, not a valid current record.
 | --- | --- | --- |
 | Product listing and dynamic detail pages | IMPLEMENTED | Repository-backed listing, static product paths, and not-found handling |
 | Localization foundation | IMPLEMENTED | Persian-first FA/EN routing, matching UI catalogs, one-click equivalent-page switching, locale direction, and temporarily noindexed English routes |
-| Product-copy consumer integration | IMPLEMENTED | All intended consumers use the central resolver/public DTO boundary; private drafts and both approval roles are 60/382 with 60 current dual approvals, zero pending roles, and 322 missing, while active overlays remain 0/382, activation capability is absent, and publication is disabled |
+| Product-copy consumer integration | IMPLEMENTED | All intended consumers use the central resolver/public DTO boundary; private drafts and both approval roles are 65/382 with 65 current dual approvals, zero pending roles, and 317 missing, while active overlays remain 0/382, activation capability is absent, and publication is disabled |
 | Search, URL parameters, filters, sorting, pagination | IMPLEMENTED | Category, family, series, and product-type filters; 12-item pagination |
 | Gallery and specifications | IMPLEMENTED | Product gallery/image UI and technical specification rendering |
 | SEO and structured data | IMPLEMENTED | Metadata, canonical/Open Graph/Twitter fields, Product JSON-LD, breadcrumbs, and Breadcrumb JSON-LD |
@@ -912,6 +940,16 @@ each milestone was recorded; they are not the current connection state.
   and the Product collection total is 308.
 
 ## Validation at the Documentation Checkpoint
+
+- **PASS (REUSED)** — The Batch 13 validator, focused lint and build, including
+  TypeScript and 774/774 static pages, each exited 0 at reviewed head
+  `8e4c4b2c55e2b0d473502ab722ae7b26458d7114`. The squash has the same tree
+  `2dafa6f313389d48613213ddaabcc9683b8a43cd`. Application, dependency and
+  build configuration content is unchanged through this documentation checkpoint.
+- Recorded implementation CI was absent: zero checks and statuses, with the
+  combined status pending.
+
+### Historical Validation — Batch 12
 
 - **PASS (REUSED)**: recorded Batch 12 validator, focused lint and build including
   TypeScript and 774/774 static pages each exited 0 at reviewed head
