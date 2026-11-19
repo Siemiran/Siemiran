@@ -7499,6 +7499,139 @@ assert(
     }),
   "Completed Batches 01-12 must retain exactly sixty current dual-approved entries, disjoint from the five Batch 13 entries."
 );
+const expectedCompletedThroughBatch13ProductIdSet = new Set<ProductId>([
+  ...expectedCompletedThroughBatch12ProductIdSet,
+  ...expectedBatch13ProductIdSet,
+]);
+const registeredCompletedThroughBatch13Drafts =
+  persianProductCopyDraftRegistry.filter((entry) =>
+    expectedCompletedThroughBatch13ProductIdSet.has(entry.productId)
+  );
+assert(
+  expectedCompletedThroughBatch13ProductIdSet.size === 65 &&
+    registeredCompletedThroughBatch13Drafts.length === 65 &&
+    new Set(
+      registeredCompletedThroughBatch13Drafts.map((entry) => entry.productId)
+    ).size === 65 &&
+    registeredCompletedThroughBatch13Drafts.every((entry) => {
+      const contentHash = createProductCopyContentHash(entry);
+      return (
+        entry.linguisticReview.decision === "approved" &&
+        entry.technicalReview.decision === "approved" &&
+        entry.linguisticReview.reviewedContentHash === contentHash &&
+        entry.technicalReview.reviewedContentHash === contentHash
+      );
+    }),
+  "Completed Batches 01-13 must retain exactly sixty-five current dual-approved entries."
+);
+
+const expectedBatch14Products = [
+  {
+    productId: "siemens-s7-300-sm332-ao4-channel-isolated-16bit-7nd02-0ab0",
+    partNumber: "6ES7332-7ND02-0AB0",
+  },
+  {
+    productId: "siemens-s7-300-sm332-ao4-0-4-20ma-ex-5rd00-0ab0",
+    partNumber: "6ES7332-5RD00-0AB0",
+  },
+  {
+    productId: "siemens-s7-300-sm332-ao2-hart-5tb00-0ab0",
+    partNumber: "6ES7332-5TB00-0AB0",
+  },
+  {
+    productId: "siemens-s7-300-sm332-ao8-hart-8tf01-0ab0",
+    partNumber: "6ES7332-8TF01-0AB0",
+  },
+  {
+    productId: "siemens-siplus-s7-300-sm332-ao2-ui-5hb01-2ab0",
+    partNumber: "6AG1332-5HB01-2AB0",
+  },
+] as const;
+const expectedBatch14ProductIds = expectedBatch14Products.map(
+  (entry) => entry.productId
+);
+const expectedBatch14ProductIdSet = new Set<ProductId>(expectedBatch14ProductIds);
+const registeredBatch14Drafts = persianProductCopyDraftRegistry.filter(
+  (entry) => expectedBatch14ProductIdSet.has(entry.productId)
+);
+const registeredBatch14ReviewRoles = registeredBatch14Drafts.flatMap((entry) => [
+  entry.linguisticReview,
+  entry.technicalReview,
+]);
+assert(
+  expectedBatch14ProductIdSet.size === 5 &&
+    expectedBatch14ProductIds.every(
+      (id) => !expectedCompletedThroughBatch13ProductIdSet.has(id)
+    ) &&
+    JSON.stringify(registeredBatch14Drafts.map((entry) => entry.productId)) ===
+      JSON.stringify(expectedBatch14ProductIds) &&
+    new Set(registeredBatch14ReviewRoles).size === 10 &&
+    registeredBatch14ReviewRoles.every(
+      (review) => isPendingReview(review) && Reflect.ownKeys(review).length === 1
+    ),
+  "Batch 14 must contain exactly five ordered new drafts and ten distinct pending-only role records."
+);
+const registeredBatch14DraftRecords = registeredBatch14Drafts.map(
+  (entry, index) => {
+    const { productId, partNumber } = expectedBatch14Products[index];
+    const sources = s7300SM.filter(
+      (source) => source.id === productId || source.mlfb === partNumber
+    );
+    const matches = products.filter(
+      (product) =>
+        product.id === productId ||
+        product.partNumber === partNumber ||
+        product.manufacturerPartNumber === partNumber
+    );
+    const [source] = sources;
+    const [product] = matches;
+    assert(
+      sources.length === 1 &&
+        source !== undefined &&
+        source.id === productId &&
+        source.mlfb === partNumber &&
+        matches.length === 1 &&
+        product !== undefined &&
+        product.id === productId &&
+        product.partNumber === partNumber &&
+        product.manufacturerPartNumber === partNumber &&
+        product.productTypeId === "Signal Module" &&
+        product.variantId === "analog-output" &&
+        JSON.stringify(mapSiemensS7300SignalModuleToProduct(source)) ===
+          JSON.stringify(product) &&
+        reviewedTechnicalTokenOverrides.every(
+          (override) => override.productId !== productId
+        ),
+      `Batch 14 source and production binding must be exact with zero overrides: ${productId}`
+    );
+
+    const expectedSegments = [
+      { kind: "text", value: "مدل " },
+      { kind: "technical", value: partNumber },
+      { kind: "text", value: "، ماژول خروجی آنالوگ است." },
+    ];
+    assert(
+      entry.provenance === "ai-assisted" &&
+        JSON.stringify(entry.shortDescription) ===
+          JSON.stringify(expectedSegments) &&
+        JSON.stringify(entry.description) ===
+          JSON.stringify([expectedSegments]) &&
+        deriveAllowedTechnicalTokens(product).has(partNumber),
+      `Batch 14 must retain identical MLFB/type-only paragraphs with an authorized MLFB and the Persian output suffix: ${productId}`
+    );
+
+    return {
+      productId,
+      partNumber,
+      variantId: product.variantId,
+      renderedShortDescription: serializeProductCopyParagraphForSearch(
+        entry.shortDescription
+      ),
+      freshContentHash: createProductCopyContentHash(entry),
+    };
+  }
+);
+
 const registeredCompletedBatchDrafts = persianProductCopyDraftRegistry.filter(
   (entry) => expectedCompletedBatchProductIdSet.has(entry.productId)
 );
@@ -7512,8 +7645,8 @@ assert(
     ) &&
     persianProductCopyDraftRegistry.every(
       (entry) =>
-        expectedCompletedThroughBatch12ProductIdSet.has(entry.productId) ||
-        expectedBatch13ProductIdSet.has(entry.productId)
+        expectedCompletedThroughBatch13ProductIdSet.has(entry.productId) ||
+        expectedBatch14ProductIdSet.has(entry.productId)
     ) &&
     registeredCompletedBatchDrafts.every((entry) => {
       const contentHash = createProductCopyContentHash(entry);
@@ -7529,7 +7662,7 @@ assert(
 
 assert(
   registeredDraftValidation.valid &&
-    persianProductCopyDraftRegistry.length === 65 &&
+    persianProductCopyDraftRegistry.length === 70 &&
     registeredBatch01Drafts.length === 5 &&
     JSON.stringify(registeredBatch01DraftBindings) ===
       JSON.stringify(expectedBatch01DraftProducts),
@@ -7655,15 +7788,6 @@ assert(
     ) &&
     expectedPreviouslyApprovedProductIdSet.size === 30 &&
     registeredPreviouslyApprovedDrafts.length === 30 &&
-    registeredLinguisticApprovals === 65 &&
-    registeredTechnicalApprovals === 65 &&
-    registeredCurrentDualApprovals === 65 &&
-    persianProductCopyDraftRegistry.filter((entry) =>
-      isPendingReview(entry.linguisticReview)
-    ).length === 0 &&
-    persianProductCopyDraftRegistry.filter((entry) =>
-      isPendingReview(entry.technicalReview)
-    ).length === 0 &&
     registeredPreviouslyApprovedDrafts.filter((entry) =>
       isPendingReview(entry.linguisticReview)
     ).length === 0 &&
@@ -7693,13 +7817,25 @@ assert(
   "The existing thirty drafts must retain exact current dual approvals with no pending reviews."
 );
 assert(
+  registeredLinguisticApprovals === 65 &&
+    registeredTechnicalApprovals === 65 &&
+    registeredCurrentDualApprovals === 65 &&
+    persianProductCopyDraftRegistry.filter((entry) =>
+      isPendingReview(entry.linguisticReview)
+    ).length === 5 &&
+    persianProductCopyDraftRegistry.filter((entry) =>
+      isPendingReview(entry.technicalReview)
+    ).length === 5,
+  "The registry must retain sixty-five current dual approvals and five pending reviews per role."
+);
+assert(
   !registeredDraftActivation.valid &&
-    registeredDraftActivation.overlayCount === 65 &&
+    registeredDraftActivation.overlayCount === 70 &&
     registeredDraftActivation.canonicalCount === 382 &&
     registeredDraftActivation.approvedCount === 65 &&
-    registeredDraftActivation.missingIds.length === 317 &&
+    registeredDraftActivation.missingIds.length === 312 &&
     !("capability" in registeredDraftActivation),
-  "Combined activation must fail closed at exactly 65/382 drafts, 65 dual approvals, and 317 missing Products."
+  "Combined activation must fail closed at exactly 70/382 drafts, 65 dual approvals, and 312 missing Products."
 );
 assert(
   PERSIAN_PRODUCT_COPY_PUBLICATION_STATE === "disabled",
@@ -7917,6 +8053,13 @@ console.log(
           mutationStaleness: registeredBatch13ApprovalMutationResults,
           technicalSegments: registeredBatch13TechnicalSegmentCount,
         },
+        batch14: {
+          entries: registeredBatch14Drafts.length,
+          drafts: registeredBatch14DraftRecords,
+          pendingRoleRecords: registeredBatch14ReviewRoles.length,
+        },
+        completedThroughBatch13Entries:
+          registeredCompletedThroughBatch13Drafts.length,
         completedThroughBatch12Entries:
           registeredCompletedThroughBatch12Drafts.length,
         completedThroughBatch11Entries:
