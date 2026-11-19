@@ -1,6 +1,6 @@
 # Siemiran — Roadmap
 
-Baseline: `main` at `b62b5fccebf748d09a0164271bb477be23887570`
+Baseline: `main` at `f30da51f62eb8bfeb9ea2b5b9c0a05e0cf7ac6c2` (2026-11-19)
 
 This roadmap distinguishes the completed repository baseline from future
 priorities. Ordering expresses current priority, not a finalized implementation
@@ -144,33 +144,36 @@ design or semantic release schedule.
   at `b62b5fccebf748d09a0164271bb477be23887570`; guarded squash and main
   synchronization completed. All five entries approve exact MLFB/analog-input
   module type only. Evidence kinds, access limitations and qualifications are in
-  [DATABASE.md](DATABASE.md#2026-11-17---batch-12-private-product-copy-checkpoint-current-state) and
+  [DATABASE.md](DATABASE.md#2026-11-17---batch-12-private-product-copy-checkpoint-historical-snapshot) and
   [SESSION_HANDOFF.md](SESSION_HANDOFF.md). Batch 11's 55/327 checkpoint is historical.
-- Private drafts and current approvals per role are each 60/382, with 60 current
-  dual approvals, zero pending roles and 322 missing private entries.
-- Overrides remain 10 Products / 20 assignments / 7 unique strings; global
-  allowlist empty. Batches 03–12 added zero overrides. Eleven lifecycle omissions
-  and separate S7-300 provenance 185/11 remain unchanged.
-- Activation validation remains invalid: `overlayCount` 60, `approvedCount`
-  60, `missingIds.length` 322, capability absent. Active overlays remain 0/382,
-  publication disabled and public FA/EN copy canonical English/LTR. Full 382/382
-  current dual approvals and separate launch authorization remain required.
-  Partial activation is prohibited; earlier scopes and deferred issues remain
-  unchanged. Earlier pending PR #64 review and Batch 04 drafting-blocker wording
-  is historical and superseded.
+- [PR #83](https://github.com/Siemiran/Siemiran/pull/83) completed private Batch 13 at
+  `f30da51f62eb8bfeb9ea2b5b9c0a05e0cf7ac6c2`. Approval covers exact MLFB and
+  the respective module type only (two analog inputs and three analog outputs).
+  See [DATABASE.md](DATABASE.md#2026-11-19---batch-13-private-product-copy-checkpoint-current-state) for evidence and access qualifications.
+  Batch 12's 60/322 checkpoint is historical.
+- Private drafts and current approvals per role are each 65/382, with 65 current
+  dual approvals, zero pending roles and 317 missing private entries.
+- Overrides remain 10 Products / 20 assignments / 7 unique strings with an empty
+  global allowlist. Batches 03–13 added zero overrides. Eleven lifecycle omissions
+  and the separate S7-300 provenance classification of 185/11 remain in effect.
+- Activation remains invalid at `overlayCount` 65, `approvedCount` 65 and
+  `missingIds.length` 317 (capability absent). Active overlays are 0/382,
+  publication is disabled and public FA/EN copy is canonical English/LTR.
+  Complete 382/382 current dual approvals and separate launch authorization
+  remain required. Partial activation is prohibited. Earlier pending PR #64
+  review and Batch 04 drafting-blocker wording are historical and superseded.
 
 ## Next Resume Workflow
 
-1. Batch 13 readiness and scope require separate authorization; they remain
+1. Batch 14 readiness and scope require separate authorization; they remain
    unapproved and unstarted in this workflow.
 2. Preserve closed-batch entries with machine comparison, review only affected
    files/evidence, and reuse successful validation while relevant content is unchanged.
 3. Keep Admin Panel and Automation gated. Dedicated completed-copy inspection,
    the full 382/382 dual-approval gate and separately authorized launch remain pending.
 
-The merged Batch 12 implementation is complete. Documentation publication/review
-status belongs in its task report and PR. Durable checkpoint and resume policy are in
-[SESSION_HANDOFF.md](SESSION_HANDOFF.md).
+See [SESSION_HANDOFF.md](SESSION_HANDOFF.md) for the implementation checkpoint
+and resume checks.
 
 ## 1. Persian Product-copy Drafting, Review, and Atomic Activation
 
@@ -188,9 +191,9 @@ status belongs in its task report and PR. Durable checkpoint and resume policy a
 
 Throughout drafting and review, canonical technical tokens remain untranslated:
 MLFBs, Product IDs, slugs, part numbers, official model/family names, protocols,
-standards, values, units, and URLs. Batches 01–12 are complete privately;
+standards, values, units, and URLs. Batches 01–13 are complete privately;
 dated earlier checkpoints retain their historical counts. Future drafting requires
-separately authorized Batch 13 readiness and independent scope/token review.
+separately authorized Batch 14 readiness and independent scope/token review.
 
 After Persian Product-copy completion, perform a dedicated local visual and
 functional website inspection with the maintainer: FA/EN switching, Persian
@@ -245,8 +248,8 @@ nor publication.
 - Keep CMS, API, database, and cache evaluation as future architecture
   decisions.
 
-Persian Product-copy drafting and review are complete privately for 60/382
-Products but not for the remaining 322. The 382/382 current dual-approval gate,
+Persian Product-copy drafting and review are complete privately for 65/382
+Products, with 317 remaining. The 382/382 current dual-approval gate,
 separate activation authorization, atomic publication, maintainer website inspection,
 bilingual SEO activation, inquiry delivery, CI/CD, download population, and
 another Siemens-series expansion are not complete. Consumer integration and

@@ -34,22 +34,24 @@ Principles:
 - The eleven unverified S7-300 records continue to omit public lifecycle in both
   languages.
 
-Current implementation checkpoint: `b62b5fccebf748d09a0164271bb477be23887570`
-(merged PR #81, Batch 12; local main synchronized). Batches 01–12 are complete
-privately: 60/382 drafts and current approvals per role, 60 current dual approvals,
-zero pending roles and 322 missing entries. Catalog coverage remains 382 Products
-(186 S7-1200 / 196 S7-300). Activation validation remains invalid:
-`overlayCount` 60, `approvedCount` 60, `missingIds.length` 322, capability
-absent. Active overlays remain 0/382, publication disabled and public FA/EN copy
-canonical English/LTR. Full 382/382 current dual approvals and separate launch
-authorization remain required. Batch 13 is unapproved and unstarted; Admin Panel
-and Automation remain gated. Batch 12 approves exact MLFB/analog-input type only;
-full titles, counts, RTD/thermocouple characteristics, Ex certification/suitability
-and other operating claims remain outside approval. Product evidence and distinct
-access qualifications are in [DATABASE.md](DATABASE.md#2026-11-17---batch-12-private-product-copy-checkpoint-current-state);
-durable resume policy is in [SESSION_HANDOFF.md](SESSION_HANDOFF.md).
-Batch 11's 55/327 checkpoint and earlier counts remain historical; earlier scopes
-and deferred issues remain unchanged.
+Current implementation checkpoint (2026-11-19)
+`f30da51f62eb8bfeb9ea2b5b9c0a05e0cf7ac6c2` (merged [PR #83](https://github.com/Siemiran/Siemiran/pull/83)).
+Batches 01–13 are complete privately. Batch 13 approves only exact MLFB
+identity and the respective module type: two analog inputs and three analog
+outputs.
+Product evidence is in [DATABASE.md](DATABASE.md#2026-11-19---batch-13-private-product-copy-checkpoint-current-state), with durable
+qualifications and resume checks in [SESSION_HANDOFF.md](SESSION_HANDOFF.md).
+
+The catalog contains 382 Products (186 S7-1200 / 196 S7-300). There are
+65 private drafts, 65 current approvals per role, 65 current dual approvals,
+zero pending roles and 317 missing entries. Activation validation remains
+invalid at `overlayCount` 65, `approvedCount` 65 and `missingIds.length` 317,
+with capability absent. Active overlays remain 0/382, publication is disabled,
+and public FA/EN copy stays canonical English/LTR. Complete 382/382 current dual
+approvals and separate launch authorization remain required.
+
+Batch 14 remains unapproved and unstarted. Admin Panel and Automation remain
+gated. Batch 12's 60/322 checkpoint and earlier counts are historical.
 
 After Persian Product-copy completion, the dedicated local visual and functional
 website inspection with the maintainer remains pending: FA/EN switching,
