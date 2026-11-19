@@ -736,6 +736,36 @@ const siplusSm332MlfbOnly5Hb01Copy = [
   { kind: "text", value: "، ماژول خروجی آنالوگ است." },
 ] as const satisfies ProductCopyParagraph;
 
+const siplusSm332MlfbOnly5Hf00Copy = [
+  { kind: "text", value: "مدل " },
+  { kind: "technical", value: "6AG1332-5HF00-2AB0" },
+  { kind: "text", value: "، ماژول خروجی آنالوگ است." },
+] as const satisfies ProductCopyParagraph;
+
+const sm334MlfbOnly0Ce01Copy = [
+  { kind: "text", value: "مدل " },
+  { kind: "technical", value: "6ES7334-0CE01-0AA0" },
+  { kind: "text", value: "، ماژول ورودی و خروجی آنالوگ است." },
+] as const satisfies ProductCopyParagraph;
+
+const sm334MlfbOnly0Ke00Copy = [
+  { kind: "text", value: "مدل " },
+  { kind: "technical", value: "6ES7334-0KE00-0AB0" },
+  { kind: "text", value: "، ماژول ورودی و خروجی آنالوگ است." },
+] as const satisfies ProductCopyParagraph;
+
+const siplusSm334MlfbOnly0Ke00Copy = [
+  { kind: "text", value: "مدل " },
+  { kind: "technical", value: "6AG1334-0KE00-7AB0" },
+  { kind: "text", value: "، ماژول ورودی و خروجی آنالوگ است." },
+] as const satisfies ProductCopyParagraph;
+
+const sm335MlfbOnly7Hg01Copy = [
+  { kind: "text", value: "مدل " },
+  { kind: "technical", value: "6ES7335-7HG01-0AB0" },
+  { kind: "text", value: "، ماژول ورودی و خروجی آنالوگ است." },
+] as const satisfies ProductCopyParagraph;
+
 export const persianProductCopyDraftRegistry = [
   {
     productId: "siemens-s7-1200-cpu-211-1ae40",
@@ -2616,5 +2646,45 @@ export const persianProductCopyDraftRegistry = [
       note:
         "6AG1332-5HB01-2AB0: PM-approved exact MLFB identity and analog-output module type only. Full titles, counts, isolation, resolution, Ex, HART, electrical ranges, operating characteristics, compatibility, certification, lifecycle and availability remain outside approval.",
     },
+  },
+  {
+    productId: "siemens-siplus-s7-300-sm332-ao8-ui-5hf00-2ab0",
+    shortDescription: siplusSm332MlfbOnly5Hf00Copy,
+    description: [siplusSm332MlfbOnly5Hf00Copy],
+    provenance: "ai-assisted",
+    linguisticReview: { decision: "pending" },
+    technicalReview: { decision: "pending" },
+  },
+  {
+    productId: "siemens-s7-300-sm334-ai4-ao2-8bit-0ce01-0aa0",
+    shortDescription: sm334MlfbOnly0Ce01Copy,
+    description: [sm334MlfbOnly0Ce01Copy],
+    provenance: "ai-assisted",
+    linguisticReview: { decision: "pending" },
+    technicalReview: { decision: "pending" },
+  },
+  {
+    productId: "siemens-s7-300-sm334-ai4-ao2-12bit-0ke00-0ab0",
+    shortDescription: sm334MlfbOnly0Ke00Copy,
+    description: [sm334MlfbOnly0Ke00Copy],
+    provenance: "ai-assisted",
+    linguisticReview: { decision: "pending" },
+    technicalReview: { decision: "pending" },
+  },
+  {
+    productId: "siemens-siplus-s7-300-sm334-ai4-ao2-12bit-0ke00-7ab0",
+    shortDescription: siplusSm334MlfbOnly0Ke00Copy,
+    description: [siplusSm334MlfbOnly0Ke00Copy],
+    provenance: "ai-assisted",
+    linguisticReview: { decision: "pending" },
+    technicalReview: { decision: "pending" },
+  },
+  {
+    productId: "siemens-s7-300-sm335-ai4-ao4-14bit-7hg01-0ab0",
+    shortDescription: sm335MlfbOnly7Hg01Copy,
+    description: [sm335MlfbOnly7Hg01Copy],
+    provenance: "ai-assisted",
+    linguisticReview: { decision: "pending" },
+    technicalReview: { decision: "pending" },
   },
 ] as const satisfies readonly PersianProductCopyOverlay[];
