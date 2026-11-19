@@ -706,6 +706,36 @@ const sm332MlfbOnly5Hf00Copy = [
   { kind: "text", value: "، ماژول خروجی آنالوگ است." },
 ] as const satisfies ProductCopyParagraph;
 
+const sm332MlfbOnly7Nd02Copy = [
+  { kind: "text", value: "مدل " },
+  { kind: "technical", value: "6ES7332-7ND02-0AB0" },
+  { kind: "text", value: "، ماژول خروجی آنالوگ است." },
+] as const satisfies ProductCopyParagraph;
+
+const sm332MlfbOnly5Rd00Copy = [
+  { kind: "text", value: "مدل " },
+  { kind: "technical", value: "6ES7332-5RD00-0AB0" },
+  { kind: "text", value: "، ماژول خروجی آنالوگ است." },
+] as const satisfies ProductCopyParagraph;
+
+const sm332MlfbOnly5Tb00Copy = [
+  { kind: "text", value: "مدل " },
+  { kind: "technical", value: "6ES7332-5TB00-0AB0" },
+  { kind: "text", value: "، ماژول خروجی آنالوگ است." },
+] as const satisfies ProductCopyParagraph;
+
+const sm332MlfbOnly8Tf01Copy = [
+  { kind: "text", value: "مدل " },
+  { kind: "technical", value: "6ES7332-8TF01-0AB0" },
+  { kind: "text", value: "، ماژول خروجی آنالوگ است." },
+] as const satisfies ProductCopyParagraph;
+
+const siplusSm332MlfbOnly5Hb01Copy = [
+  { kind: "text", value: "مدل " },
+  { kind: "technical", value: "6AG1332-5HB01-2AB0" },
+  { kind: "text", value: "، ماژول خروجی آنالوگ است." },
+] as const satisfies ProductCopyParagraph;
+
 export const persianProductCopyDraftRegistry = [
   {
     productId: "siemens-s7-1200-cpu-211-1ae40",
@@ -2445,6 +2475,146 @@ export const persianProductCopyDraftRegistry = [
         "PM technical approval in the supplied Batch 13 approval request; draft commit 1b92833003a32176546b7e8064e79a6b44a22591; Product siemens-s7-300-sm332-ao8-ui-diagnostics-5hf00-0ab0; MLFB 6ES7332-5HF00-0AB0; module type analog-output. Recording time is an actual UTC observation, not the PM review timestamp. Reused readiness-accessible parsed document text of Siemens S7-300 Module Data, 05/2022, A5E00105505-AK; https://cache.industry.siemens.com/dl/files/629/8859629/att_55794/v1/s7300_module_data_manual_en-US_en-US.pdf; section 6.12, printed p367. Voltage/current output configuration and nominal counts remain outside approval. Printed pages are not assumed viewer indices. Visual inspection and successful direct-origin HTTP status for accessible parsed material NOT OBSERVED; no fresh retrieval or lifecycle verification.",
       note:
         "6ES7332-5HF00-0AB0: PM-approved exact MLFB identity and analog-output module type only. No approval of complete titles, counts, HART/U/I characteristics, resolution, diagnostics, electrical ranges, compatibility, certification, lifecycle, availability or performance. Voltage/current output configuration and nominal counts remain outside approval. Canonical data, earlier scopes and deferred issues remain unchanged.",
+    },
+  },
+  {
+    productId: "siemens-s7-300-sm332-ao4-channel-isolated-16bit-7nd02-0ab0",
+    shortDescription: sm332MlfbOnly7Nd02Copy,
+    description: [sm332MlfbOnly7Nd02Copy],
+    provenance: "ai-assisted",
+    linguisticReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-11-19T09:05:22Z",
+      reviewedContentHash:
+        "sha256:31d12dc70ce3271779b913a916729290ef8622fd2b65bc0f0de3c728fe81c3b2",
+      evidenceRef:
+        "PM linguistic approval in the supplied Batch 14 approval request; draft commit 31cc7c87d22df51dde622c5f1ef34c942acefad6; Product siemens-s7-300-sm332-ao4-channel-isolated-16bit-7nd02-0ab0; MLFB 6ES7332-7ND02-0AB0; module type analog-output. Recording time is an actual UTC observation, not the PM review timestamp.",
+      note:
+        "6ES7332-7ND02-0AB0: PM-approved Persian wording, spacing and punctuation, with typed MLFB isolation and the analog-output suffix in identical short and single-paragraph long copy.",
+    },
+    technicalReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-11-19T09:05:23Z",
+      reviewedContentHash:
+        "sha256:31d12dc70ce3271779b913a916729290ef8622fd2b65bc0f0de3c728fe81c3b2",
+      evidenceRef:
+        "PM technical approval in the supplied Batch 14 approval request; draft commit 31cc7c87d22df51dde622c5f1ef34c942acefad6; Product siemens-s7-300-sm332-ao4-channel-isolated-16bit-7nd02-0ab0; MLFB 6ES7332-7ND02-0AB0; module type analog-output. Recording time is an actual UTC observation, not the PM review timestamp. Reused readiness parsed manual text from Siemens S7-300 Module Data, 05/2022, A5E00105505-AK; https://cache.industry.siemens.com/dl/files/629/8859629/att_55794/v1/s7300_module_data_manual_en-US_en-US.pdf; section 6.13, printed p373. Indexed Industry Mall wording \"4 AI\" conflicts with the parsed manual's analog-output type; https://mall.industry.siemens.com/mall/en/sg/Catalog/Product/6ES7332-7ND02-0AB0. No count approval, catalog correction or canonical-data change. Printed pages are not assumed viewer indices. Visual inspection and direct-origin HTTP status were NOT OBSERVED. No fresh retrieval or lifecycle verification.",
+      note:
+        "6ES7332-7ND02-0AB0: PM-approved exact MLFB identity and analog-output module type only. Full titles, counts, isolation, resolution, Ex, HART, electrical ranges, operating characteristics, compatibility, certification, lifecycle and availability remain outside approval.",
+    },
+  },
+  {
+    productId: "siemens-s7-300-sm332-ao4-0-4-20ma-ex-5rd00-0ab0",
+    shortDescription: sm332MlfbOnly5Rd00Copy,
+    description: [sm332MlfbOnly5Rd00Copy],
+    provenance: "ai-assisted",
+    linguisticReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-11-19T09:05:22Z",
+      reviewedContentHash:
+        "sha256:69abfc57a5946c926b15c7b1e0e18c4c742e7f3f26211a5fc568ea4953344e03",
+      evidenceRef:
+        "PM linguistic approval in the supplied Batch 14 approval request; draft commit 31cc7c87d22df51dde622c5f1ef34c942acefad6; Product siemens-s7-300-sm332-ao4-0-4-20ma-ex-5rd00-0ab0; MLFB 6ES7332-5RD00-0AB0; module type analog-output. Recording time is an actual UTC observation, not the PM review timestamp.",
+      note:
+        "6ES7332-5RD00-0AB0: PM-approved Persian wording, spacing and punctuation, with typed MLFB isolation and the analog-output suffix in identical short and single-paragraph long copy.",
+    },
+    technicalReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-11-19T09:05:23Z",
+      reviewedContentHash:
+        "sha256:69abfc57a5946c926b15c7b1e0e18c4c742e7f3f26211a5fc568ea4953344e03",
+      evidenceRef:
+        "PM technical approval in the supplied Batch 14 approval request; draft commit 31cc7c87d22df51dde622c5f1ef34c942acefad6; Product siemens-s7-300-sm332-ao4-0-4-20ma-ex-5rd00-0ab0; MLFB 6ES7332-5RD00-0AB0; module type analog-output. Recording time is an actual UTC observation, not the PM review timestamp. Reused readiness official indexed excerpts and parsed text from Siemens S7-300, ET 200M Ex I/O Modules, 04/2022, A5E00172008-AP; https://cache.industry.siemens.com/dl/files/709/1096709/att_885614/v2/s7300_et200m_ex_io_modules_manual_en_en-US.pdf?download=true; section 3.13, printed p153. Printed pages are not assumed viewer indices. Visual inspection and direct-origin HTTP status were NOT OBSERVED. No fresh retrieval or lifecycle verification.",
+      note:
+        "6ES7332-5RD00-0AB0: PM-approved exact MLFB identity and analog-output module type only. Full titles, counts, isolation, resolution, Ex, HART, electrical ranges, operating characteristics, compatibility, certification, lifecycle and availability remain outside approval.",
+    },
+  },
+  {
+    productId: "siemens-s7-300-sm332-ao2-hart-5tb00-0ab0",
+    shortDescription: sm332MlfbOnly5Tb00Copy,
+    description: [sm332MlfbOnly5Tb00Copy],
+    provenance: "ai-assisted",
+    linguisticReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-11-19T09:05:22Z",
+      reviewedContentHash:
+        "sha256:da80c757ca2bbc694590e9eebad1aef4b604dc05f092ca139688653af0f880bf",
+      evidenceRef:
+        "PM linguistic approval in the supplied Batch 14 approval request; draft commit 31cc7c87d22df51dde622c5f1ef34c942acefad6; Product siemens-s7-300-sm332-ao2-hart-5tb00-0ab0; MLFB 6ES7332-5TB00-0AB0; module type analog-output. Recording time is an actual UTC observation, not the PM review timestamp.",
+      note:
+        "6ES7332-5TB00-0AB0: PM-approved Persian wording, spacing and punctuation, with typed MLFB isolation and the analog-output suffix in identical short and single-paragraph long copy.",
+    },
+    technicalReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-11-19T09:05:23Z",
+      reviewedContentHash:
+        "sha256:da80c757ca2bbc694590e9eebad1aef4b604dc05f092ca139688653af0f880bf",
+      evidenceRef:
+        "PM technical approval in the supplied Batch 14 approval request; draft commit 31cc7c87d22df51dde622c5f1ef34c942acefad6; Product siemens-s7-300-sm332-ao2-hart-5tb00-0ab0; MLFB 6ES7332-5TB00-0AB0; module type analog-output. Recording time is an actual UTC observation, not the PM review timestamp. Reused readiness official indexed excerpts and parsed text from Siemens S7-300, ET 200M Ex I/O Modules, 04/2022, A5E00172008-AP; https://cache.industry.siemens.com/dl/files/709/1096709/att_885614/v2/s7300_et200m_ex_io_modules_manual_en_en-US.pdf?download=true; section 4.4.5, printed p183. Printed pages are not assumed viewer indices. Visual inspection and direct-origin HTTP status were NOT OBSERVED. No fresh retrieval or lifecycle verification.",
+      note:
+        "6ES7332-5TB00-0AB0: PM-approved exact MLFB identity and analog-output module type only. Full titles, counts, isolation, resolution, Ex, HART, electrical ranges, operating characteristics, compatibility, certification, lifecycle and availability remain outside approval.",
+    },
+  },
+  {
+    productId: "siemens-s7-300-sm332-ao8-hart-8tf01-0ab0",
+    shortDescription: sm332MlfbOnly8Tf01Copy,
+    description: [sm332MlfbOnly8Tf01Copy],
+    provenance: "ai-assisted",
+    linguisticReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-11-19T09:05:22Z",
+      reviewedContentHash:
+        "sha256:91d11f448e3ab88cecc1845903aae8b1b689ebadf47f98f24b515eec9949690d",
+      evidenceRef:
+        "PM linguistic approval in the supplied Batch 14 approval request; draft commit 31cc7c87d22df51dde622c5f1ef34c942acefad6; Product siemens-s7-300-sm332-ao8-hart-8tf01-0ab0; MLFB 6ES7332-8TF01-0AB0; module type analog-output. Recording time is an actual UTC observation, not the PM review timestamp.",
+      note:
+        "6ES7332-8TF01-0AB0: PM-approved Persian wording, spacing and punctuation, with typed MLFB isolation and the analog-output suffix in identical short and single-paragraph long copy.",
+    },
+    technicalReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-11-19T09:05:23Z",
+      reviewedContentHash:
+        "sha256:91d11f448e3ab88cecc1845903aae8b1b689ebadf47f98f24b515eec9949690d",
+      evidenceRef:
+        "PM technical approval in the supplied Batch 14 approval request; draft commit 31cc7c87d22df51dde622c5f1ef34c942acefad6; Product siemens-s7-300-sm332-ao8-hart-8tf01-0ab0; MLFB 6ES7332-8TF01-0AB0; module type analog-output. Recording time is an actual UTC observation, not the PM review timestamp. Reused readiness official indexed excerpts and parsed text from Siemens HART analog modules, 11/2020, A5E00434623-AG; https://support.industry.siemens.com/cs/attachments/22063748/et200m_hart_analog_modules_manual_en-US_en-US.pdf?download=true; section 6.2, printed p61. Printed pages are not assumed viewer indices. Visual inspection and direct-origin HTTP status were NOT OBSERVED. No fresh retrieval or lifecycle verification.",
+      note:
+        "6ES7332-8TF01-0AB0: PM-approved exact MLFB identity and analog-output module type only. Full titles, counts, isolation, resolution, Ex, HART, electrical ranges, operating characteristics, compatibility, certification, lifecycle and availability remain outside approval.",
+    },
+  },
+  {
+    productId: "siemens-siplus-s7-300-sm332-ao2-ui-5hb01-2ab0",
+    shortDescription: siplusSm332MlfbOnly5Hb01Copy,
+    description: [siplusSm332MlfbOnly5Hb01Copy],
+    provenance: "ai-assisted",
+    linguisticReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-11-19T09:05:22Z",
+      reviewedContentHash:
+        "sha256:2fc22d6c41f2e4492722c6809128ea38ebaebd1b6bff51877c96ebb2e4900374",
+      evidenceRef:
+        "PM linguistic approval in the supplied Batch 14 approval request; draft commit 31cc7c87d22df51dde622c5f1ef34c942acefad6; Product siemens-siplus-s7-300-sm332-ao2-ui-5hb01-2ab0; MLFB 6AG1332-5HB01-2AB0; module type analog-output. Recording time is an actual UTC observation, not the PM review timestamp.",
+      note:
+        "6AG1332-5HB01-2AB0: PM-approved Persian wording, spacing and punctuation, with typed MLFB isolation and the analog-output suffix in identical short and single-paragraph long copy.",
+    },
+    technicalReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-11-19T09:05:23Z",
+      reviewedContentHash:
+        "sha256:2fc22d6c41f2e4492722c6809128ea38ebaebd1b6bff51877c96ebb2e4900374",
+      evidenceRef:
+        "PM technical approval in the supplied Batch 14 approval request; draft commit 31cc7c87d22df51dde622c5f1ef34c942acefad6; Product siemens-siplus-s7-300-sm332-ao2-ui-5hb01-2ab0; MLFB 6AG1332-5HB01-2AB0; module type analog-output. Recording time is an actual UTC observation, not the PM review timestamp. Reused readiness parsed manual text from Siemens S7-300 Module Data, 05/2022, A5E00105505-AK; https://cache.industry.siemens.com/dl/files/629/8859629/att_55794/v1/s7300_module_data_manual_en-US_en-US.pdf; section 1.7, printed p28 and section 6.15, printed p388. The parsed text identifies the exact SIPLUS order number, distinct from 6ES7332-5HB01-0AB0. The SIPLUS Mall and datasheet URLs were inaccessible through the reader, with no numeric status reported. Printed pages are not assumed viewer indices. Visual inspection and direct-origin HTTP status were NOT OBSERVED. No fresh retrieval or lifecycle verification.",
+      note:
+        "6AG1332-5HB01-2AB0: PM-approved exact MLFB identity and analog-output module type only. Full titles, counts, isolation, resolution, Ex, HART, electrical ranges, operating characteristics, compatibility, certification, lifecycle and availability remain outside approval.",
     },
   },
 ] as const satisfies readonly PersianProductCopyOverlay[];
