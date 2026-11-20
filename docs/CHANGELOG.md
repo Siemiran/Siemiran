@@ -3,7 +3,47 @@
 This file records completed repository changes. The newest entry records the
 current implementation baseline; older dated entries are historical snapshots.
 
-## 2026-11-20 - PR #91: Complete Batch 17 Private Drafts and Dual Approvals
+## 2026-11-20 - PR #93: Complete Batch 18 Private Drafts and Dual Approvals
+
+- [PR #93](https://github.com/Siemiran/Siemiran/pull/93), `feat: add Batch 18 Persian product copy`,
+  merged at `2026-11-20T14:29:02Z` / `2026-11-20 17:59:02` Asia/Tehran as
+  `800094010e6ada6199652168d74274a87f1f6be2`. Sole parent:
+  `e476d843d142d8b8785b3d0a59228a5a9cfd4e23`. Reviewed/approval head:
+  `98cb84045f6e67652953d7121af2928fc9c871eb`; draft:
+  `501d607b7f141317cc72c39ceac94df9107a2c5e`. Reviewed head and squash share
+  tree `623272d76c4e3f22936e10a03533b3aa56fd4d80`.
+- Two-file scope: registry +340/-0, verifier +408/-11; total +748/-11.
+  Ten exact CP 340 / CP 341 / CP 342-5 bindings approve MLFB and
+  communication-processor type only. Interfaces, performance, compatibility,
+  lifecycle, certification and availability remain outside approval.
+  Exact IDs, recorded hashes and E1-E6 evidence are in
+  [DATABASE.md](DATABASE.md#2026-11-20---batch-18-private-product-copy-checkpoint-current-state).
+- Twenty separate `Siemiran` hash-bound role records retain observed UTC
+  recording times `2026-11-20T14:14:07Z` (linguistic) and
+  `2026-11-20T14:14:12Z` (technical), not PM review times or GitHub reviews.
+  All 85 prior records and 95 draft payloads were preserved; twenty independent
+  text/kind mutation cases each staled both roles.
+- At merge: 382 Products, 95 private drafts/current approvals per role, 95 dual
+  approvals, zero pending roles and 287 products without drafts. Activation
+  remains invalid at 95/95/287 with capability absent. Active overlays remain
+  zero; publication is disabled and public FA/EN copy canonical English/LTR.
+  Full 382/382 current dual approvals and separate launch authorization remain
+  required.
+- One normal head-guarded squash and main-only fetch/switch/fast-forward
+  synchronization completed. Feature refs were preserved; auto-merge and
+  automatic branch deletion were off. CI was absent: zero checks/statuses and
+  workflow runs, empty rollup, combined `pending`; this is not passing CI.
+- **PASS (REUSED)** - Product-copy validator, focused lint and TypeScript/build
+  results each exited `0`, including 774/774 static pages. Exact reviewed-tree
+  equality and unchanged application, dependency and build content make that
+  evidence applicable here. Application checks, hash audits and manufacturer
+  research are **NOT RUN** for this documentation task.
+- Batch 17's 85/297 checkpoint is historical. Batch 19 remains unstarted and
+  outside scope. Admin Panel and Automation remain gated; the completed-copy
+  website inspection remains pending. Resume facts are in
+  [SESSION_HANDOFF.md](SESSION_HANDOFF.md).
+
+## 2026-11-20 - PR #91: Complete Batch 17 Private Drafts and Dual Approvals (Historical Snapshot)
 
 - [PR #91](https://github.com/Siemiran/Siemiran/pull/91), `feat: add Batch 17 Persian product copy`,
   merged at `2026-11-20T13:23:52Z` / `2026-11-20 16:53:52` Asia/Tehran as
@@ -17,7 +57,7 @@ current implementation baseline; older dated entries are historical snapshots.
   formatting versus semantic changes; all prior 80 records and completed-batch
   checks were preserved. Ten independent text/kind mutation cases each staled
   both roles. Exact bindings, hashes and qualified evidence are in
-  [DATABASE.md](DATABASE.md#2026-11-20---batch-17-private-product-copy-checkpoint-current-state).
+  [DATABASE.md](DATABASE.md#2026-11-20---batch-17-private-product-copy-checkpoint-historical-snapshot).
 - Ten separate hash-bound `Siemiran` role records use observed UTC recording
   times `2026-11-20T13:07:06Z` (linguistic) and `2026-11-20T13:07:12Z` (technical).
   They are not PM review timestamps or GitHub reviews.
