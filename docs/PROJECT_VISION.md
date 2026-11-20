@@ -35,22 +35,29 @@ Principles:
   languages.
 
 Current implementation checkpoint (2026-11-19)
-`74668d494683525d8128d9950309b511fc1b373a` (merged [PR #85](https://github.com/Siemiran/Siemiran/pull/85)).
-Batches 01–14 are complete privately. The five Batch 14 entries approve only
-exact MLFB identity and analog-output module type.
-See [DATABASE.md](DATABASE.md#2026-11-19---batch-14-private-product-copy-checkpoint-current-state) for Product evidence and
+`8e33dd6a895057db175fe7ec496fb4f4486bd0b5` (merged [PR #87](https://github.com/Siemiran/Siemiran/pull/87)).
+Batches 01–15 are complete privately. The five Batch 15 entries approve only
+exact MLFB identity and module type: one analog output and four mixed analog
+input/output modules. Titles, counts, specifications and lifecycle remain outside approval.
+See [DATABASE.md](DATABASE.md#2026-11-19---batch-15-private-product-copy-checkpoint-current-state) for Product evidence and
 [SESSION_HANDOFF.md](SESSION_HANDOFF.md) for durable qualifications.
 
-The catalog contains 382 Products (186 S7-1200 / 196 S7-300). There are 70 private
-drafts, 70 current approvals per role, 70 current dual approvals, zero pending
-roles and 312 missing entries. Activation validation remains invalid at
-`overlayCount` 70, `approvedCount` 70 and `missingIds.length` 312, with capability
+The catalog contains 382 Products (186 S7-1200 / 196 S7-300). There are 75 private
+drafts, 75 current approvals per role, 75 current dual approvals, zero pending
+roles and 307 missing entries. Activation validation remains invalid at
+`overlayCount=75`, `approvedCount=75` and `missingIds.length=307`, with capability
 absent. Active overlays remain 0/382, publication is disabled, and public FA/EN
 copy stays canonical English/LTR. Complete 382/382 current dual approvals and
 separate launch authorization remain required.
 
-Batch 15 remains unapproved and unstarted. Admin Panel and Automation remain
-gated. Batch 13's 65/317 checkpoint and earlier counts are historical.
+Overrides remain 10 Products / 20 assignments / 7 unique strings with an empty
+global allowlist. Batch 15 added zero overrides. The eleven public lifecycle
+omissions and separate S7-300 provenance classification (185 Siemens-official
+verified / 11 explicitly unverified) remain in effect.
+
+Batch 16 remains unapproved and unstarted. Admin Panel and Automation remain
+gated, and the dedicated completed-copy website inspection remains pending.
+Batch 14's 70/312 checkpoint and earlier counts are historical.
 
 After Persian Product-copy completion, the dedicated local visual and functional
 website inspection with the maintainer remains pending: FA/EN switching,
