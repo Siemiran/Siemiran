@@ -766,6 +766,36 @@ const sm335MlfbOnly7Hg01Copy = [
   { kind: "text", value: "، ماژول ورودی و خروجی آنالوگ است." },
 ] as const satisfies ProductCopyParagraph;
 
+const sm335MlfbOnly7Hg02Copy = [
+  { kind: "text", value: "مدل " },
+  { kind: "technical", value: "6ES7335-7HG02-0AB0" },
+  { kind: "text", value: "، ماژول ورودی و خروجی آنالوگ است." },
+] as const satisfies ProductCopyParagraph;
+
+const im360MlfbOnly3Aa01Copy = [
+  { kind: "text", value: "مدل " },
+  { kind: "technical", value: "6ES7360-3AA01-0AA0" },
+  { kind: "text", value: "، ماژول رابط است." },
+] as const satisfies ProductCopyParagraph;
+
+const im361MlfbOnly3Ca01Copy = [
+  { kind: "text", value: "مدل " },
+  { kind: "technical", value: "6ES7361-3CA01-0AA0" },
+  { kind: "text", value: "، ماژول رابط است." },
+] as const satisfies ProductCopyParagraph;
+
+const im365MlfbOnly0Ba01Copy = [
+  { kind: "text", value: "مدل " },
+  { kind: "technical", value: "6ES7365-0BA01-0AA0" },
+  { kind: "text", value: "، ماژول رابط است." },
+] as const satisfies ProductCopyParagraph;
+
+const im365MlfbOnly0Ba81Copy = [
+  { kind: "text", value: "مدل " },
+  { kind: "technical", value: "6ES7365-0BA81-0AA0" },
+  { kind: "text", value: "، ماژول رابط است." },
+] as const satisfies ProductCopyParagraph;
+
 export const persianProductCopyDraftRegistry = [
   {
     productId: "siemens-s7-1200-cpu-211-1ae40",
@@ -2785,6 +2815,146 @@ export const persianProductCopyDraftRegistry = [
         "PM technical approval in the supplied Batch 15 approval request; draft commit 55aafe89238e3c68dac886358e9d9fcda753b4a2; Product siemens-s7-300-sm335-ai4-ao4-14bit-7hg01-0ab0; MLFB 6ES7335-7HG01-0AB0; module type analog-io. Recording time is an actual UTC observation, not the PM review timestamp. Reused readiness indexed and parsed FAQ text from Siemens Front Connector Selection, V2.0, 15 October 2008, ID 23060726; https://cache.industry.siemens.com/dl/files/726/23060726/att_66628/v1/23060726_s7-300_kabel_und_zubehoer_zuordnung_stecker_baugruppe_e.pdf; section 1.3 Table 7, printed p13/16. The separate SM 335 manual request returned 403 in the reader and supplied no evidence. The usable indexed and parsed FAQ is a separate source. Printed pages are not assumed viewer indices. Visual inspection and successful direct-origin HTTP status for parsed material were NOT OBSERVED. No fresh retrieval or lifecycle verification.",
       note:
         "6ES7335-7HG01-0AB0: PM-approved exact MLFB identity and mixed analog input and output module type only. Full titles, counts, resolution, speed, electrical or operating characteristics, compatibility, certification, lifecycle and availability remain outside approval.",
+    },
+  },
+  {
+    productId: "siemens-s7-300-sm335-ai4-ao4-14bit-7hg02-0ab0",
+    shortDescription: sm335MlfbOnly7Hg02Copy,
+    description: [sm335MlfbOnly7Hg02Copy],
+    provenance: "ai-assisted",
+    linguisticReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-11-20T10:15:48Z",
+      reviewedContentHash:
+        "sha256:7cea0b953bd3af82756492e0a6d31428d893fa98fbc0f8d139fb12a9af0ba08a",
+      evidenceRef:
+        "PM linguistic approval in the supplied Batch 16 approval request; draft commit 64be5ce1cf8f1787a556029844130c0d6d88b2cd; Product siemens-s7-300-sm335-ai4-ao4-14bit-7hg02-0ab0; MLFB 6ES7335-7HG02-0AB0; module type mixed analog input and output. Recording time is an actual UTC observation, not the PM review timestamp.",
+      note:
+        "6ES7335-7HG02-0AB0: PM-approved exact Persian wording, punctuation and spacing, typed MLFB isolation, and the exact ورودی و خروجی آنالوگ suffix in identical three-segment short and single-paragraph long descriptions.",
+    },
+    technicalReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-11-20T10:15:56Z",
+      reviewedContentHash:
+        "sha256:7cea0b953bd3af82756492e0a6d31428d893fa98fbc0f8d139fb12a9af0ba08a",
+      evidenceRef:
+        "PM technical approval in the supplied Batch 16 approval request; draft commit 64be5ce1cf8f1787a556029844130c0d6d88b2cd; Product siemens-s7-300-sm335-ai4-ao4-14bit-7hg02-0ab0; MLFB 6ES7335-7HG02-0AB0; module type mixed analog input and output. Recording time is an actual UTC observation, not the PM review timestamp. Reused readiness indexed text and reader-returned Siemens Mall HTML from https://mall.industry.siemens.com/mall/en/se/Catalog/Product/6ES7335-7HG02-0AB0; indexed Siemens exact-product datasheet, printed p1/2, https://support.industry.siemens.com/teddatasheet/?caller=SIOS&format=pdf&language=en&mlfbs=6ES7335-7HG02-0AB0. The separate datasheet request returned 403 in the reader and supplied no successful PDF read or parsed evidence. ST 70 2021 indexed corroboration at printed p5/255 is separate from its reader (400) Content length is too large: 25626498 error; that is a reader size limit, not a Siemens-origin HTTP status. Printed pages are not assumed viewer indices. Visual inspection and successful direct-origin HTTP status were NOT OBSERVED. No fresh retrieval or lifecycle verification.",
+      note:
+        "6ES7335-7HG02-0AB0: PM-approved exact MLFB identity and mixed analog input and output module type only. Full titles, counts, High-Speed, sender/receiver behavior, temperature range, specifications, operating characteristics, compatibility, certification, lifecycle and availability remain outside approval.",
+    },
+  },
+  {
+    productId: "siemens-s7-300-im360-3aa01-0aa0",
+    shortDescription: im360MlfbOnly3Aa01Copy,
+    description: [im360MlfbOnly3Aa01Copy],
+    provenance: "ai-assisted",
+    linguisticReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-11-20T10:15:48Z",
+      reviewedContentHash:
+        "sha256:0943e72a22fb929d256cc74388c2d8be71ba36ccda3fbaf86ddb30a436d36001",
+      evidenceRef:
+        "PM linguistic approval in the supplied Batch 16 approval request; draft commit 64be5ce1cf8f1787a556029844130c0d6d88b2cd; Product siemens-s7-300-im360-3aa01-0aa0; MLFB 6ES7360-3AA01-0AA0; module type interface. Recording time is an actual UTC observation, not the PM review timestamp.",
+      note:
+        "6ES7360-3AA01-0AA0: PM-approved exact Persian wording, punctuation and spacing, typed MLFB isolation, and the exact رابط suffix in identical three-segment short and single-paragraph long descriptions.",
+    },
+    technicalReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-11-20T10:15:56Z",
+      reviewedContentHash:
+        "sha256:0943e72a22fb929d256cc74388c2d8be71ba36ccda3fbaf86ddb30a436d36001",
+      evidenceRef:
+        "PM technical approval in the supplied Batch 16 approval request; draft commit 64be5ce1cf8f1787a556029844130c0d6d88b2cd; Product siemens-s7-300-im360-3aa01-0aa0; MLFB 6ES7360-3AA01-0AA0; module type interface. Recording time is an actual UTC observation, not the PM review timestamp. Reused readiness indexed and parsed text of Siemens SINUMERIK Safety Integrated, Description of Functions, edition 11.03, 6FC5297-6AB80-0BP2; section 2.9, Table 2-8, printed p2-42; https://cache.industry.siemens.com/dl/files/938/109474938/att_834764/v1/FBSI_1103_en.pdf. All four exact IM order numbers are listed separately. The failed support-hosted manual request returned 403 in the reader; that failed request supplied no parsed evidence and is distinct from the usable cache-hosted parsed manual. The three standard IM Mall requests also returned 403 in the reader. ST 70 2021 indexed corroboration at printed p5/255 is separate from its reader (400) Content length is too large: 25626498 error; that is a reader size limit, not a Siemens-origin HTTP status. Printed pages are not assumed viewer indices. Visual inspection and successful direct-origin HTTP status were NOT OBSERVED. No fresh retrieval or lifecycle verification.",
+      note:
+        "6ES7360-3AA01-0AA0: PM-approved exact MLFB identity and interface module type only. Full titles, counts, High-Speed, sender/receiver behavior, temperature range, specifications, operating characteristics, compatibility, certification, lifecycle and availability remain outside approval.",
+    },
+  },
+  {
+    productId: "siemens-s7-300-im361-3ca01-0aa0",
+    shortDescription: im361MlfbOnly3Ca01Copy,
+    description: [im361MlfbOnly3Ca01Copy],
+    provenance: "ai-assisted",
+    linguisticReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-11-20T10:15:48Z",
+      reviewedContentHash:
+        "sha256:92d6f77bf7531bddcf2dba02d812931667ef58ea62c222e03571aab81a564570",
+      evidenceRef:
+        "PM linguistic approval in the supplied Batch 16 approval request; draft commit 64be5ce1cf8f1787a556029844130c0d6d88b2cd; Product siemens-s7-300-im361-3ca01-0aa0; MLFB 6ES7361-3CA01-0AA0; module type interface. Recording time is an actual UTC observation, not the PM review timestamp.",
+      note:
+        "6ES7361-3CA01-0AA0: PM-approved exact Persian wording, punctuation and spacing, typed MLFB isolation, and the exact رابط suffix in identical three-segment short and single-paragraph long descriptions.",
+    },
+    technicalReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-11-20T10:15:56Z",
+      reviewedContentHash:
+        "sha256:92d6f77bf7531bddcf2dba02d812931667ef58ea62c222e03571aab81a564570",
+      evidenceRef:
+        "PM technical approval in the supplied Batch 16 approval request; draft commit 64be5ce1cf8f1787a556029844130c0d6d88b2cd; Product siemens-s7-300-im361-3ca01-0aa0; MLFB 6ES7361-3CA01-0AA0; module type interface. Recording time is an actual UTC observation, not the PM review timestamp. Reused readiness indexed and parsed text of Siemens SINUMERIK Safety Integrated, Description of Functions, edition 11.03, 6FC5297-6AB80-0BP2; section 2.9, Table 2-8, printed p2-42; https://cache.industry.siemens.com/dl/files/938/109474938/att_834764/v1/FBSI_1103_en.pdf. All four exact IM order numbers are listed separately. The failed support-hosted manual request returned 403 in the reader; that failed request supplied no parsed evidence and is distinct from the usable cache-hosted parsed manual. The three standard IM Mall requests also returned 403 in the reader. ST 70 2021 indexed corroboration at printed p5/255 is separate from its reader (400) Content length is too large: 25626498 error; that is a reader size limit, not a Siemens-origin HTTP status. Printed pages are not assumed viewer indices. Visual inspection and successful direct-origin HTTP status were NOT OBSERVED. No fresh retrieval or lifecycle verification.",
+      note:
+        "6ES7361-3CA01-0AA0: PM-approved exact MLFB identity and interface module type only. Full titles, counts, High-Speed, sender/receiver behavior, temperature range, specifications, operating characteristics, compatibility, certification, lifecycle and availability remain outside approval.",
+    },
+  },
+  {
+    productId: "siemens-s7-300-im365-0ba01-0aa0",
+    shortDescription: im365MlfbOnly0Ba01Copy,
+    description: [im365MlfbOnly0Ba01Copy],
+    provenance: "ai-assisted",
+    linguisticReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-11-20T10:15:48Z",
+      reviewedContentHash:
+        "sha256:ba8f2857a26fc682b7d4909ad2eced3802f6d5f74d60d5ce4c5bacfda1aaba7d",
+      evidenceRef:
+        "PM linguistic approval in the supplied Batch 16 approval request; draft commit 64be5ce1cf8f1787a556029844130c0d6d88b2cd; Product siemens-s7-300-im365-0ba01-0aa0; MLFB 6ES7365-0BA01-0AA0; module type interface. Recording time is an actual UTC observation, not the PM review timestamp.",
+      note:
+        "6ES7365-0BA01-0AA0: PM-approved exact Persian wording, punctuation and spacing, typed MLFB isolation, and the exact رابط suffix in identical three-segment short and single-paragraph long descriptions.",
+    },
+    technicalReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-11-20T10:15:56Z",
+      reviewedContentHash:
+        "sha256:ba8f2857a26fc682b7d4909ad2eced3802f6d5f74d60d5ce4c5bacfda1aaba7d",
+      evidenceRef:
+        "PM technical approval in the supplied Batch 16 approval request; draft commit 64be5ce1cf8f1787a556029844130c0d6d88b2cd; Product siemens-s7-300-im365-0ba01-0aa0; MLFB 6ES7365-0BA01-0AA0; module type interface. Recording time is an actual UTC observation, not the PM review timestamp. Reused readiness indexed and parsed text of Siemens SINUMERIK Safety Integrated, Description of Functions, edition 11.03, 6FC5297-6AB80-0BP2; section 2.9, Table 2-8, printed p2-42; https://cache.industry.siemens.com/dl/files/938/109474938/att_834764/v1/FBSI_1103_en.pdf. All four exact IM order numbers are listed separately. The failed support-hosted manual request returned 403 in the reader; that failed request supplied no parsed evidence and is distinct from the usable cache-hosted parsed manual. The three standard IM Mall requests also returned 403 in the reader. ST 70 2021 indexed corroboration at printed p5/255 is separate from its reader (400) Content length is too large: 25626498 error; that is a reader size limit, not a Siemens-origin HTTP status. Printed pages are not assumed viewer indices. Visual inspection and successful direct-origin HTTP status were NOT OBSERVED. No fresh retrieval or lifecycle verification.",
+      note:
+        "6ES7365-0BA01-0AA0: PM-approved exact MLFB identity and interface module type only. Full titles, counts, High-Speed, sender/receiver behavior, temperature range, specifications, operating characteristics, compatibility, certification, lifecycle and availability remain outside approval.",
+    },
+  },
+  {
+    productId: "siemens-s7-300-im365-0ba81-0aa0",
+    shortDescription: im365MlfbOnly0Ba81Copy,
+    description: [im365MlfbOnly0Ba81Copy],
+    provenance: "ai-assisted",
+    linguisticReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-11-20T10:15:48Z",
+      reviewedContentHash:
+        "sha256:d4f700afe1d6cbf46f2f4e980cb225f3c8af7d894b74a9cdaaa8b6a6db064191",
+      evidenceRef:
+        "PM linguistic approval in the supplied Batch 16 approval request; draft commit 64be5ce1cf8f1787a556029844130c0d6d88b2cd; Product siemens-s7-300-im365-0ba81-0aa0; MLFB 6ES7365-0BA81-0AA0; module type interface. Recording time is an actual UTC observation, not the PM review timestamp.",
+      note:
+        "6ES7365-0BA81-0AA0: PM-approved exact Persian wording, punctuation and spacing, typed MLFB isolation, and the exact رابط suffix in identical three-segment short and single-paragraph long descriptions.",
+    },
+    technicalReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-11-20T10:15:56Z",
+      reviewedContentHash:
+        "sha256:d4f700afe1d6cbf46f2f4e980cb225f3c8af7d894b74a9cdaaa8b6a6db064191",
+      evidenceRef:
+        "PM technical approval in the supplied Batch 16 approval request; draft commit 64be5ce1cf8f1787a556029844130c0d6d88b2cd; Product siemens-s7-300-im365-0ba81-0aa0; MLFB 6ES7365-0BA81-0AA0; module type interface. Recording time is an actual UTC observation, not the PM review timestamp. Reused readiness indexed and parsed text of Siemens SINUMERIK Safety Integrated, Description of Functions, edition 11.03, 6FC5297-6AB80-0BP2; section 2.9, Table 2-8, printed p2-42; https://cache.industry.siemens.com/dl/files/938/109474938/att_834764/v1/FBSI_1103_en.pdf. All four exact IM order numbers are listed separately. The failed support-hosted manual request returned 403 in the reader; that failed request supplied no parsed evidence and is distinct from the usable cache-hosted parsed manual. The three standard IM Mall requests also returned 403 in the reader. ST 70 2021 indexed corroboration at printed p5/255 is separate from its reader (400) Content length is too large: 25626498 error; that is a reader size limit, not a Siemens-origin HTTP status. Printed pages are not assumed viewer indices. Visual inspection and successful direct-origin HTTP status were NOT OBSERVED. No fresh retrieval or lifecycle verification.",
+      note:
+        "6ES7365-0BA81-0AA0: PM-approved exact MLFB identity and interface module type only. Full titles, counts, High-Speed, sender/receiver behavior, temperature range, specifications, operating characteristics, compatibility, certification, lifecycle and availability remain outside approval.",
     },
   },
 ] as const satisfies readonly PersianProductCopyOverlay[];
