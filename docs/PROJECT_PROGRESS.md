@@ -1,19 +1,53 @@
 # Siemiran — Project Progress
 
 Repository implementation source of truth: merged `main` baseline
-`52f6a336e307254867e4957c14db804105477bd6`
+`33009a15647ff2907c949e58ff779918a5ec60ad`
 
 Last synchronized: 2026-11-20 (documentation reconciliation)
 
-## 2026-11-20 - Batch 16 Reconciliation (Current State)
+## 2026-11-20 - Batch 17 Reconciliation (Current State)
+
+[PR #91](https://github.com/Siemiran/Siemiran/pull/91) completed private Batch 17 at
+`33009a15647ff2907c949e58ff779918a5ec60ad`. Approval covers exact MLFB identity and
+product type only: interface module for SIPLUS IM 365 and IM 174, drive interface
+module for IM 178-4, and communication processor for both CP 340 entries.
+Full titles, counts, motion-control behavior, interface standards, electrical
+specifications, compatibility, certification, lifecycle and availability remain
+outside approval. See [DATABASE.md](DATABASE.md#2026-11-20---batch-17-private-product-copy-checkpoint-current-state) for exact bindings,
+hash-bound role records and evidence limits, [CHANGELOG.md](CHANGELOG.md#2026-11-20---pr-91-complete-batch-17-private-drafts-and-dual-approvals)
+for merge identity, and [SESSION_HANDOFF.md](SESSION_HANDOFF.md) for resume facts.
+
+The catalog contains 382 Products (186 S7-1200 / 196 S7-300). There are 85 private
+drafts, 85 current approvals per role, 85 current dual approvals, zero pending
+roles and 297 missing entries. Activation validation remains invalid at
+`overlayCount=85`, `approvedCount=85` and `missingIds.length=297`, with capability
+absent. Active overlays remain 0/382, publication is disabled, and public FA/EN
+copy stays canonical English/LTR. Complete 382/382 current dual approvals and
+separate launch authorization remain required.
+
+Overrides remain 10 Products / 20 assignments / 7 unique strings with an empty
+global allowlist. Batch 17 added zero overrides. The eleven public lifecycle
+omissions, including IM 178-4, and separate S7-300 provenance classification
+(185 Siemens-official verified / 11 explicitly unverified) remain in effect.
+
+Batch 18 is unstarted; its product selection and scope require separate approval.
+Admin Panel and Automation remain gated, and the dedicated completed-copy
+website inspection remains pending.
+
+Batch 16 and earlier checkpoints below are historical.
+
+## 2026-11-20 - Batch 16 Reconciliation (Historical Snapshot)
+
+The following 80/302 checkpoint and prospective workflow describe Batch 16 at
+its merge; Batch 17 above is current.
 
 [PR #89](https://github.com/Siemiran/Siemiran/pull/89) completed private Batch 16 at
 `52f6a336e307254867e4957c14db804105477bd6`. Approval covers exact MLFB identity and
 module type only: one mixed analog input/output module and four interface
 modules. Titles, counts, speed, sender/receiver behavior, temperature range,
 other specifications and lifecycle claims remain outside approval.
-See [DATABASE.md](DATABASE.md#2026-11-20---batch-16-private-product-copy-checkpoint-current-state) for exact bindings, evidence limits and
-recorded preservation results, [CHANGELOG.md](CHANGELOG.md#2026-11-20---pr-89-complete-batch-16-private-drafts-and-dual-approvals) for merge
+See [DATABASE.md](DATABASE.md#2026-11-20---batch-16-private-product-copy-checkpoint-historical-snapshot) for exact bindings, evidence limits and
+recorded preservation results, [CHANGELOG.md](CHANGELOG.md#2026-11-20---pr-89-complete-batch-16-private-drafts-and-dual-approvals-historical-snapshot) for merge
 identity, and [SESSION_HANDOFF.md](SESSION_HANDOFF.md) for durable resume facts.
 
 The catalog contains 382 Products (186 S7-1200 / 196 S7-300). There are 80 private
@@ -714,9 +748,9 @@ the inventory before this approved deletion, not a valid current record.
   values and Product-description presentation
 
 The Product-copy infrastructure is implemented and all intended consumers now
-use its resolver/presentation boundary. The private registry contains 70/382
-drafts and 70/382 current approvals per role, with 70 current dual approvals,
-zero pending roles and 312 Products still missing.
+use its resolver/presentation boundary. The private registry contains 85/382
+drafts and 85/382 current approvals per role, with 85 current dual approvals,
+zero pending roles and 297 Products still missing.
 Active overlays remain 0/382, no activation capability exists, and publication
 remains disabled. Further controlled private drafting, the exact 382/382
 activation gate, English indexing activation, reciprocal hreflang, and
@@ -734,8 +768,8 @@ localized sitemap coverage remain future gates.
   approvals
 - Exact 382/382 atomic activation gate and exact-eleven lifecycle-omission
   invariant
-- Private 70/382 registry with 70 current dual approvals, zero pending roles,
-  and 312 missing entries; active coverage remains 0/382,
+- Private 85/382 registry with 85 current dual approvals, zero pending roles,
+  and 297 missing entries; active coverage remains 0/382,
   publication remains disabled, and its resolver/presentation boundary is
   connected to all intended consumers
 
@@ -1081,6 +1115,38 @@ after Task Y merge.
 
 ## Quality Progress
 
+**PASS (REUSED)** - Batch 17's AST comparison, Product-copy validator, focused
+lint and production build are accepted implementation evidence at reviewed head
+`a876917ef3939670f068bf99678c0fe5ed7c3cac`. Validator, focused lint and build
+each exited `0`; the build checked TypeScript and generated 774/774 static pages.
+The reviewed head and merged implementation share exact tree
+`9a382bcd8a72a208286e399de8c65b9fade1a8c0`. Application, canonical data,
+dependencies and build content are unchanged by this eight-document task.
+Application checks, AST comparison reruns, hash audits and manufacturer research
+are **NOT RUN** here.
+
+The recorded syntax-aware comparison distinguished formatting-only changes
+from semantic changes in both implementation files. All 80 prior registry
+entries retained order, content, review metadata and production hashes.
+The draft-to-base verifier comparison preserved 796 prior statements; its five
+replacements and additions were confined to Batch 17 coverage and necessary
+membership/count/report assertions. The approval comparison preserved 808 draft
+verifier statements and made no further formatting sweep. All 85 draft contents,
+bindings, order, provenance and hashes matched draft
+`65b6682a2471e502a63227e333bbf1c3a58c686b`. Ten independent text or segment-kind
+mutation cases each staled both approval roles. Completed-batch checks and fixed
+30/50/55/60/65/70/75 membership boundaries remain intact; the completed-through-
+Batch-16 set contains 80 unique current dual-approved IDs and is disjoint from
+the explicit five-ID Batch 17 set. Membership uses filtering, not positional slicing.
+These are reused implementation results, not new hash or application audits.
+
+Recorded Batch 17 implementation CI was absent: zero check runs, zero statuses,
+empty rollup and combined `pending`; this does not establish passing CI.
+Fresh documentation checks and documentation PR/CI observations belong in the
+task report.
+
+### Historical Validation - Batch 14
+
 - **PASS (REUSED)** — The Batch 14 validator, focused lint and build, including
   TypeScript and 774/774 static pages, each exited 0 at reviewed head
   `ccedae932c330b4220bcff82a5dd0324432e664b`. The squash has the same tree
@@ -1239,14 +1305,15 @@ verified, while 11 records are explicitly `unverified` and expose no public
 lifecycle value. Product integration is not pending.
 
 The Product-copy resolver/presentation boundary is verified and connected to
-all intended consumers. Its private registry contains 70/382 drafts and 70
-current approvals per role. All 70 drafts have current dual approvals, with zero
-pending roles and 312 missing entries. Batches 01–14 are complete privately.
+all intended consumers. Its private registry contains 85/382 drafts and 85
+current approvals per role. All 85 drafts have current dual approvals, with zero
+pending roles and 297 missing entries. Batches 01–17 are complete privately.
 Technical-token overrides cover 10 Products, 20 assignments and 7 unique
-strings, with an empty global allowlist. Batches 03–14 added none.
+strings, with an empty global allowlist. Batches 03–17 added none.
 Active overlays remain 0/382, activation capability is absent and publication
 is disabled. Both locales resolve canonical English/LTR Product prose while
-Persian UI localization remains active. Batch 15 is unapproved and unstarted.
+Persian UI localization remains active. Batch 18 is unstarted; product selection
+and scope require separate approval.
 Admin Panel and Automation remain gated. The complete 382/382 gate and separately authorized
 atomic public activation remain pending,
 followed by separately authorized bilingual SEO work. Partial activation is

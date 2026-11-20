@@ -1,13 +1,120 @@
 # Siemiran — Product Database
 
 Repository source of truth: `main` at
-`52f6a336e307254867e4957c14db804105477bd6` (2026-11-20).
+`33009a15647ff2907c949e58ff779918a5ec60ad` (2026-11-20).
 
-## 2026-11-20 - Batch 16 Private Product-copy Checkpoint (Current State)
+## 2026-11-20 - Batch 17 Private Product-copy Checkpoint (Current State)
+
+[PR #91](https://github.com/Siemiran/Siemiran/pull/91) completed private Batch 17 at
+`33009a15647ff2907c949e58ff779918a5ec60ad`. Approval covers exact MLFB identity and
+product type only: interface module for SIPLUS IM 365 and IM 174, drive interface
+module for IM 178-4, and communication processor for both CP 340 entries.
+Full titles, counts, motion-control behavior, interface standards, electrical
+specifications, compatibility, certification, lifecycle and availability remain
+outside approval. Exact bindings, hash-bound role records and evidence limits
+follow. See [CHANGELOG.md](CHANGELOG.md#2026-11-20---pr-91-complete-batch-17-private-drafts-and-dual-approvals)
+for merge identity and [SESSION_HANDOFF.md](SESSION_HANDOFF.md) for resume facts.
+
+Each `ai-assisted` short description and single-paragraph long description has
+identical three-segment content: Persian introduction, one `technical` exact
+MLFB and the approved Persian product type. Product IDs and variants below are
+bindings, not approval of behavior or specifications embedded in identifiers.
+
+| Exact MLFB | Stable Product ID | Canonical variant | Approved product type | Evidence / printed pages |
+| --- | --- | --- | --- | --- |
+| `6AG1365-0BA01-2AA0` | `siemens-siplus-s7-300-im365-0ba01-2aa0` | `rack-interface` | interface module | E1 / p27 and p431 |
+| `6ES7174-0AA10-0AA0` | `siemens-s7-300-im174-0aa10-0aa0` | `motion-control` | interface module | E2 / p4 |
+| `6ES7178-4BH00-0AE0` | `siemens-s7-300-im178-4-4bh00-0ae0` | `distributed-motion-control` | drive interface module | E3 / cover and p1-1; E4 / p1-1 |
+| `6ES7340-1AH02-0AE0` | `siemens-s7-300-cp340-rs232-1ah02-0ae0` | `rs232` | communication processor | E5 / p11 |
+| `6ES7340-1BH02-0AE0` | `siemens-s7-300-cp340-tty-1bh02-0ae0` | `20ma-tty` | communication processor | E5 / p11 |
+
+- **E1:** [Siemens S7-300 Module Data, 05/2022, A5E00105505-AK](https://cache.industry.siemens.com/dl/files/629/8859629/att_55794/v1/s7300_module_data_manual_en-US_en-US.pdf), section 1.7 Table 1-2, printed p27, and section 8.4, printed p431. Parsed text identifies the exact SIPLUS IM 365 order number as an interface module. The separate canonical Mall reader request returned **403**; that failure is distinct from the usable parsed manual.
+- **E2:** [Siemens S7 Easy Motion Control - Driver Blocks for SINAMICS and IM174, V1.0, Entry 40787611](https://support.industry.siemens.com/cs/attachments/40787611/40787611_EMC_additional_Drivers_en.pdf), Table 1-1, printed p4. **Indexed-only text** identifies the exact IM 174 order number as an interface module. The separate direct PDF reader request returned **403**; no successful parsed read was observed.
+- **E3:** [German IM 178-4 Drive Interface manual, C79000-G7000-C178-01](https://cache.industry.siemens.com/dl/files/389/1117389/att_22592/v1/IM1784_d.pdf), unnumbered cover and printed p1-1. Parsed text identifies Drive Interface and the exact order number.
+- **E4:** [English IM 178-4 manual, C79000-G7076-C178-01](https://cache.industry.siemens.com/dl/files/389/1117389/att_22595/v1/IM1784_e.pdf), printed p1-1. Parsed text corroborates exact identity. The separate support-hosted English reader request returned **403**; it is distinct from the usable cache-hosted parsed manuals.
+- **E5:** [Siemens PtP coupling and configuration of CP 340, 04/2011, A5E00369892-03](https://cache.industry.siemens.com/dl/files/332/1137332/att_24649/v1/s7300_cp340_manual_en_en-US.pdf), section 1.1 Table 1-1, printed p11. Parsed text separately lists both exact CP order numbers as communication-processor variants.
+
+These are printed page references, not assumed viewer indices. Visual inspection
+and successful direct-origin HTTP status remain **NOT OBSERVED**. This task
+reuses reviewed evidence without fresh research, retrieval or lifecycle
+verification. Reader failures do not supply parsed evidence. Earlier evidence
+qualifications, including Batch 16's distinct reader size error, remain intact.
+
+Ten distinct `Siemiran` approval records bind the five unchanged production
+content hashes below: one linguistic and one technical record per row.
+Linguistic recording was observed at `2026-11-20T13:07:06Z` UTC and technical
+recording at `2026-11-20T13:07:12Z` UTC. These are **recording times, not PM review
+times**, and the records are separate from GitHub reviews (PR #91 had none).
+They bind draft `65b6682a2471e502a63227e333bbf1c3a58c686b`; approval commit
+`a876917ef3939670f068bf99678c0fe5ed7c3cac` preserved wording, typed segments,
+bindings, order, provenance and hashes.
+
+| Exact MLFB | Content hash bound by both separate role records |
+| --- | --- |
+| `6AG1365-0BA01-2AA0` | `sha256:9bc2e9c4ac070faef6a49208c79226fb5eeeca5e77cc3f2281fef0f236eb4946` |
+| `6ES7174-0AA10-0AA0` | `sha256:7646442547fe6d820467f951a5da2a2bf3d692dde9de9f1fb8dd876367692a7b` |
+| `6ES7178-4BH00-0AE0` | `sha256:d5008ca2271b6562097b90c0fc3b4de2891ea3bad7069ea9b530ee7eeb0c8c4f` |
+| `6ES7340-1AH02-0AE0` | `sha256:21a6c7208281c57c32f9963efbe3453f38085adac45faf7bf82b1656d194c747` |
+| `6ES7340-1BH02-0AE0` | `sha256:63fa7ba48908fa7905aadcc489f1e552c4253aeca40bd440dea3ed69c6ef2b1a` |
+
+**PASS (REUSED)** - Batch 17's AST comparison, Product-copy validator, focused
+lint and production build are accepted implementation evidence at reviewed head
+`a876917ef3939670f068bf99678c0fe5ed7c3cac`. Validator, focused lint and build
+each exited `0`; the build checked TypeScript and generated 774/774 static pages.
+The reviewed head and merged implementation share exact tree
+`9a382bcd8a72a208286e399de8c65b9fade1a8c0`. Application, canonical data,
+dependencies and build content are unchanged by this eight-document task.
+Application checks, AST comparison reruns, hash audits and manufacturer research
+are **NOT RUN** here.
+
+The recorded syntax-aware comparison distinguished formatting-only changes
+from semantic changes in both implementation files. All 80 prior registry
+entries retained order, content, review metadata and production hashes.
+The draft-to-base verifier comparison preserved 796 prior statements; its five
+replacements and additions were confined to Batch 17 coverage and necessary
+membership/count/report assertions. The approval comparison preserved 808 draft
+verifier statements and made no further formatting sweep. All 85 draft contents,
+bindings, order, provenance and hashes matched draft
+`65b6682a2471e502a63227e333bbf1c3a58c686b`. Ten independent text or segment-kind
+mutation cases each staled both approval roles. Completed-batch checks and fixed
+30/50/55/60/65/70/75 membership boundaries remain intact; the completed-through-
+Batch-16 set contains 80 unique current dual-approved IDs and is disjoint from
+the explicit five-ID Batch 17 set. Membership uses filtering, not positional slicing.
+These are reused implementation results, not new hash or application audits.
+
+Recorded Batch 17 implementation CI was absent: zero check runs, zero statuses,
+empty rollup and combined `pending`; this does not establish passing CI.
+Fresh documentation checks and documentation PR/CI observations belong in the
+task report.
+
+The catalog contains 382 Products (186 S7-1200 / 196 S7-300). There are 85 private
+drafts, 85 current approvals per role, 85 current dual approvals, zero pending
+roles and 297 missing entries. Activation validation remains invalid at
+`overlayCount=85`, `approvedCount=85` and `missingIds.length=297`, with capability
+absent. Active overlays remain 0/382, publication is disabled, and public FA/EN
+copy stays canonical English/LTR. Complete 382/382 current dual approvals and
+separate launch authorization remain required.
+
+Overrides remain 10 Products / 20 assignments / 7 unique strings with an empty
+global allowlist. Batch 17 added zero overrides. The eleven public lifecycle
+omissions, including IM 178-4, and separate S7-300 provenance classification
+(185 Siemens-official verified / 11 explicitly unverified) remain in effect.
+
+Batch 18 is unstarted; its product selection and scope require separate approval.
+Admin Panel and Automation remain gated, and the dedicated completed-copy
+website inspection remains pending.
+
+Batch 16's 80/302 checkpoint below is historical; its records and evidence
+qualifications remain preserved.
+
+## 2026-11-20 - Batch 16 Private Product-copy Checkpoint (Historical Snapshot)
+
+The following 80/302 checkpoint, records and prospective workflow describe Batch 16
+at its merge. Batch 17 above is current.
 
 [PR #89](https://github.com/Siemiran/Siemiran/pull/89) merged as
 `52f6a336e307254867e4957c14db804105477bd6` at `2026-11-20T10:39:01Z`
-(`2026-11-20 14:09:01` Asia/Tehran). See [CHANGELOG.md](CHANGELOG.md#2026-11-20---pr-89-complete-batch-16-private-drafts-and-dual-approvals)
+(`2026-11-20 14:09:01` Asia/Tehran). See [CHANGELOG.md](CHANGELOG.md#2026-11-20---pr-89-complete-batch-16-private-drafts-and-dual-approvals-historical-snapshot)
 for the reviewed head, identical squash tree, sole parent and two-file scope.
 
 Approval covers exact MLFB identity and module type only. Each `ai-assisted`
