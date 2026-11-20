@@ -1,7 +1,7 @@
 # Siemiran — Session Handoff
 
-Checkpoint: **2026-11-19 (Asia/Tehran)**. Private Batch 14 merged and local
-main was synchronized.
+Checkpoint: **2026-11-20 (Asia/Tehran)**. Private Batch 15 merged; documentation
+is reconciled to its implementation baseline. Recheck actual refs on resume.
 
 ## Identity and source of truth
 
@@ -17,6 +17,22 @@ For implemented behavior, use the exact committed source and validation first,
 then merged PR/review evidence, then current repository summaries. Dated older
 snapshots preserve history. Maintainer instructions define authorization; a
 historical next-step statement does not authorize new work.
+
+Merged implementation baseline: `8e33dd6a895057db175fe7ec496fb4f4486bd0b5`.
+[PR #87](https://github.com/Siemiran/Siemiran/pull/87), `feat: add Batch 15 Persian product copy`, merged at
+`2026-11-19T10:07:20Z` (Asia/Tehran: `2026-11-19 13:37:20`).
+Sole parent: `a0526c6db2c2d43b8569fb4ce06d0b62b8621814`.
+Reviewed head: `1a28b17671b96f838c7fe6e4ae281ebfa1590e17`.
+Draft: `55aafe89238e3c68dac886358e9d9fcda753b4a2`.
+Identical reviewed/squash tree: `d3fe4b269804bbb82f67d0032a84bfa519452efe`.
+Implementation scope: registry +170/-0, verifier +336/-11, total +506/-11.
+Clean local main, origin/main and live main matched the implementation baseline
+before this documentation branch was created. Documentation commit/PR identities
+belong in the task report; no future merge identity is assumed.
+
+### Historical Batch 14 implementation identity
+
+The following identity and ref observations describe the Batch 14 checkpoint.
 
 Merged implementation baseline: `74668d494683525d8128d9950309b511fc1b373a`.
 [PR #85](https://github.com/Siemiran/Siemiran/pull/85), `feat: add Batch 14 Persian product copy`, merged at
@@ -65,25 +81,34 @@ Follow [AGENTS.md](../AGENTS.md): Feature First, repository access, one canonica
 
 | Current measure | State |
 | --- | --- |
-| Private drafts / linguistic approvals / technical approvals | 70/382 each |
-| Current dual approvals / pending roles / missing private entries | 70 / zero / 312 |
-| Activation validation / overlayCount / approvedCount / missingIds.length | Invalid / 70 / 70 / 312 |
+| Private drafts / linguistic approvals / technical approvals | 75/382 each |
+| Current dual approvals / pending roles / missing private entries | 75 / zero / 307 |
+| Activation validation / overlayCount / approvedCount / missingIds.length | Invalid / 75 / 75 / 307 |
 | Active overlays / activation capability / publication | 0/382 / absent / disabled |
 | Public FA/EN Product copy | Canonical English/LTR |
 | Overrides | 10 Products / 20 assignments / 7 unique strings |
-| Batch 14 added overrides / global allowlist | Zero / empty |
+| Batch 15 added overrides / global allowlist | Zero / empty |
 | Canonical lifecycle omissions | Exactly eleven |
 | S7-300 lifecycle provenance | 185 Siemens-official verified / 11 explicitly unverified |
 
-Batches 01–14 are complete privately. The five Batch 14 entries approve only
+Batches 01–15 are complete privately. Batch 15 approves exact MLFB and module
+type only: one analog output and four mixed analog input/output modules. Its
+ai-assisted short and single-paragraph long descriptions retain identical
+three-segment content. Ten distinct hash-bound linguistic and technical records
+are separate from GitHub reviews (PR #87 has none). UTC observations
+`2026-11-19T09:57:17Z` and `2026-11-19T09:57:18Z` are role recording times,
+not PM review times. Exact bindings and reused preservation/mutation results are
+in [DATABASE.md](DATABASE.md#2026-11-19---batch-15-private-product-copy-checkpoint-current-state).
+
+Batch 14's 70/312 checkpoint is historical. Its five entries approved only
 exact MLFB identity and analog-output module type. The `ai-assisted` entries have
 identical three-segment short and single-paragraph long content.
 Ten distinct `Siemiran` approval records bind unchanged production hashes.
 Linguistic recording was observed at `2026-11-19T09:05:22Z` UTC and technical
 at `2026-11-19T09:05:23Z` UTC. These observations record the entry of the
 approvals and are separate from PM review and the merge.
-See [DATABASE.md](DATABASE.md#2026-11-19---batch-14-private-product-copy-checkpoint-current-state) for exact bindings and reused
-implementation checks. Batch 13's 65/317 checkpoint and prospective workflow
+See [DATABASE.md](DATABASE.md#2026-11-19---batch-14-private-product-copy-checkpoint-historical-snapshot) for exact bindings and reused
+implementation checks. Batch 14's 70/312 and Batch 13's 65/317 checkpoints and prospective workflows
 are historical, as are earlier checkpoints.
 Recorded public FA/EN resolution checks remain canonical English/LTR. Lifecycle omission debt is separate from missing
 Persian-copy coverage. Activation requires the complete 382/382 current
@@ -92,9 +117,9 @@ activation is prohibited. Private drafts authorize neither activation nor public
 
 ## Outstanding work and evidence limits
 
-1. Batch 15 readiness and scope remain **unapproved and unstarted**. Read-only
+1. Batch 16 readiness and scope remain **unapproved and unstarted**. Read-only
    readiness and independent scope/token review require separate authorization.
-2. Complete the remaining 312 private drafts and both review roles through later
+2. Complete the remaining 307 private drafts and both review roles through later
    separately authorized batches. Public activation and bilingual SEO remain
    separate future tasks; English indexing, hreflang, and localized sitemap work
    remain deferred.
@@ -268,7 +293,7 @@ compatibility, certification, lifecycle, availability and performance remain
 outside approval.
 
 Batch 14 evidence limits (exact bindings and printed pages in
-[DATABASE.md](DATABASE.md#2026-11-19---batch-14-private-product-copy-checkpoint-current-state)):
+[DATABASE.md](DATABASE.md#2026-11-19---batch-14-private-product-copy-checkpoint-historical-snapshot)):
 
 - **7ND02** — The parsed Module Data manual establishes analog-output type.
   The indexed [Industry Mall entry](https://mall.industry.siemens.com/mall/en/sg/Catalog/Product/6ES7332-7ND02-0AB0)
@@ -287,6 +312,25 @@ Batch 14 evidence limits (exact bindings and printed pages in
 Batch 14 technical approval covers exact MLFB and analog-output type only.
 Titles, counts and engineering or lifecycle claims remain outside scope.
 
+Batch 15 evidence limits (exact bindings and printed pages in
+[DATABASE.md](DATABASE.md#2026-11-19---batch-15-private-product-copy-checkpoint-current-state)):
+
+- Parsed Module Data supports exact SIPLUS SM 332 `6AG1332-5HF00-2AB0`
+  (§1.7 p28; §6.12 p367) and both standard SM 334 order numbers
+  (`6ES7334-0CE01-0AA0`, §6.16 p395; `6ES7334-0KE00-0AB0`, §6.17 p401).
+- SIPLUS SM 334 `6AG1334-0KE00-7AB0` uses Module Data §1.7 p28 and ST 70
+  p5/104. The `-2AB0` listing in §6.17 is a different order number.
+- SM 335 `6ES7335-7HG01-0AB0` uses the indexed and parsed Siemens Front
+  Connector Selection FAQ, ID 23060726, §1.3 Table 7, printed p13/16. The
+  separate SM 335 manual request returned **403 in the reader** and supplied no evidence.
+- Visual inspection and successful direct-origin HTTP status for parsed material
+  remain **NOT OBSERVED**. Printed pages are not assumed viewer indices.
+  No fresh manufacturer retrieval or lifecycle verification is claimed.
+- Only exact MLFB and module type are approved. Titles, counts, specifications,
+  compatibility, certification, lifecycle and availability remain outside scope.
+  Preserve Batch 14's distinct 7ND02 “4 AI” discrepancy and SIPLUS reader
+  limitation without assigning the latter an HTTP status.
+
 Other deferred work: inquiry delivery/persistence, broader automated tests/CI/CD,
 verified download/relation population, and owner-selected catalog expansion. See
 [ARCHITECTURE.md](ARCHITECTURE.md), [DATABASE.md](DATABASE.md),
@@ -295,6 +339,26 @@ verified download/relation population, and owner-selected catalog expansion. See
 [CHANGELOG.md](CHANGELOG.md) for details and dated history.
 
 ## Validation applicability
+
+**PASS (REUSED)** — Batch 15's Product-copy validator, focused lint and build
+each exited `0` at reviewed head `1a28b17671b96f838c7fe6e4ae281ebfa1590e17`.
+The build passed TypeScript and generated 774/774 static pages. Reviewed head
+and merged implementation share tree `d3fe4b269804bbb82f67d0032a84bfa519452efe`.
+Application, dependency and build content is unchanged by this eight-document
+reconciliation. Application checks, approval-hash audits and manufacturer
+research were **NOT RUN** for this documentation task.
+
+The recorded implementation preserved all 70 prior complete entries, metadata,
+order and production hashes and all 75 draft contents, bindings and provenance.
+Each of ten independent text or segment-kind mutations staled both approvals.
+Fixed 30/50/55/60 boundaries and the separate 65-ID and 70-ID completed sets
+remain intact. See [DATABASE.md](DATABASE.md#2026-11-19---batch-15-private-product-copy-checkpoint-current-state).
+Fresh documentation checks and documentation PR/CI state belong in the task report.
+
+### Historical Batch 14 checkpoint and validation
+
+The 70/312 checkpoint and validation below describe Batch 14 at its merge.
+Batch 15 supersedes that checkpoint; the evidence limitations remain applicable.
 
 - **PASS (REUSED)** — The Batch 14 validator, focused lint and build, including
   TypeScript and 774/774 static pages, each exited 0 at reviewed head
@@ -306,7 +370,7 @@ verified download/relation population, and owner-selected catalog expansion. See
 
 The implementation preserved the fixed 30/50/55/60 membership boundaries and
 the separate completed-through-Batch-13 65-ID set. See
-[DATABASE.md](DATABASE.md#2026-11-19---batch-14-private-product-copy-checkpoint-current-state) for the recorded comparisons and
+[DATABASE.md](DATABASE.md#2026-11-19---batch-14-private-product-copy-checkpoint-historical-snapshot) for the recorded comparisons and
 approval mutation results.
 
 ### Historical Batch 13 checkpoint and validation
@@ -588,7 +652,7 @@ counts and evidence; they are not current coverage or new task executions.
 
 - Record branch, exact HEAD, sole parent/base, index/worktree clean or dirty state,
   and live/local `main` refs. The durable implementation baseline is
-  `74668d494683525d8128d9950309b511fc1b373a`; task-specific workflow status and
+  `8e33dd6a895057db175fe7ec496fb4f4486bd0b5`; task-specific workflow status and
   commit/PR identities belong in the task report rather than this file.
 - Identify existing task branches, patches, and commits before starting; preserve
   identifiable partial work and finish only missing authorized work. If refs or
@@ -599,6 +663,6 @@ counts and evidence; they are not current coverage or new task executions.
 - Record validation commands, exit codes, NEW versus REUSED status, exact checked
   content, and evidence limitations. Check Markdown links/anchors, whitespace
   and unchanged outside content; report actual results and final clean state.
-- Batch 15 readiness/scope remains unapproved and unstarted. Overlay activation,
+- Batch 16 readiness/scope remains unapproved and unstarted. Overlay activation,
   publication, English indexing and completed-copy website inspection remain
   separately authorized future work.

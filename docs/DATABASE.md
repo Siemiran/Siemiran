@@ -1,13 +1,93 @@
 # Siemiran — Product Database
 
 Repository source of truth: `main` at
-`74668d494683525d8128d9950309b511fc1b373a` (2026-11-19).
+`8e33dd6a895057db175fe7ec496fb4f4486bd0b5` (2026-11-19).
 
-## 2026-11-19 - Batch 14 Private Product-copy Checkpoint (Current State)
+## 2026-11-19 - Batch 15 Private Product-copy Checkpoint (Current State)
+
+[PR #87](https://github.com/Siemiran/Siemiran/pull/87) merged as
+`8e33dd6a895057db175fe7ec496fb4f4486bd0b5` at `2026-11-19T10:07:20Z`
+(`2026-11-19 13:37:20` Asia/Tehran). See [CHANGELOG.md](CHANGELOG.md#2026-11-19---pr-87-complete-batch-15-private-drafts-and-dual-approvals)
+for the reviewed head, identical squash tree, sole parent and two-file scope.
+
+Approval covers exact MLFB identity and module type only. Each `ai-assisted`
+short description and single-paragraph long description uses the same three
+segments: Persian introduction, one typed exact MLFB, and Persian module type.
+Full titles, counts, resolution, speed, electrical or operating characteristics,
+compatibility, certification, lifecycle and availability remain outside approval.
+Product IDs below are stable bindings, not approval of the specifications in
+their identifier strings.
+
+| Exact MLFB | Stable Product ID | Approved module type | Evidence / section / printed pages |
+| --- | --- | --- | --- |
+| `6AG1332-5HF00-2AB0` | `siemens-siplus-s7-300-sm332-ao8-ui-5hf00-2ab0` | analog output | E1 / §1.7 p28; §6.12 p367 |
+| `6ES7334-0CE01-0AA0` | `siemens-s7-300-sm334-ai4-ao2-8bit-0ce01-0aa0` | mixed analog input/output | E1 / §6.16 p395 |
+| `6ES7334-0KE00-0AB0` | `siemens-s7-300-sm334-ai4-ao2-12bit-0ke00-0ab0` | mixed analog input/output | E1 / §6.17 p401 |
+| `6AG1334-0KE00-7AB0` | `siemens-siplus-s7-300-sm334-ai4-ao2-12bit-0ke00-7ab0` | mixed analog input/output | E1 / §1.7 p28; E2 / p5/104 |
+| `6ES7335-7HG01-0AB0` | `siemens-s7-300-sm335-ai4-ao4-14bit-7hg01-0ab0` | mixed analog input/output | E3 / §1.3 Table 7 p13/16 |
+
+- **E1:** [Siemens S7-300 Module Data, 05/2022, A5E00105505-AK](https://cache.industry.siemens.com/dl/files/629/8859629/att_55794/v1/s7300_module_data_manual_en-US_en-US.pdf).
+- **E2:** [Siemens ST 70, 2023, SIPLUS SM 334](https://cache.industry.siemens.com/dl/files/167/109744167/att_1145924/v1/simatic-st70-complete-english-2023.pdf).
+- **E3:** [Siemens Front Connector Selection, V2.0, 15 October 2008, ID 23060726](https://cache.industry.siemens.com/dl/files/726/23060726/att_66628/v1/23060726_s7-300_kabel_und_zubehoer_zuordnung_stecker_baugruppe_e.pdf).
+
+- **SIPLUS SM 332:** Parsed Module Data supports exact
+  `6AG1332-5HF00-2AB0`, distinct from standard `6ES7332-5HF00-0AB0`.
+- **Standard SM 334:** Parsed Module Data supports the two exact standard order
+  numbers and both analog directions at the sections above.
+- **SIPLUS SM 334:** Exact `6AG1334-0KE00-7AB0` is supported by parsed Module
+  Data §1.7 and ST 70. Module Data §6.17 lists a different SIPLUS `-2AB0`
+  order number; that listing supplies no evidence for `-7AB0`.
+- **SM 335:** The usable source is the indexed and parsed Front Connector
+  Selection FAQ, ID 23060726, §1.3 Table 7, printed p13/16. The separate SM 335
+  manual request returned **403 in the reader** and supplied no evidence.
+- Printed pages are not assumed viewer indices. Visual inspection and successful
+  direct-origin HTTP status for parsed material remain **NOT OBSERVED**.
+  This record reuses readiness evidence; no fresh manufacturer retrieval or
+  lifecycle verification was performed for the documentation reconciliation.
+
+Ten distinct `Siemiran` linguistic and technical records bind the unchanged
+production content hashes from draft commit
+`55aafe89238e3c68dac886358e9d9fcda753b4a2`. The UTC observations
+`2026-11-19T09:57:17Z` (linguistic) and `2026-11-19T09:57:18Z` (technical)
+are recording times, **not PM review times**. These ten hash-bound role records
+are distinct from GitHub reviews; PR #87's GitHub review list is empty.
+
+Recorded implementation comparison preserved all 70 prior entries, including
+order, complete content, metadata and production hashes, and all 75 draft
+contents, bindings and ai-assisted provenance against the reviewed draft.
+All five bindings, typed MLFB tokens and PM-reviewed hashes passed. Each of the
+ten independent text or segment-kind mutations staled both approvals. Fixed
+30/50/55/60 membership boundaries and the separate completed-through-Batch-13
+65-ID and completed-through-Batch-14 70-ID sets remain intact. These are reused
+implementation results, not fresh approval-hash audits.
+
+The catalog contains 382 Products (186 S7-1200 / 196 S7-300). There are 75 private
+drafts, 75 current approvals per role, 75 current dual approvals, zero pending
+roles and 307 missing entries. Activation validation remains invalid at
+`overlayCount=75`, `approvedCount=75` and `missingIds.length=307`, with capability
+absent. Active overlays remain 0/382, publication is disabled, and public FA/EN
+copy stays canonical English/LTR. Complete 382/382 current dual approvals and
+separate launch authorization remain required.
+
+Overrides remain 10 Products / 20 assignments / 7 unique strings with an empty
+global allowlist. Batch 15 added zero overrides. The eleven public lifecycle
+omissions and separate S7-300 provenance classification (185 Siemens-official
+verified / 11 explicitly unverified) remain in effect.
+
+Batch 16 remains unapproved and unstarted. Admin Panel and Automation remain
+gated, and the dedicated completed-copy website inspection remains pending.
+
+Batch 14's 70/312 checkpoint below is historical. Its distinct 7ND02 “4 AI”
+discrepancy and SIPLUS reader limitation without a numeric status remain in force.
+
+## 2026-11-19 - Batch 14 Private Product-copy Checkpoint (Historical Snapshot)
+
+The following counts and prospective workflow describe Batch 14 at its merge;
+Batch 15 is the current checkpoint.
 
 [PR #85](https://github.com/Siemiran/Siemiran/pull/85) merged as
 `74668d494683525d8128d9950309b511fc1b373a` on 2026-11-19. The merge identity
-and two-file scope are recorded in [CHANGELOG.md](CHANGELOG.md#2026-11-19---pr-85-complete-batch-14-private-drafts-and-dual-approvals).
+and two-file scope are recorded in [CHANGELOG.md](CHANGELOG.md#2026-11-19---pr-85-complete-batch-14-private-drafts-and-dual-approvals-historical-snapshot).
 
 Batch 14 approves exact MLFB identity and analog-output module type only for
 all five private entries. The `ai-assisted` short description and single-paragraph
@@ -73,7 +153,7 @@ gated, and the dedicated completed-copy website inspection remains pending.
 ## 2026-11-19 - Batch 13 Private Product-copy Checkpoint (Historical Snapshot)
 
 The 65/317 checkpoint and prospective workflow below describe Batch 13 at its
-merge. Batch 14 is the current checkpoint.
+merge. Batch 14 superseded that checkpoint; Batch 15 is current.
 
 [PR #83](https://github.com/Siemiran/Siemiran/pull/83) merged as `f30da51f62eb8bfeb9ea2b5b9c0a05e0cf7ac6c2`
 on 2026-11-19. See [CHANGELOG.md](CHANGELOG.md#2026-11-19---pr-83-complete-batch-13-private-drafts-and-dual-approvals-historical-snapshot) for the exact merge identity and scope.

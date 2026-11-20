@@ -1,18 +1,49 @@
 # Siemiran — Project Progress
 
 Repository implementation source of truth: merged `main` baseline
-`74668d494683525d8128d9950309b511fc1b373a`
+`8e33dd6a895057db175fe7ec496fb4f4486bd0b5`
 
-Last synchronized: 2026-11-19
+Last synchronized: 2026-11-20 (documentation reconciliation)
 
-## 2026-11-19 - Batch 14 Reconciliation (Current State)
+## 2026-11-19 - Batch 15 Reconciliation (Current State)
+
+[PR #87](https://github.com/Siemiran/Siemiran/pull/87) completed private Batch 15 at
+`8e33dd6a895057db175fe7ec496fb4f4486bd0b5`. The five entries approve exact MLFB identity
+and module type only: one analog output and four mixed analog input/output
+modules. Titles, counts, specifications, lifecycle and availability remain
+outside approval. See [DATABASE.md](DATABASE.md#2026-11-19---batch-15-private-product-copy-checkpoint-current-state) for exact bindings,
+evidence limits and recorded preservation results, [CHANGELOG.md](CHANGELOG.md#2026-11-19---pr-87-complete-batch-15-private-drafts-and-dual-approvals)
+for merge identity, and [SESSION_HANDOFF.md](SESSION_HANDOFF.md) for resume facts.
+
+The catalog contains 382 Products (186 S7-1200 / 196 S7-300). There are 75 private
+drafts, 75 current approvals per role, 75 current dual approvals, zero pending
+roles and 307 missing entries. Activation validation remains invalid at
+`overlayCount=75`, `approvedCount=75` and `missingIds.length=307`, with capability
+absent. Active overlays remain 0/382, publication is disabled, and public FA/EN
+copy stays canonical English/LTR. Complete 382/382 current dual approvals and
+separate launch authorization remain required.
+
+Overrides remain 10 Products / 20 assignments / 7 unique strings with an empty
+global allowlist. Batch 15 added zero overrides. The eleven public lifecycle
+omissions and separate S7-300 provenance classification (185 Siemens-official
+verified / 11 explicitly unverified) remain in effect.
+
+Batch 16 remains unapproved and unstarted. Admin Panel and Automation remain
+gated, and the dedicated completed-copy website inspection remains pending.
+
+Batch 14's 70/312 checkpoint and prospective workflow below are historical.
+
+## 2026-11-19 - Batch 14 Reconciliation (Historical Snapshot)
+
+The following counts and next-step statements describe Batch 14 at its merge;
+Batch 15 supersedes that checkpoint.
 
 [PR #85](https://github.com/Siemiran/Siemiran/pull/85) completed private Batch 14 at
 `74668d494683525d8128d9950309b511fc1b373a`. Guarded squash and local fast-forward
 completed. The five private entries approve only exact MLFB identity and
 analog-output module type.
-See [DATABASE.md](DATABASE.md#2026-11-19---batch-14-private-product-copy-checkpoint-current-state) for bindings, evidence and
-recorded preservation results, and [CHANGELOG.md](CHANGELOG.md#2026-11-19---pr-85-complete-batch-14-private-drafts-and-dual-approvals) for merge identity.
+See [DATABASE.md](DATABASE.md#2026-11-19---batch-14-private-product-copy-checkpoint-historical-snapshot) for bindings, evidence and
+recorded preservation results, and [CHANGELOG.md](CHANGELOG.md#2026-11-19---pr-85-complete-batch-14-private-drafts-and-dual-approvals-historical-snapshot) for merge identity.
 
 The catalog contains 382 Products (186 S7-1200 / 196 S7-300). There are 70 private
 drafts, 70 current approvals per role, 70 current dual approvals, zero pending
@@ -34,7 +65,7 @@ See [SESSION_HANDOFF.md](SESSION_HANDOFF.md) for resume checks.
 ## 2026-11-19 - Batch 13 Reconciliation (Historical Snapshot)
 
 The 65/317 checkpoint and prospective workflow below describe Batch 13 at its
-merge. Batch 14 is the current checkpoint.
+merge. Batch 14 superseded that checkpoint; Batch 15 is current.
 
 [PR #83](https://github.com/Siemiran/Siemiran/pull/83) completed private Batch 13 at
 `f30da51f62eb8bfeb9ea2b5b9c0a05e0cf7ac6c2`. Guarded squash and main
