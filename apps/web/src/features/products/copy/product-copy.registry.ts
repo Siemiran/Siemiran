@@ -766,6 +766,36 @@ const sm335MlfbOnly7Hg01Copy = [
   { kind: "text", value: "، ماژول ورودی و خروجی آنالوگ است." },
 ] as const satisfies ProductCopyParagraph;
 
+const sm335MlfbOnly7Hg02Copy = [
+  { kind: "text", value: "مدل " },
+  { kind: "technical", value: "6ES7335-7HG02-0AB0" },
+  { kind: "text", value: "، ماژول ورودی و خروجی آنالوگ است." },
+] as const satisfies ProductCopyParagraph;
+
+const im360MlfbOnly3Aa01Copy = [
+  { kind: "text", value: "مدل " },
+  { kind: "technical", value: "6ES7360-3AA01-0AA0" },
+  { kind: "text", value: "، ماژول رابط است." },
+] as const satisfies ProductCopyParagraph;
+
+const im361MlfbOnly3Ca01Copy = [
+  { kind: "text", value: "مدل " },
+  { kind: "technical", value: "6ES7361-3CA01-0AA0" },
+  { kind: "text", value: "، ماژول رابط است." },
+] as const satisfies ProductCopyParagraph;
+
+const im365MlfbOnly0Ba01Copy = [
+  { kind: "text", value: "مدل " },
+  { kind: "technical", value: "6ES7365-0BA01-0AA0" },
+  { kind: "text", value: "، ماژول رابط است." },
+] as const satisfies ProductCopyParagraph;
+
+const im365MlfbOnly0Ba81Copy = [
+  { kind: "text", value: "مدل " },
+  { kind: "technical", value: "6ES7365-0BA81-0AA0" },
+  { kind: "text", value: "، ماژول رابط است." },
+] as const satisfies ProductCopyParagraph;
+
 export const persianProductCopyDraftRegistry = [
   {
     productId: "siemens-s7-1200-cpu-211-1ae40",
@@ -2786,5 +2816,45 @@ export const persianProductCopyDraftRegistry = [
       note:
         "6ES7335-7HG01-0AB0: PM-approved exact MLFB identity and mixed analog input and output module type only. Full titles, counts, resolution, speed, electrical or operating characteristics, compatibility, certification, lifecycle and availability remain outside approval.",
     },
+  },
+  {
+    productId: "siemens-s7-300-sm335-ai4-ao4-14bit-7hg02-0ab0",
+    shortDescription: sm335MlfbOnly7Hg02Copy,
+    description: [sm335MlfbOnly7Hg02Copy],
+    provenance: "ai-assisted",
+    linguisticReview: { decision: "pending" },
+    technicalReview: { decision: "pending" },
+  },
+  {
+    productId: "siemens-s7-300-im360-3aa01-0aa0",
+    shortDescription: im360MlfbOnly3Aa01Copy,
+    description: [im360MlfbOnly3Aa01Copy],
+    provenance: "ai-assisted",
+    linguisticReview: { decision: "pending" },
+    technicalReview: { decision: "pending" },
+  },
+  {
+    productId: "siemens-s7-300-im361-3ca01-0aa0",
+    shortDescription: im361MlfbOnly3Ca01Copy,
+    description: [im361MlfbOnly3Ca01Copy],
+    provenance: "ai-assisted",
+    linguisticReview: { decision: "pending" },
+    technicalReview: { decision: "pending" },
+  },
+  {
+    productId: "siemens-s7-300-im365-0ba01-0aa0",
+    shortDescription: im365MlfbOnly0Ba01Copy,
+    description: [im365MlfbOnly0Ba01Copy],
+    provenance: "ai-assisted",
+    linguisticReview: { decision: "pending" },
+    technicalReview: { decision: "pending" },
+  },
+  {
+    productId: "siemens-s7-300-im365-0ba81-0aa0",
+    shortDescription: im365MlfbOnly0Ba81Copy,
+    description: [im365MlfbOnly0Ba81Copy],
+    provenance: "ai-assisted",
+    linguisticReview: { decision: "pending" },
+    technicalReview: { decision: "pending" },
   },
 ] as const satisfies readonly PersianProductCopyOverlay[];
