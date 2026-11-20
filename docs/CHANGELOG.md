@@ -3,7 +3,37 @@
 This file records completed repository changes. The newest entry records the
 current implementation baseline; older dated entries are historical snapshots.
 
-## 2026-11-19 - PR #87: Complete Batch 15 Private Drafts and Dual Approvals
+## 2026-11-20 - PR #89: Complete Batch 16 Private Drafts and Dual Approvals
+
+- [PR #89](https://github.com/Siemiran/Siemiran/pull/89) merged at
+  `2026-11-20T10:39:01Z` / `2026-11-20 14:09:01` Asia/Tehran as
+  `52f6a336e307254867e4957c14db804105477bd6`. Sole parent:
+  `48a53625de5c297264e5095ac36d280320bdf139`. Reviewed head:
+  `0cc5db23499e7e4b1041ec2336efdf2f39316d6e`; draft:
+  `64be5ce1cf8f1787a556029844130c0d6d88b2cd`. Identical reviewed/squash tree:
+  `7278f8f79f23e6703220d490c4eacaf4962970cf`. Registry +170/-0,
+  verifier +337/-11, total +507/-11 across two files. Local main synchronization
+  completed by fast-forward; feature refs were preserved at the reviewed head.
+- Five private entries approve exact MLFB/module type only: one mixed analog
+  input/output module and four interface modules. Detailed bindings, ten
+  hash-bound role records, recording observations, qualified evidence and
+  preservation/mutation results are in [DATABASE.md](DATABASE.md#2026-11-20---batch-16-private-product-copy-checkpoint-current-state);
+  durable resume facts are in [SESSION_HANDOFF.md](SESSION_HANDOFF.md).
+- At merge: 80 drafts/current approvals per role, 80 dual approvals, zero pending
+  roles and 302 missing. Activation remains invalid at 80/80/302, capability
+  absent; active overlays zero, publication disabled and public FA/EN copy canonical
+  English/LTR. Full 382/382 current dual approvals and separate launch authorization remain required.
+- **PASS (REUSED)** — Batch 16's Product-copy validator, focused lint and build
+  each exited `0` at reviewed head `0cc5db23499e7e4b1041ec2336efdf2f39316d6e`.
+  The build passed TypeScript and generated 774/774 static pages. Reviewed head
+  and merged implementation share tree `7278f8f79f23e6703220d490c4eacaf4962970cf`.
+  Application, dependency and build content is unchanged by this eight-document
+  reconciliation. Application checks, hash audits and manufacturer research were
+  **NOT RUN** for this documentation task.
+- Recorded Batch 16 implementation CI was absent: zero checks, statuses and
+  workflow runs, with combined status pending; this is not passed CI.
+
+## 2026-11-19 - PR #87: Complete Batch 15 Private Drafts and Dual Approvals (Historical Snapshot)
 
 - [PR #87](https://github.com/Siemiran/Siemiran/pull/87) merged at
   `2026-11-19T10:07:20Z` / `2026-11-19 13:37:20` Asia/Tehran as
@@ -17,7 +47,7 @@ current implementation baseline; older dated entries are historical snapshots.
   and four mixed analog input/output modules. Exact bindings, ten distinct
   hash-bound role records (separate from GitHub reviews), recording observations,
   evidence qualifications and preservation results are in
-  [DATABASE.md](DATABASE.md#2026-11-19---batch-15-private-product-copy-checkpoint-current-state); resume facts are in
+  [DATABASE.md](DATABASE.md#2026-11-19---batch-15-private-product-copy-checkpoint-historical-snapshot); resume facts are in
   [SESSION_HANDOFF.md](SESSION_HANDOFF.md).
 - At merge: 75 drafts/current approvals per role, 75 dual approvals, zero pending
   roles and 307 missing. Activation invalid (75/75/307, capability absent), active
