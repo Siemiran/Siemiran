@@ -1,6 +1,6 @@
 # Siemiran — Roadmap
 
-Baseline: `main` at `8e33dd6a895057db175fe7ec496fb4f4486bd0b5` (2026-11-19)
+Baseline: `main` at `52f6a336e307254867e4957c14db804105477bd6` (2026-11-20)
 
 This roadmap distinguishes the completed repository baseline from future
 priorities. Ordering expresses current priority, not a finalized implementation
@@ -158,16 +158,22 @@ design or semantic release schedule.
 - [PR #87](https://github.com/Siemiran/Siemiran/pull/87) completed private Batch 15 at
   `8e33dd6a895057db175fe7ec496fb4f4486bd0b5`. Approval covers exact MLFB and module type
   only: one analog output and four mixed analog input/output modules. Exact
-  bindings and qualified evidence are in [DATABASE.md](DATABASE.md#2026-11-19---batch-15-private-product-copy-checkpoint-current-state);
-  merge identity is in [CHANGELOG.md](CHANGELOG.md#2026-11-19---pr-87-complete-batch-15-private-drafts-and-dual-approvals).
+  bindings and qualified evidence are in [DATABASE.md](DATABASE.md#2026-11-19---batch-15-private-product-copy-checkpoint-historical-snapshot);
+  merge identity is in [CHANGELOG.md](CHANGELOG.md#2026-11-19---pr-87-complete-batch-15-private-drafts-and-dual-approvals-historical-snapshot).
   Batch 14's 70/312 checkpoint is historical.
-- Private drafts and current approvals per role are each 75/382, with 75 current
-  dual approvals, zero pending roles and 307 missing private entries.
+- [PR #89](https://github.com/Siemiran/Siemiran/pull/89) completed private Batch 16 at
+  `52f6a336e307254867e4957c14db804105477bd6`. Approval covers exact MLFB and module type
+  only: one mixed analog input/output module and four interface modules. Detailed
+  bindings and evidence qualifications are in [DATABASE.md](DATABASE.md#2026-11-20---batch-16-private-product-copy-checkpoint-current-state);
+  merge identity is in [CHANGELOG.md](CHANGELOG.md#2026-11-20---pr-89-complete-batch-16-private-drafts-and-dual-approvals).
+  Batch 15's 75/307 checkpoint is historical.
+- Private drafts and current approvals per role are each 80/382, with 80 current
+  dual approvals, zero pending roles and 302 missing private entries.
 - Overrides remain 10 Products / 20 assignments / 7 unique strings with an empty
-  global allowlist. Batches 03–15 added zero overrides. Eleven lifecycle omissions
+  global allowlist. Batches 03–16 added zero overrides. Eleven lifecycle omissions
   and the separate S7-300 provenance classification of 185/11 remain in effect.
-- Activation remains invalid at `overlayCount=75`, `approvedCount=75` and
-  `missingIds.length=307` (capability absent). Active overlays are 0/382,
+- Activation remains invalid at `overlayCount=80`, `approvedCount=80` and
+  `missingIds.length=302` (capability absent). Active overlays are 0/382,
   publication is disabled and public FA/EN copy is canonical English/LTR.
   Complete 382/382 current dual approvals and separate launch authorization
   remain required. Partial activation is prohibited. Earlier pending PR #64
@@ -175,7 +181,7 @@ design or semantic release schedule.
 
 ## Next Resume Workflow
 
-1. Batch 16 readiness and scope require separate authorization; they remain
+1. Batch 17 readiness and scope require separate authorization; they remain
    unapproved and unstarted in this workflow.
 2. Preserve closed-batch entries with machine comparison, review only affected
    files/evidence, and reuse successful validation while relevant content is unchanged.
@@ -201,9 +207,9 @@ and resume checks.
 
 Throughout drafting and review, canonical technical tokens remain untranslated:
 MLFBs, Product IDs, slugs, part numbers, official model/family names, protocols,
-standards, values, units, and URLs. Batches 01–15 are complete privately;
+standards, values, units, and URLs. Batches 01–16 are complete privately;
 dated earlier checkpoints retain their historical counts. Future drafting requires
-separately authorized Batch 16 readiness and independent scope/token review.
+separately authorized Batch 17 readiness and independent scope/token review.
 
 After Persian Product-copy completion, perform a dedicated local visual and
 functional website inspection with the maintainer: FA/EN switching, Persian
