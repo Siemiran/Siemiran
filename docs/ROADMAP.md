@@ -1,6 +1,6 @@
 # Siemiran — Roadmap
 
-Baseline: `main` at `33009a15647ff2907c949e58ff779918a5ec60ad` (2026-11-20)
+Baseline: `main` at `800094010e6ada6199652168d74274a87f1f6be2` (2026-11-20)
 
 This roadmap distinguishes the completed repository baseline from future
 priorities. Ordering expresses current priority, not a finalized implementation
@@ -171,16 +171,23 @@ design or semantic release schedule.
 - [PR #91](https://github.com/Siemiran/Siemiran/pull/91) completed private Batch 17 at
   `33009a15647ff2907c949e58ff779918a5ec60ad`. Copy approves exact MLFB plus interface module,
   drive interface module or communication processor as bound per Product in
-  [DATABASE.md](DATABASE.md#2026-11-20---batch-17-private-product-copy-checkpoint-current-state). The merge record is in
-  [CHANGELOG.md](CHANGELOG.md#2026-11-20---pr-91-complete-batch-17-private-drafts-and-dual-approvals); durable resume facts are in
+  [DATABASE.md](DATABASE.md#2026-11-20---batch-17-private-product-copy-checkpoint-historical-snapshot). The merge record is in
+  [CHANGELOG.md](CHANGELOG.md#2026-11-20---pr-91-complete-batch-17-private-drafts-and-dual-approvals-historical-snapshot); durable resume facts are in
   [SESSION_HANDOFF.md](SESSION_HANDOFF.md).
-- Private drafts and current approvals per role are each 85/382, with 85 current
-  dual approvals, zero pending roles and 297 missing private entries.
+- Batch 17's 85/297 checkpoint is historical.
+- [PR #93](https://github.com/Siemiran/Siemiran/pull/93) completed private Batch 18 at
+  `800094010e6ada6199652168d74274a87f1f6be2`. Its ten exact CP 340 / CP 341 / CP 342-5
+  entries approve MLFB plus communication-processor type only. Bindings and
+  qualified E1-E6 evidence are in [DATABASE.md](DATABASE.md#2026-11-20---batch-18-private-product-copy-checkpoint-current-state);
+  merge identity is in [CHANGELOG.md](CHANGELOG.md#2026-11-20---pr-93-complete-batch-18-private-drafts-and-dual-approvals),
+  and resume facts are in [SESSION_HANDOFF.md](SESSION_HANDOFF.md).
+- Private drafts and current approvals per role are each 95/382, with 95 current
+  dual approvals, zero pending roles and 287 products without drafts.
 - Overrides remain 10 Products / 20 assignments / 7 unique strings with an empty
-  global allowlist. Batches 03–17 added zero overrides. Eleven lifecycle omissions
+  global allowlist. Batches 03–18 added zero overrides. Eleven lifecycle omissions
   and the separate S7-300 provenance classification of 185/11 remain in effect.
-- Activation remains invalid at `overlayCount=85`, `approvedCount=85` and
-  `missingIds.length=297` (capability absent). Active overlays are 0/382,
+- Activation remains invalid at `overlayCount=95`, `approvedCount=95` and
+  `missingIds.length=287` (capability absent). Active overlays are 0/382,
   publication is disabled and public FA/EN copy is canonical English/LTR.
   Complete 382/382 current dual approvals and separate launch authorization
   remain required. Partial activation is prohibited. Earlier pending PR #64
@@ -188,8 +195,8 @@ design or semantic release schedule.
 
 ## Next Resume Workflow
 
-1. Batch 18 is unstarted. Its product selection, readiness and scope require
-   separate approval; no products are selected by this documentation task.
+1. Batch 19 is unstarted and outside this task's scope. Product selection,
+   readiness and scope require separate approval; no products are selected here.
 2. Preserve closed-batch entries with machine comparison, review only affected
    files/evidence, and reuse successful validation while relevant content is unchanged.
 3. Keep Admin Panel and Automation gated. Dedicated completed-copy inspection,
@@ -214,9 +221,9 @@ and resume checks.
 
 Throughout drafting and review, canonical technical tokens remain untranslated:
 MLFBs, Product IDs, slugs, part numbers, official model/family names, protocols,
-standards, values, units, and URLs. Batches 01–17 are complete privately;
+standards, values, units, and URLs. Batches 01–18 are complete privately;
 dated earlier checkpoints retain their historical counts. Future drafting requires
-separately authorized Batch 18 product selection, readiness and independent scope/token review.
+separately authorized Batch 19 product selection, readiness and independent scope/token review.
 
 After Persian Product-copy completion, perform a dedicated local visual and
 functional website inspection with the maintainer: FA/EN switching, Persian
@@ -271,8 +278,8 @@ nor publication.
 - Keep CMS, API, database, and cache evaluation as future architecture
   decisions.
 
-Persian Product-copy drafting and review are complete privately for 85/382
-Products, with 297 remaining. The 382/382 current dual-approval gate,
+Persian Product-copy drafting and review are complete privately for 95/382
+Products, with 287 remaining. The 382/382 current dual-approval gate,
 separate activation authorization, atomic publication, maintainer website inspection,
 bilingual SEO activation, inquiry delivery, CI/CD, download population, and
 another Siemens-series expansion are not complete. Consumer integration and
