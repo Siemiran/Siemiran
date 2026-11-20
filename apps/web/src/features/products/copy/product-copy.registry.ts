@@ -832,6 +832,66 @@ const cp340MlfbOnly1Bh02Copy = [
   { kind: "text", value: "، پردازندهٔ ارتباطی است." },
 ] as const satisfies ProductCopyParagraph;
 
+const cp340MlfbOnly1Ch02Copy = [
+  { kind: "text", value: "مدل " },
+  { kind: "technical", value: "6ES7340-1CH02-0AE0" },
+  { kind: "text", value: "، پردازندهٔ ارتباطی است." },
+] as const satisfies ProductCopyParagraph;
+
+const cp341MlfbOnly1Ah01Copy = [
+  { kind: "text", value: "مدل " },
+  { kind: "technical", value: "6ES7341-1AH01-0AE0" },
+  { kind: "text", value: "، پردازندهٔ ارتباطی است." },
+] as const satisfies ProductCopyParagraph;
+
+const cp341MlfbOnly1Ah02Copy = [
+  { kind: "text", value: "مدل " },
+  { kind: "technical", value: "6ES7341-1AH02-0AE0" },
+  { kind: "text", value: "، پردازندهٔ ارتباطی است." },
+] as const satisfies ProductCopyParagraph;
+
+const cp341MlfbOnly1Bh01Copy = [
+  { kind: "text", value: "مدل " },
+  { kind: "technical", value: "6ES7341-1BH01-0AE0" },
+  { kind: "text", value: "، پردازندهٔ ارتباطی است." },
+] as const satisfies ProductCopyParagraph;
+
+const cp341MlfbOnly1Bh02Copy = [
+  { kind: "text", value: "مدل " },
+  { kind: "technical", value: "6ES7341-1BH02-0AE0" },
+  { kind: "text", value: "، پردازندهٔ ارتباطی است." },
+] as const satisfies ProductCopyParagraph;
+
+const cp341MlfbOnly1Ch01Copy = [
+  { kind: "text", value: "مدل " },
+  { kind: "technical", value: "6ES7341-1CH01-0AE0" },
+  { kind: "text", value: "، پردازندهٔ ارتباطی است." },
+] as const satisfies ProductCopyParagraph;
+
+const cp341MlfbOnly1Ch02Copy = [
+  { kind: "text", value: "مدل " },
+  { kind: "technical", value: "6ES7341-1CH02-0AE0" },
+  { kind: "text", value: "، پردازندهٔ ارتباطی است." },
+] as const satisfies ProductCopyParagraph;
+
+const cp3425MlfbOnly5Da01Copy = [
+  { kind: "text", value: "مدل " },
+  { kind: "technical", value: "6GK7342-5DA01-0XE0" },
+  { kind: "text", value: "، پردازندهٔ ارتباطی است." },
+] as const satisfies ProductCopyParagraph;
+
+const cp3425MlfbOnly5Da02Copy = [
+  { kind: "text", value: "مدل " },
+  { kind: "technical", value: "6GK7342-5DA02-0XE0" },
+  { kind: "text", value: "، پردازندهٔ ارتباطی است." },
+] as const satisfies ProductCopyParagraph;
+
+const cp3425MlfbOnly5Da03Copy = [
+  { kind: "text", value: "مدل " },
+  { kind: "technical", value: "6GK7342-5DA03-0XE0" },
+  { kind: "text", value: "، پردازندهٔ ارتباطی است." },
+] as const satisfies ProductCopyParagraph;
+
 export const persianProductCopyDraftRegistry = [
   {
     productId: "siemens-s7-1200-cpu-211-1ae40",
@@ -3052,5 +3112,85 @@ export const persianProductCopyDraftRegistry = [
       note:
         "6ES7340-1BH02-0AE0: PM-approved exact MLFB identity and communication processor only. Full titles, counts, motion-control behavior, interface standards, electrical specifications, compatibility, certification, lifecycle and availability remain outside approval.",
     },
+  },
+  {
+    productId: "siemens-s7-300-cp340-rs422-485-1ch02-0ae0",
+    shortDescription: cp340MlfbOnly1Ch02Copy,
+    description: [cp340MlfbOnly1Ch02Copy],
+    provenance: "ai-assisted",
+    linguisticReview: { decision: "pending" },
+    technicalReview: { decision: "pending" },
+  },
+  {
+    productId: "siemens-s7-300-cp341-rs232-1ah01-0ae0",
+    shortDescription: cp341MlfbOnly1Ah01Copy,
+    description: [cp341MlfbOnly1Ah01Copy],
+    provenance: "ai-assisted",
+    linguisticReview: { decision: "pending" },
+    technicalReview: { decision: "pending" },
+  },
+  {
+    productId: "siemens-s7-300-cp341-rs232-1ah02-0ae0",
+    shortDescription: cp341MlfbOnly1Ah02Copy,
+    description: [cp341MlfbOnly1Ah02Copy],
+    provenance: "ai-assisted",
+    linguisticReview: { decision: "pending" },
+    technicalReview: { decision: "pending" },
+  },
+  {
+    productId: "siemens-s7-300-cp341-tty-1bh01-0ae0",
+    shortDescription: cp341MlfbOnly1Bh01Copy,
+    description: [cp341MlfbOnly1Bh01Copy],
+    provenance: "ai-assisted",
+    linguisticReview: { decision: "pending" },
+    technicalReview: { decision: "pending" },
+  },
+  {
+    productId: "siemens-s7-300-cp341-tty-1bh02-0ae0",
+    shortDescription: cp341MlfbOnly1Bh02Copy,
+    description: [cp341MlfbOnly1Bh02Copy],
+    provenance: "ai-assisted",
+    linguisticReview: { decision: "pending" },
+    technicalReview: { decision: "pending" },
+  },
+  {
+    productId: "siemens-s7-300-cp341-rs422-485-1ch01-0ae0",
+    shortDescription: cp341MlfbOnly1Ch01Copy,
+    description: [cp341MlfbOnly1Ch01Copy],
+    provenance: "ai-assisted",
+    linguisticReview: { decision: "pending" },
+    technicalReview: { decision: "pending" },
+  },
+  {
+    productId: "siemens-s7-300-cp341-rs422-485-1ch02-0ae0",
+    shortDescription: cp341MlfbOnly1Ch02Copy,
+    description: [cp341MlfbOnly1Ch02Copy],
+    provenance: "ai-assisted",
+    linguisticReview: { decision: "pending" },
+    technicalReview: { decision: "pending" },
+  },
+  {
+    productId: "siemens-s7-300-cp342-5-da01-0xe0",
+    shortDescription: cp3425MlfbOnly5Da01Copy,
+    description: [cp3425MlfbOnly5Da01Copy],
+    provenance: "ai-assisted",
+    linguisticReview: { decision: "pending" },
+    technicalReview: { decision: "pending" },
+  },
+  {
+    productId: "siemens-s7-300-cp342-5-da02-0xe0",
+    shortDescription: cp3425MlfbOnly5Da02Copy,
+    description: [cp3425MlfbOnly5Da02Copy],
+    provenance: "ai-assisted",
+    linguisticReview: { decision: "pending" },
+    technicalReview: { decision: "pending" },
+  },
+  {
+    productId: "siemens-s7-300-cp342-5-da03-0xe0",
+    shortDescription: cp3425MlfbOnly5Da03Copy,
+    description: [cp3425MlfbOnly5Da03Copy],
+    provenance: "ai-assisted",
+    linguisticReview: { decision: "pending" },
+    technicalReview: { decision: "pending" },
   },
 ] as const satisfies readonly PersianProductCopyOverlay[];
