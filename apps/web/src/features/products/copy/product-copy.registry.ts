@@ -2918,39 +2918,139 @@ export const persianProductCopyDraftRegistry = [
     shortDescription: siplusIm365MlfbOnly2Aa0Copy,
     description: [siplusIm365MlfbOnly2Aa0Copy],
     provenance: "ai-assisted",
-    linguisticReview: { decision: "pending" },
-    technicalReview: { decision: "pending" },
+    linguisticReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-11-20T13:07:06Z",
+      reviewedContentHash:
+        "sha256:9bc2e9c4ac070faef6a49208c79226fb5eeeca5e77cc3f2281fef0f236eb4946",
+      evidenceRef:
+        "PM linguistic approval in the supplied Batch 17 approval request; draft commit 65b6682a2471e502a63227e333bbf1c3a58c686b; Product siemens-siplus-s7-300-im365-0ba01-2aa0; MLFB 6AG1365-0BA01-2AA0; product type interface module. Recording time is an actual UTC observation, not the PM review timestamp.",
+      note:
+        "6AG1365-0BA01-2AA0: PM-approved exact Persian wording, punctuation and spacing, typed MLFB isolation, and identical three-segment short and single-paragraph long descriptions.",
+    },
+    technicalReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-11-20T13:07:12Z",
+      reviewedContentHash:
+        "sha256:9bc2e9c4ac070faef6a49208c79226fb5eeeca5e77cc3f2281fef0f236eb4946",
+      evidenceRef:
+        "PM technical approval in the supplied Batch 17 approval request; draft commit 65b6682a2471e502a63227e333bbf1c3a58c686b; Product siemens-siplus-s7-300-im365-0ba01-2aa0; MLFB 6AG1365-0BA01-2AA0; product type interface module. Recording time is an actual UTC observation, not the PM review timestamp. Reused readiness parsed text from Siemens S7-300 Module Data, 05/2022, A5E00105505-AK; section 1.7 Table 1-2, printed p27, and section 8.4, printed p431; https://cache.industry.siemens.com/dl/files/629/8859629/att_55794/v1/s7300_module_data_manual_en-US_en-US.pdf. The separate canonical Mall reader request returned 403; that failure is distinct from the usable parsed manual. Printed pages are not assumed viewer indices. Visual inspection and successful direct-origin HTTP status were NOT OBSERVED. No fresh retrieval or lifecycle verification.",
+      note:
+        "6AG1365-0BA01-2AA0: PM-approved exact MLFB identity and interface module only. Full titles, counts, motion-control behavior, interface standards, electrical specifications, compatibility, certification, lifecycle and availability remain outside approval.",
+    },
   },
   {
     productId: "siemens-s7-300-im174-0aa10-0aa0",
     shortDescription: im174MlfbOnly0Aa10Copy,
     description: [im174MlfbOnly0Aa10Copy],
     provenance: "ai-assisted",
-    linguisticReview: { decision: "pending" },
-    technicalReview: { decision: "pending" },
+    linguisticReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-11-20T13:07:06Z",
+      reviewedContentHash:
+        "sha256:7646442547fe6d820467f951a5da2a2bf3d692dde9de9f1fb8dd876367692a7b",
+      evidenceRef:
+        "PM linguistic approval in the supplied Batch 17 approval request; draft commit 65b6682a2471e502a63227e333bbf1c3a58c686b; Product siemens-s7-300-im174-0aa10-0aa0; MLFB 6ES7174-0AA10-0AA0; product type interface module. Recording time is an actual UTC observation, not the PM review timestamp.",
+      note:
+        "6ES7174-0AA10-0AA0: PM-approved exact Persian wording, punctuation and spacing, typed MLFB isolation, and identical three-segment short and single-paragraph long descriptions.",
+    },
+    technicalReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-11-20T13:07:12Z",
+      reviewedContentHash:
+        "sha256:7646442547fe6d820467f951a5da2a2bf3d692dde9de9f1fb8dd876367692a7b",
+      evidenceRef:
+        "PM technical approval in the supplied Batch 17 approval request; draft commit 65b6682a2471e502a63227e333bbf1c3a58c686b; Product siemens-s7-300-im174-0aa10-0aa0; MLFB 6ES7174-0AA10-0AA0; product type interface module. Recording time is an actual UTC observation, not the PM review timestamp. Reused readiness indexed-only text from Siemens S7 Easy Motion Control - Driver Blocks for SINAMICS and IM174, V1.0, Entry 40787611, Table 1-1, printed p4; https://support.industry.siemens.com/cs/attachments/40787611/40787611_EMC_additional_Drivers_en.pdf. The separate direct PDF reader request returned 403; no successful parsed read was observed. Printed pages are not assumed viewer indices. Visual inspection and successful direct-origin HTTP status were NOT OBSERVED. No fresh retrieval or lifecycle verification.",
+      note:
+        "6ES7174-0AA10-0AA0: PM-approved exact MLFB identity and interface module only. Full titles, counts, motion-control behavior, interface standards, electrical specifications, compatibility, certification, lifecycle and availability remain outside approval.",
+    },
   },
   {
     productId: "siemens-s7-300-im178-4-4bh00-0ae0",
     shortDescription: im1784MlfbOnly4Bh00Copy,
     description: [im1784MlfbOnly4Bh00Copy],
     provenance: "ai-assisted",
-    linguisticReview: { decision: "pending" },
-    technicalReview: { decision: "pending" },
+    linguisticReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-11-20T13:07:06Z",
+      reviewedContentHash:
+        "sha256:d5008ca2271b6562097b90c0fc3b4de2891ea3bad7069ea9b530ee7eeb0c8c4f",
+      evidenceRef:
+        "PM linguistic approval in the supplied Batch 17 approval request; draft commit 65b6682a2471e502a63227e333bbf1c3a58c686b; Product siemens-s7-300-im178-4-4bh00-0ae0; MLFB 6ES7178-4BH00-0AE0; product type drive interface module. Recording time is an actual UTC observation, not the PM review timestamp.",
+      note:
+        "6ES7178-4BH00-0AE0: PM-approved exact Persian wording, punctuation and spacing, typed MLFB isolation, and identical three-segment short and single-paragraph long descriptions.",
+    },
+    technicalReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-11-20T13:07:12Z",
+      reviewedContentHash:
+        "sha256:d5008ca2271b6562097b90c0fc3b4de2891ea3bad7069ea9b530ee7eeb0c8c4f",
+      evidenceRef:
+        "PM technical approval in the supplied Batch 17 approval request; draft commit 65b6682a2471e502a63227e333bbf1c3a58c686b; Product siemens-s7-300-im178-4-4bh00-0ae0; MLFB 6ES7178-4BH00-0AE0; product type drive interface module. Recording time is an actual UTC observation, not the PM review timestamp. Reused readiness parsed German IM 178-4 Drive Interface manual C79000-G7000-C178-01, unnumbered cover and printed p1-1; https://cache.industry.siemens.com/dl/files/389/1117389/att_22592/v1/IM1784_d.pdf. Parsed English C79000-G7076-C178-01, printed p1-1, corroborates exact identity; https://cache.industry.siemens.com/dl/files/389/1117389/att_22595/v1/IM1784_e.pdf. The separate support-hosted English reader request returned 403; that failure is distinct from the usable cache-hosted parsed manuals. Printed pages are not assumed viewer indices. Visual inspection and successful direct-origin HTTP status were NOT OBSERVED. No fresh retrieval or lifecycle verification.",
+      note:
+        "6ES7178-4BH00-0AE0: PM-approved exact MLFB identity and drive interface module only. Full titles, counts, motion-control behavior, interface standards, electrical specifications, compatibility, certification, lifecycle and availability remain outside approval.",
+    },
   },
   {
     productId: "siemens-s7-300-cp340-rs232-1ah02-0ae0",
     shortDescription: cp340MlfbOnly1Ah02Copy,
     description: [cp340MlfbOnly1Ah02Copy],
     provenance: "ai-assisted",
-    linguisticReview: { decision: "pending" },
-    technicalReview: { decision: "pending" },
+    linguisticReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-11-20T13:07:06Z",
+      reviewedContentHash:
+        "sha256:21a6c7208281c57c32f9963efbe3453f38085adac45faf7bf82b1656d194c747",
+      evidenceRef:
+        "PM linguistic approval in the supplied Batch 17 approval request; draft commit 65b6682a2471e502a63227e333bbf1c3a58c686b; Product siemens-s7-300-cp340-rs232-1ah02-0ae0; MLFB 6ES7340-1AH02-0AE0; product type communication processor. Recording time is an actual UTC observation, not the PM review timestamp.",
+      note:
+        "6ES7340-1AH02-0AE0: PM-approved exact Persian wording, punctuation and spacing, typed MLFB isolation, and identical three-segment short and single-paragraph long descriptions.",
+    },
+    technicalReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-11-20T13:07:12Z",
+      reviewedContentHash:
+        "sha256:21a6c7208281c57c32f9963efbe3453f38085adac45faf7bf82b1656d194c747",
+      evidenceRef:
+        "PM technical approval in the supplied Batch 17 approval request; draft commit 65b6682a2471e502a63227e333bbf1c3a58c686b; Product siemens-s7-300-cp340-rs232-1ah02-0ae0; MLFB 6ES7340-1AH02-0AE0; product type communication processor. Recording time is an actual UTC observation, not the PM review timestamp. Reused readiness parsed text from Siemens PtP coupling and configuration of CP 340, 04/2011, A5E00369892-03; section 1.1 Table 1-1, printed p11; https://cache.industry.siemens.com/dl/files/332/1137332/att_24649/v1/s7300_cp340_manual_en_en-US.pdf. Both CP order numbers are listed separately as communication-processor variants. Printed pages are not assumed viewer indices. Visual inspection and successful direct-origin HTTP status were NOT OBSERVED. No fresh retrieval or lifecycle verification.",
+      note:
+        "6ES7340-1AH02-0AE0: PM-approved exact MLFB identity and communication processor only. Full titles, counts, motion-control behavior, interface standards, electrical specifications, compatibility, certification, lifecycle and availability remain outside approval.",
+    },
   },
   {
     productId: "siemens-s7-300-cp340-tty-1bh02-0ae0",
     shortDescription: cp340MlfbOnly1Bh02Copy,
     description: [cp340MlfbOnly1Bh02Copy],
     provenance: "ai-assisted",
-    linguisticReview: { decision: "pending" },
-    technicalReview: { decision: "pending" },
+    linguisticReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-11-20T13:07:06Z",
+      reviewedContentHash:
+        "sha256:63fa7ba48908fa7905aadcc489f1e552c4253aeca40bd440dea3ed69c6ef2b1a",
+      evidenceRef:
+        "PM linguistic approval in the supplied Batch 17 approval request; draft commit 65b6682a2471e502a63227e333bbf1c3a58c686b; Product siemens-s7-300-cp340-tty-1bh02-0ae0; MLFB 6ES7340-1BH02-0AE0; product type communication processor. Recording time is an actual UTC observation, not the PM review timestamp.",
+      note:
+        "6ES7340-1BH02-0AE0: PM-approved exact Persian wording, punctuation and spacing, typed MLFB isolation, and identical three-segment short and single-paragraph long descriptions.",
+    },
+    technicalReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-11-20T13:07:12Z",
+      reviewedContentHash:
+        "sha256:63fa7ba48908fa7905aadcc489f1e552c4253aeca40bd440dea3ed69c6ef2b1a",
+      evidenceRef:
+        "PM technical approval in the supplied Batch 17 approval request; draft commit 65b6682a2471e502a63227e333bbf1c3a58c686b; Product siemens-s7-300-cp340-tty-1bh02-0ae0; MLFB 6ES7340-1BH02-0AE0; product type communication processor. Recording time is an actual UTC observation, not the PM review timestamp. Reused readiness parsed text from Siemens PtP coupling and configuration of CP 340, 04/2011, A5E00369892-03; section 1.1 Table 1-1, printed p11; https://cache.industry.siemens.com/dl/files/332/1137332/att_24649/v1/s7300_cp340_manual_en_en-US.pdf. Both CP order numbers are listed separately as communication-processor variants. Printed pages are not assumed viewer indices. Visual inspection and successful direct-origin HTTP status were NOT OBSERVED. No fresh retrieval or lifecycle verification.",
+      note:
+        "6ES7340-1BH02-0AE0: PM-approved exact MLFB identity and communication processor only. Full titles, counts, motion-control behavior, interface standards, electrical specifications, compatibility, certification, lifecycle and availability remain outside approval.",
+    },
   },
 ] as const satisfies readonly PersianProductCopyOverlay[];
