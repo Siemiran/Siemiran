@@ -9168,6 +9168,416 @@ const registeredBatch18ApprovalMutationResults =
     })
   );
 
+// Actual UTC recording observations, not the PM's review timestamps.
+const BATCH_19_DRAFT_COMMIT = "4a36081e61e9a2ea3fe6e9d403b1edac053f1184";
+const BATCH_19_LINGUISTIC_RECORDED_AT = "2026-11-21T19:34:16.592Z";
+const BATCH_19_TECHNICAL_RECORDED_AT = "2026-11-21T19:34:43.097Z";
+assert(
+  [BATCH_19_LINGUISTIC_RECORDED_AT, BATCH_19_TECHNICAL_RECORDED_AT].every(
+    (recordedAt) =>
+      Number.isFinite(Date.parse(recordedAt)) &&
+      new Date(recordedAt).toISOString() === recordedAt
+  ) && BATCH_19_LINGUISTIC_RECORDED_AT < BATCH_19_TECHNICAL_RECORDED_AT,
+  "Batch 19 role recording observations must be valid and separately ordered."
+);
+// Reused readiness evidence only; no fresh retrieval or visual inspection.
+// Reader 403s (support PDFs and SIPLUS Mall), the ST 70 reader size limit
+// (25,626,498 bytes), and GX30's JavaScript shell supplied no usable evidence.
+// Successful direct-origin HTTP status was NOT OBSERVED. Printed pages are
+// not assumed viewer indices. No FA01 characteristics are transferred to FA00.
+const batch19ReadinessEvidence = {
+  A: {
+    reference:
+      "Siemens February 2025 supplier declaration, CP300 table, printed p12",
+    url: "https://cache.industry.siemens.com/dl/files/142/109983142/att_1315774/v1/c02-suppliers_declaration_of_conformity_2025-02-05.pdf",
+    access: "reused parsed readiness text; identity/type only",
+    orderNumbers: ["6GK7342-5DF00-0XE0"],
+    productType: "communication processor",
+  },
+  B: {
+    reference:
+      "Siemens ST 70 (2021), SIPLUS CP 342-5 ordering data; printed page unestablished",
+    url: "https://cache.industry.siemens.com/dl/files/167/109744167/att_1076941/v1/simatic-st70-complete-english-2021.pdf",
+    access: "reused indexed-only readiness text; not a parsed document read",
+    orderNumbers: ["6AG1342-5DA03-7XE0"],
+    productType: "communication processor",
+  },
+  C: {
+    reference: "Siemens CP 343-1 manual, 02/2003, cover and printed pB1–5",
+    url: "https://cache.industry.siemens.com/dl/files/308/8777308/att_39695/v1/ghb3431_e.pdf",
+    access: "reused parsed readiness text",
+    orderNumbers: ["6GK7343-1EX11-0XE0"],
+    productType: "communication processor",
+  },
+  D: {
+    reference:
+      "Siemens LCom manual, 02/2013, section 1.4 Table 1–1 CP types, printed p29",
+    url: "https://cache.industry.siemens.com/dl/files/385/48955385/att_10839/v2/lcom_communication_library_simatic_v1_2.pdf",
+    access: "reused parsed readiness text",
+    orderNumbers: [
+      "6GK7343-1EX21-0XE0",
+      "6GK7343-1EX30-0XE0",
+      "6GK7343-1CX10-0XE0",
+      "6GK7343-1GX30-0XE0",
+      "6GK7343-1GX31-0XE0",
+    ],
+    productType: "communication processor",
+  },
+  E: {
+    reference:
+      "Siemens CP 343-5 manual, 05/2023; FA00 section 5.1.1 printed p23; FA01 printed pp3 and 23",
+    url: "https://cache.industry.siemens.com/dl/files/841/8778841/att_1143234/v1/GHB_CP343-5_76.pdf",
+    access: "reused parsed readiness text; exact MLFB and type only",
+    orderNumbers: ["6GK7343-5FA00-0XE0", "6GK7343-5FA01-0XE0"],
+    productType: "communication processor",
+  },
+} as const;
+const expectedBatch19Products = [
+  {
+    position: 135,
+    productId: "siemens-s7-300-cp342-5-fo-df00-0xe0",
+    partNumber: "6GK7342-5DF00-0XE0",
+    reviewedContentHash:
+      "sha256:8a10bbefa9b9dfcba577ee23d8e88e514f94efeb3042f261c079f28d6f4b212d",
+    variantId: "profibus-dp-fo",
+    evidenceKey: "A",
+  },
+  {
+    position: 136,
+    productId: "siemens-siplus-s7-300-cp342-5-da03-7xe0",
+    partNumber: "6AG1342-5DA03-7XE0",
+    reviewedContentHash:
+      "sha256:8bca868dafcd12e26879a31eb0464245218ba1b0d4a812a8f38feae971d402d1",
+    variantId: "profibus-dp",
+    evidenceKey: "B",
+  },
+  {
+    position: 137,
+    productId: "siemens-s7-300-cp343-1-ex11-0xe0",
+    partNumber: "6GK7343-1EX11-0XE0",
+    reviewedContentHash:
+      "sha256:7c51652d24a1e3dfa619a7c81abdb15e164b5ae572c6ac0a17412156e5655d50",
+    variantId: "industrial-ethernet",
+    evidenceKey: "C",
+  },
+  {
+    position: 138,
+    productId: "siemens-s7-300-cp343-1-ex21-0xe0",
+    partNumber: "6GK7343-1EX21-0XE0",
+    reviewedContentHash:
+      "sha256:eb4c9ad10b1147ae31a3fae2e60b5d86d819dedf0ad4524fec659914c5e34f6a",
+    variantId: "industrial-ethernet",
+    evidenceKey: "D",
+  },
+  {
+    position: 139,
+    productId: "siemens-s7-300-cp343-1-ex30-0xe0",
+    partNumber: "6GK7343-1EX30-0XE0",
+    reviewedContentHash:
+      "sha256:1ecd4cbfd29c2c1155c9ee9ba4910f600484db58b8d7079f024da0d93b5a4c3c",
+    variantId: "industrial-ethernet",
+    evidenceKey: "D",
+  },
+  {
+    position: 140,
+    productId: "siemens-s7-300-cp343-1-lean-cx10-0xe0",
+    partNumber: "6GK7343-1CX10-0XE0",
+    reviewedContentHash:
+      "sha256:7136ddd83d4ffe861db78cc932cc1952e9547d30b1a42da77737c0d02c5c5eff",
+    variantId: "industrial-ethernet-lean",
+    evidenceKey: "D",
+  },
+  {
+    position: 141,
+    productId: "siemens-s7-300-cp343-1-advanced-gx30-0xe0",
+    partNumber: "6GK7343-1GX30-0XE0",
+    reviewedContentHash:
+      "sha256:897acc1cae3276fcc331b67cda48c8b779fb82ee2e3c9439a8d364620631603d",
+    variantId: "industrial-ethernet-advanced",
+    evidenceKey: "D",
+  },
+  {
+    position: 142,
+    productId: "siemens-s7-300-cp343-1-advanced-gx31-0xe0",
+    partNumber: "6GK7343-1GX31-0XE0",
+    reviewedContentHash:
+      "sha256:e23e8f722fc337c9c9c9fc20861f3a53b489369e3ed7dc0d928a756c65660aa2",
+    variantId: "industrial-ethernet-advanced",
+    evidenceKey: "D",
+  },
+  {
+    position: 143,
+    productId: "siemens-s7-300-cp343-5-fa00-0xe0",
+    partNumber: "6GK7343-5FA00-0XE0",
+    reviewedContentHash:
+      "sha256:70f50596cc143e6d61be0b890a42961e3bdf786067a5ec8e4efbd9a4b2b935d5",
+    variantId: "profibus-fms",
+    evidenceKey: "E",
+  },
+  {
+    position: 144,
+    productId: "siemens-s7-300-cp343-5-fa01-0xe0",
+    partNumber: "6GK7343-5FA01-0XE0",
+    reviewedContentHash:
+      "sha256:e7117ea60b88d95799b82a10acca66e54f1f17a00abe30be4374ab4a514c3f43",
+    variantId: "profibus-fms",
+    evidenceKey: "E",
+  },
+] as const;
+const expectedCompletedThroughBatch18ProductIdSet = new Set<ProductId>([
+  ...expectedCompletedThroughBatch17ProductIdSet,
+  ...expectedBatch18ProductIdSet,
+]);
+const registeredCompletedThroughBatch18Drafts =
+  persianProductCopyDraftRegistry.filter((entry) =>
+    expectedCompletedThroughBatch18ProductIdSet.has(entry.productId)
+  );
+assert(
+  expectedCompletedThroughBatch18ProductIdSet.size === 95 &&
+    registeredCompletedThroughBatch18Drafts.length === 95 &&
+    JSON.stringify(
+      registeredCompletedThroughBatch18Drafts.map((entry) => entry.productId)
+    ) === JSON.stringify([...expectedCompletedThroughBatch18ProductIdSet]) &&
+    registeredCompletedThroughBatch18Drafts.every((entry) => {
+      const contentHash = createProductCopyContentHash(entry);
+      return (
+        entry.linguisticReview.decision === "approved" &&
+        entry.technicalReview.decision === "approved" &&
+        entry.linguisticReview.reviewedContentHash === contentHash &&
+        entry.technicalReview.reviewedContentHash === contentHash
+      );
+    }),
+  "Completed Batches 01-18 must retain exactly 95 ordered current dual-approved entries."
+);
+const expectedBatch19ProductIds = expectedBatch19Products.map(
+  (entry) => entry.productId
+);
+const expectedBatch19ProductIdSet = new Set<ProductId>(
+  expectedBatch19ProductIds
+);
+const registeredBatch19Drafts = persianProductCopyDraftRegistry.filter(
+  (entry) => expectedBatch19ProductIdSet.has(entry.productId)
+);
+const registeredBatch19ReviewRoles = registeredBatch19Drafts.flatMap(
+  (entry) => [entry.linguisticReview, entry.technicalReview]
+);
+assert(
+  expectedBatch19ProductIdSet.size === 10 &&
+    expectedBatch19ProductIds.every(
+      (id) => !expectedCompletedThroughBatch18ProductIdSet.has(id)
+    ) &&
+    JSON.stringify(registeredBatch19Drafts.map((entry) => entry.productId)) ===
+      JSON.stringify(expectedBatch19ProductIds) &&
+    JSON.stringify(
+      persianProductCopyDraftRegistry.map((entry) => entry.productId)
+    ) ===
+      JSON.stringify([
+        ...expectedCompletedThroughBatch18ProductIdSet,
+        ...expectedBatch19ProductIds,
+      ]) &&
+    new Set(registeredBatch19ReviewRoles).size === 20 &&
+    registeredBatch19ReviewRoles.every(isApprovedReview),
+  "Batch 19 must retain ten disjoint ordered drafts with twenty distinct approved role objects."
+);
+const registeredBatch19DraftRecords = registeredBatch19Drafts.map(
+  (entry, index) => {
+    const { position, productId, partNumber, variantId, evidenceKey } =
+      expectedBatch19Products[index];
+    const sources = s7300CP.filter(
+      (source) => source.id === productId || source.mlfb === partNumber
+    );
+    const matches = products.filter(
+      (product) =>
+        product.id === productId ||
+        product.partNumber === partNumber ||
+        product.manufacturerPartNumber === partNumber
+    );
+    const [source] = sources;
+    const [product] = matches;
+    assert(
+      sources.length === 1 &&
+        source !== undefined &&
+        source.id === productId &&
+        source.mlfb === partNumber &&
+        source.variantId === variantId &&
+        source.familyId === "S7-300" &&
+        source.productTypeId === "Communication Processor" &&
+        matches.length === 1 &&
+        product !== undefined &&
+        product.id === productId &&
+        product.familyId === "S7-300" &&
+        product.partNumber === partNumber &&
+        product.manufacturerPartNumber === partNumber &&
+        product.variantId === variantId &&
+        product.productTypeId === "Communication Processor" &&
+        products.indexOf(product) + 1 === position &&
+        JSON.stringify(
+          mapSiemensS7300CommunicationProcessorToProduct(source)
+        ) === JSON.stringify(product) &&
+        deriveAllowedTechnicalTokens(product).has(partNumber) &&
+        reviewedTechnicalTokenOverrides.every(
+          (override) => override.productId !== productId
+        ),
+      "Batch 19 exact source/CP adapter/production binding, variant and token must pass: " +
+        productId
+    );
+    const expectedSegments = [
+      { kind: "text", value: "مدل " },
+      { kind: "technical", value: partNumber },
+      { kind: "text", value: "، پردازندهٔ ارتباطی است." },
+    ];
+    assert(
+      entry.provenance === "ai-assisted" &&
+        JSON.stringify(entry.shortDescription) ===
+          JSON.stringify(expectedSegments) &&
+        JSON.stringify(entry.description) ===
+          JSON.stringify([expectedSegments]) &&
+        entry.shortDescription.every(
+          (segment) => segment.value.normalize("NFC") === segment.value
+        ),
+      "Batch 19 linguistic draft check must retain exact wording, punctuation, NFC and segment boundaries: " +
+        productId
+    );
+    const evidence = batch19ReadinessEvidence[evidenceKey];
+    assert(
+      new Set<string>(evidence.orderNumbers).has(partNumber) &&
+        evidence.productType === "communication processor",
+      "Batch 19 technical draft check must use exact-order identity/type evidence: " +
+        productId
+    );
+    const freshContentHash = createProductCopyContentHash(entry);
+    assert(
+      freshContentHash === expectedBatch19Products[index].reviewedContentHash,
+      "Batch 19 must retain the exact PM-authorized production hash: " +
+        productId
+    );
+    for (const [role, label, recordedAt] of [
+      ["linguisticReview", "linguistic", BATCH_19_LINGUISTIC_RECORDED_AT],
+      ["technicalReview", "technical", BATCH_19_TECHNICAL_RECORDED_AT],
+    ] as const) {
+      const review = entry[role];
+      assert(
+        review.decision === "approved" &&
+          review.reviewerId === "Siemiran" &&
+          review.reviewedAt === recordedAt &&
+          review.reviewedContentHash === freshContentHash &&
+          Reflect.ownKeys(review).length === 6 &&
+          review.evidenceRef.includes("PM-authorized " + label + " approval") &&
+          review.evidenceRef.includes(BATCH_19_DRAFT_COMMIT) &&
+          review.evidenceRef.includes(productId) &&
+          review.evidenceRef.includes(partNumber) &&
+          review.evidenceRef.includes("product type communication processor") &&
+          review.evidenceRef.includes("not the PM review timestamp") &&
+          review.note?.startsWith(partNumber + ":") === true,
+        "Batch 19 " +
+          label +
+          " approval must bind the reviewed draft hash and separate UTC recording observation: " +
+          productId
+      );
+      if (role === "linguisticReview") {
+        assert(
+          [
+            "PM-authorized exact Persian wording",
+            "NFC normalization",
+            "typed MLFB isolation and segment boundaries",
+            "identical three-segment short and single-paragraph long descriptions",
+          ].every((fact) => review.note.includes(fact)),
+          "Batch 19 linguistic approval must cover exact Persian text and typed segments: " +
+            productId
+        );
+      } else {
+        assert(
+          [
+            evidence.reference,
+            evidence.access,
+            evidence.url,
+            "Printed pages are not assumed viewer indices.",
+            "No fresh retrieval or visual inspection.",
+            "Visual inspection and successful direct-origin HTTP status were NOT OBSERVED.",
+            "Reported reader 403s, the ST 70 reader size limit (25,626,498 bytes), and the GX30 JavaScript shell are distinct from usable evidence.",
+          ].every((fact) => review.evidenceRef.includes(fact)) &&
+            review.note.includes(
+              "PM-authorized exact MLFB identity and communication-processor type only."
+            ) &&
+            review.note.includes("remain outside approval") &&
+            (evidenceKey !== "B" ||
+              [
+                "Indexed text is not a parsed document read.",
+                "Printed page is unestablished.",
+                "no standard CP 342-5 code is substituted.",
+              ].every((fact) => review.evidenceRef.includes(fact))) &&
+            (evidenceKey !== "E" ||
+              review.evidenceRef.includes(
+                "FA00 and FA01 are separate exact identities; no FA01 characteristics are transferred to FA00."
+              )),
+          "Batch 19 technical approval must preserve exact identity/type and evidence limits: " +
+            productId
+        );
+      }
+    }
+    return {
+      position,
+      productId,
+      partNumber,
+      variantId,
+      renderedShortDescription: entry.shortDescription
+        .map((segment) => segment.value)
+        .join(""),
+      freshContentHash,
+      linguisticDraftReview: {
+        result: "PASS",
+        wording: "Exact requested Persian introduction and product-type suffix",
+        punctuation: "Exact Persian comma, spacing and final period",
+        unicodeNormalization: "NFC",
+        segmentBoundaries: "text / exact technical MLFB / text",
+        approvalDecision: entry.linguisticReview.decision,
+      },
+      technicalDraftReview: {
+        result: "PASS",
+        binding: "One exact source/CP adapter/production binding",
+        manufacturerSupportedType: evidence.productType,
+        evidenceReference: evidence.reference,
+        evidenceAccess: evidence.access,
+        approvalDecision: entry.technicalReview.decision,
+      },
+    };
+  }
+);
+
+const registeredBatch19ApprovalMutationResults =
+  registeredBatch19Drafts.flatMap((entry) =>
+    (["text", "kind"] as const).map((mutation) => {
+      const changed = cloneMutableOverlay(entry);
+      const segment = changed.shortDescription[0];
+      assert(segment !== undefined, "Batch 19 mutation requires a first segment.");
+      if (mutation === "text") segment.value += "!";
+      else segment.kind = segment.kind === "text" ? "technical" : "text";
+      const result = validatePersianProductCopyDrafts([changed], products);
+      const staleApprovals = result.issues.filter(
+        (issue) =>
+          issue.code === "stale-approval-hash" &&
+          issue.productId === entry.productId
+      );
+      assert(
+        !result.valid &&
+          staleApprovals.length === 2 &&
+          ["Linguistic", "Technical"].every((role) =>
+            staleApprovals.some(
+              (issue) =>
+                issue.message ===
+                `${role} approval does not match the current copy content.`
+            )
+          ),
+        `Batch 19 independent ${mutation} mutation must stale both approvals: ${entry.productId}`
+      );
+      return {
+        productId: entry.productId,
+        mutation,
+        staleApprovals: staleApprovals.length,
+      };
+    })
+  );
+
 const registeredCompletedBatchDrafts = persianProductCopyDraftRegistry.filter(
   (entry) => expectedCompletedBatchProductIdSet.has(entry.productId)
 );
@@ -9181,8 +9591,8 @@ assert(
     ) &&
     persianProductCopyDraftRegistry.every(
       (entry) =>
-        expectedCompletedThroughBatch17ProductIdSet.has(entry.productId) ||
-        expectedBatch18ProductIdSet.has(entry.productId)
+        expectedCompletedThroughBatch18ProductIdSet.has(entry.productId) ||
+        expectedBatch19ProductIdSet.has(entry.productId)
     ) &&
     registeredCompletedBatchDrafts.every((entry) => {
       const contentHash = createProductCopyContentHash(entry);
@@ -9198,7 +9608,7 @@ assert(
 
 assert(
   registeredDraftValidation.valid &&
-    persianProductCopyDraftRegistry.length === 95 &&
+    persianProductCopyDraftRegistry.length === 105 &&
     registeredBatch01Drafts.length === 5 &&
     JSON.stringify(registeredBatch01DraftBindings) ===
       JSON.stringify(expectedBatch01DraftProducts),
@@ -9353,25 +9763,25 @@ assert(
   "The existing thirty drafts must retain exact current dual approvals with no pending reviews."
 );
 assert(
-  registeredLinguisticApprovals === 95 &&
-    registeredTechnicalApprovals === 95 &&
-    registeredCurrentDualApprovals === 95 &&
+  registeredLinguisticApprovals === 105 &&
+    registeredTechnicalApprovals === 105 &&
+    registeredCurrentDualApprovals === 105 &&
     persianProductCopyDraftRegistry.filter((entry) =>
       isPendingReview(entry.linguisticReview)
     ).length === 0 &&
     persianProductCopyDraftRegistry.filter((entry) =>
       isPendingReview(entry.technicalReview)
     ).length === 0,
-  "The registry must contain ninety-five current dual approvals and zero pending reviews."
+  "The registry must contain 105 current dual approvals and zero pending reviews."
 );
 assert(
   !registeredDraftActivation.valid &&
-    registeredDraftActivation.overlayCount === 95 &&
+    registeredDraftActivation.overlayCount === 105 &&
     registeredDraftActivation.canonicalCount === 382 &&
-    registeredDraftActivation.approvedCount === 95 &&
-    registeredDraftActivation.missingIds.length === 287 &&
+    registeredDraftActivation.approvedCount === 105 &&
+    registeredDraftActivation.missingIds.length === 277 &&
     !("capability" in registeredDraftActivation),
-  "Combined activation must fail closed at exactly 95/382 drafts, 95 dual approvals, and 287 missing Products."
+  "Combined activation must fail closed at exactly 105/382 drafts, 105 dual approvals, and 277 missing Products."
 );
 assert(
   PERSIAN_PRODUCT_COPY_PUBLICATION_STATE === "disabled",
@@ -9635,6 +10045,21 @@ console.log(
           freshManufacturerRetrieval: "NOT RUN",
           visualInspection: "NOT OBSERVED",
         },
+        batch19: {
+          entries: registeredBatch19Drafts.length,
+          drafts: registeredBatch19DraftRecords,
+          approvedRoleRecords: registeredBatch19ReviewRoles.length,
+          linguisticRecordedAt: BATCH_19_LINGUISTIC_RECORDED_AT,
+          technicalRecordedAt: BATCH_19_TECHNICAL_RECORDED_AT,
+          mutationStaleness: registeredBatch19ApprovalMutationResults,
+          readinessEvidence: batch19ReadinessEvidence,
+          finalApprovalsRecorded: true,
+          freshManufacturerRetrieval: "NOT RUN",
+          visualInspection: "NOT OBSERVED",
+          successfulDirectOriginHttpStatus: "NOT OBSERVED",
+        },
+        completedThroughBatch18Entries:
+          registeredCompletedThroughBatch18Drafts.length,
         completedThroughBatch17Entries:
           registeredCompletedThroughBatch17Drafts.length,
         completedThroughBatch16Entries:

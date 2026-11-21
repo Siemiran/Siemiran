@@ -892,6 +892,66 @@ const cp3425MlfbOnly5Da03Copy = [
   { kind: "text", value: "، پردازندهٔ ارتباطی است." },
 ] as const satisfies ProductCopyParagraph;
 
+const batch19Position135Copy = [
+  { kind: "text", value: "مدل " },
+  { kind: "technical", value: "6GK7342-5DF00-0XE0" },
+  { kind: "text", value: "، پردازندهٔ ارتباطی است." },
+] as const satisfies ProductCopyParagraph;
+
+const batch19Position136Copy = [
+  { kind: "text", value: "مدل " },
+  { kind: "technical", value: "6AG1342-5DA03-7XE0" },
+  { kind: "text", value: "، پردازندهٔ ارتباطی است." },
+] as const satisfies ProductCopyParagraph;
+
+const batch19Position137Copy = [
+  { kind: "text", value: "مدل " },
+  { kind: "technical", value: "6GK7343-1EX11-0XE0" },
+  { kind: "text", value: "، پردازندهٔ ارتباطی است." },
+] as const satisfies ProductCopyParagraph;
+
+const batch19Position138Copy = [
+  { kind: "text", value: "مدل " },
+  { kind: "technical", value: "6GK7343-1EX21-0XE0" },
+  { kind: "text", value: "، پردازندهٔ ارتباطی است." },
+] as const satisfies ProductCopyParagraph;
+
+const batch19Position139Copy = [
+  { kind: "text", value: "مدل " },
+  { kind: "technical", value: "6GK7343-1EX30-0XE0" },
+  { kind: "text", value: "، پردازندهٔ ارتباطی است." },
+] as const satisfies ProductCopyParagraph;
+
+const batch19Position140Copy = [
+  { kind: "text", value: "مدل " },
+  { kind: "technical", value: "6GK7343-1CX10-0XE0" },
+  { kind: "text", value: "، پردازندهٔ ارتباطی است." },
+] as const satisfies ProductCopyParagraph;
+
+const batch19Position141Copy = [
+  { kind: "text", value: "مدل " },
+  { kind: "technical", value: "6GK7343-1GX30-0XE0" },
+  { kind: "text", value: "، پردازندهٔ ارتباطی است." },
+] as const satisfies ProductCopyParagraph;
+
+const batch19Position142Copy = [
+  { kind: "text", value: "مدل " },
+  { kind: "technical", value: "6GK7343-1GX31-0XE0" },
+  { kind: "text", value: "، پردازندهٔ ارتباطی است." },
+] as const satisfies ProductCopyParagraph;
+
+const batch19Position143Copy = [
+  { kind: "text", value: "مدل " },
+  { kind: "technical", value: "6GK7343-5FA00-0XE0" },
+  { kind: "text", value: "، پردازندهٔ ارتباطی است." },
+] as const satisfies ProductCopyParagraph;
+
+const batch19Position144Copy = [
+  { kind: "text", value: "مدل " },
+  { kind: "technical", value: "6GK7343-5FA01-0XE0" },
+  { kind: "text", value: "، پردازندهٔ ارتباطی است." },
+] as const satisfies ProductCopyParagraph;
+
 export const persianProductCopyDraftRegistry = [
   {
     productId: "siemens-s7-1200-cpu-211-1ae40",
@@ -3391,6 +3451,266 @@ export const persianProductCopyDraftRegistry = [
         "PM-authorized technical approval in the supplied Batch 18 approval request; draft commit 501d607b7f141317cc72c39ceac94df9107a2c5e; Product siemens-s7-300-cp342-5-da03-0xe0; MLFB 6GK7342-5DA03-0XE0; product type communication processor. Recording time is an actual UTC observation, not the PM review timestamp. Reused readiness E6: Siemens CP 342-5 manual, section 1.6.1, printed p21; reused parsed readiness text; https://support.industry.siemens.com/cs/attachments/67225941/HY_S7-CPs-PB_76.pdf. All three exact 5DA order numbers remain distinct. Printed pages are not assumed viewer indices. No fresh retrieval or visual inspection. Visual inspection and successful direct-origin HTTP status were NOT OBSERVED.",
       note:
         "6GK7342-5DA03-0XE0: PM-authorized exact MLFB identity and communication-processor type only. Interface, performance, compatibility, lifecycle, certification and availability claims remain outside approval.",
+    },
+  },
+  {
+    productId: "siemens-s7-300-cp342-5-fo-df00-0xe0",
+    shortDescription: batch19Position135Copy,
+    description: [batch19Position135Copy],
+    provenance: "ai-assisted",
+    linguisticReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-11-21T19:34:16.592Z",
+      reviewedContentHash:
+        "sha256:8a10bbefa9b9dfcba577ee23d8e88e514f94efeb3042f261c079f28d6f4b212d",
+      evidenceRef:
+        "PM-authorized linguistic approval in the supplied Batch 19 approval request; draft commit 4a36081e61e9a2ea3fe6e9d403b1edac053f1184; Product siemens-s7-300-cp342-5-fo-df00-0xe0; MLFB 6GK7342-5DF00-0XE0; product type communication processor. Recording time is an actual UTC observation, not the PM review timestamp.",
+      note: "6GK7342-5DF00-0XE0: PM-authorized exact Persian wording, punctuation and spacing, NFC normalization, typed MLFB isolation and segment boundaries in identical three-segment short and single-paragraph long descriptions.",
+    },
+    technicalReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-11-21T19:34:43.097Z",
+      reviewedContentHash:
+        "sha256:8a10bbefa9b9dfcba577ee23d8e88e514f94efeb3042f261c079f28d6f4b212d",
+      evidenceRef:
+        "PM-authorized technical approval in the supplied Batch 19 approval request; draft commit 4a36081e61e9a2ea3fe6e9d403b1edac053f1184; Product siemens-s7-300-cp342-5-fo-df00-0xe0; MLFB 6GK7342-5DF00-0XE0; product type communication processor. Recording time is an actual UTC observation, not the PM review timestamp. Reused readiness A: Siemens February 2025 supplier declaration, CP300 table, printed p12; reused parsed readiness text; identity/type only; https://cache.industry.siemens.com/dl/files/142/109983142/att_1315774/v1/c02-suppliers_declaration_of_conformity_2025-02-05.pdf. Printed pages are not assumed viewer indices. No fresh retrieval or visual inspection. Visual inspection and successful direct-origin HTTP status were NOT OBSERVED. Reported reader 403s, the ST 70 reader size limit (25,626,498 bytes), and the GX30 JavaScript shell are distinct from usable evidence.",
+      note: "6GK7342-5DF00-0XE0: PM-authorized exact MLFB identity and communication-processor type only. Model titles, interfaces, protocols, performance, compatibility, lifecycle, certification and availability remain outside approval.",
+    },
+  },
+  {
+    productId: "siemens-siplus-s7-300-cp342-5-da03-7xe0",
+    shortDescription: batch19Position136Copy,
+    description: [batch19Position136Copy],
+    provenance: "ai-assisted",
+    linguisticReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-11-21T19:34:16.592Z",
+      reviewedContentHash:
+        "sha256:8bca868dafcd12e26879a31eb0464245218ba1b0d4a812a8f38feae971d402d1",
+      evidenceRef:
+        "PM-authorized linguistic approval in the supplied Batch 19 approval request; draft commit 4a36081e61e9a2ea3fe6e9d403b1edac053f1184; Product siemens-siplus-s7-300-cp342-5-da03-7xe0; MLFB 6AG1342-5DA03-7XE0; product type communication processor. Recording time is an actual UTC observation, not the PM review timestamp.",
+      note: "6AG1342-5DA03-7XE0: PM-authorized exact Persian wording, punctuation and spacing, NFC normalization, typed MLFB isolation and segment boundaries in identical three-segment short and single-paragraph long descriptions.",
+    },
+    technicalReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-11-21T19:34:43.097Z",
+      reviewedContentHash:
+        "sha256:8bca868dafcd12e26879a31eb0464245218ba1b0d4a812a8f38feae971d402d1",
+      evidenceRef:
+        "PM-authorized technical approval in the supplied Batch 19 approval request; draft commit 4a36081e61e9a2ea3fe6e9d403b1edac053f1184; Product siemens-siplus-s7-300-cp342-5-da03-7xe0; MLFB 6AG1342-5DA03-7XE0; product type communication processor. Recording time is an actual UTC observation, not the PM review timestamp. Reused readiness B: Siemens ST 70 (2021), SIPLUS CP 342-5 ordering data; printed page unestablished; reused indexed-only readiness text; not a parsed document read; https://cache.industry.siemens.com/dl/files/167/109744167/att_1076941/v1/simatic-st70-complete-english-2021.pdf. The exact SIPLUS 6AG order number is independently supported; no standard CP 342-5 code is substituted. Indexed text is not a parsed document read. Printed page is unestablished. Printed pages are not assumed viewer indices. No fresh retrieval or visual inspection. Visual inspection and successful direct-origin HTTP status were NOT OBSERVED. Reported reader 403s, the ST 70 reader size limit (25,626,498 bytes), and the GX30 JavaScript shell are distinct from usable evidence.",
+      note: "6AG1342-5DA03-7XE0: PM-authorized exact MLFB identity and communication-processor type only. Model titles, interfaces, protocols, performance, compatibility, lifecycle, certification and availability remain outside approval.",
+    },
+  },
+  {
+    productId: "siemens-s7-300-cp343-1-ex11-0xe0",
+    shortDescription: batch19Position137Copy,
+    description: [batch19Position137Copy],
+    provenance: "ai-assisted",
+    linguisticReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-11-21T19:34:16.592Z",
+      reviewedContentHash:
+        "sha256:7c51652d24a1e3dfa619a7c81abdb15e164b5ae572c6ac0a17412156e5655d50",
+      evidenceRef:
+        "PM-authorized linguistic approval in the supplied Batch 19 approval request; draft commit 4a36081e61e9a2ea3fe6e9d403b1edac053f1184; Product siemens-s7-300-cp343-1-ex11-0xe0; MLFB 6GK7343-1EX11-0XE0; product type communication processor. Recording time is an actual UTC observation, not the PM review timestamp.",
+      note: "6GK7343-1EX11-0XE0: PM-authorized exact Persian wording, punctuation and spacing, NFC normalization, typed MLFB isolation and segment boundaries in identical three-segment short and single-paragraph long descriptions.",
+    },
+    technicalReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-11-21T19:34:43.097Z",
+      reviewedContentHash:
+        "sha256:7c51652d24a1e3dfa619a7c81abdb15e164b5ae572c6ac0a17412156e5655d50",
+      evidenceRef:
+        "PM-authorized technical approval in the supplied Batch 19 approval request; draft commit 4a36081e61e9a2ea3fe6e9d403b1edac053f1184; Product siemens-s7-300-cp343-1-ex11-0xe0; MLFB 6GK7343-1EX11-0XE0; product type communication processor. Recording time is an actual UTC observation, not the PM review timestamp. Reused readiness C: Siemens CP 343-1 manual, 02/2003, cover and printed pB1–5; reused parsed readiness text; https://cache.industry.siemens.com/dl/files/308/8777308/att_39695/v1/ghb3431_e.pdf. Printed pages are not assumed viewer indices. No fresh retrieval or visual inspection. Visual inspection and successful direct-origin HTTP status were NOT OBSERVED. Reported reader 403s, the ST 70 reader size limit (25,626,498 bytes), and the GX30 JavaScript shell are distinct from usable evidence.",
+      note: "6GK7343-1EX11-0XE0: PM-authorized exact MLFB identity and communication-processor type only. Model titles, interfaces, protocols, performance, compatibility, lifecycle, certification and availability remain outside approval.",
+    },
+  },
+  {
+    productId: "siemens-s7-300-cp343-1-ex21-0xe0",
+    shortDescription: batch19Position138Copy,
+    description: [batch19Position138Copy],
+    provenance: "ai-assisted",
+    linguisticReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-11-21T19:34:16.592Z",
+      reviewedContentHash:
+        "sha256:eb4c9ad10b1147ae31a3fae2e60b5d86d819dedf0ad4524fec659914c5e34f6a",
+      evidenceRef:
+        "PM-authorized linguistic approval in the supplied Batch 19 approval request; draft commit 4a36081e61e9a2ea3fe6e9d403b1edac053f1184; Product siemens-s7-300-cp343-1-ex21-0xe0; MLFB 6GK7343-1EX21-0XE0; product type communication processor. Recording time is an actual UTC observation, not the PM review timestamp.",
+      note: "6GK7343-1EX21-0XE0: PM-authorized exact Persian wording, punctuation and spacing, NFC normalization, typed MLFB isolation and segment boundaries in identical three-segment short and single-paragraph long descriptions.",
+    },
+    technicalReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-11-21T19:34:43.097Z",
+      reviewedContentHash:
+        "sha256:eb4c9ad10b1147ae31a3fae2e60b5d86d819dedf0ad4524fec659914c5e34f6a",
+      evidenceRef:
+        "PM-authorized technical approval in the supplied Batch 19 approval request; draft commit 4a36081e61e9a2ea3fe6e9d403b1edac053f1184; Product siemens-s7-300-cp343-1-ex21-0xe0; MLFB 6GK7343-1EX21-0XE0; product type communication processor. Recording time is an actual UTC observation, not the PM review timestamp. Reused readiness D: Siemens LCom manual, 02/2013, section 1.4 Table 1–1 CP types, printed p29; reused parsed readiness text; https://cache.industry.siemens.com/dl/files/385/48955385/att_10839/v2/lcom_communication_library_simatic_v1_2.pdf. Printed pages are not assumed viewer indices. No fresh retrieval or visual inspection. Visual inspection and successful direct-origin HTTP status were NOT OBSERVED. Reported reader 403s, the ST 70 reader size limit (25,626,498 bytes), and the GX30 JavaScript shell are distinct from usable evidence.",
+      note: "6GK7343-1EX21-0XE0: PM-authorized exact MLFB identity and communication-processor type only. Model titles, interfaces, protocols, performance, compatibility, lifecycle, certification and availability remain outside approval.",
+    },
+  },
+  {
+    productId: "siemens-s7-300-cp343-1-ex30-0xe0",
+    shortDescription: batch19Position139Copy,
+    description: [batch19Position139Copy],
+    provenance: "ai-assisted",
+    linguisticReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-11-21T19:34:16.592Z",
+      reviewedContentHash:
+        "sha256:1ecd4cbfd29c2c1155c9ee9ba4910f600484db58b8d7079f024da0d93b5a4c3c",
+      evidenceRef:
+        "PM-authorized linguistic approval in the supplied Batch 19 approval request; draft commit 4a36081e61e9a2ea3fe6e9d403b1edac053f1184; Product siemens-s7-300-cp343-1-ex30-0xe0; MLFB 6GK7343-1EX30-0XE0; product type communication processor. Recording time is an actual UTC observation, not the PM review timestamp.",
+      note: "6GK7343-1EX30-0XE0: PM-authorized exact Persian wording, punctuation and spacing, NFC normalization, typed MLFB isolation and segment boundaries in identical three-segment short and single-paragraph long descriptions.",
+    },
+    technicalReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-11-21T19:34:43.097Z",
+      reviewedContentHash:
+        "sha256:1ecd4cbfd29c2c1155c9ee9ba4910f600484db58b8d7079f024da0d93b5a4c3c",
+      evidenceRef:
+        "PM-authorized technical approval in the supplied Batch 19 approval request; draft commit 4a36081e61e9a2ea3fe6e9d403b1edac053f1184; Product siemens-s7-300-cp343-1-ex30-0xe0; MLFB 6GK7343-1EX30-0XE0; product type communication processor. Recording time is an actual UTC observation, not the PM review timestamp. Reused readiness D: Siemens LCom manual, 02/2013, section 1.4 Table 1–1 CP types, printed p29; reused parsed readiness text; https://cache.industry.siemens.com/dl/files/385/48955385/att_10839/v2/lcom_communication_library_simatic_v1_2.pdf. Printed pages are not assumed viewer indices. No fresh retrieval or visual inspection. Visual inspection and successful direct-origin HTTP status were NOT OBSERVED. Reported reader 403s, the ST 70 reader size limit (25,626,498 bytes), and the GX30 JavaScript shell are distinct from usable evidence.",
+      note: "6GK7343-1EX30-0XE0: PM-authorized exact MLFB identity and communication-processor type only. Model titles, interfaces, protocols, performance, compatibility, lifecycle, certification and availability remain outside approval.",
+    },
+  },
+  {
+    productId: "siemens-s7-300-cp343-1-lean-cx10-0xe0",
+    shortDescription: batch19Position140Copy,
+    description: [batch19Position140Copy],
+    provenance: "ai-assisted",
+    linguisticReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-11-21T19:34:16.592Z",
+      reviewedContentHash:
+        "sha256:7136ddd83d4ffe861db78cc932cc1952e9547d30b1a42da77737c0d02c5c5eff",
+      evidenceRef:
+        "PM-authorized linguistic approval in the supplied Batch 19 approval request; draft commit 4a36081e61e9a2ea3fe6e9d403b1edac053f1184; Product siemens-s7-300-cp343-1-lean-cx10-0xe0; MLFB 6GK7343-1CX10-0XE0; product type communication processor. Recording time is an actual UTC observation, not the PM review timestamp.",
+      note: "6GK7343-1CX10-0XE0: PM-authorized exact Persian wording, punctuation and spacing, NFC normalization, typed MLFB isolation and segment boundaries in identical three-segment short and single-paragraph long descriptions.",
+    },
+    technicalReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-11-21T19:34:43.097Z",
+      reviewedContentHash:
+        "sha256:7136ddd83d4ffe861db78cc932cc1952e9547d30b1a42da77737c0d02c5c5eff",
+      evidenceRef:
+        "PM-authorized technical approval in the supplied Batch 19 approval request; draft commit 4a36081e61e9a2ea3fe6e9d403b1edac053f1184; Product siemens-s7-300-cp343-1-lean-cx10-0xe0; MLFB 6GK7343-1CX10-0XE0; product type communication processor. Recording time is an actual UTC observation, not the PM review timestamp. Reused readiness D: Siemens LCom manual, 02/2013, section 1.4 Table 1–1 CP types, printed p29; reused parsed readiness text; https://cache.industry.siemens.com/dl/files/385/48955385/att_10839/v2/lcom_communication_library_simatic_v1_2.pdf. Printed pages are not assumed viewer indices. No fresh retrieval or visual inspection. Visual inspection and successful direct-origin HTTP status were NOT OBSERVED. Reported reader 403s, the ST 70 reader size limit (25,626,498 bytes), and the GX30 JavaScript shell are distinct from usable evidence.",
+      note: "6GK7343-1CX10-0XE0: PM-authorized exact MLFB identity and communication-processor type only. Model titles, interfaces, protocols, performance, compatibility, lifecycle, certification and availability remain outside approval.",
+    },
+  },
+  {
+    productId: "siemens-s7-300-cp343-1-advanced-gx30-0xe0",
+    shortDescription: batch19Position141Copy,
+    description: [batch19Position141Copy],
+    provenance: "ai-assisted",
+    linguisticReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-11-21T19:34:16.592Z",
+      reviewedContentHash:
+        "sha256:897acc1cae3276fcc331b67cda48c8b779fb82ee2e3c9439a8d364620631603d",
+      evidenceRef:
+        "PM-authorized linguistic approval in the supplied Batch 19 approval request; draft commit 4a36081e61e9a2ea3fe6e9d403b1edac053f1184; Product siemens-s7-300-cp343-1-advanced-gx30-0xe0; MLFB 6GK7343-1GX30-0XE0; product type communication processor. Recording time is an actual UTC observation, not the PM review timestamp.",
+      note: "6GK7343-1GX30-0XE0: PM-authorized exact Persian wording, punctuation and spacing, NFC normalization, typed MLFB isolation and segment boundaries in identical three-segment short and single-paragraph long descriptions.",
+    },
+    technicalReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-11-21T19:34:43.097Z",
+      reviewedContentHash:
+        "sha256:897acc1cae3276fcc331b67cda48c8b779fb82ee2e3c9439a8d364620631603d",
+      evidenceRef:
+        "PM-authorized technical approval in the supplied Batch 19 approval request; draft commit 4a36081e61e9a2ea3fe6e9d403b1edac053f1184; Product siemens-s7-300-cp343-1-advanced-gx30-0xe0; MLFB 6GK7343-1GX30-0XE0; product type communication processor. Recording time is an actual UTC observation, not the PM review timestamp. Reused readiness D: Siemens LCom manual, 02/2013, section 1.4 Table 1–1 CP types, printed p29; reused parsed readiness text; https://cache.industry.siemens.com/dl/files/385/48955385/att_10839/v2/lcom_communication_library_simatic_v1_2.pdf. Printed pages are not assumed viewer indices. No fresh retrieval or visual inspection. Visual inspection and successful direct-origin HTTP status were NOT OBSERVED. Reported reader 403s, the ST 70 reader size limit (25,626,498 bytes), and the GX30 JavaScript shell are distinct from usable evidence.",
+      note: "6GK7343-1GX30-0XE0: PM-authorized exact MLFB identity and communication-processor type only. Model titles, interfaces, protocols, performance, compatibility, lifecycle, certification and availability remain outside approval.",
+    },
+  },
+  {
+    productId: "siemens-s7-300-cp343-1-advanced-gx31-0xe0",
+    shortDescription: batch19Position142Copy,
+    description: [batch19Position142Copy],
+    provenance: "ai-assisted",
+    linguisticReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-11-21T19:34:16.592Z",
+      reviewedContentHash:
+        "sha256:e23e8f722fc337c9c9c9fc20861f3a53b489369e3ed7dc0d928a756c65660aa2",
+      evidenceRef:
+        "PM-authorized linguistic approval in the supplied Batch 19 approval request; draft commit 4a36081e61e9a2ea3fe6e9d403b1edac053f1184; Product siemens-s7-300-cp343-1-advanced-gx31-0xe0; MLFB 6GK7343-1GX31-0XE0; product type communication processor. Recording time is an actual UTC observation, not the PM review timestamp.",
+      note: "6GK7343-1GX31-0XE0: PM-authorized exact Persian wording, punctuation and spacing, NFC normalization, typed MLFB isolation and segment boundaries in identical three-segment short and single-paragraph long descriptions.",
+    },
+    technicalReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-11-21T19:34:43.097Z",
+      reviewedContentHash:
+        "sha256:e23e8f722fc337c9c9c9fc20861f3a53b489369e3ed7dc0d928a756c65660aa2",
+      evidenceRef:
+        "PM-authorized technical approval in the supplied Batch 19 approval request; draft commit 4a36081e61e9a2ea3fe6e9d403b1edac053f1184; Product siemens-s7-300-cp343-1-advanced-gx31-0xe0; MLFB 6GK7343-1GX31-0XE0; product type communication processor. Recording time is an actual UTC observation, not the PM review timestamp. Reused readiness D: Siemens LCom manual, 02/2013, section 1.4 Table 1–1 CP types, printed p29; reused parsed readiness text; https://cache.industry.siemens.com/dl/files/385/48955385/att_10839/v2/lcom_communication_library_simatic_v1_2.pdf. Printed pages are not assumed viewer indices. No fresh retrieval or visual inspection. Visual inspection and successful direct-origin HTTP status were NOT OBSERVED. Reported reader 403s, the ST 70 reader size limit (25,626,498 bytes), and the GX30 JavaScript shell are distinct from usable evidence.",
+      note: "6GK7343-1GX31-0XE0: PM-authorized exact MLFB identity and communication-processor type only. Model titles, interfaces, protocols, performance, compatibility, lifecycle, certification and availability remain outside approval.",
+    },
+  },
+  {
+    productId: "siemens-s7-300-cp343-5-fa00-0xe0",
+    shortDescription: batch19Position143Copy,
+    description: [batch19Position143Copy],
+    provenance: "ai-assisted",
+    linguisticReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-11-21T19:34:16.592Z",
+      reviewedContentHash:
+        "sha256:70f50596cc143e6d61be0b890a42961e3bdf786067a5ec8e4efbd9a4b2b935d5",
+      evidenceRef:
+        "PM-authorized linguistic approval in the supplied Batch 19 approval request; draft commit 4a36081e61e9a2ea3fe6e9d403b1edac053f1184; Product siemens-s7-300-cp343-5-fa00-0xe0; MLFB 6GK7343-5FA00-0XE0; product type communication processor. Recording time is an actual UTC observation, not the PM review timestamp.",
+      note: "6GK7343-5FA00-0XE0: PM-authorized exact Persian wording, punctuation and spacing, NFC normalization, typed MLFB isolation and segment boundaries in identical three-segment short and single-paragraph long descriptions.",
+    },
+    technicalReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-11-21T19:34:43.097Z",
+      reviewedContentHash:
+        "sha256:70f50596cc143e6d61be0b890a42961e3bdf786067a5ec8e4efbd9a4b2b935d5",
+      evidenceRef:
+        "PM-authorized technical approval in the supplied Batch 19 approval request; draft commit 4a36081e61e9a2ea3fe6e9d403b1edac053f1184; Product siemens-s7-300-cp343-5-fa00-0xe0; MLFB 6GK7343-5FA00-0XE0; product type communication processor. Recording time is an actual UTC observation, not the PM review timestamp. Reused readiness E: Siemens CP 343-5 manual, 05/2023; FA00 section 5.1.1 printed p23; FA01 printed pp3 and 23; reused parsed readiness text; exact MLFB and type only; https://cache.industry.siemens.com/dl/files/841/8778841/att_1143234/v1/GHB_CP343-5_76.pdf. FA00 and FA01 are separate exact identities; no FA01 characteristics are transferred to FA00. Printed pages are not assumed viewer indices. No fresh retrieval or visual inspection. Visual inspection and successful direct-origin HTTP status were NOT OBSERVED. Reported reader 403s, the ST 70 reader size limit (25,626,498 bytes), and the GX30 JavaScript shell are distinct from usable evidence.",
+      note: "6GK7343-5FA00-0XE0: PM-authorized exact MLFB identity and communication-processor type only. Model titles, interfaces, protocols, performance, compatibility, lifecycle, certification and availability remain outside approval.",
+    },
+  },
+  {
+    productId: "siemens-s7-300-cp343-5-fa01-0xe0",
+    shortDescription: batch19Position144Copy,
+    description: [batch19Position144Copy],
+    provenance: "ai-assisted",
+    linguisticReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-11-21T19:34:16.592Z",
+      reviewedContentHash:
+        "sha256:e7117ea60b88d95799b82a10acca66e54f1f17a00abe30be4374ab4a514c3f43",
+      evidenceRef:
+        "PM-authorized linguistic approval in the supplied Batch 19 approval request; draft commit 4a36081e61e9a2ea3fe6e9d403b1edac053f1184; Product siemens-s7-300-cp343-5-fa01-0xe0; MLFB 6GK7343-5FA01-0XE0; product type communication processor. Recording time is an actual UTC observation, not the PM review timestamp.",
+      note: "6GK7343-5FA01-0XE0: PM-authorized exact Persian wording, punctuation and spacing, NFC normalization, typed MLFB isolation and segment boundaries in identical three-segment short and single-paragraph long descriptions.",
+    },
+    technicalReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-11-21T19:34:43.097Z",
+      reviewedContentHash:
+        "sha256:e7117ea60b88d95799b82a10acca66e54f1f17a00abe30be4374ab4a514c3f43",
+      evidenceRef:
+        "PM-authorized technical approval in the supplied Batch 19 approval request; draft commit 4a36081e61e9a2ea3fe6e9d403b1edac053f1184; Product siemens-s7-300-cp343-5-fa01-0xe0; MLFB 6GK7343-5FA01-0XE0; product type communication processor. Recording time is an actual UTC observation, not the PM review timestamp. Reused readiness E: Siemens CP 343-5 manual, 05/2023; FA00 section 5.1.1 printed p23; FA01 printed pp3 and 23; reused parsed readiness text; exact MLFB and type only; https://cache.industry.siemens.com/dl/files/841/8778841/att_1143234/v1/GHB_CP343-5_76.pdf. FA00 and FA01 are separate exact identities; no FA01 characteristics are transferred to FA00. Printed pages are not assumed viewer indices. No fresh retrieval or visual inspection. Visual inspection and successful direct-origin HTTP status were NOT OBSERVED. Reported reader 403s, the ST 70 reader size limit (25,626,498 bytes), and the GX30 JavaScript shell are distinct from usable evidence.",
+      note: "6GK7343-5FA01-0XE0: PM-authorized exact MLFB identity and communication-processor type only. Model titles, interfaces, protocols, performance, compatibility, lifecycle, certification and availability remain outside approval.",
     },
   },
 ] as const satisfies readonly PersianProductCopyOverlay[];
