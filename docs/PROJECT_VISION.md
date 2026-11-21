@@ -34,7 +34,40 @@ Principles:
 - The eleven unverified S7-300 records continue to omit public lifecycle in both
   languages.
 
-Current implementation checkpoint (2026-11-20): `800094010e6ada6199652168d74274a87f1f6be2`.
+Current implementation checkpoint (2026-11-21): `416495b83f071b9b105d30a35cb04ab5f3b17131`.
+
+[PR #95](https://github.com/Siemiran/Siemiran/pull/95) completed private Batch 19 at
+`416495b83f071b9b105d30a35cb04ab5f3b17131`. Its ten entries at canonical positions
+135–144 approve exact MLFB identity and communication-processor type only.
+The exact SIPLUS order number stays distinct from the standard CP 342-5 code;
+FA00 and FA01 remain distinct, with no characteristics transferred between variants.
+Model titles, interfaces, protocols, performance, compatibility, lifecycle,
+certification and availability remain outside approval. Exact bindings, recorded
+hashes and qualified A–E evidence are in
+[DATABASE.md](DATABASE.md#2026-11-21---batch-19-private-product-copy-checkpoint-current-state);
+the merge record is in
+[CHANGELOG.md](CHANGELOG.md#2026-11-21---pr-95-complete-batch-19-private-drafts-and-dual-approvals)
+and durable resume facts are in [SESSION_HANDOFF.md](SESSION_HANDOFF.md).
+
+The catalog contains 382 Products (186 S7-1200 / 196 S7-300). There are 105 private
+drafts, 105 current approvals per role, 105 current dual approvals, zero pending
+roles and 277 products without drafts. Activation remains invalid at
+`overlayCount=105`, `approvedCount=105` and `missingIds.length=277`, with capability
+absent. Active overlays remain 0/382, publication is disabled, and public FA/EN
+copy stays canonical English/LTR. Complete 382/382 current dual approvals and
+separate launch authorization remain required.
+
+Overrides remain 10 Products / 20 assignments / 7 unique strings with an empty
+global allowlist. Batch 19 added zero overrides. The eleven public lifecycle
+omissions, including IM 178-4, and separate S7-300 provenance classification
+(185 Siemens-official verified / 11 explicitly unverified) remain in effect.
+
+Batch 20 remains unstarted and outside this task's scope. Product selection and
+future scope require separate authorization. Admin Panel and Automation remain
+gated; the dedicated completed-copy website inspection remains pending.
+
+Historical Batch 18 checkpoint (95/287): the following scope, counts and
+prospective workflow describe Batch 18 at its merge and are superseded above.
 
 [PR #93](https://github.com/Siemiran/Siemiran/pull/93) completed private Batch 18 at
 `800094010e6ada6199652168d74274a87f1f6be2`. The ten entries approve exact MLFB
@@ -42,8 +75,8 @@ identity and communication-processor type only, retaining distinct CP 340,
 CP 341 and CP 342-5 order numbers, including each CP 341 01/02 revision.
 Interfaces, performance, compatibility, lifecycle, certification and
 availability remain outside approval. Exact bindings, recorded hashes and E1-E6
-evidence are in [DATABASE.md](DATABASE.md#2026-11-20---batch-18-private-product-copy-checkpoint-current-state); the merge record is in
-[CHANGELOG.md](CHANGELOG.md#2026-11-20---pr-93-complete-batch-18-private-drafts-and-dual-approvals) and durable resume facts are in
+evidence are in [DATABASE.md](DATABASE.md#2026-11-20---batch-18-private-product-copy-checkpoint-historical-snapshot); the merge record is in
+[CHANGELOG.md](CHANGELOG.md#2026-11-20---pr-93-complete-batch-18-private-drafts-and-dual-approvals-historical-snapshot) and durable resume facts are in
 [SESSION_HANDOFF.md](SESSION_HANDOFF.md).
 
 The catalog contains 382 Products (186 S7-1200 / 196 S7-300). There are 95 private
@@ -99,7 +132,7 @@ Historical Batch 16 checkpoint (80/302): [PR #89](https://github.com/Siemiran/Si
 completed one mixed analog input/output and four interface-module entries.
 Its exact MLFB/type-only scope, exclusions and evidence qualifications remain in
 [DATABASE.md](DATABASE.md#2026-11-20---batch-16-private-product-copy-checkpoint-historical-snapshot).
-Batch 17 and earlier counts are historical; Batch 18 is current.
+Batch 18 and earlier counts are historical; Batch 19 is current.
 
 After Persian Product-copy completion, the dedicated local visual and functional
 website inspection with the maintainer remains pending: FA/EN switching,

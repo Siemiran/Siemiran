@@ -1,6 +1,6 @@
 # Siemiran — Current Architecture
 
-Implementation base: `main` at `800094010e6ada6199652168d74274a87f1f6be2` (2026-11-20)
+Implementation base: `main` at `416495b83f071b9b105d30a35cb04ab5f3b17131` (2026-11-21)
 
 Current checkpoint and resume workflow: [SESSION_HANDOFF.md](SESSION_HANDOFF.md).
 
@@ -280,14 +280,47 @@ for merge identity, and [SESSION_HANDOFF.md](SESSION_HANDOFF.md) for resume fact
 Batch 17's 85/297 checkpoint is historical; its records and evidence limits
 remain in the linked historical record.
 
+[PR #95](https://github.com/Siemiran/Siemiran/pull/95) completed private Batch 19 at
+`416495b83f071b9b105d30a35cb04ab5f3b17131`. Its ten entries at canonical positions
+135–144 approve exact MLFB identity and communication-processor type only.
+The exact SIPLUS order number stays distinct from the standard CP 342-5 code;
+FA00 and FA01 remain distinct, with no characteristics transferred between variants.
+Model titles, interfaces, protocols, performance, compatibility, lifecycle,
+certification and availability remain outside approval. Exact bindings, recorded
+hashes and qualified A–E evidence are in
+[DATABASE.md](DATABASE.md#2026-11-21---batch-19-private-product-copy-checkpoint-current-state);
+the merge record is in
+[CHANGELOG.md](CHANGELOG.md#2026-11-21---pr-95-complete-batch-19-private-drafts-and-dual-approvals)
+and durable resume facts are in [SESSION_HANDOFF.md](SESSION_HANDOFF.md).
+
+The catalog contains 382 Products (186 S7-1200 / 196 S7-300). There are 105 private
+drafts, 105 current approvals per role, 105 current dual approvals, zero pending
+roles and 277 products without drafts. Activation remains invalid at
+`overlayCount=105`, `approvedCount=105` and `missingIds.length=277`, with capability
+absent. Active overlays remain 0/382, publication is disabled, and public FA/EN
+copy stays canonical English/LTR. Complete 382/382 current dual approvals and
+separate launch authorization remain required.
+
+Overrides remain 10 Products / 20 assignments / 7 unique strings with an empty
+global allowlist. Batch 19 added zero overrides. The eleven public lifecycle
+omissions, including IM 178-4, and separate S7-300 provenance classification
+(185 Siemens-official verified / 11 explicitly unverified) remain in effect.
+
+Batch 20 remains unstarted and outside this task's scope. Product selection and
+future scope require separate authorization. Admin Panel and Automation remain
+gated; the dedicated completed-copy website inspection remains pending.
+
+Historical Batch 18 checkpoint (95/287): the following scope, counts and
+prospective workflow describe Batch 18 at its merge and are superseded above.
+
 [PR #93](https://github.com/Siemiran/Siemiran/pull/93) completed private Batch 18 at
 `800094010e6ada6199652168d74274a87f1f6be2`. The ten entries approve exact MLFB
 identity and communication-processor type only, retaining distinct CP 340,
 CP 341 and CP 342-5 order numbers, including each CP 341 01/02 revision.
 Interfaces, performance, compatibility, lifecycle, certification and
 availability remain outside approval. Exact bindings, recorded hashes and E1-E6
-evidence are in [DATABASE.md](DATABASE.md#2026-11-20---batch-18-private-product-copy-checkpoint-current-state); the merge record is in
-[CHANGELOG.md](CHANGELOG.md#2026-11-20---pr-93-complete-batch-18-private-drafts-and-dual-approvals) and durable resume facts are in
+evidence are in [DATABASE.md](DATABASE.md#2026-11-20---batch-18-private-product-copy-checkpoint-historical-snapshot); the merge record is in
+[CHANGELOG.md](CHANGELOG.md#2026-11-20---pr-93-complete-batch-18-private-drafts-and-dual-approvals-historical-snapshot) and durable resume facts are in
 [SESSION_HANDOFF.md](SESSION_HANDOFF.md).
 
 The catalog contains 382 Products (186 S7-1200 / 196 S7-300). There are 95 private
@@ -312,7 +345,9 @@ Batches 01–13, the 70-ID set for completed Batches 01–14, and the 75-ID set 
 completed Batches 01–15 remain intact. The 80-ID completed-through-Batch-16
 set and five-ID Batch 17 set remain preserved and form the explicit 85-ID
 completed-through-Batch-17 set. That set and the disjoint ten-ID Batch 18 set
-admit only their union by membership filtering; no positional slicing is used.
+form the explicit 95-ID completed-through-Batch-18 set. That set and the
+disjoint ten-ID Batch 19 set admit only their union by membership filtering;
+no positional slicing is used.
 Batch 14's 70/312, Batch 13's 65/317 and Batch 12's 60/322 checkpoints
 are historical. Batch 11 recorded 55/327.
 Dated Batch 01–10 checkpoints retain 5/10/15/20/25/30/35/40/45/50 entries and
