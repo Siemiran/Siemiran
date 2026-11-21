@@ -952,6 +952,66 @@ const batch19Position144Copy = [
   { kind: "text", value: "، پردازندهٔ ارتباطی است." },
 ] as const satisfies ProductCopyParagraph;
 
+const batch20Position145Copy = [
+  { kind: "text", value: "مدل " },
+  { kind: "technical", value: "6GK7343-2AH00-0XA0" },
+  { kind: "text", value: "، پردازندهٔ ارتباطی است." },
+] as const satisfies ProductCopyParagraph;
+
+const batch20Position146Copy = [
+  { kind: "text", value: "مدل " },
+  { kind: "technical", value: "6GK7343-2AH01-0XA0" },
+  { kind: "text", value: "، پردازندهٔ ارتباطی است." },
+] as const satisfies ProductCopyParagraph;
+
+const batch20Position147Copy = [
+  { kind: "text", value: "مدل " },
+  { kind: "technical", value: "6GK7343-2AH10-0XA0" },
+  { kind: "text", value: "، پردازندهٔ ارتباطی است." },
+] as const satisfies ProductCopyParagraph;
+
+const batch20Position148Copy = [
+  { kind: "text", value: "مدل " },
+  { kind: "technical", value: "6GK7343-2AH11-0XA0" },
+  { kind: "text", value: "، پردازندهٔ ارتباطی است." },
+] as const satisfies ProductCopyParagraph;
+
+const batch20Position149Copy = [
+  { kind: "text", value: "مدل " },
+  { kind: "technical", value: "6GK7342-2AH00-0XA0" },
+  { kind: "text", value: "، پردازندهٔ ارتباطی است." },
+] as const satisfies ProductCopyParagraph;
+
+const batch20Position150Copy = [
+  { kind: "text", value: "مدل " },
+  { kind: "technical", value: "6GK7342-2AH01-0XA0" },
+  { kind: "text", value: "، پردازندهٔ ارتباطی است." },
+] as const satisfies ProductCopyParagraph;
+
+const batch20Position151Copy = [
+  { kind: "text", value: "مدل " },
+  { kind: "technical", value: "6GK7343-1BA00-0XE0" },
+  { kind: "text", value: "، پردازندهٔ ارتباطی است." },
+] as const satisfies ProductCopyParagraph;
+
+const batch20Position152Copy = [
+  { kind: "text", value: "مدل " },
+  { kind: "technical", value: "6GK7343-1GX00-0XE0" },
+  { kind: "text", value: "، پردازندهٔ ارتباطی است." },
+] as const satisfies ProductCopyParagraph;
+
+const batch20Position153Copy = [
+  { kind: "text", value: "مدل " },
+  { kind: "technical", value: "6GK7343-1GX11-0XE0" },
+  { kind: "text", value: "، پردازندهٔ ارتباطی است." },
+] as const satisfies ProductCopyParagraph;
+
+const batch20Position154Copy = [
+  { kind: "text", value: "مدل " },
+  { kind: "technical", value: "6GK7343-1GX20-0XE0" },
+  { kind: "text", value: "، پردازندهٔ ارتباطی است." },
+] as const satisfies ProductCopyParagraph;
+
 export const persianProductCopyDraftRegistry = [
   {
     productId: "siemens-s7-1200-cpu-211-1ae40",
@@ -3712,5 +3772,85 @@ export const persianProductCopyDraftRegistry = [
         "PM-authorized technical approval in the supplied Batch 19 approval request; draft commit 4a36081e61e9a2ea3fe6e9d403b1edac053f1184; Product siemens-s7-300-cp343-5-fa01-0xe0; MLFB 6GK7343-5FA01-0XE0; product type communication processor. Recording time is an actual UTC observation, not the PM review timestamp. Reused readiness E: Siemens CP 343-5 manual, 05/2023; FA00 section 5.1.1 printed p23; FA01 printed pp3 and 23; reused parsed readiness text; exact MLFB and type only; https://cache.industry.siemens.com/dl/files/841/8778841/att_1143234/v1/GHB_CP343-5_76.pdf. FA00 and FA01 are separate exact identities; no FA01 characteristics are transferred to FA00. Printed pages are not assumed viewer indices. No fresh retrieval or visual inspection. Visual inspection and successful direct-origin HTTP status were NOT OBSERVED. Reported reader 403s, the ST 70 reader size limit (25,626,498 bytes), and the GX30 JavaScript shell are distinct from usable evidence.",
       note: "6GK7343-5FA01-0XE0: PM-authorized exact MLFB identity and communication-processor type only. Model titles, interfaces, protocols, performance, compatibility, lifecycle, certification and availability remain outside approval.",
     },
+  },
+  {
+    productId: "siemens-s7-300-cp343-2-ah00-0xa0",
+    shortDescription: batch20Position145Copy,
+    description: [batch20Position145Copy],
+    provenance: "ai-assisted",
+    linguisticReview: { decision: "pending" },
+    technicalReview: { decision: "pending" },
+  },
+  {
+    productId: "siemens-s7-300-cp343-2-ah01-0xa0",
+    shortDescription: batch20Position146Copy,
+    description: [batch20Position146Copy],
+    provenance: "ai-assisted",
+    linguisticReview: { decision: "pending" },
+    technicalReview: { decision: "pending" },
+  },
+  {
+    productId: "siemens-s7-300-cp343-2p-ah10-0xa0",
+    shortDescription: batch20Position147Copy,
+    description: [batch20Position147Copy],
+    provenance: "ai-assisted",
+    linguisticReview: { decision: "pending" },
+    technicalReview: { decision: "pending" },
+  },
+  {
+    productId: "siemens-s7-300-cp343-2p-ah11-0xa0",
+    shortDescription: batch20Position148Copy,
+    description: [batch20Position148Copy],
+    provenance: "ai-assisted",
+    linguisticReview: { decision: "pending" },
+    technicalReview: { decision: "pending" },
+  },
+  {
+    productId: "siemens-s7-300-cp342-2-ah00-0xa0",
+    shortDescription: batch20Position149Copy,
+    description: [batch20Position149Copy],
+    provenance: "ai-assisted",
+    linguisticReview: { decision: "pending" },
+    technicalReview: { decision: "pending" },
+  },
+  {
+    productId: "siemens-s7-300-cp342-2-ah01-0xa0",
+    shortDescription: batch20Position150Copy,
+    description: [batch20Position150Copy],
+    provenance: "ai-assisted",
+    linguisticReview: { decision: "pending" },
+    technicalReview: { decision: "pending" },
+  },
+  {
+    productId: "siemens-s7-300-cp343-1-iso-ba00-0xe0",
+    shortDescription: batch20Position151Copy,
+    description: [batch20Position151Copy],
+    provenance: "ai-assisted",
+    linguisticReview: { decision: "pending" },
+    technicalReview: { decision: "pending" },
+  },
+  {
+    productId: "siemens-s7-300-cp343-1it-gx00-0xe0",
+    shortDescription: batch20Position152Copy,
+    description: [batch20Position152Copy],
+    provenance: "ai-assisted",
+    linguisticReview: { decision: "pending" },
+    technicalReview: { decision: "pending" },
+  },
+  {
+    productId: "siemens-s7-300-cp343-1it-gx11-0xe0",
+    shortDescription: batch20Position153Copy,
+    description: [batch20Position153Copy],
+    provenance: "ai-assisted",
+    linguisticReview: { decision: "pending" },
+    technicalReview: { decision: "pending" },
+  },
+  {
+    productId: "siemens-s7-300-cp343-1it-gx20-0xe0",
+    shortDescription: batch20Position154Copy,
+    description: [batch20Position154Copy],
+    provenance: "ai-assisted",
+    linguisticReview: { decision: "pending" },
+    technicalReview: { decision: "pending" },
   },
 ] as const satisfies readonly PersianProductCopyOverlay[];
