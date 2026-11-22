@@ -1,6 +1,6 @@
 # Siemiran — Session Handoff
 
-Checkpoint: **2026-11-22 (Asia/Tehran)**. Private Batch 20 merged; documentation
+Checkpoint: **2026-11-22 (Asia/Tehran)**. Private Batch 21 merged; documentation
 is reconciled to its implementation baseline. Recheck actual refs on resume.
 
 ## Identity and source of truth
@@ -17,6 +17,24 @@ For implemented behavior, use the exact committed source and validation first,
 then merged PR/review evidence, then current repository summaries. Dated older
 snapshots preserve history. Maintainer instructions define authorization; a
 historical next-step statement does not authorize new work.
+
+Merged implementation baseline: `c1c1779a4e019b6a49b8fae96dae0762e0b16d50`.
+[PR #99](https://github.com/Siemiran/Siemiran/pull/99), `feat: add Batch 21 Persian product copy`,
+merged at `2026-11-22T20:07:27Z` (Asia/Tehran: `2026-11-22 23:37:27`).
+Sole squash parent: `7da6e286adf85297f1560127f960fc7f0b9b45af`.
+Reviewed/approval head: `a29da517f2f6b7fa96ed5fc64f5b603f6e597c09`.
+Draft: `c267ffa67444d21fdfe816221889246a96571120`.
+Identical reviewed/squash tree: `83923572a8cf05fc8306873db0eb77e5063bed88`.
+Implementation scope: registry `+320/-0`, verifier `+473/-19`, total `+793/-19`.
+The implementation merge/synchronization preserved feature branch refs and
+`origin/HEAD` targeting `origin/main`. Before this documentation branch, clean
+HEAD on main, local main, origin/main and live main matched the implementation
+baseline. Recheck actual refs on resume. This reconciliation uses only the eight
+existing project documents on `docs/reconcile-twenty-first-persian-product-copy-batch`;
+its commit/PR identity and workflow state belong in the task report. No future
+documentation PR number or squash identity is assumed.
+
+### Historical Batch 20 implementation identity
 
 Merged implementation baseline: `541386b2775cf21270a4708bd37a144cac3b90f7`.
 [PR #97](https://github.com/Siemiran/Siemiran/pull/97), `feat: add Batch 20 Persian product copy`,
@@ -177,15 +195,34 @@ Follow [AGENTS.md](../AGENTS.md): Feature First, repository access, one canonica
 
 | Current measure | State |
 | --- | --- |
-| Private drafts / linguistic approvals / technical approvals | 115/382 each |
-| Current dual approvals / pending roles / missing private entries | 115 / zero / 267 |
-| Activation validation / overlayCount / approvedCount / missingIds.length | Invalid / 115 / 115 / 267 |
+| Private drafts / linguistic approvals / technical approvals | 125/382 each |
+| Current dual approvals / pending roles / missing private entries | 125 / zero / 257 |
+| Activation validation / overlayCount / approvedCount / missingIds.length | Invalid / 125 / 125 / 257 |
 | Active overlays / activation capability / publication | 0/382 / absent / disabled |
 | Public FA/EN Product copy | Canonical English/LTR |
 | Overrides | 10 Products / 20 assignments / 7 unique strings |
-| Batch 20 added overrides / global allowlist | Zero / empty |
+| Batch 21 added overrides / global allowlist | Zero / empty |
 | Canonical lifecycle omissions | Exactly eleven, including IM 178-4 |
 | S7-300 lifecycle provenance | 185 Siemens-official verified / 11 explicitly unverified |
+
+Batches 01–21 are complete privately. The ten Batch 21 entries at canonical
+positions 155–164 approve exact MLFB and communication-processor type only.
+Prefixes 6FL/6GK/6AG, both SIPLUS orders versus standard orders and CX00/CX10
+remain distinct; no characteristics transfer between revisions. Twenty separate
+`Siemiran` hash-bound approvals preserve wording, typed segments, bindings, order
+and ai-assisted provenance. Actual UTC recording observations are
+`2026-11-22T19:54:14.570Z` (linguistic) and
+`2026-11-22T19:54:14.594Z` (technical): recording times, not PM review times,
+and separate from GitHub reviews. The implementation comparison preserved all
+115 prior entries and all 125 reviewed payloads and hashes. Twenty independent
+text/segment-kind mutations, two per Product, each staled both roles. Batch 19
+and Batch 20 cohort ordering checks and the exact 115-entry completed cohort
+order remain intact. Explicit disjoint membership separates those 115 IDs from
+ten Batch 21 IDs; a separate assertion checks full 125-entry membership and order.
+Exact bindings, hashes and A–E evidence are in [DATABASE.md](DATABASE.md#2026-11-22---batch-21-private-product-copy-checkpoint-current-state);
+merge identity is in [CHANGELOG.md](CHANGELOG.md#2026-11-22---pr-99-complete-batch-21-private-drafts-and-dual-approvals).
+
+Historical Batch 20 copy checkpoint (115/267):
 
 Batches 01–20 are complete privately. The ten Batch 20 entries at canonical
 positions 145–154 approve exact MLFB and communication-processor type only.
@@ -202,7 +239,7 @@ text/segment-kind mutations, two per Product, each staled both roles. Batch 19's
 ordering assertion checks its completed cohort; a separate assertion checks
 membership and order across the full 115-entry registry. Earlier cohort checks
 and boundaries remain intact. Exact bindings, hashes and A–E evidence are in
-[DATABASE.md](DATABASE.md#2026-11-22---batch-20-private-product-copy-checkpoint-current-state); merge identity is in [CHANGELOG.md](CHANGELOG.md#2026-11-22---pr-97-complete-batch-20-private-drafts-and-dual-approvals).
+[DATABASE.md](DATABASE.md#2026-11-22---batch-20-private-product-copy-checkpoint-historical-snapshot); merge identity is in [CHANGELOG.md](CHANGELOG.md#2026-11-22---pr-97-complete-batch-20-private-drafts-and-dual-approvals-historical-snapshot).
 
 Historical Batch 19 copy checkpoint (105/277):
 
@@ -285,9 +322,9 @@ activation is prohibited. Private drafts authorize neither activation nor public
 
 ## Outstanding work and evidence limits
 
-1. Batch 21 is **unstarted and outside scope**. Product selection, readiness
+1. Batch 22 is **unstarted and outside scope**. Product selection, readiness
    and scope require separate approval; this task selects no products.
-2. Complete the remaining 267 private drafts and both review roles through later
+2. Complete the remaining 257 private drafts and both review roles through later
    separately authorized batches. Public activation and bilingual SEO remain
    separate future tasks; English indexing, hreflang, and localized sitemap work
    remain deferred.
@@ -499,7 +536,25 @@ Batch 15 evidence limits (exact bindings and printed pages in
   Preserve Batch 14's distinct 7ND02 “4 AI” discrepancy and SIPLUS reader
   limitation without assigning the latter an HTTP status.
 
-Batch 20 evidence limits: [DATABASE.md](DATABASE.md#2026-11-22---batch-20-private-product-copy-checkpoint-current-state)
+Batch 21 evidence limits: [DATABASE.md](DATABASE.md#2026-11-22---batch-21-private-product-copy-checkpoint-current-state)
+records A–E and exact bindings. A reuses parsed supplier-declaration identity/type
+rows on printed p12 only, without a certification claim. B reuses parsed exact-order
+rows in routing note 78906145 section 2.3.2.2 and a separate indexed Chinese type
+heading; the parsed heading is garbled and printed pagination is unestablished.
+C reuses parsed exact SIPLUS CX10 identity/type on printed p3 and separate standard
+CX00 predecessor identity in section 7.3.2, printed p54 / Table 7-1, p55; CX00 type
+comes from B, without CX10 characteristics. D reuses parsed exact SIPLUS EX30
+identity/type on printed p3. E reuses parsed identity corroboration on printed p1/2
+for distinct EX00/EX10/EX20/HX00; their type comes from B. Both SIPLUS orders remain
+distinct from standard orders, as do 6FL/6GK/6AG identities and CX00/CX10 revisions.
+The `IE_CP_S7-300_e.pdf` and `hy_S7-CPs-IE_76.pdf` reader 403s supplied no usable
+evidence; they are separate from usable parsed/indexed sources. Printed pages are
+not assumed viewer indices. Visual inspection and successful direct-origin HTTP
+status remain **NOT OBSERVED**. No fresh retrieval or manufacturer research is
+claimed, and no characteristics transfer between revisions. Earlier evidence
+qualifications remain intact.
+
+Historical Batch 20 evidence limits: [DATABASE.md](DATABASE.md#2026-11-22---batch-20-private-product-copy-checkpoint-historical-snapshot)
 records A–E and exact bindings. A combines parsed PCS 7 library identity text
 (section 1.7.2, printed p19) with indexed-only system-manual type text
 (section 6.1.3.2, printed p94). B is indexed-only IC 10 (2025) ordering/type text,
@@ -585,6 +640,34 @@ verified download/relation population, and owner-selected catalog expansion. See
 [CHANGELOG.md](CHANGELOG.md) for details and dated history.
 
 ## Validation applicability
+
+**PASS (REUSED)** - Batch 21's Product-copy validator, focused lint on both
+implementation files and production build each exited `0` at reviewed head
+`a29da517f2f6b7fa96ed5fc64f5b603f6e597c09`. The build included TypeScript and
+774/774 static pages. Reviewed head and squash share exact tree
+`83923572a8cf05fc8306873db0eb77e5063bed88`. This documentation change leaves all
+application, canonical data, dependency and build content unchanged, preserving
+those results' applicability. Application checks, production hash audits and
+manufacturer research/retrieval are **NOT RUN** in this documentation task.
+
+The recorded implementation comparison preserved all 115 prior entries in order,
+with unchanged content, review metadata and production hashes. All 125 reviewed
+draft payloads, typed segments, bindings, order, provenance and hashes remained
+unchanged from draft `c267ffa67444d21fdfe816221889246a96571120`.
+Twenty independent text/segment-kind mutations, two per Product, each staled
+both roles. These are reused implementation results, not new application checks
+or hash audits. Batch 19 and Batch 20 cohort ordering checks remain scoped;
+the completed-through-Batch-20 cohort retains its exact 115-entry order.
+Explicit disjoint membership separates those 115 completed IDs from ten Batch 21
+IDs; a separate assertion verifies membership and order across the full 125-entry
+registry. Earlier cohort checks and boundaries remain intact.
+
+Recorded Batch 21 implementation CI was absent on the reviewed head and squash:
+zero workflow runs, check runs and statuses, with empty rollup and combined
+`pending`; this is absent CI, not passing CI. Fresh documentation checks and
+documentation PR/CI observations belong in the task report.
+
+### Historical Batch 20 checkpoint and validation
 
 **PASS (REUSED)** - Batch 20's Product-copy validator, focused lint and
 production build each exited `0` at reviewed head
@@ -1042,7 +1125,7 @@ counts and evidence; they are not current coverage or new task executions.
 
 - Record branch, exact HEAD, sole parent/base, index/worktree clean or dirty state,
   and live/local `main` refs. The durable implementation baseline is
-  `541386b2775cf21270a4708bd37a144cac3b90f7`; task-specific workflow status and
+  `c1c1779a4e019b6a49b8fae96dae0762e0b16d50`; task-specific workflow status and
   commit/PR identities belong in the task report rather than this file.
 - Identify existing task branches, patches, and commits before starting; preserve
   identifiable partial work and finish only missing authorized work. If refs or
@@ -1053,7 +1136,7 @@ counts and evidence; they are not current coverage or new task executions.
 - Record validation commands, exit codes, NEW versus REUSED status, exact checked
   content, and evidence limitations. Check Markdown links/anchors, whitespace
   and unchanged outside content; report actual results and final clean state.
-- Batch 21 product selection/readiness/scope remains unstarted and outside
+- Batch 22 product selection/readiness/scope remains unstarted and outside
   scope, requiring separate approval. Overlay activation,
   publication, English indexing and completed-copy website inspection remain
   separately authorized future work.

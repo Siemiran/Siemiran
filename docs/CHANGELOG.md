@@ -3,7 +3,62 @@
 This file records completed repository changes. The newest entry records the
 current implementation baseline; older dated entries are historical snapshots.
 
-## 2026-11-22 - PR #97: Complete Batch 20 Private Drafts and Dual Approvals
+## 2026-11-22 - PR #99: Complete Batch 21 Private Drafts and Dual Approvals
+
+- [PR #99](https://github.com/Siemiran/Siemiran/pull/99), `feat: add Batch 21 Persian product copy`, merged at
+  `2026-11-22T20:07:27Z` / `2026-11-22 23:37:27` Asia/Tehran as
+  `c1c1779a4e019b6a49b8fae96dae0762e0b16d50`. Sole parent:
+  `7da6e286adf85297f1560127f960fc7f0b9b45af`. Reviewed/approval head:
+  `a29da517f2f6b7fa96ed5fc64f5b603f6e597c09`; draft:
+  `c267ffa67444d21fdfe816221889246a96571120`. Reviewed head and squash share
+  tree `83923572a8cf05fc8306873db0eb77e5063bed88`.
+- Two-file implementation scope: registry +320/-0, verifier +473/-19; total +793/-19.
+  Canonical positions 155–164 approve exact MLFB and communication-processor type
+  only. Prefixes 6FL/6GK/6AG, both SIPLUS orders versus standard orders, CX00/CX10
+  and other revisions remain distinct; no characteristics transfer between variants.
+  Exact bindings, recorded hashes and qualified A–E evidence are in [DATABASE.md](DATABASE.md#2026-11-22---batch-21-private-product-copy-checkpoint-current-state).
+- Twenty separate `Siemiran` hash-bound approvals record actual UTC observations
+  `2026-11-22T19:54:14.570Z` (linguistic) and
+  `2026-11-22T19:54:14.594Z` (technical). These are recording times, not PM review
+  times, and are separate from GitHub reviews. The implementation comparison
+  preserved all 115 prior entries in order with unchanged content, review metadata
+  and hashes, and all 125 reviewed payloads and hashes. Twenty independent
+  text/segment-kind mutations, two per Product, each staled both roles.
+- Batch 19 and Batch 20 cohort ordering checks remain scoped, retaining the exact
+  115-entry completed-through-Batch-20 order. Explicit disjoint membership separates
+  those 115 IDs from ten Batch 21 IDs; a separate assertion verifies membership
+  and order across the full 125-entry registry. Earlier checks/boundaries remain intact.
+- At merge: 382 Products (186 S7-1200 / 196 S7-300), 125 private drafts, 125 current
+  approvals per role, 125 dual approvals, zero pending roles and 257 Products without
+  drafts. Activation remains invalid at `overlayCount=125`, `approvedCount=125`,
+  `missingIds.length=257`, capability absent. Active overlays remain zero,
+  publication disabled and public FA/EN copy canonical English/LTR. The full
+  382/382 current dual-approval gate plus separate launch authorization remain required.
+- Overrides remain 10 Products / 20 assignments / 7 unique strings, with an empty
+  global allowlist; Batch 21 added none. Eleven lifecycle omissions and the separate
+  S7-300 provenance classification of 185/11 remain unchanged.
+- The merged implementation identity, sole parent, subject, tree and scope match
+  PR #99. Its recorded synchronization preserved feature branch refs and left
+  main clean. This reconciliation changes documentation only.
+- **PASS (REUSED)** - Final Product-copy validator, focused lint and production
+  build including TypeScript each exited `0`; 774/774 static pages were generated.
+  Exact reviewed-tree equality and unchanged application, dependency and build
+  content preserve applicability. Application checks, hash audits and manufacturer
+  research/retrieval are **NOT RUN** in this documentation task.
+- Implementation CI on reviewed head and squash was absent: zero workflow runs,
+  check runs and statuses, empty rollup, combined `pending`; this is not passing CI.
+  Fresh documentation checks and documentation PR/CI state belong in the task report.
+- Reused A–E evidence limits the supplier declaration to identity/type on printed
+  p12, separates routing note 78906145 parsed order rows from the indexed Chinese
+  type heading (printed pagination unestablished), and retains the distinct SIPLUS
+  orders and CX00 predecessor. Both reader 403s supplied no usable evidence.
+  Visual inspection and successful direct-origin HTTP status remain **NOT OBSERVED**;
+  no fresh retrieval is claimed. Broader characteristics and certification are excluded.
+- Batch 20's 115/267 checkpoint is historical. Batch 22 is unstarted; Admin Panel
+  and Automation remain gated, and completed-copy website inspection remains pending.
+  Durable resume facts are in [SESSION_HANDOFF.md](SESSION_HANDOFF.md).
+
+## 2026-11-22 - PR #97: Complete Batch 20 Private Drafts and Dual Approvals (Historical Snapshot)
 
 - [PR #97](https://github.com/Siemiran/Siemiran/pull/97), `feat: add Batch 20 Persian product copy`, merged at
   `2026-11-22T19:01:41Z` / `2026-11-22 22:31:41` Asia/Tehran as
@@ -16,7 +71,7 @@ current implementation baseline; older dated entries are historical snapshots.
   The ten canonical positions 145–154 approve exact MLFB and communication-processor
   type only. The AS-Interface versus ISO/IT boundary and GX00/GX11/GX20 identities
   remain distinct; no characteristics are transferred between variants. Exact
-  bindings, recorded hashes and qualified A–E evidence are in [DATABASE.md](DATABASE.md#2026-11-22---batch-20-private-product-copy-checkpoint-current-state).
+  bindings, recorded hashes and qualified A–E evidence are in [DATABASE.md](DATABASE.md#2026-11-22---batch-20-private-product-copy-checkpoint-historical-snapshot).
 - Twenty separate `Siemiran` hash-bound approvals record actual UTC observations
   `2026-11-22T18:39:22.991Z` (linguistic) and
   `2026-11-22T18:39:23.902Z` (technical). These are recording times, not PM review
