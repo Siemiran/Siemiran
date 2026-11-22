@@ -4098,79 +4098,259 @@ export const persianProductCopyDraftRegistry = [
     shortDescription: batch21Position155Copy,
     description: [batch21Position155Copy],
     provenance: "ai-assisted",
-    linguisticReview: { decision: "pending" },
-    technicalReview: { decision: "pending" },
+    linguisticReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-11-22T19:54:14.570Z",
+      reviewedContentHash:
+        "sha256:88359626f1ad601d449430b1b90dfba03a9280504c9ca14429ec40631a9dd0b1",
+      evidenceRef:
+        "PM-authorized linguistic approval in the supplied Batch 21 approval request; draft commit c267ffa67444d21fdfe816221889246a96571120; Product siemens-s7-300-cp343-1-advanced-gx21-0xe0; MLFB 6GK7343-1GX21-0XE0; product type communication processor. Recording time is an actual UTC observation, not the PM review timestamp. Registry role approvals are separate from GitHub reviews.",
+      note: "6GK7343-1GX21-0XE0: PM-authorized exact Persian wording, punctuation and spacing, NFC normalization, typed MLFB isolation and segment boundaries in identical three-segment short and single-paragraph long descriptions.",
+    },
+    technicalReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-11-22T19:54:14.594Z",
+      reviewedContentHash:
+        "sha256:88359626f1ad601d449430b1b90dfba03a9280504c9ca14429ec40631a9dd0b1",
+      evidenceRef:
+        "PM-authorized technical approval in the supplied Batch 21 approval request; draft commit c267ffa67444d21fdfe816221889246a96571120; Product siemens-s7-300-cp343-1-advanced-gx21-0xe0; MLFB 6GK7343-1GX21-0XE0; product type communication processor. Recording time is an actual UTC observation, not the PM review timestamp. Registry role approvals are separate from GitHub reviews. Reused readiness A: Siemens supplier declaration, February 2025, printed p12, CP300 table; exact GX21, FX00 and BACnet identity/type rows only; no certification claim; reused parsed readiness text; no certification claim; https://cache.industry.siemens.com/dl/files/142/109983142/att_1315774/v1/c02-suppliers_declaration_of_conformity_2025-02-05.pdf. Exact 6FL, 6GK and 6AG identities remain separate; CX00 is distinct from CX10, and both SIPLUS orders remain distinct from standard orders. No characteristics are transferred between variants. Printed pages are not assumed viewer indices. No fresh retrieval or visual inspection. Visual inspection and successful direct-origin HTTP status were NOT OBSERVED. The IE_CP_S7-300_e.pdf canonical support-manual request returned a reader 403 and supplied no usable evidence. The hy_S7-CPs-IE_76.pdf canonical support-manual request returned a reader 403 and supplied no usable evidence.",
+      note: "6GK7343-1GX21-0XE0: PM-authorized exact MLFB identity and communication-processor type only. Model titles, interfaces, protocols, performance, compatibility, lifecycle, certification and availability remain outside approval.",
+    },
   },
   {
     productId: "siemens-s7-300-cp343-1-erpc-fx00-0xe0",
     shortDescription: batch21Position156Copy,
     description: [batch21Position156Copy],
     provenance: "ai-assisted",
-    linguisticReview: { decision: "pending" },
-    technicalReview: { decision: "pending" },
+    linguisticReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-11-22T19:54:14.570Z",
+      reviewedContentHash:
+        "sha256:8f0dee9c1b276a78e5b1483357be30bb6a95a7cc2c4f58c610b38aae9a9673ad",
+      evidenceRef:
+        "PM-authorized linguistic approval in the supplied Batch 21 approval request; draft commit c267ffa67444d21fdfe816221889246a96571120; Product siemens-s7-300-cp343-1-erpc-fx00-0xe0; MLFB 6GK7343-1FX00-0XE0; product type communication processor. Recording time is an actual UTC observation, not the PM review timestamp. Registry role approvals are separate from GitHub reviews.",
+      note: "6GK7343-1FX00-0XE0: PM-authorized exact Persian wording, punctuation and spacing, NFC normalization, typed MLFB isolation and segment boundaries in identical three-segment short and single-paragraph long descriptions.",
+    },
+    technicalReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-11-22T19:54:14.594Z",
+      reviewedContentHash:
+        "sha256:8f0dee9c1b276a78e5b1483357be30bb6a95a7cc2c4f58c610b38aae9a9673ad",
+      evidenceRef:
+        "PM-authorized technical approval in the supplied Batch 21 approval request; draft commit c267ffa67444d21fdfe816221889246a96571120; Product siemens-s7-300-cp343-1-erpc-fx00-0xe0; MLFB 6GK7343-1FX00-0XE0; product type communication processor. Recording time is an actual UTC observation, not the PM review timestamp. Registry role approvals are separate from GitHub reviews. Reused readiness A: Siemens supplier declaration, February 2025, printed p12, CP300 table; exact GX21, FX00 and BACnet identity/type rows only; no certification claim; reused parsed readiness text; no certification claim; https://cache.industry.siemens.com/dl/files/142/109983142/att_1315774/v1/c02-suppliers_declaration_of_conformity_2025-02-05.pdf. Exact 6FL, 6GK and 6AG identities remain separate; CX00 is distinct from CX10, and both SIPLUS orders remain distinct from standard orders. No characteristics are transferred between variants. Printed pages are not assumed viewer indices. No fresh retrieval or visual inspection. Visual inspection and successful direct-origin HTTP status were NOT OBSERVED. The IE_CP_S7-300_e.pdf canonical support-manual request returned a reader 403 and supplied no usable evidence. The hy_S7-CPs-IE_76.pdf canonical support-manual request returned a reader 403 and supplied no usable evidence.",
+      note: "6GK7343-1FX00-0XE0: PM-authorized exact MLFB identity and communication-processor type only. Model titles, interfaces, protocols, performance, compatibility, lifecycle, certification and availability remain outside approval.",
+    },
   },
   {
     productId: "siemens-s7-300-cp343-1-bacnet-cx10-0xe0",
     shortDescription: batch21Position157Copy,
     description: [batch21Position157Copy],
     provenance: "ai-assisted",
-    linguisticReview: { decision: "pending" },
-    technicalReview: { decision: "pending" },
+    linguisticReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-11-22T19:54:14.570Z",
+      reviewedContentHash:
+        "sha256:c57c0c123fbabfe64d0630d6268347caaa00fb2056c14bdee09969cce0e3cbb0",
+      evidenceRef:
+        "PM-authorized linguistic approval in the supplied Batch 21 approval request; draft commit c267ffa67444d21fdfe816221889246a96571120; Product siemens-s7-300-cp343-1-bacnet-cx10-0xe0; MLFB 6FL4343-1CX10-0XE0; product type communication processor. Recording time is an actual UTC observation, not the PM review timestamp. Registry role approvals are separate from GitHub reviews.",
+      note: "6FL4343-1CX10-0XE0: PM-authorized exact Persian wording, punctuation and spacing, NFC normalization, typed MLFB isolation and segment boundaries in identical three-segment short and single-paragraph long descriptions.",
+    },
+    technicalReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-11-22T19:54:14.594Z",
+      reviewedContentHash:
+        "sha256:c57c0c123fbabfe64d0630d6268347caaa00fb2056c14bdee09969cce0e3cbb0",
+      evidenceRef:
+        "PM-authorized technical approval in the supplied Batch 21 approval request; draft commit c267ffa67444d21fdfe816221889246a96571120; Product siemens-s7-300-cp343-1-bacnet-cx10-0xe0; MLFB 6FL4343-1CX10-0XE0; product type communication processor. Recording time is an actual UTC observation, not the PM review timestamp. Registry role approvals are separate from GitHub reviews. Reused readiness A: Siemens supplier declaration, February 2025, printed p12, CP300 table; exact GX21, FX00 and BACnet identity/type rows only; no certification claim; reused parsed readiness text; no certification claim; https://cache.industry.siemens.com/dl/files/142/109983142/att_1315774/v1/c02-suppliers_declaration_of_conformity_2025-02-05.pdf. Exact 6FL, 6GK and 6AG identities remain separate; CX00 is distinct from CX10, and both SIPLUS orders remain distinct from standard orders. No characteristics are transferred between variants. Printed pages are not assumed viewer indices. No fresh retrieval or visual inspection. Visual inspection and successful direct-origin HTTP status were NOT OBSERVED. The IE_CP_S7-300_e.pdf canonical support-manual request returned a reader 403 and supplied no usable evidence. The hy_S7-CPs-IE_76.pdf canonical support-manual request returned a reader 403 and supplied no usable evidence.",
+      note: "6FL4343-1CX10-0XE0: PM-authorized exact MLFB identity and communication-processor type only. Model titles, interfaces, protocols, performance, compatibility, lifecycle, certification and availability remain outside approval.",
+    },
   },
   {
     productId: "siemens-s7-300-cp343-1-lean-cx00-0xe0",
     shortDescription: batch21Position158Copy,
     description: [batch21Position158Copy],
     provenance: "ai-assisted",
-    linguisticReview: { decision: "pending" },
-    technicalReview: { decision: "pending" },
+    linguisticReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-11-22T19:54:14.570Z",
+      reviewedContentHash:
+        "sha256:6dba0342353992e6f23eee26807b21b47775429eefe35b8968b8d9563e3ef99f",
+      evidenceRef:
+        "PM-authorized linguistic approval in the supplied Batch 21 approval request; draft commit c267ffa67444d21fdfe816221889246a96571120; Product siemens-s7-300-cp343-1-lean-cx00-0xe0; MLFB 6GK7343-1CX00-0XE0; product type communication processor. Recording time is an actual UTC observation, not the PM review timestamp. Registry role approvals are separate from GitHub reviews.",
+      note: "6GK7343-1CX00-0XE0: PM-authorized exact Persian wording, punctuation and spacing, NFC normalization, typed MLFB isolation and segment boundaries in identical three-segment short and single-paragraph long descriptions.",
+    },
+    technicalReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-11-22T19:54:14.594Z",
+      reviewedContentHash:
+        "sha256:6dba0342353992e6f23eee26807b21b47775429eefe35b8968b8d9563e3ef99f",
+      evidenceRef:
+        "PM-authorized technical approval in the supplied Batch 21 approval request; draft commit c267ffa67444d21fdfe816221889246a96571120; Product siemens-s7-300-cp343-1-lean-cx00-0xe0; MLFB 6GK7343-1CX00-0XE0; product type communication processor. Recording time is an actual UTC observation, not the PM review timestamp. Registry role approvals are separate from GitHub reviews. Reused readiness B: Siemens S7-routing note 78906145, section 2.3.2.2, S7 CP communication-processor table; printed pagination unestablished; reused parsed exact-order rows and indexed Chinese type heading; the parsed Chinese heading is garbled; printed pagination unestablished; https://cache.industry.siemens.com/dl/files/145/78906145/att_76780/v1/78906145.pdf. Reused readiness C: Siemens CP 343-1 Lean manual, 12/2018, C79000-G8976-C198-08; printed p3 for exact SIPLUS identity/type; section 7.3.2 printed p54 and Table 7-1 printed p55 separately identify CX00 as a predecessor; reused parsed readiness text; SIPLUS and standard codes remain distinct; no CX10 characteristics are transferred to CX00; https://cache.industry.siemens.com/dl/files/456/23643456/att_973772/v1/GH_CP343-1-Lean-CX10_76.pdf. Exact 6FL, 6GK and 6AG identities remain separate; CX00 is distinct from CX10, and both SIPLUS orders remain distinct from standard orders. No characteristics are transferred between variants. Printed pages are not assumed viewer indices. No fresh retrieval or visual inspection. Visual inspection and successful direct-origin HTTP status were NOT OBSERVED. The IE_CP_S7-300_e.pdf canonical support-manual request returned a reader 403 and supplied no usable evidence. The hy_S7-CPs-IE_76.pdf canonical support-manual request returned a reader 403 and supplied no usable evidence.",
+      note: "6GK7343-1CX00-0XE0: PM-authorized exact MLFB identity and communication-processor type only. Model titles, interfaces, protocols, performance, compatibility, lifecycle, certification and availability remain outside approval.",
+    },
   },
   {
     productId: "siemens-siplus-s7-300-cp343-1-lean-cx10-2xe0",
     shortDescription: batch21Position159Copy,
     description: [batch21Position159Copy],
     provenance: "ai-assisted",
-    linguisticReview: { decision: "pending" },
-    technicalReview: { decision: "pending" },
+    linguisticReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-11-22T19:54:14.570Z",
+      reviewedContentHash:
+        "sha256:95424da2b03ded957fc7e65702fbb6c90a174ed42c3fbe21b4871da4b2edfa94",
+      evidenceRef:
+        "PM-authorized linguistic approval in the supplied Batch 21 approval request; draft commit c267ffa67444d21fdfe816221889246a96571120; Product siemens-siplus-s7-300-cp343-1-lean-cx10-2xe0; MLFB 6AG1343-1CX10-2XE0; product type communication processor. Recording time is an actual UTC observation, not the PM review timestamp. Registry role approvals are separate from GitHub reviews.",
+      note: "6AG1343-1CX10-2XE0: PM-authorized exact Persian wording, punctuation and spacing, NFC normalization, typed MLFB isolation and segment boundaries in identical three-segment short and single-paragraph long descriptions.",
+    },
+    technicalReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-11-22T19:54:14.594Z",
+      reviewedContentHash:
+        "sha256:95424da2b03ded957fc7e65702fbb6c90a174ed42c3fbe21b4871da4b2edfa94",
+      evidenceRef:
+        "PM-authorized technical approval in the supplied Batch 21 approval request; draft commit c267ffa67444d21fdfe816221889246a96571120; Product siemens-siplus-s7-300-cp343-1-lean-cx10-2xe0; MLFB 6AG1343-1CX10-2XE0; product type communication processor. Recording time is an actual UTC observation, not the PM review timestamp. Registry role approvals are separate from GitHub reviews. Reused readiness C: Siemens CP 343-1 Lean manual, 12/2018, C79000-G8976-C198-08; printed p3 for exact SIPLUS identity/type; section 7.3.2 printed p54 and Table 7-1 printed p55 separately identify CX00 as a predecessor; reused parsed readiness text; SIPLUS and standard codes remain distinct; no CX10 characteristics are transferred to CX00; https://cache.industry.siemens.com/dl/files/456/23643456/att_973772/v1/GH_CP343-1-Lean-CX10_76.pdf. Exact 6FL, 6GK and 6AG identities remain separate; CX00 is distinct from CX10, and both SIPLUS orders remain distinct from standard orders. No characteristics are transferred between variants. Printed pages are not assumed viewer indices. No fresh retrieval or visual inspection. Visual inspection and successful direct-origin HTTP status were NOT OBSERVED. The IE_CP_S7-300_e.pdf canonical support-manual request returned a reader 403 and supplied no usable evidence. The hy_S7-CPs-IE_76.pdf canonical support-manual request returned a reader 403 and supplied no usable evidence.",
+      note: "6AG1343-1CX10-2XE0: PM-authorized exact MLFB identity and communication-processor type only. Model titles, interfaces, protocols, performance, compatibility, lifecycle, certification and availability remain outside approval.",
+    },
   },
   {
     productId: "siemens-s7-300-cp343-1-ex00-0xe0",
     shortDescription: batch21Position160Copy,
     description: [batch21Position160Copy],
     provenance: "ai-assisted",
-    linguisticReview: { decision: "pending" },
-    technicalReview: { decision: "pending" },
+    linguisticReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-11-22T19:54:14.570Z",
+      reviewedContentHash:
+        "sha256:59a970a5f52934f6d312282b0e9f6ce71399335e6b3954371758c5de4ecc9a8e",
+      evidenceRef:
+        "PM-authorized linguistic approval in the supplied Batch 21 approval request; draft commit c267ffa67444d21fdfe816221889246a96571120; Product siemens-s7-300-cp343-1-ex00-0xe0; MLFB 6GK7343-1EX00-0XE0; product type communication processor. Recording time is an actual UTC observation, not the PM review timestamp. Registry role approvals are separate from GitHub reviews.",
+      note: "6GK7343-1EX00-0XE0: PM-authorized exact Persian wording, punctuation and spacing, NFC normalization, typed MLFB isolation and segment boundaries in identical three-segment short and single-paragraph long descriptions.",
+    },
+    technicalReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-11-22T19:54:14.594Z",
+      reviewedContentHash:
+        "sha256:59a970a5f52934f6d312282b0e9f6ce71399335e6b3954371758c5de4ecc9a8e",
+      evidenceRef:
+        "PM-authorized technical approval in the supplied Batch 21 approval request; draft commit c267ffa67444d21fdfe816221889246a96571120; Product siemens-s7-300-cp343-1-ex00-0xe0; MLFB 6GK7343-1EX00-0XE0; product type communication processor. Recording time is an actual UTC observation, not the PM review timestamp. Registry role approvals are separate from GitHub reviews. Reused readiness B: Siemens S7-routing note 78906145, section 2.3.2.2, S7 CP communication-processor table; printed pagination unestablished; reused parsed exact-order rows and indexed Chinese type heading; the parsed Chinese heading is garbled; printed pagination unestablished; https://cache.industry.siemens.com/dl/files/145/78906145/att_76780/v1/78906145.pdf. Reused readiness E: Siemens routing overview, Entry 584459, printed p1/2; separate exact EX00, EX10, EX20 and HX00 identities; reused parsed readiness identity corroboration only; product type comes from evidence B; https://cache.industry.siemens.com/dl/files/459/584459/att_109849/v7/584459_overview_cps_en.pdf. Exact 6FL, 6GK and 6AG identities remain separate; CX00 is distinct from CX10, and both SIPLUS orders remain distinct from standard orders. No characteristics are transferred between variants. Printed pages are not assumed viewer indices. No fresh retrieval or visual inspection. Visual inspection and successful direct-origin HTTP status were NOT OBSERVED. The IE_CP_S7-300_e.pdf canonical support-manual request returned a reader 403 and supplied no usable evidence. The hy_S7-CPs-IE_76.pdf canonical support-manual request returned a reader 403 and supplied no usable evidence.",
+      note: "6GK7343-1EX00-0XE0: PM-authorized exact MLFB identity and communication-processor type only. Model titles, interfaces, protocols, performance, compatibility, lifecycle, certification and availability remain outside approval.",
+    },
   },
   {
     productId: "siemens-s7-300-cp343-1-ex10-0xe0",
     shortDescription: batch21Position161Copy,
     description: [batch21Position161Copy],
     provenance: "ai-assisted",
-    linguisticReview: { decision: "pending" },
-    technicalReview: { decision: "pending" },
+    linguisticReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-11-22T19:54:14.570Z",
+      reviewedContentHash:
+        "sha256:561f3d48f5cc5d386586b9750871d16857a6297b7d9656ce284a32e7867ef3d9",
+      evidenceRef:
+        "PM-authorized linguistic approval in the supplied Batch 21 approval request; draft commit c267ffa67444d21fdfe816221889246a96571120; Product siemens-s7-300-cp343-1-ex10-0xe0; MLFB 6GK7343-1EX10-0XE0; product type communication processor. Recording time is an actual UTC observation, not the PM review timestamp. Registry role approvals are separate from GitHub reviews.",
+      note: "6GK7343-1EX10-0XE0: PM-authorized exact Persian wording, punctuation and spacing, NFC normalization, typed MLFB isolation and segment boundaries in identical three-segment short and single-paragraph long descriptions.",
+    },
+    technicalReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-11-22T19:54:14.594Z",
+      reviewedContentHash:
+        "sha256:561f3d48f5cc5d386586b9750871d16857a6297b7d9656ce284a32e7867ef3d9",
+      evidenceRef:
+        "PM-authorized technical approval in the supplied Batch 21 approval request; draft commit c267ffa67444d21fdfe816221889246a96571120; Product siemens-s7-300-cp343-1-ex10-0xe0; MLFB 6GK7343-1EX10-0XE0; product type communication processor. Recording time is an actual UTC observation, not the PM review timestamp. Registry role approvals are separate from GitHub reviews. Reused readiness B: Siemens S7-routing note 78906145, section 2.3.2.2, S7 CP communication-processor table; printed pagination unestablished; reused parsed exact-order rows and indexed Chinese type heading; the parsed Chinese heading is garbled; printed pagination unestablished; https://cache.industry.siemens.com/dl/files/145/78906145/att_76780/v1/78906145.pdf. Reused readiness E: Siemens routing overview, Entry 584459, printed p1/2; separate exact EX00, EX10, EX20 and HX00 identities; reused parsed readiness identity corroboration only; product type comes from evidence B; https://cache.industry.siemens.com/dl/files/459/584459/att_109849/v7/584459_overview_cps_en.pdf. Exact 6FL, 6GK and 6AG identities remain separate; CX00 is distinct from CX10, and both SIPLUS orders remain distinct from standard orders. No characteristics are transferred between variants. Printed pages are not assumed viewer indices. No fresh retrieval or visual inspection. Visual inspection and successful direct-origin HTTP status were NOT OBSERVED. The IE_CP_S7-300_e.pdf canonical support-manual request returned a reader 403 and supplied no usable evidence. The hy_S7-CPs-IE_76.pdf canonical support-manual request returned a reader 403 and supplied no usable evidence.",
+      note: "6GK7343-1EX10-0XE0: PM-authorized exact MLFB identity and communication-processor type only. Model titles, interfaces, protocols, performance, compatibility, lifecycle, certification and availability remain outside approval.",
+    },
   },
   {
     productId: "siemens-s7-300-cp343-1-ex20-0xe0",
     shortDescription: batch21Position162Copy,
     description: [batch21Position162Copy],
     provenance: "ai-assisted",
-    linguisticReview: { decision: "pending" },
-    technicalReview: { decision: "pending" },
+    linguisticReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-11-22T19:54:14.570Z",
+      reviewedContentHash:
+        "sha256:ff7cfa1bea74e03d43013facefcc5ca24501b40994540e8a58667401059442d0",
+      evidenceRef:
+        "PM-authorized linguistic approval in the supplied Batch 21 approval request; draft commit c267ffa67444d21fdfe816221889246a96571120; Product siemens-s7-300-cp343-1-ex20-0xe0; MLFB 6GK7343-1EX20-0XE0; product type communication processor. Recording time is an actual UTC observation, not the PM review timestamp. Registry role approvals are separate from GitHub reviews.",
+      note: "6GK7343-1EX20-0XE0: PM-authorized exact Persian wording, punctuation and spacing, NFC normalization, typed MLFB isolation and segment boundaries in identical three-segment short and single-paragraph long descriptions.",
+    },
+    technicalReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-11-22T19:54:14.594Z",
+      reviewedContentHash:
+        "sha256:ff7cfa1bea74e03d43013facefcc5ca24501b40994540e8a58667401059442d0",
+      evidenceRef:
+        "PM-authorized technical approval in the supplied Batch 21 approval request; draft commit c267ffa67444d21fdfe816221889246a96571120; Product siemens-s7-300-cp343-1-ex20-0xe0; MLFB 6GK7343-1EX20-0XE0; product type communication processor. Recording time is an actual UTC observation, not the PM review timestamp. Registry role approvals are separate from GitHub reviews. Reused readiness B: Siemens S7-routing note 78906145, section 2.3.2.2, S7 CP communication-processor table; printed pagination unestablished; reused parsed exact-order rows and indexed Chinese type heading; the parsed Chinese heading is garbled; printed pagination unestablished; https://cache.industry.siemens.com/dl/files/145/78906145/att_76780/v1/78906145.pdf. Reused readiness E: Siemens routing overview, Entry 584459, printed p1/2; separate exact EX00, EX10, EX20 and HX00 identities; reused parsed readiness identity corroboration only; product type comes from evidence B; https://cache.industry.siemens.com/dl/files/459/584459/att_109849/v7/584459_overview_cps_en.pdf. Exact 6FL, 6GK and 6AG identities remain separate; CX00 is distinct from CX10, and both SIPLUS orders remain distinct from standard orders. No characteristics are transferred between variants. Printed pages are not assumed viewer indices. No fresh retrieval or visual inspection. Visual inspection and successful direct-origin HTTP status were NOT OBSERVED. The IE_CP_S7-300_e.pdf canonical support-manual request returned a reader 403 and supplied no usable evidence. The hy_S7-CPs-IE_76.pdf canonical support-manual request returned a reader 403 and supplied no usable evidence.",
+      note: "6GK7343-1EX20-0XE0: PM-authorized exact MLFB identity and communication-processor type only. Model titles, interfaces, protocols, performance, compatibility, lifecycle, certification and availability remain outside approval.",
+    },
   },
   {
     productId: "siemens-s7-300-cp343-1-pn-hx00-0xe0",
     shortDescription: batch21Position163Copy,
     description: [batch21Position163Copy],
     provenance: "ai-assisted",
-    linguisticReview: { decision: "pending" },
-    technicalReview: { decision: "pending" },
+    linguisticReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-11-22T19:54:14.570Z",
+      reviewedContentHash:
+        "sha256:163daf3e1695e70083332b8e097c862d553855424edc21d6b2fdeff79a6bda54",
+      evidenceRef:
+        "PM-authorized linguistic approval in the supplied Batch 21 approval request; draft commit c267ffa67444d21fdfe816221889246a96571120; Product siemens-s7-300-cp343-1-pn-hx00-0xe0; MLFB 6GK7343-1HX00-0XE0; product type communication processor. Recording time is an actual UTC observation, not the PM review timestamp. Registry role approvals are separate from GitHub reviews.",
+      note: "6GK7343-1HX00-0XE0: PM-authorized exact Persian wording, punctuation and spacing, NFC normalization, typed MLFB isolation and segment boundaries in identical three-segment short and single-paragraph long descriptions.",
+    },
+    technicalReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-11-22T19:54:14.594Z",
+      reviewedContentHash:
+        "sha256:163daf3e1695e70083332b8e097c862d553855424edc21d6b2fdeff79a6bda54",
+      evidenceRef:
+        "PM-authorized technical approval in the supplied Batch 21 approval request; draft commit c267ffa67444d21fdfe816221889246a96571120; Product siemens-s7-300-cp343-1-pn-hx00-0xe0; MLFB 6GK7343-1HX00-0XE0; product type communication processor. Recording time is an actual UTC observation, not the PM review timestamp. Registry role approvals are separate from GitHub reviews. Reused readiness B: Siemens S7-routing note 78906145, section 2.3.2.2, S7 CP communication-processor table; printed pagination unestablished; reused parsed exact-order rows and indexed Chinese type heading; the parsed Chinese heading is garbled; printed pagination unestablished; https://cache.industry.siemens.com/dl/files/145/78906145/att_76780/v1/78906145.pdf. Reused readiness E: Siemens routing overview, Entry 584459, printed p1/2; separate exact EX00, EX10, EX20 and HX00 identities; reused parsed readiness identity corroboration only; product type comes from evidence B; https://cache.industry.siemens.com/dl/files/459/584459/att_109849/v7/584459_overview_cps_en.pdf. Exact 6FL, 6GK and 6AG identities remain separate; CX00 is distinct from CX10, and both SIPLUS orders remain distinct from standard orders. No characteristics are transferred between variants. Printed pages are not assumed viewer indices. No fresh retrieval or visual inspection. Visual inspection and successful direct-origin HTTP status were NOT OBSERVED. The IE_CP_S7-300_e.pdf canonical support-manual request returned a reader 403 and supplied no usable evidence. The hy_S7-CPs-IE_76.pdf canonical support-manual request returned a reader 403 and supplied no usable evidence.",
+      note: "6GK7343-1HX00-0XE0: PM-authorized exact MLFB identity and communication-processor type only. Model titles, interfaces, protocols, performance, compatibility, lifecycle, certification and availability remain outside approval.",
+    },
   },
   {
     productId: "siemens-siplus-s7-300-cp343-1-ex30-7xe0",
     shortDescription: batch21Position164Copy,
     description: [batch21Position164Copy],
     provenance: "ai-assisted",
-    linguisticReview: { decision: "pending" },
-    technicalReview: { decision: "pending" },
+    linguisticReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-11-22T19:54:14.570Z",
+      reviewedContentHash:
+        "sha256:d9497214759749ab080156b63d1cd6ae1ad1012683fdbdc72cccc9ed3be9019d",
+      evidenceRef:
+        "PM-authorized linguistic approval in the supplied Batch 21 approval request; draft commit c267ffa67444d21fdfe816221889246a96571120; Product siemens-siplus-s7-300-cp343-1-ex30-7xe0; MLFB 6AG1343-1EX30-7XE0; product type communication processor. Recording time is an actual UTC observation, not the PM review timestamp. Registry role approvals are separate from GitHub reviews.",
+      note: "6AG1343-1EX30-7XE0: PM-authorized exact Persian wording, punctuation and spacing, NFC normalization, typed MLFB isolation and segment boundaries in identical three-segment short and single-paragraph long descriptions.",
+    },
+    technicalReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-11-22T19:54:14.594Z",
+      reviewedContentHash:
+        "sha256:d9497214759749ab080156b63d1cd6ae1ad1012683fdbdc72cccc9ed3be9019d",
+      evidenceRef:
+        "PM-authorized technical approval in the supplied Batch 21 approval request; draft commit c267ffa67444d21fdfe816221889246a96571120; Product siemens-siplus-s7-300-cp343-1-ex30-7xe0; MLFB 6AG1343-1EX30-7XE0; product type communication processor. Recording time is an actual UTC observation, not the PM review timestamp. Registry role approvals are separate from GitHub reviews. Reused readiness D: Siemens CP 343-1 manual, 12/2018, C79000-G8976-C201-08; printed p3 for exact SIPLUS EX30 identity/type; reused parsed readiness text; exact SIPLUS EX30 code remains distinct from the standard EX30 code; https://cache.industry.siemens.com/dl/files/272/24485272/att_973778/v1/GH_CP343-1-EX30_76.pdf. Exact 6FL, 6GK and 6AG identities remain separate; CX00 is distinct from CX10, and both SIPLUS orders remain distinct from standard orders. No characteristics are transferred between variants. Printed pages are not assumed viewer indices. No fresh retrieval or visual inspection. Visual inspection and successful direct-origin HTTP status were NOT OBSERVED. The IE_CP_S7-300_e.pdf canonical support-manual request returned a reader 403 and supplied no usable evidence. The hy_S7-CPs-IE_76.pdf canonical support-manual request returned a reader 403 and supplied no usable evidence.",
+      note: "6AG1343-1EX30-7XE0: PM-authorized exact MLFB identity and communication-processor type only. Model titles, interfaces, protocols, performance, compatibility, lifecycle, certification and availability remain outside approval.",
+    },
   },
 ] as const satisfies readonly PersianProductCopyOverlay[];
