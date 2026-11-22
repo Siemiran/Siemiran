@@ -34,7 +34,39 @@ Principles:
 - The eleven unverified S7-300 records continue to omit public lifecycle in both
   languages.
 
-Current implementation checkpoint (2026-11-21): `416495b83f071b9b105d30a35cb04ab5f3b17131`.
+Current implementation checkpoint (2026-11-22): `541386b2775cf21270a4708bd37a144cac3b90f7`.
+
+[PR #97](https://github.com/Siemiran/Siemiran/pull/97) completed private Batch 20 at
+`541386b2775cf21270a4708bd37a144cac3b90f7`. Its ten entries at canonical positions
+145–154 approve exact MLFB identity and communication-processor type only.
+Positions 150/151 retain the AS-Interface versus ISO/IT subfamily boundary as
+binding metadata outside copy claims. GX00, GX11 and GX20 remain distinct;
+no characteristics are transferred between variants. Model titles, interfaces,
+protocols, performance, compatibility, lifecycle, certification and availability
+remain outside approval. Exact bindings, recorded hashes and qualified A–E
+evidence are in [DATABASE.md](DATABASE.md#2026-11-22---batch-20-private-product-copy-checkpoint-current-state);
+the implementation merge record is in [CHANGELOG.md](CHANGELOG.md#2026-11-22---pr-97-complete-batch-20-private-drafts-and-dual-approvals)
+and durable resume facts are in [SESSION_HANDOFF.md](SESSION_HANDOFF.md).
+
+The catalog contains 382 Products (186 S7-1200 / 196 S7-300). There are 115 private
+drafts, 115 current approvals per role, 115 current dual approvals, zero pending
+roles and 267 products without drafts. Activation remains invalid at
+`overlayCount=115`, `approvedCount=115` and `missingIds.length=267`, with capability
+absent. Active overlays remain 0/382, publication is disabled, and public FA/EN
+copy stays canonical English/LTR. Complete 382/382 current dual approvals and
+separate launch authorization remain required.
+
+Overrides remain 10 Products / 20 assignments / 7 unique strings with an empty
+global allowlist. Batch 20 added zero overrides. The eleven public lifecycle
+omissions, including IM 178-4, and separate S7-300 provenance classification
+(185 Siemens-official verified / 11 explicitly unverified) remain in effect.
+
+Batch 21 remains unstarted and outside this task's scope. Product selection and
+future scope require separate authorization. Admin Panel and Automation remain
+gated; the dedicated completed-copy website inspection remains pending.
+
+Historical Batch 19 checkpoint (105/277): the following scope, counts and
+prospective workflow describe Batch 19 at its merge and are superseded above.
 
 [PR #95](https://github.com/Siemiran/Siemiran/pull/95) completed private Batch 19 at
 `416495b83f071b9b105d30a35cb04ab5f3b17131`. Its ten entries at canonical positions
@@ -44,9 +76,9 @@ FA00 and FA01 remain distinct, with no characteristics transferred between varia
 Model titles, interfaces, protocols, performance, compatibility, lifecycle,
 certification and availability remain outside approval. Exact bindings, recorded
 hashes and qualified A–E evidence are in
-[DATABASE.md](DATABASE.md#2026-11-21---batch-19-private-product-copy-checkpoint-current-state);
+[DATABASE.md](DATABASE.md#2026-11-21---batch-19-private-product-copy-checkpoint-historical-snapshot);
 the merge record is in
-[CHANGELOG.md](CHANGELOG.md#2026-11-21---pr-95-complete-batch-19-private-drafts-and-dual-approvals)
+[CHANGELOG.md](CHANGELOG.md#2026-11-21---pr-95-complete-batch-19-private-drafts-and-dual-approvals-historical-snapshot)
 and durable resume facts are in [SESSION_HANDOFF.md](SESSION_HANDOFF.md).
 
 The catalog contains 382 Products (186 S7-1200 / 196 S7-300). There are 105 private
@@ -132,7 +164,7 @@ Historical Batch 16 checkpoint (80/302): [PR #89](https://github.com/Siemiran/Si
 completed one mixed analog input/output and four interface-module entries.
 Its exact MLFB/type-only scope, exclusions and evidence qualifications remain in
 [DATABASE.md](DATABASE.md#2026-11-20---batch-16-private-product-copy-checkpoint-historical-snapshot).
-Batch 18 and earlier counts are historical; Batch 19 is current.
+Batch 19 and earlier counts are historical; Batch 20 is current.
 
 After Persian Product-copy completion, the dedicated local visual and functional
 website inspection with the maintainer remains pending: FA/EN switching,

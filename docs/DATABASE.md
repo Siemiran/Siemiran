@@ -1,13 +1,130 @@
 # Siemiran — Product Database
 
 Repository source of truth: `main` at
-`416495b83f071b9b105d30a35cb04ab5f3b17131` (2026-11-21).
+`541386b2775cf21270a4708bd37a144cac3b90f7` (2026-11-22).
 
-## 2026-11-21 - Batch 19 Private Product-copy Checkpoint (Current State)
+## 2026-11-22 - Batch 20 Private Product-copy Checkpoint (Current State)
+
+[PR #97](https://github.com/Siemiran/Siemiran/pull/97) merged as
+`541386b2775cf21270a4708bd37a144cac3b90f7`. See [CHANGELOG.md](CHANGELOG.md#2026-11-22---pr-97-complete-batch-20-private-drafts-and-dual-approvals)
+for the sole parent, server merge time, exact reviewed tree and implementation scope.
+
+Approval covers **exact MLFB plus communication-processor type only** for every row.
+Canonical variants are binding metadata, not approval of embedded characteristics.
+The ten `ai-assisted` entries retain identical short and single-paragraph long copy:
+`text` introduction `مدل `, one `technical` exact MLFB, and `text` suffix
+`، پردازندهٔ ارتباطی است.`. Titles, interfaces, protocols, performance, compatibility,
+lifecycle, certification and availability remain outside approval.
+
+| Canonical position | Exact MLFB | Stable Product ID | Canonical variant | Evidence / printed reference |
+| --- | --- | --- | --- | --- |
+| 145 | `6GK7343-2AH00-0XA0` | `siemens-s7-300-cp343-2-ah00-0xa0` | `as-interface` | A / p19 identity; indexed p94 type |
+| 146 | `6GK7343-2AH01-0XA0` | `siemens-s7-300-cp343-2-ah01-0xa0` | `as-interface` | A + B / p19 identity; indexed p2/40 type |
+| 147 | `6GK7343-2AH10-0XA0` | `siemens-s7-300-cp343-2p-ah10-0xa0` | `as-interface-plus` | A / p19 identity; indexed p94 type |
+| 148 | `6GK7343-2AH11-0XA0` | `siemens-s7-300-cp343-2p-ah11-0xa0` | `as-interface-plus` | A + B / p19 identity; indexed p2/40 type |
+| 149 | `6GK7342-2AH00-0XA0` | `siemens-s7-300-cp342-2-ah00-0xa0` | `as-interface` | C / p77 identity; pA-1 and pC-1 |
+| 150 | `6GK7342-2AH01-0XA0` | `siemens-s7-300-cp342-2-ah01-0xa0` | `as-interface` | C / p77 identity; glossary pC-1 type |
+| 151 | `6GK7343-1BA00-0XE0` | `siemens-s7-300-cp343-1-iso-ba00-0xe0` | `industrial-ethernet-iso` | D / indexed type; parsed identity p1/2 |
+| 152 | `6GK7343-1GX00-0XE0` | `siemens-s7-300-cp343-1it-gx00-0xe0` | `industrial-ethernet-it` | E / separate predecessor §7.2, pB3-22 |
+| 153 | `6GK7343-1GX11-0XE0` | `siemens-s7-300-cp343-1it-gx11-0xe0` | `industrial-ethernet-it` | E / cover; ppB3-5/B3-22 |
+| 154 | `6GK7343-1GX20-0XE0` | `siemens-s7-300-cp343-1it-gx20-0xe0` | `industrial-ethernet-it` | E / cover; ppB3-5/B3-22 |
+
+Positions 145–150 are AS-Interface variants; positions 151–154 are ISO/IT variants.
+The boundary at 150/151 is canonical subfamily metadata outside copy claims.
+GX00, GX11 and GX20 are separate exact identities, not interchangeable variants;
+no newer characteristics are transferred to GX00. AH00 characteristics are not
+transferred to AH01, and CP 343-2 / CP 343-2P identities remain distinct.
+
+- **A:** [PCS 7 AS-Interface Library V9.0 SP2](https://cache.industry.siemens.com/dl/files/336/109773336/att_1004103/v1/manual_asi_pcs7_library_v90sp2_en-US.pdf?download=true), section 1.7.2 Supported modules, printed p19, is reused **parsed** evidence for all four exact CP 343-2/2P identities. The separate [AS-Interface system manual](https://cache.industry.siemens.com/dl/files/840/26250840/att_109960/v1/AS-Interface_System-Manual_2008-11_X-2010-09_en-US.pdf), section 6.1.3.2, printed p94, supplies **indexed-only** AH00/AH10 type evidence, not a parsed read.
+- **B:** [Siemens IC 10 (2025)](https://cache.industry.siemens.com/dl/files/994/109771994/att_1311260/v1/SIRIUS_IC10_chap02_English_2025_202501240945406042.pdf), selection and ordering data, printed p2/40, is reused **indexed-only** type evidence for exact CP 343-2 AH01 and CP 343-2P AH11. It is not a parsed document read.
+- **C:** [Released Modules V8.0](https://cache.industry.siemens.com/dl/files/475/61187475/att_62477/v1/S7pcshwb_en-US.pdf), section 13.2, printed p77, is reused **parsed** evidence for both exact CP 342-2 identities. The [CP 342-2 manual](https://cache.industry.siemens.com/dl/files/328/1123328/att_80869/v1/CP342_e.pdf?download=true), printed pA-1 for AH00 and glossary pC-1 for product type, is reused parsed evidence; AH00 characteristics are not transferred to AH01.
+- **D:** The [exact BA00 Siemens SiePortal entry](https://sieportal.siemens.com/en-ww/products-services/detail/6GK7343-1BA00-0XE0?tree=CatalogTree) supplies reused **indexed-only** type text. The [Siemens routing overview](https://cache.industry.siemens.com/dl/files/459/584459/att_109849/v7/584459_overview_cps_en.pdf), printed p1/2, supplies reused **parsed** exact-identity text. The direct-reader JavaScript shell is distinct from indexed type evidence.
+- **E:** [Siemens CP 343-1 IT manual, 06/2003](https://cache.industry.siemens.com/dl/files/544/8776544/att_104755/v1/ghb3431it_e.pdf), cover and printed ppB3-5/B3-22, is reused **parsed** evidence. GX00 is separately identified as a predecessor in section 7.2, printed pB3-22; GX00, GX11 and GX20 remain distinct, without transfer of newer characteristics to GX00.
+
+Reported reader **403s** for the canonical AS-Interface library, Released Modules
+and `78906145.pdf` supplied no parsed evidence. The IC 10 reader request returned
+**404**; its usable evidence remains indexed-only. The system-manual reader
+rejected **40,107,922 bytes**: a reader size limit, not a Siemens-origin HTTP status.
+Direct BA00 SiePortal access returned a **JavaScript shell**, distinct from indexed
+type text. Printed pages are not assumed viewer indices. Visual inspection and
+successful direct-origin HTTP status remain **NOT OBSERVED**. No fresh retrieval,
+manufacturer research or lifecycle verification is claimed. Earlier evidence
+qualifications remain preserved in their historical records.
+
+Twenty separate `Siemiran` hash-bound approvals, one linguistic and one technical
+record per Product, bind the recorded hashes below. Actual UTC recording
+observations are `2026-11-22T18:39:22.991Z` (linguistic) and
+`2026-11-22T18:39:23.902Z` (technical). These are **recording times, not PM review
+times**, and the registry approvals are separate from GitHub reviews. They bind
+draft `2a3db21d07e60e2f86bbc78f525af3963ca7ba08`; approval commit
+`f96e0ea1c6e7ec692d2e9d95d20ce2ff7f196e2c` preserves its reviewed payloads.
+This table transcribes merged-registry metadata; no production hash is recomputed.
+
+| Exact MLFB | Production content hash bound by both separate role records |
+| --- | --- |
+| `6GK7343-2AH00-0XA0` | `sha256:6ec21d4284b83227075b250107e828f28a528048f6d24cda84cf8ba97211535c` |
+| `6GK7343-2AH01-0XA0` | `sha256:7bbc35c13b6d09501a026d8691b7b4cd733cdcf3d1925f80909483f8fac64fb5` |
+| `6GK7343-2AH10-0XA0` | `sha256:0b5f9facca8df37c940cdc94e91ad4260c7e2e980b4b437847a9e5c73c284b2e` |
+| `6GK7343-2AH11-0XA0` | `sha256:e074ff6ed8b1e2944502fdfe868a73ddef692e39dfe0189cd05c259cc1375930` |
+| `6GK7342-2AH00-0XA0` | `sha256:4344cfdc77d02e1e21104238889943752cbf04fdb8217c7f0e52dfdfc66b1000` |
+| `6GK7342-2AH01-0XA0` | `sha256:e9d6ae394bda5f9796f7f4191b1eadb69680c85a1caf8ce788f5dab4aaede64f` |
+| `6GK7343-1BA00-0XE0` | `sha256:d3c8c1652d0daf8f1f8fafd5f3d7c492214cd7906a33fe48950e4b3221969f72` |
+| `6GK7343-1GX00-0XE0` | `sha256:50dee404b38d6776774cfd358b2cf9e59318b537fd5eb846ffc97a8e367e3173` |
+| `6GK7343-1GX11-0XE0` | `sha256:948ae7bdabeee1f3189079888ecd7347e6115678b071de033dfc9fb2a57d6904` |
+| `6GK7343-1GX20-0XE0` | `sha256:6a9b8d5ebeca94afbf10ad0796b2c13347a69d28631727ae6ed14b4210a1f6f3` |
+
+**PASS (REUSED)** - Batch 20's Product-copy validator, focused lint and
+production build each exited `0` at reviewed head
+`f96e0ea1c6e7ec692d2e9d95d20ce2ff7f196e2c`. The build included TypeScript and
+774/774 static pages. Reviewed head and squash share exact tree
+`a866bee814bcc6bbbd369712e660dbec0bf1bfaa`. This documentation change leaves all
+application, canonical data, dependency and build content unchanged, preserving
+those results' applicability. Application checks, production hash audits and
+manufacturer research/retrieval are **NOT RUN** in this documentation task.
+
+The recorded implementation comparison preserved all 105 prior entries in order,
+with unchanged content, review metadata and production hashes. All 115 reviewed
+draft payloads, typed segments, bindings, order, provenance and hashes remained
+unchanged from draft `2a3db21d07e60e2f86bbc78f525af3963ca7ba08`.
+Twenty independent text/segment-kind mutations, two per Product, each staled
+both roles. These are reused implementation results, not new application checks
+or hash audits. Earlier cohort checks and boundaries remain intact. Batch 19's
+ordering assertion checks its completed cohort; a separate assertion verifies
+membership and order across the full 115-entry registry.
+
+Recorded Batch 20 implementation CI was absent on the reviewed head and squash:
+zero workflow runs, check runs and statuses, with empty rollup and combined
+`pending`; this is absent CI, not passing CI. Fresh documentation checks and
+documentation PR/CI observations belong in the task report.
+
+The catalog contains 382 Products (186 S7-1200 / 196 S7-300). There are 115 private
+drafts, 115 current approvals per role, 115 current dual approvals, zero pending
+roles and 267 products without drafts. Activation remains invalid at
+`overlayCount=115`, `approvedCount=115` and `missingIds.length=267`, with capability
+absent. Active overlays remain 0/382, publication is disabled, and public FA/EN
+copy stays canonical English/LTR. Complete 382/382 current dual approvals and
+separate launch authorization remain required.
+
+Overrides remain 10 Products / 20 assignments / 7 unique strings with an empty
+global allowlist. Batch 20 added zero overrides. The eleven public lifecycle
+omissions, including IM 178-4, and separate S7-300 provenance classification
+(185 Siemens-official verified / 11 explicitly unverified) remain in effect.
+
+Batch 21 remains unstarted and outside this task's scope. Product selection and
+future scope require separate authorization. Admin Panel and Automation remain
+gated; the dedicated completed-copy website inspection remains pending.
+
+Batch 19's 105/277 checkpoint and all earlier records below are historical;
+their dated scope, evidence qualifications and prospective workflows are preserved.
+
+## 2026-11-21 - Batch 19 Private Product-copy Checkpoint (Historical Snapshot)
+
+Historical Batch 19 checkpoint (105/277): the following scope, counts and
+prospective workflow describe Batch 19 at its merge and are superseded above.
 
 [PR #95](https://github.com/Siemiran/Siemiran/pull/95) merged as
 `416495b83f071b9b105d30a35cb04ab5f3b17131`. See
-[CHANGELOG.md](CHANGELOG.md#2026-11-21---pr-95-complete-batch-19-private-drafts-and-dual-approvals)
+[CHANGELOG.md](CHANGELOG.md#2026-11-21---pr-95-complete-batch-19-private-drafts-and-dual-approvals-historical-snapshot)
 for the sole parent, server merge time, identical reviewed tree and implementation scope.
 
 Approval covers **exact MLFB plus communication-processor type only** for every row.
@@ -223,7 +340,7 @@ evidence qualifications remain preserved.
 ## 2026-11-20 - Batch 17 Private Product-copy Checkpoint (Historical Snapshot)
 
 The following 85/297 checkpoint, records and prospective workflow describe
-Batch 17 at its merge. Batch 18 superseded that checkpoint; Batch 19 above is current.
+Batch 17 at its merge. Batches 18 and 19 also remain historical; Batch 20 above is current.
 
 [PR #91](https://github.com/Siemiran/Siemiran/pull/91) completed private Batch 17 at
 `33009a15647ff2907c949e58ff779918a5ec60ad`. Approval covers exact MLFB identity and

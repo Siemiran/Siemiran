@@ -3,7 +3,63 @@
 This file records completed repository changes. The newest entry records the
 current implementation baseline; older dated entries are historical snapshots.
 
-## 2026-11-21 - PR #95: Complete Batch 19 Private Drafts and Dual Approvals
+## 2026-11-22 - PR #97: Complete Batch 20 Private Drafts and Dual Approvals
+
+- [PR #97](https://github.com/Siemiran/Siemiran/pull/97), `feat: add Batch 20 Persian product copy`, merged at
+  `2026-11-22T19:01:41Z` / `2026-11-22 22:31:41` Asia/Tehran as
+  `541386b2775cf21270a4708bd37a144cac3b90f7`. Sole parent:
+  `7a02c9efe436119423ee4a9c9bdcc8ba2394aade`. Reviewed/approval head:
+  `f96e0ea1c6e7ec692d2e9d95d20ce2ff7f196e2c`; draft:
+  `2a3db21d07e60e2f86bbc78f525af3963ca7ba08`. Reviewed head and squash share
+  tree `a866bee814bcc6bbbd369712e660dbec0bf1bfaa`.
+- Two-file implementation scope: registry +320/-0, verifier +469/-12; total +789/-12.
+  The ten canonical positions 145–154 approve exact MLFB and communication-processor
+  type only. The AS-Interface versus ISO/IT boundary and GX00/GX11/GX20 identities
+  remain distinct; no characteristics are transferred between variants. Exact
+  bindings, recorded hashes and qualified A–E evidence are in [DATABASE.md](DATABASE.md#2026-11-22---batch-20-private-product-copy-checkpoint-current-state).
+- Twenty separate `Siemiran` hash-bound approvals record actual UTC observations
+  `2026-11-22T18:39:22.991Z` (linguistic) and
+  `2026-11-22T18:39:23.902Z` (technical). These are recording times, not PM review
+  times, and are separate from GitHub reviews. The implementation comparison
+  preserved all 105 prior entries in order with unchanged content, review metadata
+  and hashes, and all 115 reviewed payloads and hashes. Twenty independent
+  text/segment-kind mutations, two per Product, each staled both roles.
+- Batch 19's ordering assertion checks its completed cohort; a separate assertion
+  verifies membership and order across the full 115-entry registry. Earlier cohort
+  checks and boundaries remain intact.
+- At merge: 382 Products (186 S7-1200 / 196 S7-300), 115 private drafts, 115 current
+  approvals per role, 115 dual approvals, zero pending roles and 267 Products without
+  drafts. Activation remains invalid at `overlayCount=115`, `approvedCount=115`,
+  `missingIds.length=267`, capability absent. Active overlays remain zero,
+  publication disabled and public FA/EN copy canonical English/LTR. The full
+  382/382 current dual-approval gate plus separate launch authorization remain required.
+- Overrides remain 10 Products / 20 assignments / 7 unique strings, with an empty
+  global allowlist; Batch 20 added none. Eleven lifecycle omissions and the separate
+  S7-300 provenance classification of 185/11 remain unchanged.
+- One normal squash using `--match-head-commit` and the exact reviewed head,
+  followed by main-only fetch, switch and fast-forward, completed with exit `0`.
+  Sole parent, subject, tree and scope matched. Base-to-squash, index and worktree
+  whitespace checks exited `0`; main refs synchronized and feature refs were preserved.
+  Auto-merge and automatic branch deletion were off; no protection bypass was used.
+- **PASS (REUSED)** - Final Product-copy validator, focused lint and production
+  build including TypeScript each exited `0`; 774/774 static pages were generated.
+  Exact reviewed-tree equality and unchanged application, dependency and build
+  content preserve applicability. Application checks, hash audits and manufacturer
+  research/retrieval are **NOT RUN** in this documentation task.
+- Implementation CI on reviewed head and squash was absent: zero workflow runs,
+  check runs and statuses, empty rollup, combined `pending`; this is not passing CI.
+  Fresh documentation checks and documentation PR/CI state belong in the task report.
+- Reused A–E evidence retains separate parsed and indexed sources. Reader 403/404
+  responses, the system-manual reader size limit (40,107,922 bytes), and the BA00
+  JavaScript shell are not successful source retrieval. Visual inspection and
+  successful direct-origin HTTP status remain **NOT OBSERVED**; no fresh retrieval
+  is claimed. Titles, interfaces, protocols, performance, compatibility, lifecycle,
+  certification and availability remain outside approval.
+- Batch 19's 105/277 checkpoint is historical. Batch 21 is unstarted; Admin Panel
+  and Automation remain gated, and completed-copy website inspection remains pending.
+  Durable resume facts are in [SESSION_HANDOFF.md](SESSION_HANDOFF.md).
+
+## 2026-11-21 - PR #95: Complete Batch 19 Private Drafts and Dual Approvals (Historical Snapshot)
 
 - [PR #95](https://github.com/Siemiran/Siemiran/pull/95), `feat: add Batch 19 Persian product copy`, merged at
   `2026-11-21T19:49:09Z` / `2026-11-21 23:19:09` Asia/Tehran as
@@ -17,7 +73,7 @@ current implementation baseline; older dated entries are historical snapshots.
   type only. Titles, interfaces, protocols, performance, compatibility, lifecycle,
   certification and availability remain outside approval. Exact bindings, recorded
   hashes and qualified A–E evidence are in
-  [DATABASE.md](DATABASE.md#2026-11-21---batch-19-private-product-copy-checkpoint-current-state).
+  [DATABASE.md](DATABASE.md#2026-11-21---batch-19-private-product-copy-checkpoint-historical-snapshot).
 - Twenty distinct `Siemiran` hash-bound approvals retain actual UTC recording
   observations `2026-11-21T19:34:16.592Z` (linguistic) and
   `2026-11-21T19:34:43.097Z` (technical). These are recording times, not PM review
