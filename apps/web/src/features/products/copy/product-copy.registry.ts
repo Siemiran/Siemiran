@@ -1072,6 +1072,66 @@ const batch21Position164Copy = [
   { kind: "text", value: "، پردازندهٔ ارتباطی است." },
 ] as const satisfies ProductCopyParagraph;
 
+const batch22Position165Copy = [
+  { kind: "text", value: "مدل " },
+  { kind: "technical", value: "6AG1343-1GX31-4XE0" },
+  { kind: "text", value: "، پردازندهٔ ارتباطی است." },
+] as const satisfies ProductCopyParagraph;
+
+const batch22Position166Copy = [
+  { kind: "text", value: "مدل " },
+  { kind: "technical", value: "6ES7350-1AH03-0AE0" },
+  { kind: "text", value: "، ماژول شمارنده است." },
+] as const satisfies ProductCopyParagraph;
+
+const batch22Position167Copy = [
+  { kind: "text", value: "مدل " },
+  { kind: "technical", value: "6ES7350-2AH00-0AE0" },
+  { kind: "text", value: "، ماژول شمارنده است." },
+] as const satisfies ProductCopyParagraph;
+
+const batch22Position168Copy = [
+  { kind: "text", value: "مدل " },
+  { kind: "technical", value: "6ES7350-2AH01-0AE0" },
+  { kind: "text", value: "، ماژول شمارنده است." },
+] as const satisfies ProductCopyParagraph;
+
+const batch22Position169Copy = [
+  { kind: "text", value: "مدل " },
+  { kind: "technical", value: "6AG1350-2AH01-4AE0" },
+  { kind: "text", value: "، ماژول شمارنده است." },
+] as const satisfies ProductCopyParagraph;
+
+const batch22Position170Copy = [
+  { kind: "text", value: "مدل " },
+  { kind: "technical", value: "6ES7351-1AH01-0AE0" },
+  { kind: "text", value: "، ماژول موقعیت‌دهی است." },
+] as const satisfies ProductCopyParagraph;
+
+const batch22Position171Copy = [
+  { kind: "text", value: "مدل " },
+  { kind: "technical", value: "6ES7351-1AH02-0AE0" },
+  { kind: "text", value: "، ماژول موقعیت‌دهی است." },
+] as const satisfies ProductCopyParagraph;
+
+const batch22Position172Copy = [
+  { kind: "text", value: "مدل " },
+  { kind: "technical", value: "6ES7352-1AH02-0AE0" },
+  { kind: "text", value: "، کنترل‌کنندهٔ الکترونیکی بادامک است." },
+] as const satisfies ProductCopyParagraph;
+
+const batch22Position173Copy = [
+  { kind: "text", value: "مدل " },
+  { kind: "technical", value: "6ES7353-1AH01-0AE0" },
+  { kind: "text", value: "، ماژول موقعیت‌دهی است." },
+] as const satisfies ProductCopyParagraph;
+
+const batch22Position174Copy = [
+  { kind: "text", value: "مدل " },
+  { kind: "technical", value: "6ES7354-1AH01-0AE0" },
+  { kind: "text", value: "، ماژول موقعیت‌دهی سروو است." },
+] as const satisfies ProductCopyParagraph;
+
 export const persianProductCopyDraftRegistry = [
   {
     productId: "siemens-s7-1200-cpu-211-1ae40",
@@ -4351,6 +4411,266 @@ export const persianProductCopyDraftRegistry = [
       evidenceRef:
         "PM-authorized technical approval in the supplied Batch 21 approval request; draft commit c267ffa67444d21fdfe816221889246a96571120; Product siemens-siplus-s7-300-cp343-1-ex30-7xe0; MLFB 6AG1343-1EX30-7XE0; product type communication processor. Recording time is an actual UTC observation, not the PM review timestamp. Registry role approvals are separate from GitHub reviews. Reused readiness D: Siemens CP 343-1 manual, 12/2018, C79000-G8976-C201-08; printed p3 for exact SIPLUS EX30 identity/type; reused parsed readiness text; exact SIPLUS EX30 code remains distinct from the standard EX30 code; https://cache.industry.siemens.com/dl/files/272/24485272/att_973778/v1/GH_CP343-1-EX30_76.pdf. Exact 6FL, 6GK and 6AG identities remain separate; CX00 is distinct from CX10, and both SIPLUS orders remain distinct from standard orders. No characteristics are transferred between variants. Printed pages are not assumed viewer indices. No fresh retrieval or visual inspection. Visual inspection and successful direct-origin HTTP status were NOT OBSERVED. The IE_CP_S7-300_e.pdf canonical support-manual request returned a reader 403 and supplied no usable evidence. The hy_S7-CPs-IE_76.pdf canonical support-manual request returned a reader 403 and supplied no usable evidence.",
       note: "6AG1343-1EX30-7XE0: PM-authorized exact MLFB identity and communication-processor type only. Model titles, interfaces, protocols, performance, compatibility, lifecycle, certification and availability remain outside approval.",
+    },
+  },
+  {
+    productId: "siemens-siplus-s7-300-cp343-1-advanced-gx31-4xe0",
+    shortDescription: batch22Position165Copy,
+    description: [batch22Position165Copy],
+    provenance: "ai-assisted",
+    linguisticReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-11-24T19:01:55.331Z",
+      reviewedContentHash:
+        "sha256:b6f66d381313bed1c6d70277cde4adac4c799a9fce3038bbad312544a26e5bac",
+      evidenceRef:
+        "PM-authorized linguistic approval in the supplied Batch 22 approval request; draft commit fd516cfdd92d494a2b17bc9e1f712734b3e004f1; Product siemens-siplus-s7-300-cp343-1-advanced-gx31-4xe0; MLFB 6AG1343-1GX31-4XE0; product type communication processor. Recording time is an actual UTC observation, not the PM review timestamp. Registry role approvals are separate from GitHub reviews.",
+      note: "6AG1343-1GX31-4XE0: PM-authorized exact Persian wording, punctuation and spacing, NFC normalization, typed MLFB isolation and segment boundaries in identical three-segment short and single-paragraph long descriptions.",
+    },
+    technicalReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-11-24T19:01:55.333Z",
+      reviewedContentHash:
+        "sha256:b6f66d381313bed1c6d70277cde4adac4c799a9fce3038bbad312544a26e5bac",
+      evidenceRef:
+        "PM-authorized technical approval in the supplied Batch 22 approval request; draft commit fd516cfdd92d494a2b17bc9e1f712734b3e004f1; Product siemens-siplus-s7-300-cp343-1-advanced-gx31-4xe0; MLFB 6AG1343-1GX31-4XE0; product type communication processor. Recording time is an actual UTC observation, not the PM review timestamp. Registry role approvals are separate from GitHub reviews. Reused readiness A: Siemens CP 343-1 Advanced manual, 12/2018, C79000-G8976-C202-06; printed p4, Validity; Reused parsed readiness text; exact SIPLUS order identity/type only; https://cache.industry.siemens.com/dl/files/619/62046619/att_973791/v1/GH_CP343-1-Adv-GX31_76.pdf. Position 165 uses the CP adapter; positions 166-174 use the FM adapter. Canonical variants remain binding metadata outside copy claims. FM350-2 2AH00, 2AH01 and the SIPLUS order remain distinct. Both FM351 stable IDs retain 1ch01/1ch02 while exact MLFBs contain 1AH01/1AH02. No characteristics transfer between orders. Position 167 indexed Siemens performance information differs from the canonical record; the discrepancy is unchanged and outside this identity/type-only copy. Printed pages are not assumed viewer indices. No fresh retrieval or visual inspection. Visual inspection and successful direct-origin HTTP status were NOT OBSERVED. Position 167 Mall reader request returned 403; no usable evidence. Position 169 exact SIPLUS datasheet reader request returned 403; indexed text remains separate. Siemens Fichas Tecnicas reader hit a 10,485,761+ byte size limit; indexed text remains separate. ST70 2021 reader hit a 25,626,498 byte size limit; indexed corroboration remains separate. FM352 support-manual reader request returned 403; no usable evidence. FM353 support-manual URL was inaccessible via the reader; no usable evidence.",
+      note: "6AG1343-1GX31-4XE0: PM-authorized exact MLFB identity and communication processor type only. Model titles, interfaces, protocols, performance, compatibility, lifecycle, certification and availability remain outside approval.",
+    },
+  },
+  {
+    productId: "siemens-s7-300-fm350-1-counter-1ah03-0ae0",
+    shortDescription: batch22Position166Copy,
+    description: [batch22Position166Copy],
+    provenance: "ai-assisted",
+    linguisticReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-11-24T19:01:55.331Z",
+      reviewedContentHash:
+        "sha256:28f66d2700933ee658907e9650ded8f58e1209755fcd301682395eb35657ff83",
+      evidenceRef:
+        "PM-authorized linguistic approval in the supplied Batch 22 approval request; draft commit fd516cfdd92d494a2b17bc9e1f712734b3e004f1; Product siemens-s7-300-fm350-1-counter-1ah03-0ae0; MLFB 6ES7350-1AH03-0AE0; product type counter module. Recording time is an actual UTC observation, not the PM review timestamp. Registry role approvals are separate from GitHub reviews.",
+      note: "6ES7350-1AH03-0AE0: PM-authorized exact Persian wording, punctuation and spacing, NFC normalization, typed MLFB isolation and segment boundaries in identical three-segment short and single-paragraph long descriptions.",
+    },
+    technicalReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-11-24T19:01:55.333Z",
+      reviewedContentHash:
+        "sha256:28f66d2700933ee658907e9650ded8f58e1209755fcd301682395eb35657ff83",
+      evidenceRef:
+        "PM-authorized technical approval in the supplied Batch 22 approval request; draft commit fd516cfdd92d494a2b17bc9e1f712734b3e004f1; Product siemens-s7-300-fm350-1-counter-1ah03-0ae0; MLFB 6ES7350-1AH03-0AE0; product type counter module. Recording time is an actual UTC observation, not the PM review timestamp. Registry role approvals are separate from GitHub reviews. Reused readiness B: Siemens Entry 21536617, 28 February 2011; printed p1/1, module-name/order-number table; Reused parsed readiness text; module names and exact order numbers only; compatibility columns excluded; https://cache.industry.siemens.com/dl/files/617/21536617/att_108718/v1/21536617_compatibility_fm_with_profibus_interfacemodules_en.pdf. Position 165 uses the CP adapter; positions 166-174 use the FM adapter. Canonical variants remain binding metadata outside copy claims. FM350-2 2AH00, 2AH01 and the SIPLUS order remain distinct. Both FM351 stable IDs retain 1ch01/1ch02 while exact MLFBs contain 1AH01/1AH02. No characteristics transfer between orders. Position 167 indexed Siemens performance information differs from the canonical record; the discrepancy is unchanged and outside this identity/type-only copy. Printed pages are not assumed viewer indices. No fresh retrieval or visual inspection. Visual inspection and successful direct-origin HTTP status were NOT OBSERVED. Position 167 Mall reader request returned 403; no usable evidence. Position 169 exact SIPLUS datasheet reader request returned 403; indexed text remains separate. Siemens Fichas Tecnicas reader hit a 10,485,761+ byte size limit; indexed text remains separate. ST70 2021 reader hit a 25,626,498 byte size limit; indexed corroboration remains separate. FM352 support-manual reader request returned 403; no usable evidence. FM353 support-manual URL was inaccessible via the reader; no usable evidence.",
+      note: "6ES7350-1AH03-0AE0: PM-authorized exact MLFB identity and counter module type only. Model titles, interfaces, protocols, performance, compatibility, lifecycle, certification and availability remain outside approval.",
+    },
+  },
+  {
+    productId: "siemens-s7-300-fm350-2-counter-2ah00-0ae0",
+    shortDescription: batch22Position167Copy,
+    description: [batch22Position167Copy],
+    provenance: "ai-assisted",
+    linguisticReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-11-24T19:01:55.331Z",
+      reviewedContentHash:
+        "sha256:d298aa7c3eefe248fe8bfb6a33717836d5ee2a51b429ee1ca32d983b1786205b",
+      evidenceRef:
+        "PM-authorized linguistic approval in the supplied Batch 22 approval request; draft commit fd516cfdd92d494a2b17bc9e1f712734b3e004f1; Product siemens-s7-300-fm350-2-counter-2ah00-0ae0; MLFB 6ES7350-2AH00-0AE0; product type counter module. Recording time is an actual UTC observation, not the PM review timestamp. Registry role approvals are separate from GitHub reviews.",
+      note: "6ES7350-2AH00-0AE0: PM-authorized exact Persian wording, punctuation and spacing, NFC normalization, typed MLFB isolation and segment boundaries in identical three-segment short and single-paragraph long descriptions.",
+    },
+    technicalReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-11-24T19:01:55.333Z",
+      reviewedContentHash:
+        "sha256:d298aa7c3eefe248fe8bfb6a33717836d5ee2a51b429ee1ca32d983b1786205b",
+      evidenceRef:
+        "PM-authorized technical approval in the supplied Batch 22 approval request; draft commit fd516cfdd92d494a2b17bc9e1f712734b3e004f1; Product siemens-s7-300-fm350-2-counter-2ah00-0ae0; MLFB 6ES7350-2AH00-0AE0; product type counter module. Recording time is an actual UTC observation, not the PM review timestamp. Registry role approvals are separate from GitHub reviews. Reused readiness C: Siemens Fichas Tecnicas, August 2025; printed p17, Modulos de Funcao table; Reused indexed readiness text; reader size limit supplied no parsed or visual evidence; exact 2AH00 identity/type only; https://assets.new.siemens.com/siemens/assets/api/uuid%3A6b83665d-d50c-409b-8e2e-05ccaa826c49/Fichas-tecnicas-MONTADA-AGO25_original.pdf. Position 165 uses the CP adapter; positions 166-174 use the FM adapter. Canonical variants remain binding metadata outside copy claims. FM350-2 2AH00, 2AH01 and the SIPLUS order remain distinct. Both FM351 stable IDs retain 1ch01/1ch02 while exact MLFBs contain 1AH01/1AH02. No characteristics transfer between orders. Position 167 indexed Siemens performance information differs from the canonical record; the discrepancy is unchanged and outside this identity/type-only copy. Printed pages are not assumed viewer indices. No fresh retrieval or visual inspection. Visual inspection and successful direct-origin HTTP status were NOT OBSERVED. Position 167 Mall reader request returned 403; no usable evidence. Position 169 exact SIPLUS datasheet reader request returned 403; indexed text remains separate. Siemens Fichas Tecnicas reader hit a 10,485,761+ byte size limit; indexed text remains separate. ST70 2021 reader hit a 25,626,498 byte size limit; indexed corroboration remains separate. FM352 support-manual reader request returned 403; no usable evidence. FM353 support-manual URL was inaccessible via the reader; no usable evidence.",
+      note: "6ES7350-2AH00-0AE0: PM-authorized exact MLFB identity and counter module type only. Model titles, interfaces, protocols, performance, compatibility, lifecycle, certification and availability remain outside approval.",
+    },
+  },
+  {
+    productId: "siemens-s7-300-fm350-2-counter-2ah01-0ae0",
+    shortDescription: batch22Position168Copy,
+    description: [batch22Position168Copy],
+    provenance: "ai-assisted",
+    linguisticReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-11-24T19:01:55.331Z",
+      reviewedContentHash:
+        "sha256:579c10f639520675f95caf0d368be2522e0c3b95181819baa102873653bd0051",
+      evidenceRef:
+        "PM-authorized linguistic approval in the supplied Batch 22 approval request; draft commit fd516cfdd92d494a2b17bc9e1f712734b3e004f1; Product siemens-s7-300-fm350-2-counter-2ah01-0ae0; MLFB 6ES7350-2AH01-0AE0; product type counter module. Recording time is an actual UTC observation, not the PM review timestamp. Registry role approvals are separate from GitHub reviews.",
+      note: "6ES7350-2AH01-0AE0: PM-authorized exact Persian wording, punctuation and spacing, NFC normalization, typed MLFB isolation and segment boundaries in identical three-segment short and single-paragraph long descriptions.",
+    },
+    technicalReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-11-24T19:01:55.333Z",
+      reviewedContentHash:
+        "sha256:579c10f639520675f95caf0d368be2522e0c3b95181819baa102873653bd0051",
+      evidenceRef:
+        "PM-authorized technical approval in the supplied Batch 22 approval request; draft commit fd516cfdd92d494a2b17bc9e1f712734b3e004f1; Product siemens-s7-300-fm350-2-counter-2ah01-0ae0; MLFB 6ES7350-2AH01-0AE0; product type counter module. Recording time is an actual UTC observation, not the PM review timestamp. Registry role approvals are separate from GitHub reviews. Reused readiness B: Siemens Entry 21536617, 28 February 2011; printed p1/1, module-name/order-number table; Reused parsed readiness text; module names and exact order numbers only; compatibility columns excluded; https://cache.industry.siemens.com/dl/files/617/21536617/att_108718/v1/21536617_compatibility_fm_with_profibus_interfacemodules_en.pdf. Position 165 uses the CP adapter; positions 166-174 use the FM adapter. Canonical variants remain binding metadata outside copy claims. FM350-2 2AH00, 2AH01 and the SIPLUS order remain distinct. Both FM351 stable IDs retain 1ch01/1ch02 while exact MLFBs contain 1AH01/1AH02. No characteristics transfer between orders. Position 167 indexed Siemens performance information differs from the canonical record; the discrepancy is unchanged and outside this identity/type-only copy. Printed pages are not assumed viewer indices. No fresh retrieval or visual inspection. Visual inspection and successful direct-origin HTTP status were NOT OBSERVED. Position 167 Mall reader request returned 403; no usable evidence. Position 169 exact SIPLUS datasheet reader request returned 403; indexed text remains separate. Siemens Fichas Tecnicas reader hit a 10,485,761+ byte size limit; indexed text remains separate. ST70 2021 reader hit a 25,626,498 byte size limit; indexed corroboration remains separate. FM352 support-manual reader request returned 403; no usable evidence. FM353 support-manual URL was inaccessible via the reader; no usable evidence.",
+      note: "6ES7350-2AH01-0AE0: PM-authorized exact MLFB identity and counter module type only. Model titles, interfaces, protocols, performance, compatibility, lifecycle, certification and availability remain outside approval.",
+    },
+  },
+  {
+    productId: "siemens-siplus-s7-300-fm350-2-counter-2ah01-4ae0",
+    shortDescription: batch22Position169Copy,
+    description: [batch22Position169Copy],
+    provenance: "ai-assisted",
+    linguisticReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-11-24T19:01:55.331Z",
+      reviewedContentHash:
+        "sha256:dfee312de5f9341b2b92e7399b235c3f87e9b3b38a5466d844d14e5a5e7c29e6",
+      evidenceRef:
+        "PM-authorized linguistic approval in the supplied Batch 22 approval request; draft commit fd516cfdd92d494a2b17bc9e1f712734b3e004f1; Product siemens-siplus-s7-300-fm350-2-counter-2ah01-4ae0; MLFB 6AG1350-2AH01-4AE0; product type counter module. Recording time is an actual UTC observation, not the PM review timestamp. Registry role approvals are separate from GitHub reviews.",
+      note: "6AG1350-2AH01-4AE0: PM-authorized exact Persian wording, punctuation and spacing, NFC normalization, typed MLFB isolation and segment boundaries in identical three-segment short and single-paragraph long descriptions.",
+    },
+    technicalReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-11-24T19:01:55.333Z",
+      reviewedContentHash:
+        "sha256:dfee312de5f9341b2b92e7399b235c3f87e9b3b38a5466d844d14e5a5e7c29e6",
+      evidenceRef:
+        "PM-authorized technical approval in the supplied Batch 22 approval request; draft commit fd516cfdd92d494a2b17bc9e1f712734b3e004f1; Product siemens-siplus-s7-300-fm350-2-counter-2ah01-4ae0; MLFB 6AG1350-2AH01-4AE0; product type counter module. Recording time is an actual UTC observation, not the PM review timestamp. Registry role approvals are separate from GitHub reviews. Reused readiness D: Exact Siemens SIPLUS 6AG1350-2AH01-4AE0 datasheet; printed p1/4; indexed ST70 2021 ordering-table corroboration, catalog printed pagination unestablished; Reused indexed readiness text only; exact datasheet reader 403; ST70 reader size limit; no parsed or visual evidence; corroboration https://cache.industry.siemens.com/dl/files/167/109744167/att_1076941/v1/simatic-st70-complete-english-2021.pdf; https://support.industry.siemens.com/teddatasheet/?caller=SIOS&format=pdf&language=en&mlfbs=6AG1350-2AH01-4AE0. Position 165 uses the CP adapter; positions 166-174 use the FM adapter. Canonical variants remain binding metadata outside copy claims. FM350-2 2AH00, 2AH01 and the SIPLUS order remain distinct. Both FM351 stable IDs retain 1ch01/1ch02 while exact MLFBs contain 1AH01/1AH02. No characteristics transfer between orders. Position 167 indexed Siemens performance information differs from the canonical record; the discrepancy is unchanged and outside this identity/type-only copy. Printed pages are not assumed viewer indices. No fresh retrieval or visual inspection. Visual inspection and successful direct-origin HTTP status were NOT OBSERVED. Position 167 Mall reader request returned 403; no usable evidence. Position 169 exact SIPLUS datasheet reader request returned 403; indexed text remains separate. Siemens Fichas Tecnicas reader hit a 10,485,761+ byte size limit; indexed text remains separate. ST70 2021 reader hit a 25,626,498 byte size limit; indexed corroboration remains separate. FM352 support-manual reader request returned 403; no usable evidence. FM353 support-manual URL was inaccessible via the reader; no usable evidence.",
+      note: "6AG1350-2AH01-4AE0: PM-authorized exact MLFB identity and counter module type only. Model titles, interfaces, protocols, performance, compatibility, lifecycle, certification and availability remain outside approval.",
+    },
+  },
+  {
+    productId: "siemens-s7-300-fm351-positioning-1ch01-0ae0",
+    shortDescription: batch22Position170Copy,
+    description: [batch22Position170Copy],
+    provenance: "ai-assisted",
+    linguisticReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-11-24T19:01:55.331Z",
+      reviewedContentHash:
+        "sha256:212f9ed9aa3d3848d251dcb5c88cd9c8f624bcc268a0bc28db621dadca84b467",
+      evidenceRef:
+        "PM-authorized linguistic approval in the supplied Batch 22 approval request; draft commit fd516cfdd92d494a2b17bc9e1f712734b3e004f1; Product siemens-s7-300-fm351-positioning-1ch01-0ae0; MLFB 6ES7351-1AH01-0AE0; product type positioning module. Recording time is an actual UTC observation, not the PM review timestamp. Registry role approvals are separate from GitHub reviews.",
+      note: "6ES7351-1AH01-0AE0: PM-authorized exact Persian wording, punctuation and spacing, NFC normalization, typed MLFB isolation and segment boundaries in identical three-segment short and single-paragraph long descriptions.",
+    },
+    technicalReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-11-24T19:01:55.333Z",
+      reviewedContentHash:
+        "sha256:212f9ed9aa3d3848d251dcb5c88cd9c8f624bcc268a0bc28db621dadca84b467",
+      evidenceRef:
+        "PM-authorized technical approval in the supplied Batch 22 approval request; draft commit fd516cfdd92d494a2b17bc9e1f712734b3e004f1; Product siemens-s7-300-fm351-positioning-1ch01-0ae0; MLFB 6ES7351-1AH01-0AE0; product type positioning module. Recording time is an actual UTC observation, not the PM review timestamp. Registry role approvals are separate from GitHub reviews. Reused readiness B: Siemens Entry 21536617, 28 February 2011; printed p1/1, module-name/order-number table; Reused parsed readiness text; module names and exact order numbers only; compatibility columns excluded; https://cache.industry.siemens.com/dl/files/617/21536617/att_108718/v1/21536617_compatibility_fm_with_profibus_interfacemodules_en.pdf. Reused readiness E: Siemens FM351 manual, 05/2011, A5E01092700-02; printed p31 for 1AH01, p78 for 1AH02; Reused parsed readiness text; exact FM351 order corroboration only; no characteristics transferred; https://cache.industry.siemens.com/dl/files/043/2103043/att_66101/v1/s7300_fm351_operating_instructions_en_en-US.pdf. Position 165 uses the CP adapter; positions 166-174 use the FM adapter. Canonical variants remain binding metadata outside copy claims. FM350-2 2AH00, 2AH01 and the SIPLUS order remain distinct. Both FM351 stable IDs retain 1ch01/1ch02 while exact MLFBs contain 1AH01/1AH02. No characteristics transfer between orders. Position 167 indexed Siemens performance information differs from the canonical record; the discrepancy is unchanged and outside this identity/type-only copy. Printed pages are not assumed viewer indices. No fresh retrieval or visual inspection. Visual inspection and successful direct-origin HTTP status were NOT OBSERVED. Position 167 Mall reader request returned 403; no usable evidence. Position 169 exact SIPLUS datasheet reader request returned 403; indexed text remains separate. Siemens Fichas Tecnicas reader hit a 10,485,761+ byte size limit; indexed text remains separate. ST70 2021 reader hit a 25,626,498 byte size limit; indexed corroboration remains separate. FM352 support-manual reader request returned 403; no usable evidence. FM353 support-manual URL was inaccessible via the reader; no usable evidence.",
+      note: "6ES7351-1AH01-0AE0: PM-authorized exact MLFB identity and positioning module type only. Model titles, interfaces, protocols, performance, compatibility, lifecycle, certification and availability remain outside approval.",
+    },
+  },
+  {
+    productId: "siemens-s7-300-fm351-positioning-1ch02-0ae0",
+    shortDescription: batch22Position171Copy,
+    description: [batch22Position171Copy],
+    provenance: "ai-assisted",
+    linguisticReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-11-24T19:01:55.331Z",
+      reviewedContentHash:
+        "sha256:a1b32474533bac0515ad26b3392a8e2d52576d153983c2e81aa140af0bdcffae",
+      evidenceRef:
+        "PM-authorized linguistic approval in the supplied Batch 22 approval request; draft commit fd516cfdd92d494a2b17bc9e1f712734b3e004f1; Product siemens-s7-300-fm351-positioning-1ch02-0ae0; MLFB 6ES7351-1AH02-0AE0; product type positioning module. Recording time is an actual UTC observation, not the PM review timestamp. Registry role approvals are separate from GitHub reviews.",
+      note: "6ES7351-1AH02-0AE0: PM-authorized exact Persian wording, punctuation and spacing, NFC normalization, typed MLFB isolation and segment boundaries in identical three-segment short and single-paragraph long descriptions.",
+    },
+    technicalReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-11-24T19:01:55.333Z",
+      reviewedContentHash:
+        "sha256:a1b32474533bac0515ad26b3392a8e2d52576d153983c2e81aa140af0bdcffae",
+      evidenceRef:
+        "PM-authorized technical approval in the supplied Batch 22 approval request; draft commit fd516cfdd92d494a2b17bc9e1f712734b3e004f1; Product siemens-s7-300-fm351-positioning-1ch02-0ae0; MLFB 6ES7351-1AH02-0AE0; product type positioning module. Recording time is an actual UTC observation, not the PM review timestamp. Registry role approvals are separate from GitHub reviews. Reused readiness B: Siemens Entry 21536617, 28 February 2011; printed p1/1, module-name/order-number table; Reused parsed readiness text; module names and exact order numbers only; compatibility columns excluded; https://cache.industry.siemens.com/dl/files/617/21536617/att_108718/v1/21536617_compatibility_fm_with_profibus_interfacemodules_en.pdf. Reused readiness E: Siemens FM351 manual, 05/2011, A5E01092700-02; printed p31 for 1AH01, p78 for 1AH02; Reused parsed readiness text; exact FM351 order corroboration only; no characteristics transferred; https://cache.industry.siemens.com/dl/files/043/2103043/att_66101/v1/s7300_fm351_operating_instructions_en_en-US.pdf. Position 165 uses the CP adapter; positions 166-174 use the FM adapter. Canonical variants remain binding metadata outside copy claims. FM350-2 2AH00, 2AH01 and the SIPLUS order remain distinct. Both FM351 stable IDs retain 1ch01/1ch02 while exact MLFBs contain 1AH01/1AH02. No characteristics transfer between orders. Position 167 indexed Siemens performance information differs from the canonical record; the discrepancy is unchanged and outside this identity/type-only copy. Printed pages are not assumed viewer indices. No fresh retrieval or visual inspection. Visual inspection and successful direct-origin HTTP status were NOT OBSERVED. Position 167 Mall reader request returned 403; no usable evidence. Position 169 exact SIPLUS datasheet reader request returned 403; indexed text remains separate. Siemens Fichas Tecnicas reader hit a 10,485,761+ byte size limit; indexed text remains separate. ST70 2021 reader hit a 25,626,498 byte size limit; indexed corroboration remains separate. FM352 support-manual reader request returned 403; no usable evidence. FM353 support-manual URL was inaccessible via the reader; no usable evidence.",
+      note: "6ES7351-1AH02-0AE0: PM-authorized exact MLFB identity and positioning module type only. Model titles, interfaces, protocols, performance, compatibility, lifecycle, certification and availability remain outside approval.",
+    },
+  },
+  {
+    productId: "siemens-s7-300-fm352-cam-controller-1ah02-0ae0",
+    shortDescription: batch22Position172Copy,
+    description: [batch22Position172Copy],
+    provenance: "ai-assisted",
+    linguisticReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-11-24T19:01:55.331Z",
+      reviewedContentHash:
+        "sha256:8f2cd62d9b6190e47c09799db4b8fa5aa173680270132ec91c0cc0c44dd6acb0",
+      evidenceRef:
+        "PM-authorized linguistic approval in the supplied Batch 22 approval request; draft commit fd516cfdd92d494a2b17bc9e1f712734b3e004f1; Product siemens-s7-300-fm352-cam-controller-1ah02-0ae0; MLFB 6ES7352-1AH02-0AE0; product type electronic cam controller. Recording time is an actual UTC observation, not the PM review timestamp. Registry role approvals are separate from GitHub reviews.",
+      note: "6ES7352-1AH02-0AE0: PM-authorized exact Persian wording, punctuation and spacing, NFC normalization, typed MLFB isolation and segment boundaries in identical three-segment short and single-paragraph long descriptions.",
+    },
+    technicalReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-11-24T19:01:55.333Z",
+      reviewedContentHash:
+        "sha256:8f2cd62d9b6190e47c09799db4b8fa5aa173680270132ec91c0cc0c44dd6acb0",
+      evidenceRef:
+        "PM-authorized technical approval in the supplied Batch 22 approval request; draft commit fd516cfdd92d494a2b17bc9e1f712734b3e004f1; Product siemens-s7-300-fm352-cam-controller-1ah02-0ae0; MLFB 6ES7352-1AH02-0AE0; product type electronic cam controller. Recording time is an actual UTC observation, not the PM review timestamp. Registry role approvals are separate from GitHub reviews. Reused readiness B: Siemens Entry 21536617, 28 February 2011; printed p1/1, module-name/order-number table; Reused parsed readiness text; module names and exact order numbers only; compatibility columns excluded; https://cache.industry.siemens.com/dl/files/617/21536617/att_108718/v1/21536617_compatibility_fm_with_profibus_interfacemodules_en.pdf. Position 165 uses the CP adapter; positions 166-174 use the FM adapter. Canonical variants remain binding metadata outside copy claims. FM350-2 2AH00, 2AH01 and the SIPLUS order remain distinct. Both FM351 stable IDs retain 1ch01/1ch02 while exact MLFBs contain 1AH01/1AH02. No characteristics transfer between orders. Position 167 indexed Siemens performance information differs from the canonical record; the discrepancy is unchanged and outside this identity/type-only copy. Printed pages are not assumed viewer indices. No fresh retrieval or visual inspection. Visual inspection and successful direct-origin HTTP status were NOT OBSERVED. Position 167 Mall reader request returned 403; no usable evidence. Position 169 exact SIPLUS datasheet reader request returned 403; indexed text remains separate. Siemens Fichas Tecnicas reader hit a 10,485,761+ byte size limit; indexed text remains separate. ST70 2021 reader hit a 25,626,498 byte size limit; indexed corroboration remains separate. FM352 support-manual reader request returned 403; no usable evidence. FM353 support-manual URL was inaccessible via the reader; no usable evidence.",
+      note: "6ES7352-1AH02-0AE0: PM-authorized exact MLFB identity and electronic cam controller type only. Model titles, interfaces, protocols, performance, compatibility, lifecycle, certification and availability remain outside approval.",
+    },
+  },
+  {
+    productId: "siemens-s7-300-fm353-positioning-1ah01-0ae0",
+    shortDescription: batch22Position173Copy,
+    description: [batch22Position173Copy],
+    provenance: "ai-assisted",
+    linguisticReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-11-24T19:01:55.331Z",
+      reviewedContentHash:
+        "sha256:9b70d41d3cc7cf9dc6c68d7e0101b61d7f1abb5b61e23037a7e042887c9278f4",
+      evidenceRef:
+        "PM-authorized linguistic approval in the supplied Batch 22 approval request; draft commit fd516cfdd92d494a2b17bc9e1f712734b3e004f1; Product siemens-s7-300-fm353-positioning-1ah01-0ae0; MLFB 6ES7353-1AH01-0AE0; product type positioning module. Recording time is an actual UTC observation, not the PM review timestamp. Registry role approvals are separate from GitHub reviews.",
+      note: "6ES7353-1AH01-0AE0: PM-authorized exact Persian wording, punctuation and spacing, NFC normalization, typed MLFB isolation and segment boundaries in identical three-segment short and single-paragraph long descriptions.",
+    },
+    technicalReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-11-24T19:01:55.333Z",
+      reviewedContentHash:
+        "sha256:9b70d41d3cc7cf9dc6c68d7e0101b61d7f1abb5b61e23037a7e042887c9278f4",
+      evidenceRef:
+        "PM-authorized technical approval in the supplied Batch 22 approval request; draft commit fd516cfdd92d494a2b17bc9e1f712734b3e004f1; Product siemens-s7-300-fm353-positioning-1ah01-0ae0; MLFB 6ES7353-1AH01-0AE0; product type positioning module. Recording time is an actual UTC observation, not the PM review timestamp. Registry role approvals are separate from GitHub reviews. Reused readiness B: Siemens Entry 21536617, 28 February 2011; printed p1/1, module-name/order-number table; Reused parsed readiness text; module names and exact order numbers only; compatibility columns excluded; https://cache.industry.siemens.com/dl/files/617/21536617/att_108718/v1/21536617_compatibility_fm_with_profibus_interfacemodules_en.pdf. Reused readiness F: Siemens Product Information A5E00390472, AA, August 2004; English validity table on second PDF page; printed pagination unestablished; Reused parsed readiness text; exact FM353/FM354 positioning identity/type only; servo type for FM354 is supported separately by B; https://cache.industry.siemens.com/dl/files/415/19659415/att_41963/v1/Produktinformation_FM-Pos.pdf?download=true. Position 165 uses the CP adapter; positions 166-174 use the FM adapter. Canonical variants remain binding metadata outside copy claims. FM350-2 2AH00, 2AH01 and the SIPLUS order remain distinct. Both FM351 stable IDs retain 1ch01/1ch02 while exact MLFBs contain 1AH01/1AH02. No characteristics transfer between orders. Position 167 indexed Siemens performance information differs from the canonical record; the discrepancy is unchanged and outside this identity/type-only copy. Printed pages are not assumed viewer indices. No fresh retrieval or visual inspection. Visual inspection and successful direct-origin HTTP status were NOT OBSERVED. Position 167 Mall reader request returned 403; no usable evidence. Position 169 exact SIPLUS datasheet reader request returned 403; indexed text remains separate. Siemens Fichas Tecnicas reader hit a 10,485,761+ byte size limit; indexed text remains separate. ST70 2021 reader hit a 25,626,498 byte size limit; indexed corroboration remains separate. FM352 support-manual reader request returned 403; no usable evidence. FM353 support-manual URL was inaccessible via the reader; no usable evidence.",
+      note: "6ES7353-1AH01-0AE0: PM-authorized exact MLFB identity and positioning module type only. Model titles, interfaces, protocols, performance, compatibility, lifecycle, certification and availability remain outside approval.",
+    },
+  },
+  {
+    productId: "siemens-s7-300-fm354-servo-positioning-1ah01-0ae0",
+    shortDescription: batch22Position174Copy,
+    description: [batch22Position174Copy],
+    provenance: "ai-assisted",
+    linguisticReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-11-24T19:01:55.331Z",
+      reviewedContentHash:
+        "sha256:ba2961c36ace7f4f835779673f90eba4218ca74e173d2cfa81d053a09ad0ee7c",
+      evidenceRef:
+        "PM-authorized linguistic approval in the supplied Batch 22 approval request; draft commit fd516cfdd92d494a2b17bc9e1f712734b3e004f1; Product siemens-s7-300-fm354-servo-positioning-1ah01-0ae0; MLFB 6ES7354-1AH01-0AE0; product type servo positioning module. Recording time is an actual UTC observation, not the PM review timestamp. Registry role approvals are separate from GitHub reviews.",
+      note: "6ES7354-1AH01-0AE0: PM-authorized exact Persian wording, punctuation and spacing, NFC normalization, typed MLFB isolation and segment boundaries in identical three-segment short and single-paragraph long descriptions.",
+    },
+    technicalReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-11-24T19:01:55.333Z",
+      reviewedContentHash:
+        "sha256:ba2961c36ace7f4f835779673f90eba4218ca74e173d2cfa81d053a09ad0ee7c",
+      evidenceRef:
+        "PM-authorized technical approval in the supplied Batch 22 approval request; draft commit fd516cfdd92d494a2b17bc9e1f712734b3e004f1; Product siemens-s7-300-fm354-servo-positioning-1ah01-0ae0; MLFB 6ES7354-1AH01-0AE0; product type servo positioning module. Recording time is an actual UTC observation, not the PM review timestamp. Registry role approvals are separate from GitHub reviews. Reused readiness B: Siemens Entry 21536617, 28 February 2011; printed p1/1, module-name/order-number table; Reused parsed readiness text; module names and exact order numbers only; compatibility columns excluded; https://cache.industry.siemens.com/dl/files/617/21536617/att_108718/v1/21536617_compatibility_fm_with_profibus_interfacemodules_en.pdf. Reused readiness F: Siemens Product Information A5E00390472, AA, August 2004; English validity table on second PDF page; printed pagination unestablished; Reused parsed readiness text; exact FM353/FM354 positioning identity/type only; servo type for FM354 is supported separately by B; https://cache.industry.siemens.com/dl/files/415/19659415/att_41963/v1/Produktinformation_FM-Pos.pdf?download=true. Position 165 uses the CP adapter; positions 166-174 use the FM adapter. Canonical variants remain binding metadata outside copy claims. FM350-2 2AH00, 2AH01 and the SIPLUS order remain distinct. Both FM351 stable IDs retain 1ch01/1ch02 while exact MLFBs contain 1AH01/1AH02. No characteristics transfer between orders. Position 167 indexed Siemens performance information differs from the canonical record; the discrepancy is unchanged and outside this identity/type-only copy. Printed pages are not assumed viewer indices. No fresh retrieval or visual inspection. Visual inspection and successful direct-origin HTTP status were NOT OBSERVED. Position 167 Mall reader request returned 403; no usable evidence. Position 169 exact SIPLUS datasheet reader request returned 403; indexed text remains separate. Siemens Fichas Tecnicas reader hit a 10,485,761+ byte size limit; indexed text remains separate. ST70 2021 reader hit a 25,626,498 byte size limit; indexed corroboration remains separate. FM352 support-manual reader request returned 403; no usable evidence. FM353 support-manual URL was inaccessible via the reader; no usable evidence.",
+      note: "6ES7354-1AH01-0AE0: PM-authorized exact MLFB identity and servo positioning module type only. Model titles, interfaces, protocols, performance, compatibility, lifecycle, certification and availability remain outside approval.",
     },
   },
 ] as const satisfies readonly PersianProductCopyOverlay[];

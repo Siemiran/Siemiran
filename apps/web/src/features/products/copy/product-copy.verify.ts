@@ -4,6 +4,8 @@ import { products } from "../data/products";
 import { validateSiemensPLCProduct } from "../database/siemens/plc.validator";
 import { mapSiemensS7300CommunicationProcessorToProduct } from "../database/siemens/s7-300/cp.adapter";
 import { s7300CP } from "../database/siemens/s7-300/cp";
+import { mapSiemensS7300FunctionModuleToProduct } from "../database/siemens/s7-300/fm.adapter";
+import { s7300FM } from "../database/siemens/s7-300/fm";
 import { mapSiemensS7300InterfaceModuleToProduct } from "../database/siemens/s7-300/im.adapter";
 import { s7300IM } from "../database/siemens/s7-300/im";
 import { mapSiemensS7300SignalModuleToProduct } from "../database/siemens/s7-300/sm.adapter";
@@ -10271,16 +10273,20 @@ assert(
     registeredBatch21ReviewRoles.every(isApprovedReview),
   "Batch 21 must retain ten disjoint ordered drafts with twenty distinct approved role objects."
 );
+const expectedCompletedThroughBatch21ProductIdSet = new Set<ProductId>([
+  ...expectedCompletedThroughBatch20ProductIdSet,
+  ...expectedBatch21ProductIds,
+]);
+const registeredCompletedThroughBatch21Drafts = persianProductCopyDraftRegistry.filter(
+  (entry) => expectedCompletedThroughBatch21ProductIdSet.has(entry.productId)
+);
 assert(
-  persianProductCopyDraftRegistry.length === 125 &&
+  expectedCompletedThroughBatch21ProductIdSet.size === 125 &&
+    registeredCompletedThroughBatch21Drafts.length === 125 &&
     JSON.stringify(
-      persianProductCopyDraftRegistry.map((entry) => entry.productId)
-    ) ===
-      JSON.stringify([
-        ...expectedCompletedThroughBatch20ProductIdSet,
-        ...expectedBatch21ProductIds,
-      ]),
-  "The full 125-entry registry must retain exact membership and order across Batches 01-21."
+      registeredCompletedThroughBatch21Drafts.map((entry) => entry.productId)
+    ) === JSON.stringify([...expectedCompletedThroughBatch21ProductIdSet]),
+  "Completed Batches 01-21 must retain exact membership and order across 125 entries."
 );
 const registeredBatch21DraftRecords = registeredBatch21Drafts.map(
   (entry, index) => {
@@ -10463,6 +10469,497 @@ const registeredBatch21ApprovalMutationResults =
     })
   );
 
+const BATCH_22_DRAFT_COMMIT = "fd516cfdd92d494a2b17bc9e1f712734b3e004f1";
+// Actual UTC recording observations, not PM review timestamps or GitHub reviews.
+const BATCH_22_LINGUISTIC_RECORDED_AT = "2026-11-24T19:01:55.331Z";
+const BATCH_22_TECHNICAL_RECORDED_AT = "2026-11-24T19:01:55.333Z";
+assert(
+  [BATCH_22_LINGUISTIC_RECORDED_AT, BATCH_22_TECHNICAL_RECORDED_AT].every(
+    (recordedAt) =>
+      Number.isFinite(Date.parse(recordedAt)) &&
+      new Date(recordedAt).toISOString() === recordedAt
+  ) && BATCH_22_LINGUISTIC_RECORDED_AT < BATCH_22_TECHNICAL_RECORDED_AT,
+  "Batch 22 role recording observations must be valid and separately ordered."
+);
+
+// Batch 22 approval checks reuse readiness evidence; the two roles are recorded separately.
+const batch22ReadinessEvidence: Record<
+  string,
+  {
+    reference: string;
+    url: string;
+    access: string;
+    orderTypes: Readonly<Record<string, string>>;
+  }
+> = {
+  A: {
+    reference:
+      "Siemens CP 343-1 Advanced manual, 12/2018, C79000-G8976-C202-06; printed p4, Validity",
+    url: "https://cache.industry.siemens.com/dl/files/619/62046619/att_973791/v1/GH_CP343-1-Adv-GX31_76.pdf",
+    access:
+      "Reused parsed readiness text; exact SIPLUS order identity/type only",
+    orderTypes: {
+      "6AG1343-1GX31-4XE0": "communication processor",
+    },
+  },
+  B: {
+    reference:
+      "Siemens Entry 21536617, 28 February 2011; printed p1/1, module-name/order-number table",
+    url: "https://cache.industry.siemens.com/dl/files/617/21536617/att_108718/v1/21536617_compatibility_fm_with_profibus_interfacemodules_en.pdf",
+    access:
+      "Reused parsed readiness text; module names and exact order numbers only; compatibility columns excluded",
+    orderTypes: {
+      "6ES7350-1AH03-0AE0": "counter module",
+      "6ES7350-2AH01-0AE0": "counter module",
+      "6ES7351-1AH01-0AE0": "positioning module",
+      "6ES7351-1AH02-0AE0": "positioning module",
+      "6ES7352-1AH02-0AE0": "electronic cam controller",
+      "6ES7353-1AH01-0AE0": "positioning module",
+      "6ES7354-1AH01-0AE0": "servo positioning module",
+    },
+  },
+  C: {
+    reference:
+      "Siemens Fichas Tecnicas, August 2025; printed p17, Modulos de Funcao table",
+    url: "https://assets.new.siemens.com/siemens/assets/api/uuid%3A6b83665d-d50c-409b-8e2e-05ccaa826c49/Fichas-tecnicas-MONTADA-AGO25_original.pdf",
+    access:
+      "Reused indexed readiness text; reader size limit supplied no parsed or visual evidence; exact 2AH00 identity/type only",
+    orderTypes: {
+      "6ES7350-2AH00-0AE0": "counter module",
+    },
+  },
+  D: {
+    reference:
+      "Exact Siemens SIPLUS 6AG1350-2AH01-4AE0 datasheet; printed p1/4; indexed ST70 2021 ordering-table corroboration, catalog printed pagination unestablished",
+    url: "https://support.industry.siemens.com/teddatasheet/?caller=SIOS&format=pdf&language=en&mlfbs=6AG1350-2AH01-4AE0",
+    access:
+      "Reused indexed readiness text only; exact datasheet reader 403; ST70 reader size limit; no parsed or visual evidence; corroboration https://cache.industry.siemens.com/dl/files/167/109744167/att_1076941/v1/simatic-st70-complete-english-2021.pdf",
+    orderTypes: {
+      "6AG1350-2AH01-4AE0": "counter module",
+    },
+  },
+  E: {
+    reference:
+      "Siemens FM351 manual, 05/2011, A5E01092700-02; printed p31 for 1AH01, p78 for 1AH02",
+    url: "https://cache.industry.siemens.com/dl/files/043/2103043/att_66101/v1/s7300_fm351_operating_instructions_en_en-US.pdf",
+    access:
+      "Reused parsed readiness text; exact FM351 order corroboration only; no characteristics transferred",
+    orderTypes: {
+      "6ES7351-1AH01-0AE0": "positioning module",
+      "6ES7351-1AH02-0AE0": "positioning module",
+    },
+  },
+  F: {
+    reference:
+      "Siemens Product Information A5E00390472, AA, August 2004; English validity table on second PDF page; printed pagination unestablished",
+    url: "https://cache.industry.siemens.com/dl/files/415/19659415/att_41963/v1/Produktinformation_FM-Pos.pdf?download=true",
+    access:
+      "Reused parsed readiness text; exact FM353/FM354 positioning identity/type only; servo type for FM354 is supported separately by B",
+    orderTypes: {
+      "6ES7353-1AH01-0AE0": "positioning module",
+      "6ES7354-1AH01-0AE0": "positioning module",
+    },
+  },
+};
+const batch22ReadinessEvidenceLimits = {
+  freshManufacturerRetrieval: "NOT RUN; reused readiness references",
+  visualInspection: "NOT OBSERVED",
+  successfulDirectOriginHttpStatus: "NOT OBSERVED",
+  printedPages: "Printed pages are not assumed viewer indices.",
+  failedReaderRequests: [
+    "Position 167 Mall reader request returned 403; no usable evidence.",
+    "Position 169 exact SIPLUS datasheet reader request returned 403; indexed text remains separate.",
+    "Siemens Fichas Tecnicas reader hit a 10,485,761+ byte size limit; indexed text remains separate.",
+    "ST70 2021 reader hit a 25,626,498 byte size limit; indexed corroboration remains separate.",
+    "FM352 support-manual reader request returned 403; no usable evidence.",
+    "FM353 support-manual URL was inaccessible via the reader; no usable evidence.",
+  ],
+  familyBoundary:
+    "Position 165 uses the CP adapter; positions 166-174 use the FM adapter. Canonical variants remain binding metadata outside copy claims.",
+  revisionBoundary:
+    "FM350-2 2AH00, 2AH01 and the SIPLUS order remain distinct. Both FM351 stable IDs retain 1ch01/1ch02 while exact MLFBs contain 1AH01/1AH02. No characteristics transfer between orders.",
+  deferredDataReview:
+    "Position 167 indexed Siemens performance information differs from the canonical record; the discrepancy is unchanged and outside this identity/type-only copy.",
+  excludedClaims:
+    "Model titles, interfaces, protocols, performance, compatibility, lifecycle, certification and availability are outside the copy scope.",
+};
+const expectedBatch22Products = [
+  {
+    position: 165,
+    productId: "siemens-siplus-s7-300-cp343-1-advanced-gx31-4xe0",
+    partNumber: "6AG1343-1GX31-4XE0",
+    reviewedContentHash:
+      "sha256:b6f66d381313bed1c6d70277cde4adac4c799a9fce3038bbad312544a26e5bac",
+    variantId: "industrial-ethernet-advanced",
+    suffix: "، پردازندهٔ ارتباطی است.",
+    productTypeId: "Communication Processor",
+    supportedType: "communication processor",
+    evidenceKeys: ["A"],
+  },
+  {
+    position: 166,
+    productId: "siemens-s7-300-fm350-1-counter-1ah03-0ae0",
+    partNumber: "6ES7350-1AH03-0AE0",
+    reviewedContentHash:
+      "sha256:28f66d2700933ee658907e9650ded8f58e1209755fcd301682395eb35657ff83",
+    variantId: "counter",
+    suffix: "، ماژول شمارنده است.",
+    productTypeId: "Function Module",
+    supportedType: "counter module",
+    evidenceKeys: ["B"],
+  },
+  {
+    position: 167,
+    productId: "siemens-s7-300-fm350-2-counter-2ah00-0ae0",
+    partNumber: "6ES7350-2AH00-0AE0",
+    reviewedContentHash:
+      "sha256:d298aa7c3eefe248fe8bfb6a33717836d5ee2a51b429ee1ca32d983b1786205b",
+    variantId: "counter",
+    suffix: "، ماژول شمارنده است.",
+    productTypeId: "Function Module",
+    supportedType: "counter module",
+    evidenceKeys: ["C"],
+  },
+  {
+    position: 168,
+    productId: "siemens-s7-300-fm350-2-counter-2ah01-0ae0",
+    partNumber: "6ES7350-2AH01-0AE0",
+    reviewedContentHash:
+      "sha256:579c10f639520675f95caf0d368be2522e0c3b95181819baa102873653bd0051",
+    variantId: "counter",
+    suffix: "، ماژول شمارنده است.",
+    productTypeId: "Function Module",
+    supportedType: "counter module",
+    evidenceKeys: ["B"],
+  },
+  {
+    position: 169,
+    productId: "siemens-siplus-s7-300-fm350-2-counter-2ah01-4ae0",
+    partNumber: "6AG1350-2AH01-4AE0",
+    reviewedContentHash:
+      "sha256:dfee312de5f9341b2b92e7399b235c3f87e9b3b38a5466d844d14e5a5e7c29e6",
+    variantId: "counter",
+    suffix: "، ماژول شمارنده است.",
+    productTypeId: "Function Module",
+    supportedType: "counter module",
+    evidenceKeys: ["D"],
+  },
+  {
+    position: 170,
+    productId: "siemens-s7-300-fm351-positioning-1ch01-0ae0",
+    partNumber: "6ES7351-1AH01-0AE0",
+    reviewedContentHash:
+      "sha256:212f9ed9aa3d3848d251dcb5c88cd9c8f624bcc268a0bc28db621dadca84b467",
+    variantId: "positioning",
+    suffix: "، ماژول موقعیت‌دهی است.",
+    productTypeId: "Function Module",
+    supportedType: "positioning module",
+    evidenceKeys: ["B", "E"],
+  },
+  {
+    position: 171,
+    productId: "siemens-s7-300-fm351-positioning-1ch02-0ae0",
+    partNumber: "6ES7351-1AH02-0AE0",
+    reviewedContentHash:
+      "sha256:a1b32474533bac0515ad26b3392a8e2d52576d153983c2e81aa140af0bdcffae",
+    variantId: "positioning",
+    suffix: "، ماژول موقعیت‌دهی است.",
+    productTypeId: "Function Module",
+    supportedType: "positioning module",
+    evidenceKeys: ["B", "E"],
+  },
+  {
+    position: 172,
+    productId: "siemens-s7-300-fm352-cam-controller-1ah02-0ae0",
+    partNumber: "6ES7352-1AH02-0AE0",
+    reviewedContentHash:
+      "sha256:8f2cd62d9b6190e47c09799db4b8fa5aa173680270132ec91c0cc0c44dd6acb0",
+    variantId: "cam-controller",
+    suffix: "، کنترل‌کنندهٔ الکترونیکی بادامک است.",
+    productTypeId: "Function Module",
+    supportedType: "electronic cam controller",
+    evidenceKeys: ["B"],
+  },
+  {
+    position: 173,
+    productId: "siemens-s7-300-fm353-positioning-1ah01-0ae0",
+    partNumber: "6ES7353-1AH01-0AE0",
+    reviewedContentHash:
+      "sha256:9b70d41d3cc7cf9dc6c68d7e0101b61d7f1abb5b61e23037a7e042887c9278f4",
+    variantId: "positioning",
+    suffix: "، ماژول موقعیت‌دهی است.",
+    productTypeId: "Function Module",
+    supportedType: "positioning module",
+    evidenceKeys: ["B", "F"],
+  },
+  {
+    position: 174,
+    productId: "siemens-s7-300-fm354-servo-positioning-1ah01-0ae0",
+    partNumber: "6ES7354-1AH01-0AE0",
+    reviewedContentHash:
+      "sha256:ba2961c36ace7f4f835779673f90eba4218ca74e173d2cfa81d053a09ad0ee7c",
+    variantId: "servo-positioning",
+    suffix: "، ماژول موقعیت‌دهی سروو است.",
+    productTypeId: "Function Module",
+    supportedType: "servo positioning module",
+    evidenceKeys: ["B", "F"],
+  },
+] as const;
+const expectedBatch22ProductIds = expectedBatch22Products.map(
+  (entry) => entry.productId
+);
+const expectedBatch22ProductIdSet = new Set<ProductId>(
+  expectedBatch22ProductIds
+);
+const registeredBatch22Drafts = persianProductCopyDraftRegistry.filter(
+  (entry) => expectedBatch22ProductIdSet.has(entry.productId)
+);
+const registeredBatch22ReviewRoles = registeredBatch22Drafts.flatMap(
+  (entry) => [entry.linguisticReview, entry.technicalReview]
+);
+assert(
+  expectedCompletedThroughBatch21ProductIdSet.size === 125 &&
+    expectedBatch22ProductIdSet.size === 10 &&
+    expectedBatch22ProductIds.every(
+      (id) => !expectedCompletedThroughBatch21ProductIdSet.has(id)
+    ) &&
+    JSON.stringify(registeredBatch22Drafts.map((entry) => entry.productId)) ===
+      JSON.stringify(expectedBatch22ProductIds) &&
+    new Set(registeredBatch22ReviewRoles).size === 20 &&
+    registeredBatch22ReviewRoles.every(isApprovedReview),
+  "Batch 22 must retain ten disjoint ordered drafts and twenty distinct approved role objects."
+);
+assert(
+  persianProductCopyDraftRegistry.length === 135 &&
+    JSON.stringify(
+      persianProductCopyDraftRegistry.map((entry) => entry.productId)
+    ) ===
+      JSON.stringify([
+        ...expectedCompletedThroughBatch21ProductIdSet,
+        ...expectedBatch22ProductIds,
+      ]),
+  "The full 135-entry registry must retain exact membership and order across Batches 01-22."
+);
+const registeredBatch22DraftRecords = registeredBatch22Drafts.map(
+  (entry, index) => {
+    const {
+      position,
+      productId,
+      partNumber,
+      variantId,
+      suffix,
+      productTypeId,
+      supportedType,
+      evidenceKeys,
+    } = expectedBatch22Products[index];
+    const matchesSource = (source: { id: string; mlfb: string }) =>
+      source.id === productId || source.mlfb === partNumber;
+    const sources =
+      position === 165
+        ? s7300CP.filter(matchesSource)
+        : s7300FM.filter(matchesSource);
+    const matches = products.filter(
+      (product) =>
+        product.id === productId ||
+        product.partNumber === partNumber ||
+        product.manufacturerPartNumber === partNumber
+    );
+    const [source] = sources;
+    const [product] = matches;
+    assert(
+      sources.length === 1 &&
+        source !== undefined &&
+        source.id === productId &&
+        source.mlfb === partNumber &&
+        source.familyId === "S7-300" &&
+        source.variantId === variantId &&
+        source.productTypeId === productTypeId &&
+        validateSiemensPLCProduct(source).valid &&
+        matches.length === 1 &&
+        product !== undefined &&
+        product.id === productId &&
+        product.familyId === "S7-300" &&
+        product.partNumber === partNumber &&
+        product.manufacturerPartNumber === partNumber &&
+        product.variantId === variantId &&
+        product.productTypeId === productTypeId &&
+        products.indexOf(product) + 1 === position,
+      "Batch 22 exact source/production binding and variant must pass: " +
+        productId
+    );
+    const adapted =
+      source.productTypeId === "Communication Processor"
+        ? mapSiemensS7300CommunicationProcessorToProduct(source)
+        : mapSiemensS7300FunctionModuleToProduct(source);
+    assert(
+      JSON.stringify(adapted) === JSON.stringify(product) &&
+        deriveAllowedTechnicalTokens(product).has(partNumber) &&
+        reviewedTechnicalTokenOverrides.every(
+          (override) => override.productId !== productId
+        ),
+      "Batch 22 CP/FM adapter equality and exact MLFB token eligibility must pass without overrides: " +
+        productId
+    );
+    const expectedSegments = [
+      { kind: "text", value: "مدل " },
+      { kind: "technical", value: partNumber },
+      { kind: "text", value: suffix },
+    ];
+    assert(
+      entry.provenance === "ai-assisted" &&
+        JSON.stringify(entry.shortDescription) ===
+          JSON.stringify(expectedSegments) &&
+        JSON.stringify(entry.description) ===
+          JSON.stringify([expectedSegments]) &&
+        entry.shortDescription.every(
+          (segment) => segment.value.normalize("NFC") === segment.value
+        ) &&
+        validatePersianProductCopyDrafts([entry], products).valid,
+      "Batch 22 linguistic check must retain exact wording, punctuation, NFC and three valid segments: " +
+        productId
+    );
+    const evidence = evidenceKeys.map((key) => batch22ReadinessEvidence[key]);
+    assert(
+      evidence.every((item) => item.orderTypes[partNumber] !== undefined) &&
+        evidence.some((item) => item.orderTypes[partNumber] === supportedType),
+      "Batch 22 technical check must use exact-order identity/type evidence: " +
+        productId
+    );
+
+    const freshContentHash = createProductCopyContentHash(entry);
+    assert(
+      freshContentHash === expectedBatch22Products[index].reviewedContentHash,
+      "Batch 22 must retain the exact PM-reviewed production hash: " + productId
+    );
+    for (const [role, label, recordedAt] of [
+      ["linguisticReview", "linguistic", BATCH_22_LINGUISTIC_RECORDED_AT],
+      ["technicalReview", "technical", BATCH_22_TECHNICAL_RECORDED_AT],
+    ] as const) {
+      const review = entry[role];
+      const expectedEvidenceRef =
+        "PM-authorized " +
+        label +
+        " approval in the supplied Batch 22 approval request; draft commit " +
+        BATCH_22_DRAFT_COMMIT +
+        "; Product " +
+        productId +
+        "; MLFB " +
+        partNumber +
+        "; product type " +
+        supportedType +
+        ". Recording time is an actual UTC observation, not the PM review timestamp. Registry role approvals are separate from GitHub reviews." +
+        (role === "technicalReview"
+          ? evidenceKeys
+              .map((key) => {
+                const item = batch22ReadinessEvidence[key];
+                return (
+                  " Reused readiness " +
+                  key +
+                  ": " +
+                  item.reference +
+                  "; " +
+                  item.access +
+                  "; " +
+                  item.url +
+                  "."
+                );
+              })
+              .join("") +
+            " " +
+            batch22ReadinessEvidenceLimits.familyBoundary +
+            " " +
+            batch22ReadinessEvidenceLimits.revisionBoundary +
+            " " +
+            batch22ReadinessEvidenceLimits.deferredDataReview +
+            " Printed pages are not assumed viewer indices. No fresh retrieval or visual inspection. Visual inspection and successful direct-origin HTTP status were NOT OBSERVED. " +
+            batch22ReadinessEvidenceLimits.failedReaderRequests.join(" ")
+          : "");
+      assert(
+        review.decision === "approved" &&
+          review.reviewerId === "Siemiran" &&
+          review.reviewedAt === recordedAt &&
+          review.reviewedContentHash === freshContentHash &&
+          Reflect.ownKeys(review).length === 6 &&
+          review.evidenceRef === expectedEvidenceRef &&
+          review.note ===
+            (role === "linguisticReview"
+              ? partNumber +
+                ": PM-authorized exact Persian wording, punctuation and spacing, NFC normalization, typed MLFB isolation and segment boundaries in identical three-segment short and single-paragraph long descriptions."
+              : partNumber +
+                ": PM-authorized exact MLFB identity and " +
+                supportedType +
+                " type only. Model titles, interfaces, protocols, performance, compatibility, lifecycle, certification and availability remain outside approval."),
+        "Batch 22 " +
+          label +
+          " approval must bind the reviewed hash, exact scope, evidence and actual UTC recording observation: " +
+          productId
+      );
+    }
+    return {
+      position,
+      productId,
+      partNumber,
+      variantId,
+      renderedShortDescription: entry.shortDescription
+        .map((segment) => segment.value)
+        .join(""),
+      freshContentHash,
+      linguisticDraftReview: {
+        result: "PASS",
+        wording:
+          "Exact authorized Persian introduction and product-type suffix",
+        punctuation: "Exact Persian comma, spacing and final period",
+        unicodeNormalization: "NFC",
+        segmentBoundaries: "text / exact technical MLFB / text",
+        approvalDecision: entry.linguisticReview.decision,
+      },
+      technicalDraftReview: {
+        result: "PASS",
+        binding: "One exact source, CP/FM adapter and production record",
+        manufacturerSupportedType: supportedType,
+        evidenceKeys,
+        evidenceReferences: evidence.map((item) => item.reference),
+        evidenceAccess: evidence.map((item) => item.access),
+        approvalDecision: entry.technicalReview.decision,
+      },
+    };
+  }
+);
+
+const registeredBatch22ApprovalMutationResults =
+  registeredBatch22Drafts.flatMap((entry) =>
+    (["text", "kind"] as const).map((mutation) => {
+      const changed = cloneMutableOverlay(entry);
+      const segment = changed.shortDescription[0];
+      assert(segment !== undefined, "Batch 22 mutation requires a first segment.");
+      if (mutation === "text") segment.value += "!";
+      else segment.kind = segment.kind === "text" ? "technical" : "text";
+      const result = validatePersianProductCopyDrafts([changed], products);
+      const staleApprovals = result.issues.filter(
+        (issue) =>
+          issue.code === "stale-approval-hash" &&
+          issue.productId === entry.productId
+      );
+      assert(
+        !result.valid &&
+          staleApprovals.length === 2 &&
+          ["Linguistic", "Technical"].every((role) =>
+            staleApprovals.some(
+              (issue) =>
+                issue.message ===
+                `${role} approval does not match the current copy content.`
+            )
+          ),
+        `Batch 22 independent ${mutation} mutation must stale both approvals: ${entry.productId}`
+      );
+      return {
+        productId: entry.productId,
+        mutation,
+        staleApprovals: staleApprovals.length,
+      };
+    })
+  );
+
 const registeredCompletedBatchDrafts = persianProductCopyDraftRegistry.filter(
   (entry) => expectedCompletedBatchProductIdSet.has(entry.productId)
 );
@@ -10476,8 +10973,8 @@ assert(
     ) &&
     persianProductCopyDraftRegistry.every(
       (entry) =>
-        expectedCompletedThroughBatch20ProductIdSet.has(entry.productId) ||
-        expectedBatch21ProductIdSet.has(entry.productId)
+        expectedCompletedThroughBatch21ProductIdSet.has(entry.productId) ||
+        expectedBatch22ProductIdSet.has(entry.productId)
     ) &&
     registeredCompletedBatchDrafts.every((entry) => {
       const contentHash = createProductCopyContentHash(entry);
@@ -10493,7 +10990,7 @@ assert(
 
 assert(
   registeredDraftValidation.valid &&
-    persianProductCopyDraftRegistry.length === 125 &&
+    persianProductCopyDraftRegistry.length === 135 &&
     registeredBatch01Drafts.length === 5 &&
     JSON.stringify(registeredBatch01DraftBindings) ===
       JSON.stringify(expectedBatch01DraftProducts),
@@ -10648,25 +11145,25 @@ assert(
   "The existing thirty drafts must retain exact current dual approvals with no pending reviews."
 );
 assert(
-  registeredLinguisticApprovals === 125 &&
-    registeredTechnicalApprovals === 125 &&
-    registeredCurrentDualApprovals === 125 &&
+  registeredLinguisticApprovals === 135 &&
+    registeredTechnicalApprovals === 135 &&
+    registeredCurrentDualApprovals === 135 &&
     persianProductCopyDraftRegistry.filter((entry) =>
       isPendingReview(entry.linguisticReview)
     ).length === 0 &&
     persianProductCopyDraftRegistry.filter((entry) =>
       isPendingReview(entry.technicalReview)
     ).length === 0,
-  "The registry must contain 125 current dual approvals and zero pending reviews per role."
+  "The registry must contain 135 current dual approvals and zero pending reviews per role."
 );
 assert(
   !registeredDraftActivation.valid &&
-    registeredDraftActivation.overlayCount === 125 &&
+    registeredDraftActivation.overlayCount === 135 &&
     registeredDraftActivation.canonicalCount === 382 &&
-    registeredDraftActivation.approvedCount === 125 &&
-    registeredDraftActivation.missingIds.length === 257 &&
+    registeredDraftActivation.approvedCount === 135 &&
+    registeredDraftActivation.missingIds.length === 247 &&
     !("capability" in registeredDraftActivation),
-  "Combined activation must fail closed at exactly 125/382 drafts, 125 dual approvals, and 257 missing Products."
+  "Combined activation must fail closed at exactly 135/382 drafts, 135 dual approvals, and 247 missing Products."
 );
 assert(
   PERSIAN_PRODUCT_COPY_PUBLICATION_STATE === "disabled",
@@ -10965,6 +11462,19 @@ console.log(
           evidenceLimits: batch21ReadinessEvidenceLimits,
           finalApprovalsRecorded: true,
         },
+        batch22: {
+          entries: registeredBatch22Drafts.length,
+          drafts: registeredBatch22DraftRecords,
+          approvedRoleRecords: registeredBatch22ReviewRoles.length,
+          linguisticRecordedAt: BATCH_22_LINGUISTIC_RECORDED_AT,
+          technicalRecordedAt: BATCH_22_TECHNICAL_RECORDED_AT,
+          mutationStaleness: registeredBatch22ApprovalMutationResults,
+          readinessEvidence: batch22ReadinessEvidence,
+          evidenceLimits: batch22ReadinessEvidenceLimits,
+          finalApprovalsRecorded: true,
+        },
+        completedThroughBatch21Entries:
+          registeredCompletedThroughBatch21Drafts.length,
         completedThroughBatch20Entries:
           registeredCompletedThroughBatch20Drafts.length,
         completedThroughBatch19Entries:
