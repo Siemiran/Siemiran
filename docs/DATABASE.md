@@ -1,9 +1,135 @@
 # Siemiran — Product Database
 
 Repository source of truth: `main` at
-`c1c1779a4e019b6a49b8fae96dae0762e0b16d50` (2026-11-22).
+`7aa9741f6a80ccccb2a4877567d60bc16e2e6444` (2026-11-24).
 
-## 2026-11-22 - Batch 21 Private Product-copy Checkpoint (Current State)
+## 2026-11-24 - Batch 22 Private Product-copy Checkpoint (Current State)
+
+[PR #101](https://github.com/Siemiran/Siemiran/pull/101) merged as
+`7aa9741f6a80ccccb2a4877567d60bc16e2e6444`. See [CHANGELOG.md](CHANGELOG.md#2026-11-24---pr-101-complete-batch-22-private-drafts-and-dual-approvals)
+for the sole parent, exact subject, server merge time, reviewed tree and scope.
+
+Approval covers **exact MLFB plus supported product type only** for every row.
+The ten `ai-assisted` entries use identical three-segment short and single-paragraph
+long descriptions: `text` introduction `مدل `, one `technical` exact MLFB,
+and a `text` type-only suffix. Canonical variants are binding metadata, not
+approval of embedded characteristics. Model titles, interfaces, protocols,
+performance, compatibility, lifecycle, certification and availability are excluded.
+
+| Canonical position | Exact MLFB | Stable Product ID | Canonical variant | Supported type | Evidence |
+| --- | --- | --- | --- | --- | --- |
+| 165 | `6AG1343-1GX31-4XE0` | `siemens-siplus-s7-300-cp343-1-advanced-gx31-4xe0` | `industrial-ethernet-advanced` | communication processor | A |
+| 166 | `6ES7350-1AH03-0AE0` | `siemens-s7-300-fm350-1-counter-1ah03-0ae0` | `counter` | counter module | B |
+| 167 | `6ES7350-2AH00-0AE0` | `siemens-s7-300-fm350-2-counter-2ah00-0ae0` | `counter` | counter module | C |
+| 168 | `6ES7350-2AH01-0AE0` | `siemens-s7-300-fm350-2-counter-2ah01-0ae0` | `counter` | counter module | B |
+| 169 | `6AG1350-2AH01-4AE0` | `siemens-siplus-s7-300-fm350-2-counter-2ah01-4ae0` | `counter` | counter module | D |
+| 170 | `6ES7351-1AH01-0AE0` | `siemens-s7-300-fm351-positioning-1ch01-0ae0` | `positioning` | positioning module | B, E |
+| 171 | `6ES7351-1AH02-0AE0` | `siemens-s7-300-fm351-positioning-1ch02-0ae0` | `positioning` | positioning module | B, E |
+| 172 | `6ES7352-1AH02-0AE0` | `siemens-s7-300-fm352-cam-controller-1ah02-0ae0` | `cam-controller` | electronic cam controller | B |
+| 173 | `6ES7353-1AH01-0AE0` | `siemens-s7-300-fm353-positioning-1ah01-0ae0` | `positioning` | positioning module | B, F |
+| 174 | `6ES7354-1AH01-0AE0` | `siemens-s7-300-fm354-servo-positioning-1ah01-0ae0` | `servo-positioning` | servo positioning module | B, F |
+
+Position 165 is the final communication processor in this cohort; positions
+166–174 use the existing FM adapter. Preserve the CP-to-FM boundary at 165/166.
+FM350-2 `2AH00`, `2AH01` and the SIPLUS `6AG1350-2AH01-4AE0` are separate orders.
+Both FM351 stable IDs retain `1ch01`/`1ch02` although the exact MLFBs contain
+`1AH01`/`1AH02`; MLFBs must never be derived from those internal ID suffixes.
+FM353 positioning and FM354 servo positioning remain distinct. The position-167
+performance discrepancy is unchanged, deferred to separate data review and
+outside the type-only approval. No characteristics transfer between revisions.
+
+- **A:** [CP 343-1 Advanced manual, 12/2018, C79000-G8976-C202-06](https://cache.industry.siemens.com/dl/files/619/62046619/att_973791/v1/GH_CP343-1-Adv-GX31_76.pdf), printed p4, Validity, is reused **parsed** evidence for the exact SIPLUS communication-processor order.
+- **B:** [Siemens Entry 21536617, 28 February 2011](https://cache.industry.siemens.com/dl/files/617/21536617/att_108718/v1/21536617_compatibility_fm_with_profibus_interfacemodules_en.pdf), printed p1/1, is reused **parsed** evidence. Use only each exact module-name/order-number row; compatibility columns are excluded. The exact FM354 row supports servo-positioning type.
+- **C:** [Siemens Fichas Técnicas, August 2025](https://assets.new.siemens.com/siemens/assets/api/uuid%3A6b83665d-d50c-409b-8e2e-05ccaa826c49/Fichas-tecnicas-MONTADA-AGO25_original.pdf), printed p17, Módulos de Função table, is reused **indexed-only** evidence for exact FM350-2 `2AH00` counter-module identity/type; it is not a parsed read.
+- **D:** The [exact SIPLUS datasheet](https://support.industry.siemens.com/teddatasheet/?caller=SIOS&format=pdf&language=en&mlfbs=6AG1350-2AH01-4AE0), printed p1/4, supplies reused **indexed-only** exact counter-module identity/type, with [indexed ST70 2021 ordering-table corroboration](https://cache.industry.siemens.com/dl/files/167/109744167/att_1076941/v1/simatic-st70-complete-english-2021.pdf). Catalog printed pagination is unestablished; neither source is claimed as a parsed read.
+- **E:** [FM351 manual, 05/2011, A5E01092700-02](https://cache.industry.siemens.com/dl/files/043/2103043/att_66101/v1/s7300_fm351_operating_instructions_en_en-US.pdf), printed p31 for `1AH01` and p78 for `1AH02`, supplies reused **parsed** exact-order corroboration. No characteristics transfer between the two orders.
+- **F:** [Siemens Product Information A5E00390472 AA, August 2004](https://cache.industry.siemens.com/dl/files/415/19659415/att_41963/v1/Produktinformation_FM-Pos.pdf?download=true), English validity table on the **second PDF page**, supplies reused **parsed** FM353/FM354 positioning identity/type evidence. **Printed pagination is unestablished**; the second PDF page is not called printed p2. FM354's narrower servo-positioning type comes from B.
+
+Reader failures remain separate from usable parsed/indexed evidence:
+
+- Position 167 Mall reader request returned 403; no usable evidence.
+- Position 169 exact SIPLUS datasheet reader request returned 403; indexed text remains separate.
+- Siemens Fichas Tecnicas reader hit a 10,485,761+ byte size limit; indexed text remains separate.
+- ST70 2021 reader hit a 25,626,498 byte size limit; indexed corroboration remains separate.
+- FM352 support-manual reader request returned 403; no usable evidence.
+- FM353 support-manual URL was inaccessible via the reader; no usable evidence.
+
+Reader 403s and size limits are access observations, not successful Siemens-origin
+HTTP status or usable document reads. Printed pages are not assumed viewer indices.
+Visual inspection and successful direct-origin HTTP status remain **NOT OBSERVED**.
+No fresh retrieval, manufacturer research or lifecycle verification is claimed.
+
+Twenty separate `Siemiran` hash-bound approvals bind the following transcribed
+merged-registry hashes. Actual UTC recording observations are
+`2026-11-24T19:01:55.331Z` (linguistic) and
+`2026-11-24T19:01:55.333Z` (technical): **recording times, not PM review times**,
+and separate from GitHub reviews. They bind draft
+`fd516cfdd92d494a2b17bc9e1f712734b3e004f1`; approval head
+`57141752226e1be1dbbb4baca5bef7834abf6163` retains its reviewed payloads.
+Each transcription was checked against merged source, the reviewed head and
+PR #101; no production content hash was recomputed.
+
+| Exact MLFB | Production content hash bound by both separate role records |
+| --- | --- |
+| `6AG1343-1GX31-4XE0` | `sha256:b6f66d381313bed1c6d70277cde4adac4c799a9fce3038bbad312544a26e5bac` |
+| `6ES7350-1AH03-0AE0` | `sha256:28f66d2700933ee658907e9650ded8f58e1209755fcd301682395eb35657ff83` |
+| `6ES7350-2AH00-0AE0` | `sha256:d298aa7c3eefe248fe8bfb6a33717836d5ee2a51b429ee1ca32d983b1786205b` |
+| `6ES7350-2AH01-0AE0` | `sha256:579c10f639520675f95caf0d368be2522e0c3b95181819baa102873653bd0051` |
+| `6AG1350-2AH01-4AE0` | `sha256:dfee312de5f9341b2b92e7399b235c3f87e9b3b38a5466d844d14e5a5e7c29e6` |
+| `6ES7351-1AH01-0AE0` | `sha256:212f9ed9aa3d3848d251dcb5c88cd9c8f624bcc268a0bc28db621dadca84b467` |
+| `6ES7351-1AH02-0AE0` | `sha256:a1b32474533bac0515ad26b3392a8e2d52576d153983c2e81aa140af0bdcffae` |
+| `6ES7352-1AH02-0AE0` | `sha256:8f2cd62d9b6190e47c09799db4b8fa5aa173680270132ec91c0cc0c44dd6acb0` |
+| `6ES7353-1AH01-0AE0` | `sha256:9b70d41d3cc7cf9dc6c68d7e0101b61d7f1abb5b61e23037a7e042887c9278f4` |
+| `6ES7354-1AH01-0AE0` | `sha256:ba2961c36ace7f4f835779673f90eba4218ca74e173d2cfa81d053a09ad0ee7c` |
+
+**PASS (REUSED)** - Batch 22's Product-copy validator, focused lint on both
+implementation files and production build each exited `0`, once each on final
+changes at reviewed head `57141752226e1be1dbbb4baca5bef7834abf6163`.
+The build included TypeScript and 774/774 static pages. Reviewed head and squash
+share exact tree `10154b800daadc12c5f53891ded59415bc64dd72`.
+This Markdown-only reconciliation leaves all application, canonical data,
+dependency and build content unchanged. Application checks, product-hash
+recomputation/audits and manufacturer research/retrieval are **NOT RUN** here.
+
+The recorded implementation comparison preserved all 125 prior entries in order,
+with unchanged content, review metadata and production hashes. All 135 reviewed
+draft payloads, typed segments, bindings, order, provenance and hashes matched
+draft `fd516cfdd92d494a2b17bc9e1f712734b3e004f1`. Twenty independent mutations
+(one text and one segment-kind case per Product) each staled both approval roles.
+These are reused implementation results, not newly executed application checks.
+The completed-through-Batch-21 125-entry cohort keeps its separate membership
+and ordering assertion. Explicit disjoint membership separates those 125 IDs
+from ten Batch 22 IDs; a separate assertion checks membership and order across
+the full 135-entry registry. All earlier cohort checks and boundaries remain.
+
+Recorded Batch 22 implementation CI on reviewed head and squash was absent:
+zero workflow runs, check runs and statuses, with combined `pending`; this is
+absent CI, not passing CI. Fresh documentation audits and documentation PR/CI
+observations belong in the task report.
+
+The catalog contains 382 Products (186 S7-1200 / 196 S7-300). There are 135 private
+drafts, 135 current approvals per role, 135 current dual approvals, zero pending
+roles and 247 products without drafts. Activation remains invalid at
+`overlayCount=135`, `approvedCount=135` and `missingIds.length=247`
+(`135/135/247`), with capability absent. Active overlays remain 0/382, publication
+is disabled, and public FA/EN copy stays canonical English/LTR. Complete
+382/382 current dual approvals and separate launch authorization remain required.
+
+Overrides remain 10 Products / 20 assignments / 7 unique strings (`10/20/7`),
+with an empty global allowlist; Batch 22 added zero overrides. The eleven
+lifecycle omissions, including IM 178-4, and separate S7-300 provenance
+classification (185 Siemens-official verified / 11 explicitly unverified) remain.
+
+Batch 23 remains unstarted and outside this documentation task's scope.
+Selection, readiness and future scope require separate authorization. Admin
+Panel and Automation remain gated; completed-copy website inspection is pending.
+
+<a id="2026-11-22---batch-21-private-product-copy-checkpoint-current-state"></a>
+
+## 2026-11-22 - Batch 21 Private Product-copy Checkpoint (Historical Snapshot)
+
+Historical Batch 21 checkpoint (125/257): the following dated facts, evidence
+and prospective workflow are preserved. Batch 22 above is current.
 
 [PR #99](https://github.com/Siemiran/Siemiran/pull/99) merged as
 `c1c1779a4e019b6a49b8fae96dae0762e0b16d50`. See [CHANGELOG.md](CHANGELOG.md#2026-11-22---pr-99-complete-batch-21-private-drafts-and-dual-approvals)

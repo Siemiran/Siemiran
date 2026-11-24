@@ -34,7 +34,43 @@ Principles:
 - The eleven unverified S7-300 records continue to omit public lifecycle in both
   languages.
 
-Current implementation checkpoint (2026-11-22): `c1c1779a4e019b6a49b8fae96dae0762e0b16d50`.
+Current implementation checkpoint (2026-11-24): `7aa9741f6a80ccccb2a4877567d60bc16e2e6444`.
+
+[PR #101](https://github.com/Siemiran/Siemiran/pull/101) completed private Batch 22 at
+`7aa9741f6a80ccccb2a4877567d60bc16e2e6444`. Its ten entries occupy canonical
+positions 165–174. Approval covers exact MLFB identity and the supported product
+type only: one communication processor, four counter modules, two FM351
+positioning modules, one electronic cam controller, FM353 positioning and
+FM354 servo positioning. The CP-to-FM boundary is at 165/166. Canonical variants
+are binding metadata outside copy claims; FM350-2 2AH00/2AH01 and the SIPLUS
+order remain distinct. FM351 MLFBs contain 1AH01/1AH02 while their stable IDs
+retain 1ch01/1ch02 verbatim. Position 167's performance discrepancy remains
+deferred and outside approval. No characteristics transfer between orders.
+Model titles, interfaces, protocols, performance, compatibility, lifecycle,
+certification and availability remain excluded. Exact bindings, recorded hashes
+and qualified A–F evidence are in [DATABASE.md](DATABASE.md#2026-11-24---batch-22-private-product-copy-checkpoint-current-state);
+merge identity is in [CHANGELOG.md](CHANGELOG.md#2026-11-24---pr-101-complete-batch-22-private-drafts-and-dual-approvals)
+and durable resume facts are in [SESSION_HANDOFF.md](SESSION_HANDOFF.md).
+
+The catalog contains 382 Products (186 S7-1200 / 196 S7-300). There are 135 private
+drafts, 135 current approvals per role, 135 current dual approvals, zero pending
+roles and 247 products without drafts. Activation remains invalid at
+`overlayCount=135`, `approvedCount=135` and `missingIds.length=247`
+(`135/135/247`), with capability absent. Active overlays remain 0/382, publication
+is disabled, and public FA/EN copy stays canonical English/LTR. Complete
+382/382 current dual approvals and separate launch authorization remain required.
+
+Overrides remain 10 Products / 20 assignments / 7 unique strings (`10/20/7`),
+with an empty global allowlist; Batch 22 added zero overrides. The eleven
+lifecycle omissions, including IM 178-4, and separate S7-300 provenance
+classification (185 Siemens-official verified / 11 explicitly unverified) remain.
+
+Batch 23 remains unstarted and outside this documentation task's scope.
+Selection, readiness and future scope require separate authorization. Admin
+Panel and Automation remain gated; completed-copy website inspection is pending.
+
+Historical Batch 21 checkpoint (125/257): the following dated facts, evidence
+and prospective workflow are preserved. Batch 22 above is current.
 
 [PR #99](https://github.com/Siemiran/Siemiran/pull/99) completed private Batch 21 at
 `c1c1779a4e019b6a49b8fae96dae0762e0b16d50`. Its ten entries at canonical positions
@@ -197,7 +233,7 @@ Historical Batch 16 checkpoint (80/302): [PR #89](https://github.com/Siemiran/Si
 completed one mixed analog input/output and four interface-module entries.
 Its exact MLFB/type-only scope, exclusions and evidence qualifications remain in
 [DATABASE.md](DATABASE.md#2026-11-20---batch-16-private-product-copy-checkpoint-historical-snapshot).
-Batch 20 and earlier counts are historical; Batch 21 is current.
+Batch 21 and earlier counts are historical; Batch 22 is current.
 
 After Persian Product-copy completion, the dedicated local visual and functional
 website inspection with the maintainer remains pending: FA/EN switching,
