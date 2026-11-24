@@ -1,12 +1,130 @@
 # Siemiran — Product Database
 
 Repository source of truth: `main` at
-`541386b2775cf21270a4708bd37a144cac3b90f7` (2026-11-22).
+`c1c1779a4e019b6a49b8fae96dae0762e0b16d50` (2026-11-22).
 
-## 2026-11-22 - Batch 20 Private Product-copy Checkpoint (Current State)
+## 2026-11-22 - Batch 21 Private Product-copy Checkpoint (Current State)
+
+[PR #99](https://github.com/Siemiran/Siemiran/pull/99) merged as
+`c1c1779a4e019b6a49b8fae96dae0762e0b16d50`. See [CHANGELOG.md](CHANGELOG.md#2026-11-22---pr-99-complete-batch-21-private-drafts-and-dual-approvals)
+for the sole parent, server merge time, exact reviewed tree and implementation scope.
+
+Approval covers **exact MLFB plus communication-processor type only** for every row.
+Canonical variants are binding metadata, not approval of embedded characteristics.
+The ten `ai-assisted` entries retain identical short and single-paragraph long copy:
+`text` introduction `مدل `, one `technical` exact MLFB, and `text` suffix
+`، پردازندهٔ ارتباطی است.`. Titles, interfaces, protocols, performance, compatibility,
+lifecycle, certification and availability remain outside approval.
+
+| Canonical position | Exact MLFB | Stable Product ID | Canonical variant | Evidence / printed reference |
+| --- | --- | --- | --- | --- |
+| 155 | `6GK7343-1GX21-0XE0` | `siemens-s7-300-cp343-1-advanced-gx21-0xe0` | `industrial-ethernet-advanced` | A / printed p12, CP300 table |
+| 156 | `6GK7343-1FX00-0XE0` | `siemens-s7-300-cp343-1-erpc-fx00-0xe0` | `industrial-ethernet-erpc` | A / printed p12, CP300 table |
+| 157 | `6FL4343-1CX10-0XE0` | `siemens-s7-300-cp343-1-bacnet-cx10-0xe0` | `bacnet` | A / printed p12, CP300 table |
+| 158 | `6GK7343-1CX00-0XE0` | `siemens-s7-300-cp343-1-lean-cx00-0xe0` | `industrial-ethernet-lean` | B type + identity; C predecessor / pp54–55 |
+| 159 | `6AG1343-1CX10-2XE0` | `siemens-siplus-s7-300-cp343-1-lean-cx10-2xe0` | `industrial-ethernet-lean` | C / printed p3, exact SIPLUS identity/type |
+| 160 | `6GK7343-1EX00-0XE0` | `siemens-s7-300-cp343-1-ex00-0xe0` | `industrial-ethernet` | B type + identity; E / printed p1/2 identity |
+| 161 | `6GK7343-1EX10-0XE0` | `siemens-s7-300-cp343-1-ex10-0xe0` | `industrial-ethernet` | B type + identity; E / printed p1/2 identity |
+| 162 | `6GK7343-1EX20-0XE0` | `siemens-s7-300-cp343-1-ex20-0xe0` | `industrial-ethernet` | B type + identity; E / printed p1/2 identity |
+| 163 | `6GK7343-1HX00-0XE0` | `siemens-s7-300-cp343-1-pn-hx00-0xe0` | `profinet` | B type + identity; E / printed p1/2 identity |
+| 164 | `6AG1343-1EX30-7XE0` | `siemens-siplus-s7-300-cp343-1-ex30-7xe0` | `industrial-ethernet` | D / printed p3, exact SIPLUS identity/type |
+
+All ten are S7-300 CP 343-1 communication processors. The IT-to-Advanced boundary
+after position 154 and the ERPC, BACnet, Lean, standard, PN and SIPLUS distinctions
+remain binding metadata outside copy claims. The `6FL`, `6GK` and `6AG` identities,
+both SIPLUS orders versus standard orders, GX20/GX21, CX00/CX10 and the individual
+EX00/EX10/EX20/EX30 and HX00 revisions remain distinct. No characteristics are
+transferred between prefixes, revisions or variants.
+
+- **A:** [Siemens supplier declaration, February 2025](https://cache.industry.siemens.com/dl/files/142/109983142/att_1315774/v1/c02-suppliers_declaration_of_conformity_2025-02-05.pdf), printed p12, CP300 table, is reused **parsed** evidence for exact GX21, FX00 and BACnet identity/type rows only. The supplier declaration supports identity and type only; no certification claim is made.
+- **B:** [Siemens S7-routing note 78906145](https://cache.industry.siemens.com/dl/files/145/78906145/att_76780/v1/78906145.pdf), section 2.3.2.2, provides reused **parsed exact-order rows** for CX00, EX00, EX10, EX20 and HX00. Their communication-processor type comes from the separate **indexed Chinese type heading**; the parsed Chinese heading is garbled. Printed pagination is **unestablished**, not inferred from viewer indices.
+- **C:** [Siemens CP 343-1 Lean manual, 12/2018, C79000-G8976-C198-08](https://cache.industry.siemens.com/dl/files/456/23643456/att_973772/v1/GH_CP343-1-Lean-CX10_76.pdf) supplies reused **parsed** exact SIPLUS `6AG1343-1CX10-2XE0` identity/type on printed p3. Section 7.3.2, printed p54, and Table 7-1, printed p55, separately identify standard CX00 as a predecessor; CX00 type comes from B. No CX10 characteristics are transferred to CX00, and SIPLUS and standard orders remain distinct.
+- **D:** [Siemens CP 343-1 manual, 12/2018, C79000-G8976-C201-08](https://cache.industry.siemens.com/dl/files/272/24485272/att_973778/v1/GH_CP343-1-EX30_76.pdf), printed p3, supplies reused **parsed** exact SIPLUS `6AG1343-1EX30-7XE0` identity/type. It remains distinct from standard EX30.
+- **E:** [Siemens routing overview, Entry 584459](https://cache.industry.siemens.com/dl/files/459/584459/att_109849/v7/584459_overview_cps_en.pdf), printed p1/2, provides reused **parsed identity corroboration only** for separate EX00, EX10, EX20 and HX00 exact orders. Their type evidence comes from B.
+
+The two canonical support-manual reader requests, `IE_CP_S7-300_e.pdf` and
+`hy_S7-CPs-IE_76.pdf`, each returned a reader **403** and supplied no usable
+evidence. These failures are separate from usable parsed/cache evidence and the
+indexed Chinese type heading. Printed pages are not assumed viewer indices.
+Visual inspection and successful direct-origin HTTP status remain **NOT OBSERVED**.
+No fresh retrieval, manufacturer research or lifecycle verification is claimed;
+earlier evidence qualifications remain preserved in their historical records.
+
+Twenty separate `Siemiran` hash-bound approvals, one linguistic and one technical
+record per Product, bind the recorded hashes below. Actual UTC recording
+observations are `2026-11-22T19:54:14.570Z` (linguistic) and
+`2026-11-22T19:54:14.594Z` (technical). These are **recording times, not PM review
+times**, and the registry approvals are separate from GitHub reviews. They bind
+draft `c267ffa67444d21fdfe816221889246a96571120`; approval commit
+`a29da517f2f6b7fa96ed5fc64f5b603f6e597c09` preserves its reviewed payloads.
+This table transcribes merged-registry metadata; no production hash is recomputed.
+
+| Exact MLFB | Production content hash bound by both separate role records |
+| --- | --- |
+| `6GK7343-1GX21-0XE0` | `sha256:88359626f1ad601d449430b1b90dfba03a9280504c9ca14429ec40631a9dd0b1` |
+| `6GK7343-1FX00-0XE0` | `sha256:8f0dee9c1b276a78e5b1483357be30bb6a95a7cc2c4f58c610b38aae9a9673ad` |
+| `6FL4343-1CX10-0XE0` | `sha256:c57c0c123fbabfe64d0630d6268347caaa00fb2056c14bdee09969cce0e3cbb0` |
+| `6GK7343-1CX00-0XE0` | `sha256:6dba0342353992e6f23eee26807b21b47775429eefe35b8968b8d9563e3ef99f` |
+| `6AG1343-1CX10-2XE0` | `sha256:95424da2b03ded957fc7e65702fbb6c90a174ed42c3fbe21b4871da4b2edfa94` |
+| `6GK7343-1EX00-0XE0` | `sha256:59a970a5f52934f6d312282b0e9f6ce71399335e6b3954371758c5de4ecc9a8e` |
+| `6GK7343-1EX10-0XE0` | `sha256:561f3d48f5cc5d386586b9750871d16857a6297b7d9656ce284a32e7867ef3d9` |
+| `6GK7343-1EX20-0XE0` | `sha256:ff7cfa1bea74e03d43013facefcc5ca24501b40994540e8a58667401059442d0` |
+| `6GK7343-1HX00-0XE0` | `sha256:163daf3e1695e70083332b8e097c862d553855424edc21d6b2fdeff79a6bda54` |
+| `6AG1343-1EX30-7XE0` | `sha256:d9497214759749ab080156b63d1cd6ae1ad1012683fdbdc72cccc9ed3be9019d` |
+
+**PASS (REUSED)** - Batch 21's Product-copy validator, focused lint on both
+implementation files and production build each exited `0` at reviewed head
+`a29da517f2f6b7fa96ed5fc64f5b603f6e597c09`. The build included TypeScript and
+774/774 static pages. Reviewed head and squash share exact tree
+`83923572a8cf05fc8306873db0eb77e5063bed88`. This documentation change leaves all
+application, canonical data, dependency and build content unchanged, preserving
+those results' applicability. Application checks, production hash audits and
+manufacturer research/retrieval are **NOT RUN** in this documentation task.
+
+The recorded implementation comparison preserved all 115 prior entries in order,
+with unchanged content, review metadata and production hashes. All 125 reviewed
+draft payloads, typed segments, bindings, order, provenance and hashes remained
+unchanged from draft `c267ffa67444d21fdfe816221889246a96571120`.
+Twenty independent text/segment-kind mutations, two per Product, each staled
+both roles. These are reused implementation results, not new application checks
+or hash audits. Batch 19 and Batch 20 cohort ordering checks remain scoped;
+the completed-through-Batch-20 cohort retains its exact 115-entry order.
+Explicit disjoint membership separates those 115 completed IDs from ten Batch 21
+IDs; a separate assertion verifies membership and order across the full 125-entry
+registry. Earlier cohort checks and boundaries remain intact.
+
+Recorded Batch 21 implementation CI was absent on the reviewed head and squash:
+zero workflow runs, check runs and statuses, with empty rollup and combined
+`pending`; this is absent CI, not passing CI. Fresh documentation checks and
+documentation PR/CI observations belong in the task report.
+
+The catalog contains 382 Products (186 S7-1200 / 196 S7-300). There are 125 private
+drafts, 125 current approvals per role, 125 current dual approvals, zero pending
+roles and 257 products without drafts. Activation remains invalid at
+`overlayCount=125`, `approvedCount=125` and `missingIds.length=257`, with capability
+absent. Active overlays remain 0/382, publication is disabled, and public FA/EN
+copy stays canonical English/LTR. Complete 382/382 current dual approvals and
+separate launch authorization remain required.
+
+Overrides remain 10 Products / 20 assignments / 7 unique strings with an empty
+global allowlist. Batch 21 added zero overrides. The eleven public lifecycle
+omissions, including IM 178-4, and separate S7-300 provenance classification
+(185 Siemens-official verified / 11 explicitly unverified) remain in effect.
+
+Batch 22 remains unstarted and outside this task's scope. Product selection and
+future scope require separate authorization. Admin Panel and Automation remain
+gated; the dedicated completed-copy website inspection remains pending.
+
+Batch 20's 115/267 checkpoint and all earlier records below are historical;
+their dated scope, evidence qualifications and prospective workflows are preserved.
+
+## 2026-11-22 - Batch 20 Private Product-copy Checkpoint (Historical Snapshot)
+
+Historical Batch 20 checkpoint (115/267): the following scope, counts and
+prospective workflow describe Batch 20 at its merge and are superseded above.
 
 [PR #97](https://github.com/Siemiran/Siemiran/pull/97) merged as
-`541386b2775cf21270a4708bd37a144cac3b90f7`. See [CHANGELOG.md](CHANGELOG.md#2026-11-22---pr-97-complete-batch-20-private-drafts-and-dual-approvals)
+`541386b2775cf21270a4708bd37a144cac3b90f7`. See [CHANGELOG.md](CHANGELOG.md#2026-11-22---pr-97-complete-batch-20-private-drafts-and-dual-approvals-historical-snapshot)
 for the sole parent, server merge time, exact reviewed tree and implementation scope.
 
 Approval covers **exact MLFB plus communication-processor type only** for every row.
@@ -340,7 +458,7 @@ evidence qualifications remain preserved.
 ## 2026-11-20 - Batch 17 Private Product-copy Checkpoint (Historical Snapshot)
 
 The following 85/297 checkpoint, records and prospective workflow describe
-Batch 17 at its merge. Batches 18 and 19 also remain historical; Batch 20 above is current.
+Batch 17 at its merge. Batches 18 through 20 also remain historical; Batch 21 above is current.
 
 [PR #91](https://github.com/Siemiran/Siemiran/pull/91) completed private Batch 17 at
 `33009a15647ff2907c949e58ff779918a5ec60ad`. Approval covers exact MLFB identity and
