@@ -1072,6 +1072,66 @@ const batch21Position164Copy = [
   { kind: "text", value: "، پردازندهٔ ارتباطی است." },
 ] as const satisfies ProductCopyParagraph;
 
+const batch22Position165Copy = [
+  { kind: "text", value: "مدل " },
+  { kind: "technical", value: "6AG1343-1GX31-4XE0" },
+  { kind: "text", value: "، پردازندهٔ ارتباطی است." },
+] as const satisfies ProductCopyParagraph;
+
+const batch22Position166Copy = [
+  { kind: "text", value: "مدل " },
+  { kind: "technical", value: "6ES7350-1AH03-0AE0" },
+  { kind: "text", value: "، ماژول شمارنده است." },
+] as const satisfies ProductCopyParagraph;
+
+const batch22Position167Copy = [
+  { kind: "text", value: "مدل " },
+  { kind: "technical", value: "6ES7350-2AH00-0AE0" },
+  { kind: "text", value: "، ماژول شمارنده است." },
+] as const satisfies ProductCopyParagraph;
+
+const batch22Position168Copy = [
+  { kind: "text", value: "مدل " },
+  { kind: "technical", value: "6ES7350-2AH01-0AE0" },
+  { kind: "text", value: "، ماژول شمارنده است." },
+] as const satisfies ProductCopyParagraph;
+
+const batch22Position169Copy = [
+  { kind: "text", value: "مدل " },
+  { kind: "technical", value: "6AG1350-2AH01-4AE0" },
+  { kind: "text", value: "، ماژول شمارنده است." },
+] as const satisfies ProductCopyParagraph;
+
+const batch22Position170Copy = [
+  { kind: "text", value: "مدل " },
+  { kind: "technical", value: "6ES7351-1AH01-0AE0" },
+  { kind: "text", value: "، ماژول موقعیت‌دهی است." },
+] as const satisfies ProductCopyParagraph;
+
+const batch22Position171Copy = [
+  { kind: "text", value: "مدل " },
+  { kind: "technical", value: "6ES7351-1AH02-0AE0" },
+  { kind: "text", value: "، ماژول موقعیت‌دهی است." },
+] as const satisfies ProductCopyParagraph;
+
+const batch22Position172Copy = [
+  { kind: "text", value: "مدل " },
+  { kind: "technical", value: "6ES7352-1AH02-0AE0" },
+  { kind: "text", value: "، کنترل‌کنندهٔ الکترونیکی بادامک است." },
+] as const satisfies ProductCopyParagraph;
+
+const batch22Position173Copy = [
+  { kind: "text", value: "مدل " },
+  { kind: "technical", value: "6ES7353-1AH01-0AE0" },
+  { kind: "text", value: "، ماژول موقعیت‌دهی است." },
+] as const satisfies ProductCopyParagraph;
+
+const batch22Position174Copy = [
+  { kind: "text", value: "مدل " },
+  { kind: "technical", value: "6ES7354-1AH01-0AE0" },
+  { kind: "text", value: "، ماژول موقعیت‌دهی سروو است." },
+] as const satisfies ProductCopyParagraph;
+
 export const persianProductCopyDraftRegistry = [
   {
     productId: "siemens-s7-1200-cpu-211-1ae40",
@@ -4352,5 +4412,85 @@ export const persianProductCopyDraftRegistry = [
         "PM-authorized technical approval in the supplied Batch 21 approval request; draft commit c267ffa67444d21fdfe816221889246a96571120; Product siemens-siplus-s7-300-cp343-1-ex30-7xe0; MLFB 6AG1343-1EX30-7XE0; product type communication processor. Recording time is an actual UTC observation, not the PM review timestamp. Registry role approvals are separate from GitHub reviews. Reused readiness D: Siemens CP 343-1 manual, 12/2018, C79000-G8976-C201-08; printed p3 for exact SIPLUS EX30 identity/type; reused parsed readiness text; exact SIPLUS EX30 code remains distinct from the standard EX30 code; https://cache.industry.siemens.com/dl/files/272/24485272/att_973778/v1/GH_CP343-1-EX30_76.pdf. Exact 6FL, 6GK and 6AG identities remain separate; CX00 is distinct from CX10, and both SIPLUS orders remain distinct from standard orders. No characteristics are transferred between variants. Printed pages are not assumed viewer indices. No fresh retrieval or visual inspection. Visual inspection and successful direct-origin HTTP status were NOT OBSERVED. The IE_CP_S7-300_e.pdf canonical support-manual request returned a reader 403 and supplied no usable evidence. The hy_S7-CPs-IE_76.pdf canonical support-manual request returned a reader 403 and supplied no usable evidence.",
       note: "6AG1343-1EX30-7XE0: PM-authorized exact MLFB identity and communication-processor type only. Model titles, interfaces, protocols, performance, compatibility, lifecycle, certification and availability remain outside approval.",
     },
+  },
+  {
+    productId: "siemens-siplus-s7-300-cp343-1-advanced-gx31-4xe0",
+    shortDescription: batch22Position165Copy,
+    description: [batch22Position165Copy],
+    provenance: "ai-assisted",
+    linguisticReview: { decision: "pending" },
+    technicalReview: { decision: "pending" },
+  },
+  {
+    productId: "siemens-s7-300-fm350-1-counter-1ah03-0ae0",
+    shortDescription: batch22Position166Copy,
+    description: [batch22Position166Copy],
+    provenance: "ai-assisted",
+    linguisticReview: { decision: "pending" },
+    technicalReview: { decision: "pending" },
+  },
+  {
+    productId: "siemens-s7-300-fm350-2-counter-2ah00-0ae0",
+    shortDescription: batch22Position167Copy,
+    description: [batch22Position167Copy],
+    provenance: "ai-assisted",
+    linguisticReview: { decision: "pending" },
+    technicalReview: { decision: "pending" },
+  },
+  {
+    productId: "siemens-s7-300-fm350-2-counter-2ah01-0ae0",
+    shortDescription: batch22Position168Copy,
+    description: [batch22Position168Copy],
+    provenance: "ai-assisted",
+    linguisticReview: { decision: "pending" },
+    technicalReview: { decision: "pending" },
+  },
+  {
+    productId: "siemens-siplus-s7-300-fm350-2-counter-2ah01-4ae0",
+    shortDescription: batch22Position169Copy,
+    description: [batch22Position169Copy],
+    provenance: "ai-assisted",
+    linguisticReview: { decision: "pending" },
+    technicalReview: { decision: "pending" },
+  },
+  {
+    productId: "siemens-s7-300-fm351-positioning-1ch01-0ae0",
+    shortDescription: batch22Position170Copy,
+    description: [batch22Position170Copy],
+    provenance: "ai-assisted",
+    linguisticReview: { decision: "pending" },
+    technicalReview: { decision: "pending" },
+  },
+  {
+    productId: "siemens-s7-300-fm351-positioning-1ch02-0ae0",
+    shortDescription: batch22Position171Copy,
+    description: [batch22Position171Copy],
+    provenance: "ai-assisted",
+    linguisticReview: { decision: "pending" },
+    technicalReview: { decision: "pending" },
+  },
+  {
+    productId: "siemens-s7-300-fm352-cam-controller-1ah02-0ae0",
+    shortDescription: batch22Position172Copy,
+    description: [batch22Position172Copy],
+    provenance: "ai-assisted",
+    linguisticReview: { decision: "pending" },
+    technicalReview: { decision: "pending" },
+  },
+  {
+    productId: "siemens-s7-300-fm353-positioning-1ah01-0ae0",
+    shortDescription: batch22Position173Copy,
+    description: [batch22Position173Copy],
+    provenance: "ai-assisted",
+    linguisticReview: { decision: "pending" },
+    technicalReview: { decision: "pending" },
+  },
+  {
+    productId: "siemens-s7-300-fm354-servo-positioning-1ah01-0ae0",
+    shortDescription: batch22Position174Copy,
+    description: [batch22Position174Copy],
+    provenance: "ai-assisted",
+    linguisticReview: { decision: "pending" },
+    technicalReview: { decision: "pending" },
   },
 ] as const satisfies readonly PersianProductCopyOverlay[];
