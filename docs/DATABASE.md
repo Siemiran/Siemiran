@@ -1,9 +1,116 @@
 # Siemiran — Product Database
 
 Repository source of truth: `main` at
-`84d458642afd1a716449d4f4e0db6aabb0d5354f` (2026-11-26).
+`ab37f3f05208e027aeb7ac47c1b97b00072d16a8` (2026-11-26).
 
-## 2026-11-26 - Batch 23 Private Product-copy Checkpoint (Current State)
+## 2026-11-26 - Batch 24 Private Product-copy Checkpoint (Current State)
+
+[PR #105](https://github.com/Siemiran/Siemiran/pull/105) merged as
+`ab37f3f05208e027aeb7ac47c1b97b00072d16a8`. The merge record includes the sole
+parent, merge time, reviewed tree, and implementation scope. [CHANGELOG.md](CHANGELOG.md#2026-11-26---pr-105-complete-batch-24-private-drafts-and-dual-approvals)
+
+The ten `ai-assisted` drafts use identical short and single-paragraph long
+descriptions. Each has one verbatim `technical` MLFB segment followed by one
+`text` segment containing a Persian comma, one space, and the approved label.
+Linguistic approval covers exact wording, punctuation, NFC, and MLFB segmentation.
+Technical approval covers exact order identity and module type only. Family,
+capacity, performance, compatibility, interfaces, lifecycle, certification,
+and availability are outside the approved copy.
+
+| Position | Exact MLFB | Stable Product ID | Canonical variant | Approved Persian type label | Reviewed production hash | Evidence |
+| --- | --- | --- | --- | --- | --- | --- |
+| 185 | `6ES7356-4BM00-0AE0` | `siemens-m7-300-fm356-4-4bm00-0ae0` | `application-function` | ماژول تابع کاربردی | `sha256:35a2e9987a2cc5a19f58c2612334bb0129b464b472cace03aecb98bff468cbd9` | A |
+| 186 | `6ES7357-4AH01-0AE0` | `siemens-s7-300-fm357-2-positioning-4ah01-0ae0` | `multi-axis-positioning` | ماژول موقعیت‌دهی چندمحوره | `sha256:5f62768f025bac6f819077f048efe6b9bc34f4d072bac1b9f2956064f96631ba` | B |
+| 187 | `6ES7338-4BC01-0AB0` | `siemens-s7-300-sm338-pos-input-4bc01-0ab0` | `position-input` | ماژول ورودی موقعیت | `sha256:8b3eb5cb38d78aedf6eab445b2ca6f361ee3bb66593d08812bf47e0da514fc3b` | C |
+| 188 | `7MH4950-1AA01` | `siemens-s7-300-siwarex-u1-4950-1aa01` | `weighing-electronics` | ماژول توزین | `sha256:d63ee959df42bf97cdcd324ce27dcc1d093d529e23b74155293bf7b8a1f757f6` | D |
+| 189 | `7MH4950-2AA01` | `siemens-s7-300-siwarex-u2-4950-2aa01` | `weighing-electronics` | ماژول توزین | `sha256:e8c74be63274020fba67c7cf4487ba81403110fdfbbeaeff13643d536b8ffe4e` | D |
+| 190 | `6AG1950-2AA01-4AA0` | `siemens-siplus-s7-300-siwarex-u2-1950-2aa01-4aa0` | `weighing-electronics` | ماژول توزین | `sha256:6b8c9c53a81050508031176f9ebe54adb36437a0f3737af90d692720059f5e95` | E |
+| 191 | `7MH4900-2AA01` | `siemens-s7-300-siwarex-fta-4900-2aa01` | `weighing-electronics` | ماژول توزین و دوزینگ | `sha256:5f3202390e52bf66a6a479c987ca497f56add38784357607a246570005fbe829` | F |
+| 192 | `7MH4900-3AA01` | `siemens-s7-300-siwarex-ftc-4900-3aa01` | `weighing-electronics` | ماژول توزین پیوسته | `sha256:030f93b6d8aa2f69a754dd527971f1d0807f09c96d00bc84cc2814a1890729e7` | G |
+| 193 | `7MH4421-1AA01` | `siemens-s7-300-siwarex-a-4421-1aa01` | `weighing-electronics` | ماژول دوزینگ | `sha256:08cd5804f7c1eb52fdef1220ea7d5bb6a334ec5ac93d046598c628c453bdcc92` | H |
+| 194 | `7MH4910-0AA01` | `siemens-s7-300-siwarex-cs-4910-0aa01` | `weighing-electronics` | ماژول توزین | `sha256:b248500e5ad5a34009b27d25c6244817b5fe86c6f3006e76f27f2b9716a49bef` | I |
+
+All ten entries use the existing FM adapter in source order. Position 185 is the
+exact `4BM00` order, distinct from Batch 23's `4BN00`. Siemens uses **M7-300**
+naming in the manual, while the internal FM source groups the product under
+`S7-300` for both family and series. The manufacturer name stays in the evidence.
+Position 190 preserves its own SIPLUS `6AG` order. Position 193 keeps the
+`weighing-electronics` canonical variant and uses the independently supported
+dosing label.
+
+### Batch 24 evidence and access limits
+
+- **A (185)**. The scope table on printed page iii identifies the exact `4BM00`
+  application function module separately from `4BN00`. [Siemens FM 356 manual C79000-G7076-C356-01](https://cache.industry.siemens.com/dl/files/369/1109369/att_21519/v1/Fm356_e.pdf)
+- **B (186)**. Product Summary and Fig. 1-6 on printed page 1-11 identify
+  the exact `4AH01` multi-axis positioning module. [Siemens FM 357-2 manual](https://cache.industry.siemens.com/dl/files/537/1803537/att_58245/v1/FM357_2_b.pdf)
+- **C (187)**. Section 1 identifies the exact SM 338 position-input module.
+  [Siemens SM 338 product information A5E00409892-01](https://cache.industry.siemens.com/dl/files/879/21145879/att_64144/v1/pi_sm388_e.pdf)
+- **D (188–189)**. Section 1.3, Table 1-1 on printed page 1-1 lists both
+  standard orders explicitly and supports the weighing module type for each.
+  [Siemens SIWAREX U device manual](https://cache.industry.siemens.com/dl/files/477/28392477/att_110626/v1/Manual_U_en_38.pdf?download=true)
+- **E (190)**. The SIPLUS SIWAREX U overview and ordering data on printed page
+  5/170 give the separate `6AG1950-2AA01-4AA0` row and its weighing module type.
+  [Siemens ST 70 2023](https://cache.industry.siemens.com/dl/files/167/109744167/att_1145924/v1/simatic-st70-complete-english-2023.pdf)
+- **F (191)**. The exact FTA row gives the weighing and dosing module type.
+  Section 1 of the FTA guide corroborates the order.
+  [Siemens STEP 7 V5.6 SP1 module table](https://cache.industry.siemens.com/dl/files/423/109760423/att_965430/v1/STEP_7_-_Neue_Baugruppen.pdf) · [Siemens FTA guide](https://cache.industry.siemens.com/dl/files/673/28998673/att_118267/v1/siwarex_fta-en_v01_3.pdf)
+- **G (192)**. The exact FTC row gives the continuous-weighing module type.
+  The FTC-B guide cover corroborates the order.
+  [Siemens STEP 7 V5.6 SP1 module table](https://cache.industry.siemens.com/dl/files/423/109760423/att_965430/v1/STEP_7_-_Neue_Baugruppen.pdf) · [Siemens FTC-B quick guide](https://cache.industry.siemens.com/dl/files/861/44016861/att_108639/v1/SIWAREX_FTC_B_Quick_Guide_V3_3_Siwatool_V2.pdf)
+- **H (193)**. The exact SIWAREX A row gives the dosing module type.
+  Fig. 10-3 on printed page 10-7 corroborates the order.
+  [Siemens STEP 7 V5.6 SP1 module table](https://cache.industry.siemens.com/dl/files/423/109760423/att_965430/v1/STEP_7_-_Neue_Baugruppen.pdf) · [Siemens SIWAREX A manual](https://cache.industry.siemens.com/dl/files/356/7787356/att_51395/v1/manual_a_de_04072001.pdf)
+- **I (194)**. The CS quick guide cover identifies the exact weighing module.
+  [Siemens SIWAREX CS quick guide](https://cache.industry.siemens.com/dl/files/418/37733418/att_36796/v1/SIWAREX_CS_Quick_Guide_V4_0.pdf)
+
+The review used parsed Siemens evidence for exact identity and type. Indexed
+results were used for discovery. Visual inspection was **NOT OBSERVED**.
+The repository support attachments at positions 186, 191, 192, and 193 returned
+reader HTTP 403 during readiness. Those requests supplied no evidence. The
+Siemens-hosted alternatives in B, F, G, and H supplied the parsed evidence.
+
+Twenty separate `Siemiran` approvals bind the recorded hashes to reviewed draft
+`541f72f8234fa128362ca5d0e05b3e97d966dbd3`. Actual UTC registry recording times
+were `2026-11-26T19:47:24.786Z` (linguistic) and
+`2026-11-26T19:47:25.249Z` (technical), separate from GitHub reviews.
+The table was checked against the merged registry, verifier, and FM source.
+The evidence references and access limits were checked against the reviewed PR.
+
+The catalog contains 382 Products (186 S7-1200 and 196 S7-300). There are 155
+private drafts, 155 current approvals per role, 155 current dual approvals, zero
+pending roles, and 227 products without drafts. Activation remains invalid at
+`155/155/227` (drafts, dual approvals, missing drafts). Capability is absent,
+active overlays are 0/382, publication is disabled, and public FA/EN Product
+copy remains canonical English/LTR. Launch requires complete 382/382 current
+dual approvals and separate authorization.
+
+Overrides remain `10/20/7` (Products, assignments, unique strings), with an
+empty global allowlist. Batch 24 added no overrides. The eleven public lifecycle
+omissions and separate S7-300 provenance classification (185 verified and 11
+explicitly unverified) remain in effect.
+
+Batch 25 remains unstarted. Product selection, readiness, and scope require
+separate authorization. Admin Panel and Automation remain gated, and the
+dedicated completed-copy website inspection is pending.
+
+**PASS (REUSED)** — `validate:product-copy`, focused ESLint on the two
+implementation files, TypeScript, and the production build exited `0` at
+reviewed head `9d0681ac81e672c811b82021d0e2ede253707682`. The build generated
+774/774 static pages. The reviewed head and implementation squash share tree
+`5e143cf8fec1d30dd7836b457f448cbe1a3b22f8`. The application content is unchanged
+in this documentation reconciliation. Application checks, product hash
+recomputation, and manufacturer research were not run.
+
+Implementation CI reported zero workflow runs, check runs, and status contexts
+on both the reviewed head and the squash. GitHub returned aggregate `pending`.
+
+<a id="2026-11-26---batch-23-private-product-copy-checkpoint-current-state"></a>
+
+## 2026-11-26 - Batch 23 Private Product-copy Checkpoint (Historical Snapshot)
+
+The Batch 23 checkpoint was `145/145/237`. The following record describes
+the implementation and workflow at that checkpoint.
 
 [PR #103](https://github.com/Siemiran/Siemiran/pull/103) merged as
 `84d458642afd1a716449d4f4e0db6aabb0d5354f`. The merge record includes the sole
