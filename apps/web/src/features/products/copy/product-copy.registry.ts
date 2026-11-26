@@ -1267,6 +1267,55 @@ const batch24Position194Copy = [
   { kind: "text", value: "، ماژول توزین" },
 ] as const satisfies ProductCopyParagraph;
 
+const batch24TechnicalEvidence = {
+  fm356:
+    "Siemens FM 356 manual C79000-G7076-C356-01, scope table on printed p. iii, lists 4BM00 as a separate order from Batch 23's 4BN00 and supports the application function module type. Siemens uses M7-300 naming in the manual. The internal grouping remains S7-300 and the manufacturer family name is evidence context only. https://cache.industry.siemens.com/dl/files/369/1109369/att_21519/v1/Fm356_e.pdf",
+  fm357:
+    "Siemens FM 357-2 manual, Product Summary and Fig. 1-6 on printed p. 1-11, supports the exact 4AH01 order and multi-axis positioning module type. The repository support attachment returned reader HTTP 403 during readiness. This Siemens-hosted alternative supplied parsed evidence. https://cache.industry.siemens.com/dl/files/537/1803537/att_58245/v1/FM357_2_b.pdf",
+  sm338:
+    "Siemens SM 338 product information A5E00409892-01, section 1, supports the exact order and position-input module type. https://cache.industry.siemens.com/dl/files/879/21145879/att_64144/v1/pi_sm388_e.pdf",
+  siwarexU:
+    "Siemens SIWAREX U device manual, section 1.3, Table 1-1 on printed p. 1-1, lists both standard orders explicitly and describes the weighing electronics. The approval binds the exact order stated above. https://cache.industry.siemens.com/dl/files/477/28392477/att_110626/v1/Manual_U_en_38.pdf?download=true",
+  siplusU:
+    "Siemens ST 70 2023, SIPLUS SIWAREX U overview and ordering data on printed p. 5/170, supplies a separate exact 6AG order row and establishes the weighing module type. https://cache.industry.siemens.com/dl/files/167/109744167/att_1145924/v1/simatic-st70-complete-english-2023.pdf",
+  fta:
+    "The exact FTA row in the Siemens STEP 7 V5.6 SP1 module table identifies a weighing and dosing module. Section 1 of the Siemens FTA guide corroborates the exact order. The repository support attachment returned reader HTTP 403 during readiness. These Siemens-hosted alternatives supplied parsed evidence. https://cache.industry.siemens.com/dl/files/423/109760423/att_965430/v1/STEP_7_-_Neue_Baugruppen.pdf https://cache.industry.siemens.com/dl/files/673/28998673/att_118267/v1/siwarex_fta-en_v01_3.pdf",
+  ftc:
+    "The exact FTC row in the Siemens STEP 7 V5.6 SP1 module table identifies a continuous-weighing module. The Siemens FTC-B quick guide cover corroborates the exact order. The repository support attachment returned reader HTTP 403 during readiness. These Siemens-hosted alternatives supplied parsed evidence. https://cache.industry.siemens.com/dl/files/423/109760423/att_965430/v1/STEP_7_-_Neue_Baugruppen.pdf https://cache.industry.siemens.com/dl/files/861/44016861/att_108639/v1/SIWAREX_FTC_B_Quick_Guide_V3_3_Siwatool_V2.pdf",
+  siwarexA:
+    "The exact SIWAREX A row in the Siemens STEP 7 V5.6 SP1 module table identifies a dosing module. The Siemens SIWAREX A manual corroborates the exact order in Fig. 10-3 on printed p. 10-7. The internal weighing-electronics variant is binding metadata. The repository support attachment returned reader HTTP 403 during readiness. These Siemens-hosted alternatives supplied parsed evidence. https://cache.industry.siemens.com/dl/files/423/109760423/att_965430/v1/STEP_7_-_Neue_Baugruppen.pdf https://cache.industry.siemens.com/dl/files/356/7787356/att_51395/v1/manual_a_de_04072001.pdf",
+  siwarexCS:
+    "The Siemens SIWAREX CS quick guide cover identifies the exact order and weighing module type. https://cache.industry.siemens.com/dl/files/418/37733418/att_36796/v1/SIWAREX_CS_Quick_Guide_V4_0.pdf",
+} as const;
+
+function createBatch24Approvals(
+  partNumber: string,
+  reviewedContentHash: string,
+  technicalEvidence: string
+) {
+  const reviewReference =
+    `for ${partNumber} in the supplied Batch 24 approval request, citing draft commit 541f72f8234fa128362ca5d0e05b3e97d966dbd3. The UTC timestamp records entry of this approval in the registry. Registry approvals are separate from GitHub reviews.`;
+
+  return {
+    linguisticReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-11-26T19:47:24.786Z",
+      reviewedContentHash,
+      evidenceRef: `Linguistic approval ${reviewReference}`,
+      note: "Approved the exact Persian wording, punctuation, NFC normalization, and MLFB segmentation in the identical short and single-paragraph long descriptions.",
+    },
+    technicalReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-11-26T19:47:25.249Z",
+      reviewedContentHash,
+      evidenceRef: `Technical approval ${reviewReference} ${technicalEvidence} The review uses parsed Siemens evidence. Indexed results were used for discovery. Visual inspection was not observed.`,
+      note: "Approved exact order identity and module type only. Family, capacity, performance, compatibility, interfaces, lifecycle, certification, and availability are outside the reviewed copy scope.",
+    },
+  } as const;
+}
+
 export const persianProductCopyDraftRegistry = [
   {
     productId: "siemens-s7-1200-cpu-211-1ae40",
@@ -4923,79 +4972,109 @@ export const persianProductCopyDraftRegistry = [
     shortDescription: batch24Position185Copy,
     description: [batch24Position185Copy],
     provenance: "ai-assisted",
-    linguisticReview: { decision: "pending" },
-    technicalReview: { decision: "pending" },
+    ...createBatch24Approvals(
+      "6ES7356-4BM00-0AE0",
+      "sha256:35a2e9987a2cc5a19f58c2612334bb0129b464b472cace03aecb98bff468cbd9",
+      batch24TechnicalEvidence.fm356
+    ),
   },
   {
     productId: "siemens-s7-300-fm357-2-positioning-4ah01-0ae0",
     shortDescription: batch24Position186Copy,
     description: [batch24Position186Copy],
     provenance: "ai-assisted",
-    linguisticReview: { decision: "pending" },
-    technicalReview: { decision: "pending" },
+    ...createBatch24Approvals(
+      "6ES7357-4AH01-0AE0",
+      "sha256:5f62768f025bac6f819077f048efe6b9bc34f4d072bac1b9f2956064f96631ba",
+      batch24TechnicalEvidence.fm357
+    ),
   },
   {
     productId: "siemens-s7-300-sm338-pos-input-4bc01-0ab0",
     shortDescription: batch24Position187Copy,
     description: [batch24Position187Copy],
     provenance: "ai-assisted",
-    linguisticReview: { decision: "pending" },
-    technicalReview: { decision: "pending" },
+    ...createBatch24Approvals(
+      "6ES7338-4BC01-0AB0",
+      "sha256:8b3eb5cb38d78aedf6eab445b2ca6f361ee3bb66593d08812bf47e0da514fc3b",
+      batch24TechnicalEvidence.sm338
+    ),
   },
   {
     productId: "siemens-s7-300-siwarex-u1-4950-1aa01",
     shortDescription: batch24Position188Copy,
     description: [batch24Position188Copy],
     provenance: "ai-assisted",
-    linguisticReview: { decision: "pending" },
-    technicalReview: { decision: "pending" },
+    ...createBatch24Approvals(
+      "7MH4950-1AA01",
+      "sha256:d63ee959df42bf97cdcd324ce27dcc1d093d529e23b74155293bf7b8a1f757f6",
+      batch24TechnicalEvidence.siwarexU
+    ),
   },
   {
     productId: "siemens-s7-300-siwarex-u2-4950-2aa01",
     shortDescription: batch24Position189Copy,
     description: [batch24Position189Copy],
     provenance: "ai-assisted",
-    linguisticReview: { decision: "pending" },
-    technicalReview: { decision: "pending" },
+    ...createBatch24Approvals(
+      "7MH4950-2AA01",
+      "sha256:e8c74be63274020fba67c7cf4487ba81403110fdfbbeaeff13643d536b8ffe4e",
+      batch24TechnicalEvidence.siwarexU
+    ),
   },
   {
     productId: "siemens-siplus-s7-300-siwarex-u2-1950-2aa01-4aa0",
     shortDescription: batch24Position190Copy,
     description: [batch24Position190Copy],
     provenance: "ai-assisted",
-    linguisticReview: { decision: "pending" },
-    technicalReview: { decision: "pending" },
+    ...createBatch24Approvals(
+      "6AG1950-2AA01-4AA0",
+      "sha256:6b8c9c53a81050508031176f9ebe54adb36437a0f3737af90d692720059f5e95",
+      batch24TechnicalEvidence.siplusU
+    ),
   },
   {
     productId: "siemens-s7-300-siwarex-fta-4900-2aa01",
     shortDescription: batch24Position191Copy,
     description: [batch24Position191Copy],
     provenance: "ai-assisted",
-    linguisticReview: { decision: "pending" },
-    technicalReview: { decision: "pending" },
+    ...createBatch24Approvals(
+      "7MH4900-2AA01",
+      "sha256:5f3202390e52bf66a6a479c987ca497f56add38784357607a246570005fbe829",
+      batch24TechnicalEvidence.fta
+    ),
   },
   {
     productId: "siemens-s7-300-siwarex-ftc-4900-3aa01",
     shortDescription: batch24Position192Copy,
     description: [batch24Position192Copy],
     provenance: "ai-assisted",
-    linguisticReview: { decision: "pending" },
-    technicalReview: { decision: "pending" },
+    ...createBatch24Approvals(
+      "7MH4900-3AA01",
+      "sha256:030f93b6d8aa2f69a754dd527971f1d0807f09c96d00bc84cc2814a1890729e7",
+      batch24TechnicalEvidence.ftc
+    ),
   },
   {
     productId: "siemens-s7-300-siwarex-a-4421-1aa01",
     shortDescription: batch24Position193Copy,
     description: [batch24Position193Copy],
     provenance: "ai-assisted",
-    linguisticReview: { decision: "pending" },
-    technicalReview: { decision: "pending" },
+    ...createBatch24Approvals(
+      "7MH4421-1AA01",
+      "sha256:08cd5804f7c1eb52fdef1220ea7d5bb6a334ec5ac93d046598c628c453bdcc92",
+      batch24TechnicalEvidence.siwarexA
+    ),
   },
   {
     productId: "siemens-s7-300-siwarex-cs-4910-0aa01",
     shortDescription: batch24Position194Copy,
     description: [batch24Position194Copy],
     provenance: "ai-assisted",
-    linguisticReview: { decision: "pending" },
-    technicalReview: { decision: "pending" },
+    ...createBatch24Approvals(
+      "7MH4910-0AA01",
+      "sha256:b248500e5ad5a34009b27d25c6244817b5fe86c6f3006e76f27f2b9716a49bef",
+      batch24TechnicalEvidence.siwarexCS
+    ),
   },
 ] as const satisfies readonly PersianProductCopyOverlay[];
