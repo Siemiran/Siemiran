@@ -1217,6 +1217,56 @@ function createBatch23Approvals(
   } as const;
 }
 
+const batch24Position185Copy = [
+  { kind: "technical", value: "6ES7356-4BM00-0AE0" },
+  { kind: "text", value: "، ماژول تابع کاربردی" },
+] as const satisfies ProductCopyParagraph;
+
+const batch24Position186Copy = [
+  { kind: "technical", value: "6ES7357-4AH01-0AE0" },
+  { kind: "text", value: "، ماژول موقعیت‌دهی چندمحوره" },
+] as const satisfies ProductCopyParagraph;
+
+const batch24Position187Copy = [
+  { kind: "technical", value: "6ES7338-4BC01-0AB0" },
+  { kind: "text", value: "، ماژول ورودی موقعیت" },
+] as const satisfies ProductCopyParagraph;
+
+const batch24Position188Copy = [
+  { kind: "technical", value: "7MH4950-1AA01" },
+  { kind: "text", value: "، ماژول توزین" },
+] as const satisfies ProductCopyParagraph;
+
+const batch24Position189Copy = [
+  { kind: "technical", value: "7MH4950-2AA01" },
+  { kind: "text", value: "، ماژول توزین" },
+] as const satisfies ProductCopyParagraph;
+
+const batch24Position190Copy = [
+  { kind: "technical", value: "6AG1950-2AA01-4AA0" },
+  { kind: "text", value: "، ماژول توزین" },
+] as const satisfies ProductCopyParagraph;
+
+const batch24Position191Copy = [
+  { kind: "technical", value: "7MH4900-2AA01" },
+  { kind: "text", value: "، ماژول توزین و دوزینگ" },
+] as const satisfies ProductCopyParagraph;
+
+const batch24Position192Copy = [
+  { kind: "technical", value: "7MH4900-3AA01" },
+  { kind: "text", value: "، ماژول توزین پیوسته" },
+] as const satisfies ProductCopyParagraph;
+
+const batch24Position193Copy = [
+  { kind: "technical", value: "7MH4421-1AA01" },
+  { kind: "text", value: "، ماژول دوزینگ" },
+] as const satisfies ProductCopyParagraph;
+
+const batch24Position194Copy = [
+  { kind: "technical", value: "7MH4910-0AA01" },
+  { kind: "text", value: "، ماژول توزین" },
+] as const satisfies ProductCopyParagraph;
+
 export const persianProductCopyDraftRegistry = [
   {
     productId: "siemens-s7-1200-cpu-211-1ae40",
@@ -4867,5 +4917,85 @@ export const persianProductCopyDraftRegistry = [
       "sha256:01fb576958bab91123a6a9c5dd2d0162facbb0901a693c71b523cb9b67ac7da9",
       batch23Fm356Evidence
     ),
+  },
+  {
+    productId: "siemens-m7-300-fm356-4-4bm00-0ae0",
+    shortDescription: batch24Position185Copy,
+    description: [batch24Position185Copy],
+    provenance: "ai-assisted",
+    linguisticReview: { decision: "pending" },
+    technicalReview: { decision: "pending" },
+  },
+  {
+    productId: "siemens-s7-300-fm357-2-positioning-4ah01-0ae0",
+    shortDescription: batch24Position186Copy,
+    description: [batch24Position186Copy],
+    provenance: "ai-assisted",
+    linguisticReview: { decision: "pending" },
+    technicalReview: { decision: "pending" },
+  },
+  {
+    productId: "siemens-s7-300-sm338-pos-input-4bc01-0ab0",
+    shortDescription: batch24Position187Copy,
+    description: [batch24Position187Copy],
+    provenance: "ai-assisted",
+    linguisticReview: { decision: "pending" },
+    technicalReview: { decision: "pending" },
+  },
+  {
+    productId: "siemens-s7-300-siwarex-u1-4950-1aa01",
+    shortDescription: batch24Position188Copy,
+    description: [batch24Position188Copy],
+    provenance: "ai-assisted",
+    linguisticReview: { decision: "pending" },
+    technicalReview: { decision: "pending" },
+  },
+  {
+    productId: "siemens-s7-300-siwarex-u2-4950-2aa01",
+    shortDescription: batch24Position189Copy,
+    description: [batch24Position189Copy],
+    provenance: "ai-assisted",
+    linguisticReview: { decision: "pending" },
+    technicalReview: { decision: "pending" },
+  },
+  {
+    productId: "siemens-siplus-s7-300-siwarex-u2-1950-2aa01-4aa0",
+    shortDescription: batch24Position190Copy,
+    description: [batch24Position190Copy],
+    provenance: "ai-assisted",
+    linguisticReview: { decision: "pending" },
+    technicalReview: { decision: "pending" },
+  },
+  {
+    productId: "siemens-s7-300-siwarex-fta-4900-2aa01",
+    shortDescription: batch24Position191Copy,
+    description: [batch24Position191Copy],
+    provenance: "ai-assisted",
+    linguisticReview: { decision: "pending" },
+    technicalReview: { decision: "pending" },
+  },
+  {
+    productId: "siemens-s7-300-siwarex-ftc-4900-3aa01",
+    shortDescription: batch24Position192Copy,
+    description: [batch24Position192Copy],
+    provenance: "ai-assisted",
+    linguisticReview: { decision: "pending" },
+    technicalReview: { decision: "pending" },
+  },
+  {
+    productId: "siemens-s7-300-siwarex-a-4421-1aa01",
+    shortDescription: batch24Position193Copy,
+    description: [batch24Position193Copy],
+    provenance: "ai-assisted",
+    linguisticReview: { decision: "pending" },
+    technicalReview: { decision: "pending" },
+  },
+  {
+    productId: "siemens-s7-300-siwarex-cs-4910-0aa01",
+    shortDescription: batch24Position194Copy,
+    description: [batch24Position194Copy],
+    provenance: "ai-assisted",
+    linguisticReview: { decision: "pending" },
+    technicalReview: { decision: "pending" },
   },
 ] as const satisfies readonly PersianProductCopyOverlay[];
