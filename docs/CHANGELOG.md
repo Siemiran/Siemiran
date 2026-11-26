@@ -3,7 +3,45 @@
 This file records completed repository changes. The newest entry records the
 current implementation baseline; older dated entries are historical snapshots.
 
-## 2026-11-26 - PR #103: Complete Batch 23 Private Drafts and Dual Approvals
+## 2026-11-26 - PR #105: Complete Batch 24 Private Drafts and Dual Approvals
+
+- [PR #105](https://github.com/Siemiran/Siemiran/pull/105), `feat: add Batch 24 Persian product copy`, merged at
+  `2026-11-26 19:59:23 UTC` / `2026-11-26 23:29:23 Asia/Tehran` as
+  `ab37f3f05208e027aeb7ac47c1b97b00072d16a8`. Its sole parent is
+  `1f647d58f651fd9ec769e5fd844205f636ba93ce`. The reviewed head
+  `9d0681ac81e672c811b82021d0e2ede253707682` and squash share tree
+  `5e143cf8fec1d30dd7836b457f448cbe1a3b22f8`. The reviewed draft is
+  `541f72f8234fa128362ca5d0e05b3e97d966dbd3`.
+- The implementation changes only the registry (`+209/-0`) and verifier
+  (`+306/-10`), totaling `+515/-10`. Positions 185–194 approve exact
+  MLFB identity and module type. The exact bindings, hashes, and evidence
+  limits are recorded in [DATABASE.md](DATABASE.md#2026-11-26---batch-24-private-product-copy-checkpoint-current-state).
+- Twenty separate `Siemiran` approvals preserve all 155 reviewed payloads,
+  provenance, order, and hashes and both review records for each of the 145
+  earlier entries. Ten text and ten segment-kind mutations each made both
+  approval roles stale.
+- At merge, the catalog contained 382 Products with 155 private drafts, 155
+  current approvals per role, 155 dual approvals, zero pending roles, and 227
+  products without drafts. Activation remains invalid at `155/155/227`.
+  Capability is absent, overlays are 0/382, publication is disabled, and
+  public FA/EN Product copy stays canonical English/LTR.
+- Overrides remain `10/20/7`, with an empty global allowlist and eleven public
+  lifecycle omissions. The full 382/382 current dual-approval gate and separate
+  launch authorization still apply. Batch 25 remains unstarted.
+- The head-matched squash, main-only fetch, local switch, and fast-forward
+  exited `0`. Feature refs and `origin/HEAD` were preserved. Base-to-squash,
+  index, and worktree whitespace checks passed.
+- **PASS (REUSED)** for the implementation validator, focused ESLint, TypeScript,
+  and production build (774/774 static pages) through exact reviewed-tree
+  equality. The reviewed head and squash reported zero workflow runs, check
+  runs, and status contexts, with aggregate `pending`.
+
+<a id="2026-11-26---pr-103-complete-batch-23-private-drafts-and-dual-approvals"></a>
+
+## 2026-11-26 - PR #103: Complete Batch 23 Private Drafts and Dual Approvals (Historical Snapshot)
+
+The Batch 23 checkpoint was `145/145/237`. The following record describes
+the implementation and workflow at that checkpoint.
 
 - [PR #103](https://github.com/Siemiran/Siemiran/pull/103), `feat: add Batch 23 Persian product copy`, merged at
   `2026-11-26 19:02:34 UTC` / `2026-11-26 22:32:34 Asia/Tehran` as

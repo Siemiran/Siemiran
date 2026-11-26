@@ -34,7 +34,32 @@ Principles:
 - The eleven unverified S7-300 records continue to omit public lifecycle in both
   languages.
 
-Current implementation checkpoint (2026-11-26): `84d458642afd1a716449d4f4e0db6aabb0d5354f`.
+Current implementation checkpoint (2026-11-26): `ab37f3f05208e027aeb7ac47c1b97b00072d16a8`.
+
+[PR #105](https://github.com/Siemiran/Siemiran/pull/105) completed private Batch 24 at
+`ab37f3f05208e027aeb7ac47c1b97b00072d16a8`. Its ten Function Module entries
+occupy positions 185–194. Technical approval covers exact MLFB identity and
+module type only. The database record includes exact bindings, hashes, and
+evidence limits. [DATABASE.md](DATABASE.md#2026-11-26---batch-24-private-product-copy-checkpoint-current-state)
+
+The catalog contains 382 Products (186 S7-1200 and 196 S7-300). There are 155
+private drafts, 155 current approvals per role, 155 current dual approvals, zero
+pending roles, and 227 products without drafts. Activation remains invalid at
+`155/155/227` (drafts, dual approvals, missing drafts). Capability is absent,
+active overlays are 0/382, publication is disabled, and public FA/EN Product
+copy remains canonical English/LTR. Launch requires complete 382/382 current
+dual approvals and separate authorization.
+
+Overrides remain `10/20/7` (Products, assignments, unique strings), with an
+empty global allowlist. Batch 24 added no overrides. The eleven public lifecycle
+omissions and separate S7-300 provenance classification (185 verified and 11
+explicitly unverified) remain in effect.
+
+Batch 25 remains unstarted. Product selection, readiness, and scope require
+separate authorization. Admin Panel and Automation remain gated, and the
+dedicated completed-copy website inspection is pending.
+
+Historical Batch 23 checkpoint (`145/145/237`):
 
 [PR #103](https://github.com/Siemiran/Siemiran/pull/103) completed private Batch 23 at `84d458642afd1a716449d4f4e0db6aabb0d5354f`. Its ten Function Module
 entries occupy positions 175–184. Technical approval covers exact MLFB identity
@@ -257,7 +282,7 @@ Historical Batch 16 checkpoint (80/302): [PR #89](https://github.com/Siemiran/Si
 completed one mixed analog input/output and four interface-module entries.
 Its exact MLFB/type-only scope, exclusions and evidence qualifications remain in
 [DATABASE.md](DATABASE.md#2026-11-20---batch-16-private-product-copy-checkpoint-historical-snapshot).
-Batch 22 and earlier counts are historical. Batch 23 is current.
+Batch 23 and earlier counts are historical. Batch 24 is current.
 
 After Persian Product-copy completion, the dedicated local visual and functional
 website inspection with the maintainer remains pending: FA/EN switching,

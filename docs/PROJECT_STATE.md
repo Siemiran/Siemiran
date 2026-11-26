@@ -1,6 +1,36 @@
 # Siemiran — Project State
 
-## 2026-11-26 - Batch 23 Reconciliation (Current State)
+## 2026-11-26 - Batch 24 Reconciliation (Current State)
+
+[PR #105](https://github.com/Siemiran/Siemiran/pull/105) completed private Batch 24 at
+`ab37f3f05208e027aeb7ac47c1b97b00072d16a8`. Its ten Function Module entries
+occupy positions 185–194. Technical approval covers exact MLFB identity and
+module type only. The database record includes exact bindings, hashes, and
+evidence limits. [DATABASE.md](DATABASE.md#2026-11-26---batch-24-private-product-copy-checkpoint-current-state)
+
+The catalog contains 382 Products (186 S7-1200 and 196 S7-300). There are 155
+private drafts, 155 current approvals per role, 155 current dual approvals, zero
+pending roles, and 227 products without drafts. Activation remains invalid at
+`155/155/227` (drafts, dual approvals, missing drafts). Capability is absent,
+active overlays are 0/382, publication is disabled, and public FA/EN Product
+copy remains canonical English/LTR. Launch requires complete 382/382 current
+dual approvals and separate authorization.
+
+Overrides remain `10/20/7` (Products, assignments, unique strings), with an
+empty global allowlist. Batch 24 added no overrides. The eleven public lifecycle
+omissions and separate S7-300 provenance classification (185 verified and 11
+explicitly unverified) remain in effect.
+
+Batch 25 remains unstarted. Product selection, readiness, and scope require
+separate authorization. Admin Panel and Automation remain gated, and the
+dedicated completed-copy website inspection is pending.
+
+<a id="2026-11-26---batch-23-reconciliation-current-state"></a>
+
+## 2026-11-26 - Batch 23 Reconciliation (Historical Snapshot)
+
+The Batch 23 checkpoint was `145/145/237`. The following record describes
+the implementation and workflow at that checkpoint.
 
 [PR #103](https://github.com/Siemiran/Siemiran/pull/103) completed private Batch 23 at `84d458642afd1a716449d4f4e0db6aabb0d5354f`. Its ten Function Module
 entries occupy positions 175–184. Technical approval covers exact MLFB identity
@@ -994,7 +1024,7 @@ the inventory before this approved deletion, not a valid current record.
 - Status: Active Development
 - Documentation checkpoint: 2026-11-26. Workflow status is reported separately.
 - Implementation base: `main` at
-  `84d458642afd1a716449d4f4e0db6aabb0d5354f`
+  `ab37f3f05208e027aeb7ac47c1b97b00072d16a8`
 - No semantic release version is asserted by this document.
 
 ## Current Stack
@@ -1026,7 +1056,7 @@ the inventory before this approved deletion, not a valid current record.
 | --- | --- | --- |
 | Product listing and dynamic detail pages | IMPLEMENTED | Repository-backed listing, static product paths, and not-found handling |
 | Localization foundation | IMPLEMENTED | Persian-first FA/EN routing, matching UI catalogs, one-click equivalent-page switching, locale direction, and temporarily noindexed English routes |
-| Product-copy consumer integration | IMPLEMENTED | All intended consumers use the central resolver/public DTO boundary. Private drafts and both approval roles are 145/382, with 145 current dual approvals, zero pending roles, and 237 products without drafts. Active overlays remain 0/382, activation capability is absent, and publication is disabled. |
+| Product-copy consumer integration | IMPLEMENTED | All intended consumers use the central resolver/public DTO boundary. Private drafts and both approval roles are 155/382, with 155 current dual approvals, zero pending roles, and 227 products without drafts. Active overlays remain 0/382, activation capability is absent, and publication is disabled. |
 | Search, URL parameters, filters, sorting, pagination | IMPLEMENTED | Category, family, series, and product-type filters; 12-item pagination |
 | Gallery and specifications | IMPLEMENTED | Product gallery/image UI and technical specification rendering |
 | SEO and structured data | IMPLEMENTED | Metadata, canonical/Open Graph/Twitter fields, Product JSON-LD, breadcrumbs, and Breadcrumb JSON-LD |
@@ -1273,6 +1303,24 @@ each milestone was recorded; they are not the current connection state.
   and the Product collection total is 308.
 
 ## Validation at the Documentation Checkpoint
+
+**PASS (REUSED)** — `validate:product-copy`, focused ESLint on the two
+implementation files, TypeScript, and the production build exited `0` at
+reviewed head `9d0681ac81e672c811b82021d0e2ede253707682`. The build generated
+774/774 static pages. The reviewed head and implementation squash share tree
+`5e143cf8fec1d30dd7836b457f448cbe1a3b22f8`. The application content is unchanged
+in this documentation reconciliation. Application checks, product hash
+recomputation, and manufacturer research were not run.
+
+Implementation CI reported zero workflow runs, check runs, and status contexts
+on both the reviewed head and the squash. GitHub returned aggregate `pending`.
+
+The recorded implementation comparison preserved all 155 draft payloads,
+provenance, order, and hashes, plus both review records for each of the 145
+earlier entries. Ten text and ten segment-kind mutations each made both
+approval roles stale.
+
+### Historical Validation - Batch 23
 
 **PASS (REUSED)** — `validate:product-copy`, focused ESLint on the two
 implementation files, TypeScript, and the production build exited `0` at
