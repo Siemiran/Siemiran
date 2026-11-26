@@ -1182,6 +1182,41 @@ const batch23Position184Copy = [
   { kind: "text", value: "، ماژول تابع کاربردی" },
 ] as const satisfies ProductCopyParagraph;
 
+const batch23Entry21536617Evidence =
+  "Siemens Entry 21536617, 28 February 2011, printed p. 1/1. Reviewed parsed module-name and exact order-number rows for identity and type. Compatibility columns and speed wording are outside the reviewed scope. https://cache.industry.siemens.com/dl/files/617/21536617/att_108718/v1/21536617_compatibility_fm_with_profibus_interfacemodules_en.pdf";
+const batch23Cm35Evidence =
+  "Siemens CM35 manual, June 2000, cover and foreword (printed p. i), with figure 1-1 (printed p. 1-6). Reviewed parsed text for the exact 6AT order and counter-module type. https://cache.industry.siemens.com/dl/files/297/1911297/att_59462/v1/HB_CM35_d.pdf";
+const batch23Fm356Evidence =
+  "Siemens FM 356 manual C79000-G7076-C356-01, scope table on printed p. iii. Reviewed parsed text for the exact 4BN00 order and application function module type. The manufacturer's M7-300 naming is evidence context only. https://cache.industry.siemens.com/dl/files/369/1109369/att_21519/v1/Fm356_e.pdf";
+
+function createBatch23Approvals(
+  partNumber: string,
+  reviewedContentHash: string,
+  technicalEvidence: string
+) {
+  const reviewReference =
+    `for ${partNumber} in the supplied Batch 23 approval request, citing draft commit a69bd823dfc020e4023827607375d33884739d0a. The UTC timestamp records entry of this approval. Registry approvals are separate from GitHub reviews.`;
+
+  return {
+    linguisticReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-11-26T18:46:48.627Z",
+      reviewedContentHash,
+      evidenceRef: `Linguistic approval ${reviewReference}`,
+      note: "Approved the exact Persian wording, punctuation, NFC normalization, and MLFB segmentation in the identical short and single-paragraph long descriptions.",
+    },
+    technicalReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-11-26T18:46:48.974Z",
+      reviewedContentHash,
+      evidenceRef: `Technical approval ${reviewReference} ${technicalEvidence}`,
+      note: "Approved exact MLFB identity and module type only. Speed, performance, compatibility, interfaces, protocols, lifecycle, certification, and availability are outside the reviewed scope.",
+    },
+  } as const;
+}
+
 export const persianProductCopyDraftRegistry = [
   {
     productId: "siemens-s7-1200-cpu-211-1ae40",
@@ -4728,79 +4763,109 @@ export const persianProductCopyDraftRegistry = [
     shortDescription: batch23Position175Copy,
     description: [batch23Position175Copy],
     provenance: "ai-assisted",
-    linguisticReview: { decision: "pending" },
-    technicalReview: { decision: "pending" },
+    ...createBatch23Approvals(
+      "6ES7355-0VH10-0AE0",
+      "sha256:e52b1cbd8b93ab08f7576c87c5c5b10f09ca6c668710612f800f0d35421c589d",
+      batch23Entry21536617Evidence
+    ),
   },
   {
     productId: "siemens-s7-300-fm355-s-control-1vh10-0ae0",
     shortDescription: batch23Position176Copy,
     description: [batch23Position176Copy],
     provenance: "ai-assisted",
-    linguisticReview: { decision: "pending" },
-    technicalReview: { decision: "pending" },
+    ...createBatch23Approvals(
+      "6ES7355-1VH10-0AE0",
+      "sha256:f049ff4b268627b899ec7032c027039c304436428ce84300282beab079016af3",
+      batch23Entry21536617Evidence
+    ),
   },
   {
     productId: "siemens-s7-300-fm355-2-c-temperature-control-2ch00-0ae0",
     shortDescription: batch23Position177Copy,
     description: [batch23Position177Copy],
     provenance: "ai-assisted",
-    linguisticReview: { decision: "pending" },
-    technicalReview: { decision: "pending" },
+    ...createBatch23Approvals(
+      "6ES7355-2CH00-0AE0",
+      "sha256:8b5cf9209048a3a94c6f1c005e964223a7a7113ee37392957f7d6cd2be1f32e9",
+      batch23Entry21536617Evidence
+    ),
   },
   {
     productId: "siemens-s7-300-fm355-2-s-temperature-control-2sh00-0ae0",
     shortDescription: batch23Position178Copy,
     description: [batch23Position178Copy],
     provenance: "ai-assisted",
-    linguisticReview: { decision: "pending" },
-    technicalReview: { decision: "pending" },
+    ...createBatch23Approvals(
+      "6ES7355-2SH00-0AE0",
+      "sha256:4fb8c160c8cf076df720ea2b9dc2a36cf68dc1ade084533c1f61162cf4b3de23",
+      batch23Entry21536617Evidence
+    ),
   },
   {
     productId: "siemens-s7-300-fm352-5-high-speed-boolean-5ah01-0ae0",
     shortDescription: batch23Position179Copy,
     description: [batch23Position179Copy],
     provenance: "ai-assisted",
-    linguisticReview: { decision: "pending" },
-    technicalReview: { decision: "pending" },
+    ...createBatch23Approvals(
+      "6ES7352-5AH01-0AE0",
+      "sha256:d5655408d6f1d57621afd845a565735fe58acf86eb835fbfcb97abb4508705bc",
+      batch23Entry21536617Evidence
+    ),
   },
   {
     productId: "siemens-s7-300-cm35-counter-0aa01-0aa0",
     shortDescription: batch23Position180Copy,
     description: [batch23Position180Copy],
     provenance: "ai-assisted",
-    linguisticReview: { decision: "pending" },
-    technicalReview: { decision: "pending" },
+    ...createBatch23Approvals(
+      "6AT1735-0AA01-0AA0",
+      "sha256:312bf6c5f69637cefde6b234268c2d8e9f4dcb92777c4c8d0593d4fc4678a6c2",
+      batch23Cm35Evidence
+    ),
   },
   {
     productId: "siemens-s7-300-fm352-5-high-speed-boolean-5ah00-0ae0",
     shortDescription: batch23Position181Copy,
     description: [batch23Position181Copy],
     provenance: "ai-assisted",
-    linguisticReview: { decision: "pending" },
-    technicalReview: { decision: "pending" },
+    ...createBatch23Approvals(
+      "6ES7352-5AH00-0AE0",
+      "sha256:e1d4129480c13471e327deb38c9cd91e41d956e92e746e8201f568283738e7ad",
+      batch23Entry21536617Evidence
+    ),
   },
   {
     productId: "siemens-s7-300-fm352-5-high-speed-boolean-5ah10-0ae0",
     shortDescription: batch23Position182Copy,
     description: [batch23Position182Copy],
     provenance: "ai-assisted",
-    linguisticReview: { decision: "pending" },
-    technicalReview: { decision: "pending" },
+    ...createBatch23Approvals(
+      "6ES7352-5AH10-0AE0",
+      "sha256:17877c7fcb514294d034bf0ee62bad80fbc196ee564f81b48abfd503d66f7974",
+      batch23Entry21536617Evidence
+    ),
   },
   {
     productId: "siemens-s7-300-fm352-5-high-speed-boolean-5ah11-0ae0",
     shortDescription: batch23Position183Copy,
     description: [batch23Position183Copy],
     provenance: "ai-assisted",
-    linguisticReview: { decision: "pending" },
-    technicalReview: { decision: "pending" },
+    ...createBatch23Approvals(
+      "6ES7352-5AH11-0AE0",
+      "sha256:e3dddf7bdb0c48945c408f52fbaa17be3f379eefd98b5bbd03abeb879fd5a40e",
+      batch23Entry21536617Evidence
+    ),
   },
   {
     productId: "siemens-m7-300-fm356-4-4bn00-0ae0",
     shortDescription: batch23Position184Copy,
     description: [batch23Position184Copy],
     provenance: "ai-assisted",
-    linguisticReview: { decision: "pending" },
-    technicalReview: { decision: "pending" },
+    ...createBatch23Approvals(
+      "6ES7356-4BN00-0AE0",
+      "sha256:01fb576958bab91123a6a9c5dd2d0162facbb0901a693c71b523cb9b67ac7da9",
+      batch23Fm356Evidence
+    ),
   },
 ] as const satisfies readonly PersianProductCopyOverlay[];

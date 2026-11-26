@@ -10967,6 +10967,16 @@ const registeredBatch22ApprovalMutationResults =
     })
   );
 
+const BATCH_23_DRAFT_COMMIT = "a69bd823dfc020e4023827607375d33884739d0a";
+const BATCH_23_LINGUISTIC_RECORDED_AT = "2026-11-26T18:46:48.627Z";
+const BATCH_23_TECHNICAL_RECORDED_AT = "2026-11-26T18:46:48.974Z";
+assert(
+  [BATCH_23_LINGUISTIC_RECORDED_AT, BATCH_23_TECHNICAL_RECORDED_AT].every(
+    (recordedAt) => new Date(recordedAt).toISOString() === recordedAt
+  ) && BATCH_23_LINGUISTIC_RECORDED_AT < BATCH_23_TECHNICAL_RECORDED_AT,
+  "Batch 23 must retain distinct UTC recording times for both roles."
+);
+
 const expectedBatch23Products = [
   {
     position: 175,
@@ -10974,6 +10984,8 @@ const expectedBatch23Products = [
     partNumber: "6ES7355-0VH10-0AE0",
     variantId: "closed-loop-control",
     typeLabel: "ماژول کنترل حلقه‌بسته",
+    reviewedContentHash:
+      "sha256:e52b1cbd8b93ab08f7576c87c5c5b10f09ca6c668710612f800f0d35421c589d",
   },
   {
     position: 176,
@@ -10981,6 +10993,8 @@ const expectedBatch23Products = [
     partNumber: "6ES7355-1VH10-0AE0",
     variantId: "closed-loop-control-step-pulse",
     typeLabel: "ماژول کنترل حلقه‌بسته",
+    reviewedContentHash:
+      "sha256:f049ff4b268627b899ec7032c027039c304436428ce84300282beab079016af3",
   },
   {
     position: 177,
@@ -10988,6 +11002,8 @@ const expectedBatch23Products = [
     partNumber: "6ES7355-2CH00-0AE0",
     variantId: "temperature-control",
     typeLabel: "ماژول کنترل دما",
+    reviewedContentHash:
+      "sha256:8b5cf9209048a3a94c6f1c005e964223a7a7113ee37392957f7d6cd2be1f32e9",
   },
   {
     position: 178,
@@ -10995,6 +11011,8 @@ const expectedBatch23Products = [
     partNumber: "6ES7355-2SH00-0AE0",
     variantId: "temperature-control-step-pulse",
     typeLabel: "ماژول کنترل دما",
+    reviewedContentHash:
+      "sha256:4fb8c160c8cf076df720ea2b9dc2a36cf68dc1ade084533c1f61162cf4b3de23",
   },
   {
     position: 179,
@@ -11002,6 +11020,8 @@ const expectedBatch23Products = [
     partNumber: "6ES7352-5AH01-0AE0",
     variantId: "high-speed-boolean-processor",
     typeLabel: "پردازندهٔ منطقی بولی",
+    reviewedContentHash:
+      "sha256:d5655408d6f1d57621afd845a565735fe58acf86eb835fbfcb97abb4508705bc",
   },
   {
     position: 180,
@@ -11009,6 +11029,8 @@ const expectedBatch23Products = [
     partNumber: "6AT1735-0AA01-0AA0",
     variantId: "counter",
     typeLabel: "ماژول شمارنده",
+    reviewedContentHash:
+      "sha256:312bf6c5f69637cefde6b234268c2d8e9f4dcb92777c4c8d0593d4fc4678a6c2",
   },
   {
     position: 181,
@@ -11016,6 +11038,8 @@ const expectedBatch23Products = [
     partNumber: "6ES7352-5AH00-0AE0",
     variantId: "high-speed-boolean-processor",
     typeLabel: "پردازندهٔ منطقی بولی",
+    reviewedContentHash:
+      "sha256:e1d4129480c13471e327deb38c9cd91e41d956e92e746e8201f568283738e7ad",
   },
   {
     position: 182,
@@ -11023,6 +11047,8 @@ const expectedBatch23Products = [
     partNumber: "6ES7352-5AH10-0AE0",
     variantId: "high-speed-boolean-processor",
     typeLabel: "پردازندهٔ منطقی بولی",
+    reviewedContentHash:
+      "sha256:17877c7fcb514294d034bf0ee62bad80fbc196ee564f81b48abfd503d66f7974",
   },
   {
     position: 183,
@@ -11030,6 +11056,8 @@ const expectedBatch23Products = [
     partNumber: "6ES7352-5AH11-0AE0",
     variantId: "high-speed-boolean-processor",
     typeLabel: "پردازندهٔ منطقی بولی",
+    reviewedContentHash:
+      "sha256:e3dddf7bdb0c48945c408f52fbaa17be3f379eefd98b5bbd03abeb879fd5a40e",
   },
   {
     position: 184,
@@ -11037,18 +11065,26 @@ const expectedBatch23Products = [
     partNumber: "6ES7356-4BN00-0AE0",
     variantId: "application-function",
     typeLabel: "ماژول تابع کاربردی",
+    reviewedContentHash:
+      "sha256:01fb576958bab91123a6a9c5dd2d0162facbb0901a693c71b523cb9b67ac7da9",
   },
 ] as const;
 const registeredBatch23Drafts = persianProductCopyDraftRegistry.slice(
   registeredCompletedThroughBatch22Drafts.length
 );
+const registeredBatch23ReviewRoles = registeredBatch23Drafts.flatMap(
+  (entry) => [entry.linguisticReview, entry.technicalReview]
+);
 assert(
-  registeredBatch23Drafts.length === 10,
-  "Batch 23 must append exactly ten drafts after Batches 01-22."
+  registeredBatch23Drafts.length === 10 &&
+    new Set(registeredBatch23ReviewRoles).size === 20 &&
+    registeredBatch23ReviewRoles.every(isApprovedReview),
+  "Batch 23 must retain ten drafts after Batches 01-22 and twenty distinct approvals."
 );
 
 const registeredBatch23DraftRecords = expectedBatch23Products.map(
-  ({ position, productId, partNumber, variantId, typeLabel }, index) => {
+  (expected, index) => {
+    const { position, productId, partNumber, variantId, typeLabel } = expected;
     const entry = registeredBatch23Drafts[index];
     assert(
       entry?.productId === productId,
@@ -11105,12 +11141,40 @@ const registeredBatch23DraftRecords = expectedBatch23Products.map(
         typeLabel.normalize("NFC") === typeLabel,
       `Batch 23 copy must use the exact MLFB and NFC Persian label in separate segments: ${productId}`
     );
+    const contentHash = createProductCopyContentHash(entry);
     assert(
-      [entry.linguisticReview, entry.technicalReview].every(
-        (review) => isPendingReview(review) && Object.keys(review).length === 1
-      ),
-      `Both Batch 23 review roles must be pending with no review metadata: ${productId}`
+      contentHash === expected.reviewedContentHash,
+      `Batch 23 must retain the authorized production hash: ${productId}`
     );
+    const technicalEvidenceUrl =
+      position === 180
+        ? "https://cache.industry.siemens.com/dl/files/297/1911297/att_59462/v1/HB_CM35_d.pdf"
+        : position === 184
+          ? "https://cache.industry.siemens.com/dl/files/369/1109369/att_21519/v1/Fm356_e.pdf"
+          : "https://cache.industry.siemens.com/dl/files/617/21536617/att_108718/v1/21536617_compatibility_fm_with_profibus_interfacemodules_en.pdf";
+    const reference =
+      `for ${partNumber} in the supplied Batch 23 approval request, citing draft commit ${BATCH_23_DRAFT_COMMIT}. The UTC timestamp records entry of this approval. Registry approvals are separate from GitHub reviews.`;
+    for (const [review, role, recordedAt] of [
+      [entry.linguisticReview, "Linguistic", BATCH_23_LINGUISTIC_RECORDED_AT],
+      [entry.technicalReview, "Technical", BATCH_23_TECHNICAL_RECORDED_AT],
+    ] as const) {
+      const referencePrefix = `${role} approval ${reference}`;
+      assert(
+        review.decision === "approved" &&
+          review.reviewerId === "Siemiran" &&
+          review.reviewedContentHash === contentHash &&
+          review.reviewedAt === recordedAt &&
+          (role === "Linguistic"
+            ? review.evidenceRef === referencePrefix &&
+              review.note ===
+                "Approved the exact Persian wording, punctuation, NFC normalization, and MLFB segmentation in the identical short and single-paragraph long descriptions."
+            : review.evidenceRef.startsWith(`${referencePrefix} `) &&
+              review.evidenceRef.endsWith(technicalEvidenceUrl) &&
+              review.note ===
+                "Approved exact MLFB identity and module type only. Speed, performance, compatibility, interfaces, protocols, lifecycle, certification, and availability are outside the reviewed scope."),
+        `Batch 23 ${role} approval must bind the current hash and reviewed scope: ${productId}`
+      );
+    }
 
     for (const locale of ["fa", "en"] as const) {
       const resolved = resolveProductCopy(product, locale);
@@ -11133,12 +11197,49 @@ const registeredBatch23DraftRecords = expectedBatch23Products.map(
       partNumber,
       variantId,
       draftText: serializeProductCopyParagraph(entry.shortDescription),
-      contentHash: createProductCopyContentHash(entry),
+      contentHash,
       linguisticReview: entry.linguisticReview.decision,
       technicalReview: entry.technicalReview.decision,
     };
   }
 );
+
+const registeredBatch23ApprovalMutationResults =
+  registeredBatch23Drafts.flatMap((entry) =>
+    (["text", "kind"] as const).map((mutation) => {
+      const changed = cloneMutableOverlay(entry);
+      if (mutation === "text") {
+        changed.shortDescription[1].value += ".";
+      } else {
+        changed.description[0][0].kind = "text";
+      }
+      const result = validatePersianProductCopyDrafts([changed], products);
+      const staleApprovals = result.issues.filter(
+        (issue) =>
+          issue.code === "stale-approval-hash" &&
+          issue.productId === entry.productId
+      );
+      assert(
+        createProductCopyContentHash(changed) !==
+          createProductCopyContentHash(entry) &&
+          !result.valid &&
+          staleApprovals.length === 2 &&
+          ["Linguistic", "Technical"].every((role) =>
+            staleApprovals.some(
+              (issue) =>
+                issue.message ===
+                `${role} approval does not match the current copy content.`
+            )
+          ),
+        `Batch 23 ${mutation} mutation must change the production hash and stale both approvals: ${entry.productId}`
+      );
+      return {
+        productId: entry.productId,
+        mutation,
+        staleApprovals: staleApprovals.length,
+      };
+    })
+  );
 
 const registeredCompletedBatchDrafts = persianProductCopyDraftRegistry.filter(
   (entry) => expectedCompletedBatchProductIdSet.has(entry.productId)
@@ -11325,21 +11426,21 @@ assert(
   "The existing thirty drafts must retain exact current dual approvals with no pending reviews."
 );
 assert(
-  registeredLinguisticApprovals === 135 &&
-    registeredTechnicalApprovals === 135 &&
-    registeredCurrentDualApprovals === 135 &&
-    registeredLinguisticPending === 10 &&
-    registeredTechnicalPending === 10,
-  "The registry must contain 135 current dual approvals and ten pending reviews per role."
+  registeredLinguisticApprovals === 145 &&
+    registeredTechnicalApprovals === 145 &&
+    registeredCurrentDualApprovals === 145 &&
+    registeredLinguisticPending === 0 &&
+    registeredTechnicalPending === 0,
+  "The registry must contain 145 current dual approvals and zero pending reviews per role."
 );
 assert(
   !registeredDraftActivation.valid &&
     registeredDraftActivation.overlayCount === 145 &&
     registeredDraftActivation.canonicalCount === 382 &&
-    registeredDraftActivation.approvedCount === 135 &&
+    registeredDraftActivation.approvedCount === 145 &&
     registeredDraftActivation.missingIds.length === 237 &&
     !("capability" in registeredDraftActivation),
-  "Combined activation must fail closed at exactly 145/382 drafts, 135 dual approvals, and 237 missing Products."
+  "Combined activation must fail closed at exactly 145/382 drafts, 145 dual approvals, and 237 missing Products."
 );
 assert(
   PERSIAN_PRODUCT_COPY_PUBLICATION_STATE === "disabled",
@@ -11652,6 +11753,10 @@ console.log(
         batch23: {
           entries: registeredBatch23Drafts.length,
           drafts: registeredBatch23DraftRecords,
+          approvedRoleRecords: registeredBatch23ReviewRoles.length,
+          linguisticRecordedAt: BATCH_23_LINGUISTIC_RECORDED_AT,
+          technicalRecordedAt: BATCH_23_TECHNICAL_RECORDED_AT,
+          mutationStaleness: registeredBatch23ApprovalMutationResults,
           publicCanonicalEnglishLtr: true,
         },
         completedThroughBatch21Entries:
