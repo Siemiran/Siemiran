@@ -1,6 +1,35 @@
 # Siemiran — Project State
 
-## 2026-11-24 - Batch 22 Reconciliation (Current State)
+## 2026-11-26 - Batch 23 Reconciliation (Current State)
+
+[PR #103](https://github.com/Siemiran/Siemiran/pull/103) completed private Batch 23 at `84d458642afd1a716449d4f4e0db6aabb0d5354f`. Its ten Function Module
+entries occupy positions 175–184. Technical approval covers exact MLFB identity
+and module type only. [DATABASE.md](DATABASE.md#2026-11-26---batch-23-private-product-copy-checkpoint-current-state) records the bindings, reviewed hashes, and evidence
+limits. [CHANGELOG.md](CHANGELOG.md#2026-11-26---pr-103-complete-batch-23-private-drafts-and-dual-approvals) records the implementation merge.
+
+The catalog contains 382 Products (186 S7-1200 and 196 S7-300). There are 145
+private drafts, 145 current approvals per role, 145 current dual approvals, zero
+pending roles, and 237 products without drafts. Activation remains invalid at
+`145/145/237` (drafts, dual approvals, missing drafts). Capability is absent,
+active overlays are 0/382, publication is disabled, and public FA/EN Product
+copy remains canonical English/LTR. Launch requires complete 382/382 current
+dual approvals and separate authorization.
+
+Overrides remain `10/20/7` (Products, assignments, unique strings), with an
+empty global allowlist. Batch 23 added no overrides. The eleven public lifecycle
+omissions and the separate S7-300 provenance classification (185 verified and
+11 explicitly unverified) remain in effect.
+
+Batch 24 remains unstarted. Product selection, readiness, and scope require
+separate authorization. Admin Panel and Automation remain gated, and the
+dedicated completed-copy website inspection is pending.
+
+<a id="2026-11-24---batch-22-reconciliation-current-state"></a>
+
+## 2026-11-24 - Batch 22 Reconciliation (Historical Snapshot)
+
+The Batch 22 checkpoint was `135/135/247`. The following record describes
+the implementation and workflow at that checkpoint.
 
 [PR #101](https://github.com/Siemiran/Siemiran/pull/101) completed private Batch 22 at
 `7aa9741f6a80ccccb2a4877567d60bc16e2e6444`. Its ten entries occupy canonical
@@ -40,7 +69,7 @@ Panel and Automation remain gated; completed-copy website inspection is pending.
 ## 2026-11-22 - Batch 21 Reconciliation (Historical Snapshot)
 
 Historical Batch 21 checkpoint (125/257): the following dated facts, evidence
-and prospective workflow are preserved. Batch 22 above is current.
+and prospective workflow are preserved.
 
 [PR #99](https://github.com/Siemiran/Siemiran/pull/99) completed private Batch 21 at
 `c1c1779a4e019b6a49b8fae96dae0762e0b16d50`. Its ten entries at canonical positions
@@ -178,7 +207,7 @@ Batch 18 and earlier checkpoints below are historical.
 ## 2026-11-20 - Batch 17 Reconciliation (Historical Snapshot)
 
 The following 85/297 checkpoint and prospective workflow describe Batch 17 at
-its merge. Batches 18 through 21 also remain historical; Batch 22 above is current.
+its merge. Batches 18 through 22 also remain historical.
 
 [PR #91](https://github.com/Siemiran/Siemiran/pull/91) completed private Batch 17 at
 `33009a15647ff2907c949e58ff779918a5ec60ad`. Approval covers exact MLFB identity and
@@ -963,9 +992,9 @@ the inventory before this approved deletion, not a valid current record.
 ## Current Baseline
 
 - Status: Active Development
-- Documentation checkpoint: 2026-11-24; workflow status is reported separately
+- Documentation checkpoint: 2026-11-26. Workflow status is reported separately.
 - Implementation base: `main` at
-  `7aa9741f6a80ccccb2a4877567d60bc16e2e6444`
+  `84d458642afd1a716449d4f4e0db6aabb0d5354f`
 - No semantic release version is asserted by this document.
 
 ## Current Stack
@@ -997,7 +1026,7 @@ the inventory before this approved deletion, not a valid current record.
 | --- | --- | --- |
 | Product listing and dynamic detail pages | IMPLEMENTED | Repository-backed listing, static product paths, and not-found handling |
 | Localization foundation | IMPLEMENTED | Persian-first FA/EN routing, matching UI catalogs, one-click equivalent-page switching, locale direction, and temporarily noindexed English routes |
-| Product-copy consumer integration | IMPLEMENTED | All intended consumers use the central resolver/public DTO boundary; private drafts and both approval roles are 135/382 with 135 current dual approvals, zero pending roles, and 247 products without drafts, while active overlays remain 0/382, activation capability is absent, and publication is disabled |
+| Product-copy consumer integration | IMPLEMENTED | All intended consumers use the central resolver/public DTO boundary. Private drafts and both approval roles are 145/382, with 145 current dual approvals, zero pending roles, and 237 products without drafts. Active overlays remain 0/382, activation capability is absent, and publication is disabled. |
 | Search, URL parameters, filters, sorting, pagination | IMPLEMENTED | Category, family, series, and product-type filters; 12-item pagination |
 | Gallery and specifications | IMPLEMENTED | Product gallery/image UI and technical specification rendering |
 | SEO and structured data | IMPLEMENTED | Metadata, canonical/Open Graph/Twitter fields, Product JSON-LD, breadcrumbs, and Breadcrumb JSON-LD |
@@ -1244,6 +1273,23 @@ each milestone was recorded; they are not the current connection state.
   and the Product collection total is 308.
 
 ## Validation at the Documentation Checkpoint
+
+**PASS (REUSED)** — `validate:product-copy`, focused ESLint on the two
+implementation files, TypeScript, and the production build exited `0` at
+reviewed head `ec7827c4bbe46f2fa170a79deba1f49f3038d0d2`. The build generated 774/774 static pages.
+The reviewed head and implementation squash share tree
+`3afb60a77c77277ecc74ca63e409bb30017f4b40`. The documentation-only diff preserves those results for
+application content. Application checks, product hash recomputation, and
+manufacturer research were not run for this reconciliation.
+
+Implementation CI reported zero workflow runs, check runs, and status contexts
+on both the reviewed head and the squash. GitHub returned aggregate `pending`.
+
+The recorded implementation comparison preserved all 145 draft payloads,
+provenance, order, and hashes, plus all 135 earlier review pairs. Ten text
+mutations and ten segment-kind mutations each staled both approval roles.
+
+### Historical Validation - Batch 22
 
 **PASS (REUSED)** - Batch 22's Product-copy validator, focused lint on both
 implementation files and production build each exited `0`, once each on final

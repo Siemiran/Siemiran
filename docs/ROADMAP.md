@@ -1,6 +1,6 @@
 # Siemiran — Roadmap
 
-Baseline: `main` at `7aa9741f6a80ccccb2a4877567d60bc16e2e6444` (2026-11-24)
+Baseline: `main` at `84d458642afd1a716449d4f4e0db6aabb0d5354f` (2026-11-26)
 
 This roadmap distinguishes the completed repository baseline from future
 priorities. Ordering expresses current priority, not a finalized implementation
@@ -211,13 +211,18 @@ design or semantic release schedule.
   performance discrepancy is deferred. Exact bindings, hashes and A–F limits
   are in [DATABASE.md](DATABASE.md#2026-11-24---batch-22-private-product-copy-checkpoint-current-state);
   merge identity is in [CHANGELOG.md](CHANGELOG.md#2026-11-24---pr-101-complete-batch-22-private-drafts-and-dual-approvals).
-- Private drafts and current approvals per role are each 135/382, with 135 current
-  dual approvals, zero pending roles and 247 products without drafts.
+- Batch 22's `135/135/247` checkpoint is historical.
+- [PR #103](https://github.com/Siemiran/Siemiran/pull/103) completed private Batch 23 at
+  `84d458642afd1a716449d4f4e0db6aabb0d5354f`. Positions 175–184 approve exact MLFB
+  identity and module type only. The bindings, hashes, and evidence limits are
+  in [DATABASE.md](DATABASE.md#2026-11-26---batch-23-private-product-copy-checkpoint-current-state).
+- Private drafts and current approvals per role are each 145/382, with 145 current
+  dual approvals, zero pending roles, and 237 products without drafts.
 - Overrides remain 10 Products / 20 assignments / 7 unique strings with an empty
-  global allowlist. Batches 03–22 added zero overrides. Eleven lifecycle omissions
+  global allowlist. Batches 03–23 added zero overrides. Eleven lifecycle omissions
   and the separate S7-300 provenance classification of 185/11 remain in effect.
-- Activation remains invalid at `overlayCount=135`, `approvedCount=135` and
-  `missingIds.length=247` (capability absent). Active overlays are 0/382,
+- Activation remains invalid at `145/145/237` (drafts, dual approvals, missing
+  drafts), with capability absent. Active overlays are 0/382,
   publication is disabled and public FA/EN copy is canonical English/LTR.
   Complete 382/382 current dual approvals and separate launch authorization
   remain required. Partial activation is prohibited. Earlier pending PR #64
@@ -225,8 +230,8 @@ design or semantic release schedule.
 
 ## Next Resume Workflow
 
-1. Batch 23 is unstarted and outside this task's scope. Product selection,
-   readiness and scope require separate approval; no products are selected here.
+1. Batch 24 remains unstarted. Product selection, readiness, and scope require
+   separate approval.
 2. Preserve closed-batch entries with machine comparison, review only affected
    files/evidence, and reuse successful validation while relevant content is unchanged.
 3. Keep Admin Panel and Automation gated. Dedicated completed-copy inspection,
@@ -251,9 +256,10 @@ and resume checks.
 
 Throughout drafting and review, canonical technical tokens remain untranslated:
 MLFBs, Product IDs, slugs, part numbers, official model/family names, protocols,
-standards, values, units, and URLs. Batches 01–21 are complete privately;
-dated earlier checkpoints retain their historical counts. Future drafting requires
-separately authorized Batch 23 product selection, readiness and independent scope/token review.
+standards, values, units, and URLs. Batches 01–23 are complete privately.
+Dated earlier checkpoints retain their historical counts. Future drafting
+requires separately authorized Batch 24 product selection, readiness, and
+independent scope/token review.
 
 After Persian Product-copy completion, perform a dedicated local visual and
 functional website inspection with the maintainer: FA/EN switching, Persian
@@ -308,8 +314,8 @@ nor publication.
 - Keep CMS, API, database, and cache evaluation as future architecture
   decisions.
 
-Persian Product-copy drafting and review are complete privately for 135/382
-Products, with 247 remaining. The 382/382 current dual-approval gate,
+Persian Product-copy drafting and review are complete privately for 145/382
+Products, with 237 remaining. The 382/382 current dual-approval gate,
 separate activation authorization, atomic publication, maintainer website inspection,
 bilingual SEO activation, inquiry delivery, CI/CD, download population, and
 another Siemens-series expansion are not complete. Consumer integration and
