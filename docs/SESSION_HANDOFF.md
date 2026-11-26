@@ -1,7 +1,7 @@
 # Siemiran — Session Handoff
 
-Checkpoint: **2026-11-24 (Asia/Tehran)**. Private Batch 22 merged; documentation
-is reconciled to its implementation baseline. Recheck actual refs on resume.
+Checkpoint **2026-11-26 (Asia/Tehran)**. Private Batch 23 is merged, and this
+handoff records its implementation baseline. Recheck actual refs on resume.
 
 ## Identity and source of truth
 
@@ -17,6 +17,22 @@ For implemented behavior, use the exact committed source and validation first,
 then merged PR/review evidence, then current repository summaries. Dated older
 snapshots preserve history. Maintainer instructions define authorization; a
 historical next-step statement does not authorize new work.
+
+Merged implementation baseline: `84d458642afd1a716449d4f4e0db6aabb0d5354f`.
+[PR #103](https://github.com/Siemiran/Siemiran/pull/103) merged at `2026-11-26 19:02:34 UTC` /
+`2026-11-26 22:32:34 Asia/Tehran` with subject
+`feat: add Batch 23 Persian product copy`. Sole squash parent:
+`62aefdfc69719b657c457ef073b6401388077cc5`. Reviewed head:
+`ec7827c4bbe46f2fa170a79deba1f49f3038d0d2`. Reviewed draft:
+`a69bd823dfc020e4023827607375d33884739d0a`. Identical reviewed/squash tree:
+`3afb60a77c77277ecc74ca63e409bb30017f4b40`. Implementation scope: registry
+`+195/-0`, verifier `+313/-31`, total `+508/-31`.
+The head-matched squash and main-only fetch, switch, and fast-forward passed.
+Local, tracking, and live `feat/fa-product-copy-batch-23` refs were preserved
+at the reviewed head. `origin/HEAD` still targets `origin/main`.
+Recheck actual refs on resume.
+
+### Historical Batch 22 implementation identity
 
 Merged implementation baseline: `7aa9741f6a80ccccb2a4877567d60bc16e2e6444`.
 [PR #101](https://github.com/Siemiran/Siemiran/pull/101), `feat: add Batch 22 Persian product copy`,
@@ -215,16 +231,24 @@ Follow [AGENTS.md](../AGENTS.md): Feature First, repository access, one canonica
 
 | Current measure | State |
 | --- | --- |
-| Private drafts / linguistic approvals / technical approvals | 135/382 each |
-| Current dual approvals / pending roles / missing private entries | 135 / zero / 247 |
-| Activation validation / overlayCount / approvedCount / missingIds.length | Invalid / 135 / 135 / 247 |
+| Catalog | 382 Products (186 S7-1200 / 196 S7-300) |
+| Private drafts / current linguistic approvals / current technical approvals | 145/382 each |
+| Current dual approvals / pending roles / missing private entries | 145 / zero / 237 |
+| Activation validation / overlayCount / approvedCount / missingIds.length | Invalid / 145 / 145 / 237 |
 | Active overlays / activation capability / publication | 0/382 / absent / disabled |
 | Public FA/EN Product copy | Canonical English/LTR |
 | Public activation gate | 382/382 current dual approvals plus separate launch authorization |
 | Overrides | 10 Products / 20 assignments / 7 unique strings |
-| Batch 22 added overrides / global allowlist | Zero / empty |
+| Batch 23 added overrides / global allowlist | Zero / empty |
 | Canonical lifecycle omissions | Exactly eleven, including IM 178-4 |
 | S7-300 lifecycle provenance | 185 Siemens-official verified / 11 explicitly unverified |
+
+Batches 01–23 are complete privately. Batch 23 at positions 175–184 covers
+exact MLFB and module type. The FM bindings retain source order, including
+`AH01 → CM35 → AH00` and CM35's `6AT` prefix. The ten bindings, hashes,
+and evidence limits are in [DATABASE.md](DATABASE.md#2026-11-26---batch-23-private-product-copy-checkpoint-current-state).
+
+Historical Batch 22 copy checkpoint (`135/135/247`):
 
 Batches 01–22 are complete privately. Batch 22 at positions 165–174 covers
 exact MLFB and supported product type only. The CP-to-FM boundary at 165/166,
@@ -361,9 +385,9 @@ activation is prohibited. Private drafts authorize neither activation nor public
 
 ## Outstanding work and evidence limits
 
-1. Batch 23 is **unstarted and outside scope**. Product selection, readiness
-   and scope require separate approval; this task selects no products.
-2. Complete the remaining 247 private drafts and both review roles through later
+1. Batch 24 remains **unstarted**. Product selection, readiness, and scope
+   require separate approval.
+2. Draft and obtain both approvals for the remaining 237 products through
    separately authorized batches. Public activation and bilingual SEO remain
    separate future tasks; English indexing, hreflang, and localized sitemap work
    remain deferred.
@@ -575,7 +599,11 @@ Batch 15 evidence limits (exact bindings and printed pages in
   Preserve Batch 14's distinct 7ND02 “4 AI” discrepancy and SIPLUS reader
   limitation without assigning the latter an HTTP status.
 
-Batch 22 evidence limits: [DATABASE.md](DATABASE.md#2026-11-24---batch-22-private-product-copy-checkpoint-current-state)
+Batch 23 uses reviewed parsed evidence for identity and type from Siemens
+Entry 21536617, the CM35 manual, and the FM 356 manual. The printed-page
+references and access limits are in [DATABASE.md](DATABASE.md#2026-11-26---batch-23-private-product-copy-checkpoint-current-state).
+
+Historical Batch 22 evidence limits: [DATABASE.md](DATABASE.md#2026-11-24---batch-22-private-product-copy-checkpoint-current-state)
 transcribes A/B/E/F parsed evidence separately from C/D indexed evidence.
 F uses the second PDF page; printed pagination is unestablished. Reader 403s,
 size limits and inaccessible URLs remain separate from usable evidence.
@@ -686,6 +714,23 @@ verified download/relation population, and owner-selected catalog expansion. See
 [CHANGELOG.md](CHANGELOG.md) for details and dated history.
 
 ## Validation applicability
+
+**PASS (REUSED)** — `validate:product-copy`, focused ESLint on the two
+implementation files, TypeScript, and the production build exited `0` at
+reviewed head `ec7827c4bbe46f2fa170a79deba1f49f3038d0d2`. The build generated 774/774 static pages.
+The reviewed head and implementation squash share tree
+`3afb60a77c77277ecc74ca63e409bb30017f4b40`. The documentation-only diff preserves those results for
+application content. Application checks, product hash recomputation, and
+manufacturer research were not run for this reconciliation.
+
+Implementation CI reported zero workflow runs, check runs, and status contexts
+on both the reviewed head and the squash. GitHub returned aggregate `pending`.
+
+The recorded implementation comparison preserved all 145 draft payloads,
+provenance, order, and hashes, plus all 135 earlier review pairs. Ten text
+mutations and ten segment-kind mutations each staled both approval roles.
+
+### Historical Validation - Batch 22
 
 **PASS (REUSED)** - Batch 22's Product-copy validator, focused lint on both
 implementation files and production build each exited `0`, once each on final
@@ -1198,7 +1243,7 @@ counts and evidence; they are not current coverage or new task executions.
 
 - Record branch, exact HEAD, sole parent/base, index/worktree clean or dirty state,
   and live/local `main` refs. The durable implementation baseline is
-  `7aa9741f6a80ccccb2a4877567d60bc16e2e6444`; task-specific workflow status and
+  `84d458642afd1a716449d4f4e0db6aabb0d5354f`. Task-specific workflow status and
   commit/PR identities belong in the task report rather than this file.
 - Identify existing task branches, patches, and commits before starting; preserve
   identifiable partial work and finish only missing authorized work. If refs or
@@ -1209,7 +1254,7 @@ counts and evidence; they are not current coverage or new task executions.
 - Record validation commands, exit codes, NEW versus REUSED status, exact checked
   content, and evidence limitations. Check Markdown links/anchors, whitespace
   and unchanged outside content; report actual results and final clean state.
-- Batch 23 product selection/readiness/scope remains unstarted and outside
-  scope, requiring separate approval. Overlay activation,
+- Batch 24 product selection, readiness, and scope remain unstarted and require
+  separate approval. Overlay activation,
   publication, English indexing and completed-copy website inspection remain
   separately authorized future work.

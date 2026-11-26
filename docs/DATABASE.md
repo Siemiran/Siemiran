@@ -1,9 +1,104 @@
 # Siemiran — Product Database
 
 Repository source of truth: `main` at
-`7aa9741f6a80ccccb2a4877567d60bc16e2e6444` (2026-11-24).
+`84d458642afd1a716449d4f4e0db6aabb0d5354f` (2026-11-26).
 
-## 2026-11-24 - Batch 22 Private Product-copy Checkpoint (Current State)
+## 2026-11-26 - Batch 23 Private Product-copy Checkpoint (Current State)
+
+[PR #103](https://github.com/Siemiran/Siemiran/pull/103) merged as
+`84d458642afd1a716449d4f4e0db6aabb0d5354f`. The merge record includes the sole
+parent, merge time, reviewed tree, and implementation scope.
+[CHANGELOG.md](CHANGELOG.md#2026-11-26---pr-103-complete-batch-23-private-drafts-and-dual-approvals)
+
+The ten `ai-assisted` drafts use identical short and single-paragraph long
+descriptions. Each has a verbatim `technical` MLFB segment followed by a `text`
+segment with a Persian comma, one space, and the approved type label.
+Linguistic approval covers the exact wording, punctuation, NFC, and segment
+boundaries. Technical approval covers exact MLFB identity and module type only.
+Canonical variants are binding metadata. Model titles, family claims, speed,
+performance, compatibility, interfaces, protocols, lifecycle, certification,
+and availability are outside the approved copy.
+
+| Position | Exact MLFB | Stable Product ID | Canonical variant | Approved Persian type label | Reviewed production hash | Evidence |
+| --- | --- | --- | --- | --- | --- | --- |
+| 175 | `6ES7355-0VH10-0AE0` | `siemens-s7-300-fm355-c-control-0vh10-0ae0` | `closed-loop-control` | ماژول کنترل حلقه‌بسته | `sha256:e52b1cbd8b93ab08f7576c87c5c5b10f09ca6c668710612f800f0d35421c589d` | A |
+| 176 | `6ES7355-1VH10-0AE0` | `siemens-s7-300-fm355-s-control-1vh10-0ae0` | `closed-loop-control-step-pulse` | ماژول کنترل حلقه‌بسته | `sha256:f049ff4b268627b899ec7032c027039c304436428ce84300282beab079016af3` | A |
+| 177 | `6ES7355-2CH00-0AE0` | `siemens-s7-300-fm355-2-c-temperature-control-2ch00-0ae0` | `temperature-control` | ماژول کنترل دما | `sha256:8b5cf9209048a3a94c6f1c005e964223a7a7113ee37392957f7d6cd2be1f32e9` | A |
+| 178 | `6ES7355-2SH00-0AE0` | `siemens-s7-300-fm355-2-s-temperature-control-2sh00-0ae0` | `temperature-control-step-pulse` | ماژول کنترل دما | `sha256:4fb8c160c8cf076df720ea2b9dc2a36cf68dc1ade084533c1f61162cf4b3de23` | A |
+| 179 | `6ES7352-5AH01-0AE0` | `siemens-s7-300-fm352-5-high-speed-boolean-5ah01-0ae0` | `high-speed-boolean-processor` | پردازندهٔ منطقی بولی | `sha256:d5655408d6f1d57621afd845a565735fe58acf86eb835fbfcb97abb4508705bc` | A |
+| 180 | `6AT1735-0AA01-0AA0` | `siemens-s7-300-cm35-counter-0aa01-0aa0` | `counter` | ماژول شمارنده | `sha256:312bf6c5f69637cefde6b234268c2d8e9f4dcb92777c4c8d0593d4fc4678a6c2` | B |
+| 181 | `6ES7352-5AH00-0AE0` | `siemens-s7-300-fm352-5-high-speed-boolean-5ah00-0ae0` | `high-speed-boolean-processor` | پردازندهٔ منطقی بولی | `sha256:e1d4129480c13471e327deb38c9cd91e41d956e92e746e8201f568283738e7ad` | A |
+| 182 | `6ES7352-5AH10-0AE0` | `siemens-s7-300-fm352-5-high-speed-boolean-5ah10-0ae0` | `high-speed-boolean-processor` | پردازندهٔ منطقی بولی | `sha256:17877c7fcb514294d034bf0ee62bad80fbc196ee564f81b48abfd503d66f7974` | A |
+| 183 | `6ES7352-5AH11-0AE0` | `siemens-s7-300-fm352-5-high-speed-boolean-5ah11-0ae0` | `high-speed-boolean-processor` | پردازندهٔ منطقی بولی | `sha256:e3dddf7bdb0c48945c408f52fbaa17be3f379eefd98b5bbd03abeb879fd5a40e` | A |
+| 184 | `6ES7356-4BN00-0AE0` | `siemens-m7-300-fm356-4-4bn00-0ae0` | `application-function` | ماژول تابع کاربردی | `sha256:01fb576958bab91123a6a9c5dd2d0162facbb0901a693c71b523cb9b67ac7da9` | C |
+
+All ten positions use the existing FM adapter and preserve the canonical source
+order. Positions 179–181 retain the `AH01 → CM35 → AH00` sequence, including
+CM35's `6AT` prefix. Position 184 retains
+`siemens-m7-300-fm356-4-4bn00-0ae0`, exact MLFB `6ES7356-4BN00-0AE0`, and
+variant `application-function`. Siemens uses M7-300 naming in the manual.
+The internal FM source groups the record under S7-300 for both family and series.
+The draft contains the exact MLFB and type label only.
+
+### Batch 23 evidence and access limits
+
+- **A** covers positions 175–179 and 181–183 using parsed module-name and
+  exact order-number rows on printed page 1/1. Compatibility columns and
+  speed wording are outside the reviewed scope. [Siemens Entry 21536617, 28 February 2011](https://cache.industry.siemens.com/dl/files/617/21536617/att_108718/v1/21536617_compatibility_fm_with_profibus_interfacemodules_en.pdf)
+- **B** covers position 180 using parsed text from the cover, foreword on
+  printed page i, and figure 1-1 on printed page 1-6 to establish the exact
+  `6AT` order and counter-module type. [Siemens CM35 manual, June 2000](https://cache.industry.siemens.com/dl/files/297/1911297/att_59462/v1/HB_CM35_d.pdf)
+- **C** covers position 184 using the parsed scope table on printed page iii
+  for the exact `4BN00` order and application function module type. The M7-300
+  name appears in the evidence as manufacturer identity context. [Siemens FM 356 manual C79000-G7076-C356-01](https://cache.industry.siemens.com/dl/files/369/1109369/att_21519/v1/Fm356_e.pdf)
+
+The entries above transcribe the parsed evidence recorded in the implementation
+and reviewed PR. Printed page labels are retained. Visual inspection and
+successful direct-origin HTTP status were not recorded as evidence for these
+approvals. The reconciliation involved no fresh retrieval or manufacturer
+research.
+
+The reviewed draft is `a69bd823dfc020e4023827607375d33884739d0a`. Twenty separate
+`Siemiran` role approvals bind the hashes in the table. Actual UTC registry
+recording times were `2026-11-26T18:46:48.627Z` (linguistic) and
+`2026-11-26T18:46:48.974Z` (technical), separate from GitHub reviews.
+Each table row was checked against the merged registry and verifier, the FM
+source, and the evidence mapping in the reviewed PR.
+
+The catalog contains 382 Products (186 S7-1200 and 196 S7-300). There are 145
+private drafts, 145 current approvals per role, 145 current dual approvals, zero
+pending roles, and 237 products without drafts. Activation remains invalid at
+`145/145/237` (drafts, dual approvals, missing drafts). Capability is absent,
+active overlays are 0/382, publication is disabled, and public FA/EN Product
+copy remains canonical English/LTR. Launch requires complete 382/382 current
+dual approvals and separate authorization.
+
+Overrides remain `10/20/7` (Products, assignments, unique strings), with an
+empty global allowlist. Batch 23 added no overrides. The eleven public lifecycle
+omissions and the separate S7-300 provenance classification (185 verified and
+11 explicitly unverified) remain in effect.
+
+Batch 24 remains unstarted. Product selection, readiness, and scope require
+separate authorization. Admin Panel and Automation remain gated, and the
+dedicated completed-copy website inspection is pending.
+
+**PASS (REUSED)** — `validate:product-copy`, focused ESLint on the two
+implementation files, TypeScript, and the production build exited `0` at
+reviewed head `ec7827c4bbe46f2fa170a79deba1f49f3038d0d2`. The build generated 774/774 static pages.
+The reviewed head and implementation squash share tree
+`3afb60a77c77277ecc74ca63e409bb30017f4b40`. The documentation-only diff preserves those results for
+application content. Application checks, product hash recomputation, and
+manufacturer research were not run for this reconciliation.
+
+Implementation CI reported zero workflow runs, check runs, and status contexts
+on both the reviewed head and the squash. GitHub returned aggregate `pending`.
+
+<a id="2026-11-24---batch-22-private-product-copy-checkpoint-current-state"></a>
+
+## 2026-11-24 - Batch 22 Private Product-copy Checkpoint (Historical Snapshot)
+
+The Batch 22 checkpoint was `135/135/247`. The following record describes
+the implementation and workflow at that checkpoint.
 
 [PR #101](https://github.com/Siemiran/Siemiran/pull/101) merged as
 `7aa9741f6a80ccccb2a4877567d60bc16e2e6444`. See [CHANGELOG.md](CHANGELOG.md#2026-11-24---pr-101-complete-batch-22-private-drafts-and-dual-approvals)
@@ -129,7 +224,7 @@ Panel and Automation remain gated; completed-copy website inspection is pending.
 ## 2026-11-22 - Batch 21 Private Product-copy Checkpoint (Historical Snapshot)
 
 Historical Batch 21 checkpoint (125/257): the following dated facts, evidence
-and prospective workflow are preserved. Batch 22 above is current.
+and prospective workflow are preserved.
 
 [PR #99](https://github.com/Siemiran/Siemiran/pull/99) merged as
 `c1c1779a4e019b6a49b8fae96dae0762e0b16d50`. See [CHANGELOG.md](CHANGELOG.md#2026-11-22---pr-99-complete-batch-21-private-drafts-and-dual-approvals)
