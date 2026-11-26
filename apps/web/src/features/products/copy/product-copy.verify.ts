@@ -4729,6 +4729,12 @@ const registeredLinguisticApprovals = persianProductCopyDraftRegistry.filter(
 const registeredTechnicalApprovals = persianProductCopyDraftRegistry.filter(
   (entry) => isApprovedReview(entry.technicalReview)
 ).length;
+const registeredLinguisticPending = persianProductCopyDraftRegistry.filter(
+  (entry) => isPendingReview(entry.linguisticReview)
+).length;
+const registeredTechnicalPending = persianProductCopyDraftRegistry.filter(
+  (entry) => isPendingReview(entry.technicalReview)
+).length;
 const registeredBatch01ApprovalRecords = registeredBatch01Drafts.map(
   (entry) => {
     const expected = expectedBatch01ReviewMetadata.find(
@@ -10729,16 +10735,17 @@ assert(
     registeredBatch22ReviewRoles.every(isApprovedReview),
   "Batch 22 must retain ten disjoint ordered drafts and twenty distinct approved role objects."
 );
+const registeredCompletedThroughBatch22Drafts =
+  persianProductCopyDraftRegistry.slice(0, 135);
 assert(
-  persianProductCopyDraftRegistry.length === 135 &&
-    JSON.stringify(
-      persianProductCopyDraftRegistry.map((entry) => entry.productId)
-    ) ===
-      JSON.stringify([
-        ...expectedCompletedThroughBatch21ProductIdSet,
-        ...expectedBatch22ProductIds,
-      ]),
-  "The full 135-entry registry must retain exact membership and order across Batches 01-22."
+  JSON.stringify(
+    registeredCompletedThroughBatch22Drafts.map((entry) => entry.productId)
+  ) ===
+    JSON.stringify([
+      ...expectedCompletedThroughBatch21ProductIdSet,
+      ...expectedBatch22ProductIds,
+    ]),
+  "The first 135 registry entries must retain exact membership and order across Batches 01-22."
 );
 const registeredBatch22DraftRecords = registeredBatch22Drafts.map(
   (entry, index) => {
@@ -10960,6 +10967,179 @@ const registeredBatch22ApprovalMutationResults =
     })
   );
 
+const expectedBatch23Products = [
+  {
+    position: 175,
+    productId: "siemens-s7-300-fm355-c-control-0vh10-0ae0",
+    partNumber: "6ES7355-0VH10-0AE0",
+    variantId: "closed-loop-control",
+    typeLabel: "ماژول کنترل حلقه‌بسته",
+  },
+  {
+    position: 176,
+    productId: "siemens-s7-300-fm355-s-control-1vh10-0ae0",
+    partNumber: "6ES7355-1VH10-0AE0",
+    variantId: "closed-loop-control-step-pulse",
+    typeLabel: "ماژول کنترل حلقه‌بسته",
+  },
+  {
+    position: 177,
+    productId: "siemens-s7-300-fm355-2-c-temperature-control-2ch00-0ae0",
+    partNumber: "6ES7355-2CH00-0AE0",
+    variantId: "temperature-control",
+    typeLabel: "ماژول کنترل دما",
+  },
+  {
+    position: 178,
+    productId: "siemens-s7-300-fm355-2-s-temperature-control-2sh00-0ae0",
+    partNumber: "6ES7355-2SH00-0AE0",
+    variantId: "temperature-control-step-pulse",
+    typeLabel: "ماژول کنترل دما",
+  },
+  {
+    position: 179,
+    productId: "siemens-s7-300-fm352-5-high-speed-boolean-5ah01-0ae0",
+    partNumber: "6ES7352-5AH01-0AE0",
+    variantId: "high-speed-boolean-processor",
+    typeLabel: "پردازندهٔ منطقی بولی",
+  },
+  {
+    position: 180,
+    productId: "siemens-s7-300-cm35-counter-0aa01-0aa0",
+    partNumber: "6AT1735-0AA01-0AA0",
+    variantId: "counter",
+    typeLabel: "ماژول شمارنده",
+  },
+  {
+    position: 181,
+    productId: "siemens-s7-300-fm352-5-high-speed-boolean-5ah00-0ae0",
+    partNumber: "6ES7352-5AH00-0AE0",
+    variantId: "high-speed-boolean-processor",
+    typeLabel: "پردازندهٔ منطقی بولی",
+  },
+  {
+    position: 182,
+    productId: "siemens-s7-300-fm352-5-high-speed-boolean-5ah10-0ae0",
+    partNumber: "6ES7352-5AH10-0AE0",
+    variantId: "high-speed-boolean-processor",
+    typeLabel: "پردازندهٔ منطقی بولی",
+  },
+  {
+    position: 183,
+    productId: "siemens-s7-300-fm352-5-high-speed-boolean-5ah11-0ae0",
+    partNumber: "6ES7352-5AH11-0AE0",
+    variantId: "high-speed-boolean-processor",
+    typeLabel: "پردازندهٔ منطقی بولی",
+  },
+  {
+    position: 184,
+    productId: "siemens-m7-300-fm356-4-4bn00-0ae0",
+    partNumber: "6ES7356-4BN00-0AE0",
+    variantId: "application-function",
+    typeLabel: "ماژول تابع کاربردی",
+  },
+] as const;
+const registeredBatch23Drafts = persianProductCopyDraftRegistry.slice(
+  registeredCompletedThroughBatch22Drafts.length
+);
+assert(
+  registeredBatch23Drafts.length === 10,
+  "Batch 23 must append exactly ten drafts after Batches 01-22."
+);
+
+const registeredBatch23DraftRecords = expectedBatch23Products.map(
+  ({ position, productId, partNumber, variantId, typeLabel }, index) => {
+    const entry = registeredBatch23Drafts[index];
+    assert(
+      entry?.productId === productId,
+      `Batch 23 draft order must match the exact binding at position ${position}.`
+    );
+
+    const sources = s7300FM.filter(
+      (source) => source.id === productId || source.mlfb === partNumber
+    );
+    const matches = products.filter(
+      (product) =>
+        product.id === productId ||
+        product.partNumber === partNumber ||
+        product.manufacturerPartNumber === partNumber
+    );
+    const [source] = sources;
+    const [product] = matches;
+    assert(
+      sources.length === 1 &&
+        source === s7300FM[9 + index] &&
+        source.id === productId &&
+        source.mlfb === partNumber &&
+        source.productTypeId === "Function Module" &&
+        source.variantId === variantId &&
+        validateSiemensPLCProduct(source).valid &&
+        matches.length === 1 &&
+        product === products[position - 1] &&
+        product.id === productId &&
+        product.partNumber === partNumber &&
+        product.manufacturerPartNumber === partNumber &&
+        product.productTypeId === "Function Module" &&
+        product.variantId === variantId &&
+        JSON.stringify(mapSiemensS7300FunctionModuleToProduct(source)) ===
+          JSON.stringify(product),
+      `Batch 23 source order, canonical binding and FM adapter output must be exact: ${productId}`
+    );
+    assert(
+      deriveAllowedTechnicalTokens(product).has(partNumber) &&
+        reviewedTechnicalTokenOverrides.every(
+          (override) => override.productId !== productId
+        ),
+      `Batch 23 exact MLFB must be eligible without a token override: ${productId}`
+    );
+
+    const expectedSegments = [
+      { kind: "technical", value: partNumber },
+      { kind: "text", value: `، ${typeLabel}` },
+    ];
+    assert(
+      entry.provenance === "ai-assisted" &&
+        JSON.stringify(entry.shortDescription) ===
+          JSON.stringify(expectedSegments) &&
+        JSON.stringify(entry.description) === JSON.stringify([expectedSegments]) &&
+        typeLabel.normalize("NFC") === typeLabel,
+      `Batch 23 copy must use the exact MLFB and NFC Persian label in separate segments: ${productId}`
+    );
+    assert(
+      [entry.linguisticReview, entry.technicalReview].every(
+        (review) => isPendingReview(review) && Object.keys(review).length === 1
+      ),
+      `Both Batch 23 review roles must be pending with no review metadata: ${productId}`
+    );
+
+    for (const locale of ["fa", "en"] as const) {
+      const resolved = resolveProductCopy(product, locale);
+      const publicCopy = createPublicProductCardCopyDTO(resolved);
+      assert(
+        resolved.source === "canonical-en" &&
+          serializeProductCopyParagraph(resolved.shortDescription) ===
+            product.shortDescription &&
+          resolved.description.map(serializeProductCopyParagraph).join("\n") ===
+            (product.description ?? "") &&
+          publicCopy.language === "en" &&
+          publicCopy.direction === "ltr",
+        `Batch 23 public ${locale} copy must remain canonical English/LTR: ${productId}`
+      );
+    }
+
+    return {
+      position,
+      productId,
+      partNumber,
+      variantId,
+      draftText: serializeProductCopyParagraph(entry.shortDescription),
+      contentHash: createProductCopyContentHash(entry),
+      linguisticReview: entry.linguisticReview.decision,
+      technicalReview: entry.technicalReview.decision,
+    };
+  }
+);
+
 const registeredCompletedBatchDrafts = persianProductCopyDraftRegistry.filter(
   (entry) => expectedCompletedBatchProductIdSet.has(entry.productId)
 );
@@ -10971,7 +11151,7 @@ assert(
     [...expectedBatch11ProductIdSet].every(
       (productId) => !expectedCompletedBatchProductIdSet.has(productId)
     ) &&
-    persianProductCopyDraftRegistry.every(
+    registeredCompletedThroughBatch22Drafts.every(
       (entry) =>
         expectedCompletedThroughBatch21ProductIdSet.has(entry.productId) ||
         expectedBatch22ProductIdSet.has(entry.productId)
@@ -10990,7 +11170,7 @@ assert(
 
 assert(
   registeredDraftValidation.valid &&
-    persianProductCopyDraftRegistry.length === 135 &&
+    persianProductCopyDraftRegistry.length === 145 &&
     registeredBatch01Drafts.length === 5 &&
     JSON.stringify(registeredBatch01DraftBindings) ===
       JSON.stringify(expectedBatch01DraftProducts),
@@ -11148,22 +11328,18 @@ assert(
   registeredLinguisticApprovals === 135 &&
     registeredTechnicalApprovals === 135 &&
     registeredCurrentDualApprovals === 135 &&
-    persianProductCopyDraftRegistry.filter((entry) =>
-      isPendingReview(entry.linguisticReview)
-    ).length === 0 &&
-    persianProductCopyDraftRegistry.filter((entry) =>
-      isPendingReview(entry.technicalReview)
-    ).length === 0,
-  "The registry must contain 135 current dual approvals and zero pending reviews per role."
+    registeredLinguisticPending === 10 &&
+    registeredTechnicalPending === 10,
+  "The registry must contain 135 current dual approvals and ten pending reviews per role."
 );
 assert(
   !registeredDraftActivation.valid &&
-    registeredDraftActivation.overlayCount === 135 &&
+    registeredDraftActivation.overlayCount === 145 &&
     registeredDraftActivation.canonicalCount === 382 &&
     registeredDraftActivation.approvedCount === 135 &&
-    registeredDraftActivation.missingIds.length === 247 &&
+    registeredDraftActivation.missingIds.length === 237 &&
     !("capability" in registeredDraftActivation),
-  "Combined activation must fail closed at exactly 135/382 drafts, 135 dual approvals, and 247 missing Products."
+  "Combined activation must fail closed at exactly 145/382 drafts, 135 dual approvals, and 237 missing Products."
 );
 assert(
   PERSIAN_PRODUCT_COPY_PUBLICATION_STATE === "disabled",
@@ -11473,6 +11649,11 @@ console.log(
           evidenceLimits: batch22ReadinessEvidenceLimits,
           finalApprovalsRecorded: true,
         },
+        batch23: {
+          entries: registeredBatch23Drafts.length,
+          drafts: registeredBatch23DraftRecords,
+          publicCanonicalEnglishLtr: true,
+        },
         completedThroughBatch21Entries:
           registeredCompletedThroughBatch21Drafts.length,
         completedThroughBatch20Entries:
@@ -11496,12 +11677,8 @@ console.log(
         completedThroughBatch11Entries:
           registeredCompletedThroughBatch11Drafts.length,
         completedBatchEntries: registeredCompletedBatchDrafts.length,
-        linguisticPending: persianProductCopyDraftRegistry.filter((entry) =>
-          isPendingReview(entry.linguisticReview)
-        ).length,
-        technicalPending: persianProductCopyDraftRegistry.filter((entry) =>
-          isPendingReview(entry.technicalReview)
-        ).length,
+        linguisticPending: registeredLinguisticPending,
+        technicalPending: registeredTechnicalPending,
         linguisticApprovals: registeredLinguisticApprovals,
         technicalApprovals: registeredTechnicalApprovals,
         currentDualApprovals: registeredCurrentDualApprovals,

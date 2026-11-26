@@ -1132,6 +1132,56 @@ const batch22Position174Copy = [
   { kind: "text", value: "، ماژول موقعیت‌دهی سروو است." },
 ] as const satisfies ProductCopyParagraph;
 
+const batch23Position175Copy = [
+  { kind: "technical", value: "6ES7355-0VH10-0AE0" },
+  { kind: "text", value: "، ماژول کنترل حلقه‌بسته" },
+] as const satisfies ProductCopyParagraph;
+
+const batch23Position176Copy = [
+  { kind: "technical", value: "6ES7355-1VH10-0AE0" },
+  { kind: "text", value: "، ماژول کنترل حلقه‌بسته" },
+] as const satisfies ProductCopyParagraph;
+
+const batch23Position177Copy = [
+  { kind: "technical", value: "6ES7355-2CH00-0AE0" },
+  { kind: "text", value: "، ماژول کنترل دما" },
+] as const satisfies ProductCopyParagraph;
+
+const batch23Position178Copy = [
+  { kind: "technical", value: "6ES7355-2SH00-0AE0" },
+  { kind: "text", value: "، ماژول کنترل دما" },
+] as const satisfies ProductCopyParagraph;
+
+const batch23Position179Copy = [
+  { kind: "technical", value: "6ES7352-5AH01-0AE0" },
+  { kind: "text", value: "، پردازندهٔ منطقی بولی" },
+] as const satisfies ProductCopyParagraph;
+
+const batch23Position180Copy = [
+  { kind: "technical", value: "6AT1735-0AA01-0AA0" },
+  { kind: "text", value: "، ماژول شمارنده" },
+] as const satisfies ProductCopyParagraph;
+
+const batch23Position181Copy = [
+  { kind: "technical", value: "6ES7352-5AH00-0AE0" },
+  { kind: "text", value: "، پردازندهٔ منطقی بولی" },
+] as const satisfies ProductCopyParagraph;
+
+const batch23Position182Copy = [
+  { kind: "technical", value: "6ES7352-5AH10-0AE0" },
+  { kind: "text", value: "، پردازندهٔ منطقی بولی" },
+] as const satisfies ProductCopyParagraph;
+
+const batch23Position183Copy = [
+  { kind: "technical", value: "6ES7352-5AH11-0AE0" },
+  { kind: "text", value: "، پردازندهٔ منطقی بولی" },
+] as const satisfies ProductCopyParagraph;
+
+const batch23Position184Copy = [
+  { kind: "technical", value: "6ES7356-4BN00-0AE0" },
+  { kind: "text", value: "، ماژول تابع کاربردی" },
+] as const satisfies ProductCopyParagraph;
+
 export const persianProductCopyDraftRegistry = [
   {
     productId: "siemens-s7-1200-cpu-211-1ae40",
@@ -4672,5 +4722,85 @@ export const persianProductCopyDraftRegistry = [
         "PM-authorized technical approval in the supplied Batch 22 approval request; draft commit fd516cfdd92d494a2b17bc9e1f712734b3e004f1; Product siemens-s7-300-fm354-servo-positioning-1ah01-0ae0; MLFB 6ES7354-1AH01-0AE0; product type servo positioning module. Recording time is an actual UTC observation, not the PM review timestamp. Registry role approvals are separate from GitHub reviews. Reused readiness B: Siemens Entry 21536617, 28 February 2011; printed p1/1, module-name/order-number table; Reused parsed readiness text; module names and exact order numbers only; compatibility columns excluded; https://cache.industry.siemens.com/dl/files/617/21536617/att_108718/v1/21536617_compatibility_fm_with_profibus_interfacemodules_en.pdf. Reused readiness F: Siemens Product Information A5E00390472, AA, August 2004; English validity table on second PDF page; printed pagination unestablished; Reused parsed readiness text; exact FM353/FM354 positioning identity/type only; servo type for FM354 is supported separately by B; https://cache.industry.siemens.com/dl/files/415/19659415/att_41963/v1/Produktinformation_FM-Pos.pdf?download=true. Position 165 uses the CP adapter; positions 166-174 use the FM adapter. Canonical variants remain binding metadata outside copy claims. FM350-2 2AH00, 2AH01 and the SIPLUS order remain distinct. Both FM351 stable IDs retain 1ch01/1ch02 while exact MLFBs contain 1AH01/1AH02. No characteristics transfer between orders. Position 167 indexed Siemens performance information differs from the canonical record; the discrepancy is unchanged and outside this identity/type-only copy. Printed pages are not assumed viewer indices. No fresh retrieval or visual inspection. Visual inspection and successful direct-origin HTTP status were NOT OBSERVED. Position 167 Mall reader request returned 403; no usable evidence. Position 169 exact SIPLUS datasheet reader request returned 403; indexed text remains separate. Siemens Fichas Tecnicas reader hit a 10,485,761+ byte size limit; indexed text remains separate. ST70 2021 reader hit a 25,626,498 byte size limit; indexed corroboration remains separate. FM352 support-manual reader request returned 403; no usable evidence. FM353 support-manual URL was inaccessible via the reader; no usable evidence.",
       note: "6ES7354-1AH01-0AE0: PM-authorized exact MLFB identity and servo positioning module type only. Model titles, interfaces, protocols, performance, compatibility, lifecycle, certification and availability remain outside approval.",
     },
+  },
+  {
+    productId: "siemens-s7-300-fm355-c-control-0vh10-0ae0",
+    shortDescription: batch23Position175Copy,
+    description: [batch23Position175Copy],
+    provenance: "ai-assisted",
+    linguisticReview: { decision: "pending" },
+    technicalReview: { decision: "pending" },
+  },
+  {
+    productId: "siemens-s7-300-fm355-s-control-1vh10-0ae0",
+    shortDescription: batch23Position176Copy,
+    description: [batch23Position176Copy],
+    provenance: "ai-assisted",
+    linguisticReview: { decision: "pending" },
+    technicalReview: { decision: "pending" },
+  },
+  {
+    productId: "siemens-s7-300-fm355-2-c-temperature-control-2ch00-0ae0",
+    shortDescription: batch23Position177Copy,
+    description: [batch23Position177Copy],
+    provenance: "ai-assisted",
+    linguisticReview: { decision: "pending" },
+    technicalReview: { decision: "pending" },
+  },
+  {
+    productId: "siemens-s7-300-fm355-2-s-temperature-control-2sh00-0ae0",
+    shortDescription: batch23Position178Copy,
+    description: [batch23Position178Copy],
+    provenance: "ai-assisted",
+    linguisticReview: { decision: "pending" },
+    technicalReview: { decision: "pending" },
+  },
+  {
+    productId: "siemens-s7-300-fm352-5-high-speed-boolean-5ah01-0ae0",
+    shortDescription: batch23Position179Copy,
+    description: [batch23Position179Copy],
+    provenance: "ai-assisted",
+    linguisticReview: { decision: "pending" },
+    technicalReview: { decision: "pending" },
+  },
+  {
+    productId: "siemens-s7-300-cm35-counter-0aa01-0aa0",
+    shortDescription: batch23Position180Copy,
+    description: [batch23Position180Copy],
+    provenance: "ai-assisted",
+    linguisticReview: { decision: "pending" },
+    technicalReview: { decision: "pending" },
+  },
+  {
+    productId: "siemens-s7-300-fm352-5-high-speed-boolean-5ah00-0ae0",
+    shortDescription: batch23Position181Copy,
+    description: [batch23Position181Copy],
+    provenance: "ai-assisted",
+    linguisticReview: { decision: "pending" },
+    technicalReview: { decision: "pending" },
+  },
+  {
+    productId: "siemens-s7-300-fm352-5-high-speed-boolean-5ah10-0ae0",
+    shortDescription: batch23Position182Copy,
+    description: [batch23Position182Copy],
+    provenance: "ai-assisted",
+    linguisticReview: { decision: "pending" },
+    technicalReview: { decision: "pending" },
+  },
+  {
+    productId: "siemens-s7-300-fm352-5-high-speed-boolean-5ah11-0ae0",
+    shortDescription: batch23Position183Copy,
+    description: [batch23Position183Copy],
+    provenance: "ai-assisted",
+    linguisticReview: { decision: "pending" },
+    technicalReview: { decision: "pending" },
+  },
+  {
+    productId: "siemens-m7-300-fm356-4-4bn00-0ae0",
+    shortDescription: batch23Position184Copy,
+    description: [batch23Position184Copy],
+    provenance: "ai-assisted",
+    linguisticReview: { decision: "pending" },
+    technicalReview: { decision: "pending" },
   },
 ] as const satisfies readonly PersianProductCopyOverlay[];
