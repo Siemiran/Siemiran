@@ -11923,11 +11923,16 @@ const registeredBatch25ApprovalMutationResults =
     })
   );
 
+const BATCH_26_DRAFT_COMMIT =
+  "4d9ef9d33249f9ea431e3ace193e68b9054af0bf";
+
 const expectedBatch26Catalog = [
   {
     position: 205,
     productId: "siemens-s7-1200-cpu-214-1ah50",
     partNumber: "6ES7214-1AH50-0XB0",
+    reviewedContentHash:
+      "sha256:a44295703e6397cf1ae9008c2f6a67609bb339d3bcb8d1b0102bfc91eb25a70b",
     variantId: "compact",
     sourceGroup: "g2",
     sourceIndex: 3,
@@ -11937,6 +11942,8 @@ const expectedBatch26Catalog = [
     position: 206,
     productId: "siemens-s7-1200-cpu-214-1bh50",
     partNumber: "6ES7214-1BH50-0XB0",
+    reviewedContentHash:
+      "sha256:01071e62986baac000d9c009eec5fae100d807f0cdf4aa5220b68f53caa53385",
     variantId: "compact",
     sourceGroup: "g2",
     sourceIndex: 4,
@@ -11946,6 +11953,8 @@ const expectedBatch26Catalog = [
     position: 207,
     productId: "siemens-s7-1200-cpu-214-1hh50",
     partNumber: "6ES7214-1HH50-0XB0",
+    reviewedContentHash:
+      "sha256:50da617b59ec1a4fa3c73a614fccc4ef0d03fd9885b59fc901c2036af425e303",
     variantId: "compact",
     sourceGroup: "g2",
     sourceIndex: 5,
@@ -11955,6 +11964,8 @@ const expectedBatch26Catalog = [
     position: 208,
     productId: "siemens-s7-1200-cpu-212-1af50",
     partNumber: "6ES7212-1AF50-0XB0",
+    reviewedContentHash:
+      "sha256:1f8b790844a850d1ff07f49b3a8fbab140681677abe47f42de7e1fd670d1e160",
     variantId: "fail-safe",
     sourceGroup: "g2",
     sourceIndex: 6,
@@ -11964,6 +11975,8 @@ const expectedBatch26Catalog = [
     position: 209,
     productId: "siemens-s7-1200-cpu-212-1hf50",
     partNumber: "6ES7212-1HF50-0XB0",
+    reviewedContentHash:
+      "sha256:bc4d07af7e9dbe93d2ebd4a77a02b2e66e2fcf233fac56532c4b7b9f45e9f41d",
     variantId: "fail-safe",
     sourceGroup: "g2",
     sourceIndex: 7,
@@ -11973,6 +11986,8 @@ const expectedBatch26Catalog = [
     position: 210,
     productId: "siemens-s7-1200-cpu-214-1af50",
     partNumber: "6ES7214-1AF50-0XB0",
+    reviewedContentHash:
+      "sha256:235bb53045df6cd9af5455090fe035c79f5f7e2cdc3d267ab5ae0e3c7c6caf51",
     variantId: "fail-safe",
     sourceGroup: "g2",
     sourceIndex: 8,
@@ -11982,6 +11997,8 @@ const expectedBatch26Catalog = [
     position: 211,
     productId: "siemens-s7-1200-cpu-214-1hf50",
     partNumber: "6ES7214-1HF50-0XB0",
+    reviewedContentHash:
+      "sha256:dcd4cb5eff1906ff481fba4b2a442155a28ebd7fc54cd6d2c2bca64dd75395b4",
     variantId: "fail-safe",
     sourceGroup: "g2",
     sourceIndex: 9,
@@ -11991,6 +12008,7 @@ const expectedBatch26Catalog = [
     position: 212,
     productId: "siemens-s7-1200-cpu-211-1ae40",
     partNumber: "6ES7211-1AE40-0XB0",
+    reviewedContentHash: null,
     variantId: "compact",
     sourceGroup: "classic",
     sourceIndex: 0,
@@ -12000,6 +12018,8 @@ const expectedBatch26Catalog = [
     position: 213,
     productId: "siemens-s7-1200-cpu-211-1he40",
     partNumber: "6ES7211-1HE40-0XB0",
+    reviewedContentHash:
+      "sha256:654523c95182f1190c915e51fd555ed3f6d9278cf795b1fd77e85d8b711ac1e6",
     variantId: "compact",
     sourceGroup: "classic",
     sourceIndex: 1,
@@ -12009,6 +12029,8 @@ const expectedBatch26Catalog = [
     position: 214,
     productId: "siemens-s7-1200-cpu-211-1be40",
     partNumber: "6ES7211-1BE40-0XB0",
+    reviewedContentHash:
+      "sha256:7cbc2aeedd96ae283b51c3f5c8c723b81cccabb6fd24b13480cfbfc9fbc0be0d",
     variantId: "compact",
     sourceGroup: "classic",
     sourceIndex: 2,
@@ -12018,6 +12040,7 @@ const expectedBatch26Catalog = [
     position: 215,
     productId: "siemens-s7-1200-cpu-212-1ae40",
     partNumber: "6ES7212-1AE40-0XB0",
+    reviewedContentHash: null,
     variantId: "compact",
     sourceGroup: "classic",
     sourceIndex: 3,
@@ -12027,6 +12050,8 @@ const expectedBatch26Catalog = [
     position: 216,
     productId: "siemens-s7-1200-cpu-212-1he40",
     partNumber: "6ES7212-1HE40-0XB0",
+    reviewedContentHash:
+      "sha256:33cfd6b0bc1ce7ffe8dc59c7b2e039970723bf4f56fddf83d73a29145d746643",
     variantId: "compact",
     sourceGroup: "classic",
     sourceIndex: 4,
@@ -12114,11 +12139,8 @@ const registeredBatch26ReviewRoles = registeredBatch26Drafts.flatMap(
 );
 assert(
   registeredBatch26Drafts.length === 10 &&
-    new Set(registeredBatch26ReviewRoles).size === 20 &&
-    registeredBatch26ReviewRoles.every(
-      (review) => isPendingReview(review) && Object.keys(review).length === 1
-    ),
-  "Batch 26 must contain ten drafts and twenty distinct pending review records."
+    new Set(registeredBatch26ReviewRoles).size === 20,
+  "Batch 26 must contain ten drafts and twenty distinct review records."
 );
 
 const registeredBatch26DraftRecords = batch26CatalogBindings
@@ -12130,6 +12152,7 @@ const registeredBatch26DraftRecords = batch26CatalogBindings
       partNumber,
       variantId,
       sourceGroup,
+      reviewedContentHash,
       typeLabel,
       product,
     } = binding;
@@ -12161,6 +12184,43 @@ const registeredBatch26DraftRecords = batch26CatalogBindings
       `Batch 26 copy must use the exact MLFB and NFC Persian label in identical two-segment paragraphs: ${productId}`
     );
 
+    const contentHash = createProductCopyContentHash(entry);
+    const reviewReference =
+      `for ${partNumber} in the supplied Batch 26 approval review, citing draft commit ${BATCH_26_DRAFT_COMMIT}. The UTC timestamp records entry of this approval in the registry. Registry approvals are separate from GitHub reviews.`;
+    const { linguisticReview, technicalReview } = entry;
+    assert(
+      contentHash === reviewedContentHash &&
+        linguisticReview.decision === "approved" &&
+        linguisticReview.reviewerId === "Siemiran" &&
+        linguisticReview.reviewedContentHash === contentHash &&
+        linguisticReview.evidenceRef === `Linguistic approval ${reviewReference}` &&
+        linguisticReview.note ===
+          "Approved the exact Persian wording, punctuation, NFC normalization, and MLFB segmentation in the identical short and single-paragraph long descriptions.",
+      `Batch 26 linguistic approval must match the reviewed draft and wording scope: ${productId}`
+    );
+    const visualInspection = [205, 207].includes(position)
+      ? "Visual inspection was reported during readiness."
+      : "Visual inspection was not reported.";
+    const technicalNote =
+      variantId === "fail-safe"
+        ? "Approved exact order identity and CPU type only. The fail-safe label carries no safety rating, certification, or application suitability claim."
+        : "Approved exact order identity and CPU type only.";
+    assert(
+      technicalReview.decision === "approved" &&
+        technicalReview.reviewerId === "Siemiran" &&
+        technicalReview.reviewedContentHash === contentHash &&
+        technicalReview.reviewedAt > linguisticReview.reviewedAt &&
+        technicalReview.evidenceRef.startsWith(
+          `Technical approval ${reviewReference} Parsed `
+        ) &&
+        technicalReview.evidenceRef.includes(visualInspection) &&
+        technicalReview.evidenceRef.includes(
+          "Indexed results were used for discovery only."
+        ) &&
+        technicalReview.note === technicalNote,
+      `Batch 26 technical approval must match the reviewed draft and evidence scope: ${productId}`
+    );
+
     for (const locale of ["fa", "en"] as const) {
       const resolved = resolveProductCopy(product, locale);
       const publicCopy = createPublicProductCardCopyDTO(resolved);
@@ -12183,11 +12243,50 @@ const registeredBatch26DraftRecords = batch26CatalogBindings
       variantId,
       sourceGroup,
       draftText: serializeProductCopyParagraph(entry.shortDescription),
-      contentHash: createProductCopyContentHash(entry),
-      linguisticReview: entry.linguisticReview.decision,
-      technicalReview: entry.technicalReview.decision,
+      contentHash,
+      linguisticReview: linguisticReview.decision,
+      linguisticRecordedAt: linguisticReview.reviewedAt,
+      technicalReview: technicalReview.decision,
+      technicalRecordedAt: technicalReview.reviewedAt,
     };
   });
+
+const registeredBatch26ApprovalMutationResults =
+  registeredBatch26Drafts.flatMap((entry) =>
+    (["text", "kind"] as const).map((mutation) => {
+      const changed = cloneMutableOverlay(entry);
+      if (mutation === "text") {
+        changed.shortDescription[1].value += ".";
+      } else {
+        changed.description[0][0].kind = "text";
+      }
+      const result = validatePersianProductCopyDrafts([changed], products);
+      const staleApprovals = result.issues.filter(
+        (issue) =>
+          issue.code === "stale-approval-hash" &&
+          issue.productId === entry.productId
+      );
+      assert(
+        createProductCopyContentHash(changed) !==
+          createProductCopyContentHash(entry) &&
+          !result.valid &&
+          staleApprovals.length === 2 &&
+          ["Linguistic", "Technical"].every((role) =>
+            staleApprovals.some(
+              (issue) =>
+                issue.message ===
+                `${role} approval does not match the current copy content.`
+            )
+          ),
+        `Batch 26 ${mutation} mutation must change the production hash and stale both approvals: ${entry.productId}`
+      );
+      return {
+        productId: entry.productId,
+        mutation,
+        staleApprovals: staleApprovals.length,
+      };
+    })
+  );
 
 const registeredCompletedBatchDrafts = persianProductCopyDraftRegistry.filter(
   (entry) => expectedCompletedBatchProductIdSet.has(entry.productId)
@@ -12376,21 +12475,21 @@ assert(
   "The existing thirty drafts must retain exact current dual approvals with no pending reviews."
 );
 assert(
-  registeredLinguisticApprovals === 165 &&
-    registeredTechnicalApprovals === 165 &&
-    registeredCurrentDualApprovals === 165 &&
-    registeredLinguisticPending === 10 &&
-    registeredTechnicalPending === 10,
-  "The registry must contain 165 current dual approvals and ten pending reviews per role."
+  registeredLinguisticApprovals === 175 &&
+    registeredTechnicalApprovals === 175 &&
+    registeredCurrentDualApprovals === 175 &&
+    registeredLinguisticPending === 0 &&
+    registeredTechnicalPending === 0,
+  "The registry must contain 175 current dual approvals and zero pending reviews per role."
 );
 assert(
   !registeredDraftActivation.valid &&
     registeredDraftActivation.overlayCount === 175 &&
     registeredDraftActivation.canonicalCount === 382 &&
-    registeredDraftActivation.approvedCount === 165 &&
+    registeredDraftActivation.approvedCount === 175 &&
     registeredDraftActivation.missingIds.length === 207 &&
     !("capability" in registeredDraftActivation),
-  "Combined activation must fail closed at exactly 175/382 drafts, 165 dual approvals, and 207 missing Products."
+  "Combined activation must fail closed at exactly 175/382 drafts, 175 dual approvals, and 207 missing Products."
 );
 assert(
   PERSIAN_PRODUCT_COPY_PUBLICATION_STATE === "disabled",
@@ -12731,7 +12830,8 @@ console.log(
           entries: registeredBatch26Drafts.length,
           drafts: registeredBatch26DraftRecords,
           skipped: registeredBatch26SkippedRecords,
-          pendingRoleRecords: registeredBatch26ReviewRoles.length,
+          approvedRoleRecords: registeredBatch26ReviewRoles.length,
+          mutationStaleness: registeredBatch26ApprovalMutationResults,
           publicCanonicalEnglishLtr: true,
         },
         completedThroughBatch21Entries:
