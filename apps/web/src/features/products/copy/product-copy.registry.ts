@@ -1316,6 +1316,114 @@ function createBatch24Approvals(
   } as const;
 }
 
+const batch25Position195Copy = [
+  { kind: "technical", value: "6AG1350-1AH03-2AE0" },
+  { kind: "text", value: "، ماژول شمارنده" },
+] as const satisfies ProductCopyParagraph;
+
+const batch25Position196Copy = [
+  { kind: "technical", value: "6ES7357-4AH03-0AE0" },
+  { kind: "text", value: "، ماژول موقعیت‌دهی چندمحوره" },
+] as const satisfies ProductCopyParagraph;
+
+const batch25Position197Copy = [
+  { kind: "technical", value: "6EP1332-1SH71" },
+  { kind: "text", value: "، ماژول منبع تغذیه" },
+] as const satisfies ProductCopyParagraph;
+
+const batch25Position198Copy = [
+  { kind: "technical", value: "6AG1332-1SH71-4AA0" },
+  { kind: "text", value: "، ماژول منبع تغذیه" },
+] as const satisfies ProductCopyParagraph;
+
+const batch25Position199Copy = [
+  { kind: "technical", value: "6AG1332-1SH71-7AA0" },
+  { kind: "text", value: "، ماژول منبع تغذیه" },
+] as const satisfies ProductCopyParagraph;
+
+const batch25Position200Copy = [
+  { kind: "technical", value: "6EP3333-4SB00-3AX0" },
+  { kind: "text", value: "، ماژول منبع تغذیه" },
+] as const satisfies ProductCopyParagraph;
+
+const batch25Position201Copy = [
+  { kind: "technical", value: "6EP3333-4SC00-3AX0" },
+  { kind: "text", value: "، ماژول منبع تغذیه" },
+] as const satisfies ProductCopyParagraph;
+
+const batch25Position202Copy = [
+  { kind: "technical", value: "6ES7212-1AG50-0XB0" },
+  { kind: "text", value: "، واحد پردازش مرکزی کامپکت" },
+] as const satisfies ProductCopyParagraph;
+
+const batch25Position203Copy = [
+  { kind: "technical", value: "6ES7212-1BG50-0XB0" },
+  { kind: "text", value: "، واحد پردازش مرکزی کامپکت" },
+] as const satisfies ProductCopyParagraph;
+
+const batch25Position204Copy = [
+  { kind: "technical", value: "6ES7212-1HG50-0XB0" },
+  { kind: "text", value: "، واحد پردازش مرکزی کامپکت" },
+] as const satisfies ProductCopyParagraph;
+
+const batch25CatalogReference =
+  "https://cache.industry.siemens.com/dl/files/167/109744167/att_1145924/v1/simatic-st70-complete-english-2023.pdf";
+const batch25CatalogAccessLimit =
+  "The direct catalog fetch hit the reader size limit. The reader's indexed-document view supplied the parsed page.";
+const batch25G2PmReference =
+  "https://cache.industry.siemens.com/dl/files/715/109987715/att_1328598/v1/A5E53972465-1-76_MANUAL_SIMATIC-PM1207-G2_en-US.pdf#page=4";
+
+const batch25TechnicalEvidence = {
+  siplusFm:
+    `Parsed Siemens ST 70 2023, printed p. 5/166, identifies the exact SIPLUS counter-module order in its own ordering row. ${batch25CatalogReference} ${batch25CatalogAccessLimit} Visual inspection was not observed.`,
+  positioningFm:
+    "Parsed Siemens A0359, Appendix Table 3, PDF p. 24, identifies the exact 4AH03-0AE0 module order in the FM357 group. Visual inspection was reported for this row during readiness. The parsed Siemens FM 357-2 product brief, printed p. 4, supplies the model-level multi-axis positioning type. The brief lists 4AH01 hardware and 4AH03-3AE0 firmware separately in its ordering data. The repository FM 357 attachment and the support-hosted A0359 screenshot request returned reader HTTP 403. The Siemens cache copy supplied the usable A0359 evidence. https://cache.industry.siemens.com/dl/files/374/90468374/att_83125/v1/a0359.pdf#page=24 https://cache.industry.siemens.com/dl/files/071/2614071/att_24167/v1/Product_Brief_FM357-2_01_2003.pdf#page=4",
+  classicPm:
+    `Parsed Siemens ST 70 2023, printed p. 3/175, identifies the exact classic PM 1207 power-module order. ${batch25CatalogReference} ${batch25CatalogAccessLimit} Visual inspection was not observed.`,
+  siplusPm4Aa0:
+    `Parsed Siemens ST 70 2023, printed p. 3/177, identifies the SIPLUS PM 1207 power supply in the separate -4AA0 article-number column. ${batch25CatalogReference} ${batch25CatalogAccessLimit} Visual inspection was not observed.`,
+  siplusPm7Aa0:
+    `Parsed Siemens ST 70 2023, printed p. 3/177, identifies the SIPLUS PM 1207 power supply in the separate -7AA0 article-number column. ${batch25CatalogReference} ${batch25CatalogAccessLimit} Visual inspection was not observed.`,
+  g2Pm4Sb00:
+    `Parsed Siemens G2 PM 1207 equipment manual A5E53972465-1-76, printed p. 4, identifies the exact power-module order in the first ordering table. Visual inspection was reported for this row during readiness. ${batch25G2PmReference}`,
+  g2Pm4Sc00:
+    `Parsed Siemens G2 PM 1207 equipment manual A5E53972465-1-76, printed p. 4, identifies the exact power-module order in the second ordering table. Visual inspection was reported for this row during readiness. The pm-1207-ex canonical variant is binding metadata only. ${batch25G2PmReference}`,
+  g2Cpu1Ag50:
+    "Parsed exact-order Siemens datasheet, printed p. 1, identifies this order as a compact CPU. Visual inspection was not observed. https://apim.industry.siemens.cloud/ted/datasheet?caller=SiePortal&format=PDF&language=en&mlfbs=6ES7212-1AG50-0XB0",
+  g2Cpu1Bg50:
+    "Parsed exact-order Siemens datasheet, printed p. 1, identifies this order as a compact CPU. Visual inspection was not observed. https://apim.industry.siemens.cloud/ted/datasheet?caller=PDPS&format=PDF&language=en&mlfbs=6ES72121BG500XB0",
+  g2Cpu1Hg50:
+    "Parsed exact-order Siemens datasheet, printed p. 1, identifies this order as a compact CPU. Visual inspection was not observed. https://apim.industry.siemens.cloud/ted/datasheet?caller=SIOS&format=pdf&language=en&mlfbs=6ES7212-1HG50-0XB0",
+} as const;
+
+function createBatch25Approvals(
+  partNumber: string,
+  reviewedContentHash: string,
+  technicalEvidence: string
+) {
+  const reviewReference =
+    `for ${partNumber} in the supplied Batch 25 approval request, citing draft commit d499bed2b712f91d77bdf9a8cefc9a808e50b4d9. The UTC timestamp records entry of this approval in the registry. Registry approvals are separate from GitHub reviews.`;
+
+  return {
+    linguisticReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-11-27T07:54:26.515Z",
+      reviewedContentHash,
+      evidenceRef: `Linguistic approval ${reviewReference}`,
+      note: "Approved the exact Persian wording, punctuation, NFC normalization, and MLFB segmentation in the identical short and single-paragraph long descriptions.",
+    },
+    technicalReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-11-27T07:54:26.764Z",
+      reviewedContentHash,
+      evidenceRef: `Technical approval ${reviewReference} ${technicalEvidence} Indexed results were used for discovery. Several alternate catalog or datasheet requests were inaccessible or returned JavaScript-only shells during readiness.`,
+      note: "Approved exact order identity and product type only.",
+    },
+  } as const;
+}
+
 export const persianProductCopyDraftRegistry = [
   {
     productId: "siemens-s7-1200-cpu-211-1ae40",
@@ -5075,6 +5183,116 @@ export const persianProductCopyDraftRegistry = [
       "7MH4910-0AA01",
       "sha256:b248500e5ad5a34009b27d25c6244817b5fe86c6f3006e76f27f2b9716a49bef",
       batch24TechnicalEvidence.siwarexCS
+    ),
+  },
+  {
+    productId: "siemens-siplus-s7-300-fm350-1-counter-1ah03-2ae0",
+    shortDescription: batch25Position195Copy,
+    description: [batch25Position195Copy],
+    provenance: "ai-assisted",
+    ...createBatch25Approvals(
+      "6AG1350-1AH03-2AE0",
+      "sha256:1267799fdb73595a7004d43b156cda280502deb8a553341509d8d25495306fa2",
+      batch25TechnicalEvidence.siplusFm
+    ),
+  },
+  {
+    productId: "siemens-s7-300-fm357-2-positioning-4ah03-0ae0",
+    shortDescription: batch25Position196Copy,
+    description: [batch25Position196Copy],
+    provenance: "ai-assisted",
+    ...createBatch25Approvals(
+      "6ES7357-4AH03-0AE0",
+      "sha256:56731df80887d1e70aba56d39e1418abd97c1d347577463d881e5abfeaf599e9",
+      batch25TechnicalEvidence.positioningFm
+    ),
+  },
+  {
+    productId: "siemens-s7-1200-pm1207-1sh71",
+    shortDescription: batch25Position197Copy,
+    description: [batch25Position197Copy],
+    provenance: "ai-assisted",
+    ...createBatch25Approvals(
+      "6EP1332-1SH71",
+      "sha256:eb7647c2a68bccce608462462c7bac788087dad9c6b9aba3812b424ff0c3ef5d",
+      batch25TechnicalEvidence.classicPm
+    ),
+  },
+  {
+    productId: "siemens-s7-1200-siplus-pm1207-1sh71-4aa0",
+    shortDescription: batch25Position198Copy,
+    description: [batch25Position198Copy],
+    provenance: "ai-assisted",
+    ...createBatch25Approvals(
+      "6AG1332-1SH71-4AA0",
+      "sha256:cc855604f86ab56a37061dbb8c564a45ba184a9c415dbda73847261bbc5e05a9",
+      batch25TechnicalEvidence.siplusPm4Aa0
+    ),
+  },
+  {
+    productId: "siemens-s7-1200-siplus-pm1207-1sh71-7aa0",
+    shortDescription: batch25Position199Copy,
+    description: [batch25Position199Copy],
+    provenance: "ai-assisted",
+    ...createBatch25Approvals(
+      "6AG1332-1SH71-7AA0",
+      "sha256:c81be47698b87486b544c3985ddbf1b99f11a714a5a6ff9fec5336d1297a9cb7",
+      batch25TechnicalEvidence.siplusPm7Aa0
+    ),
+  },
+  {
+    productId: "siemens-s7-1200-g2-pm1207-4sb00-3ax0",
+    shortDescription: batch25Position200Copy,
+    description: [batch25Position200Copy],
+    provenance: "ai-assisted",
+    ...createBatch25Approvals(
+      "6EP3333-4SB00-3AX0",
+      "sha256:2cf19330446b239cc695c68bc918d82150dd81b77707906d38419dc41de9790e",
+      batch25TechnicalEvidence.g2Pm4Sb00
+    ),
+  },
+  {
+    productId: "siemens-s7-1200-g2-pm1207-ex-4sc00-3ax0",
+    shortDescription: batch25Position201Copy,
+    description: [batch25Position201Copy],
+    provenance: "ai-assisted",
+    ...createBatch25Approvals(
+      "6EP3333-4SC00-3AX0",
+      "sha256:80a47f827635ef7184121dbf64e8f7a8abddaedd16798d09f17170f1a488ecd5",
+      batch25TechnicalEvidence.g2Pm4Sc00
+    ),
+  },
+  {
+    productId: "siemens-s7-1200-cpu-212-1ag50",
+    shortDescription: batch25Position202Copy,
+    description: [batch25Position202Copy],
+    provenance: "ai-assisted",
+    ...createBatch25Approvals(
+      "6ES7212-1AG50-0XB0",
+      "sha256:5f2c79ca0a2dd8be24fcf085f4761afa8c08a67c90df58fcaccd5e6cfc95e377",
+      batch25TechnicalEvidence.g2Cpu1Ag50
+    ),
+  },
+  {
+    productId: "siemens-s7-1200-cpu-212-1bg50",
+    shortDescription: batch25Position203Copy,
+    description: [batch25Position203Copy],
+    provenance: "ai-assisted",
+    ...createBatch25Approvals(
+      "6ES7212-1BG50-0XB0",
+      "sha256:d5d60bccfd56b8ae6b0897a958cf984cd09e4bd93fdc85ee154a01a3a87facde",
+      batch25TechnicalEvidence.g2Cpu1Bg50
+    ),
+  },
+  {
+    productId: "siemens-s7-1200-cpu-212-1hg50",
+    shortDescription: batch25Position204Copy,
+    description: [batch25Position204Copy],
+    provenance: "ai-assisted",
+    ...createBatch25Approvals(
+      "6ES7212-1HG50-0XB0",
+      "sha256:ae2e8b968363818aac9a777226ae77ec1ec728751fc0887e2102c5671b830ed6",
+      batch25TechnicalEvidence.g2Cpu1Hg50
     ),
   },
 ] as const satisfies readonly PersianProductCopyOverlay[];
