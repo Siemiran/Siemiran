@@ -1,6 +1,6 @@
 # Siemiran — Roadmap
 
-Baseline: `main` at `7ed2bb4a5f5f14f5a85a4f0d1562ed3fc29146df` (2026-11-27)
+Baseline: `main` at `7a3525d59c26ad60105f3fa8c48900afe79118f1` (2026-11-27)
 
 This roadmap distinguishes the completed repository baseline from future
 priorities. Ordering expresses current priority, not a finalized implementation
@@ -231,13 +231,18 @@ design or semantic release schedule.
   `7ed2bb4a5f5f14f5a85a4f0d1562ed3fc29146df`. Positions 205–211,
   213–214, and 216 add ten G2 and classic CPUs. Positions 212 and 215 kept
   both original approvals. [DATABASE.md](DATABASE.md#2026-11-27---batch-26-private-product-copy-checkpoint-current-state)
-- Batches 01–26 are complete privately. The catalog contains 382 Products.
-  Private drafts and current approvals per role are each 175/382, with 175
-  current dual approvals, zero pending roles, and 207 products without drafts.
+- Batch 26's `175/175/207` checkpoint is historical.
+- [PR #111](https://github.com/Siemiran/Siemiran/pull/111) completed private Batch 27 at
+  `7a3525d59c26ad60105f3fa8c48900afe79118f1`. The ten classic CPUs
+  occupy positions 217, 219–220, 222–223, and 225–229. Positions 218, 221, and
+  224 kept their Batch 01 indexes and both approvals. [DATABASE.md](DATABASE.md#2026-11-27---batch-27-private-product-copy-checkpoint-current-state)
+- Batches 01–27 are complete privately. The catalog contains 382 Products.
+  Private drafts and current approvals per role are each 185/382, with 175
+  current dual approvals, zero pending roles, and 197 products without drafts.
 - Overrides remain 10 Products / 20 assignments / 7 unique strings with an empty
-  global allowlist. Batches 03–26 added zero overrides. Eleven lifecycle omissions
+  global allowlist. Batches 03–27 added zero overrides. Eleven lifecycle omissions
   and the separate S7-300 provenance classification of 185/11 remain in effect.
-- Activation remains invalid at `175/175/207` (drafts, dual approvals, missing
+- Activation remains invalid at `185/185/197` (drafts, dual approvals, missing
   drafts), with capability absent. Active overlays are 0/382,
   publication is disabled, and public FA/EN copy is canonical English/LTR.
   Complete 382/382 current dual approvals and separate launch authorization
@@ -246,7 +251,7 @@ design or semantic release schedule.
 
 ## Next Resume Workflow
 
-1. Batch 27 remains unstarted. Product selection, readiness, and scope require
+1. Batch 28 remains unstarted. Product selection, readiness, and scope require
    separate approval.
 2. Preserve closed-batch entries with machine comparison, review only affected
    files/evidence, and reuse successful validation while relevant content is unchanged.
@@ -272,9 +277,9 @@ and resume checks.
 
 Throughout drafting and review, canonical technical tokens remain untranslated:
 MLFBs, Product IDs, slugs, part numbers, official model/family names, protocols,
-standards, values, units, and URLs. Batches 01–26 are complete privately.
+standards, values, units, and URLs. Batches 01–27 are complete privately.
 Dated earlier checkpoints retain their historical counts. Future drafting
-requires separately authorized Batch 27 product selection, readiness, and
+requires separately authorized Batch 28 product selection, readiness, and
 independent scope/token review.
 
 After Persian Product-copy completion, perform a dedicated local visual and
@@ -330,8 +335,8 @@ nor publication.
 - Keep CMS, API, database, and cache evaluation as future architecture
   decisions.
 
-Persian Product-copy drafting and review are complete privately for 175/382
-Products, with 207 remaining. The 382/382 current dual-approval gate,
+Persian Product-copy drafting and review are complete privately for 185/382
+Products, with 197 remaining. The 382/382 current dual-approval gate,
 separate activation authorization, atomic publication, maintainer website inspection,
 bilingual SEO activation, inquiry delivery, CI/CD, download population, and
 another Siemens-series expansion are not complete. Consumer integration and
