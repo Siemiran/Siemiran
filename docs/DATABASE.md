@@ -1,9 +1,136 @@
 # Siemiran — Product Database
 
 Repository source of truth: `main` at
-`ec910b0b302483889ffa8651bc859f51f7d6ac4d` (2026-11-27).
+`7ed2bb4a5f5f14f5a85a4f0d1562ed3fc29146df` (2026-11-27).
 
-## 2026-11-27 - Batch 25 Private Product-copy Checkpoint (Current State)
+## 2026-11-27 - Batch 26 Private Product-copy Checkpoint (Current State)
+
+[PR #109](https://github.com/Siemiran/Siemiran/pull/109) merged as
+`7ed2bb4a5f5f14f5a85a4f0d1562ed3fc29146df`. See the squash parent, reviewed
+tree, merge time, and implementation scope in [CHANGELOG.md](CHANGELOG.md#2026-11-27---pr-109-complete-batch-26-private-drafts-and-dual-approvals).
+
+Each `ai-assisted` draft has identical short and single-paragraph long copy.
+The first segment is the exact `technical` MLFB. The second is a `text` segment
+with a Persian comma, one space, and the NFC label shown below. Linguistic
+approval covers the exact wording, punctuation, NFC, and MLFB segmentation.
+Technical approval covers exact order identity and CPU type only.
+
+| Position | Exact MLFB | Stable Product ID | Canonical variant | CPU source group | Approved Persian type label | Stored approval hash | Evidence position |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| 205 | `6ES7214-1AH50-0XB0` | `siemens-s7-1200-cpu-214-1ah50` | `compact` | G2 (`g2`) | واحد پردازش مرکزی کامپکت | `sha256:a44295703e6397cf1ae9008c2f6a67609bb339d3bcb8d1b0102bfc91eb25a70b` | [205](#batch-26-evidence-and-access-limits) |
+| 206 | `6ES7214-1BH50-0XB0` | `siemens-s7-1200-cpu-214-1bh50` | `compact` | G2 (`g2`) | واحد پردازش مرکزی کامپکت | `sha256:01071e62986baac000d9c009eec5fae100d807f0cdf4aa5220b68f53caa53385` | [206](#batch-26-evidence-and-access-limits) |
+| 207 | `6ES7214-1HH50-0XB0` | `siemens-s7-1200-cpu-214-1hh50` | `compact` | G2 (`g2`) | واحد پردازش مرکزی کامپکت | `sha256:50da617b59ec1a4fa3c73a614fccc4ef0d03fd9885b59fc901c2036af425e303` | [207](#batch-26-evidence-and-access-limits) |
+| 208 | `6ES7212-1AF50-0XB0` | `siemens-s7-1200-cpu-212-1af50` | `fail-safe` | G2 (`g2`) | واحد پردازش مرکزی ایمن در برابر خطا | `sha256:1f8b790844a850d1ff07f49b3a8fbab140681677abe47f42de7e1fd670d1e160` | [208](#batch-26-evidence-and-access-limits) |
+| 209 | `6ES7212-1HF50-0XB0` | `siemens-s7-1200-cpu-212-1hf50` | `fail-safe` | G2 (`g2`) | واحد پردازش مرکزی ایمن در برابر خطا | `sha256:bc4d07af7e9dbe93d2ebd4a77a02b2e66e2fcf233fac56532c4b7b9f45e9f41d` | [209](#batch-26-evidence-and-access-limits) |
+| 210 | `6ES7214-1AF50-0XB0` | `siemens-s7-1200-cpu-214-1af50` | `fail-safe` | G2 (`g2`) | واحد پردازش مرکزی ایمن در برابر خطا | `sha256:235bb53045df6cd9af5455090fe035c79f5f7e2cdc3d267ab5ae0e3c7c6caf51` | [210](#batch-26-evidence-and-access-limits) |
+| 211 | `6ES7214-1HF50-0XB0` | `siemens-s7-1200-cpu-214-1hf50` | `fail-safe` | G2 (`g2`) | واحد پردازش مرکزی ایمن در برابر خطا | `sha256:dcd4cb5eff1906ff481fba4b2a442155a28ebd7fc54cd6d2c2bca64dd75395b4` | [211](#batch-26-evidence-and-access-limits) |
+| 213 | `6ES7211-1HE40-0XB0` | `siemens-s7-1200-cpu-211-1he40` | `compact` | Classic (`classic`) | واحد پردازش مرکزی کامپکت | `sha256:654523c95182f1190c915e51fd555ed3f6d9278cf795b1fd77e85d8b711ac1e6` | [213](#batch-26-evidence-and-access-limits) |
+| 214 | `6ES7211-1BE40-0XB0` | `siemens-s7-1200-cpu-211-1be40` | `compact` | Classic (`classic`) | واحد پردازش مرکزی کامپکت | `sha256:7cbc2aeedd96ae283b51c3f5c8c723b81cccabb6fd24b13480cfbfc9fbc0be0d` | [214](#batch-26-evidence-and-access-limits) |
+| 216 | `6ES7212-1HE40-0XB0` | `siemens-s7-1200-cpu-212-1he40` | `compact` | Classic (`classic`) | واحد پردازش مرکزی کامپکت | `sha256:33cfd6b0bc1ce7ffe8dc59c7b2e039970723bf4f56fddf83d73a29145d746643` | [216](#batch-26-evidence-and-access-limits) |
+
+Positions 205–211 come from the [G2 CPU source](../apps/web/src/features/products/database/siemens/s7-1200/g2/cpu.ts).
+Positions 213, 214, and 216 come from the [classic CPU source](../apps/web/src/features/products/database/siemens/s7-1200/cpu.ts).
+Both bind through the [S7-1200 CPU adapter](../apps/web/src/features/products/database/siemens/s7-1200/cpu.adapter.ts)
+to unique canonical Products. The [verifier](../apps/web/src/features/products/copy/product-copy.verify.ts)
+checks these bindings against the [registry](../apps/web/src/features/products/copy/product-copy.registry.ts).
+
+### Previously approved entries at positions 212 and 215
+
+Both classic compact CPUs retained their original registry entries and both
+current approvals. The ten Batch 26 additions exclude these positions.
+
+| Position | Exact MLFB | Stable Product ID | Canonical variant | CPU source group | Original hash shared by both approvals |
+| --- | --- | --- | --- | --- | --- |
+| 212 | `6ES7211-1AE40-0XB0` | `siemens-s7-1200-cpu-211-1ae40` | `compact` | Classic (`classic`) | `sha256:9f4eb09fec28f71baef3c0ed074486afec042c0a20d779da51fc4a90d518e8f3` |
+| 215 | `6ES7212-1AE40-0XB0` | `siemens-s7-1200-cpu-212-1ae40` | `compact` | Classic (`classic`) | `sha256:467e4c69ff60f302f22acc31bdb3521dfb9335d5171cc5131ba3514f5f6c11fb` |
+
+### Batch 26 evidence and access limits
+
+- **205**. Parsed page 1 of the exact Siemens datasheet identifies the compact
+  CPU 1214C DC/DC/DC. Visual inspection was reported during readiness.
+  [Siemens datasheet](https://apim.industry.siemens.cloud/ted/datasheet?caller=SiePortal&format=PDF&language=en&mlfbs=6ES7214-1AH50-0XB0)
+- **206**. Parsed page 1 of the Siemens-authored DigiKey mirror identifies the
+  compact CPU 1214C AC/DC/RLY. Separately, the parsed official Siemens
+  S7-1200 G2 V20 ordering information, Table 1, lists the exact
+  `6ES7214-1BH50-0XB0` CPU 1214C AC/DC/RLY row.
+  [DigiKey mirror](https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/7134/6ES72141BH500XB0datasheeten.pdf) · [Official Table 1](https://docs.tia.siemens.cloud/r/simatic_s7_1200_g2_manual_collection_enus_20/ordering-information/cpus)
+- **207**. Parsed page 1 of the exact Siemens datasheet identifies the compact
+  CPU 1214C DC/DC/RLY. Visual inspection was reported during readiness.
+  [Siemens datasheet](https://apim.industry.siemens.cloud/ted/datasheet?caller=SiePortal&format=PDF&language=en&mlfbs=6ES7214-1HH50-0XB0)
+- **208–211**. The parsed official Siemens S7-1200 G2 V20 ordering
+  information, Table 2 (Fail-safe CPUs), supplies these exact rows.
+  [Official Table 2](https://docs.tia.siemens.cloud/r/simatic_s7_1200_g2_manual_collection_enus_20/ordering-information/cpus)
+
+  | Position | Exact order | Table 2 CPU row |
+  | --- | --- | --- |
+  | 208 | `6ES7212-1AF50-0XB0` | CPU 1212FC DC/DC/DC |
+  | 209 | `6ES7212-1HF50-0XB0` | CPU 1212FC DC/DC/RLY |
+  | 210 | `6ES7214-1AF50-0XB0` | CPU 1214FC DC/DC/DC |
+  | 211 | `6ES7214-1HF50-0XB0` | CPU 1214FC DC/DC/RLY |
+
+  The fail-safe labels describe CPU type only and carry no safety rating,
+  certification, or application suitability claim.
+- **213, 214, 216**. Parsed official Siemens S7-1200 V20 classic CPU module
+  ordering information, Table 1, supplies the compact CPU rows. Position 213
+  is `6ES7211-1HE40-0XB0`, CPU 1211C DC/DC/Relay. Position 214 is
+  `6ES7211-1BE40-0XB0`, CPU 1211C AC/DC/Relay. Position 216 is
+  `6ES7212-1HE40-0XB0`, CPU 1212C DC/DC/Relay.
+  [Classic Table 1](https://docs.tia.siemens.cloud/r/simatic_s7_1200_manual_collection_enus_20/ordering-information/cpu-modules)
+
+Indexed results were used for discovery only. Visual inspection was reported
+only at 205 and 207. The direct Siemens datasheet requests for 206, 213, 214,
+and 216 were inaccessible to the reader. The parsed mirror and ordering tables
+above supplied the usable evidence.
+[206 request](https://apim.industry.siemens.cloud/ted/datasheet?caller=SiePortal&format=PDF&language=en&mlfbs=6ES7214-1BH50-0XB0) · [213 request](https://apim.industry.siemens.cloud/ted/datasheet?caller=SiePortal&format=PDF&language=en&mlfbs=6ES7211-1HE40-0XB0) · [214 request](https://apim.industry.siemens.cloud/ted/datasheet?caller=SiePortal&format=PDF&language=en&mlfbs=6ES7211-1BE40-0XB0) · [216 request](https://apim.industry.siemens.cloud/ted/datasheet?caller=SiePortal&format=PDF&language=en&mlfbs=6ES7212-1HE40-0XB0)
+
+Twenty separate `Siemiran` approvals bind both review roles to the exact
+stored hashes of reviewed draft `4d9ef9d33249f9ea431e3ace193e68b9054af0bf`.
+The actual UTC registry recording times were `2026-11-27T12:54:53.814Z` for
+linguistic approval and `2026-11-27T12:54:53.827Z` for technical approval,
+separate from GitHub reviews.
+
+The implementation comparison preserved the payloads, provenance, registry
+order, and production hashes of all 175 drafts, and both review records for
+all 165 earlier entries. Each of the ten text mutations and ten segment-kind
+mutations made both approvals stale.
+
+Batches 01–26 are complete privately. The catalog contains 382 Products
+(186 S7-1200 and 196 S7-300), with 175 private drafts, 175 current approvals
+per role, 175 current dual approvals, zero pending roles, and 207 products
+without drafts. Activation remains invalid at `175/175/207` (drafts, dual
+approvals, missing drafts). Capability is absent, active overlays are 0/382,
+publication is disabled, and public FA/EN Product copy resolves to canonical
+English/LTR. Launch requires 382/382 current dual approvals and separate
+authorization.
+
+Technical-token overrides remain `10/20/7` (Products, assignments, unique
+strings), with an empty global allowlist. The eleven public lifecycle omissions
+and the separate S7-300 provenance classification (185 verified and 11
+explicitly unverified) remain in effect.
+
+Batch 27 remains unstarted. Product selection, readiness, and scope require
+separate authorization. The dedicated completed-copy website inspection is
+pending, and Admin Panel and Automation remain gated.
+
+**PASS (REUSED)** — `validate:product-copy`, focused ESLint on the two
+implementation files, TypeScript (`--noEmit --incremental false`), and the
+production build exited `0` at reviewed head
+`f3e2de4c7b5981a99b6109d9a4eb34dfed2bcd86`. The build generated 774/774
+static pages. The reviewed head and implementation squash share tree
+`62379ac4bf780c6b1687d246863e8950e49c070d`. This reconciliation changes
+documentation only. Application checks, product hash recomputation, and
+manufacturer research were not repeated.
+
+Implementation remote CI showed zero Actions runs, check runs, and status
+contexts for both the reviewed head and squash. GitHub returned aggregate
+`pending` with no reported checks.
+
+<a id="2026-11-27---batch-25-private-product-copy-checkpoint-current-state"></a>
+
+## 2026-11-27 - Batch 25 Private Product-copy Checkpoint (Historical Snapshot)
+
+The Batch 25 checkpoint was `165/165/217`. The following record describes
+its implementation and workflow at that checkpoint.
 
 [PR #107](https://github.com/Siemiran/Siemiran/pull/107) merged as `ec910b0b302483889ffa8651bc859f51f7d6ac4d`. The
 merge record includes the parent, merge time, reviewed tree, and implementation
