@@ -12132,8 +12132,13 @@ assert(
   "Batch 26 must retain both earlier approved skips."
 );
 
-const registeredBatch26Drafts =
-  persianProductCopyDraftRegistry.slice(batch25DraftEnd);
+const batch26DraftEnd =
+  batch25DraftEnd +
+  expectedBatch26Catalog.filter(({ typeLabel }) => typeLabel !== null).length;
+const registeredBatch26Drafts = persianProductCopyDraftRegistry.slice(
+  batch25DraftEnd,
+  batch26DraftEnd
+);
 const registeredBatch26ReviewRoles = registeredBatch26Drafts.flatMap(
   (entry) => [entry.linguisticReview, entry.technicalReview]
 );
@@ -12251,8 +12256,11 @@ const registeredBatch26DraftRecords = batch26CatalogBindings
     };
   });
 
-const registeredBatch26ApprovalMutationResults =
-  registeredBatch26Drafts.flatMap((entry) =>
+function verifyTextAndKindApprovalMutations(
+  entries: readonly PersianProductCopyOverlay[],
+  batch: string
+) {
+  return entries.flatMap((entry) =>
     (["text", "kind"] as const).map((mutation) => {
       const changed = cloneMutableOverlay(entry);
       if (mutation === "text") {
@@ -12278,7 +12286,7 @@ const registeredBatch26ApprovalMutationResults =
                 `${role} approval does not match the current copy content.`
             )
           ),
-        `Batch 26 ${mutation} mutation must change the production hash and stale both approvals: ${entry.productId}`
+        `${batch} ${mutation} mutation must change the production hash and stale both approvals: ${entry.productId}`
       );
       return {
         productId: entry.productId,
@@ -12287,6 +12295,369 @@ const registeredBatch26ApprovalMutationResults =
       };
     })
   );
+}
+
+const registeredBatch26ApprovalMutationResults =
+  verifyTextAndKindApprovalMutations(registeredBatch26Drafts, "Batch 26");
+
+/**
+ * Batch 27 readiness evidence covers exact order identity and CPU type.
+ *
+ * Parsed ordering evidence for the compact entries is Siemens ST 70 2024,
+ * printed p. 3/9 for 217, p. 3/14 for 219–220, and p. 3/19 for 222–223.
+ * https://cache.industry.siemens.com/dl/files/167/109744167/att_1289050/v1/simatic-st70-complete-english-2024.pdf
+ * Classic V20 CPU modules, Table 1, corroborates those exact order rows.
+ * https://docs.tia.siemens.cloud/r/simatic_s7_1200_manual_collection_enus_20/ordering-information/cpu-modules
+ * The parsed exact datasheet for 219 identifies the compact CPU on p. 1.
+ * https://apim.industry.siemens.cloud/ted/datasheet?caller=SiePortal&format=PDF&language=en&mlfbs=6ES7214-1HG40-0XB0
+ *
+ * Parsed classic V20 Fail-safe CPUs, Table 1, lists the exact orders below:
+ * 225–226 are CPU 1212FC, 227–228 are CPU 1214FC, and 229 is CPU 1215FC.
+ * https://docs.tia.siemens.cloud/r/simatic_s7_1200_manual_collection_enus_20/ordering-information/fail-safe-cpus-and-signal-modules
+ * The labels describe CPU type only and carry no safety rating, certification,
+ * application suitability, electrical, capacity, performance, or compatibility claims.
+ *
+ * Search snippets were used for discovery only. The document index supplied
+ * parsed ST 70 ordering text. Direct datasheet requests for 217, 220, 222, and
+ * 223 were inaccessible to the reader. The five compact SiePortal detail pages
+ * returned JavaScript-only shells. No visual inspection was performed.
+ */
+const BATCH_27_DRAFT_COMMIT =
+  "419b31ed93f1d7f91c9f0b9bdeebe87f6f95cedd";
+
+const expectedBatch27Catalog = [
+  {
+    position: 217,
+    productId: "siemens-s7-1200-cpu-212-1be40",
+    partNumber: "6ES7212-1BE40-0XB0",
+    reviewedContentHash:
+      "sha256:f669a3b2781cb146904783c9df7a683940ac0aaccbf389665f04b0386216fcab",
+    variantId: "compact",
+    sourceIndex: 5,
+    typeLabel: "واحد پردازش مرکزی کامپکت",
+  },
+  {
+    position: 218,
+    productId: "siemens-s7-1200-cpu-214-1ag40",
+    partNumber: "6ES7214-1AG40-0XB0",
+    variantId: "compact",
+    sourceIndex: 6,
+    typeLabel: null,
+    registryIndex: 2,
+    reviewedContentHash:
+      "sha256:5175b7456d490551af2627bc05aaa26c752555e565205a50fa29751b43b8e3ac",
+  },
+  {
+    position: 219,
+    productId: "siemens-s7-1200-cpu-214-1hg40",
+    partNumber: "6ES7214-1HG40-0XB0",
+    reviewedContentHash:
+      "sha256:50c20f479a513a84fbfbfd321aec1cef8b0f776434f6e92c67dbd5a99d2d3cad",
+    variantId: "compact",
+    sourceIndex: 7,
+    typeLabel: "واحد پردازش مرکزی کامپکت",
+  },
+  {
+    position: 220,
+    productId: "siemens-s7-1200-cpu-214-1bg40",
+    partNumber: "6ES7214-1BG40-0XB0",
+    reviewedContentHash:
+      "sha256:d65c9ac9d7f8cf4ac663d0556d84e60766cc4ef47e0d57b2f6552a5034557352",
+    variantId: "compact",
+    sourceIndex: 8,
+    typeLabel: "واحد پردازش مرکزی کامپکت",
+  },
+  {
+    position: 221,
+    productId: "siemens-s7-1200-cpu-215-1ag40",
+    partNumber: "6ES7215-1AG40-0XB0",
+    variantId: "compact",
+    sourceIndex: 9,
+    typeLabel: null,
+    registryIndex: 3,
+    reviewedContentHash:
+      "sha256:fa672b497d742bcc06e87ecb71b1128ad92c7771e968e0889c0954fb88ebe305",
+  },
+  {
+    position: 222,
+    productId: "siemens-s7-1200-cpu-215-1hg40",
+    partNumber: "6ES7215-1HG40-0XB0",
+    reviewedContentHash:
+      "sha256:d265f196ba97cc51e924a7c01775115de4a55a05f536d502f21f2c2ae47084d4",
+    variantId: "compact",
+    sourceIndex: 10,
+    typeLabel: "واحد پردازش مرکزی کامپکت",
+  },
+  {
+    position: 223,
+    productId: "siemens-s7-1200-cpu-215-1bg40",
+    partNumber: "6ES7215-1BG40-0XB0",
+    reviewedContentHash:
+      "sha256:f7c4bc28795f2cc18ff2a2a382ea6447330b269e5a7d8833b4b80889c5193da4",
+    variantId: "compact",
+    sourceIndex: 11,
+    typeLabel: "واحد پردازش مرکزی کامپکت",
+  },
+  {
+    position: 224,
+    productId: "siemens-s7-1200-cpu-217-1ag40",
+    partNumber: "6ES7217-1AG40-0XB0",
+    variantId: "compact",
+    sourceIndex: 12,
+    typeLabel: null,
+    registryIndex: 4,
+    reviewedContentHash:
+      "sha256:8d231e613502f35684728b238068d1e59aa1f67d17048dc7914a2469c38197c3",
+  },
+  {
+    position: 225,
+    productId: "siemens-s7-1200-cpu-212-1af40",
+    partNumber: "6ES7212-1AF40-0XB0",
+    reviewedContentHash:
+      "sha256:f29bac4bb9fc2f9a63007e9d0f5b391c8918d9212eba2501fa2c7667a0bef4c9",
+    variantId: "fail-safe",
+    sourceIndex: 13,
+    typeLabel: "واحد پردازش مرکزی ایمن در برابر خطا",
+  },
+  {
+    position: 226,
+    productId: "siemens-s7-1200-cpu-212-1hf40",
+    partNumber: "6ES7212-1HF40-0XB0",
+    reviewedContentHash:
+      "sha256:726913a47d1b8c520a7ed6ff82fa0cc3029af7fd2ebea44709f418f9ec91bb1f",
+    variantId: "fail-safe",
+    sourceIndex: 14,
+    typeLabel: "واحد پردازش مرکزی ایمن در برابر خطا",
+  },
+  {
+    position: 227,
+    productId: "siemens-s7-1200-cpu-214-1af40",
+    partNumber: "6ES7214-1AF40-0XB0",
+    reviewedContentHash:
+      "sha256:e2fd36ae6321bf27b46f2afc6a6efb0aa5d8c3797de027c5f7a80b221b372ad7",
+    variantId: "fail-safe",
+    sourceIndex: 15,
+    typeLabel: "واحد پردازش مرکزی ایمن در برابر خطا",
+  },
+  {
+    position: 228,
+    productId: "siemens-s7-1200-cpu-214-1hf40",
+    partNumber: "6ES7214-1HF40-0XB0",
+    reviewedContentHash:
+      "sha256:9b202f02d3b1eff68b59376e16de003d12e17ac511328c9bfdc3a849603404b5",
+    variantId: "fail-safe",
+    sourceIndex: 16,
+    typeLabel: "واحد پردازش مرکزی ایمن در برابر خطا",
+  },
+  {
+    position: 229,
+    productId: "siemens-s7-1200-cpu-215-1af40",
+    partNumber: "6ES7215-1AF40-0XB0",
+    reviewedContentHash:
+      "sha256:2fcbbb3fbba6521dc35c56ed8c01dfc18ed65284d84d75afe219854b1e171a15",
+    variantId: "fail-safe",
+    sourceIndex: 17,
+    typeLabel: "واحد پردازش مرکزی ایمن در برابر خطا",
+  },
+] as const;
+
+assert(
+  products[215]?.partNumber === "6ES7212-1HE40-0XB0",
+  "The Batch 27 catalog window must immediately follow the last Batch 26 Product."
+);
+const batch27CatalogBindings = expectedBatch27Catalog.map((expected) => {
+  const { position, productId, partNumber, variantId, sourceIndex } = expected;
+  const sourceMatches = batch26SourceBindings.filter(
+    ({ source }) => source.id === productId || source.mlfb === partNumber
+  );
+  const [binding] = sourceMatches;
+  const product = products[position - 1];
+  const productMatches = products.filter(
+    (candidate) =>
+      candidate.id === productId ||
+      candidate.partNumber === partNumber ||
+      candidate.manufacturerPartNumber === partNumber ||
+      candidate.slug === product?.slug
+  );
+  assert(
+    sourceMatches.length === 1 &&
+      binding === batch26SourceGroups.classic[sourceIndex] &&
+      binding.source.id === productId &&
+      binding.source.mlfb === partNumber &&
+      binding.source.variantId === variantId &&
+      productMatches.length === 1 &&
+      product === productMatches[0] &&
+      product.id === productId &&
+      product.partNumber === partNumber &&
+      product.manufacturerPartNumber === partNumber &&
+      product.variantId === variantId &&
+      product.productTypeId === "CPU" &&
+      JSON.stringify(binding.product) === JSON.stringify(product),
+    `Batch 27 catalog position ${position} and classic CPU adapter binding must be exact: ${productId}`
+  );
+  return { ...expected, product };
+});
+
+const registeredBatch27SkippedRecords = batch27CatalogBindings
+  .filter((binding) => binding.typeLabel === null)
+  .map(({ position, productId, partNumber, registryIndex, reviewedContentHash }) => {
+    const entries = persianProductCopyDraftRegistry.filter(
+      (entry) => entry.productId === productId
+    );
+    const [entry] = entries;
+    assert(
+      entries.length === 1 &&
+        entry === persianProductCopyDraftRegistry[registryIndex] &&
+        entry === registeredBatch01Drafts[registryIndex],
+      `Batch 27 skip at position ${position} must retain one original Batch 01 entry: ${productId}`
+    );
+    const contentHash = createProductCopyContentHash(entry);
+    assert(
+      contentHash === reviewedContentHash &&
+        entry.linguisticReview.decision === "approved" &&
+        entry.technicalReview.decision === "approved" &&
+        entry.linguisticReview.reviewedContentHash === contentHash &&
+        entry.technicalReview.reviewedContentHash === contentHash,
+      `Batch 27 skip at position ${position} must retain both original current approvals: ${productId}`
+    );
+    return { position, productId, partNumber, registryIndex, contentHash };
+  });
+assert(
+  registeredBatch27SkippedRecords.length === 3,
+  "Batch 27 must retain the three Batch 01 entries at positions 218, 221, and 224."
+);
+
+const registeredBatch27Drafts =
+  persianProductCopyDraftRegistry.slice(batch26DraftEnd);
+const registeredBatch27ReviewRoles = registeredBatch27Drafts.flatMap(
+  (entry) => [entry.linguisticReview, entry.technicalReview]
+);
+assert(
+  registeredBatch27Drafts.length === 10 &&
+    new Set(registeredBatch27ReviewRoles).size === 20,
+  "Batch 27 must contain ten private drafts and twenty distinct review records."
+);
+
+const registeredBatch27DraftRecords = batch27CatalogBindings
+  .filter((binding) => binding.typeLabel !== null)
+  .map((binding, index) => {
+    const {
+      position,
+      productId,
+      partNumber,
+      variantId,
+      typeLabel,
+      reviewedContentHash,
+      product,
+    } = binding;
+    const entry = registeredBatch27Drafts[index];
+    assert(
+      entry?.productId === productId,
+      `Batch 27 draft order must match the exact binding at position ${position}.`
+    );
+    assert(
+      deriveAllowedTechnicalTokens(product).has(partNumber) &&
+        reviewedGlobalTechnicalTokens.length === 0 &&
+        reviewedTechnicalTokenOverrides.every(
+          (override) => override.productId !== productId
+        ),
+      `Batch 27 exact MLFB must be eligible without a token override: ${productId}`
+    );
+
+    const expectedSegments = [
+      { kind: "technical", value: partNumber },
+      { kind: "text", value: `، ${typeLabel}` },
+    ];
+    assert(
+      entry.provenance === "ai-assisted" &&
+        JSON.stringify(entry.shortDescription) ===
+          JSON.stringify(expectedSegments) &&
+        JSON.stringify(entry.description) ===
+          JSON.stringify([expectedSegments]) &&
+        typeLabel === typeLabel.normalize("NFC"),
+      `Batch 27 copy must use the exact MLFB and NFC Persian label in identical two-segment paragraphs: ${productId}`
+    );
+
+    const contentHash = createProductCopyContentHash(entry);
+    const reviewReference =
+      `for ${partNumber} in the supplied Batch 27 approval review, citing draft commit ${BATCH_27_DRAFT_COMMIT}. The UTC timestamp records entry of this approval in the registry. Registry approvals are separate from GitHub reviews.`;
+    const { linguisticReview, technicalReview } = entry;
+    assert(
+      contentHash === reviewedContentHash &&
+        linguisticReview.decision === "approved" &&
+        linguisticReview.reviewerId === "Siemiran" &&
+        linguisticReview.reviewedContentHash === contentHash &&
+        linguisticReview.evidenceRef === `Linguistic approval ${reviewReference}` &&
+        linguisticReview.note ===
+          "Approved the exact Persian wording, punctuation, NFC normalization, and MLFB segmentation in the identical short and single-paragraph long descriptions.",
+      `Batch 27 linguistic approval must match the reviewed draft and wording scope: ${productId}`
+    );
+    const failSafe = variantId === "fail-safe";
+    const technicalNote = failSafe
+      ? "Approved exact order identity and CPU type only. The fail-safe label carries no safety rating, certification, or application suitability claim."
+      : "Approved exact order identity and CPU type only.";
+    assert(
+      technicalReview.decision === "approved" &&
+        technicalReview.reviewerId === "Siemiran" &&
+        technicalReview.reviewedContentHash === contentHash &&
+        technicalReview.evidenceRef.startsWith(
+          `Technical approval ${reviewReference} Parsed `
+        ) &&
+        technicalReview.evidenceRef.includes(partNumber) &&
+        technicalReview.evidenceRef.includes(
+          failSafe ? "Fail-safe CPUs, Table 1" : "CPU modules, Table 1"
+        ) &&
+        technicalReview.evidenceRef.includes(
+          "Indexed search snippets were used for discovery only."
+        ) &&
+        technicalReview.evidenceRef.includes(
+          "No visual inspection was performed."
+        ) &&
+        technicalReview.evidenceRef.includes(
+          "Parsed page 1 of the exact Siemens datasheet"
+        ) === (position === 219) &&
+        technicalReview.evidenceRef.includes(
+          "The direct exact Siemens datasheet request was inaccessible to the reader."
+        ) === (!failSafe && position !== 219) &&
+        technicalReview.evidenceRef.includes(
+          "The exact Siemens SiePortal detail page returned a JavaScript-only shell."
+        ) === !failSafe &&
+        technicalReview.note === technicalNote,
+      `Batch 27 technical approval must match the reviewed draft and evidence scope: ${productId}`
+    );
+
+    for (const locale of ["fa", "en"] as const) {
+      const resolved = resolveProductCopy(product, locale);
+      const publicCopy = createPublicProductCardCopyDTO(resolved);
+      assert(
+        resolved.source === "canonical-en" &&
+          serializeProductCopyParagraph(resolved.shortDescription) ===
+            product.shortDescription &&
+          resolved.description.map(serializeProductCopyParagraph).join("\n") ===
+            (product.description ?? "") &&
+          publicCopy.language === "en" &&
+          publicCopy.direction === "ltr",
+        `Batch 27 public ${locale} copy must remain canonical English/LTR: ${productId}`
+      );
+    }
+
+    return {
+      position,
+      productId,
+      partNumber,
+      variantId,
+      sourceGroup: "classic",
+      draftText: serializeProductCopyParagraphForSearch(entry.shortDescription),
+      contentHash,
+      linguisticReview: linguisticReview.decision,
+      linguisticRecordedAt: linguisticReview.reviewedAt,
+      technicalReview: technicalReview.decision,
+      technicalRecordedAt: technicalReview.reviewedAt,
+    };
+  });
+
+const registeredBatch27ApprovalMutationResults =
+  verifyTextAndKindApprovalMutations(registeredBatch27Drafts, "Batch 27");
 
 const registeredCompletedBatchDrafts = persianProductCopyDraftRegistry.filter(
   (entry) => expectedCompletedBatchProductIdSet.has(entry.productId)
@@ -12320,7 +12691,8 @@ assert(
   registeredDraftValidation.valid &&
     batch24DraftEnd === 155 &&
     batch25DraftEnd === 165 &&
-    persianProductCopyDraftRegistry.length === 175 &&
+    batch26DraftEnd === 175 &&
+    persianProductCopyDraftRegistry.length === 185 &&
     registeredBatch01Drafts.length === 5 &&
     JSON.stringify(registeredBatch01DraftBindings) ===
       JSON.stringify(expectedBatch01DraftProducts),
@@ -12475,21 +12847,21 @@ assert(
   "The existing thirty drafts must retain exact current dual approvals with no pending reviews."
 );
 assert(
-  registeredLinguisticApprovals === 175 &&
-    registeredTechnicalApprovals === 175 &&
-    registeredCurrentDualApprovals === 175 &&
+  registeredLinguisticApprovals === 185 &&
+    registeredTechnicalApprovals === 185 &&
+    registeredCurrentDualApprovals === 185 &&
     registeredLinguisticPending === 0 &&
     registeredTechnicalPending === 0,
-  "The registry must contain 175 current dual approvals and zero pending reviews per role."
+  "The registry must contain 185 current dual approvals and zero pending reviews per role."
 );
 assert(
   !registeredDraftActivation.valid &&
-    registeredDraftActivation.overlayCount === 175 &&
+    registeredDraftActivation.overlayCount === 185 &&
     registeredDraftActivation.canonicalCount === 382 &&
-    registeredDraftActivation.approvedCount === 175 &&
-    registeredDraftActivation.missingIds.length === 207 &&
+    registeredDraftActivation.approvedCount === 185 &&
+    registeredDraftActivation.missingIds.length === 197 &&
     !("capability" in registeredDraftActivation),
-  "Combined activation must fail closed at exactly 175/382 drafts, 175 dual approvals, and 207 missing Products."
+  "Combined activation must fail closed at exactly 185/382 drafts, 185 dual approvals, and 197 missing Products."
 );
 assert(
   PERSIAN_PRODUCT_COPY_PUBLICATION_STATE === "disabled",
@@ -12832,6 +13204,14 @@ console.log(
           skipped: registeredBatch26SkippedRecords,
           approvedRoleRecords: registeredBatch26ReviewRoles.length,
           mutationStaleness: registeredBatch26ApprovalMutationResults,
+          publicCanonicalEnglishLtr: true,
+        },
+        batch27: {
+          entries: registeredBatch27Drafts.length,
+          drafts: registeredBatch27DraftRecords,
+          skipped: registeredBatch27SkippedRecords,
+          approvedRoleRecords: registeredBatch27ReviewRoles.length,
+          mutationStaleness: registeredBatch27ApprovalMutationResults,
           publicCanonicalEnglishLtr: true,
         },
         completedThroughBatch21Entries:

@@ -1560,6 +1560,152 @@ function createBatch26Approvals(
   } as const;
 }
 
+const batch27Position217Copy = [
+  { kind: "technical", value: "6ES7212-1BE40-0XB0" },
+  { kind: "text", value: "، واحد پردازش مرکزی کامپکت" },
+] as const satisfies ProductCopyParagraph;
+
+const batch27Position219Copy = [
+  { kind: "technical", value: "6ES7214-1HG40-0XB0" },
+  { kind: "text", value: "، واحد پردازش مرکزی کامپکت" },
+] as const satisfies ProductCopyParagraph;
+
+const batch27Position220Copy = [
+  { kind: "technical", value: "6ES7214-1BG40-0XB0" },
+  { kind: "text", value: "، واحد پردازش مرکزی کامپکت" },
+] as const satisfies ProductCopyParagraph;
+
+const batch27Position222Copy = [
+  { kind: "technical", value: "6ES7215-1HG40-0XB0" },
+  { kind: "text", value: "، واحد پردازش مرکزی کامپکت" },
+] as const satisfies ProductCopyParagraph;
+
+const batch27Position223Copy = [
+  { kind: "technical", value: "6ES7215-1BG40-0XB0" },
+  { kind: "text", value: "، واحد پردازش مرکزی کامپکت" },
+] as const satisfies ProductCopyParagraph;
+
+const batch27Position225Copy = [
+  { kind: "technical", value: "6ES7212-1AF40-0XB0" },
+  { kind: "text", value: "، واحد پردازش مرکزی ایمن در برابر خطا" },
+] as const satisfies ProductCopyParagraph;
+
+const batch27Position226Copy = [
+  { kind: "technical", value: "6ES7212-1HF40-0XB0" },
+  { kind: "text", value: "، واحد پردازش مرکزی ایمن در برابر خطا" },
+] as const satisfies ProductCopyParagraph;
+
+const batch27Position227Copy = [
+  { kind: "technical", value: "6ES7214-1AF40-0XB0" },
+  { kind: "text", value: "، واحد پردازش مرکزی ایمن در برابر خطا" },
+] as const satisfies ProductCopyParagraph;
+
+const batch27Position228Copy = [
+  { kind: "technical", value: "6ES7214-1HF40-0XB0" },
+  { kind: "text", value: "، واحد پردازش مرکزی ایمن در برابر خطا" },
+] as const satisfies ProductCopyParagraph;
+
+const batch27Position229Copy = [
+  { kind: "technical", value: "6ES7215-1AF40-0XB0" },
+  { kind: "text", value: "، واحد پردازش مرکزی ایمن در برابر خطا" },
+] as const satisfies ProductCopyParagraph;
+
+const batch27St70Reference =
+  "https://cache.industry.siemens.com/dl/files/167/109744167/att_1289050/v1/simatic-st70-complete-english-2024.pdf";
+const batch27ClassicCpuReference =
+  "https://docs.tia.siemens.cloud/r/simatic_s7_1200_manual_collection_enus_20/ordering-information/cpu-modules";
+const batch27FailSafeCpuReference =
+  "https://docs.tia.siemens.cloud/r/simatic_s7_1200_manual_collection_enus_20/ordering-information/fail-safe-cpus-and-signal-modules";
+const batch27DetailAccessLimit =
+  "The exact Siemens SiePortal detail page returned a JavaScript-only shell.";
+const batch27DatasheetAndDetailAccessLimit =
+  `The direct exact Siemens datasheet request was inaccessible to the reader. ${batch27DetailAccessLimit}`;
+
+const batch27TechnicalEvidence = {
+  position217: {
+    parsed: `Parsed Siemens ST 70 2024, printed p. 3/9, identifies this exact order as a compact CPU 1212C. ${batch27St70Reference} Parsed classic V20 CPU modules, Table 1, corroborates the exact 6ES7212-1BE40-0XB0 order row. ${batch27ClassicCpuReference}`,
+    variantId: "compact",
+    accessLimit: batch27DatasheetAndDetailAccessLimit,
+  },
+  position219: {
+    parsed: `Parsed Siemens ST 70 2024, printed p. 3/14, identifies this exact order as a compact CPU 1214C. ${batch27St70Reference} Parsed classic V20 CPU modules, Table 1, corroborates the exact 6ES7214-1HG40-0XB0 order row. ${batch27ClassicCpuReference} Parsed page 1 of the exact Siemens datasheet identifies this order as a compact CPU. https://apim.industry.siemens.cloud/ted/datasheet?caller=SiePortal&format=PDF&language=en&mlfbs=6ES7214-1HG40-0XB0`,
+    variantId: "compact",
+    accessLimit: batch27DetailAccessLimit,
+  },
+  position220: {
+    parsed: `Parsed Siemens ST 70 2024, printed p. 3/14, identifies this exact order as a compact CPU 1214C. ${batch27St70Reference} Parsed classic V20 CPU modules, Table 1, corroborates the exact 6ES7214-1BG40-0XB0 order row. ${batch27ClassicCpuReference}`,
+    variantId: "compact",
+    accessLimit: batch27DatasheetAndDetailAccessLimit,
+  },
+  position222: {
+    parsed: `Parsed Siemens ST 70 2024, printed p. 3/19, identifies this exact order as a compact CPU 1215C. ${batch27St70Reference} Parsed classic V20 CPU modules, Table 1, corroborates the exact 6ES7215-1HG40-0XB0 order row. ${batch27ClassicCpuReference}`,
+    variantId: "compact",
+    accessLimit: batch27DatasheetAndDetailAccessLimit,
+  },
+  position223: {
+    parsed: `Parsed Siemens ST 70 2024, printed p. 3/19, identifies this exact order as a compact CPU 1215C. ${batch27St70Reference} Parsed classic V20 CPU modules, Table 1, corroborates the exact 6ES7215-1BG40-0XB0 order row. ${batch27ClassicCpuReference}`,
+    variantId: "compact",
+    accessLimit: batch27DatasheetAndDetailAccessLimit,
+  },
+  position225: {
+    parsed: `Parsed classic V20 Fail-safe CPUs, Table 1, identifies the exact 6ES7212-1AF40-0XB0 order row as CPU 1212FC in the fail-safe CPU group. ${batch27FailSafeCpuReference}`,
+    variantId: "fail-safe",
+  },
+  position226: {
+    parsed: `Parsed classic V20 Fail-safe CPUs, Table 1, identifies the exact 6ES7212-1HF40-0XB0 order row as CPU 1212FC in the fail-safe CPU group. ${batch27FailSafeCpuReference}`,
+    variantId: "fail-safe",
+  },
+  position227: {
+    parsed: `Parsed classic V20 Fail-safe CPUs, Table 1, identifies the exact 6ES7214-1AF40-0XB0 order row as CPU 1214FC in the fail-safe CPU group. ${batch27FailSafeCpuReference}`,
+    variantId: "fail-safe",
+  },
+  position228: {
+    parsed: `Parsed classic V20 Fail-safe CPUs, Table 1, identifies the exact 6ES7214-1HF40-0XB0 order row as CPU 1214FC in the fail-safe CPU group. ${batch27FailSafeCpuReference}`,
+    variantId: "fail-safe",
+  },
+  position229: {
+    parsed: `Parsed classic V20 Fail-safe CPUs, Table 1, identifies the exact 6ES7215-1AF40-0XB0 order row as CPU 1215FC in the fail-safe CPU group. ${batch27FailSafeCpuReference}`,
+    variantId: "fail-safe",
+  },
+} as const;
+
+function createBatch27Approvals(
+  partNumber: string,
+  reviewedContentHash: string,
+  technicalEvidence: {
+    parsed: string;
+    variantId: "compact" | "fail-safe";
+    accessLimit?: string;
+  }
+) {
+  const reviewReference =
+    `for ${partNumber} in the supplied Batch 27 approval review, citing draft commit 419b31ed93f1d7f91c9f0b9bdeebe87f6f95cedd. The UTC timestamp records entry of this approval in the registry. Registry approvals are separate from GitHub reviews.`;
+  const accessLimit = technicalEvidence.accessLimit
+    ? ` ${technicalEvidence.accessLimit}`
+    : "";
+
+  return {
+    linguisticReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-11-27T14:39:19.074Z",
+      reviewedContentHash,
+      evidenceRef: `Linguistic approval ${reviewReference}`,
+      note: "Approved the exact Persian wording, punctuation, NFC normalization, and MLFB segmentation in the identical short and single-paragraph long descriptions.",
+    },
+    technicalReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: "2026-11-27T14:39:19.088Z",
+      reviewedContentHash,
+      evidenceRef: `Technical approval ${reviewReference} ${technicalEvidence.parsed} Indexed search snippets were used for discovery only.${accessLimit} No visual inspection was performed.`,
+      note: technicalEvidence.variantId === "fail-safe"
+        ? "Approved exact order identity and CPU type only. The fail-safe label carries no safety rating, certification, or application suitability claim."
+        : "Approved exact order identity and CPU type only.",
+    },
+  } as const;
+}
+
 export const persianProductCopyDraftRegistry = [
   {
     productId: "siemens-s7-1200-cpu-211-1ae40",
@@ -5539,6 +5685,116 @@ export const persianProductCopyDraftRegistry = [
       "6ES7212-1HE40-0XB0",
       "sha256:33cfd6b0bc1ce7ffe8dc59c7b2e039970723bf4f56fddf83d73a29145d746643",
       batch26TechnicalEvidence.position216
+    ),
+  },
+  {
+    productId: "siemens-s7-1200-cpu-212-1be40",
+    shortDescription: batch27Position217Copy,
+    description: [batch27Position217Copy],
+    provenance: "ai-assisted",
+    ...createBatch27Approvals(
+      "6ES7212-1BE40-0XB0",
+      "sha256:f669a3b2781cb146904783c9df7a683940ac0aaccbf389665f04b0386216fcab",
+      batch27TechnicalEvidence.position217
+    ),
+  },
+  {
+    productId: "siemens-s7-1200-cpu-214-1hg40",
+    shortDescription: batch27Position219Copy,
+    description: [batch27Position219Copy],
+    provenance: "ai-assisted",
+    ...createBatch27Approvals(
+      "6ES7214-1HG40-0XB0",
+      "sha256:50c20f479a513a84fbfbfd321aec1cef8b0f776434f6e92c67dbd5a99d2d3cad",
+      batch27TechnicalEvidence.position219
+    ),
+  },
+  {
+    productId: "siemens-s7-1200-cpu-214-1bg40",
+    shortDescription: batch27Position220Copy,
+    description: [batch27Position220Copy],
+    provenance: "ai-assisted",
+    ...createBatch27Approvals(
+      "6ES7214-1BG40-0XB0",
+      "sha256:d65c9ac9d7f8cf4ac663d0556d84e60766cc4ef47e0d57b2f6552a5034557352",
+      batch27TechnicalEvidence.position220
+    ),
+  },
+  {
+    productId: "siemens-s7-1200-cpu-215-1hg40",
+    shortDescription: batch27Position222Copy,
+    description: [batch27Position222Copy],
+    provenance: "ai-assisted",
+    ...createBatch27Approvals(
+      "6ES7215-1HG40-0XB0",
+      "sha256:d265f196ba97cc51e924a7c01775115de4a55a05f536d502f21f2c2ae47084d4",
+      batch27TechnicalEvidence.position222
+    ),
+  },
+  {
+    productId: "siemens-s7-1200-cpu-215-1bg40",
+    shortDescription: batch27Position223Copy,
+    description: [batch27Position223Copy],
+    provenance: "ai-assisted",
+    ...createBatch27Approvals(
+      "6ES7215-1BG40-0XB0",
+      "sha256:f7c4bc28795f2cc18ff2a2a382ea6447330b269e5a7d8833b4b80889c5193da4",
+      batch27TechnicalEvidence.position223
+    ),
+  },
+  {
+    productId: "siemens-s7-1200-cpu-212-1af40",
+    shortDescription: batch27Position225Copy,
+    description: [batch27Position225Copy],
+    provenance: "ai-assisted",
+    ...createBatch27Approvals(
+      "6ES7212-1AF40-0XB0",
+      "sha256:f29bac4bb9fc2f9a63007e9d0f5b391c8918d9212eba2501fa2c7667a0bef4c9",
+      batch27TechnicalEvidence.position225
+    ),
+  },
+  {
+    productId: "siemens-s7-1200-cpu-212-1hf40",
+    shortDescription: batch27Position226Copy,
+    description: [batch27Position226Copy],
+    provenance: "ai-assisted",
+    ...createBatch27Approvals(
+      "6ES7212-1HF40-0XB0",
+      "sha256:726913a47d1b8c520a7ed6ff82fa0cc3029af7fd2ebea44709f418f9ec91bb1f",
+      batch27TechnicalEvidence.position226
+    ),
+  },
+  {
+    productId: "siemens-s7-1200-cpu-214-1af40",
+    shortDescription: batch27Position227Copy,
+    description: [batch27Position227Copy],
+    provenance: "ai-assisted",
+    ...createBatch27Approvals(
+      "6ES7214-1AF40-0XB0",
+      "sha256:e2fd36ae6321bf27b46f2afc6a6efb0aa5d8c3797de027c5f7a80b221b372ad7",
+      batch27TechnicalEvidence.position227
+    ),
+  },
+  {
+    productId: "siemens-s7-1200-cpu-214-1hf40",
+    shortDescription: batch27Position228Copy,
+    description: [batch27Position228Copy],
+    provenance: "ai-assisted",
+    ...createBatch27Approvals(
+      "6ES7214-1HF40-0XB0",
+      "sha256:9b202f02d3b1eff68b59376e16de003d12e17ac511328c9bfdc3a849603404b5",
+      batch27TechnicalEvidence.position228
+    ),
+  },
+  {
+    productId: "siemens-s7-1200-cpu-215-1af40",
+    shortDescription: batch27Position229Copy,
+    description: [batch27Position229Copy],
+    provenance: "ai-assisted",
+    ...createBatch27Approvals(
+      "6ES7215-1AF40-0XB0",
+      "sha256:2fcbbb3fbba6521dc35c56ed8c01dfc18ed65284d84d75afe219854b1e171a15",
+      batch27TechnicalEvidence.position229
     ),
   },
 ] as const satisfies readonly PersianProductCopyOverlay[];
