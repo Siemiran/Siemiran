@@ -1560,6 +1560,56 @@ function createBatch26Approvals(
   } as const;
 }
 
+const batch27Position217Copy = [
+  { kind: "technical", value: "6ES7212-1BE40-0XB0" },
+  { kind: "text", value: "، واحد پردازش مرکزی کامپکت" },
+] as const satisfies ProductCopyParagraph;
+
+const batch27Position219Copy = [
+  { kind: "technical", value: "6ES7214-1HG40-0XB0" },
+  { kind: "text", value: "، واحد پردازش مرکزی کامپکت" },
+] as const satisfies ProductCopyParagraph;
+
+const batch27Position220Copy = [
+  { kind: "technical", value: "6ES7214-1BG40-0XB0" },
+  { kind: "text", value: "، واحد پردازش مرکزی کامپکت" },
+] as const satisfies ProductCopyParagraph;
+
+const batch27Position222Copy = [
+  { kind: "technical", value: "6ES7215-1HG40-0XB0" },
+  { kind: "text", value: "، واحد پردازش مرکزی کامپکت" },
+] as const satisfies ProductCopyParagraph;
+
+const batch27Position223Copy = [
+  { kind: "technical", value: "6ES7215-1BG40-0XB0" },
+  { kind: "text", value: "، واحد پردازش مرکزی کامپکت" },
+] as const satisfies ProductCopyParagraph;
+
+const batch27Position225Copy = [
+  { kind: "technical", value: "6ES7212-1AF40-0XB0" },
+  { kind: "text", value: "، واحد پردازش مرکزی ایمن در برابر خطا" },
+] as const satisfies ProductCopyParagraph;
+
+const batch27Position226Copy = [
+  { kind: "technical", value: "6ES7212-1HF40-0XB0" },
+  { kind: "text", value: "، واحد پردازش مرکزی ایمن در برابر خطا" },
+] as const satisfies ProductCopyParagraph;
+
+const batch27Position227Copy = [
+  { kind: "technical", value: "6ES7214-1AF40-0XB0" },
+  { kind: "text", value: "، واحد پردازش مرکزی ایمن در برابر خطا" },
+] as const satisfies ProductCopyParagraph;
+
+const batch27Position228Copy = [
+  { kind: "technical", value: "6ES7214-1HF40-0XB0" },
+  { kind: "text", value: "، واحد پردازش مرکزی ایمن در برابر خطا" },
+] as const satisfies ProductCopyParagraph;
+
+const batch27Position229Copy = [
+  { kind: "technical", value: "6ES7215-1AF40-0XB0" },
+  { kind: "text", value: "، واحد پردازش مرکزی ایمن در برابر خطا" },
+] as const satisfies ProductCopyParagraph;
+
 export const persianProductCopyDraftRegistry = [
   {
     productId: "siemens-s7-1200-cpu-211-1ae40",
@@ -5540,5 +5590,85 @@ export const persianProductCopyDraftRegistry = [
       "sha256:33cfd6b0bc1ce7ffe8dc59c7b2e039970723bf4f56fddf83d73a29145d746643",
       batch26TechnicalEvidence.position216
     ),
+  },
+  {
+    productId: "siemens-s7-1200-cpu-212-1be40",
+    shortDescription: batch27Position217Copy,
+    description: [batch27Position217Copy],
+    provenance: "ai-assisted",
+    linguisticReview: { decision: "pending" },
+    technicalReview: { decision: "pending" },
+  },
+  {
+    productId: "siemens-s7-1200-cpu-214-1hg40",
+    shortDescription: batch27Position219Copy,
+    description: [batch27Position219Copy],
+    provenance: "ai-assisted",
+    linguisticReview: { decision: "pending" },
+    technicalReview: { decision: "pending" },
+  },
+  {
+    productId: "siemens-s7-1200-cpu-214-1bg40",
+    shortDescription: batch27Position220Copy,
+    description: [batch27Position220Copy],
+    provenance: "ai-assisted",
+    linguisticReview: { decision: "pending" },
+    technicalReview: { decision: "pending" },
+  },
+  {
+    productId: "siemens-s7-1200-cpu-215-1hg40",
+    shortDescription: batch27Position222Copy,
+    description: [batch27Position222Copy],
+    provenance: "ai-assisted",
+    linguisticReview: { decision: "pending" },
+    technicalReview: { decision: "pending" },
+  },
+  {
+    productId: "siemens-s7-1200-cpu-215-1bg40",
+    shortDescription: batch27Position223Copy,
+    description: [batch27Position223Copy],
+    provenance: "ai-assisted",
+    linguisticReview: { decision: "pending" },
+    technicalReview: { decision: "pending" },
+  },
+  {
+    productId: "siemens-s7-1200-cpu-212-1af40",
+    shortDescription: batch27Position225Copy,
+    description: [batch27Position225Copy],
+    provenance: "ai-assisted",
+    linguisticReview: { decision: "pending" },
+    technicalReview: { decision: "pending" },
+  },
+  {
+    productId: "siemens-s7-1200-cpu-212-1hf40",
+    shortDescription: batch27Position226Copy,
+    description: [batch27Position226Copy],
+    provenance: "ai-assisted",
+    linguisticReview: { decision: "pending" },
+    technicalReview: { decision: "pending" },
+  },
+  {
+    productId: "siemens-s7-1200-cpu-214-1af40",
+    shortDescription: batch27Position227Copy,
+    description: [batch27Position227Copy],
+    provenance: "ai-assisted",
+    linguisticReview: { decision: "pending" },
+    technicalReview: { decision: "pending" },
+  },
+  {
+    productId: "siemens-s7-1200-cpu-214-1hf40",
+    shortDescription: batch27Position228Copy,
+    description: [batch27Position228Copy],
+    provenance: "ai-assisted",
+    linguisticReview: { decision: "pending" },
+    technicalReview: { decision: "pending" },
+  },
+  {
+    productId: "siemens-s7-1200-cpu-215-1af40",
+    shortDescription: batch27Position229Copy,
+    description: [batch27Position229Copy],
+    provenance: "ai-assisted",
+    linguisticReview: { decision: "pending" },
+    technicalReview: { decision: "pending" },
   },
 ] as const satisfies readonly PersianProductCopyOverlay[];
