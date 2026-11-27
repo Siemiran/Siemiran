@@ -1,6 +1,6 @@
 # Siemiran — Session Handoff
 
-Checkpoint **2026-11-26 (Asia/Tehran)**. Private Batch 24 is merged, and this
+Checkpoint **2026-11-27 (Asia/Tehran)**. Private Batch 25 is merged, and this
 handoff records its implementation baseline. Recheck actual refs on resume.
 
 ## Identity and source of truth
@@ -17,6 +17,33 @@ For implemented behavior, use the exact committed source and validation first,
 then merged PR/review evidence, then current repository summaries. Dated older
 snapshots preserve history. Maintainer instructions define authorization; a
 historical next-step statement does not authorize new work.
+
+Merged implementation baseline `ec910b0b302483889ffa8651bc859f51f7d6ac4d`.
+[PR #107](https://github.com/Siemiran/Siemiran/pull/107) merged at `2026-11-27 08:15:11 UTC` /
+`2026-11-27 11:45:11 Asia/Tehran` with subject
+`feat: add Batch 25 Persian product copy`. The sole squash parent is
+`92be4762efb1c8a23f82f843d4644bf4cdcc8d2e`. The reviewed head is
+`854d8968488c2622490a8197e4249f8ccb5ef202`, and the reviewed draft is
+`d499bed2b712f91d77bdf9a8cefc9a808e50b4d9`. The reviewed head and squash
+share tree `7ecf5e8f2414bb3769ccd3118acc2341cf98e162`. The two-file implementation
+scope is registry `+218/-0` and verifier `+411/-10`, totaling `+629/-10`.
+The head-matched squash, main-only fetch, switch, and fast-forward exited
+`0`. Local, tracking, and live `feat/fa-product-copy-batch-25` refs
+stayed at the reviewed head. `origin/HEAD` still targets `origin/main`.
+Recheck actual refs on resume.
+
+**PASS (REUSED)** — `validate:product-copy`, focused ESLint, TypeScript, and
+the production build exited `0` at reviewed head
+`854d8968488c2622490a8197e4249f8ccb5ef202`. The build generated 774/774
+static pages. The reviewed head and implementation squash share tree
+`7ecf5e8f2414bb3769ccd3118acc2341cf98e162`, and this reconciliation changes
+documentation only.
+
+Implementation remote CI reported zero Actions runs, check runs, and status
+contexts for both the reviewed head and the squash. GitHub's aggregate status
+was `pending` with no checks reported.
+
+### Historical Batch 24 implementation identity
 
 Merged implementation baseline: `ab37f3f05208e027aeb7ac47c1b97b00072d16a8`.
 [PR #105](https://github.com/Siemiran/Siemiran/pull/105) merged at `2026-11-26 19:59:23 UTC` /
@@ -248,16 +275,26 @@ Follow [AGENTS.md](../AGENTS.md): Feature First, repository access, one canonica
 | Current measure | State |
 | --- | --- |
 | Catalog | 382 Products (186 S7-1200 / 196 S7-300) |
-| Private drafts / current linguistic approvals / current technical approvals | 155/382 each |
-| Current dual approvals / pending roles / missing private entries | 155 / zero / 227 |
-| Activation validation / overlayCount / approvedCount / missingIds.length | Invalid / 155 / 155 / 227 |
+| Private drafts / current linguistic approvals / current technical approvals | 165/382 each |
+| Current dual approvals / pending roles / missing private entries | 165 / zero / 217 |
+| Activation validation / overlayCount / approvedCount / missingIds.length | Invalid / 165 / 165 / 217 |
 | Active overlays / activation capability / publication | 0/382 / absent / disabled |
 | Public FA/EN Product copy | Canonical English/LTR |
 | Public activation gate | 382/382 current dual approvals plus separate launch authorization |
 | Overrides | 10 Products / 20 assignments / 7 unique strings |
-| Batch 24 added overrides / global allowlist | Zero / empty |
+| Batch 25 added overrides / global allowlist | Zero / empty |
 | Canonical lifecycle omissions | Exactly eleven, including IM 178-4 |
 | S7-300 lifecycle provenance | 185 Siemens-official verified / 11 explicitly unverified |
+
+Batches 01–25 are complete privately. Batch 25 at positions 195–204 covers
+exact MLFB identity and product type. The source order crosses from S7-300 FM
+to S7-1200 classic and G2 power modules, then to the G2 CPUs. The preservation
+comparison matched all 165 draft payloads, provenance values, production hashes,
+and registry positions, plus both review records for the 155 earlier entries.
+Twenty text and segment-kind mutations each made both approvals stale. The
+recorded approvals, exact bindings, and evidence are in [DATABASE.md](DATABASE.md#2026-11-27---batch-25-private-product-copy-checkpoint-current-state).
+
+Historical Batch 24 copy checkpoint (`155/155/227`).
 
 Batches 01–24 are complete privately. Batch 24 at positions 185–194 covers
 exact MLFB and module type. The source order preserves the distinct FM 356
@@ -409,9 +446,9 @@ activation is prohibited. Private drafts authorize neither activation nor public
 
 ## Outstanding work and evidence limits
 
-1. Batch 25 remains **unstarted**. Product selection, readiness, and scope
+1. Batch 26 remains **unstarted**. Product selection, readiness, and scope
    require separate approval.
-2. Draft and obtain both approvals for the remaining 227 products through
+2. Draft and obtain both approvals for the remaining 217 products through
    separately authorized batches. Public activation and bilingual SEO remain
    separate future tasks; English indexing, hreflang, and localized sitemap work
    remain deferred.
@@ -622,6 +659,17 @@ Batch 15 evidence limits (exact bindings and printed pages in
   compatibility, certification, lifecycle and availability remain outside scope.
   Preserve Batch 14's distinct 7ND02 “4 AI” discrepancy and SIPLUS reader
   limitation without assigning the latter an HTTP status.
+
+Batch 25 used parsed Siemens evidence for exact order identity and product
+type, with indexed results used for discovery. Visual inspection was reported
+only for positions 196, 200, and 201. The FM 357 attachment and support-hosted
+A0359 screenshot request returned reader HTTP 403. The Siemens cache copy
+supplied usable A0359 evidence. The ST 70 direct fetch hit the reader size
+limit, and parsed pages came from the indexed-document view. Alternate routes
+were inaccessible or returned JavaScript-only shells. See the
+[Batch 25 evidence and access limits](DATABASE.md#batch-25-evidence-and-access-limits).
+
+Historical Batch 24 evidence limits.
 
 Batch 24 uses parsed Siemens evidence for exact identity and type. Indexed
 results were used for discovery, visual inspection was not observed, and
@@ -1292,7 +1340,7 @@ counts and evidence; they are not current coverage or new task executions.
 
 - Record branch, exact HEAD, sole parent/base, index/worktree clean or dirty state,
   and live/local `main` refs. The durable implementation baseline is
-  `ab37f3f05208e027aeb7ac47c1b97b00072d16a8`. Task-specific workflow status and
+  `ec910b0b302483889ffa8651bc859f51f7d6ac4d`. Task-specific workflow status and
   commit/PR identities belong in the task report rather than this file.
 - Identify existing task branches, patches, and commits before starting; preserve
   identifiable partial work and finish only missing authorized work. If refs or
@@ -1303,7 +1351,7 @@ counts and evidence; they are not current coverage or new task executions.
 - Record validation commands, exit codes, NEW versus REUSED status, exact checked
   content, and evidence limitations. Check Markdown links/anchors, whitespace
   and unchanged outside content; report actual results and final clean state.
-- Batch 25 product selection, readiness, and scope remain unstarted and require
+- Batch 26 product selection, readiness, and scope remain unstarted and require
   separate approval. Overlay activation,
   publication, English indexing and completed-copy website inspection remain
   separately authorized future work.
