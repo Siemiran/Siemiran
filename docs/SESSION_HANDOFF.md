@@ -1,6 +1,6 @@
 # Siemiran — Session Handoff
 
-Checkpoint **2026-11-27 (Asia/Tehran)**. Private Batch 25 is merged, and this
+Checkpoint **2026-11-27 (Asia/Tehran)**. Private Batch 26 is merged, and this
 handoff records its implementation baseline. Recheck actual refs on resume.
 
 ## Identity and source of truth
@@ -17,6 +17,23 @@ For implemented behavior, use the exact committed source and validation first,
 then merged PR/review evidence, then current repository summaries. Dated older
 snapshots preserve history. Maintainer instructions define authorization; a
 historical next-step statement does not authorize new work.
+
+Merged implementation baseline `7ed2bb4a5f5f14f5a85a4f0d1562ed3fc29146df`.
+[PR #109](https://github.com/Siemiran/Siemiran/pull/109) merged at
+`2026-11-27 13:11:40 UTC` / `2026-11-27 16:41:40 Asia/Tehran` with subject
+`feat: add Batch 26 Persian product copy`. The sole squash parent is
+`7dab64035877806fdd1d84dfb58af4d0d0f79b9c`. Reviewed head
+`f3e2de4c7b5981a99b6109d9a4eb34dfed2bcd86` and the squash share tree
+`62379ac4bf780c6b1687d246863e8950e49c070d`. The reviewed draft is
+`4d9ef9d33249f9ea431e3ace193e68b9054af0bf`. Implementation scope is
+registry `+246/-0` and verifier `+389/-11`, totaling `+635/-11`.
+The head-matched squash, main-only fetch, switch, and fast-forward exited
+`0`. Local, tracking, and live Batch 26 feature refs remained at the reviewed
+head, and `origin/HEAD` still points to `origin/main`.
+
+### Historical Batch 25 implementation identity
+
+The Batch 25 checkpoint was `165/165/217`.
 
 Merged implementation baseline `ec910b0b302483889ffa8651bc859f51f7d6ac4d`.
 [PR #107](https://github.com/Siemiran/Siemiran/pull/107) merged at `2026-11-27 08:15:11 UTC` /
@@ -239,6 +256,34 @@ Guarded squash and local fast-forward completed.
 `feat/fa-product-copy-batch-14` remained at the reviewed head locally, in the
 cached remote ref, and on GitHub. Recheck actual refs and worktree on resume.
 
+## Documentation update map
+
+| File | Batch 26 record |
+| --- | --- |
+| [ARCHITECTURE.md](ARCHITECTURE.md) | Canonical CPU bindings, verifier coverage, and the public resolver boundary. |
+| [CHANGELOG.md](CHANGELOG.md#2026-11-27---pr-109-complete-batch-26-private-drafts-and-dual-approvals) | PR #109 merge identity, reviewed tree, exact scope, and reused checks. |
+| [DATABASE.md](DATABASE.md#2026-11-27---batch-26-private-product-copy-checkpoint-current-state) | Ten additions, two preserved entries, stored hashes, approval times, and evidence limits. |
+| [PROJECT_PROGRESS.md](PROJECT_PROGRESS.md) | Completed work, current coverage, and validation status. |
+| [PROJECT_STATE.md](PROJECT_STATE.md) | Current baseline, counts, activation and publication state, and validation applicability. |
+| [PROJECT_VISION.md](PROJECT_VISION.md) | Private copy progress and the separate public launch authorization. |
+| [ROADMAP.md](ROADMAP.md) | Completed private batches and the separately authorized Batch 27 workflow. |
+| [SESSION_HANDOFF.md](SESSION_HANDOFF.md) | Resume baseline, handoff checks, and stop conditions. |
+
+### Documentation stop conditions
+
+- Before editing, stop if the worktree or index is dirty, overlapping work is
+  present, or local and live `main`, the reviewed tree, PR #109, or the
+  implementation scope differs from this checkpoint.
+- Before committing or pushing, stop if a current fact, binding, stored hash,
+  preserved approval, historical anchor, or local link fails the audit. Also
+  stop for whitespace errors or content or mode changes outside the eight
+  mapped files. Check that staged bytes match the audited files before commit
+  and that committed bytes match them before push.
+- End this reconciliation after one non-draft documentation PR is open and
+  its live head, base, title, body, one-commit scope, and disabled auto-merge
+  are verified. Leave the PR open for review. Batch 27 selection, overlay
+  activation, and publication require separate authorization.
+
 ## Collaboration and resume policy
 
 - Review affected files and relevant evidence; do not reconstruct or rereview
@@ -275,16 +320,28 @@ Follow [AGENTS.md](../AGENTS.md): Feature First, repository access, one canonica
 | Current measure | State |
 | --- | --- |
 | Catalog | 382 Products (186 S7-1200 / 196 S7-300) |
-| Private drafts / current linguistic approvals / current technical approvals | 165/382 each |
-| Current dual approvals / pending roles / missing private entries | 165 / zero / 217 |
-| Activation validation / overlayCount / approvedCount / missingIds.length | Invalid / 165 / 165 / 217 |
+| Private drafts / current linguistic approvals / current technical approvals | 175/382 each |
+| Current dual approvals / pending roles / missing private entries | 175 / zero / 207 |
+| Activation validation / overlayCount / approvedCount / missingIds.length | Invalid / 175 / 175 / 207 |
 | Active overlays / activation capability / publication | 0/382 / absent / disabled |
 | Public FA/EN Product copy | Canonical English/LTR |
 | Public activation gate | 382/382 current dual approvals plus separate launch authorization |
-| Overrides | 10 Products / 20 assignments / 7 unique strings |
-| Batch 25 added overrides / global allowlist | Zero / empty |
+| Overrides | 10 Products / 20 assignments / 7 unique strings (`10/20/7`) |
+| Batch 26 added overrides / global allowlist | Zero / empty |
 | Canonical lifecycle omissions | Exactly eleven, including IM 178-4 |
 | S7-300 lifecycle provenance | 185 Siemens-official verified / 11 explicitly unverified |
+
+Activation remains invalid at `175/175/207` (drafts, dual approvals, missing
+drafts). Batches 01–26 are complete privately. Batch 26 adds ten G2 and classic
+S7-1200 CPUs at positions 205–211, 213–214, and 216. Positions 212 and 215 preserved
+their original registry entries and current linguistic and technical approvals.
+The implementation comparison preserved the payloads, provenance, registry
+order, and production hashes of all 175 drafts, and both review records for
+all 165 earlier entries. Each of the ten text mutations and ten segment-kind
+mutations made both approvals stale.
+See [DATABASE.md](DATABASE.md#2026-11-27---batch-26-private-product-copy-checkpoint-current-state) for the stored hashes and evidence.
+
+Historical Batch 25 checkpoint (`165/165/217`).
 
 Batches 01–25 are complete privately. Batch 25 at positions 195–204 covers
 exact MLFB identity and product type. The source order crosses from S7-300 FM
@@ -446,9 +503,9 @@ activation is prohibited. Private drafts authorize neither activation nor public
 
 ## Outstanding work and evidence limits
 
-1. Batch 26 remains **unstarted**. Product selection, readiness, and scope
+1. Batch 27 remains **unstarted**. Product selection, readiness, and scope
    require separate approval.
-2. Draft and obtain both approvals for the remaining 217 products through
+2. Draft and obtain both approvals for the remaining 207 products through
    separately authorized batches. Public activation and bilingual SEO remain
    separate future tasks; English indexing, hreflang, and localized sitemap work
    remain deferred.
@@ -660,6 +717,16 @@ Batch 15 evidence limits (exact bindings and printed pages in
   Preserve Batch 14's distinct 7ND02 “4 AI” discrepancy and SIPLUS reader
   limitation without assigning the latter an HTTP status.
 
+Batch 26 uses parsed evidence for exact order identity and CPU type. Visual
+inspection was reported only at 205 and 207. The Siemens-authored DigiKey
+mirror at 206 is separate from its official ordering row. The four fail-safe
+labels use exact official Table 2 rows and carry no safety rating, certification,
+or application suitability claim. Indexed discovery and failed direct datasheet
+requests are recorded separately from parsed evidence.
+[Batch 26 evidence and access limits](DATABASE.md#batch-26-evidence-and-access-limits)
+
+Historical Batch 25 evidence limits.
+
 Batch 25 used parsed Siemens evidence for exact order identity and product
 type, with indexed results used for discovery. Visual inspection was reported
 only for positions 196, 200, and 201. The FM 357 attachment and support-hosted
@@ -793,6 +860,28 @@ verified download/relation population, and owner-selected catalog expansion. See
 [CHANGELOG.md](CHANGELOG.md) for details and dated history.
 
 ## Validation applicability
+
+**PASS (REUSED)** — `validate:product-copy`, focused ESLint on the two
+implementation files, TypeScript (`--noEmit --incremental false`), and the
+production build exited `0` at reviewed head
+`f3e2de4c7b5981a99b6109d9a4eb34dfed2bcd86`. The build generated 774/774
+static pages. The reviewed head and implementation squash share tree
+`62379ac4bf780c6b1687d246863e8950e49c070d`. This reconciliation changes
+documentation only. Application checks, product hash recomputation, and
+manufacturer research were not repeated.
+
+Implementation remote CI showed zero Actions runs, check runs, and status
+contexts for both the reviewed head and squash. GitHub returned aggregate
+`pending` with no reported checks.
+
+The implementation comparison preserved the payloads, provenance, registry
+order, and production hashes of all 175 drafts, and both review records for
+all 165 earlier entries. Each of the ten text mutations and ten segment-kind
+mutations made both approvals stale.
+
+See [DATABASE.md](DATABASE.md#2026-11-27---batch-26-private-product-copy-checkpoint-current-state) for the stored approval hashes and evidence.
+
+### Historical Validation - Batch 24
 
 **PASS (REUSED)** — `validate:product-copy`, focused ESLint on the two
 implementation files, TypeScript, and the production build exited `0` at
@@ -1340,7 +1429,7 @@ counts and evidence; they are not current coverage or new task executions.
 
 - Record branch, exact HEAD, sole parent/base, index/worktree clean or dirty state,
   and live/local `main` refs. The durable implementation baseline is
-  `ec910b0b302483889ffa8651bc859f51f7d6ac4d`. Task-specific workflow status and
+  `7ed2bb4a5f5f14f5a85a4f0d1562ed3fc29146df`. Task-specific workflow status and
   commit/PR identities belong in the task report rather than this file.
 - Identify existing task branches, patches, and commits before starting; preserve
   identifiable partial work and finish only missing authorized work. If refs or
@@ -1351,7 +1440,7 @@ counts and evidence; they are not current coverage or new task executions.
 - Record validation commands, exit codes, NEW versus REUSED status, exact checked
   content, and evidence limitations. Check Markdown links/anchors, whitespace
   and unchanged outside content; report actual results and final clean state.
-- Batch 26 product selection, readiness, and scope remain unstarted and require
+- Batch 27 product selection, readiness, and scope remain unstarted and require
   separate approval. Overlay activation,
   publication, English indexing and completed-copy website inspection remain
   separately authorized future work.

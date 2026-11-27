@@ -3,7 +3,47 @@
 This file records completed repository changes. The newest entry records the
 current implementation baseline; older dated entries are historical snapshots.
 
-## 2026-11-27 - PR #107: Complete Batch 25 Private Drafts and Dual Approvals
+## 2026-11-27 - PR #109: Complete Batch 26 Private Drafts and Dual Approvals
+
+- [PR #109](https://github.com/Siemiran/Siemiran/pull/109), `feat: add Batch 26 Persian product copy`,
+  merged at `2026-11-27 13:11:40 UTC` / `2026-11-27 16:41:40 Asia/Tehran` as
+  `7ed2bb4a5f5f14f5a85a4f0d1562ed3fc29146df`. Its sole parent is
+  `7dab64035877806fdd1d84dfb58af4d0d0f79b9c`. Reviewed head
+  `f3e2de4c7b5981a99b6109d9a4eb34dfed2bcd86` and squash share tree
+  `62379ac4bf780c6b1687d246863e8950e49c070d`. The reviewed draft is
+  `4d9ef9d33249f9ea431e3ace193e68b9054af0bf`, tree
+  `b60af01e3651ef0043bbad8e26a4648ceca851ed`.
+- Implementation scope is the registry (`+246/-0`) and verifier (`+389/-11`),
+  totaling `+635/-11`. The ten new G2 and classic CPU entries occupy positions
+  205–211, 213–214, and 216. Positions 212 and 215 kept their original dual
+  approvals. [DATABASE.md](DATABASE.md#2026-11-27---batch-26-private-product-copy-checkpoint-current-state)
+- Twenty separate `Siemiran` approvals bind both roles to the ten reviewed
+  hashes. All 175 payloads, provenance values, hashes, and registry positions
+  were preserved, along with both reviews for each of the 165 earlier entries.
+  Every text or segment-kind mutation made both roles stale. The database
+  records the actual UTC registry recording times and evidence limits.
+- Batches 01–26 are complete privately. The catalog contains 382 Products,
+  with 175 private drafts, 175 current approvals per role, 175 dual approvals,
+  zero pending roles, and 207 products without drafts. Activation is invalid
+  at `175/175/207`, capability is absent, active overlays are 0/382, publication
+  is disabled, and public FA/EN copy resolves to canonical English/LTR.
+- Overrides remain `10/20/7` with an empty global allowlist. Eleven public
+  lifecycle omissions, the 382/382 current dual-approval gate, and separate
+  launch authorization still apply. Batch 27 remains unstarted.
+- The head-matched squash, main-only fetch, local switch, and fast-forward
+  exited `0`. Feature refs and `origin/HEAD` were preserved. Base-to-squash,
+  index, and worktree whitespace checks passed.
+- **PASS (REUSED)** for the implementation validator, focused ESLint, TypeScript,
+  and production build (774/774 static pages) through exact reviewed-tree
+  equality. Both implementation refs showed zero check runs, status contexts,
+  and Actions runs, with an empty aggregate `pending` status.
+
+<a id="2026-11-27---pr-107-complete-batch-25-private-drafts-and-dual-approvals"></a>
+
+## 2026-11-27 - PR #107: Complete Batch 25 Private Drafts and Dual Approvals (Historical Snapshot)
+
+The Batch 25 checkpoint was `165/165/217`. The following record describes
+its implementation and workflow at that checkpoint.
 
 - [PR #107](https://github.com/Siemiran/Siemiran/pull/107), `feat: add Batch 25 Persian product copy`, merged at
   `2026-11-27 08:15:11 UTC` / `2026-11-27 11:45:11 Asia/Tehran` as
