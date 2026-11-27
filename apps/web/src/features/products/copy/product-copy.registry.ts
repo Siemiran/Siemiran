@@ -1316,6 +1316,56 @@ function createBatch24Approvals(
   } as const;
 }
 
+const batch25Position195Copy = [
+  { kind: "technical", value: "6AG1350-1AH03-2AE0" },
+  { kind: "text", value: "، ماژول شمارنده" },
+] as const satisfies ProductCopyParagraph;
+
+const batch25Position196Copy = [
+  { kind: "technical", value: "6ES7357-4AH03-0AE0" },
+  { kind: "text", value: "، ماژول موقعیت‌دهی چندمحوره" },
+] as const satisfies ProductCopyParagraph;
+
+const batch25Position197Copy = [
+  { kind: "technical", value: "6EP1332-1SH71" },
+  { kind: "text", value: "، ماژول منبع تغذیه" },
+] as const satisfies ProductCopyParagraph;
+
+const batch25Position198Copy = [
+  { kind: "technical", value: "6AG1332-1SH71-4AA0" },
+  { kind: "text", value: "، ماژول منبع تغذیه" },
+] as const satisfies ProductCopyParagraph;
+
+const batch25Position199Copy = [
+  { kind: "technical", value: "6AG1332-1SH71-7AA0" },
+  { kind: "text", value: "، ماژول منبع تغذیه" },
+] as const satisfies ProductCopyParagraph;
+
+const batch25Position200Copy = [
+  { kind: "technical", value: "6EP3333-4SB00-3AX0" },
+  { kind: "text", value: "، ماژول منبع تغذیه" },
+] as const satisfies ProductCopyParagraph;
+
+const batch25Position201Copy = [
+  { kind: "technical", value: "6EP3333-4SC00-3AX0" },
+  { kind: "text", value: "، ماژول منبع تغذیه" },
+] as const satisfies ProductCopyParagraph;
+
+const batch25Position202Copy = [
+  { kind: "technical", value: "6ES7212-1AG50-0XB0" },
+  { kind: "text", value: "، واحد پردازش مرکزی کامپکت" },
+] as const satisfies ProductCopyParagraph;
+
+const batch25Position203Copy = [
+  { kind: "technical", value: "6ES7212-1BG50-0XB0" },
+  { kind: "text", value: "، واحد پردازش مرکزی کامپکت" },
+] as const satisfies ProductCopyParagraph;
+
+const batch25Position204Copy = [
+  { kind: "technical", value: "6ES7212-1HG50-0XB0" },
+  { kind: "text", value: "، واحد پردازش مرکزی کامپکت" },
+] as const satisfies ProductCopyParagraph;
+
 export const persianProductCopyDraftRegistry = [
   {
     productId: "siemens-s7-1200-cpu-211-1ae40",
@@ -5076,5 +5126,85 @@ export const persianProductCopyDraftRegistry = [
       "sha256:b248500e5ad5a34009b27d25c6244817b5fe86c6f3006e76f27f2b9716a49bef",
       batch24TechnicalEvidence.siwarexCS
     ),
+  },
+  {
+    productId: "siemens-siplus-s7-300-fm350-1-counter-1ah03-2ae0",
+    shortDescription: batch25Position195Copy,
+    description: [batch25Position195Copy],
+    provenance: "ai-assisted",
+    linguisticReview: { decision: "pending" },
+    technicalReview: { decision: "pending" },
+  },
+  {
+    productId: "siemens-s7-300-fm357-2-positioning-4ah03-0ae0",
+    shortDescription: batch25Position196Copy,
+    description: [batch25Position196Copy],
+    provenance: "ai-assisted",
+    linguisticReview: { decision: "pending" },
+    technicalReview: { decision: "pending" },
+  },
+  {
+    productId: "siemens-s7-1200-pm1207-1sh71",
+    shortDescription: batch25Position197Copy,
+    description: [batch25Position197Copy],
+    provenance: "ai-assisted",
+    linguisticReview: { decision: "pending" },
+    technicalReview: { decision: "pending" },
+  },
+  {
+    productId: "siemens-s7-1200-siplus-pm1207-1sh71-4aa0",
+    shortDescription: batch25Position198Copy,
+    description: [batch25Position198Copy],
+    provenance: "ai-assisted",
+    linguisticReview: { decision: "pending" },
+    technicalReview: { decision: "pending" },
+  },
+  {
+    productId: "siemens-s7-1200-siplus-pm1207-1sh71-7aa0",
+    shortDescription: batch25Position199Copy,
+    description: [batch25Position199Copy],
+    provenance: "ai-assisted",
+    linguisticReview: { decision: "pending" },
+    technicalReview: { decision: "pending" },
+  },
+  {
+    productId: "siemens-s7-1200-g2-pm1207-4sb00-3ax0",
+    shortDescription: batch25Position200Copy,
+    description: [batch25Position200Copy],
+    provenance: "ai-assisted",
+    linguisticReview: { decision: "pending" },
+    technicalReview: { decision: "pending" },
+  },
+  {
+    productId: "siemens-s7-1200-g2-pm1207-ex-4sc00-3ax0",
+    shortDescription: batch25Position201Copy,
+    description: [batch25Position201Copy],
+    provenance: "ai-assisted",
+    linguisticReview: { decision: "pending" },
+    technicalReview: { decision: "pending" },
+  },
+  {
+    productId: "siemens-s7-1200-cpu-212-1ag50",
+    shortDescription: batch25Position202Copy,
+    description: [batch25Position202Copy],
+    provenance: "ai-assisted",
+    linguisticReview: { decision: "pending" },
+    technicalReview: { decision: "pending" },
+  },
+  {
+    productId: "siemens-s7-1200-cpu-212-1bg50",
+    shortDescription: batch25Position203Copy,
+    description: [batch25Position203Copy],
+    provenance: "ai-assisted",
+    linguisticReview: { decision: "pending" },
+    technicalReview: { decision: "pending" },
+  },
+  {
+    productId: "siemens-s7-1200-cpu-212-1hg50",
+    shortDescription: batch25Position204Copy,
+    description: [batch25Position204Copy],
+    provenance: "ai-assisted",
+    linguisticReview: { decision: "pending" },
+    technicalReview: { decision: "pending" },
   },
 ] as const satisfies readonly PersianProductCopyOverlay[];
