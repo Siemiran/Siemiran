@@ -1,6 +1,6 @@
 # Siemiran — Current Architecture
 
-Implementation base: `main` at `ab37f3f05208e027aeb7ac47c1b97b00072d16a8` (2026-11-26)
+Implementation base: `main` at `ec910b0b302483889ffa8651bc859f51f7d6ac4d` (2026-11-27)
 
 Current checkpoint and resume workflow: [SESSION_HANDOFF.md](SESSION_HANDOFF.md).
 
@@ -280,6 +280,33 @@ for merge identity, and [SESSION_HANDOFF.md](SESSION_HANDOFF.md) for resume fact
 Batch 17's 85/297 checkpoint is historical; its records and evidence limits
 remain in the linked historical record.
 
+[PR #107](https://github.com/Siemiran/Siemiran/pull/107) completed private Batch 25 at
+`ec910b0b302483889ffa8651bc859f51f7d6ac4d`. Positions 195–204 transition
+from S7-300 function modules to S7-1200 classic power modules, G2 power
+modules, and G2 CPUs. Technical approval covers exact MLFB identity and product
+type only. The database records all ten bindings, hashes, and evidence limits.
+[DATABASE.md](DATABASE.md#2026-11-27---batch-25-private-product-copy-checkpoint-current-state)
+
+Batches 01–25 are complete privately. The catalog contains 382 Products
+(186 S7-1200 and 196 S7-300), with 165 private drafts, 165 current approvals
+per role, 165 current dual approvals, zero pending roles, and 217 products
+without drafts. Activation remains invalid at `165/165/217` (drafts, dual
+approvals, missing drafts). Capability is absent, active overlays are 0/382,
+publication is disabled, and public FA/EN Product copy resolves to canonical
+English/LTR. Launch requires 382/382 current dual approvals and separate
+authorization.
+
+Technical-token overrides remain `10/20/7` (Products, assignments, unique
+strings), with an empty global allowlist. The eleven public lifecycle omissions
+and the separate S7-300 provenance classification (185 verified and 11
+explicitly unverified) remain in effect.
+
+Batch 26 remains unstarted. Product selection, readiness, and scope require
+separate authorization. The dedicated completed-copy website inspection is
+pending, and Admin Panel and Automation remain gated.
+
+Historical Batch 24 checkpoint (`155/155/227`).
+
 [PR #105](https://github.com/Siemiran/Siemiran/pull/105) completed private Batch 24 at
 `ab37f3f05208e027aeb7ac47c1b97b00072d16a8`. Its ten Function Module entries
 occupy positions 185–194. Technical approval covers exact MLFB identity and
@@ -516,6 +543,10 @@ are checked against the reviewed production hash for each entry.
 Batch 24 retains the first 145 entries and checks the next ten exact FM
 bindings, both hash-bound approvals per entry, and staleness of both roles
 after a text or segment-kind mutation.
+Batch 25 preserves the 155 earlier entries and checks the ten new records in
+canonical order through their FM, classic power-module, G2 power-module, and
+G2 CPU adapters. It verifies both current approval hashes per entry and that
+each text or segment-kind mutation stales both roles.
 Batch 14's 70/312, Batch 13's 65/317 and Batch 12's 60/322 checkpoints
 are historical. Batch 11 recorded 55/327.
 Dated Batch 01–10 checkpoints retain 5/10/15/20/25/30/35/40/45/50 entries and

@@ -1,11 +1,43 @@
 # Siemiran — Project Progress
 
 Repository implementation source of truth: merged `main` baseline
-`ab37f3f05208e027aeb7ac47c1b97b00072d16a8`
+`ec910b0b302483889ffa8651bc859f51f7d6ac4d`
 
-Last synchronized: 2026-11-26 (documentation reconciliation)
+Last synchronized: 2026-11-27 (documentation reconciliation)
 
-## 2026-11-26 - Batch 24 Reconciliation (Current State)
+## 2026-11-27 - Batch 25 Reconciliation (Current State)
+
+[PR #107](https://github.com/Siemiran/Siemiran/pull/107) completed private Batch 25 at
+`ec910b0b302483889ffa8651bc859f51f7d6ac4d`. Positions 195–204 transition
+from S7-300 function modules to S7-1200 classic power modules, G2 power
+modules, and G2 CPUs. Technical approval covers exact MLFB identity and product
+type only. The database records all ten bindings, hashes, and evidence limits.
+[DATABASE.md](DATABASE.md#2026-11-27---batch-25-private-product-copy-checkpoint-current-state)
+
+Batches 01–25 are complete privately. The catalog contains 382 Products
+(186 S7-1200 and 196 S7-300), with 165 private drafts, 165 current approvals
+per role, 165 current dual approvals, zero pending roles, and 217 products
+without drafts. Activation remains invalid at `165/165/217` (drafts, dual
+approvals, missing drafts). Capability is absent, active overlays are 0/382,
+publication is disabled, and public FA/EN Product copy resolves to canonical
+English/LTR. Launch requires 382/382 current dual approvals and separate
+authorization.
+
+Technical-token overrides remain `10/20/7` (Products, assignments, unique
+strings), with an empty global allowlist. The eleven public lifecycle omissions
+and the separate S7-300 provenance classification (185 verified and 11
+explicitly unverified) remain in effect.
+
+Batch 26 remains unstarted. Product selection, readiness, and scope require
+separate authorization. The dedicated completed-copy website inspection is
+pending, and Admin Panel and Automation remain gated.
+
+<a id="2026-11-26---batch-24-reconciliation-current-state"></a>
+
+## 2026-11-26 - Batch 24 Reconciliation (Historical Snapshot)
+
+The Batch 24 checkpoint was `155/155/227`. The following record describes
+its implementation and workflow at that checkpoint.
 
 [PR #105](https://github.com/Siemiran/Siemiran/pull/105) completed private Batch 24 at
 `ab37f3f05208e027aeb7ac47c1b97b00072d16a8`. Its ten Function Module entries
@@ -985,9 +1017,9 @@ the inventory before this approved deletion, not a valid current record.
   values and Product-description presentation
 
 The Product-copy infrastructure is implemented and all intended consumers now
-use its resolver/presentation boundary. The private registry contains 155/382
-drafts and 155/382 current approvals per role, with 155 current dual approvals,
-zero pending roles, and 227 products without drafts.
+use its resolver/presentation boundary. The private registry contains 165/382
+drafts and 165/382 current approvals per role, with 165 current dual approvals,
+zero pending roles, and 217 products without drafts.
 Active overlays remain 0/382, no activation capability exists, and publication
 remains disabled. Further controlled private drafting, the exact 382/382
 activation gate, English indexing activation, reciprocal hreflang, and
@@ -1005,8 +1037,8 @@ localized sitemap coverage remain future gates.
   approvals
 - Exact 382/382 atomic activation gate and exact-eleven lifecycle-omission
   invariant
-- Private 155/382 registry with 155 current dual approvals, zero pending roles,
-  and 227 products without drafts. Active coverage remains 0/382,
+- Private 165/382 registry with 165 current dual approvals, zero pending roles,
+  and 217 products without drafts. Active coverage remains 0/382,
   publication remains disabled, and its resolver/presentation boundary is
   connected to all intended consumers
 
@@ -1712,14 +1744,14 @@ verified, while 11 records are explicitly `unverified` and expose no public
 lifecycle value. Product integration is not pending.
 
 The Product-copy resolver/presentation boundary is verified and connected to
-all intended consumers. Its private registry contains 155/382 drafts and 155
-current approvals per role. All 155 drafts have current dual approvals, with zero
-pending roles and 227 products without drafts. Batches 01–24 are complete privately.
+all intended consumers. Its private registry contains 165/382 drafts and 165
+current approvals per role. All 165 drafts have current dual approvals, with zero
+pending roles and 217 products without drafts. Batches 01–25 are complete privately.
 Technical-token overrides cover 10 Products, 20 assignments and 7 unique
-strings, with an empty global allowlist. Batches 03–24 added none.
+strings, with an empty global allowlist. Batches 03–25 added none.
 Active overlays remain 0/382, activation capability is absent and publication
 is disabled. Both locales resolve canonical English/LTR Product prose while
-Persian UI localization remains active. Batch 25 remains unstarted.
+Persian UI localization remains active. Batch 26 remains unstarted.
 Product selection and scope require separate approval.
 Admin Panel and Automation remain gated. The complete 382/382 gate and separately authorized
 atomic public activation remain pending,

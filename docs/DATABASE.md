@@ -1,9 +1,129 @@
 # Siemiran — Product Database
 
 Repository source of truth: `main` at
-`ab37f3f05208e027aeb7ac47c1b97b00072d16a8` (2026-11-26).
+`ec910b0b302483889ffa8651bc859f51f7d6ac4d` (2026-11-27).
 
-## 2026-11-26 - Batch 24 Private Product-copy Checkpoint (Current State)
+## 2026-11-27 - Batch 25 Private Product-copy Checkpoint (Current State)
+
+[PR #107](https://github.com/Siemiran/Siemiran/pull/107) merged as `ec910b0b302483889ffa8651bc859f51f7d6ac4d`. The
+merge record includes the parent, merge time, reviewed tree, and implementation
+scope. [CHANGELOG.md](CHANGELOG.md#2026-11-27---pr-107-complete-batch-25-private-drafts-and-dual-approvals)
+
+Each `ai-assisted` draft uses the same short and single-paragraph long
+description. One verbatim `technical` MLFB segment is followed by a `text`
+segment with a Persian comma, one space, and the approved label. Linguistic
+approval covers exact wording, punctuation, NFC, and MLFB segmentation.
+Technical approval covers exact order identity and product type only.
+
+| Position | Exact MLFB | Stable Product ID | Canonical variant | Source group | Approved Persian type label | Reviewed production hash | Evidence |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| 195 | `6AG1350-1AH03-2AE0` | `siemens-siplus-s7-300-fm350-1-counter-1ah03-2ae0` | `counter` | S7-300 FM | ماژول شمارنده | `sha256:1267799fdb73595a7004d43b156cda280502deb8a553341509d8d25495306fa2` | A |
+| 196 | `6ES7357-4AH03-0AE0` | `siemens-s7-300-fm357-2-positioning-4ah03-0ae0` | `multi-axis-positioning` | S7-300 FM | ماژول موقعیت‌دهی چندمحوره | `sha256:56731df80887d1e70aba56d39e1418abd97c1d347577463d881e5abfeaf599e9` | B |
+| 197 | `6EP1332-1SH71` | `siemens-s7-1200-pm1207-1sh71` | `pm-1207` | S7-1200 classic power module | ماژول منبع تغذیه | `sha256:eb7647c2a68bccce608462462c7bac788087dad9c6b9aba3812b424ff0c3ef5d` | C |
+| 198 | `6AG1332-1SH71-4AA0` | `siemens-s7-1200-siplus-pm1207-1sh71-4aa0` | `pm-1207` | S7-1200 classic power module | ماژول منبع تغذیه | `sha256:cc855604f86ab56a37061dbb8c564a45ba184a9c415dbda73847261bbc5e05a9` | D |
+| 199 | `6AG1332-1SH71-7AA0` | `siemens-s7-1200-siplus-pm1207-1sh71-7aa0` | `pm-1207` | S7-1200 classic power module | ماژول منبع تغذیه | `sha256:c81be47698b87486b544c3985ddbf1b99f11a714a5a6ff9fec5336d1297a9cb7` | D |
+| 200 | `6EP3333-4SB00-3AX0` | `siemens-s7-1200-g2-pm1207-4sb00-3ax0` | `pm-1207` | S7-1200 G2 power module | ماژول منبع تغذیه | `sha256:2cf19330446b239cc695c68bc918d82150dd81b77707906d38419dc41de9790e` | E |
+| 201 | `6EP3333-4SC00-3AX0` | `siemens-s7-1200-g2-pm1207-ex-4sc00-3ax0` | `pm-1207-ex` | S7-1200 G2 power module | ماژول منبع تغذیه | `sha256:80a47f827635ef7184121dbf64e8f7a8abddaedd16798d09f17170f1a488ecd5` | E |
+| 202 | `6ES7212-1AG50-0XB0` | `siemens-s7-1200-cpu-212-1ag50` | `compact` | S7-1200 G2 CPU | واحد پردازش مرکزی کامپکت | `sha256:5f2c79ca0a2dd8be24fcf085f4761afa8c08a67c90df58fcaccd5e6cfc95e377` | F |
+| 203 | `6ES7212-1BG50-0XB0` | `siemens-s7-1200-cpu-212-1bg50` | `compact` | S7-1200 G2 CPU | واحد پردازش مرکزی کامپکت | `sha256:d5d60bccfd56b8ae6b0897a958cf984cd09e4bd93fdc85ee154a01a3a87facde` | G |
+| 204 | `6ES7212-1HG50-0XB0` | `siemens-s7-1200-cpu-212-1hg50` | `compact` | S7-1200 G2 CPU | واحد پردازش مرکزی کامپکت | `sha256:ae2e8b968363818aac9a777226ae77ec1ec728751fc0887e2102c5671b830ed6` | H |
+
+Batch 25 starts immediately after `7MH4910-0AA01`. Positions 195–196 use
+the S7-300 FM source and adapter. Positions 197–199 use the classic S7-1200
+power-module source, and positions 200–201 use the separate G2 power-module
+source through the same power-module adapter. Positions 202–204 use the
+G2 CPU source and S7-1200 CPU adapter. Each order has one canonical Product
+binding. Position 201's `pm-1207-ex` is binding metadata only. The approved
+label describes the power-module type without a hazardous-location or
+certification claim.
+
+### Batch 25 evidence and access limits
+
+- **A (195)**. Siemens ST 70 2023, printed p. 5/166, identifies the exact
+  SIPLUS FM 350-1 counter module in its own ordering row.
+  [Siemens ST 70 2023](https://cache.industry.siemens.com/dl/files/167/109744167/att_1145924/v1/simatic-st70-complete-english-2023.pdf)
+- **B (196)**. Siemens A0359, Appendix Table 3, PDF p. 24, identifies the exact
+  `6ES7357-4AH03-0AE0` module order in the FM357 group. The separate FM 357-2
+  product brief, printed p. 4, supplies the model-level positioning type. Its
+  ordering data lists `6ES7357-4AH01-0AE0` hardware and `6ES7357-4AH03-3AE0`
+  firmware as separate orders.
+  [Siemens A0359](https://cache.industry.siemens.com/dl/files/374/90468374/att_83125/v1/a0359.pdf#page=24) · [Siemens FM 357-2 product brief](https://cache.industry.siemens.com/dl/files/071/2614071/att_24167/v1/Product_Brief_FM357-2_01_2003.pdf#page=4)
+- **C (197)**. Siemens ST 70 2023, printed p. 3/175, identifies the exact
+  classic PM 1207 power-module order.
+  [Siemens ST 70 2023](https://cache.industry.siemens.com/dl/files/167/109744167/att_1145924/v1/simatic-st70-complete-english-2023.pdf)
+- **D (198–199)**. Siemens ST 70 2023, printed p. 3/177, lists the SIPLUS
+  PM 1207 orders in separate `-4AA0` and `-7AA0` article-number columns.
+  [Siemens ST 70 2023](https://cache.industry.siemens.com/dl/files/167/109744167/att_1145924/v1/simatic-st70-complete-english-2023.pdf)
+- **E (200–201)**. Printed p. 4 of the G2 PM 1207 equipment manual lists
+  `6EP3333-4SB00-3AX0` in the first ordering table and `6EP3333-4SC00-3AX0`
+  in the second.
+  [Siemens G2 PM 1207 manual A5E53972465-1-76](https://cache.industry.siemens.com/dl/files/715/109987715/att_1328598/v1/A5E53972465-1-76_MANUAL_SIMATIC-PM1207-G2_en-US.pdf#page=4)
+- **F (202)**. The exact `6ES7212-1AG50-0XB0` datasheet, printed p. 1,
+  identifies a compact CPU.
+  [Siemens datasheet](https://apim.industry.siemens.cloud/ted/datasheet?caller=SiePortal&format=PDF&language=en&mlfbs=6ES7212-1AG50-0XB0)
+- **G (203)**. The exact `6ES7212-1BG50-0XB0` datasheet, printed p. 1,
+  identifies a compact CPU.
+  [Siemens datasheet](https://apim.industry.siemens.cloud/ted/datasheet?caller=PDPS&format=PDF&language=en&mlfbs=6ES72121BG500XB0)
+- **H (204)**. The exact `6ES7212-1HG50-0XB0` datasheet, printed p. 1,
+  identifies a compact CPU.
+  [Siemens datasheet](https://apim.industry.siemens.cloud/ted/datasheet?caller=SIOS&format=pdf&language=en&mlfbs=6ES7212-1HG50-0XB0)
+
+The review used parsed evidence for exact identity and type. Indexed results
+were used for discovery. Visual inspection was reported only for positions
+196, 200, and 201 during readiness. The repository FM 357 attachment and the
+support-hosted A0359 screenshot request returned reader HTTP 403. The Siemens
+cache copy of A0359 supplied the usable evidence. The direct ST 70 fetch hit
+the reader size limit. Its indexed-document view supplied the parsed pages.
+Other alternate catalog and datasheet routes were inaccessible or returned
+JavaScript-only shells.
+
+Twenty separate `Siemiran` approvals bind the recorded production hashes to
+reviewed draft `d499bed2b712f91d77bdf9a8cefc9a808e50b4d9`. The actual UTC
+registry recording times were `2026-11-27T07:54:26.515Z` for linguistic
+approval and `2026-11-27T07:54:26.764Z` for technical approval. These
+recording times are separate from GitHub reviews.
+
+The ten table rows and stored hashes were checked against the merged registry,
+verifier, canonical sources, and reviewed PR. The implementation comparison
+preserved all 165 payloads, provenance values, production hashes, and registry
+order, plus both review records for each of the 155 earlier entries. Ten text
+and ten segment-kind mutations each made both roles stale.
+
+Batches 01–25 are complete privately. The catalog contains 382 Products
+(186 S7-1200 and 196 S7-300), with 165 private drafts, 165 current approvals
+per role, 165 current dual approvals, zero pending roles, and 217 products
+without drafts. Activation remains invalid at `165/165/217` (drafts, dual
+approvals, missing drafts). Capability is absent, active overlays are 0/382,
+publication is disabled, and public FA/EN Product copy resolves to canonical
+English/LTR. Launch requires 382/382 current dual approvals and separate
+authorization.
+
+Technical-token overrides remain `10/20/7` (Products, assignments, unique
+strings), with an empty global allowlist. The eleven public lifecycle omissions
+and the separate S7-300 provenance classification (185 verified and 11
+explicitly unverified) remain in effect.
+
+Batch 26 remains unstarted. Product selection, readiness, and scope require
+separate authorization. The dedicated completed-copy website inspection is
+pending, and Admin Panel and Automation remain gated.
+
+**PASS (REUSED)** — `validate:product-copy`, focused ESLint, TypeScript, and
+the production build exited `0` at reviewed head
+`854d8968488c2622490a8197e4249f8ccb5ef202`. The build generated 774/774
+static pages. The reviewed head and implementation squash share tree
+`7ecf5e8f2414bb3769ccd3118acc2341cf98e162`, and this reconciliation changes
+documentation only.
+
+Implementation remote CI reported zero Actions runs, check runs, and status
+contexts for both the reviewed head and the squash. GitHub's aggregate status
+was `pending` with no checks reported.
+
+<a id="2026-11-26---batch-24-private-product-copy-checkpoint-current-state"></a>
+
+## 2026-11-26 - Batch 24 Private Product-copy Checkpoint (Historical Snapshot)
+
+The Batch 24 checkpoint was `155/155/227`. The following record describes
+its implementation and workflow at that checkpoint.
 
 [PR #105](https://github.com/Siemiran/Siemiran/pull/105) merged as
 `ab37f3f05208e027aeb7ac47c1b97b00072d16a8`. The merge record includes the sole
