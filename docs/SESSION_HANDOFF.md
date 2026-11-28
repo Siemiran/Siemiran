@@ -1,6 +1,6 @@
 # Siemiran — Session Handoff
 
-Checkpoint **2026-11-27 (Asia/Tehran)**. Private Batch 27 is merged, and this
+Checkpoint **2026-11-28 (Asia/Tehran)**. Private Batch 28 is merged, and this
 handoff records its implementation baseline. Recheck actual refs on resume.
 
 ## Identity and source of truth
@@ -17,6 +17,25 @@ For implemented behavior, use the exact committed source and validation first,
 then merged PR/review evidence, then current repository summaries. Dated older
 snapshots preserve history. Maintainer instructions define authorization; a
 historical next-step statement does not authorize new work.
+
+Merged implementation baseline `6be8ba001951edd6e2de3956b7bf62d0e186c0a1`.
+[PR #113](https://github.com/Siemiran/Siemiran/pull/113) merged at
+`2026-11-28 20:01:18 UTC` / `2026-11-28 23:31:18 Asia/Tehran` with subject
+`feat: add Batch 28 Persian product copy`. Its sole parent is
+`e0c04c87bf37f4961470fa58d1debdcd0801856c`. Reviewed head
+`11fade0d18bd71744382ee029f2ac1de42ddda05` and the squash share tree
+`d097f32a5b18bcbabcacb245679571bae6f647ad`. The reviewed draft is
+`9d0767a1090181746fa4a40c5c39efe13c50565e`, tree
+`4af5dc1e1b7eb0220d614dadf75b65b814af4c8e`. Implementation scope is
+registry `+236/−0` and verifier `+313/−11`, totaling `+549/−11`, with both
+file modes preserved. The head-matched squash, main-only fetch, local switch,
+and fast-forward each exited `0`. The local, tracking, and live Batch 28
+feature refs remained at the reviewed head. `origin/HEAD` still points
+to `origin/main`.
+
+### Historical Batch 27 implementation identity
+
+The Batch 27 checkpoint was `185/185/197`.
 
 Merged implementation baseline `7a3525d59c26ad60105f3fa8c48900afe79118f1`.
 [PR #111](https://github.com/Siemiran/Siemiran/pull/111) merged at
@@ -275,21 +294,21 @@ cached remote ref, and on GitHub. Recheck actual refs and worktree on resume.
 
 ## Documentation update map
 
-| File | Batch 27 record |
+| File | Batch 28 record |
 | --- | --- |
-| [ARCHITECTURE.md](ARCHITECTURE.md) | Canonical CPU bindings, verifier coverage, and the public resolver boundary. |
-| [CHANGELOG.md](CHANGELOG.md#2026-11-27---pr-111-complete-batch-27-private-drafts-and-dual-approvals) | PR #111 merge identity, reviewed tree, exact scope, and reused checks. |
-| [DATABASE.md](DATABASE.md#2026-11-27---batch-27-private-product-copy-checkpoint-current-state) | Ten additions, three preserved Batch 01 entries, stored hashes, approval times, and evidence limits. |
+| [ARCHITECTURE.md](ARCHITECTURE.md) | Canonical CPU bindings, 50 stale-approval mutation cases, and the public resolver boundary. |
+| [CHANGELOG.md](CHANGELOG.md#2026-11-28---pr-113-complete-batch-28-private-drafts-and-dual-approvals) | PR #113 merge identity, reviewed tree, scope, and experiment timings. |
+| [DATABASE.md](DATABASE.md#2026-11-28---batch-28-private-product-copy-checkpoint-current-state) | 25 exact orders, stored hashes, shared registry recording time, and evidence limits. |
 | [PROJECT_PROGRESS.md](PROJECT_PROGRESS.md) | Completed work, current coverage, and validation status. |
 | [PROJECT_STATE.md](PROJECT_STATE.md) | Current baseline, counts, activation and publication state, and validation applicability. |
 | [PROJECT_VISION.md](PROJECT_VISION.md) | Private copy progress and the separate public launch authorization. |
-| [ROADMAP.md](ROADMAP.md) | Completed private batches and the separately authorized Batch 28 workflow. |
+| [ROADMAP.md](ROADMAP.md) | Completed private batches and the separately authorized Batch 29 workflow. |
 | [SESSION_HANDOFF.md](SESSION_HANDOFF.md) | Resume baseline, handoff checks, and stop conditions. |
 
 ### Documentation stop conditions
 
 - Before editing, stop if the worktree or index is dirty, overlapping work is
-  present, or local and live `main`, the reviewed tree, PR #111, or the
+  present, or local and live `main`, the reviewed tree, PR #113, or the
   implementation scope differs from this checkpoint.
 - Before committing or pushing, stop if a current fact, binding, stored hash,
   preserved approval, historical anchor, or local link fails the audit. Also
@@ -298,7 +317,7 @@ cached remote ref, and on GitHub. Recheck actual refs and worktree on resume.
   and that committed bytes match them before push.
 - End this reconciliation after one non-draft documentation PR is open and
   its live head, base, title, body, one-commit scope, and disabled auto-merge
-  are verified. Leave the PR open for review. Batch 28 selection, overlay
+  are verified. Leave the PR open for review. Batch 29 selection, overlay
   activation, and publication require separate authorization.
 
 ## Collaboration and resume policy
@@ -337,16 +356,27 @@ Follow [AGENTS.md](../AGENTS.md): Feature First, repository access, one canonica
 | Current measure | State |
 | --- | --- |
 | Catalog | 382 Products (186 S7-1200 / 196 S7-300) |
-| Private drafts / current linguistic approvals / current technical approvals | 185/382 each |
-| Current dual approvals / pending roles / missing private entries | 185 / zero / 197 |
-| Activation validation / overlayCount / approvedCount / missingIds.length | Invalid / 185 / 185 / 197 |
+| Private drafts / current linguistic approvals / current technical approvals | 210/382 each |
+| Current dual approvals / pending roles / missing private entries | 210 / zero / 172 |
+| Activation validation / overlayCount / approvedCount / missingIds.length | Invalid / 210 / 210 / 172 |
 | Active overlays / activation capability / publication | 0/382 / absent / disabled |
 | Public FA/EN Product copy | Canonical English/LTR |
 | Public activation gate | 382/382 current dual approvals plus separate launch authorization |
 | Overrides | 10 Products / 20 assignments / 7 unique strings (`10/20/7`) |
-| Batch 27 added overrides / global allowlist | Zero / empty |
+| Batch 28 added overrides / global allowlist | Zero / empty |
 | Canonical lifecycle omissions | Exactly eleven, including IM 178-4 |
 | S7-300 lifecycle provenance | 185 Siemens-official verified / 11 explicitly unverified |
+
+Activation remains invalid at `210/210/172` (drafts, dual approvals, missing
+drafts). Batches 01–28 are complete privately. Batch 28 adds 25 classic
+S7-1200 CPU orders at positions 230–254 and remains experimental.
+The implementation comparison preserved all 210 draft payloads, provenance
+values, hashes, and registry positions, plus both review records on each of
+the 185 earlier entries. All 25 text mutations and 25 segment-kind mutations
+made both approvals stale.
+See [DATABASE.md](DATABASE.md#2026-11-28---batch-28-private-product-copy-checkpoint-current-state) for the stored hashes and evidence.
+
+Historical Batch 27 checkpoint (`185/185/197`).
 
 Activation remains invalid at `185/185/197` (drafts, dual approvals, missing
 drafts). Batches 01–27 are complete privately. Batch 27 adds ten classic
@@ -532,9 +562,9 @@ activation is prohibited. Private drafts authorize neither activation nor public
 
 ## Outstanding work and evidence limits
 
-1. Batch 28 remains **unstarted**. Product selection, readiness, and scope
+1. Batch 29 remains **unstarted**. Product selection, readiness, and scope
    require separate approval.
-2. Draft and obtain both approvals for the remaining 197 products through
+2. Draft and obtain both approvals for the remaining 172 products through
    separately authorized batches. Public activation and bilingual SEO remain
    separate future tasks; English indexing, hreflang, and localized sitemap work
    remain deferred.
@@ -746,6 +776,12 @@ Batch 15 evidence limits (exact bindings and printed pages in
   Preserve Batch 14's distinct 7ND02 “4 AI” discrepancy and SIPLUS reader
   limitation without assigning the latter an HTTP status.
 
+Batch 28 uses parsed Classic V20 Fail-safe CPUs Table 1 and parsed ST 70 2024
+ordering rows for exact order identity and CPU type. Search indexing located
+the shared sections. Reader HTTP 403 and 404, the mirror transfer timeout,
+and unavailable visual inspection are recorded in
+[Batch 28 evidence and access limits](DATABASE.md#batch-28-evidence-and-access-limits).
+
 Batch 27 uses parsed ST 70 and classic V20 ordering rows for exact order
 identity and CPU type, including the exact datasheet for 219 and the five
 classic V20 Fail-safe CPU Table 1 rows. Indexed discovery and access failures
@@ -898,6 +934,26 @@ verified download/relation population, and owner-selected catalog expansion. See
 [CHANGELOG.md](CHANGELOG.md) for details and dated history.
 
 ## Validation applicability
+
+**PASS (REUSED)** — The approval-stage implementation report records
+`validate:product-copy`, focused ESLint, standalone TypeScript
+(`--noEmit --incremental false`), and the production build all exiting `0`
+on their first attempts at reviewed head
+`11fade0d18bd71744382ee029f2ac1de42ddda05`. The build generated 774/774
+static pages. The reviewed head and implementation squash share tree
+`d097f32a5b18bcbabcacb245679571bae6f647ad`. See [CHANGELOG.md](CHANGELOG.md#2026-11-28---pr-113-complete-batch-28-private-drafts-and-dual-approvals) for the
+reported timings and draft-stage corrections.
+
+The draft, approval head, and squash had zero remote status contexts, check
+runs, check suites, or Actions runs. GitHub reported aggregate `pending`
+with no CI verdict.
+
+The implementation comparison preserved all 210 draft payloads, provenance
+values, hashes, and registry positions, plus both review records on each of
+the 185 earlier entries. All 25 text mutations and 25 segment-kind mutations
+made both approvals stale.
+
+### Historical Validation - Batch 27
 
 **PASS (REUSED)** — `validate:product-copy`, focused ESLint on the two
 implementation files, the production build, and standalone TypeScript
@@ -1489,7 +1545,7 @@ counts and evidence; they are not current coverage or new task executions.
 
 - Record branch, exact HEAD, sole parent/base, index/worktree clean or dirty state,
   and live/local `main` refs. The durable implementation baseline is
-  `7a3525d59c26ad60105f3fa8c48900afe79118f1`. Task-specific workflow status and
+  `6be8ba001951edd6e2de3956b7bf62d0e186c0a1`. Task-specific workflow status and
   commit/PR identities belong in the task report rather than this file.
 - Identify existing task branches, patches, and commits before starting; preserve
   identifiable partial work and finish only missing authorized work. If refs or
@@ -1500,7 +1556,7 @@ counts and evidence; they are not current coverage or new task executions.
 - Record validation commands, exit codes, NEW versus REUSED status, exact checked
   content, and evidence limitations. Check Markdown links/anchors, whitespace
   and unchanged outside content; report actual results and final clean state.
-- Batch 28 product selection, readiness, and scope remain unstarted and require
+- Batch 29 product selection, readiness, and scope remain unstarted and require
   separate approval. Overlay activation,
   publication, English indexing and completed-copy website inspection remain
   separately authorized future work.

@@ -3,6 +3,60 @@
 This file records completed repository changes. The newest entry records the
 current implementation baseline; older dated entries are historical snapshots.
 
+## 2026-11-28 - PR #113: Complete Batch 28 Private Drafts and Dual Approvals
+
+- [PR #113](https://github.com/Siemiran/Siemiran/pull/113) merged as `feat: add Batch 28 Persian product copy`
+  at `2026-11-28 20:01:18 UTC` / `2026-11-28 23:31:18 Asia/Tehran`.
+  Squash `6be8ba001951edd6e2de3956b7bf62d0e186c0a1` has sole parent
+  `e0c04c87bf37f4961470fa58d1debdcd0801856c`. Reviewed head
+  `11fade0d18bd71744382ee029f2ac1de42ddda05` and squash share tree
+  `d097f32a5b18bcbabcacb245679571bae6f647ad`. The reviewed draft is
+  `9d0767a1090181746fa4a40c5c39efe13c50565e`, tree
+  `4af5dc1e1b7eb0220d614dadf75b65b814af4c8e`.
+- The registry changed by `+236/−0` and the verifier by `+313/−11`, totaling
+  `+549/−11`. Both file modes were preserved. Positions 230–254 added four
+  fail-safe and 21 compact CPU type labels. Both roles approved each exact
+  draft hash. See [DATABASE.md](DATABASE.md#2026-11-28---batch-28-private-product-copy-checkpoint-current-state) for the bindings,
+  evidence, registry recording time, and scope of approval.
+- All 210 draft payloads, provenance values, hashes, and registry positions
+  were preserved during approval recording, including both reviews on all
+  185 earlier entries. Each of the 25 text and 25 segment-kind mutation cases
+  made both approvals stale.
+- Batches 01–28 are complete privately. The 382 Products include 210 private
+  drafts, 210 current approvals per role, 210 dual approvals, zero pending
+  roles, and 172 Products without drafts. Activation remains invalid at
+  `210/210/172`, capability is absent, active overlays are 0/382, publication
+  is disabled, and public FA/EN Product copy is canonical English/LTR.
+- Overrides remain `10/20/7` with an empty global allowlist. The eleven public
+  lifecycle omissions, complete 382/382 approval gate, and separate launch
+  authorization remain in effect. Batch 29 remains unstarted.
+- The head-matched squash, main-only fetch, local switch, and fast-forward
+  exited `0`. Feature refs and `origin/HEAD` were preserved. Base-to-squash,
+  index, and worktree whitespace checks passed.
+
+### Batch 28 experiment observations
+
+| Reported run | Result | Wall time |
+| --- | --- | --- |
+| Draft-stage production build, attempt 1 | Exit `1` during type checking | 409.91 s |
+| Draft-stage production build, attempt 2 | Exit `0` | 227.54 s |
+| Approval-stage `validate:product-copy` | Exit `0` on first attempt | 16.71 s |
+| Approval-stage focused ESLint | Exit `0` on first attempt | 94.02 s |
+| Approval-stage standalone TypeScript | Exit `0` on first attempt | 41.39 s |
+| Approval-stage production build | Exit `0` on first attempt, 774/774 static pages | 215.45 s |
+
+The draft-stage report records a correction to review-type inference after the
+first build failed. A follow-up TypeScript check caught the slug lookup on the
+raw source, which was corrected to use the mapped Product. The draft strings
+and hashes matched across validation reruns. Evidence access limited visual
+review. These are observations from the reported runs. Batch 28 remains a
+25-product experiment, and standard batch size remains undecided.
+
+**PASS (REUSED)** — The approval-stage checks apply to the implementation
+squash through exact reviewed-tree equality. Remote CI is a separate
+observation. The draft, approval head, and squash returned aggregate `pending`
+with zero status contexts, check runs, check suites, or Actions runs.
+
 ## 2026-11-27 - PR #111: Complete Batch 27 Private Drafts and Dual Approvals
 
 - [PR #111](https://github.com/Siemiran/Siemiran/pull/111), `feat: add Batch 27 Persian product copy`,

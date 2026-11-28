@@ -1,9 +1,125 @@
 # Siemiran — Product Database
 
 Repository source of truth: `main` at
-`7a3525d59c26ad60105f3fa8c48900afe79118f1` (2026-11-27).
+`6be8ba001951edd6e2de3956b7bf62d0e186c0a1` (2026-11-28).
 
-## 2026-11-27 - Batch 27 Private Product-copy Checkpoint (Current State)
+## 2026-11-28 - Batch 28 Private Product-copy Checkpoint (Current State)
+
+[PR #113](https://github.com/Siemiran/Siemiran/pull/113) merged as
+`6be8ba001951edd6e2de3956b7bf62d0e186c0a1`. See [CHANGELOG.md](CHANGELOG.md#2026-11-28---pr-113-complete-batch-28-private-drafts-and-dual-approvals) for the
+squash parent, reviewed tree, server merge time, and implementation scope.
+
+Each `ai-assisted` draft has identical short and single-paragraph long copy.
+The first segment contains the verbatim `technical` MLFB. The second contains
+a Persian comma, one space, and the NFC `text` label shown below. Linguistic
+approval covers the exact wording, punctuation, NFC normalization, and MLFB
+segmentation. Technical approval covers exact order identity and CPU type.
+
+### Batch 28 bindings and stored approval hashes
+
+| Position | Exact MLFB | Stable Product ID | Canonical variant | Approved Persian type label | Stored approval hash | Parsed ordering row |
+| --- | --- | --- | --- | --- | --- | --- |
+| 230 | `6ES7215-1HF40-0XB0` | `siemens-s7-1200-cpu-215-1hf40` | `fail-safe` | واحد پردازش مرکزی ایمن در برابر خطا | `sha256:51845b0d756e0f2265685d244851f8f097f2e0319f2552b2827719a21ffbd3c6` | Classic V20 Fail-safe CPUs, Table 1 · CPU 1215FC |
+| 231 | `6AG1214-1AF40-5XB0` | `siemens-s7-1200-cpu-siplus-1214-1af40-5xb0` | `fail-safe` | واحد پردازش مرکزی ایمن در برابر خطا | `sha256:7778ee2d09b3be59f8f658cadb1e7e4f19d63ea37664443db1852dcf5169376f` | ST 70 2024, p. 3/56 · SIPLUS CPU 1214 FC |
+| 232 | `6AG1214-1HF40-5XB0` | `siemens-s7-1200-cpu-siplus-1214-1hf40-5xb0` | `fail-safe` | واحد پردازش مرکزی ایمن در برابر خطا | `sha256:01dd9c77c53f100a53c7ca112281c180f81d5056639e185d2479f857af218bda` | ST 70 2024, p. 3/56 · SIPLUS CPU 1214 FC |
+| 233 | `6AG1215-1AF40-5XB0` | `siemens-s7-1200-cpu-siplus-1215-1af40-5xb0` | `fail-safe` | واحد پردازش مرکزی ایمن در برابر خطا | `sha256:34d785dfa0c018428ddbe015ad360c9fb495c6393b7bf7f41ba199979b3b4e92` | ST 70 2024, p. 3/56 · SIPLUS CPU 1215 FC |
+| 234 | `6AG1212-1AE40-2XB0` | `siemens-s7-1200-cpu-siplus-1212-1ae40-2xb0` | `compact` | واحد پردازش مرکزی کامپکت | `sha256:d1cdc1e04950d3040e63d42db6595685d29d44ab4a5d9e5fbb4e54849716aaa4` | ST 70 2024, p. 3/28 · SIPLUS CPU 1212C |
+| 235 | `6AG1212-1AE40-4XB0` | `siemens-s7-1200-cpu-siplus-1212-1ae40-4xb0` | `compact` | واحد پردازش مرکزی کامپکت | `sha256:6b5991eb04337b8ce521f74df9259f8187b39197809dbd226b76cbe36aaa6e20` | ST 70 2024, p. 3/28 · SIPLUS CPU 1212C |
+| 236 | `6AG1212-1BE40-2XB0` | `siemens-s7-1200-cpu-siplus-1212-1be40-2xb0` | `compact` | واحد پردازش مرکزی کامپکت | `sha256:6be0a3eb01e2885576c5059fa316edb398478c0f0d2fefcde768a694abc81aa3` | ST 70 2024, p. 3/28 · SIPLUS CPU 1212C |
+| 237 | `6AG1212-1BE40-4XB0` | `siemens-s7-1200-cpu-siplus-1212-1be40-4xb0` | `compact` | واحد پردازش مرکزی کامپکت | `sha256:7f38fbe1ce1decabbee0a781e2bddb910fccc17eff37866674fdd1555f3ebf69` | ST 70 2024, p. 3/28 · SIPLUS CPU 1212C |
+| 238 | `6AG1212-1HE40-2XB0` | `siemens-s7-1200-cpu-siplus-1212-1he40-2xb0` | `compact` | واحد پردازش مرکزی کامپکت | `sha256:c33558957cb1bcb5acbc1246c28232323294db5e35a87ad5ce280b8dcda7123a` | ST 70 2024, p. 3/29 · SIPLUS CPU 1212C |
+| 239 | `6AG1212-1HE40-4XB0` | `siemens-s7-1200-cpu-siplus-1212-1he40-4xb0` | `compact` | واحد پردازش مرکزی کامپکت | `sha256:966d43696cc0b591197248f41520bf854f027b9c4071d4789328780a6908dd30` | ST 70 2024, p. 3/29 · SIPLUS CPU 1212C |
+| 240 | `6AG1214-1AG40-2XB0` | `siemens-s7-1200-cpu-siplus-1214-1ag40-2xb0` | `compact` | واحد پردازش مرکزی کامپکت | `sha256:bba37e3ba23d804b83c0aabc0c763ab181b1b1bc864086a1d809cd86df9dfd83` | ST 70 2024, p. 3/33 · SIPLUS CPU 1214C |
+| 241 | `6AG1214-1AG40-4XB0` | `siemens-s7-1200-cpu-siplus-1214-1ag40-4xb0` | `compact` | واحد پردازش مرکزی کامپکت | `sha256:6e883e061d7463eb449e692f840b008aa6bea94f21749f557da00c537b25ff5e` | ST 70 2024, p. 3/33 · SIPLUS CPU 1214C |
+| 242 | `6AG1214-1AG40-5XB0` | `siemens-s7-1200-cpu-siplus-1214-1ag40-5xb0` | `compact` | واحد پردازش مرکزی کامپکت | `sha256:1f339d286f2ff5b5c823a8f1088af72593b9ee4296a61a5fb4eee8cca6f469fa` | ST 70 2024, p. 3/33 · SIPLUS CPU 1214C |
+| 243 | `6AG1214-1BG40-2XB0` | `siemens-s7-1200-cpu-siplus-1214-1bg40-2xb0` | `compact` | واحد پردازش مرکزی کامپکت | `sha256:31dd89c0d790e6c7506adf033aafc70ee30f268b6095cded58c6369d5ed31b72` | ST 70 2024, p. 3/33 · SIPLUS CPU 1214C |
+| 244 | `6AG1214-1BG40-4XB0` | `siemens-s7-1200-cpu-siplus-1214-1bg40-4xb0` | `compact` | واحد پردازش مرکزی کامپکت | `sha256:5aadfde8c87d51780c7cf727f399c5b94ff95b8478369cb3d3a132e624ac97a1` | ST 70 2024, p. 3/33 · SIPLUS CPU 1214C |
+| 245 | `6AG1214-1BG40-5XB0` | `siemens-s7-1200-cpu-siplus-1214-1bg40-5xb0` | `compact` | واحد پردازش مرکزی کامپکت | `sha256:30cb07151a5e7b8d6ed685ad235510b1c9e8500377a356e4c47b34e4251db1c4` | ST 70 2024, p. 3/33 · SIPLUS CPU 1214C |
+| 246 | `6AG1214-1HG40-2XB0` | `siemens-s7-1200-cpu-siplus-1214-1hg40-2xb0` | `compact` | واحد پردازش مرکزی کامپکت | `sha256:c078b412ef1bff2589941ea287f49ea169be45d8033c0eb59055bef3ebb6d4c1` | ST 70 2024, p. 3/34 · SIPLUS CPU 1214C |
+| 247 | `6AG1214-1HG40-4XB0` | `siemens-s7-1200-cpu-siplus-1214-1hg40-4xb0` | `compact` | واحد پردازش مرکزی کامپکت | `sha256:2150ccf9c7add40cdbcaf73df7f075827fabb990b164aa4b0f14c3445c142c1d` | ST 70 2024, p. 3/34 · SIPLUS CPU 1214C |
+| 248 | `6AG1214-1HG40-5XB0` | `siemens-s7-1200-cpu-siplus-1214-1hg40-5xb0` | `compact` | واحد پردازش مرکزی کامپکت | `sha256:bf10ba7ab80ac4d3279f33ac4d61ae51e43961e64fdcc7619eb5fec8288e5345` | ST 70 2024, p. 3/34 · SIPLUS CPU 1214C |
+| 249 | `6AG1215-1AG40-2XB0` | `siemens-s7-1200-cpu-siplus-1215-1ag40-2xb0` | `compact` | واحد پردازش مرکزی کامپکت | `sha256:c52c2000ec3a5b58ad9983b8ab63665fd30966c5956b81e114a69c339b07f9b0` | ST 70 2024, p. 3/40 · SIPLUS CPU 1215C |
+| 250 | `6AG1215-1AG40-4XB0` | `siemens-s7-1200-cpu-siplus-1215-1ag40-4xb0` | `compact` | واحد پردازش مرکزی کامپکت | `sha256:9cdda3d84d53774c74ec6b1ed606ca77dce271352274ada0d97b7bf54d19210d` | ST 70 2024, p. 3/40 · SIPLUS CPU 1215C |
+| 251 | `6AG1215-1AG40-5XB0` | `siemens-s7-1200-cpu-siplus-1215-1ag40-5xb0` | `compact` | واحد پردازش مرکزی کامپکت | `sha256:39f3a02ef2a67169ed6d75b457fcae7ef57e683fbc2d5e5626533c6ff14deb33` | ST 70 2024, p. 3/40 · SIPLUS CPU 1215C |
+| 252 | `6AG1215-1BG40-2XB0` | `siemens-s7-1200-cpu-siplus-1215-1bg40-2xb0` | `compact` | واحد پردازش مرکزی کامپکت | `sha256:dae513e8add1db5588ff1a1df9b43f670d242fac3a8066aa93473f7189b33254` | ST 70 2024, p. 3/40 · SIPLUS CPU 1215C |
+| 253 | `6AG1215-1BG40-4XB0` | `siemens-s7-1200-cpu-siplus-1215-1bg40-4xb0` | `compact` | واحد پردازش مرکزی کامپکت | `sha256:5e2005a7768e8b6842692de90d299a71855833a0970a4695ec592c78be62f187` | ST 70 2024, p. 3/40 · SIPLUS CPU 1215C |
+| 254 | `6AG1215-1BG40-5XB0` | `siemens-s7-1200-cpu-siplus-1215-1bg40-5xb0` | `compact` | واحد پردازش مرکزی کامپکت | `sha256:b7d2cd268f109496b91e9b0607e8ee968cc34446c76fd36c1888f2e06d771557` | ST 70 2024, p. 3/40 · SIPLUS CPU 1215C |
+
+All 25 orders come from the [classic S7-1200 CPU source](../apps/web/src/features/products/database/siemens/s7-1200/cpu.ts)
+and bind to unique canonical Products in production catalog order through the
+[S7-1200 CPU adapter](../apps/web/src/features/products/database/siemens/s7-1200/cpu.adapter.ts).
+The [registry](../apps/web/src/features/products/copy/product-copy.registry.ts),
+[verifier](../apps/web/src/features/products/copy/product-copy.verify.ts), and
+reviewed PR agree on the bindings and stored hashes. The four fail-safe labels
+(230–233) and 21 compact labels (234–254) describe CPU type only. Safety ratings,
+certification, application suitability, compatibility, environmental or
+electrical specifications, and performance are outside the approval scope.
+
+### Batch 28 evidence and access limits
+
+- Position 230 uses the exact CPU 1215FC order in the parsed
+  [Classic V20 Fail-safe CPUs Table 1](https://docs.tia.siemens.cloud/r/simatic_s7_1200_manual_collection_enus_20/ordering-information/fail-safe-cpus-and-signal-modules)
+  HTML ordering table.
+- Positions 231–254 use parsed ordering rows from
+  [Siemens ST 70 2024](https://support.industry.siemens.com/cs/attachments/109744167/simatic-st70-complete-english-2024.pdf).
+  Printed p. 3/56 covers the three SIPLUS fail-safe orders. Printed pp. 3/28–29
+  cover SIPLUS CPU 1212C, pp. 3/33–34 cover SIPLUS CPU 1214C, and p. 3/40 covers
+  SIPLUS CPU 1215C. Each `-2XB0`, `-4XB0`, and `-5XB0` suffix identifies
+  its own order row.
+- Search indexing located the sections. Parsed rows supplied the evidence.
+  The reader returned HTTP 403 for the direct Siemens PDF and HTTP 404 for
+  the older Siemens cache URL. The transfer from the
+  [English edition mirror](https://dev.lp-form.com/alfa-tech/wp-content/uploads/2025/02/Siemens-catalogue-complete-english-2024.pdf)
+  timed out while preparing to render the pages. Visual inspection was unavailable.
+
+### Batch 28 approvals and state
+
+`2026-11-28T19:46:09.708Z` is the shared UTC registry recording time for
+50 separate approval records under reviewer ID `Siemiran`, one linguistic
+and one technical per order. Both records bind the stored hash and cite the
+supplied review of draft `9d0767a1090181746fa4a40c5c39efe13c50565e`.
+The recording time is separate from GitHub reviews.
+
+The implementation comparison preserved all 210 draft payloads, provenance
+values, hashes, and registry positions, plus both review records on each of
+the 185 earlier entries. All 25 text mutations and 25 segment-kind mutations
+made both approvals stale.
+
+Batches 01–28 are complete privately. The catalog contains 382 Products
+(186 S7-1200 and 196 S7-300), with 210 private drafts, 210 current approvals
+per role, 210 current dual approvals, zero pending roles, and 172 products
+without drafts. Activation remains invalid at `210/210/172` (drafts, dual
+approvals, missing drafts). Capability is absent, active overlays are 0/382,
+publication is disabled, and public FA/EN Product copy resolves to canonical
+English/LTR. Launch requires 382/382 current dual approvals and separate
+authorization.
+
+Technical-token overrides remain `10/20/7` (Products, assignments, unique
+strings), with an empty global allowlist. The eleven public lifecycle omissions
+and the separate S7-300 provenance classification (185 verified and 11
+explicitly unverified) remain in effect.
+
+Batch 28 remains a 25-product experiment. Batch 29 remains unstarted and its
+product selection, readiness, and scope require separate authorization.
+The dedicated completed-copy website inspection remains pending, and Admin
+Panel and Automation remain gated.
+
+**PASS (REUSED)** — The approval-stage implementation report records
+`validate:product-copy`, focused ESLint, standalone TypeScript
+(`--noEmit --incremental false`), and the production build all exiting `0`
+on their first attempts at reviewed head
+`11fade0d18bd71744382ee029f2ac1de42ddda05`. The build generated 774/774
+static pages. The reviewed head and implementation squash share tree
+`d097f32a5b18bcbabcacb245679571bae6f647ad`. See [CHANGELOG.md](CHANGELOG.md#2026-11-28---pr-113-complete-batch-28-private-drafts-and-dual-approvals) for the
+reported timings and draft-stage corrections.
+
+The draft, approval head, and squash had zero remote status contexts, check
+runs, check suites, or Actions runs. GitHub reported aggregate `pending`
+with no CI verdict.
+
+<a id="2026-11-27---batch-27-private-product-copy-checkpoint-current-state"></a>
+
+## 2026-11-27 - Batch 27 Private Product-copy Checkpoint (Historical Snapshot)
 
 [PR #111](https://github.com/Siemiran/Siemiran/pull/111) merged as
 `7a3525d59c26ad60105f3fa8c48900afe79118f1`. See the squash parent, reviewed

@@ -1,11 +1,39 @@
 # Siemiran — Project Progress
 
 Repository implementation source of truth: merged `main` baseline
-`7a3525d59c26ad60105f3fa8c48900afe79118f1`
+`6be8ba001951edd6e2de3956b7bf62d0e186c0a1`
 
-Last synchronized: 2026-11-27 (documentation reconciliation)
+Last synchronized: 2026-11-28 (documentation reconciliation)
 
-## 2026-11-27 - Batch 27 Reconciliation (Current State)
+## 2026-11-28 - Batch 28 Reconciliation (Current State)
+
+[PR #113](https://github.com/Siemiran/Siemiran/pull/113) completed private Batch 28 at
+`6be8ba001951edd6e2de3956b7bf62d0e186c0a1`. The 25 classic S7-1200 CPU drafts occupy
+production positions 230–254. Technical approval covers exact order identity
+and CPU type. See [DATABASE.md](DATABASE.md#2026-11-28---batch-28-private-product-copy-checkpoint-current-state) for the bindings, stored hashes, and evidence.
+
+Batches 01–28 are complete privately. The catalog contains 382 Products
+(186 S7-1200 and 196 S7-300), with 210 private drafts, 210 current approvals
+per role, 210 current dual approvals, zero pending roles, and 172 products
+without drafts. Activation remains invalid at `210/210/172` (drafts, dual
+approvals, missing drafts). Capability is absent, active overlays are 0/382,
+publication is disabled, and public FA/EN Product copy resolves to canonical
+English/LTR. Launch requires 382/382 current dual approvals and separate
+authorization.
+
+Technical-token overrides remain `10/20/7` (Products, assignments, unique
+strings), with an empty global allowlist. The eleven public lifecycle omissions
+and the separate S7-300 provenance classification (185 verified and 11
+explicitly unverified) remain in effect.
+
+Batch 28 remains a 25-product experiment. Batch 29 remains unstarted and its
+product selection, readiness, and scope require separate authorization.
+The dedicated completed-copy website inspection remains pending, and Admin
+Panel and Automation remain gated.
+
+<a id="2026-11-27---batch-27-reconciliation-current-state"></a>
+
+## 2026-11-27 - Batch 27 Reconciliation (Historical Snapshot)
 
 [PR #111](https://github.com/Siemiran/Siemiran/pull/111) completed private Batch 27 at
 `7a3525d59c26ad60105f3fa8c48900afe79118f1`. Its ten new classic S7-1200 CPU
@@ -1082,9 +1110,9 @@ the inventory before this approved deletion, not a valid current record.
   values and Product-description presentation
 
 The Product-copy infrastructure is implemented and all intended consumers now
-use its resolver/presentation boundary. The private registry contains 185/382
-drafts and 185/382 current approvals per role, with 185 current dual approvals,
-zero pending roles, and 197 products without drafts.
+use its resolver/presentation boundary. The private registry contains 210/382
+drafts and 210/382 current approvals per role, with 210 current dual approvals,
+zero pending roles, and 172 products without drafts.
 Active overlays remain 0/382, no activation capability exists, and publication
 remains disabled. Further controlled private drafting, the exact 382/382
 activation gate, English indexing activation, reciprocal hreflang, and
@@ -1102,8 +1130,8 @@ localized sitemap coverage remain future gates.
   approvals
 - Exact 382/382 atomic activation gate and exact-eleven lifecycle-omission
   invariant
-- Private 185/382 registry with 185 current dual approvals, zero pending roles,
-  and 197 products without drafts. Active coverage remains 0/382,
+- Private 210/382 registry with 210 current dual approvals, zero pending roles,
+  and 172 products without drafts. Active coverage remains 0/382,
   publication remains disabled, and its resolver/presentation boundary is
   connected to all intended consumers
 
@@ -1448,6 +1476,26 @@ after Task Y merge.
 - Delivery or persistence workflow: PARTIAL / NOT ESTABLISHED
 
 ## Quality Progress
+
+**PASS (REUSED)** — The approval-stage implementation report records
+`validate:product-copy`, focused ESLint, standalone TypeScript
+(`--noEmit --incremental false`), and the production build all exiting `0`
+on their first attempts at reviewed head
+`11fade0d18bd71744382ee029f2ac1de42ddda05`. The build generated 774/774
+static pages. The reviewed head and implementation squash share tree
+`d097f32a5b18bcbabcacb245679571bae6f647ad`. See [CHANGELOG.md](CHANGELOG.md#2026-11-28---pr-113-complete-batch-28-private-drafts-and-dual-approvals) for the
+reported timings and draft-stage corrections.
+
+The draft, approval head, and squash had zero remote status contexts, check
+runs, check suites, or Actions runs. GitHub reported aggregate `pending`
+with no CI verdict.
+
+The implementation comparison preserved all 210 draft payloads, provenance
+values, hashes, and registry positions, plus both review records on each of
+the 185 earlier entries. All 25 text mutations and 25 segment-kind mutations
+made both approvals stale.
+
+### Historical Validation - Batch 27
 
 **PASS (REUSED)** — `validate:product-copy`, focused ESLint on the two
 implementation files, the production build, and standalone TypeScript
@@ -1853,14 +1901,14 @@ verified, while 11 records are explicitly `unverified` and expose no public
 lifecycle value. Product integration is not pending.
 
 The Product-copy resolver/presentation boundary is verified and connected to
-all intended consumers. Batches 01–27 are complete privately, with 185/382
-drafts, 185 current approvals per role, 185 dual approvals, zero pending
-roles, and 197 products without drafts. Technical-token overrides remain
+all intended consumers. Batches 01–28 are complete privately, with 210/382
+drafts, 210 current approvals per role, 210 dual approvals, zero pending
+roles, and 172 products without drafts. Technical-token overrides remain
 10 Products, 20 assignments, and 7 unique strings, with an empty global
-allowlist. Batches 03–27 added none. Activation remains invalid at
-`185/185/197`, with capability absent, active overlays at 0/382, and
+allowlist. Batches 03–28 added none. Activation remains invalid at
+`210/210/172`, with capability absent, active overlays at 0/382, and
 publication disabled. Public FA/EN Product copy resolves to canonical
-English/LTR while Persian UI localization remains active. Batch 28 remains
+English/LTR while Persian UI localization remains active. Batch 29 remains
 unstarted and requires separate selection, readiness, and scope authorization.
 Admin Panel and Automation remain gated. The complete 382/382 gate and separately authorized
 atomic public activation remain pending,
