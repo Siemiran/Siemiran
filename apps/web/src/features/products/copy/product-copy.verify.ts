@@ -12769,6 +12769,36 @@ const batch28Orders = expectedBatch28Catalog.flatMap(
       cpuType,
     }))
 );
+const expectedBatch28ReviewedHashes = [
+  "sha256:51845b0d756e0f2265685d244851f8f097f2e0319f2552b2827719a21ffbd3c6",
+  "sha256:7778ee2d09b3be59f8f658cadb1e7e4f19d63ea37664443db1852dcf5169376f",
+  "sha256:01dd9c77c53f100a53c7ca112281c180f81d5056639e185d2479f857af218bda",
+  "sha256:34d785dfa0c018428ddbe015ad360c9fb495c6393b7bf7f41ba199979b3b4e92",
+  "sha256:d1cdc1e04950d3040e63d42db6595685d29d44ab4a5d9e5fbb4e54849716aaa4",
+  "sha256:6b5991eb04337b8ce521f74df9259f8187b39197809dbd226b76cbe36aaa6e20",
+  "sha256:6be0a3eb01e2885576c5059fa316edb398478c0f0d2fefcde768a694abc81aa3",
+  "sha256:7f38fbe1ce1decabbee0a781e2bddb910fccc17eff37866674fdd1555f3ebf69",
+  "sha256:c33558957cb1bcb5acbc1246c28232323294db5e35a87ad5ce280b8dcda7123a",
+  "sha256:966d43696cc0b591197248f41520bf854f027b9c4071d4789328780a6908dd30",
+  "sha256:bba37e3ba23d804b83c0aabc0c763ab181b1b1bc864086a1d809cd86df9dfd83",
+  "sha256:6e883e061d7463eb449e692f840b008aa6bea94f21749f557da00c537b25ff5e",
+  "sha256:1f339d286f2ff5b5c823a8f1088af72593b9ee4296a61a5fb4eee8cca6f469fa",
+  "sha256:31dd89c0d790e6c7506adf033aafc70ee30f268b6095cded58c6369d5ed31b72",
+  "sha256:5aadfde8c87d51780c7cf727f399c5b94ff95b8478369cb3d3a132e624ac97a1",
+  "sha256:30cb07151a5e7b8d6ed685ad235510b1c9e8500377a356e4c47b34e4251db1c4",
+  "sha256:c078b412ef1bff2589941ea287f49ea169be45d8033c0eb59055bef3ebb6d4c1",
+  "sha256:2150ccf9c7add40cdbcaf73df7f075827fabb990b164aa4b0f14c3445c142c1d",
+  "sha256:bf10ba7ab80ac4d3279f33ac4d61ae51e43961e64fdcc7619eb5fec8288e5345",
+  "sha256:c52c2000ec3a5b58ad9983b8ab63665fd30966c5956b81e114a69c339b07f9b0",
+  "sha256:9cdda3d84d53774c74ec6b1ed606ca77dce271352274ada0d97b7bf54d19210d",
+  "sha256:39f3a02ef2a67169ed6d75b457fcae7ef57e683fbc2d5e5626533c6ff14deb33",
+  "sha256:dae513e8add1db5588ff1a1df9b43f670d242fac3a8066aa93473f7189b33254",
+  "sha256:5e2005a7768e8b6842692de90d299a71855833a0970a4695ec592c78be62f187",
+  "sha256:b7d2cd268f109496b91e9b0607e8ee968cc34446c76fd36c1888f2e06d771557",
+] as const;
+const batch28ReviewedDraftCommit = "9d0767a1090181746fa4a40c5c39efe13c50565e";
+const expectedBatch28ApprovalsRecordedAt = "2026-11-28T19:46:09.708Z";
+
 const registeredBatch28Drafts =
   persianProductCopyDraftRegistry.slice(batch27DraftEnd);
 const registeredBatch28ReviewRoles = registeredBatch28Drafts.flatMap(
@@ -12777,6 +12807,7 @@ const registeredBatch28ReviewRoles = registeredBatch28Drafts.flatMap(
 assert(
   expectedBatch27Catalog.at(-1)?.position === 229 &&
     batch28Orders.length === 25 &&
+    expectedBatch28ReviewedHashes.length === batch28Orders.length &&
     new Set(batch28Orders.map(({ productId }) => productId)).size === 25 &&
     new Set(batch28Orders.map(({ partNumber }) => partNumber)).size === 25 &&
     registeredBatch28Drafts.length === 25 &&
@@ -12846,10 +12877,49 @@ const registeredBatch28DraftRecords = batch28Orders.map((expected, index) => {
     `Batch 28 draft at position ${position} must have the exact order and identical two-segment paragraphs: ${partNumber}`
   );
   const { linguisticReview, technicalReview } = entry;
+  const contentHash = createProductCopyContentHash(entry);
+  const reviewReference =
+    `for ${partNumber} in the supplied Batch 28 approval review, citing draft commit ${batch28ReviewedDraftCommit}. The UTC timestamp records entry of this approval in the registry. Registry approvals are separate from GitHub reviews.`;
   assert(
-    JSON.stringify(linguisticReview) === JSON.stringify(pendingReview) &&
-      JSON.stringify(technicalReview) === JSON.stringify(pendingReview),
-    `Batch 28 must have one pending review per role: ${partNumber}`
+    contentHash === expectedBatch28ReviewedHashes[index],
+    `Batch 28 must retain the supplied reviewed hash at position ${position}: ${partNumber}`
+  );
+  for (const [role, review] of [
+    ["Linguistic", linguisticReview],
+    ["Technical", technicalReview],
+  ] as const) {
+    assert(
+      review.decision === "approved" &&
+        review.reviewerId === "Siemiran" &&
+        review.reviewedAt === expectedBatch28ApprovalsRecordedAt &&
+        review.reviewedContentHash === contentHash &&
+        review.evidenceRef.startsWith(`${role} approval ${reviewReference}`),
+      `Batch 28 ${role.toLowerCase()} approval must match the current hash and reviewed draft: ${partNumber}`
+    );
+  }
+  assert(
+    linguisticReview.evidenceRef === `Linguistic approval ${reviewReference}` &&
+      linguisticReview.note ===
+        "Approved the exact Persian wording, punctuation, NFC normalization, and MLFB segmentation in the identical short and single-paragraph long descriptions.",
+    `Batch 28 linguistic approval must cover the exact copy and segmentation: ${partNumber}`
+  );
+  const evidence = technicalReview.evidenceRef;
+  const exactOrderEvidence =
+    `Parsed ${expected.source} exact order ${partNumber}: ${expected.cpuType}.`;
+  assert(
+    evidence.startsWith(`Technical approval ${reviewReference} ${exactOrderEvidence}`) &&
+      evidence.endsWith("Visual inspection was unavailable.") &&
+      (position === 230
+        ? evidence.includes("Parsed Siemens Classic V20 HTML ordering table.")
+        : [
+            "Parsed catalog ordering rows supplied the evidence.",
+            "Search indexing located the sections.",
+            "The direct Siemens PDF returned HTTP 403",
+            "the older Siemens cache URL returned HTTP 404",
+            "the English edition mirror transfer timed out during rendering.",
+          ].every((statement) => evidence.includes(statement))) &&
+      technicalReview.note === "Approved exact order identity and CPU type only.",
+    `Batch 28 technical approval must cite the exact order, CPU type, and evidence limits: ${partNumber}`
   );
 
   for (const locale of ["fa", "en"] as const) {
@@ -12872,11 +12942,16 @@ const registeredBatch28DraftRecords = batch28Orders.map((expected, index) => {
     ...expected,
     sourceGroup: "classic",
     draftText: serializeProductCopyParagraphForSearch(entry.shortDescription),
-    contentHash: createProductCopyContentHash(entry),
+    contentHash,
     linguisticReview: linguisticReview.decision,
+    linguisticRecordedAt: linguisticReview.reviewedAt,
     technicalReview: technicalReview.decision,
+    technicalRecordedAt: technicalReview.reviewedAt,
   };
 });
+
+const registeredBatch28ApprovalMutationResults =
+  verifyTextAndKindApprovalMutations(registeredBatch28Drafts, "Batch 28");
 
 const registeredCompletedBatchDrafts = persianProductCopyDraftRegistry.filter(
   (entry) => expectedCompletedBatchProductIdSet.has(entry.productId)
@@ -13067,21 +13142,21 @@ assert(
   "The existing thirty drafts must retain exact current dual approvals with no pending reviews."
 );
 assert(
-  registeredLinguisticApprovals === 185 &&
-    registeredTechnicalApprovals === 185 &&
-    registeredCurrentDualApprovals === 185 &&
-    registeredLinguisticPending === 25 &&
-    registeredTechnicalPending === 25,
-  "The registry must contain 185 current dual approvals and 25 pending reviews per role."
+  registeredLinguisticApprovals === 210 &&
+    registeredTechnicalApprovals === 210 &&
+    registeredCurrentDualApprovals === 210 &&
+    registeredLinguisticPending === 0 &&
+    registeredTechnicalPending === 0,
+  "The registry must contain 210 current dual approvals and zero pending reviews per role."
 );
 assert(
   !registeredDraftActivation.valid &&
     registeredDraftActivation.overlayCount === 210 &&
     registeredDraftActivation.canonicalCount === 382 &&
-    registeredDraftActivation.approvedCount === 185 &&
+    registeredDraftActivation.approvedCount === 210 &&
     registeredDraftActivation.missingIds.length === 172 &&
     !("capability" in registeredDraftActivation),
-  "Combined activation must fail closed at exactly 210/382 drafts, 185 dual approvals, and 172 missing Products."
+  "Combined activation must fail closed at exactly 210/382 drafts, 210 dual approvals, and 172 missing Products."
 );
 assert(
   PERSIAN_PRODUCT_COPY_PUBLICATION_STATE === "disabled",
@@ -13437,7 +13512,8 @@ console.log(
         batch28: {
           entries: registeredBatch28Drafts.length,
           drafts: registeredBatch28DraftRecords,
-          pendingRoleRecords: registeredBatch28ReviewRoles.length,
+          approvedRoleRecords: registeredBatch28ReviewRoles.length,
+          mutationStaleness: registeredBatch28ApprovalMutationResults,
           publicCanonicalEnglishLtr: true,
         },
         completedThroughBatch21Entries:
