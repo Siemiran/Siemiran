@@ -1,6 +1,38 @@
 # Siemiran — Project State
 
-## 2026-11-27 - Batch 26 Reconciliation (Current State)
+## 2026-11-27 - Batch 27 Reconciliation (Current State)
+
+[PR #111](https://github.com/Siemiran/Siemiran/pull/111) completed private Batch 27 at
+`7a3525d59c26ad60105f3fa8c48900afe79118f1`. Its ten new classic S7-1200 CPU
+entries occupy positions 217, 219–220, 222–223, and 225–229. Positions 218, 221,
+and 224 retain their original Batch 01 entries, registry indexes, and both
+current approvals. Technical approval covers exact order identity and CPU type
+only. See the ten bindings, stored hashes, and evidence limits in [DATABASE.md](DATABASE.md#2026-11-27---batch-27-private-product-copy-checkpoint-current-state).
+
+Batches 01–27 are complete privately. The catalog contains 382 Products
+(186 S7-1200 and 196 S7-300), with 185 private drafts, 185 current approvals
+per role, 185 current dual approvals, zero pending roles, and 197 products
+without drafts. Activation remains invalid at `185/185/197` (drafts, dual
+approvals, missing drafts). Capability is absent, active overlays are 0/382,
+publication is disabled, and public FA/EN Product copy resolves to canonical
+English/LTR. Launch requires 382/382 current dual approvals and separate
+authorization.
+
+Technical-token overrides remain `10/20/7` (Products, assignments, unique
+strings), with an empty global allowlist. The eleven public lifecycle omissions
+and the separate S7-300 provenance classification (185 verified and 11
+explicitly unverified) remain in effect.
+
+Batch 28 remains unstarted. Product selection, readiness, and scope require
+separate authorization. The dedicated completed-copy website inspection is
+pending, and Admin Panel and Automation remain gated.
+
+<a id="2026-11-27---batch-26-reconciliation-current-state"></a>
+
+## 2026-11-27 - Batch 26 Reconciliation (Historical Snapshot)
+
+The Batch 26 checkpoint was `175/175/207`. The following record describes
+its implementation and workflow at that checkpoint.
 
 [PR #109](https://github.com/Siemiran/Siemiran/pull/109) completed private Batch 26 at
 `7ed2bb4a5f5f14f5a85a4f0d1562ed3fc29146df`. Its ten new CPU entries occupy
@@ -1089,7 +1121,7 @@ the inventory before this approved deletion, not a valid current record.
 - Status: Active Development
 - Documentation checkpoint: 2026-11-27. Workflow status is reported separately.
 - Implementation base: `main` at
-  `7ed2bb4a5f5f14f5a85a4f0d1562ed3fc29146df`
+  `7a3525d59c26ad60105f3fa8c48900afe79118f1`
 - No semantic release version is asserted by this document.
 
 ## Current Stack
@@ -1121,7 +1153,7 @@ the inventory before this approved deletion, not a valid current record.
 | --- | --- | --- |
 | Product listing and dynamic detail pages | IMPLEMENTED | Repository-backed listing, static product paths, and not-found handling |
 | Localization foundation | IMPLEMENTED | Persian-first FA/EN routing, matching UI catalogs, one-click equivalent-page switching, locale direction, and temporarily noindexed English routes |
-| Product-copy consumer integration | IMPLEMENTED | All intended consumers use the central resolver/public DTO boundary. Private drafts and both approval roles are 175/382, with 175 current dual approvals, zero pending roles, and 207 products without drafts. Active overlays remain 0/382, activation capability is absent, and publication is disabled. |
+| Product-copy consumer integration | IMPLEMENTED | All intended consumers use the central resolver/public DTO boundary. Private drafts and both approval roles are 185/382, with 185 current dual approvals, zero pending roles, and 197 products without drafts. Active overlays remain 0/382, activation capability is absent, and publication is disabled. |
 | Search, URL parameters, filters, sorting, pagination | IMPLEMENTED | Category, family, series, and product-type filters; 12-item pagination |
 | Gallery and specifications | IMPLEMENTED | Product gallery/image UI and technical specification rendering |
 | SEO and structured data | IMPLEMENTED | Metadata, canonical/Open Graph/Twitter fields, Product JSON-LD, breadcrumbs, and Breadcrumb JSON-LD |
@@ -1368,6 +1400,28 @@ each milestone was recorded; they are not the current connection state.
   and the Product collection total is 308.
 
 ## Validation at the Documentation Checkpoint
+
+**PASS (REUSED)** — `validate:product-copy`, focused ESLint on the two
+implementation files, the production build, and standalone TypeScript
+(`--noEmit --incremental false`) after the build exited `0` at reviewed head
+`0596268ef7d25dcf59952cee53f3408e276baff3`. The build generated 774/774
+static pages. The reviewed head and implementation squash share tree
+`eac3efca208c13ab49e089aa425e2f2626120544`. This reconciliation changes
+documentation only. Application checks, product hash recomputation, and
+manufacturer research were not repeated.
+
+Implementation remote CI showed zero Actions runs, check runs, and status
+contexts for both the reviewed head and squash. GitHub returned aggregate
+`pending` with no reported checks.
+
+The implementation comparison preserved the payloads, provenance, registry
+order, and production hashes of all 185 drafts, and both review records for
+all 175 earlier entries. Each of the ten text mutations and ten segment-kind
+mutations made both approvals stale.
+
+See [DATABASE.md](DATABASE.md#2026-11-27---batch-27-private-product-copy-checkpoint-current-state) for the stored approval hashes and evidence.
+
+### Historical Validation - Batch 26
 
 **PASS (REUSED)** — `validate:product-copy`, focused ESLint on the two
 implementation files, TypeScript (`--noEmit --incremental false`), and the
