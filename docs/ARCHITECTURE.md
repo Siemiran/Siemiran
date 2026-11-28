@@ -1,6 +1,6 @@
 # Siemiran — Current Architecture
 
-Implementation base: `main` at `7a3525d59c26ad60105f3fa8c48900afe79118f1` (2026-11-27)
+Implementation base: `main` at `6be8ba001951edd6e2de3956b7bf62d0e186c0a1` (2026-11-28)
 
 Current checkpoint and resume workflow: [SESSION_HANDOFF.md](SESSION_HANDOFF.md).
 
@@ -279,6 +279,32 @@ for merge identity, and [SESSION_HANDOFF.md](SESSION_HANDOFF.md) for resume fact
 
 Batch 17's 85/297 checkpoint is historical; its records and evidence limits
 remain in the linked historical record.
+
+[PR #113](https://github.com/Siemiran/Siemiran/pull/113) completed private Batch 28 at
+`6be8ba001951edd6e2de3956b7bf62d0e186c0a1`. The 25 classic S7-1200 CPU drafts occupy
+production positions 230–254. Technical approval covers exact order identity
+and CPU type. See [DATABASE.md](DATABASE.md#2026-11-28---batch-28-private-product-copy-checkpoint-current-state) for the bindings, stored hashes, and evidence.
+
+Batches 01–28 are complete privately. The catalog contains 382 Products
+(186 S7-1200 and 196 S7-300), with 210 private drafts, 210 current approvals
+per role, 210 current dual approvals, zero pending roles, and 172 products
+without drafts. Activation remains invalid at `210/210/172` (drafts, dual
+approvals, missing drafts). Capability is absent, active overlays are 0/382,
+publication is disabled, and public FA/EN Product copy resolves to canonical
+English/LTR. Launch requires 382/382 current dual approvals and separate
+authorization.
+
+Technical-token overrides remain `10/20/7` (Products, assignments, unique
+strings), with an empty global allowlist. The eleven public lifecycle omissions
+and the separate S7-300 provenance classification (185 verified and 11
+explicitly unverified) remain in effect.
+
+Batch 28 remains a 25-product experiment. Batch 29 remains unstarted and its
+product selection, readiness, and scope require separate authorization.
+The dedicated completed-copy website inspection remains pending, and Admin
+Panel and Automation remain gated.
+
+Historical Batch 27 checkpoint (`185/185/197`).
 
 [PR #111](https://github.com/Siemiran/Siemiran/pull/111) completed private Batch 27 at
 `7a3525d59c26ad60105f3fa8c48900afe79118f1`. Its ten new classic S7-1200 CPU
@@ -611,6 +637,10 @@ CPU bindings in non-contiguous catalog order. The verifier pins the three
 Batch 01 entries at positions 218, 221, and 224 to their original registry
 indexes and approval hashes. Each text or segment-kind mutation makes both
 new approval roles stale.
+Batch 28 preserves the first 185 registry entries and verifies 25 new classic
+CPU bindings in consecutive catalog order. The verifier pins all 25 reviewed
+hashes and both current approvals per order. All 50 text and segment-kind
+mutation cases made both approvals stale.
 Batch 14's 70/312, Batch 13's 65/317 and Batch 12's 60/322 checkpoints
 are historical. Batch 11 recorded 55/327.
 Dated Batch 01–10 checkpoints retain 5/10/15/20/25/30/35/40/45/50 entries and
