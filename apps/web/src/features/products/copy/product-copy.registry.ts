@@ -1706,6 +1706,67 @@ function createBatch27Approvals(
   } as const;
 }
 
+const batch28TechnicalEvidence = {
+  classic1215fc: { source: "Classic V20 Fail-safe CPUs, Table 1", cpuType: "CPU 1215FC" },
+  siplus1214fc: { source: "ST 70 2024, p. 3/56", cpuType: "SIPLUS CPU 1214 FC" },
+  siplus1215fc: { source: "ST 70 2024, p. 3/56", cpuType: "SIPLUS CPU 1215 FC" },
+  siplus1212cPage28: { source: "ST 70 2024, p. 3/28", cpuType: "SIPLUS CPU 1212C" },
+  siplus1212cPage29: { source: "ST 70 2024, p. 3/29", cpuType: "SIPLUS CPU 1212C" },
+  siplus1214cPage33: { source: "ST 70 2024, p. 3/33", cpuType: "SIPLUS CPU 1214C" },
+  siplus1214cPage34: { source: "ST 70 2024, p. 3/34", cpuType: "SIPLUS CPU 1214C" },
+  siplus1215cPage40: { source: "ST 70 2024, p. 3/40", cpuType: "SIPLUS CPU 1215C" },
+} as const;
+
+const batch28ApprovalsRecordedAt = "2026-11-28T19:46:09.708Z";
+
+function createBatch28ApprovedDraft(
+  productId: string,
+  partNumber: string,
+  variantId: "fail-safe" | "compact",
+  reviewedContentHash: string,
+  evidence: { source: string; cpuType: string }
+) {
+  const typeLabel =
+    variantId === "fail-safe"
+      ? "واحد پردازش مرکزی ایمن در برابر خطا"
+      : "واحد پردازش مرکزی کامپکت";
+  const copy = [
+    { kind: "technical", value: partNumber },
+    { kind: "text", value: `، ${typeLabel}` },
+  ] as const satisfies ProductCopyParagraph;
+
+  const reviewReference =
+    `for ${partNumber} in the supplied Batch 28 approval review, citing draft commit 9d0767a1090181746fa4a40c5c39efe13c50565e. The UTC timestamp records entry of this approval in the registry. Registry approvals are separate from GitHub reviews.`;
+  const exactOrderEvidence =
+    `Parsed ${evidence.source} exact order ${partNumber}: ${evidence.cpuType}.`;
+  const evidenceAccess = evidence === batch28TechnicalEvidence.classic1215fc
+    ? "Parsed Siemens Classic V20 HTML ordering table. https://docs.tia.siemens.cloud/r/simatic_s7_1200_manual_collection_enus_20/ordering-information/fail-safe-cpus-and-signal-modules"
+    : "Parsed catalog ordering rows supplied the evidence. Search indexing located the sections. The direct Siemens PDF returned HTTP 403, the older Siemens cache URL returned HTTP 404, and the English edition mirror transfer timed out during rendering. https://support.industry.siemens.com/cs/attachments/109744167/simatic-st70-complete-english-2024.pdf https://dev.lp-form.com/alfa-tech/wp-content/uploads/2025/02/Siemens-catalogue-complete-english-2024.pdf";
+
+  return {
+    productId,
+    shortDescription: copy,
+    description: [copy],
+    provenance: "ai-assisted",
+    linguisticReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: batch28ApprovalsRecordedAt,
+      reviewedContentHash,
+      evidenceRef: `Linguistic approval ${reviewReference}`,
+      note: "Approved the exact Persian wording, punctuation, NFC normalization, and MLFB segmentation in the identical short and single-paragraph long descriptions.",
+    },
+    technicalReview: {
+      decision: "approved",
+      reviewerId: "Siemiran",
+      reviewedAt: batch28ApprovalsRecordedAt,
+      reviewedContentHash,
+      evidenceRef: `Technical approval ${reviewReference} ${exactOrderEvidence} ${evidenceAccess} Visual inspection was unavailable.`,
+      note: "Approved exact order identity and CPU type only.",
+    },
+  } as const satisfies PersianProductCopyOverlay;
+}
+
 export const persianProductCopyDraftRegistry = [
   {
     productId: "siemens-s7-1200-cpu-211-1ae40",
@@ -5797,4 +5858,179 @@ export const persianProductCopyDraftRegistry = [
       batch27TechnicalEvidence.position229
     ),
   },
+  createBatch28ApprovedDraft(
+    "siemens-s7-1200-cpu-215-1hf40",
+    "6ES7215-1HF40-0XB0",
+    "fail-safe",
+    "sha256:51845b0d756e0f2265685d244851f8f097f2e0319f2552b2827719a21ffbd3c6",
+    batch28TechnicalEvidence.classic1215fc
+  ),
+  createBatch28ApprovedDraft(
+    "siemens-s7-1200-cpu-siplus-1214-1af40-5xb0",
+    "6AG1214-1AF40-5XB0",
+    "fail-safe",
+    "sha256:7778ee2d09b3be59f8f658cadb1e7e4f19d63ea37664443db1852dcf5169376f",
+    batch28TechnicalEvidence.siplus1214fc
+  ),
+  createBatch28ApprovedDraft(
+    "siemens-s7-1200-cpu-siplus-1214-1hf40-5xb0",
+    "6AG1214-1HF40-5XB0",
+    "fail-safe",
+    "sha256:01dd9c77c53f100a53c7ca112281c180f81d5056639e185d2479f857af218bda",
+    batch28TechnicalEvidence.siplus1214fc
+  ),
+  createBatch28ApprovedDraft(
+    "siemens-s7-1200-cpu-siplus-1215-1af40-5xb0",
+    "6AG1215-1AF40-5XB0",
+    "fail-safe",
+    "sha256:34d785dfa0c018428ddbe015ad360c9fb495c6393b7bf7f41ba199979b3b4e92",
+    batch28TechnicalEvidence.siplus1215fc
+  ),
+  createBatch28ApprovedDraft(
+    "siemens-s7-1200-cpu-siplus-1212-1ae40-2xb0",
+    "6AG1212-1AE40-2XB0",
+    "compact",
+    "sha256:d1cdc1e04950d3040e63d42db6595685d29d44ab4a5d9e5fbb4e54849716aaa4",
+    batch28TechnicalEvidence.siplus1212cPage28
+  ),
+  createBatch28ApprovedDraft(
+    "siemens-s7-1200-cpu-siplus-1212-1ae40-4xb0",
+    "6AG1212-1AE40-4XB0",
+    "compact",
+    "sha256:6b5991eb04337b8ce521f74df9259f8187b39197809dbd226b76cbe36aaa6e20",
+    batch28TechnicalEvidence.siplus1212cPage28
+  ),
+  createBatch28ApprovedDraft(
+    "siemens-s7-1200-cpu-siplus-1212-1be40-2xb0",
+    "6AG1212-1BE40-2XB0",
+    "compact",
+    "sha256:6be0a3eb01e2885576c5059fa316edb398478c0f0d2fefcde768a694abc81aa3",
+    batch28TechnicalEvidence.siplus1212cPage28
+  ),
+  createBatch28ApprovedDraft(
+    "siemens-s7-1200-cpu-siplus-1212-1be40-4xb0",
+    "6AG1212-1BE40-4XB0",
+    "compact",
+    "sha256:7f38fbe1ce1decabbee0a781e2bddb910fccc17eff37866674fdd1555f3ebf69",
+    batch28TechnicalEvidence.siplus1212cPage28
+  ),
+  createBatch28ApprovedDraft(
+    "siemens-s7-1200-cpu-siplus-1212-1he40-2xb0",
+    "6AG1212-1HE40-2XB0",
+    "compact",
+    "sha256:c33558957cb1bcb5acbc1246c28232323294db5e35a87ad5ce280b8dcda7123a",
+    batch28TechnicalEvidence.siplus1212cPage29
+  ),
+  createBatch28ApprovedDraft(
+    "siemens-s7-1200-cpu-siplus-1212-1he40-4xb0",
+    "6AG1212-1HE40-4XB0",
+    "compact",
+    "sha256:966d43696cc0b591197248f41520bf854f027b9c4071d4789328780a6908dd30",
+    batch28TechnicalEvidence.siplus1212cPage29
+  ),
+  createBatch28ApprovedDraft(
+    "siemens-s7-1200-cpu-siplus-1214-1ag40-2xb0",
+    "6AG1214-1AG40-2XB0",
+    "compact",
+    "sha256:bba37e3ba23d804b83c0aabc0c763ab181b1b1bc864086a1d809cd86df9dfd83",
+    batch28TechnicalEvidence.siplus1214cPage33
+  ),
+  createBatch28ApprovedDraft(
+    "siemens-s7-1200-cpu-siplus-1214-1ag40-4xb0",
+    "6AG1214-1AG40-4XB0",
+    "compact",
+    "sha256:6e883e061d7463eb449e692f840b008aa6bea94f21749f557da00c537b25ff5e",
+    batch28TechnicalEvidence.siplus1214cPage33
+  ),
+  createBatch28ApprovedDraft(
+    "siemens-s7-1200-cpu-siplus-1214-1ag40-5xb0",
+    "6AG1214-1AG40-5XB0",
+    "compact",
+    "sha256:1f339d286f2ff5b5c823a8f1088af72593b9ee4296a61a5fb4eee8cca6f469fa",
+    batch28TechnicalEvidence.siplus1214cPage33
+  ),
+  createBatch28ApprovedDraft(
+    "siemens-s7-1200-cpu-siplus-1214-1bg40-2xb0",
+    "6AG1214-1BG40-2XB0",
+    "compact",
+    "sha256:31dd89c0d790e6c7506adf033aafc70ee30f268b6095cded58c6369d5ed31b72",
+    batch28TechnicalEvidence.siplus1214cPage33
+  ),
+  createBatch28ApprovedDraft(
+    "siemens-s7-1200-cpu-siplus-1214-1bg40-4xb0",
+    "6AG1214-1BG40-4XB0",
+    "compact",
+    "sha256:5aadfde8c87d51780c7cf727f399c5b94ff95b8478369cb3d3a132e624ac97a1",
+    batch28TechnicalEvidence.siplus1214cPage33
+  ),
+  createBatch28ApprovedDraft(
+    "siemens-s7-1200-cpu-siplus-1214-1bg40-5xb0",
+    "6AG1214-1BG40-5XB0",
+    "compact",
+    "sha256:30cb07151a5e7b8d6ed685ad235510b1c9e8500377a356e4c47b34e4251db1c4",
+    batch28TechnicalEvidence.siplus1214cPage33
+  ),
+  createBatch28ApprovedDraft(
+    "siemens-s7-1200-cpu-siplus-1214-1hg40-2xb0",
+    "6AG1214-1HG40-2XB0",
+    "compact",
+    "sha256:c078b412ef1bff2589941ea287f49ea169be45d8033c0eb59055bef3ebb6d4c1",
+    batch28TechnicalEvidence.siplus1214cPage34
+  ),
+  createBatch28ApprovedDraft(
+    "siemens-s7-1200-cpu-siplus-1214-1hg40-4xb0",
+    "6AG1214-1HG40-4XB0",
+    "compact",
+    "sha256:2150ccf9c7add40cdbcaf73df7f075827fabb990b164aa4b0f14c3445c142c1d",
+    batch28TechnicalEvidence.siplus1214cPage34
+  ),
+  createBatch28ApprovedDraft(
+    "siemens-s7-1200-cpu-siplus-1214-1hg40-5xb0",
+    "6AG1214-1HG40-5XB0",
+    "compact",
+    "sha256:bf10ba7ab80ac4d3279f33ac4d61ae51e43961e64fdcc7619eb5fec8288e5345",
+    batch28TechnicalEvidence.siplus1214cPage34
+  ),
+  createBatch28ApprovedDraft(
+    "siemens-s7-1200-cpu-siplus-1215-1ag40-2xb0",
+    "6AG1215-1AG40-2XB0",
+    "compact",
+    "sha256:c52c2000ec3a5b58ad9983b8ab63665fd30966c5956b81e114a69c339b07f9b0",
+    batch28TechnicalEvidence.siplus1215cPage40
+  ),
+  createBatch28ApprovedDraft(
+    "siemens-s7-1200-cpu-siplus-1215-1ag40-4xb0",
+    "6AG1215-1AG40-4XB0",
+    "compact",
+    "sha256:9cdda3d84d53774c74ec6b1ed606ca77dce271352274ada0d97b7bf54d19210d",
+    batch28TechnicalEvidence.siplus1215cPage40
+  ),
+  createBatch28ApprovedDraft(
+    "siemens-s7-1200-cpu-siplus-1215-1ag40-5xb0",
+    "6AG1215-1AG40-5XB0",
+    "compact",
+    "sha256:39f3a02ef2a67169ed6d75b457fcae7ef57e683fbc2d5e5626533c6ff14deb33",
+    batch28TechnicalEvidence.siplus1215cPage40
+  ),
+  createBatch28ApprovedDraft(
+    "siemens-s7-1200-cpu-siplus-1215-1bg40-2xb0",
+    "6AG1215-1BG40-2XB0",
+    "compact",
+    "sha256:dae513e8add1db5588ff1a1df9b43f670d242fac3a8066aa93473f7189b33254",
+    batch28TechnicalEvidence.siplus1215cPage40
+  ),
+  createBatch28ApprovedDraft(
+    "siemens-s7-1200-cpu-siplus-1215-1bg40-4xb0",
+    "6AG1215-1BG40-4XB0",
+    "compact",
+    "sha256:5e2005a7768e8b6842692de90d299a71855833a0970a4695ec592c78be62f187",
+    batch28TechnicalEvidence.siplus1215cPage40
+  ),
+  createBatch28ApprovedDraft(
+    "siemens-s7-1200-cpu-siplus-1215-1bg40-5xb0",
+    "6AG1215-1BG40-5XB0",
+    "compact",
+    "sha256:b7d2cd268f109496b91e9b0607e8ee968cc34446c76fd36c1888f2e06d771557",
+    batch28TechnicalEvidence.siplus1215cPage40
+  ),
 ] as const satisfies readonly PersianProductCopyOverlay[];
