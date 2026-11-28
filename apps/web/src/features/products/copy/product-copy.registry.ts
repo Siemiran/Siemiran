@@ -1706,6 +1706,30 @@ function createBatch27Approvals(
   } as const;
 }
 
+function createBatch28Draft(
+  productId: string,
+  partNumber: string,
+  variantId: "fail-safe" | "compact"
+) {
+  const typeLabel =
+    variantId === "fail-safe"
+      ? "واحد پردازش مرکزی ایمن در برابر خطا"
+      : "واحد پردازش مرکزی کامپکت";
+  const copy = [
+    { kind: "technical", value: partNumber },
+    { kind: "text", value: `، ${typeLabel}` },
+  ] as const satisfies ProductCopyParagraph;
+
+  return {
+    productId,
+    shortDescription: copy,
+    description: [copy],
+    provenance: "ai-assisted",
+    linguisticReview: { decision: "pending" },
+    technicalReview: { decision: "pending" },
+  } as const satisfies PersianProductCopyOverlay;
+}
+
 export const persianProductCopyDraftRegistry = [
   {
     productId: "siemens-s7-1200-cpu-211-1ae40",
@@ -5797,4 +5821,129 @@ export const persianProductCopyDraftRegistry = [
       batch27TechnicalEvidence.position229
     ),
   },
+  createBatch28Draft(
+    "siemens-s7-1200-cpu-215-1hf40",
+    "6ES7215-1HF40-0XB0",
+    "fail-safe"
+  ),
+  createBatch28Draft(
+    "siemens-s7-1200-cpu-siplus-1214-1af40-5xb0",
+    "6AG1214-1AF40-5XB0",
+    "fail-safe"
+  ),
+  createBatch28Draft(
+    "siemens-s7-1200-cpu-siplus-1214-1hf40-5xb0",
+    "6AG1214-1HF40-5XB0",
+    "fail-safe"
+  ),
+  createBatch28Draft(
+    "siemens-s7-1200-cpu-siplus-1215-1af40-5xb0",
+    "6AG1215-1AF40-5XB0",
+    "fail-safe"
+  ),
+  createBatch28Draft(
+    "siemens-s7-1200-cpu-siplus-1212-1ae40-2xb0",
+    "6AG1212-1AE40-2XB0",
+    "compact"
+  ),
+  createBatch28Draft(
+    "siemens-s7-1200-cpu-siplus-1212-1ae40-4xb0",
+    "6AG1212-1AE40-4XB0",
+    "compact"
+  ),
+  createBatch28Draft(
+    "siemens-s7-1200-cpu-siplus-1212-1be40-2xb0",
+    "6AG1212-1BE40-2XB0",
+    "compact"
+  ),
+  createBatch28Draft(
+    "siemens-s7-1200-cpu-siplus-1212-1be40-4xb0",
+    "6AG1212-1BE40-4XB0",
+    "compact"
+  ),
+  createBatch28Draft(
+    "siemens-s7-1200-cpu-siplus-1212-1he40-2xb0",
+    "6AG1212-1HE40-2XB0",
+    "compact"
+  ),
+  createBatch28Draft(
+    "siemens-s7-1200-cpu-siplus-1212-1he40-4xb0",
+    "6AG1212-1HE40-4XB0",
+    "compact"
+  ),
+  createBatch28Draft(
+    "siemens-s7-1200-cpu-siplus-1214-1ag40-2xb0",
+    "6AG1214-1AG40-2XB0",
+    "compact"
+  ),
+  createBatch28Draft(
+    "siemens-s7-1200-cpu-siplus-1214-1ag40-4xb0",
+    "6AG1214-1AG40-4XB0",
+    "compact"
+  ),
+  createBatch28Draft(
+    "siemens-s7-1200-cpu-siplus-1214-1ag40-5xb0",
+    "6AG1214-1AG40-5XB0",
+    "compact"
+  ),
+  createBatch28Draft(
+    "siemens-s7-1200-cpu-siplus-1214-1bg40-2xb0",
+    "6AG1214-1BG40-2XB0",
+    "compact"
+  ),
+  createBatch28Draft(
+    "siemens-s7-1200-cpu-siplus-1214-1bg40-4xb0",
+    "6AG1214-1BG40-4XB0",
+    "compact"
+  ),
+  createBatch28Draft(
+    "siemens-s7-1200-cpu-siplus-1214-1bg40-5xb0",
+    "6AG1214-1BG40-5XB0",
+    "compact"
+  ),
+  createBatch28Draft(
+    "siemens-s7-1200-cpu-siplus-1214-1hg40-2xb0",
+    "6AG1214-1HG40-2XB0",
+    "compact"
+  ),
+  createBatch28Draft(
+    "siemens-s7-1200-cpu-siplus-1214-1hg40-4xb0",
+    "6AG1214-1HG40-4XB0",
+    "compact"
+  ),
+  createBatch28Draft(
+    "siemens-s7-1200-cpu-siplus-1214-1hg40-5xb0",
+    "6AG1214-1HG40-5XB0",
+    "compact"
+  ),
+  createBatch28Draft(
+    "siemens-s7-1200-cpu-siplus-1215-1ag40-2xb0",
+    "6AG1215-1AG40-2XB0",
+    "compact"
+  ),
+  createBatch28Draft(
+    "siemens-s7-1200-cpu-siplus-1215-1ag40-4xb0",
+    "6AG1215-1AG40-4XB0",
+    "compact"
+  ),
+  createBatch28Draft(
+    "siemens-s7-1200-cpu-siplus-1215-1ag40-5xb0",
+    "6AG1215-1AG40-5XB0",
+    "compact"
+  ),
+  createBatch28Draft(
+    "siemens-s7-1200-cpu-siplus-1215-1bg40-2xb0",
+    "6AG1215-1BG40-2XB0",
+    "compact"
+  ),
+  createBatch28Draft(
+    "siemens-s7-1200-cpu-siplus-1215-1bg40-4xb0",
+    "6AG1215-1BG40-4XB0",
+    "compact"
+  ),
+  createBatch28Draft(
+    "siemens-s7-1200-cpu-siplus-1215-1bg40-5xb0",
+    "6AG1215-1BG40-5XB0",
+    "compact"
+  ),
 ] as const satisfies readonly PersianProductCopyOverlay[];

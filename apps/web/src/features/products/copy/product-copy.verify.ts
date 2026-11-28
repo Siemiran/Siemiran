@@ -12527,8 +12527,11 @@ assert(
   "Batch 27 must retain the three Batch 01 entries at positions 218, 221, and 224."
 );
 
-const registeredBatch27Drafts =
-  persianProductCopyDraftRegistry.slice(batch26DraftEnd);
+const batch27DraftEnd = batch26DraftEnd + 10;
+const registeredBatch27Drafts = persianProductCopyDraftRegistry.slice(
+  batch26DraftEnd,
+  batch27DraftEnd
+);
 const registeredBatch27ReviewRoles = registeredBatch27Drafts.flatMap(
   (entry) => [entry.linguisticReview, entry.technicalReview]
 );
@@ -12659,6 +12662,222 @@ const registeredBatch27DraftRecords = batch27CatalogBindings
 const registeredBatch27ApprovalMutationResults =
   verifyTextAndKindApprovalMutations(registeredBatch27Drafts, "Batch 27");
 
+/**
+ * Batch 28 reuses the readiness ordering evidence for exact order identity and
+ * CPU type. Classic V20 Table 1 is parsed HTML. ST 70 2024 ordering rows come
+ * from parsed catalog tables. Search indexing located the relevant pages.
+ *
+ * Classic V20: https://docs.tia.siemens.cloud/r/simatic_s7_1200_manual_collection_enus_20/ordering-information/fail-safe-cpus-and-signal-modules
+ * ST 70 2024: https://support.industry.siemens.com/cs/attachments/109744167/simatic-st70-complete-english-2024.pdf
+ * English edition mirror: https://dev.lp-form.com/alfa-tech/wp-content/uploads/2025/02/Siemens-catalogue-complete-english-2024.pdf
+ *
+ * Direct access to the Siemens PDF returned HTTP 403 and the older Siemens cache
+ * URL returned HTTP 404. The mirror transfer timed out during the attempt to
+ * render the pages. Visual inspection was unavailable.
+ */
+const expectedBatch28Catalog = [
+  {
+    source: "Classic V20 Fail-safe CPUs, Table 1",
+    cpuType: "CPU 1215FC",
+    variantId: "fail-safe",
+    orders: [
+      ["6ES7215-1HF40-0XB0", "siemens-s7-1200-cpu-215-1hf40"],
+    ],
+  },
+  {
+    source: "ST 70 2024, p. 3/56",
+    cpuType: "SIPLUS CPU 1214 FC",
+    variantId: "fail-safe",
+    orders: [
+      ["6AG1214-1AF40-5XB0", "siemens-s7-1200-cpu-siplus-1214-1af40-5xb0"],
+      ["6AG1214-1HF40-5XB0", "siemens-s7-1200-cpu-siplus-1214-1hf40-5xb0"],
+    ],
+  },
+  {
+    source: "ST 70 2024, p. 3/56",
+    cpuType: "SIPLUS CPU 1215 FC",
+    variantId: "fail-safe",
+    orders: [
+      ["6AG1215-1AF40-5XB0", "siemens-s7-1200-cpu-siplus-1215-1af40-5xb0"],
+    ],
+  },
+  {
+    source: "ST 70 2024, p. 3/28",
+    cpuType: "SIPLUS CPU 1212C",
+    variantId: "compact",
+    orders: [
+      ["6AG1212-1AE40-2XB0", "siemens-s7-1200-cpu-siplus-1212-1ae40-2xb0"],
+      ["6AG1212-1AE40-4XB0", "siemens-s7-1200-cpu-siplus-1212-1ae40-4xb0"],
+      ["6AG1212-1BE40-2XB0", "siemens-s7-1200-cpu-siplus-1212-1be40-2xb0"],
+      ["6AG1212-1BE40-4XB0", "siemens-s7-1200-cpu-siplus-1212-1be40-4xb0"],
+    ],
+  },
+  {
+    source: "ST 70 2024, p. 3/29",
+    cpuType: "SIPLUS CPU 1212C",
+    variantId: "compact",
+    orders: [
+      ["6AG1212-1HE40-2XB0", "siemens-s7-1200-cpu-siplus-1212-1he40-2xb0"],
+      ["6AG1212-1HE40-4XB0", "siemens-s7-1200-cpu-siplus-1212-1he40-4xb0"],
+    ],
+  },
+  {
+    source: "ST 70 2024, p. 3/33",
+    cpuType: "SIPLUS CPU 1214C",
+    variantId: "compact",
+    orders: [
+      ["6AG1214-1AG40-2XB0", "siemens-s7-1200-cpu-siplus-1214-1ag40-2xb0"],
+      ["6AG1214-1AG40-4XB0", "siemens-s7-1200-cpu-siplus-1214-1ag40-4xb0"],
+      ["6AG1214-1AG40-5XB0", "siemens-s7-1200-cpu-siplus-1214-1ag40-5xb0"],
+      ["6AG1214-1BG40-2XB0", "siemens-s7-1200-cpu-siplus-1214-1bg40-2xb0"],
+      ["6AG1214-1BG40-4XB0", "siemens-s7-1200-cpu-siplus-1214-1bg40-4xb0"],
+      ["6AG1214-1BG40-5XB0", "siemens-s7-1200-cpu-siplus-1214-1bg40-5xb0"],
+    ],
+  },
+  {
+    source: "ST 70 2024, p. 3/34",
+    cpuType: "SIPLUS CPU 1214C",
+    variantId: "compact",
+    orders: [
+      ["6AG1214-1HG40-2XB0", "siemens-s7-1200-cpu-siplus-1214-1hg40-2xb0"],
+      ["6AG1214-1HG40-4XB0", "siemens-s7-1200-cpu-siplus-1214-1hg40-4xb0"],
+      ["6AG1214-1HG40-5XB0", "siemens-s7-1200-cpu-siplus-1214-1hg40-5xb0"],
+    ],
+  },
+  {
+    source: "ST 70 2024, p. 3/40",
+    cpuType: "SIPLUS CPU 1215C",
+    variantId: "compact",
+    orders: [
+      ["6AG1215-1AG40-2XB0", "siemens-s7-1200-cpu-siplus-1215-1ag40-2xb0"],
+      ["6AG1215-1AG40-4XB0", "siemens-s7-1200-cpu-siplus-1215-1ag40-4xb0"],
+      ["6AG1215-1AG40-5XB0", "siemens-s7-1200-cpu-siplus-1215-1ag40-5xb0"],
+      ["6AG1215-1BG40-2XB0", "siemens-s7-1200-cpu-siplus-1215-1bg40-2xb0"],
+      ["6AG1215-1BG40-4XB0", "siemens-s7-1200-cpu-siplus-1215-1bg40-4xb0"],
+      ["6AG1215-1BG40-5XB0", "siemens-s7-1200-cpu-siplus-1215-1bg40-5xb0"],
+    ],
+  },
+] as const;
+
+const batch28Orders = expectedBatch28Catalog.flatMap(
+  ({ source, cpuType, variantId, orders }) =>
+    orders.map(([partNumber, productId]) => ({
+      partNumber,
+      productId,
+      variantId,
+      source,
+      cpuType,
+    }))
+);
+const registeredBatch28Drafts =
+  persianProductCopyDraftRegistry.slice(batch27DraftEnd);
+const registeredBatch28ReviewRoles = registeredBatch28Drafts.flatMap(
+  ({ linguisticReview, technicalReview }) => [linguisticReview, technicalReview]
+);
+assert(
+  expectedBatch27Catalog.at(-1)?.position === 229 &&
+    batch28Orders.length === 25 &&
+    new Set(batch28Orders.map(({ productId }) => productId)).size === 25 &&
+    new Set(batch28Orders.map(({ partNumber }) => partNumber)).size === 25 &&
+    registeredBatch28Drafts.length === 25 &&
+    new Set(registeredBatch28ReviewRoles).size === 50,
+  "Batch 28 must immediately follow Batch 27 with 25 distinct orders and 50 distinct review records."
+);
+
+const registeredBatch28DraftRecords = batch28Orders.map((expected, index) => {
+  const { productId, partNumber, variantId } = expected;
+  const position = 230 + index;
+  const product = products[position - 1];
+  const sourceMatches = batch26SourceBindings.filter(
+    ({ source, product: mappedProduct }) =>
+      source.id === productId ||
+      source.mlfb === partNumber ||
+      mappedProduct.slug === product?.slug
+  );
+  const [binding] = sourceMatches;
+  const productMatches = products.filter(
+    (candidate) =>
+      candidate.id === productId ||
+      candidate.partNumber === partNumber ||
+      candidate.manufacturerPartNumber === partNumber ||
+      candidate.slug === product?.slug
+  );
+  assert(
+    sourceMatches.length === 1 &&
+      binding === batch26SourceGroups.classic[18 + index] &&
+      binding.source.id === productId &&
+      binding.source.mlfb === partNumber &&
+      binding.source.variantId === variantId &&
+      productMatches.length === 1 &&
+      product === productMatches[0] &&
+      product.id === productId &&
+      product.partNumber === partNumber &&
+      product.manufacturerPartNumber === partNumber &&
+      product.variantId === variantId &&
+      product.productTypeId === "CPU" &&
+      JSON.stringify(binding.product) === JSON.stringify(product),
+    `Batch 28 position ${position} and classic CPU adapter binding must be exact: ${partNumber}`
+  );
+  assert(
+    deriveAllowedTechnicalTokens(product).has(partNumber) &&
+      reviewedGlobalTechnicalTokens.length === 0 &&
+      reviewedTechnicalTokenOverrides.every(
+        (override) => override.productId !== productId
+      ),
+    `Batch 28 exact MLFB must be eligible without a token override: ${partNumber}`
+  );
+
+  const entry = registeredBatch28Drafts[index];
+  const typeLabel =
+    variantId === "fail-safe"
+      ? "واحد پردازش مرکزی ایمن در برابر خطا"
+      : "واحد پردازش مرکزی کامپکت";
+  const textSegment = `، ${typeLabel}`;
+  const expectedSegments = [
+    { kind: "technical", value: partNumber },
+    { kind: "text", value: textSegment },
+  ];
+  assert(
+    entry?.productId === productId &&
+      entry.provenance === "ai-assisted" &&
+      textSegment === textSegment.normalize("NFC") &&
+      JSON.stringify(entry.shortDescription) === JSON.stringify(expectedSegments) &&
+      JSON.stringify(entry.description) === JSON.stringify([expectedSegments]),
+    `Batch 28 draft at position ${position} must have the exact order and identical two-segment paragraphs: ${partNumber}`
+  );
+  const { linguisticReview, technicalReview } = entry;
+  assert(
+    JSON.stringify(linguisticReview) === JSON.stringify(pendingReview) &&
+      JSON.stringify(technicalReview) === JSON.stringify(pendingReview),
+    `Batch 28 must have one pending review per role: ${partNumber}`
+  );
+
+  for (const locale of ["fa", "en"] as const) {
+    const resolved = resolveProductCopy(product, locale);
+    const publicCopy = createPublicProductCardCopyDTO(resolved);
+    assert(
+      resolved.source === "canonical-en" &&
+        serializeProductCopyParagraph(resolved.shortDescription) ===
+          product.shortDescription &&
+        resolved.description.map(serializeProductCopyParagraph).join("\n") ===
+          (product.description ?? "") &&
+        publicCopy.language === "en" &&
+        publicCopy.direction === "ltr",
+      `Batch 28 public ${locale} copy must remain canonical English/LTR: ${partNumber}`
+    );
+  }
+
+  return {
+    position,
+    ...expected,
+    sourceGroup: "classic",
+    draftText: serializeProductCopyParagraphForSearch(entry.shortDescription),
+    contentHash: createProductCopyContentHash(entry),
+    linguisticReview: linguisticReview.decision,
+    technicalReview: technicalReview.decision,
+  };
+});
+
 const registeredCompletedBatchDrafts = persianProductCopyDraftRegistry.filter(
   (entry) => expectedCompletedBatchProductIdSet.has(entry.productId)
 );
@@ -12692,7 +12911,8 @@ assert(
     batch24DraftEnd === 155 &&
     batch25DraftEnd === 165 &&
     batch26DraftEnd === 175 &&
-    persianProductCopyDraftRegistry.length === 185 &&
+    batch27DraftEnd === 185 &&
+    persianProductCopyDraftRegistry.length === 210 &&
     registeredBatch01Drafts.length === 5 &&
     JSON.stringify(registeredBatch01DraftBindings) ===
       JSON.stringify(expectedBatch01DraftProducts),
@@ -12850,18 +13070,18 @@ assert(
   registeredLinguisticApprovals === 185 &&
     registeredTechnicalApprovals === 185 &&
     registeredCurrentDualApprovals === 185 &&
-    registeredLinguisticPending === 0 &&
-    registeredTechnicalPending === 0,
-  "The registry must contain 185 current dual approvals and zero pending reviews per role."
+    registeredLinguisticPending === 25 &&
+    registeredTechnicalPending === 25,
+  "The registry must contain 185 current dual approvals and 25 pending reviews per role."
 );
 assert(
   !registeredDraftActivation.valid &&
-    registeredDraftActivation.overlayCount === 185 &&
+    registeredDraftActivation.overlayCount === 210 &&
     registeredDraftActivation.canonicalCount === 382 &&
     registeredDraftActivation.approvedCount === 185 &&
-    registeredDraftActivation.missingIds.length === 197 &&
+    registeredDraftActivation.missingIds.length === 172 &&
     !("capability" in registeredDraftActivation),
-  "Combined activation must fail closed at exactly 185/382 drafts, 185 dual approvals, and 197 missing Products."
+  "Combined activation must fail closed at exactly 210/382 drafts, 185 dual approvals, and 172 missing Products."
 );
 assert(
   PERSIAN_PRODUCT_COPY_PUBLICATION_STATE === "disabled",
@@ -13212,6 +13432,12 @@ console.log(
           skipped: registeredBatch27SkippedRecords,
           approvedRoleRecords: registeredBatch27ReviewRoles.length,
           mutationStaleness: registeredBatch27ApprovalMutationResults,
+          publicCanonicalEnglishLtr: true,
+        },
+        batch28: {
+          entries: registeredBatch28Drafts.length,
+          drafts: registeredBatch28DraftRecords,
+          pendingRoleRecords: registeredBatch28ReviewRoles.length,
           publicCanonicalEnglishLtr: true,
         },
         completedThroughBatch21Entries:
